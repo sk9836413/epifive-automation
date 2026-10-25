@@ -92,11 +92,10 @@ jobs:
           if [ "$HAS_TOKEN" != "true" ]; then echo "::notice::CLAUDE_CODE_OAUTH_TOKEN secret is not set; skipping."; fi
 
       - uses: actions/checkout@v4
+        if: steps.gate.outputs.ready == 'true'
         with:
           repository: sk9836413/EPIVIFE
           token: ${{ secrets.SITE_REPO_TOKEN }}
-        if: steps.gate.outputs.ready == 'true'
-        with:
           fetch-depth: 0 # the Make step prunes hosted media by the date it was committed
 
       - uses: actions/setup-node@v4
