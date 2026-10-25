@@ -1,0 +1,55 @@
+# Cross-posts EpiFive articles to DEV and Hashnode (canonical link back to epifive.com).
+# Started daily by the Cloudflare scheduler after the daily article; posts the newest
+# articles that haven't been syndicated yet, so the back catalogue drains a few per day.
+name: Syndicate
+
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: How many articles to cross-post
+        default: '3'
+
+env:
+  SITE_REMOTE: https://x-access-token:${{ secrets.SITE_REPO_TOKEN }}@github.com/sk9836413/EPIVIFE.git
+
+permissions:
+  contents: write
+
+concurrency:
+  group: syndicate
+  cancel-in-progress: false
+
+jobs:
+  syndicate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci --no-audit --no-fund
+
+      - name: Cross-post
+        env:
+          DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
+          HASHNODE_TOKEN: ${{ secrets.HASHNODE_TOKEN }}
+          HASHNODE_HOST: ${{ secrets.HASHNODE_HOST }}
+        run: node scripts/seo/syndicate.mjs --next "${{ inputs.count || '3' }}"
+
+      - name: Save the log
+        if: always()
+        run: |
+          git add automation/syndication-log.md 2>/dev/null || exit 0
+          git diff --cached --quiet && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Log syndication"
+          for i in 1 2 3; do git pull -q --rebase "$SITE_REMOTE" main && git push -q "$SITE_REMOTE" HEAD:main && break; sleep 10; done

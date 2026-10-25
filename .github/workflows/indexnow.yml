@@ -1,0 +1,39 @@
+# Tells Bing, Yandex and other IndexNow engines about new or changed articles after each deploy.
+# The daily writer (article.yml) pings its own new post, because bot pushes don't fire `push`.
+name: IndexNow ping
+
+on:
+  workflow_dispatch:
+    inputs:
+      all:
+        description: Submit every URL in the sitemap
+        type: boolean
+        default: false
+
+env:
+  SITE_REMOTE: https://x-access-token:${{ secrets.SITE_REPO_TOKEN }}@github.com/sk9836413/EPIVIFE.git
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Wait for the Cloudflare deploy to go live
+        if: github.event_name != 'workflow_dispatch'
+        run: sleep 300
+
+      - name: Submit to IndexNow
+        run: |
+          if [ "${{ inputs.all }}" = "true" ]; then
+            node scripts/seo/indexnow.mjs --all
+          else
+            node scripts/seo/indexnow.mjs --days 2
+          fi

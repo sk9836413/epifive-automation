@@ -1,0 +1,110 @@
+# Weekly growth review: pulls the YouTube numbers, then Claude rewrites automation/STRATEGY.md
+# (hooks, length, titles) from what worked. Started on Sundays by the Cloudflare scheduler.
+name: Growth review
+
+on:
+  workflow_dispatch:
+
+env:
+  SITE_REMOTE: https://x-access-token:${{ secrets.SITE_REPO_TOKEN }}@github.com/sk9836413/EPIVIFE.git
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: growth
+  cancel-in-progress: false
+
+jobs:
+  review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci --no-audit --no-fund
+
+      - name: YouTube report
+        id: report
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: |
+          node scripts/social/yt-stats.mjs | tee "$RUNNER_TEMP/report.json"
+          echo "file=automation/growth/$(date -u +%F).md" >> "$GITHUB_OUTPUT"
+
+      # Off until the Make scenario's stats route (with filters that stop stats requests from
+      # posting) is verified; then set the repository variable LINKEDIN_STATS to "on".
+      - name: LinkedIn report
+        if: vars.LINKEDIN_STATS == 'on'
+        env:
+          MAKE_WEBHOOK_URL: ${{ secrets.MAKE_WEBHOOK_URL }}
+          MAKE_API_KEY: ${{ secrets.MAKE_API_KEY }}
+        run: node scripts/social/linkedin-stats.mjs
+
+      - name: Update the strategy (Claude)
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          claude_args: |
+            --max-turns 40
+            --allowedTools "Read,Write,Edit,Glob,Grep"
+          prompt: |
+            You run the weekly growth review for the EpiFive YouTube Shorts (also posted to Instagram,
+            Facebook and LinkedIn).
+
+            Read the new report ${{ steps.report.outputs.file }}, the older reports in automation/growth/,
+            the current automation/STRATEGY.md, automation/social-log.md and the "Writing rules" in
+            automation/SOCIAL.md.
+
+            Compare the best and worst performing Shorts: title pattern, topic type (error/fix, security
+            risk, how-to, feature overview), opening hook, length, posting day and retention (the
+            "Avg watched (s)" and "Avg % viewed" columns). Many views with a low % viewed means YouTube
+            showed the Short but the opening lost people (fix the hook); a high % viewed with few views
+            means the content holds but the title and first frame don't get it tested (fix the title
+            and hook topic). Then rewrite
+            automation/STRATEGY.md:
+            - Update "Evidence" with this week's numbers: channel totals, average views and average %
+              viewed per Short, the 3
+              best and 3 worst, and whether last week's rules moved the average.
+            - Write 4-6 concrete rules for the coming week. Keep rules the data supports, drop the ones
+              it doesn't, and add at most one new idea to test (say it is a test).
+            - Every rule must stay inside the SOCIAL.md Writing rules: facts only from the article, no
+              clickbait the article doesn't deliver, no engagement bait, no sales offers.
+            - Keep a "LinkedIn" section. If automation/growth/linkedin-<date>.md files exist, use their
+              numbers (followers, impressions, reactions, comments per post) the same way as the YouTube
+              data: report them under Evidence and adjust the LinkedIn rules to what worked. Without
+              them, change the LinkedIn rules only with evidence.
+            - Keep the file under 75 lines.
+
+            Edit only automation/STRATEGY.md. Do not commit or push.
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add automation/growth automation/STRATEGY.md
+          git commit -q -m "Weekly growth review $(date -u +%F)" || exit 0
+          for i in 1 2 3; do git pull -q --rebase "$SITE_REMOTE" main && git push -q "$SITE_REMOTE" HEAD:main && break; sleep 10; done
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "## Growth review"
+            cat "${{ steps.report.outputs.file }}" 2>/dev/null | head -5
+            echo
+            echo "### Strategy for the coming week"
+            cat automation/STRATEGY.md
+          } >> "$GITHUB_STEP_SUMMARY"

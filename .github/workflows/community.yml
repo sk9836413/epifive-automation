@@ -1,0 +1,83 @@
+# Weekly community drafts: finds real, recent questions from IT admins that an EpiFive article
+# answers, drafts a genuinely helpful reply for each, and emails them to the owner, who posts
+# by hand. Nothing is posted automatically (forums treat automated posting as spam).
+# Started on Sundays by the Cloudflare scheduler.
+name: Community drafts
+
+on:
+  workflow_dispatch:
+
+env:
+  SITE_REMOTE: https://x-access-token:${{ secrets.SITE_REPO_TOKEN }}@github.com/sk9836413/EPIVIFE.git
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: community
+  cancel-in-progress: false
+
+jobs:
+  drafts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+
+      - name: Date
+        id: date
+        run: echo "today=$(TZ=Asia/Kolkata date +%F)" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Collect recent forum questions
+        run: node scripts/seo/community-candidates.mjs > .community-candidates.json
+
+      - name: Find questions and draft answers (Claude)
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          claude_args: |
+            --max-turns 80
+            --allowedTools "Read,Write,Glob,Grep,WebSearch,WebFetch"
+          prompt: |
+            Follow automation/COMMUNITY.md exactly. The candidate questions are in .community-candidates.json. Today's date is ${{ steps.date.outputs.today }}.
+            Write the result to automation/community/${{ steps.date.outputs.today }}.md and nothing else.
+
+      - name: Email the drafts
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          FILE: automation/community/${{ steps.date.outputs.today }}.md
+        run: |
+          [ -f "$FILE" ] || { echo "::error::No drafts file was written"; exit 1; }
+          [ -n "$RESEND_API_KEY" ] || { echo "RESEND_API_KEY not set; skipping email"; exit 0; }
+          node -e '
+            const fs = require("fs");
+            const text = fs.readFileSync(process.env.FILE, "utf8");
+            fetch("https://api.resend.com/emails", {
+              method: "POST",
+              headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, "Content-Type": "application/json" },
+              body: JSON.stringify({
+                from: "EpiFive <newsletter@epifive.com>",
+                to: "epifive2@gmail.com",
+                subject: `EpiFive: community answer drafts for ${process.env.FILE.match(/\d{4}-\d{2}-\d{2}/)[0]}`,
+                text,
+              }),
+            }).then(async (r) => { console.log("Resend:", r.status, await r.text()); if (!r.ok) process.exit(1); });
+          '
+
+      - name: Save the drafts
+        run: |
+          git add automation/community
+          git diff --cached --quiet && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Community drafts ${{ steps.date.outputs.today }}"
+          for i in 1 2 3; do git pull -q --rebase "$SITE_REMOTE" main && git push -q "$SITE_REMOTE" HEAD:main && break; sleep 10; done

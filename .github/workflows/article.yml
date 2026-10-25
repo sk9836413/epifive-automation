@@ -1,0 +1,160 @@
+# Publishes one new article a day (automation/WRITER.md). Claude researches and writes; the
+# quality gate, build, commit, push and IndexNow ping are workflow steps.
+name: Daily article
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Write and check the article but do not publish it
+        type: boolean
+        default: false
+
+env:
+  SITE_REMOTE: https://x-access-token:${{ secrets.SITE_REPO_TOKEN }}@github.com/sk9836413/EPIVIFE.git
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: article
+  cancel-in-progress: false
+
+jobs:
+  write:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 75
+    steps:
+      - name: Check Claude token
+        id: gate
+        env:
+          HAS_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN != '' }}
+        run: |
+          echo "ready=$HAS_TOKEN" >> "$GITHUB_OUTPUT"
+          if [ "$HAS_TOKEN" != "true" ]; then echo "::notice::CLAUDE_CODE_OAUTH_TOKEN secret is not set; skipping."; fi
+
+      - uses: actions/checkout@v4
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+        if: steps.gate.outputs.ready == 'true'
+
+      - uses: actions/setup-node@v4
+        if: steps.gate.outputs.ready == 'true'
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        if: steps.gate.outputs.ready == 'true'
+        run: npm ci --no-audit --no-fund
+
+      - name: Today's date
+        id: date
+        if: steps.gate.outputs.ready == 'true'
+        run: |
+          today=$(TZ=Asia/Kolkata date +%F)
+          echo "today=$today" >> "$GITHUB_OUTPUT"
+          # One article a day: a late scheduled run after a manual one (or vice versa) does nothing.
+          if [ "${{ inputs.dry_run }}" != "true" ] && grep -q "^$today | .* | published |" automation/log.md; then
+            echo "done=true" >> "$GITHUB_OUTPUT"
+            echo "::notice::An article was already published on $today; nothing to do."
+          fi
+
+      - name: Research and write (Claude)
+        if: steps.gate.outputs.ready == 'true' && steps.date.outputs.done != 'true'
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          claude_args: |
+            --max-turns 150
+            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node scripts/check-posts.mjs:*),Bash(ls:*),Bash(wc:*)"
+          prompt: |
+            Write today's EpiFive article. Today's date is ${{ steps.date.outputs.today }}; use it as the post's `date`.
+
+            Read automation/WRITER.md and follow it exactly, with these changes for this environment:
+            - Section 1: the repository is already checked out at the latest main; skip the git commands.
+            - Section 4: do steps 1, 3, 4 and 6 (quality gate until it passes, editor re-read, move the item
+              in automation/backlog.md, append the line to automation/log.md). Do NOT run `npm run build`,
+              `git commit` or `git push`; later workflow steps build, commit and publish.
+            - Write exactly one new file in content/posts/. Do not edit or delete any other post.
+
+            Finish with the section 5 report.
+
+      - name: Find the new article
+        id: post
+        if: steps.gate.outputs.ready == 'true' && steps.date.outputs.done != 'true'
+        run: |
+          new=$(git status --porcelain --untracked-files=all content/posts | awk '/^\?\?/ {print $2}')
+          count=$(printf '%s' "$new" | grep -c . || true)
+          if [ "$count" != "1" ]; then
+            echo "::error::Expected exactly one new post, found $count: $new"
+            git status --short
+            exit 1
+          fi
+          slug=$(basename "$new" | sed -E 's/\.mdx?$//')
+          title=$(node -e "console.log(require('gray-matter').read('$new').data.title)")
+          echo "slug=$slug" >> "$GITHUB_OUTPUT"
+          echo "file=$new" >> "$GITHUB_OUTPUT"
+          echo "title=$title" >> "$GITHUB_OUTPUT"
+          echo "New article: $slug"
+
+      - name: Quality gate
+        if: steps.post.outputs.slug != ''
+        run: node scripts/check-posts.mjs "${{ steps.post.outputs.slug }}"
+
+      - name: Build
+        if: steps.post.outputs.slug != ''
+        run: npm run build
+
+      - name: Publish
+        if: steps.post.outputs.slug != '' && !inputs.dry_run
+        env:
+          FILE: ${{ steps.post.outputs.file }}
+          TITLE: ${{ steps.post.outputs.title }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$FILE" automation/backlog.md automation/log.md
+          git commit -q -m "Add article: $TITLE" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+          for i in 1 2 3; do git pull -q --rebase "$SITE_REMOTE" main && git push -q "$SITE_REMOTE" HEAD:main && break; sleep 10; done
+
+      # Pushes made with GITHUB_TOKEN don't trigger indexnow.yml, so ping here.
+      - name: Ping IndexNow
+        if: steps.post.outputs.slug != '' && !inputs.dry_run
+        env:
+          URL: https://www.epifive.com/blog/${{ steps.post.outputs.slug }}
+        run: |
+          for i in $(seq 1 30); do
+            [ "$(curl -s -o /dev/null -w '%{http_code}' "$URL")" = "200" ] && break
+            sleep 20
+          done
+          curl -sS -X POST https://api.indexnow.org/indexnow \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            -d "{\"host\":\"www.epifive.com\",\"key\":\"5bbd01230376e7468f09aef0ef85403c\",\"keyLocation\":\"https://www.epifive.com/5bbd01230376e7468f09aef0ef85403c.txt\",\"urlList\":[\"$URL\"]}" \
+            -w '\nHTTP %{http_code}\n'
+
+      - name: Summary
+        if: always() && steps.post.outputs.slug != ''
+        run: |
+          {
+            echo "## ${{ steps.post.outputs.title }}"
+            echo
+            echo "https://www.epifive.com/blog/${{ steps.post.outputs.slug }}"
+            echo
+            echo "Words (including code): $(sed '1,/^---$/d' "${{ steps.post.outputs.file }}" | wc -w)"
+            if [ "${{ inputs.dry_run }}" = "true" ]; then echo; echo "_Dry run: not published._"; fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload the article
+        if: always() && steps.post.outputs.file != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: article-${{ steps.post.outputs.slug }}
+          path: |
+            ${{ steps.post.outputs.file }}
+            automation/backlog.md
+            automation/log.md
+          retention-days: 30

@@ -1,0 +1,291 @@
+# Bulk article batch: plan N ideas across a topic mix, write and fact-check them in parallel
+# batches of 8, then gate, build and publish everything that passes in one commit.
+# With no mix given it works through automation/bulk/target.json (started daily by the scheduler)
+# and subtracts what it publishes; it does nothing once every topic reaches zero.
+name: Bulk articles
+
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: Number of articles
+        default: '32'
+      mix:
+        description: Topic counts (topic=count, comma separated). Empty = take from automation/bulk/target.json
+        default: ''
+      parallel:
+        description: Batches running at once
+        default: '2'
+
+env:
+  SITE_REMOTE: https://x-access-token:${{ secrets.SITE_REPO_TOKEN }}@github.com/sk9836413/EPIVIFE.git
+
+permissions:
+  contents: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: bulk
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    outputs:
+      batches: ${{ steps.split.outputs.batches }}
+      date: ${{ steps.date.outputs.today }}
+      from_target: ${{ steps.size.outputs.from_target }}
+    steps:
+      # The daily social, article and news runs share the Claude usage limit with this job, so let
+      # any of them that are queued or running finish first (they're started in the same scheduler slot).
+      - name: Wait for the daily automations
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          sleep 120
+          for i in $(seq 1 60); do
+            busy=0
+            for wf in social.yml article.yml news.yml; do
+              n=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow "$wf" --json status --jq '[.[] | select(.status=="in_progress" or .status=="queued" or .status=="waiting")] | length')
+              busy=$((busy + n))
+            done
+            [ "$busy" = "0" ] && { echo "No daily runs in progress."; break; }
+            echo "Waiting for $busy daily run(s)…"; sleep 60
+          done
+      - uses: actions/checkout@v4
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Date
+        id: date
+        run: echo "today=$(TZ=Asia/Kolkata date +%F)" >> "$GITHUB_OUTPUT"
+      - name: Decide size and mix
+        id: size
+        env:
+          COUNT: ${{ inputs.count || '32' }}
+          MIX: ${{ inputs.mix }}
+        run: |
+          node -e '
+            const fs = require("fs");
+            let count = Number(process.env.COUNT), mix = process.env.MIX, fromTarget = false;
+            if (!mix) {
+              fromTarget = true;
+              const rem = JSON.parse(fs.readFileSync("automation/bulk/target.json", "utf8")).remaining;
+              const total = Object.values(rem).reduce((a, b) => a + b, 0);
+              count = Math.min(count, total);
+              const alloc = Object.entries(rem).map(([t, n]) => ({ t, exact: total ? (n * count) / total : 0, n }));
+              alloc.forEach((a) => (a.k = Math.min(a.n, Math.floor(a.exact))));
+              let left = count - alloc.reduce((s, a) => s + a.k, 0);
+              alloc.sort((a, b) => (b.exact - b.k) - (a.exact - a.k));
+              for (const a of alloc) { if (left > 0 && a.k < a.n) { a.k++; left--; } }
+              mix = alloc.filter((a) => a.k > 0).map((a) => `${a.t}=${a.k}`).join(",");
+            }
+            console.log(`count=${count} mix=${mix}`);
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, [`count=${count}`, `mix=${mix}`, `from_target=${fromTarget}`, ""].join(String.fromCharCode(10)));
+          '
+      - name: Plan ideas (Claude)
+        if: steps.size.outputs.count != '0'
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          claude_args: |
+            --max-turns 120
+            --allowedTools "Read,Write,Glob,Grep,WebSearch,WebFetch"
+          prompt: |
+            You are the planner in automation/BULK.md. Plan exactly ${{ steps.size.outputs.count }} article ideas with
+            this topic mix (topic=count): ${{ steps.size.outputs.mix }}.
+            Write the JSON array to automation/bulk/plan.json and nothing else.
+      - name: Validate and split into batches of 8
+        id: split
+        run: |
+          if [ ! -f automation/bulk/plan.json ]; then echo "batches=[]" >> "$GITHUB_OUTPUT"; echo "Nothing to plan"; exit 0; fi
+          node -e '
+            const fs = require("fs");
+            const matter = require("gray-matter");
+            const plan = JSON.parse(fs.readFileSync("automation/bulk/plan.json", "utf8"));
+            const existing = new Set(fs.readdirSync("content/posts").map((f) => f.replace(/\.mdx?$/, "")));
+            const seen = new Set();
+            const ideas = plan.filter((p) => p && /^[a-z0-9]+(-[a-z0-9]+)*$/.test(p.slug) && !existing.has(p.slug) && !seen.has(p.slug) && seen.add(p.slug));
+            const batches = [];
+            for (let i = 0; i < ideas.length; i += 8) batches.push(i / 8);
+            fs.writeFileSync("automation/bulk/plan.json", JSON.stringify(ideas, null, 1));
+            console.log(`${ideas.length} ideas in ${batches.length} batches`);
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, `batches=${JSON.stringify(batches)}\n`);
+          '
+      - uses: actions/upload-artifact@v4
+        if: steps.split.outputs.batches != '[]'
+        with:
+          name: plan
+          path: automation/bulk/plan.json
+
+  write:
+    needs: plan
+    if: needs.plan.outputs.batches != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      max-parallel: ${{ fromJSON(inputs.parallel || '2') }}
+      matrix:
+        batch: ${{ fromJSON(needs.plan.outputs.batches) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - uses: actions/download-artifact@v4
+        with:
+          name: plan
+          path: automation/bulk
+      - name: Assignment
+        id: assign
+        run: |
+          node -e '
+            const plan = JSON.parse(require("fs").readFileSync("automation/bulk/plan.json", "utf8"));
+            const b = Number(process.env.BATCH);
+            const items = plan.slice(b * 8, b * 8 + 8);
+            const text = items.map((p) => `- slug: ${p.slug}\n  topic: ${p.topic}\n  working title: ${p.title}\n  search intent: ${p.intent}\n  tags: ${(p.tags || []).join(", ")}`).join("\n");
+            require("fs").writeFileSync("assignment.txt", text);
+            require("fs").appendFileSync(process.env.GITHUB_OUTPUT, `slugs=${items.map((p) => p.slug).join(" ")}\n`);
+          '
+        env:
+          BATCH: ${{ matrix.batch }}
+      - name: Write (Claude)
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          claude_args: |
+            --max-turns 250
+            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node scripts/check-posts.mjs:*),Bash(ls:*)"
+          prompt: |
+            You are the writer in automation/BULK.md. Use date '${{ needs.plan.outputs.date }}'.
+            Your articles are listed in assignment.txt. Write every one of them yourself, one at a time:
+            research it, write content/posts/<slug>.md, run the quality gate, then move to the next.
+            Do not use subagents or the Task tool. Do not stop until a file exists for every slug.
+      - name: Find missing articles
+        id: missing
+        run: |
+          m=""; for s in ${{ steps.assign.outputs.slugs }}; do [ -f "content/posts/$s.md" ] || m="$m $s"; done
+          echo "slugs=$m" >> "$GITHUB_OUTPUT"; echo "Missing:$m"
+      - name: Write the missing ones (Claude, retry)
+        if: steps.missing.outputs.slugs != ''
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          claude_args: |
+            --max-turns 250
+            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node scripts/check-posts.mjs:*),Bash(ls:*)"
+          prompt: |
+            You are the writer in automation/BULK.md. Use date '${{ needs.plan.outputs.date }}'.
+            Write these articles (details for each slug are in assignment.txt):${{ steps.missing.outputs.slugs }}
+            Write every one yourself, one at a time, and run the quality gate on each. Do not use subagents
+            or the Task tool. Do not stop until a file exists for every slug listed.
+      - name: Fact-check (Claude, fresh context)
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          claude_args: |
+            --max-turns 200
+            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node scripts/check-posts.mjs:*),Bash(ls:*)"
+          prompt: |
+            You are the editor in automation/BULK.md. Review these new articles in content/posts/ (skip any
+            slug that has no file): ${{ steps.assign.outputs.slugs }}
+            Review every one yourself, one at a time. Do not use subagents or the Task tool.
+      - name: Collect
+        if: always()
+        run: |
+          mkdir -p out-batch
+          for s in ${{ steps.assign.outputs.slugs }}; do
+            [ -f "content/posts/$s.md" ] && cp "content/posts/$s.md" out-batch/
+          done
+          ls out-batch | wc -l
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: batch-${{ matrix.batch }}
+          path: out-batch/
+          if-no-files-found: ignore
+
+  publish:
+    needs: [plan, write]
+    if: always() && needs.plan.result == 'success' && needs.plan.outputs.batches != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: batch-*
+          path: incoming
+          merge-multiple: true
+      - name: Gate each article
+        id: gate
+        run: |
+          mkdir -p content/posts
+          ok=0; bad=0
+          for f in incoming/*.md; do
+            [ -f "$f" ] || continue
+            s=$(basename "$f" .md)
+            [ -f "content/posts/$s.md" ] && continue
+            cp "$f" content/posts/
+            if node scripts/check-posts.mjs "$s" >/dev/null 2>&1 && ! grep -q '^draft: true' "content/posts/$s.md"; then
+              ok=$((ok+1))
+            else
+              echo "Dropping $s"; rm "content/posts/$s.md"; bad=$((bad+1))
+            fi
+          done
+          echo "Publishing $ok, dropped $bad"
+          echo "count=$ok" >> "$GITHUB_OUTPUT"
+      - name: Build
+        if: steps.gate.outputs.count != '0'
+        run: npm run build
+      - name: Publish
+        if: steps.gate.outputs.count != '0'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ "${{ needs.plan.outputs.from_target }}" = "true" ]; then
+            node -e '
+              const fs = require("fs"); const matter = require("gray-matter");
+              const { execSync } = require("child_process");
+              const NL = String.fromCharCode(10);
+              const added = execSync("git ls-files --others --exclude-standard content/posts").toString().split(NL).filter(Boolean);
+              const t = JSON.parse(fs.readFileSync("automation/bulk/target.json", "utf8"));
+              for (const f of added) { const topic = matter.read(f).data.topic; if (t.remaining[topic] > 0) t.remaining[topic]--; }
+              fs.writeFileSync("automation/bulk/target.json", JSON.stringify(t, null, 2) + NL);
+              console.log("Remaining:", JSON.stringify(t.remaining));
+            '
+            git add automation/bulk/target.json
+          fi
+          git add content/posts
+          git commit -q -m "Publish ${{ steps.gate.outputs.count }} new articles across all topics" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+          for i in 1 2 3; do git pull -q --rebase "$SITE_REMOTE" main && git push -q "$SITE_REMOTE" HEAD:main && break; sleep 10; done
+      - name: Ping IndexNow
+        if: steps.gate.outputs.count != '0'
+        run: |
+          sleep 420
+          node scripts/seo/indexnow.mjs --days 2

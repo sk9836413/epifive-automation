@@ -1,0 +1,296 @@
+# Shares the newest unshared article on Facebook, Instagram and LinkedIn (draft) once a day.
+# Claude only writes the texts; picking, rendering, checking, posting and logging are scripts,
+# and the Meta credentials are only exposed to the posting step.
+name: Social media
+
+# Started daily at 13:16 UTC (18:46 IST) by the Cloudflare scheduler (scheduler/). No GitHub
+# `schedule`: it fires hours late in this repo and would post at the wrong time.
+on:
+  workflow_dispatch:
+    inputs:
+      smoke:
+        description: Only render a test card and video (no Claude, no posting)
+        type: boolean
+        default: false
+      force:
+        description: Share another article even if one was already shared today
+        type: boolean
+        default: false
+      slug:
+        description: Share this article instead of the next one in line (optional)
+        type: string
+        default: ''
+      brief:
+        description: Extra instruction for the writer, e.g. a free EpiFive tool to feature (optional)
+        type: string
+        default: ''
+
+env:
+  SITE_REMOTE: https://x-access-token:${{ secrets.SITE_REPO_TOKEN }}@github.com/sk9836413/EPIVIFE.git
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: social
+  cancel-in-progress: false
+
+jobs:
+  smoke:
+    if: github.event_name == 'workflow_dispatch' && inputs.smoke
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: |
+          sudo apt-get -o Acquire::Retries=3 -o Acquire::http::Timeout=20 update -qq
+          sudo apt-get -o Acquire::Retries=3 -o Acquire::http::Timeout=20 install -y -qq --no-install-recommends ffmpeg fonts-inter > /dev/null
+          npm ci --no-audit --no-fund
+      - uses: actions/cache@v4
+        with:
+          path: ~/kokoro
+          key: kokoro-onnx-model-files-v1.1
+      - run: bash scripts/social/setup-tts.sh ~/kokoro
+      - name: Render test card and video
+        run: |
+          slug=$(ls content/posts | head -1 | sed -E 's/\.mdx?$//')
+          mkdir -p smoke
+          cat > smoke/points.txt <<'EOF'
+          First test point for the smoke render, long enough to wrap onto two lines.
+          Second test point checks fonts, wrapping and the slide counter.
+          Third test point.
+          EOF
+          node scripts/social/card.mjs "$slug" --out smoke/card.jpg
+          node scripts/social/video.mjs "$slug" --points smoke/points.txt --out smoke/reel.mp4 --narrate
+          ffprobe -v error -show_entries stream=codec_name,width,height,r_frame_rate,sample_rate -of compact smoke/reel.mp4
+          ffmpeg -hide_banner -i smoke/reel.mp4 -af ebur128 -f null - 2>&1 | grep -E "^\s+I:" | tail -1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: smoke
+          path: smoke
+          retention-days: 3
+
+  share:
+    if: github.event_name == 'schedule' || !inputs.smoke
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - name: Check Claude token
+        id: gate
+        env:
+          HAS_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN != '' }}
+        run: |
+          echo "ready=$HAS_TOKEN" >> "$GITHUB_OUTPUT"
+          if [ "$HAS_TOKEN" != "true" ]; then echo "::notice::CLAUDE_CODE_OAUTH_TOKEN secret is not set; skipping."; fi
+
+      - uses: actions/checkout@v4
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+        if: steps.gate.outputs.ready == 'true'
+        with:
+          fetch-depth: 0 # the Make step prunes hosted media by the date it was committed
+
+      - uses: actions/setup-node@v4
+        if: steps.gate.outputs.ready == 'true'
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install ffmpeg, fonts and dependencies
+        if: steps.gate.outputs.ready == 'true'
+        run: |
+          sudo apt-get -o Acquire::Retries=3 -o Acquire::http::Timeout=20 update -qq
+          sudo apt-get -o Acquire::Retries=3 -o Acquire::http::Timeout=20 install -y -qq --no-install-recommends ffmpeg fonts-inter > /dev/null
+          npm ci --no-audit --no-fund
+
+      - name: Cache voice-over model
+        if: steps.gate.outputs.ready == 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/kokoro
+          key: kokoro-onnx-model-files-v1.1
+
+      - name: Install voice-over (Kokoro TTS)
+        if: steps.gate.outputs.ready == 'true'
+        run: bash scripts/social/setup-tts.sh ~/kokoro
+
+      - name: Pick article
+        id: pick
+        if: steps.gate.outputs.ready == 'true'
+        env:
+          SLUG_INPUT: ${{ inputs.slug }}
+        run: |
+          # At most SHARES_PER_DAY shares a day (repository variable, default 1): each scheduler
+          # trigger shares one article until the day's count is reached; force skips the check.
+          today=$(date -u +%F)
+          max="${{ vars.SHARES_PER_DAY || 1 }}"
+          count=$(grep -c "^- $today | " automation/social-log.md || true)
+          if [ "${{ inputs.force }}" != "true" ] && [ "$count" -ge "$max" ]; then
+            echo "::notice::Already shared $count of $max articles on $today; nothing to do."
+            echo "slug=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          slug="$SLUG_INPUT"
+          if [ -n "$slug" ] && { ! [[ "$slug" =~ ^[a-z0-9-]+$ ]] || ! ls content/posts/"$slug".md* > /dev/null 2>&1; }; then echo "::error::No article $slug"; exit 1; fi
+          [ -n "$slug" ] || slug="$(node scripts/social/pick.mjs)"
+          echo "slug=$slug" >> "$GITHUB_OUTPUT"
+          echo "dir=social-drafts/$(date -u +%F)-$slug" >> "$GITHUB_OUTPUT"
+          if [ -z "$slug" ]; then echo "::notice::Nothing new to share."; else echo "Sharing $slug"; fi
+
+      - name: Write posts and render media (Claude)
+        if: steps.pick.outputs.slug != ''
+        uses: anthropics/claude-code-action@v1
+        env:
+          # The motion reel draws every frame, so a render takes several minutes.
+          BASH_DEFAULT_TIMEOUT_MS: '1200000'
+          BASH_MAX_TIMEOUT_MS: '1500000'
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          claude_args: |
+            --max-turns 60
+            --allowedTools "Read,Write,Edit,Glob,Grep,Bash(node scripts/social/card.mjs:*),Bash(node scripts/social/video.mjs:*),Bash(node scripts/social/validate.mjs:*),Bash(ffmpeg:*),Bash(mkdir:*),Bash(ls:*),Bash(rm ${{ steps.pick.outputs.dir }}/frame-*)"
+          prompt: |
+            Prepare the social media drafts for the EpiFive article `${{ steps.pick.outputs.slug }}`
+            (content/posts/${{ steps.pick.outputs.slug }}.md, live at https://www.epifive.com/blog/${{ steps.pick.outputs.slug }}).
+
+            Read automation/SOCIAL.md and follow "Writing rules", "Files to write" and "Render and check the media"
+            exactly. The draft folder is `${{ steps.pick.outputs.dir }}` (create it).
+
+            When you are done, run `node scripts/social/validate.mjs ${{ steps.pick.outputs.slug }} ${{ steps.pick.outputs.dir }}`
+            and fix every problem it reports until it passes.
+
+            ${{ inputs.brief && format('Extra instruction for this share (it overrides nothing in the Writing rules): {0}', inputs.brief) || '' }}
+
+            Do not publish anything, do not commit, do not push and do not edit files outside the draft folder.
+            Later workflow steps publish and log the result.
+
+      - name: Validate drafts
+        if: steps.pick.outputs.slug != ''
+        run: |
+          rm -f "${{ steps.pick.outputs.dir }}"/frame-*
+          node scripts/social/validate.mjs "${{ steps.pick.outputs.slug }}" "${{ steps.pick.outputs.dir }}"
+
+      - name: Publish via Make (LinkedIn, Facebook, Instagram)
+        id: make
+        if: steps.pick.outputs.slug != ''
+        env:
+          MAKE_WEBHOOK_URL: ${{ secrets.MAKE_WEBHOOK_URL }}
+          MAKE_API_KEY: ${{ secrets.MAKE_API_KEY }}
+          LINKEDIN_FORMATS: ${{ vars.LINKEDIN_FORMATS }}
+          SLUG: ${{ steps.pick.outputs.slug }}
+          DIR: ${{ steps.pick.outputs.dir }}
+        run: |
+          if [ -z "$MAKE_WEBHOOK_URL" ]; then
+            echo "result=drafts-only" >> "$GITHUB_OUTPUT"
+            echo "::notice::MAKE_WEBHOOK_URL not set; LinkedIn is draft only."
+            exit 0
+          fi
+          # Make fetches the media by URL, so host them on the site. Keep the last 14 days only.
+          mkdir -p public/social
+          cutoff=$(date -d '14 days ago' +%s)
+          for f in public/social/*; do
+            [ -f "$f" ] || continue
+            added=$(git log -1 --format=%ct -- "$f")
+            if [ -n "$added" ] && [ "$added" -lt "$cutoff" ]; then git rm -q "$f"; fi
+          done
+          cp "$DIR/reel.mp4" "public/social/$SLUG.mp4"
+          cp "$DIR/card.jpg" "public/social/$SLUG.jpg"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A public/social
+          git commit -q -m "Host social media for $SLUG"
+          for i in 1 2 3; do git pull -q --rebase "$SITE_REMOTE" main && git push -q "$SITE_REMOTE" HEAD:main && break; sleep 10; done
+          node scripts/social/make-send.mjs "$SLUG" "$DIR" > "$RUNNER_TEMP/make-result.json" \
+            || echo "::warning::Sending to Make failed; see the log line."
+          cat "$RUNNER_TEMP/make-result.json"
+          echo "result=$RUNNER_TEMP/make-result.json" >> "$GITHUB_OUTPUT"
+
+      # Direct Meta Graph API path, used only when Make is not set up.
+      - name: Publish to Facebook and Instagram
+        id: publish
+        if: steps.pick.outputs.slug != '' && steps.make.outputs.result == 'drafts-only'
+        env:
+          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+          META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          SLUG: ${{ steps.pick.outputs.slug }}
+          DIR: ${{ steps.pick.outputs.dir }}
+        run: |
+          if [ -z "$META_PAGE_TOKEN" ]; then
+            echo "result=drafts-only" >> "$GITHUB_OUTPUT"
+            echo "::notice::Meta credentials not set; drafts only."
+            exit 0
+          fi
+          node scripts/social/meta-post.mjs --slug "$SLUG" --video "$DIR/reel.mp4" \
+            --fb "$DIR/facebook.txt" --fb-reel "$DIR/fb-reel.txt" --ig "$DIR/instagram.txt" \
+            > "$RUNNER_TEMP/meta-result.json" || echo "::warning::Some platforms failed; see the log line."
+          cat "$RUNNER_TEMP/meta-result.json"
+          echo "result=$RUNNER_TEMP/meta-result.json" >> "$GITHUB_OUTPUT"
+
+      - name: Publish to YouTube Shorts
+        id: youtube
+        if: steps.pick.outputs.slug != ''
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          DIR: ${{ steps.pick.outputs.dir }}
+        run: |
+          if [ -z "$YT_REFRESH_TOKEN" ]; then
+            echo "result=drafts-only" >> "$GITHUB_OUTPUT"
+            echo "::notice::YouTube credentials not set; drafts only."
+            exit 0
+          fi
+          node scripts/social/youtube.mjs upload --video "$DIR/reel.mp4" --meta "$DIR/youtube.txt" --captions "$DIR/captions.srt" \
+            > "$RUNNER_TEMP/yt-result.json" || echo "::warning::YouTube upload failed; see the log line."
+          cat "$RUNNER_TEMP/yt-result.json"
+          echo "result=$RUNNER_TEMP/yt-result.json" >> "$GITHUB_OUTPUT"
+
+      - name: Log and push
+        if: >-
+          steps.pick.outputs.slug != '' && steps.make.outcome == 'success' &&
+          steps.publish.outcome != 'failure' && steps.youtube.outcome == 'success'
+        run: |
+          node scripts/social/log.mjs "${{ steps.pick.outputs.slug }}" "${{ steps.publish.outputs.result || 'drafts-only' }}" \
+            "${{ steps.youtube.outputs.result }}" "${{ steps.make.outputs.result }}" | tee "$RUNNER_TEMP/log-line.txt"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add automation/social-log.md
+          git commit -q -m "Log social share for ${{ steps.pick.outputs.slug }}"
+          for i in 1 2 3; do git pull -q --rebase "$SITE_REMOTE" main && git push -q "$SITE_REMOTE" HEAD:main && break; sleep 10; done
+
+      - name: Summary
+        if: always() && steps.pick.outputs.slug != ''
+        env:
+          DIR: ${{ steps.pick.outputs.dir }}
+        run: |
+          {
+            echo "## ${{ steps.pick.outputs.slug }}"
+            echo
+            [ -f "$RUNNER_TEMP/log-line.txt" ] && { echo '```text'; cat "$RUNNER_TEMP/log-line.txt"; echo '```'; }
+            echo
+            echo "### LinkedIn post (upload reel.mp4 from the artifact below with this text)"
+            echo
+            echo '```text'
+            cat "$DIR/linkedin.txt" 2>/dev/null || echo "(not written)"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload drafts and video
+        if: always() && steps.pick.outputs.slug != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: social-${{ steps.pick.outputs.slug }}
+          path: ${{ steps.pick.outputs.dir }}
+          retention-days: 90
+          if-no-files-found: ignore

@@ -1,0 +1,102 @@
+# Daily IT & AI brief: Claude researches the last 48 hours of changes and writes content/news/<date>-*.md,
+# then the brief is gated, built, published and pinged to IndexNow.
+# Started daily by the Cloudflare scheduler (same slots as the daily article).
+name: Daily news brief
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Write and build, but don't publish
+        type: boolean
+        default: false
+
+env:
+  SITE_REMOTE: https://x-access-token:${{ secrets.SITE_REPO_TOKEN }}@github.com/sk9836413/EPIVIFE.git
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: news
+  cancel-in-progress: false
+
+jobs:
+  brief:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+
+      - name: Date and once-a-day guard
+        id: date
+        run: |
+          today=$(TZ=Asia/Kolkata date +%F)
+          echo "today=$today" >> "$GITHUB_OUTPUT"
+          if ls content/news/"$today"-*.md >/dev/null 2>&1; then
+            echo "done=true" >> "$GITHUB_OUTPUT"
+            echo "Today's brief already exists."
+          fi
+
+      - uses: actions/setup-node@v4
+        if: steps.date.outputs.done != 'true'
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        if: steps.date.outputs.done != 'true'
+        run: npm ci --no-audit --no-fund
+
+      - name: Research and write (Claude)
+        if: steps.date.outputs.done != 'true'
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          claude_args: |
+            --max-turns 120
+            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node scripts/check-news.mjs:*),Bash(ls:*)"
+          prompt: |
+            Write today's EpiFive daily brief. Today's date (IST) is ${{ steps.date.outputs.today }}.
+            Follow automation/NEWS.md exactly. Write exactly one new file in content/news/ and nothing else.
+
+      - name: Find the brief
+        id: brief
+        if: steps.date.outputs.done != 'true'
+        run: |
+          new=$(git status --porcelain --untracked-files=all content/news | awk '/^\?\?/ {print $2}')
+          count=$(printf '%s' "$new" | grep -c . || true)
+          [ "$count" = "1" ] || { echo "::error::Expected one new brief, found $count: $new"; exit 1; }
+          echo "file=$new" >> "$GITHUB_OUTPUT"
+          echo "slug=$(basename "$new" .md)" >> "$GITHUB_OUTPUT"
+
+      - name: Gate and build
+        if: steps.brief.outputs.slug != ''
+        run: |
+          node scripts/check-news.mjs "${{ steps.brief.outputs.slug }}"
+          npm run build
+
+      - name: Publish
+        if: steps.brief.outputs.slug != '' && !inputs.dry_run
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "${{ steps.brief.outputs.file }}"
+          git commit -q -m "Add news brief ${{ steps.brief.outputs.slug }}" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+          for i in 1 2 3; do git pull -q --rebase "$SITE_REMOTE" main && git push -q "$SITE_REMOTE" HEAD:main && break; sleep 10; done
+
+      - name: Ping IndexNow
+        if: steps.brief.outputs.slug != '' && !inputs.dry_run
+        env:
+          URL: https://www.epifive.com/news/${{ steps.brief.outputs.slug }}
+        run: |
+          for i in $(seq 1 30); do
+            [ "$(curl -s -o /dev/null -w '%{http_code}' "$URL")" = "200" ] && break
+            sleep 20
+          done
+          node scripts/seo/indexnow.mjs "$URL" https://www.epifive.com/news
