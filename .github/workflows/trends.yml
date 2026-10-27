@@ -1,0 +1,76 @@
+# Daily trend research: turns Google Trends, Google autocomplete and Search Console queries into
+# the next article ideas (top of automation/backlog.md) and tool ideas (automation/features.md).
+# Started daily by the Cloudflare scheduler (13 5 UTC). Nothing is published by this job.
+name: Trend research
+
+on:
+  workflow_dispatch:
+
+env:
+  SITE_REMOTE: https://x-access-token:${{ secrets.SITE_REPO_TOKEN }}@github.com/sk9836413/EPIVIFE.git
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: trends
+  cancel-in-progress: false
+
+jobs:
+  trends:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+
+      - name: Date
+        id: date
+        run: |
+          today=$(TZ=Asia/Kolkata date +%F)
+          echo "today=$today" >> "$GITHUB_OUTPUT"
+          [ -f "automation/trends/$today.md" ] && echo "done=true" >> "$GITHUB_OUTPUT" || true
+
+      - uses: actions/setup-node@v4
+        if: steps.date.outputs.done != 'true'
+        with:
+          node-version: 24
+
+      - name: Collect search signals
+        if: steps.date.outputs.done != 'true'
+        env:
+          GSC_CLIENT_ID: ${{ secrets.GSC_CLIENT_ID }}
+          GSC_CLIENT_SECRET: ${{ secrets.GSC_CLIENT_SECRET }}
+          GSC_REFRESH_TOKEN: ${{ secrets.GSC_REFRESH_TOKEN }}
+          GSC_SITE: ${{ secrets.GSC_SITE }}
+        run: node scripts/seo/trend-signals.mjs > .trend-signals.json
+
+      - name: Plan articles and tools (Claude)
+        if: steps.date.outputs.done != 'true'
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          claude_args: |
+            --max-turns 60
+            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(ls:*)"
+          prompt: |
+            Follow automation/TRENDS.md exactly. Today's date (IST) is ${{ steps.date.outputs.today }}.
+            Signals are in .trend-signals.json. Only change automation/backlog.md, automation/features.md
+            and automation/trends/${{ steps.date.outputs.today }}.md.
+
+      - name: Save
+        if: steps.date.outputs.done != 'true'
+        run: |
+          rm -f .trend-signals.json
+          bad=$(git status --porcelain | awk '{print $2}' | grep -vE '^automation/(backlog\.md|features\.md|trends/)' || true)
+          [ -z "$bad" ] || { echo "::error::Unexpected changes: $bad"; exit 1; }
+          git add automation/backlog.md automation/features.md automation/trends
+          git diff --cached --quiet && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Trend research ${{ steps.date.outputs.today }}"
+          for i in 1 2 3; do git pull -q --rebase "$SITE_REMOTE" main && git push -q "$SITE_REMOTE" HEAD:main && break; sleep 10; done

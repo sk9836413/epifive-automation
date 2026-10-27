@@ -1,0 +1,73 @@
+# Weekly feature builder: builds the next free browser tool from automation/features.md (filled by
+# the daily trend job), checks that only tool files changed and that the site builds, then pushes.
+# Cloudflare Pages deploys it. Started on Wednesdays by the Cloudflare scheduler.
+name: Feature builder
+
+on:
+  workflow_dispatch:
+
+env:
+  SITE_REMOTE: https://x-access-token:${{ secrets.SITE_REPO_TOKEN }}@github.com/sk9836413/EPIVIFE.git
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: feature
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Date
+        id: date
+        run: echo "today=$(TZ=Asia/Kolkata date +%F)" >> "$GITHUB_OUTPUT"
+
+      - name: Build one tool (Claude)
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          claude_args: |
+            --max-turns 120
+            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(npm run build:*),Bash(ls:*),Bash(node:*)"
+          prompt: |
+            Follow automation/FEATURE.md exactly. Today's date (IST) is ${{ steps.date.outputs.today }}.
+            Build exactly one tool and make `npm run build` pass.
+
+      - name: Check scope and build
+        id: check
+        run: |
+          changed=$(git status --porcelain --untracked-files=all | awk '{print $2}')
+          echo "$changed"
+          [ -n "$changed" ] || { echo "::notice::Nothing built"; echo "skip=true" >> "$GITHUB_OUTPUT"; exit 0; }
+          bad=$(echo "$changed" | grep -vE '^(src/app/tools/[a-z0-9-]+/|src/components/tools/[A-Za-z0-9]+\.tsx$|src/lib/tools\.ts$|automation/features\.md$)' || true)
+          [ -z "$bad" ] || { echo "::error::Changes outside the allowed tool paths: $bad"; exit 1; }
+          for f in $(echo "$changed" | grep '^src/components/tools/'); do
+            git ls-files --error-unmatch "$f" >/dev/null 2>&1 && { echo "::error::Existing component edited: $f"; exit 1; }
+          done
+          npm run build
+
+      - name: Push
+        if: steps.check.outputs.skip != 'true'
+        run: |
+          git add src/app/tools src/components/tools src/lib/tools.ts automation/features.md
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "New tool: $(git diff --cached --name-only | grep -oE '^src/app/tools/[a-z0-9-]+' | head -1 | cut -d/ -f4)"
+          for i in 1 2 3; do git pull -q --rebase "$SITE_REMOTE" main && git push -q "$SITE_REMOTE" HEAD:main && break; sleep 10; done
