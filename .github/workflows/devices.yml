@@ -63,6 +63,8 @@ jobs:
           node-version: 24
 
       - name: Add devices (Claude)
+        id: claude
+        continue-on-error: true # keep the devices already written if Claude runs out of turns
         if: steps.date.outputs.done != 'true'
         uses: anthropics/claude-code-action@v1
         with:
@@ -76,6 +78,12 @@ jobs:
             Add ${{ steps.date.outputs.count }} new device(s).
             Focus: ${{ inputs.focus || 'none (rotate categories as DEVICES.md says)' }}.
             Only create new content/devices/<slug>.json files and append to automation/devices-log.md.
+
+      - name: Claude's report
+        if: always() && steps.claude.outputs.execution_file != ''
+        env:
+          EXEC_FILE: ${{ steps.claude.outputs.execution_file }}
+        run: jq -r '[.[] | select(.type == "result")] | last | .result // empty' "$EXEC_FILE" || true
 
       - name: Check devices
         if: steps.date.outputs.done != 'true'
