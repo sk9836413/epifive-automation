@@ -40,7 +40,7 @@ jobs:
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           RESEND_SEGMENT_ID: ${{ secrets.RESEND_SEGMENT_ID }}
-        run: node scripts/seo/send-digest.mjs ${{ inputs.date }}
+        run: node scripts/seo/send-digest.mjs ${{ inputs.date }} --days 7
 
       - name: Save the log
         run: |
