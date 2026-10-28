@@ -1,0 +1,47 @@
+# Weekly Azure VM price refresh: re-reads Microsoft's public Azure Retail Prices API
+# (https://prices.azure.com/api/retail/prices, no auth) and updates src/data/azure-vm-prices.json,
+# which the /azure/vm-pricing pages are built from. Commits only when the file changed.
+# Started on Mondays by the Cloudflare scheduler (13 5 UTC). Uses no API keys.
+name: Azure VM prices
+
+on:
+  workflow_dispatch:
+
+env:
+  SITE_REMOTE: https://x-access-token:${{ secrets.SITE_REPO_TOKEN }}@github.com/sk9836413/EPIVIFE.git
+
+permissions:
+  contents: read
+
+concurrency:
+  group: azure-prices
+  cancel-in-progress: false
+
+jobs:
+  azure-prices:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Fetch prices
+        run: node scripts/seo/fetch-azure-prices.mjs
+
+      - name: Save
+        run: |
+          bad=$(git status --porcelain | awk '{print $2}' | grep -vxF 'src/data/azure-vm-prices.json' || true)
+          [ -z "$bad" ] || { echo "::error::Unexpected changes: $bad"; exit 1; }
+          git add src/data/azure-vm-prices.json
+          git diff --cached --quiet && { echo "No price changes."; exit 0; }
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Azure VM prices $(TZ=Asia/Kolkata date +%F)"
+          ok=0; for i in 1 2 3; do git pull -q --rebase "$SITE_REMOTE" main && git push -q "$SITE_REMOTE" HEAD:main && { ok=1; break; }; sleep 10; done
+          [ "$ok" = 1 ] || { echo "::error::Push failed"; exit 1; }
