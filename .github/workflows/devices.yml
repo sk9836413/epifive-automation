@@ -72,12 +72,13 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           claude_args: |
             --max-turns ${{ steps.date.outputs.turns }}
-            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node scripts/check-devices.mjs:*),Bash(node scripts/seo/wikidata-device.mjs:*),Bash(ls:*)"
+            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node scripts/check-devices.mjs:*),Bash(node scripts/seo/wikidata-device.mjs:*),Bash(node scripts/seo/build-vs-pairs.mjs:*),Bash(ls:*)"
           prompt: |
             Follow automation/DEVICES.md exactly. Today's date (IST) is ${{ steps.date.outputs.today }}.
             Add ${{ steps.date.outputs.count }} new device(s).
             Focus: ${{ inputs.focus || 'none (rotate categories as DEVICES.md says)' }}.
-            Only create new content/devices/<slug>.json files and append to automation/devices-log.md.
+            Only create new content/devices/<slug>.json files, append to automation/devices-log.md and
+            regenerate src/data/vs-pairs.json with node scripts/seo/build-vs-pairs.mjs.
 
       - name: Claude's report
         if: always() && steps.claude.outputs.execution_file != ''
@@ -87,18 +88,25 @@ jobs:
 
       - name: Check devices
         if: steps.date.outputs.done != 'true'
-        run: node scripts/check-devices.mjs
+        # build-vs-pairs is deterministic and offline: re-running it here keeps src/data/vs-pairs.json
+        # (the X vs Y comparison pages) in step with the devices even if Claude skipped it.
+        run: |
+          node scripts/check-devices.mjs
+          node scripts/seo/build-vs-pairs.mjs
 
       - name: Save
         id: save
         if: steps.date.outputs.done != 'true'
         run: |
-          bad=$(git status --porcelain -uall | grep -vE '^( M|M |MM|\?\?|A ) (content/devices/[a-z0-9-]+\.json|automation/devices-log\.md)$' || true)
+          bad=$(git status --porcelain -uall | grep -vE '^( M|M |MM|\?\?|A ) (content/devices/[a-z0-9-]+\.json|automation/devices-log\.md|src/data/vs-pairs\.json)$' || true)
           [ -z "$bad" ] || { echo "::error::Unexpected changes: $bad"; exit 1; }
-          git add content/devices automation/devices-log.md
+          git add content/devices automation/devices-log.md src/data/vs-pairs.json
           git diff --cached --quiet && { echo "No new devices."; exit 0; }
           slugs=$(git diff --cached --name-only --diff-filter=A -- content/devices | sed -E 's#content/devices/(.*)\.json#\1#' | tr '\n' ' ')
           echo "slugs=$slugs" >> "$GITHUB_OUTPUT"
+          # X vs Y pages that involve a new device, for IndexNow after the deploy.
+          vs=$(node -e 'const j=require("./src/data/vs-pairs.json");const s=new Set(process.argv.slice(1));for(const p of j.pairs)if(s.has(p.a)||s.has(p.b))console.log("https://www.epifive.com/devices/vs/"+p.a+"-vs-"+p.b)' $slugs | tr '\n' ' ')
+          echo "vs=$vs" >> "$GITHUB_OUTPUT"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -q -m "Devices ${{ steps.date.outputs.today }}: add $(echo $slugs | sed 's/ /, /g')"
@@ -114,6 +122,7 @@ jobs:
         if: steps.save.outputs.slugs != ''
         env:
           SLUGS: ${{ steps.save.outputs.slugs }}
+          VS_URLS: ${{ steps.save.outputs.vs }}
         run: |
           urls=""
           for s in $SLUGS; do urls="$urls https://www.epifive.com/devices/$s"; done
@@ -129,4 +138,4 @@ jobs:
           done
           [ -z "$missing" ] || echo "::warning::Not live after 20 minutes:$missing"
           echo "Live:$live"
-          [ -z "$live" ] || node scripts/seo/indexnow.mjs $live
+          [ -z "$live" ] || node scripts/seo/indexnow.mjs $live $VS_URLS
