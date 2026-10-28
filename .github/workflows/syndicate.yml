@@ -42,7 +42,7 @@ jobs:
           DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
           HASHNODE_TOKEN: ${{ secrets.HASHNODE_TOKEN }}
           HASHNODE_HOST: ${{ secrets.HASHNODE_HOST }}
-        run: node scripts/seo/syndicate.mjs --next "${{ inputs.count || '3' }}"
+        run: node scripts/seo/syndicate.mjs --next "${{ inputs.count || '1' }}"
 
       - name: Save the log
         if: always()
