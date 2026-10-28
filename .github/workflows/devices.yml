@@ -1,0 +1,121 @@
+# Daily device specs: Claude adds popular devices to the /devices portal (content/devices/*.json)
+# from the manufacturers' official spec pages, following automation/DEVICES.md.
+# Started daily by the Cloudflare scheduler (43 4 UTC, 10:13 IST) with the default count of 3;
+# skips when automation/devices-log.md already has today's date (unless force=true).
+name: Device specs
+
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: How many devices to add (1-25)
+        default: '3'
+      focus:
+        description: Optional focus, e.g. "Samsung Galaxy A/M phones" or "laptops"
+        default: ''
+      force:
+        description: Run even if today's devices were already added (backfill)
+        type: boolean
+        default: false
+
+env:
+  SITE_REMOTE: https://x-access-token:${{ secrets.SITE_REPO_TOKEN }}@github.com/sk9836413/EPIVIFE.git
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: devices
+  cancel-in-progress: false
+
+jobs:
+  devices:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+
+      - name: Date
+        id: date
+        env:
+          COUNT: ${{ inputs.count || '3' }}
+          FORCE: ${{ inputs.force }}
+        run: |
+          today=$(TZ=Asia/Kolkata date +%F)
+          echo "today=$today" >> "$GITHUB_OUTPUT"
+          case "$COUNT" in ''|*[!0-9]*) COUNT=3 ;; esac
+          [ "$COUNT" -lt 1 ] && COUNT=1
+          [ "$COUNT" -gt 25 ] && COUNT=25
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+          echo "turns=$((40 + COUNT * 15))" >> "$GITHUB_OUTPUT"
+          if [ "$FORCE" != "true" ] && grep -q "^$today |" automation/devices-log.md 2>/dev/null; then
+            echo "Devices already added today ($today); skipping."
+            echo "done=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/setup-node@v4
+        if: steps.date.outputs.done != 'true'
+        with:
+          node-version: 24
+
+      - name: Add devices (Claude)
+        if: steps.date.outputs.done != 'true'
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          claude_args: |
+            --max-turns ${{ steps.date.outputs.turns }}
+            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node scripts/check-devices.mjs:*),Bash(node scripts/seo/wikidata-device.mjs:*),Bash(ls:*)"
+          prompt: |
+            Follow automation/DEVICES.md exactly. Today's date (IST) is ${{ steps.date.outputs.today }}.
+            Add ${{ steps.date.outputs.count }} new device(s).
+            Focus: ${{ inputs.focus || 'none (rotate categories as DEVICES.md says)' }}.
+            Only create new content/devices/<slug>.json files and append to automation/devices-log.md.
+
+      - name: Check devices
+        if: steps.date.outputs.done != 'true'
+        run: node scripts/check-devices.mjs
+
+      - name: Save
+        id: save
+        if: steps.date.outputs.done != 'true'
+        run: |
+          bad=$(git status --porcelain -uall | grep -vE '^( M|M |MM|\?\?|A ) (content/devices/[a-z0-9-]+\.json|automation/devices-log\.md)$' || true)
+          [ -z "$bad" ] || { echo "::error::Unexpected changes: $bad"; exit 1; }
+          git add content/devices automation/devices-log.md
+          git diff --cached --quiet && { echo "No new devices."; exit 0; }
+          slugs=$(git diff --cached --name-only --diff-filter=A -- content/devices | sed -E 's#content/devices/(.*)\.json#\1#' | tr '\n' ' ')
+          echo "slugs=$slugs" >> "$GITHUB_OUTPUT"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Devices ${{ steps.date.outputs.today }}: add $(echo $slugs | sed 's/ /, /g')"
+          pushed=""
+          for i in 1 2 3; do git pull -q --rebase "$SITE_REMOTE" main && git push -q "$SITE_REMOTE" HEAD:main && { pushed=1; break; }; sleep 10; done
+          [ -n "$pushed" ] || { echo "::error::Push failed"; exit 1; }
+          git log -1 --format='Pushed %h %s'
+
+      - name: Wait for the deploy and submit to IndexNow
+        if: steps.save.outputs.slugs != ''
+        env:
+          SLUGS: ${{ steps.save.outputs.slugs }}
+        run: |
+          urls=""
+          for s in $SLUGS; do urls="$urls https://www.epifive.com/devices/$s"; done
+          live=""
+          for i in $(seq 1 40); do
+            live=""; missing=""
+            for u in $urls; do
+              code=$(curl -s -o /dev/null -w '%{http_code}' "$u")
+              [ "$code" = "200" ] && live="$live $u" || missing="$missing $u"
+            done
+            [ -z "$missing" ] && break
+            sleep 30
+          done
+          [ -z "$missing" ] || echo "::warning::Not live after 20 minutes:$missing"
+          echo "Live:$live"
+          [ -z "$live" ] || node scripts/seo/indexnow.mjs $live
