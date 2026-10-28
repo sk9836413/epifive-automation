@@ -59,16 +59,16 @@ jobs:
             --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(ls:*)"
           prompt: |
             Follow automation/TRENDS.md exactly. Today's date (IST) is ${{ steps.date.outputs.today }}.
-            Signals are in .trend-signals.json. Only change automation/backlog.md, automation/features.md
+            Signals are in .trend-signals.json. Only change automation/backlog.md, automation/features.md, automation/ideas.md
             and automation/trends/${{ steps.date.outputs.today }}.md.
 
       - name: Save
         if: steps.date.outputs.done != 'true'
         run: |
           rm -f .trend-signals.json
-          bad=$(git status --porcelain | awk '{print $2}' | grep -vE '^automation/(backlog\.md|features\.md|trends/)' || true)
+          bad=$(git status --porcelain | awk '{print $2}' | grep -vE '^automation/(backlog\.md|features\.md|ideas\.md|trends/)' || true)
           [ -z "$bad" ] || { echo "::error::Unexpected changes: $bad"; exit 1; }
-          git add automation/backlog.md automation/features.md automation/trends
+          git add automation/backlog.md automation/features.md automation/ideas.md automation/trends
           git diff --cached --quiet && exit 0
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
