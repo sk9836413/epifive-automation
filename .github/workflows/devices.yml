@@ -108,6 +108,9 @@ jobs:
           git log -1 --format='Pushed %h %s'
 
       - name: Wait for the deploy and submit to IndexNow
+        # A curl hiccup while waiting for Cloudflare (exit 35/56) must not mark the run failed: the
+        # devices are already committed by then.
+        continue-on-error: true
         if: steps.save.outputs.slugs != ''
         env:
           SLUGS: ${{ steps.save.outputs.slugs }}
