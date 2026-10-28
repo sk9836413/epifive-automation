@@ -140,6 +140,15 @@ jobs:
           fi
           slug="$SLUG_INPUT"
           if [ -n "$slug" ] && { ! [[ "$slug" =~ ^[a-z0-9-]+$ ]] || ! ls content/posts/"$slug".md* > /dev/null 2>&1; }; then echo "::error::No article $slug"; exit 1; fi
+          # Wednesday and Saturday: the day's first share is a promo (automation/PROMOS.md).
+          if [ -z "$slug" ] && [ "$count" -eq 0 ]; then
+            node scripts/social/promo.mjs > "$RUNNER_TEMP/promo.json"
+            slug=$(node -p "require('$RUNNER_TEMP/promo.json').slug || ''")
+            if [ -n "$slug" ]; then
+              node -e "const p=require('$RUNNER_TEMP/promo.json'); require('fs').appendFileSync(process.env.GITHUB_OUTPUT, 'brief<<EOF_BRIEF\n' + p.brief + '\nEOF_BRIEF\n')"
+              echo "Promo share: $slug"
+            fi
+          fi
           [ -n "$slug" ] || slug="$(node scripts/social/pick.mjs)"
           echo "slug=$slug" >> "$GITHUB_OUTPUT"
           echo "dir=social-drafts/$(date -u +%F)-$slug" >> "$GITHUB_OUTPUT"
@@ -168,7 +177,7 @@ jobs:
             When you are done, run `node scripts/social/validate.mjs ${{ steps.pick.outputs.slug }} ${{ steps.pick.outputs.dir }}`
             and fix every problem it reports until it passes.
 
-            ${{ inputs.brief && format('Extra instruction for this share (it overrides nothing in the Writing rules): {0}', inputs.brief) || '' }}
+            ${{ (inputs.brief || steps.pick.outputs.brief) && format('Extra instruction for this share (it overrides nothing in the Writing rules): {0}', inputs.brief || steps.pick.outputs.brief) || '' }}
 
             Do not publish anything, do not commit, do not push and do not edit files outside the draft folder.
             Later workflow steps publish and log the result.
