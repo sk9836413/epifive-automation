@@ -138,6 +138,13 @@ jobs:
             echo "slug=" >> "$GITHUB_OUTPUT"
             exit 0
           fi
+          # The audience is mostly in the US: scheduler triggers before SHARE_FROM_UTC_HOUR
+          # (repository variable, default 0) do nothing, so posts land in the US morning.
+          if [ "${{ inputs.force }}" != "true" ] && [ "$(date -u +%-H)" -lt "${{ vars.SHARE_FROM_UTC_HOUR || 0 }}" ]; then
+            echo "::notice::Before ${{ vars.SHARE_FROM_UTC_HOUR }}:00 UTC; shares wait for the US-morning slots."
+            echo "slug=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           slug="$SLUG_INPUT"
           if [ -n "$slug" ] && { ! [[ "$slug" =~ ^[a-z0-9-]+$ ]] || ! ls content/posts/"$slug".md* > /dev/null 2>&1; }; then echo "::error::No article $slug"; exit 1; fi
           # Wednesday and Saturday: the day's first share is a promo (automation/PROMOS.md).
