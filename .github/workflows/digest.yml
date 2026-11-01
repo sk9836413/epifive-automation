@@ -1,6 +1,9 @@
-# Daily email digest: sends today's new article(s) and news brief to all subscribers through a
-# Resend broadcast. Started by the Cloudflare scheduler after the daily article and brief.
-name: Daily email digest
+# Email digest through a Resend broadcast. Readers pick the frequency when they subscribe.
+#   mode=weekly: the last 7 days to every subscriber (General segment). Scheduler: Sundays.
+#   mode=daily:  today's new articles/brief to the "Daily" segment, only if something was published. Scheduler: every day.
+# Started by the Cloudflare scheduler after the daily article and brief. This repo is public: the script
+# prints only "Resend ...: HTTP <status>" lines, never addresses, keys or API responses.
+name: Email digest
 
 on:
   workflow_dispatch:
@@ -8,6 +11,11 @@ on:
       date:
         description: Date to send (YYYY-MM-DD, IST). Empty = today.
         default: ''
+      mode:
+        description: weekly (last 7 days, everyone) or daily (today, Daily segment)
+        type: choice
+        options: [weekly, daily]
+        default: weekly
 
 env:
   SITE_REMOTE: https://x-access-token:${{ secrets.SITE_REPO_TOKEN }}@github.com/sk9836413/EPIVIFE.git
@@ -40,13 +48,24 @@ jobs:
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           RESEND_SEGMENT_ID: ${{ secrets.RESEND_SEGMENT_ID }}
-        run: node scripts/seo/send-digest.mjs ${{ inputs.date }} --days 7
+          RESEND_DAILY_SEGMENT_ID: ${{ secrets.RESEND_DAILY_SEGMENT_ID }}
+          DIGEST_DATE: ${{ inputs.date }}
+          DIGEST_MODE: ${{ inputs.mode || 'weekly' }}
+        run: |
+          case "$DIGEST_DATE" in ''|[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]) ;; *) echo "Bad date"; exit 1 ;; esac
+          if [ "$DIGEST_MODE" = daily ]; then
+            node scripts/seo/send-digest.mjs $DIGEST_DATE --days 1 --segment-name Daily --label daily
+          else
+            node scripts/seo/send-digest.mjs $DIGEST_DATE --days 7 --label weekly
+          fi
 
       - name: Save the log
+        env:
+          DIGEST_MODE: ${{ inputs.mode || 'weekly' }}
         run: |
           git add automation/newsletter-log.md 2>/dev/null || exit 0
           git diff --cached --quiet && exit 0
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -q -m "Log newsletter digest"
+          git commit -q -m "Log newsletter digest ($DIGEST_MODE)"
           for i in 1 2 3; do git pull -q --rebase "$SITE_REMOTE" main && git push -q "$SITE_REMOTE" HEAD:main && break; sleep 10; done
