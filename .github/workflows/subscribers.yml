@@ -24,7 +24,7 @@ jobs:
                 const r = await fetch("https://api.resend.com/contacts?" + q, { headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}` } });
                 if (!r.ok) { console.log("Resend returned HTTP " + r.status); process.exit(1); }
                 const j = await r.json();
-                for (const c of j.data) { total++; if (!c.unsubscribed) active++; if (Date.parse(c.created_at) > week) last7++; if (!c.unsubscribed && !/^epifive2(+[^@]*)?@gmail.com$/i.test(c.email)) real++; }
+                for (const c of j.data) { total++; if (!c.unsubscribed) active++; if (Date.parse(c.created_at) > week) last7++; const em = String(c.email).toLowerCase(); if (!c.unsubscribed && !(em.startsWith("epifive2") && em.endsWith("@gmail.com"))) real++; }
                 if (!j.has_more || !j.data.length) break;
                 after = j.data[j.data.length - 1].id;
               }
