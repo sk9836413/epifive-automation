@@ -4,10 +4,18 @@
 name: Long video
 
 # Started daily at 05:13 UTC by the Cloudflare scheduler (scheduler/index.js in EPIVIFE). The video is
-# uploaded private and YouTube publishes it at 14:00 UTC (10 AM ET).
+# uploaded private and YouTube publishes it at 14:00 UTC (10 AM ET). At 14:16 UTC the scheduler starts
+# mode "facebook": when the repository variable FB_LONG_VIDEO is "on", today's video goes to the
+# Facebook Page as a normal video through the Make scenario (action "long_video"), hosted as a GitHub
+# release asset of this public repo (deleted after 14 days).
 on:
   workflow_dispatch:
     inputs:
+      mode:
+        description: video = make and upload today's video; facebook = send today's video to the Facebook Page
+        type: choice
+        options: [video, facebook]
+        default: video
       slug:
         description: Make the video for this article instead of the next one (optional)
         type: string
@@ -34,6 +42,7 @@ concurrency:
 
 jobs:
   video:
+    if: inputs.mode != 'facebook'
     runs-on: ubuntu-24.04
     timeout-minutes: 50
     steps:
@@ -135,6 +144,8 @@ jobs:
         run: |
           node scripts/social/longvideo.mjs render "${{ steps.pick.outputs.dir }}" | tee "$RUNNER_TEMP/render.json"
           ffprobe -v error -show_entries stream=codec_name,width,height,r_frame_rate:format=duration -of compact "${{ steps.pick.outputs.dir }}/video.mp4"
+          # A copy under ~24 MB for the Facebook Page video (sent at 14:16 UTC by mode "facebook").
+          if [ "${{ vars.FB_LONG_VIDEO }}" = "on" ]; then node scripts/social/longvideo.mjs webcopy "${{ steps.pick.outputs.dir }}"; fi
 
       - name: Upload to YouTube
         id: youtube
@@ -193,3 +204,107 @@ jobs:
           path: ${{ steps.pick.outputs.dir }}
           retention-days: 14
           if-no-files-found: ignore
+
+  facebook:
+    if: inputs.mode == 'facebook'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: write
+      actions: read
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Check the switch
+        id: gate
+        run: |
+          if [ "${{ vars.FB_LONG_VIDEO }}" != "on" ]; then
+            echo "::notice::FB_LONG_VIDEO is not on; the long video is not sent to Facebook."
+            echo "on=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "on=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.on == 'true'
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+
+      - name: Find today's video
+        id: find
+        if: steps.gate.outputs.on == 'true'
+        run: |
+          today=$(date -u +%F)
+          slug=$(grep "^- $today | .* | yt: https://" automation/longvideo-log.md | tail -1 | cut -d'|' -f2 | tr -d ' ')
+          if [ -z "$slug" ]; then echo "::notice::No long video uploaded today."; exit 0; fi
+          if grep -q "^- $today | $slug | fb-long: via make" automation/longvideo-log.md; then echo "::notice::Already sent to Facebook."; exit 0; fi
+          run=$(gh run list -R "$GITHUB_REPOSITORY" --workflow longvideo.yml --status success --limit 30 --json databaseId,createdAt \
+            --jq "[.[] | select(.createdAt | startswith(\"$today\"))] | .[].databaseId" | while read -r id; do
+              gh api "repos/$GITHUB_REPOSITORY/actions/runs/$id/artifacts" --jq ".artifacts[] | select(.name == \"longvideo-$slug\") | $id" ; done | head -1)
+          if [ -z "$run" ]; then echo "::warning::No artifact for $slug from today's run."; exit 0; fi
+          gh run download "$run" -R "$GITHUB_REPOSITORY" -n "longvideo-$slug" -D "$RUNNER_TEMP/lv"
+          echo "slug=$slug" >> "$GITHUB_OUTPUT"
+          echo "dir=$RUNNER_TEMP/lv" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-node@v4
+        if: steps.find.outputs.slug != ''
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        if: steps.find.outputs.slug != ''
+        run: |
+          npm ci --no-audit --no-fund
+          if [ ! -f "${{ steps.find.outputs.dir }}/web.mp4" ]; then
+            sudo apt-get -o Acquire::Retries=3 update -qq && sudo apt-get -o Acquire::Retries=3 install -y -qq --no-install-recommends ffmpeg > /dev/null
+            node scripts/social/longvideo.mjs webcopy "${{ steps.find.outputs.dir }}"
+          fi
+
+      - name: Host the video (release asset, kept 14 days)
+        id: host
+        if: steps.find.outputs.slug != ''
+        env:
+          SLUG: ${{ steps.find.outputs.slug }}
+          DIR: ${{ steps.find.outputs.dir }}
+        run: |
+          tag="longvideo-$(date -u +%F)"
+          cp "$DIR/web.mp4" "$RUNNER_TEMP/$SLUG.mp4"
+          cp "$DIR/thumbnail.jpg" "$RUNNER_TEMP/$SLUG.jpg"
+          gh release view "$tag" -R "$GITHUB_REPOSITORY" > /dev/null 2>&1 || \
+            gh release create "$tag" -R "$GITHUB_REPOSITORY" --title "Long video $(date -u +%F)" \
+              --notes "EpiFive long video for https://www.epifive.com/blog/$SLUG (hosted for the Facebook Page upload; deleted after 14 days)."
+          gh release upload "$tag" "$RUNNER_TEMP/$SLUG.mp4" "$RUNNER_TEMP/$SLUG.jpg" -R "$GITHUB_REPOSITORY" --clobber
+          base="https://github.com/$GITHUB_REPOSITORY/releases/download/$tag"
+          echo "video=$base/$SLUG.mp4" >> "$GITHUB_OUTPUT"
+          echo "thumb=$base/$SLUG.jpg" >> "$GITHUB_OUTPUT"
+          # Remove long-video releases older than 14 days.
+          cutoff=$(date -u -d '14 days ago' +%F)
+          gh release list -R "$GITHUB_REPOSITORY" --limit 100 --json tagName --jq '.[].tagName' | grep '^longvideo-' | while read -r old; do
+            [ "${old#longvideo-}" \< "$cutoff" ] && gh release delete "$old" -R "$GITHUB_REPOSITORY" --cleanup-tag -y || true
+          done
+
+      - name: Send to the Facebook Page via Make
+        id: make
+        if: steps.find.outputs.slug != ''
+        env:
+          MAKE_WEBHOOK_URL: ${{ secrets.MAKE_WEBHOOK_URL }}
+          MAKE_API_KEY: ${{ secrets.MAKE_API_KEY }}
+        run: |
+          result="$RUNNER_TEMP/make-result.json"
+          node scripts/social/make-send.mjs --long-video "${{ steps.find.outputs.dir }}" \
+            --video-url "${{ steps.host.outputs.video }}" --thumbnail-url "${{ steps.host.outputs.thumb }}" > "$result" \
+            || echo "::warning::Sending the long video to Make failed; see the result."
+          cat "$result"
+          echo "result=$result" >> "$GITHUB_OUTPUT"
+
+      - name: Log and push
+        if: steps.find.outputs.slug != ''
+        run: |
+          node scripts/social/longvideo.mjs log-facebook "${{ steps.find.outputs.slug }}" "${{ steps.make.outputs.result }}" | tee -a "$GITHUB_STEP_SUMMARY"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add automation/longvideo-log.md
+          git commit -q -m "Log Facebook long video for ${{ steps.find.outputs.slug }}"
+          for i in 1 2 3; do git pull -q --rebase "$SITE_REMOTE" main && git push -q "$SITE_REMOTE" HEAD:main && break; sleep 10; done
