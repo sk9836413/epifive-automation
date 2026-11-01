@@ -17,18 +17,18 @@ jobs:
         run: |
           node -e '
             (async () => {
-              let after = "", total = 0, active = 0, last7 = 0;
+              let after = "", total = 0, active = 0, last7 = 0, real = 0;
               const week = Date.now() - 7 * 86400e3;
               for (let page = 0; page < 100; page++) {
                 const q = new URLSearchParams({ limit: "100", ...(process.env.RESEND_SEGMENT_ID ? { segment_id: process.env.RESEND_SEGMENT_ID } : {}), ...(after ? { after } : {}) });
                 const r = await fetch("https://api.resend.com/contacts?" + q, { headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}` } });
                 if (!r.ok) { console.log("Resend returned HTTP " + r.status); process.exit(1); }
                 const j = await r.json();
-                for (const c of j.data) { total++; if (!c.unsubscribed) active++; if (Date.parse(c.created_at) > week) last7++; }
+                for (const c of j.data) { total++; if (!c.unsubscribed) active++; if (Date.parse(c.created_at) > week) last7++; if (!c.unsubscribed && !/^epifive2(+[^@]*)?@gmail.com$/i.test(c.email)) real++; }
                 if (!j.has_more || !j.data.length) break;
                 after = j.data[j.data.length - 1].id;
               }
-              console.log(`Subscribers: ${active} active, ${total - active} unsubscribed, ${last7} joined in the last 7 days`);
+              console.log(`Subscribers: ${active} active (${real} real readers, excluding the owner/test addresses), ${total - active} unsubscribed, ${last7} joined in the last 7 days`);
               require("fs").appendFileSync(process.env.GITHUB_STEP_SUMMARY, `Subscribers: **${active}** active, ${total - active} unsubscribed, ${last7} new in 7 days\n`);
             })();
           '
