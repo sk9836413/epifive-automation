@@ -1,0 +1,195 @@
+# The daily long YouTube tutorial (6-10 minutes, 16:9): one Microsoft 365 task from one EpiFive article.
+# Claude only writes the script (automation/LONGVIDEO.md in EPIVIFE); picking, checking, rendering,
+# uploading and logging are scripts, and the YouTube credentials are only exposed to the upload step.
+name: Long video
+
+# Started daily at 05:13 UTC by the Cloudflare scheduler (scheduler/index.js in EPIVIFE). The video is
+# uploaded private and YouTube publishes it at 14:00 UTC (10 AM ET).
+on:
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: Make the video for this article instead of the next one (optional)
+        type: string
+        default: ''
+      force:
+        description: Make another video even if today's is already uploaded
+        type: boolean
+        default: false
+      upload:
+        description: Upload to YouTube (off = render only, nothing is logged)
+        type: boolean
+        default: true
+
+env:
+  SITE_REMOTE: https://x-access-token:${{ secrets.SITE_REPO_TOKEN }}@github.com/sk9836413/EPIVIFE.git
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: longvideo
+  cancel-in-progress: false
+
+jobs:
+  video:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 50
+    steps:
+      - name: Check Claude token
+        id: gate
+        env:
+          HAS_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN != '' }}
+        run: |
+          echo "ready=$HAS_TOKEN" >> "$GITHUB_OUTPUT"
+          if [ "$HAS_TOKEN" != "true" ]; then echo "::notice::CLAUDE_CODE_OAUTH_TOKEN secret is not set; skipping."; fi
+
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.ready == 'true'
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+
+      - name: Pick article
+        id: pick
+        if: steps.gate.outputs.ready == 'true'
+        env:
+          SLUG_INPUT: ${{ inputs.slug }}
+        run: |
+          today=$(date -u +%F)
+          if [ "${{ inputs.force }}" != "true" ] && grep -q "^- $today | .* | yt: https://" automation/longvideo-log.md 2>/dev/null; then
+            echo "::notice::Today's long video is already uploaded."
+            echo "slug=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          slug="$SLUG_INPUT"
+          if [ -n "$slug" ] && { ! [[ "$slug" =~ ^[a-z0-9-]+$ ]] || ! ls content/posts/"$slug".md* > /dev/null 2>&1; }; then echo "::error::No article $slug"; exit 1; fi
+          echo "slug=$slug" >> "$GITHUB_OUTPUT"
+          echo "dir=longvideo/$today" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-node@v4
+        if: steps.gate.outputs.ready == 'true'
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install ffmpeg, fonts and dependencies
+        if: steps.gate.outputs.ready == 'true'
+        run: |
+          sudo apt-get -o Acquire::Retries=3 -o Acquire::http::Timeout=20 update -qq
+          sudo apt-get -o Acquire::Retries=3 -o Acquire::http::Timeout=20 install -y -qq --no-install-recommends ffmpeg fonts-inter fonts-dejavu-core > /dev/null
+          npm ci --no-audit --no-fund
+
+      - name: Choose the article
+        id: article
+        if: steps.gate.outputs.ready == 'true' && steps.pick.outputs.dir != ''
+        run: |
+          slug="${{ steps.pick.outputs.slug }}"
+          [ -n "$slug" ] || slug="$(node scripts/social/longvideo.mjs pick)"
+          echo "slug=$slug" >> "$GITHUB_OUTPUT"
+          if [ -z "$slug" ]; then echo "::notice::No suitable article left for a long video."; else echo "Long video for $slug"; mkdir -p "${{ steps.pick.outputs.dir }}"; fi
+
+      - name: Cache voice-over model
+        if: steps.article.outputs.slug != ''
+        uses: actions/cache@v4
+        with:
+          path: ~/kokoro
+          key: kokoro-onnx-model-files-v1.1
+
+      - name: Install voice-over (edge-tts, Kokoro fallback)
+        if: steps.article.outputs.slug != ''
+        run: bash scripts/social/setup-tts.sh ~/kokoro
+
+      - name: Write the video script (Claude)
+        if: steps.article.outputs.slug != ''
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          claude_args: |
+            --max-turns 60
+            --allowedTools "Read,Write,Edit,Glob,Grep,Bash(node scripts/social/longvideo.mjs validate:*),Bash(node scripts/social/longvideo.mjs check:*),Bash(mkdir:*),Bash(ls:*)"
+          prompt: |
+            Write the script for today's long EpiFive YouTube tutorial about the article
+            `${{ steps.article.outputs.slug }}` (content/posts/${{ steps.article.outputs.slug }}.md,
+            live at https://www.epifive.com/blog/${{ steps.article.outputs.slug }}).
+
+            Read automation/LONGVIDEO.md and follow it exactly, then read automation/STRATEGY.md for the
+            current title rules. Write `${{ steps.pick.outputs.dir }}/script.json`.
+
+            When you are done, run `node scripts/social/longvideo.mjs check ${{ steps.pick.outputs.dir }}`
+            and fix every problem it reports until it passes.
+
+            Do not render, upload, commit or push, and do not edit files outside that folder.
+
+      - name: Check the script
+        if: steps.article.outputs.slug != ''
+        run: node scripts/social/longvideo.mjs validate "${{ steps.pick.outputs.dir }}"
+
+      - name: Render the video
+        id: render
+        if: steps.article.outputs.slug != ''
+        env:
+          LONGVIDEO_JOBS: '3'
+        run: |
+          node scripts/social/longvideo.mjs render "${{ steps.pick.outputs.dir }}" | tee "$RUNNER_TEMP/render.json"
+          ffprobe -v error -show_entries stream=codec_name,width,height,r_frame_rate:format=duration -of compact "${{ steps.pick.outputs.dir }}/video.mp4"
+
+      - name: Upload to YouTube
+        id: youtube
+        if: steps.render.outcome == 'success' && inputs.upload != false
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          DIR: ${{ steps.pick.outputs.dir }}
+        run: |
+          result="$RUNNER_TEMP/yt-result.json"
+          node scripts/social/youtube.mjs upload-long --dir "$DIR" --publish-hour 14 > "$result" || true
+          cat "$result"
+          status=$(node -p "try { JSON.parse(require('fs').readFileSync('$result','utf8').trim().split('\n').pop()).status } catch { 'error' }")
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          echo "result=$result" >> "$GITHUB_OUTPUT"
+          case "$status" in
+            ok) ;;
+            quota) echo "::warning::YouTube quota exceeded; the article is retried on the next run." ;;
+            not-configured) echo "::notice::YouTube credentials not set; nothing uploaded." ;;
+            *) echo "::error::YouTube upload failed; see the result above." ;;
+          esac
+
+      - name: Log and push
+        if: steps.youtube.outcome == 'success' && steps.youtube.outputs.status != 'not-configured'
+        run: |
+          node scripts/social/longvideo.mjs log "${{ steps.pick.outputs.dir }}" "${{ steps.youtube.outputs.result }}" | tee "$RUNNER_TEMP/log-line.txt"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add automation/longvideo-log.md
+          git commit -q -m "Log long video for ${{ steps.article.outputs.slug }}"
+          for i in 1 2 3; do git pull -q --rebase "$SITE_REMOTE" main && git push -q "$SITE_REMOTE" HEAD:main && break; sleep 10; done
+
+      - name: Summary
+        if: always() && steps.article.outputs.slug != ''
+        env:
+          DIR: ${{ steps.pick.outputs.dir }}
+        run: |
+          {
+            echo "## Long video: ${{ steps.article.outputs.slug }}"
+            echo
+            [ -f "$RUNNER_TEMP/log-line.txt" ] && { echo '```text'; cat "$RUNNER_TEMP/log-line.txt"; echo '```'; }
+            [ -f "$RUNNER_TEMP/render.json" ] && { echo '```json'; cat "$RUNNER_TEMP/render.json"; echo '```'; }
+            [ -f "$DIR/meta.json" ] && node -e "const m=require('./$DIR/meta.json'); console.log('**' + m.title + '**\n\n' + m.chapters.map((c) => c.at + ' ' + c.title).join('  \n'))"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Fail on an upload error
+        if: steps.youtube.outputs.status != '' && steps.youtube.outputs.status != 'ok' && steps.youtube.outputs.status != 'quota' && steps.youtube.outputs.status != 'not-configured'
+        run: exit 1
+
+      - name: Upload the video and script
+        if: always() && steps.article.outputs.slug != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: longvideo-${{ steps.article.outputs.slug }}
+          path: ${{ steps.pick.outputs.dir }}
+          retention-days: 14
+          if-no-files-found: ignore
