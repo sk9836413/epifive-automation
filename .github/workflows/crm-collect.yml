@@ -1,0 +1,60 @@
+# Daily numbers for the EpiFive CRM dashboard (website, Search Console, YouTube x2, Facebook/Instagram/LinkedIn
+# via the Make stats route, newsletter, dev.to) plus the automation logs for its content calendar.
+# Runs on GitHub's own schedule (no Cloudflare cron: all 5 free triggers are used), so it may start late.
+# THIS REPO IS PUBLIC: crm/collect.mjs prints only source names and statuses, never values, secrets or emails.
+name: CRM collect
+
+on:
+  schedule:
+    - cron: '35 1 * * *' # 07:05 IST
+  workflow_dispatch:
+    inputs:
+      days:
+        description: Days to (re)collect (1-90)
+        default: '10'
+      only:
+        description: 'Only these sources, comma separated (website,gsc,youtube_epifive,youtube_shyam,social,newsletter,devto,calendar). Empty = all.'
+        default: ''
+
+permissions:
+  contents: read
+
+concurrency:
+  group: crm-collect
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Collect and send to the CRM
+        env:
+          CRM_URL: ${{ vars.CRM_URL || 'https://epifive-crm.pages.dev' }}
+          INGEST_TOKEN: ${{ secrets.INGEST_TOKEN }}
+          CRM_DAYS: ${{ inputs.days || '10' }}
+          CRM_ONLY: ${{ inputs.only || '' }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          GSC_CLIENT_ID: ${{ secrets.GSC_CLIENT_ID }}
+          GSC_CLIENT_SECRET: ${{ secrets.GSC_CLIENT_SECRET }}
+          GSC_REFRESH_TOKEN: ${{ secrets.GSC_REFRESH_TOKEN }}
+          GSC_SITE: ${{ secrets.GSC_SITE }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          SHYAM_YT_CLIENT_ID: ${{ secrets.SHYAM_YT_CLIENT_ID }}
+          SHYAM_YT_CLIENT_SECRET: ${{ secrets.SHYAM_YT_CLIENT_SECRET }}
+          SHYAM_YT_REFRESH_TOKEN: ${{ secrets.SHYAM_YT_REFRESH_TOKEN }}
+          MAKE_WEBHOOK_URL: ${{ secrets.MAKE_WEBHOOK_URL }}
+          MAKE_API_KEY: ${{ secrets.MAKE_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_SEGMENT_ID: ${{ secrets.RESEND_SEGMENT_ID }}
+          DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
+          SITE_REPO_TOKEN: ${{ secrets.SITE_REPO_TOKEN }}
+        run: node crm/collect.mjs
