@@ -230,7 +230,8 @@ function flatten(obj, prefix = '', out = {}) {
 
 async function social() {
   if (!env.MAKE_WEBHOOK_URL) return null;
-  const names = ['facebook', 'instagram', 'linkedin'];
+  // Facebook and Instagram come from the Graph API (meta) once META_* is set; Make keeps LinkedIn.
+  const names = env.META_PAGE_TOKEN ? ['linkedin'] : ['facebook', 'instagram', 'linkedin'];
   let body;
   try {
     const res = await fetch(env.MAKE_WEBHOOK_URL, {
@@ -317,12 +318,30 @@ async function calendarFiles() {
   return files;
 }
 
+// ---------------------------------------------------------------- Facebook Page + Instagram (Graph API)
+// Never-expiring Page tokens: META_* + IG_USER_ID for EpiFive, SHYAM_META_* + SHYAM_IG_USER_ID for Shyam Premi SN.
+async function meta(fbSource, igSource, prefix, igVar) {
+  const token = env[`${prefix}PAGE_TOKEN`];
+  if (!token || !env[`${prefix}PAGE_ID`]) return null;
+  const g = (id, fields) => http(`https://graph.facebook.com/v27.0/${id}?fields=${fields}&access_token=${encodeURIComponent(token)}`, {}, `${fbSource} Graph API`);
+  const out = [];
+  const page = await g(env[`${prefix}PAGE_ID`], 'followers_count,fan_count');
+  out.push({ source: fbSource, status: 'ok', days: [{ date: today, metrics: { followers: page.followers_count ?? 0, page_likes: page.fan_count ?? 0 } }] });
+  if (env[igVar]) {
+    const ig = await g(env[igVar], 'followers_count,media_count');
+    out.push({ source: igSource, status: 'ok', days: [{ date: today, metrics: { followers: ig.followers_count ?? 0, posts: ig.media_count ?? 0 } }] });
+  }
+  return out;
+}
+
 // ---------------------------------------------------------------- main
 const SOURCES = {
   website,
   gsc,
   youtube_epifive: () => youtube('youtube_epifive', 'YT_'),
   youtube_shyam: () => youtube('youtube_shyam', 'SHYAM_YT_'),
+  meta_epifive: () => meta('facebook', 'instagram', 'META_', 'IG_USER_ID'),
+  meta_shyam: () => meta('facebook_shyam', 'instagram_shyam', 'SHYAM_META_', 'SHYAM_IG_USER_ID'),
   social,
   newsletter,
   devto,

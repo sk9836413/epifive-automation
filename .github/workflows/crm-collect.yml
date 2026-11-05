@@ -56,5 +56,11 @@ jobs:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           RESEND_SEGMENT_ID: ${{ secrets.RESEND_SEGMENT_ID }}
           DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
+          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+          META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          SHYAM_META_PAGE_ID: ${{ secrets.SHYAM_META_PAGE_ID }}
+          SHYAM_META_PAGE_TOKEN: ${{ secrets.SHYAM_META_PAGE_TOKEN }}
+          SHYAM_IG_USER_ID: ${{ secrets.SHYAM_IG_USER_ID }}
           SITE_REPO_TOKEN: ${{ secrets.SITE_REPO_TOKEN }}
         run: node crm/collect.mjs
