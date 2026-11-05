@@ -256,7 +256,7 @@ jobs:
             --visuals "$DIR/visuals.json" --out "$DIR/dialogue.mp4" --srt "$DIR/dialogue.srt" --meta "$DIR/dialogue-meta.json"
           echo "- Max & Riya: $(tail -1 "$w/lipsync.log" | head -c 200) | $(head -c 300 "$DIR/dialogue-meta.json" | tr '\n' ' ')" >> "$GITHUB_STEP_SUMMARY"
 
-      # The dialogue goes to YouTube; Facebook Reels stop at 90 s, so Make gets it only when it is at most 89 s.
+      # The dialogue goes to YouTube; Facebook Reels stop at 90 s, so Facebook/Instagram get it only when it is at most 89 s.
       - name: Pick the videos
         id: media
         if: steps.pick.outputs.slug != ''
@@ -270,7 +270,42 @@ jobs:
           fi
           { echo "youtube=$yt"; echo "captions=$cap"; echo "social=$social"; } >> "$GITHUB_OUTPUT"
 
-      - name: Publish via Make (LinkedIn, Facebook, Instagram)
+      # Facebook (Reel + link post to the article) and Instagram (Reel) go straight through the Meta Graph API
+      # (meta-post.mjs, never-expiring Page token) when the META_* secrets exist; Make then posts LinkedIn only.
+      # Without the secrets, or when the direct path could not run at all (token rejected, crash), Make posts all
+      # three exactly as before. A partial failure is logged, not retried through Make (no duplicate posts).
+      # Never fails the run. The token only reaches this step and is never printed (public logs).
+      - name: Publish to Facebook and Instagram (Graph API)
+        id: meta
+        if: steps.pick.outputs.slug != ''
+        env:
+          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+          META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          SLUG: ${{ steps.pick.outputs.slug }}
+          DIR: ${{ steps.pick.outputs.dir }}
+          VIDEO: ${{ steps.media.outputs.social }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          echo "direct=false" >> "$GITHUB_OUTPUT"
+          if [ -z "$META_PAGE_TOKEN" ] || [ -z "$META_PAGE_ID" ]; then
+            echo "::notice::META_* secrets not set; Facebook and Instagram go through Make."
+            exit 0
+          fi
+          set -- --slug "$SLUG" --video "$VIDEO" --fb "$DIR/facebook.txt" --fb-reel "$DIR/fb-reel.txt" --ig "$DIR/instagram.txt"
+          if [ "$DRY_RUN" = "true" ]; then node scripts/social/meta-post.mjs "$@" --dry-run || true; exit 0; fi
+          result="$RUNNER_TEMP/meta-result.json"
+          node scripts/social/meta-post.mjs "$@" > "$result" || echo "::warning::Some Facebook/Instagram posts failed; see the result line."
+          cat "$result"
+          status=$(node -p "try { const r = JSON.parse(require('fs').readFileSync('$result', 'utf8').trim().split('\n').pop()); r.authFailed ? 'auth' : r.status } catch { 'error' }")
+          if [ "$status" = ok ] || [ "$status" = partial-failure ]; then
+            echo "direct=true" >> "$GITHUB_OUTPUT"
+            echo "result=$result" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::The Graph API path did not run ($status); Make posts Facebook and Instagram instead."
+          fi
+
+      - name: Publish via Make (LinkedIn; Facebook and Instagram only as the fallback)
         id: make
         if: steps.pick.outputs.slug != '' && !inputs.dry_run
         env:
@@ -279,6 +314,7 @@ jobs:
           LINKEDIN_FORMATS: ${{ vars.LINKEDIN_FORMATS }}
           SLUG: ${{ steps.pick.outputs.slug }}
           DIR: ${{ steps.pick.outputs.dir }}
+          ONLY: ${{ steps.meta.outputs.direct == 'true' && '--linkedin-only' || '' }}
         run: |
           if [ -z "$MAKE_WEBHOOK_URL" ]; then
             echo "result=drafts-only" >> "$GITHUB_OUTPUT"
@@ -300,32 +336,11 @@ jobs:
           git add -A public/social
           git commit -q -m "Host social media for $SLUG"
           for i in 1 2 3; do git pull -q --rebase "$SITE_REMOTE" main && git push -q "$SITE_REMOTE" HEAD:main && break; sleep 10; done
-          node scripts/social/make-send.mjs "$SLUG" "$DIR" > "$RUNNER_TEMP/make-result.json" \
+          # $ONLY = --linkedin-only when Facebook and Instagram already went out through the Graph API.
+          node scripts/social/make-send.mjs "$SLUG" "$DIR" $ONLY > "$RUNNER_TEMP/make-result.json" \
             || echo "::warning::Sending to Make failed; see the log line."
           cat "$RUNNER_TEMP/make-result.json"
           echo "result=$RUNNER_TEMP/make-result.json" >> "$GITHUB_OUTPUT"
-
-      # Direct Meta Graph API path, used only when Make is not set up.
-      - name: Publish to Facebook and Instagram
-        id: publish
-        if: steps.pick.outputs.slug != '' && steps.make.outputs.result == 'drafts-only'
-        env:
-          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
-          META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
-          IG_USER_ID: ${{ secrets.IG_USER_ID }}
-          SLUG: ${{ steps.pick.outputs.slug }}
-          DIR: ${{ steps.pick.outputs.dir }}
-        run: |
-          if [ -z "$META_PAGE_TOKEN" ]; then
-            echo "result=drafts-only" >> "$GITHUB_OUTPUT"
-            echo "::notice::Meta credentials not set; drafts only."
-            exit 0
-          fi
-          node scripts/social/meta-post.mjs --slug "$SLUG" --video "$DIR/reel.mp4" \
-            --fb "$DIR/facebook.txt" --fb-reel "$DIR/fb-reel.txt" --ig "$DIR/instagram.txt" \
-            > "$RUNNER_TEMP/meta-result.json" || echo "::warning::Some platforms failed; see the log line."
-          cat "$RUNNER_TEMP/meta-result.json"
-          echo "result=$RUNNER_TEMP/meta-result.json" >> "$GITHUB_OUTPUT"
 
       - name: Publish to YouTube Shorts
         id: youtube
@@ -349,9 +364,9 @@ jobs:
       - name: Log and push
         if: >-
           steps.pick.outputs.slug != '' && steps.make.outcome == 'success' &&
-          steps.publish.outcome != 'failure' && steps.youtube.outcome == 'success'
+          steps.meta.outcome != 'failure' && steps.youtube.outcome == 'success'
         run: |
-          node scripts/social/log.mjs "${{ steps.pick.outputs.slug }}" "${{ steps.publish.outputs.result || 'drafts-only' }}" \
+          node scripts/social/log.mjs "${{ steps.pick.outputs.slug }}" "${{ steps.meta.outputs.result || 'drafts-only' }}" \
             "${{ steps.youtube.outputs.result }}" "${{ steps.make.outputs.result }}" | tee "$RUNNER_TEMP/log-line.txt"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

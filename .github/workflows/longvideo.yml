@@ -5,9 +5,12 @@ name: Long video
 
 # Started daily at 05:13 UTC by the Cloudflare scheduler (scheduler/index.js in EPIVIFE). The video is
 # uploaded private and YouTube publishes it at 14:00 UTC (10 AM ET). At 14:16 UTC the scheduler starts
-# mode "facebook": when the repository variable FB_LONG_VIDEO is "on", today's video goes to the
-# Facebook Page as a normal video through the Make scenario (action "long_video"), hosted as a GitHub
-# release asset of this public repo (deleted after 14 days).
+# mode "facebook": today's video goes to the Facebook Page as a normal 16:9 Page video (not a Reel). When the
+# META_* secrets exist it is uploaded straight through the Graph API (meta-post.mjs --long-video: title,
+# description with the article link and chapters, thumbnail), whatever FB_LONG_VIDEO says. Without them (or
+# when Meta rejects the token) and only when the repository variable FB_LONG_VIDEO is "on", it goes through
+# the Make scenario (action "long_video"), hosted as a GitHub release asset of this public repo (deleted
+# after 14 days). Never fails the run.
 on:
   workflow_dispatch:
     inputs:
@@ -217,9 +220,12 @@ jobs:
     steps:
       - name: Check the switch
         id: gate
+        env:
+          HAS_META: ${{ secrets.META_PAGE_TOKEN != '' && secrets.META_PAGE_ID != '' }}
         run: |
-          if [ "${{ vars.FB_LONG_VIDEO }}" != "on" ]; then
-            echo "::notice::FB_LONG_VIDEO is not on; the long video is not sent to Facebook."
+          echo "meta=$HAS_META" >> "$GITHUB_OUTPUT"
+          if [ "$HAS_META" != "true" ] && [ "${{ vars.FB_LONG_VIDEO }}" != "on" ]; then
+            echo "::notice::No META_* secrets and FB_LONG_VIDEO is not on; the long video is not sent to Facebook."
             echo "on=false" >> "$GITHUB_OUTPUT"
           else
             echo "on=true" >> "$GITHUB_OUTPUT"
@@ -238,7 +244,7 @@ jobs:
           today=$(date -u +%F)
           slug=$(grep "^- $today | .* | yt: https://" automation/longvideo-log.md | tail -1 | cut -d'|' -f2 | tr -d ' ')
           if [ -z "$slug" ]; then echo "::notice::No long video uploaded today."; exit 0; fi
-          if grep -q "^- $today | $slug | fb-long: via make" automation/longvideo-log.md; then echo "::notice::Already sent to Facebook."; exit 0; fi
+          if grep -Eq "^- $today | $slug | fb-long: (via make|https://)" automation/longvideo-log.md; then echo "::notice::Already sent to Facebook."; exit 0; fi
           run=$(gh run list -R "$GITHUB_REPOSITORY" --workflow longvideo.yml --status success --limit 30 --json databaseId,createdAt \
             --jq "[.[] | select(.createdAt | startswith(\"$today\"))] | .[].databaseId" | while read -r id; do
               gh api "repos/$GITHUB_REPOSITORY/actions/runs/$id/artifacts" --jq ".artifacts[] | select(.name == \"longvideo-$slug\") | $id" ; done | head -1)
@@ -255,8 +261,34 @@ jobs:
 
       - name: Install dependencies
         if: steps.find.outputs.slug != ''
+        run: npm ci --no-audit --no-fund
+
+      # The full-quality video.mp4 (and thumbnail.jpg) from the artifact, published straight away (YouTube went
+      # public at 14:00 UTC). The token only reaches this step and is never printed (public logs).
+      - name: Upload to the Facebook Page (Graph API)
+        id: meta
+        if: steps.find.outputs.slug != ''
+        env:
+          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+          META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          FB_LONG_VIDEO: ${{ vars.FB_LONG_VIDEO }}
         run: |
-          npm ci --no-audit --no-fund
+          make=false; [ "$FB_LONG_VIDEO" = on ] && make=true
+          if [ "${{ steps.gate.outputs.meta }}" = true ]; then
+            result="$RUNNER_TEMP/meta-result.json"
+            node scripts/social/meta-post.mjs --long-video "${{ steps.find.outputs.dir }}" > "$result" \
+              || echo "::warning::The Facebook Page video upload failed; see the result."
+            cat "$result"
+            echo "result=$result" >> "$GITHUB_OUTPUT"
+            # Make takes over only when the direct path could not run at all (token rejected) and FB_LONG_VIDEO is on.
+            grep -q '"authFailed":true' "$result" || make=false
+          fi
+          echo "make=$make" >> "$GITHUB_OUTPUT"
+
+      - name: Web copy for Make
+        if: steps.meta.outputs.make == 'true'
+        run: |
           if [ ! -f "${{ steps.find.outputs.dir }}/web.mp4" ]; then
             sudo apt-get -o Acquire::Retries=3 update -qq && sudo apt-get -o Acquire::Retries=3 install -y -qq --no-install-recommends ffmpeg > /dev/null
             node scripts/social/longvideo.mjs webcopy "${{ steps.find.outputs.dir }}"
@@ -264,7 +296,7 @@ jobs:
 
       - name: Host the video (release asset, kept 14 days)
         id: host
-        if: steps.find.outputs.slug != ''
+        if: steps.meta.outputs.make == 'true'
         env:
           SLUG: ${{ steps.find.outputs.slug }}
           DIR: ${{ steps.find.outputs.dir }}
@@ -287,7 +319,7 @@ jobs:
 
       - name: Send to the Facebook Page via Make
         id: make
-        if: steps.find.outputs.slug != ''
+        if: steps.meta.outputs.make == 'true'
         env:
           MAKE_WEBHOOK_URL: ${{ secrets.MAKE_WEBHOOK_URL }}
           MAKE_API_KEY: ${{ secrets.MAKE_API_KEY }}
@@ -300,9 +332,9 @@ jobs:
           echo "result=$result" >> "$GITHUB_OUTPUT"
 
       - name: Log and push
-        if: steps.find.outputs.slug != ''
+        if: steps.find.outputs.slug != '' && (steps.make.outputs.result != '' || steps.meta.outputs.result != '')
         run: |
-          node scripts/social/longvideo.mjs log-facebook "${{ steps.find.outputs.slug }}" "${{ steps.make.outputs.result }}" | tee -a "$GITHUB_STEP_SUMMARY"
+          node scripts/social/longvideo.mjs log-facebook "${{ steps.find.outputs.slug }}" "${{ steps.make.outputs.result || steps.meta.outputs.result }}" | tee -a "$GITHUB_STEP_SUMMARY"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add automation/longvideo-log.md
