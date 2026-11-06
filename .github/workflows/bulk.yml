@@ -1,3 +1,8 @@
+# PAUSED since 6 Nov 2026 (AdSense review: scaled content). The scheduler no longer dispatches it and every job is
+# skipped unless the repository variable BULK_ENABLED is "on" (owner decision only); the workflow is also disabled in
+# GitHub (Actions > Bulk articles > Enable workflow to undo). Publishing is 1 article + 1 news
+# brief a day (article.yml, news.yml).
+#
 # Bulk article batch: plan N ideas across a topic mix, write and fact-check them in parallel
 # batches of 8, then gate, build and publish everything that passes in one commit.
 # With no mix given it works through automation/bulk/target.json (started daily by the scheduler)
@@ -31,6 +36,8 @@ concurrency:
 
 jobs:
   plan:
+    # Paused: see the note at the top. write and publish need plan, so they are skipped too.
+    if: vars.BULK_ENABLED == 'on'
     runs-on: ubuntu-latest
     timeout-minutes: 120
     outputs:
