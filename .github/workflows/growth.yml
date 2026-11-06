@@ -86,7 +86,9 @@ jobs:
               numbers (followers, impressions, reactions, comments per post) the same way as the YouTube
               data: report them under Evidence and adjust the LinkedIn rules to what worked. Without
               them, change the LinkedIn rules only with evidence.
-            - Keep the file under 75 lines.
+            - Keep the section "Hook, title and cover formulas" (validate.mjs enforces it): update its numbers
+              and sharpen a formula only when the data supports it; never drop it or loosen the banned openers.
+            - Keep the file under 95 lines.
 
             Edit only automation/STRATEGY.md. Do not commit or push.
 
