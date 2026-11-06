@@ -1,0 +1,98 @@
+# Daily EpiFive photo posts on Facebook and Instagram (owner, 6 Nov 2026: 1-2 a day), made by
+# scripts/social/photo-carousel.mjs in the site repo from the day's article, with no AI writing and no AI pictures:
+#   1. a 3-5 slide carousel (the problem, up to 3 steps, the full-guide slide): Facebook multi-photo post with the
+#      article link, Instagram carousel ("link in bio"), both published at once;
+#   2. a key-takeaway card, Facebook only, scheduled for 17:30 UTC (12:30 New York).
+# Started by the Cloudflare scheduler (scheduler/) at 13:16 UTC (18:46 IST, 08:16 New York) with a retry at 14:16 UTC;
+# no `schedule` here. A day already in photos/log.md is skipped. The cards are uploaded to Facebook from the files and
+# Instagram gets Facebook's CDN copy (it needs a public URL); with the optional secret MEDIA_TOKEN the Shyam media
+# Worker hosts them instead. Separate from social.yml: a failure here never affects the reels.
+name: Photo posts
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Render and print the texts only (the cards become the run's artifact); post and log nothing
+        type: boolean
+        default: false
+      slug:
+        description: Use this article instead of today's (optional)
+        type: string
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: epifive-photos
+  cancel-in-progress: false
+
+jobs:
+  photos:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Already posted today?
+        id: gate
+        run: |
+          mkdir -p photos && touch photos/log.md
+          if [ "${{ inputs.dry_run }}" != "true" ] && [ -z "${{ inputs.slug }}" ] && grep -q "^- $(date -u +%F) |" photos/log.md; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"; echo "::notice::Today's carousel is already posted."
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.skip != 'true'
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+          path: site
+
+      - uses: actions/setup-node@v4
+        if: steps.gate.outputs.skip != 'true'
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: Install fonts and dependencies
+        if: steps.gate.outputs.skip != 'true'
+        run: |
+          sudo apt-get -o Acquire::Retries=3 -o Acquire::http::Timeout=20 update -qq
+          sudo apt-get -o Acquire::Retries=3 install -y -qq --no-install-recommends fonts-inter > /dev/null
+          cd site && npm ci --no-audit --no-fund
+
+      - name: Render and post
+        if: steps.gate.outputs.skip != 'true'
+        env:
+          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+          META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          MEDIA_TOKEN: ${{ secrets.MEDIA_TOKEN }}
+          SLUG: ${{ inputs.slug }}
+        run: |
+          set -- --log ../photos/log.md --out ../out
+          [ -n "$SLUG" ] && set -- "$@" --slug "$SLUG"
+          [ "${{ inputs.dry_run }}" = "true" ] && set -- "$@" --dry-run
+          cd site && node scripts/social/photo-carousel.mjs "$@" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        if: always() && steps.gate.outputs.skip != 'true'
+        with:
+          name: photo-cards
+          path: out/*.jpg
+          retention-days: 5
+          if-no-files-found: ignore
+
+      - name: Log
+        if: always() && steps.gate.outputs.skip != 'true' && !inputs.dry_run
+        run: |
+          git diff --quiet -- photos/log.md && git ls-files --error-unmatch photos/log.md > /dev/null 2>&1 && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add photos/log.md
+          git diff --cached --quiet && exit 0
+          git commit -qm "Photo posts $(date -u +%F)"
+          for i in 1 2 3; do git pull -q --rebase && git push -q && break; sleep 10; done
