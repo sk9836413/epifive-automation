@@ -1,0 +1,30 @@
+# Daily EpiFive lead job: automatic follow-ups (working days, IST) and the owner's lead digest.
+# Dispatched by the epifive-scheduler Worker on its 13 5 UTC cron (10:43 IST). The work runs in the site's Pages
+# Function https://www.epifive.com/api/lead-jobs (source: functions/api/lead-jobs.ts in sk9836413/EPIVIFE), which
+# holds the Resend key and the email templates. THIS REPO IS PUBLIC: this job only starts that function with the
+# INGEST_TOKEN secret and prints the HTTP status. The response (counts only) is not printed; no lead data passes here.
+name: Lead jobs
+
+on:
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: lead-jobs
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Run the site's lead job
+        env:
+          INGEST_TOKEN: ${{ secrets.INGEST_TOKEN }}
+        run: |
+          status=$(curl -sS -o /dev/null -w '%{http_code}' --max-time 120 --retry 2 --retry-all-errors \
+            -X POST -H "X-Ingest-Token: $INGEST_TOKEN" -H 'Content-Type: application/json' -d '{}' \
+            https://www.epifive.com/api/lead-jobs)
+          echo "Lead job: HTTP $status"
+          test "$status" = 200
