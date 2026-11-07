@@ -1,1 +1,2 @@
 - 2026-11-06 | outlook-notifications-not-showing-windows-11-fix | slides 5 | fb: https://www.facebook.com/1428744796978054_122120104677497479 | ig: https://www.instagram.com/p/DfZsmz0IFPw/ | takeaway: 122120105121497479 (scheduled 2026-11-06T17:30:00.000Z)
+- 2026-11-07 | iphone-wifi-not-working-fix-ios | slides 5 | fb: https://www.facebook.com/1428744796978054_122120498247497479 | ig: https://www.instagram.com/p/DfcRWtPm1WY/ | takeaway: 122120498793497479 (scheduled 2026-11-07T17:30:00.000Z)
