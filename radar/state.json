@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-12T08:57:28.416Z",
+ "lastScan": "2026-11-12T13:16:57.870Z",
  "seen": {
   "https://openai.com/index/gilbert-tobin-sam-nickless": {
    "title": "Gilbert + Tobin rethinks the business of law with AI",
@@ -958,6 +958,111 @@
    ],
    "status": "below",
    "hash": "16d635bb"
+  },
+  "https://openai.com/business/customer-stories/holidays-extras-codex": {
+   "title": "Holiday Extras is rethinking what it can build with Codex",
+   "link": "https://openai.com/business/customer-stories/holidays-extras-codex",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "date": "2026-11-12T09:30:00.000Z",
+   "updated": null,
+   "summary": "With Codex, Holiday Extras is turning customer expertise into better apps, higher booking conversion and new possibilities for growth.",
+   "first": "2026-11-12T13:16:57.870Z",
+   "score": 1,
+   "reasons": [
+    "+2 source openai-news",
+    "+1 niche (codex)",
+    "-2 category (none)"
+   ],
+   "status": "below",
+   "hash": "b37b2ac7"
+  },
+  "https://openai.com/index/children-first-declaration": {
+   "title": "Supporting research on AI and children’s safety",
+   "link": "https://openai.com/index/children-first-declaration",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "date": "2026-11-12T00:00:00.000Z",
+   "updated": null,
+   "summary": "OpenAI commits $2 million to research on AI and children’s safety. The work supports shared tools to measure risks and opportunities for young people.",
+   "first": "2026-11-12T13:16:57.870Z",
+   "score": -2,
+   "reasons": [
+    "+2 source openai-news",
+    "+1 niche (openai)",
+    "+1 plans/price/availability \"$2\"",
+    "-3 corporate/announcement \"research\"",
+    "-3 category (Global Affairs)"
+   ],
+   "status": "below",
+   "hash": "64cb8f56"
+  },
+  "https://techcommunity.microsoft.com/t5/microsoft-365-blog/what-you-ll-learn-explore-and-experience-at-espc-2026/ba-p/4572576": {
+   "title": "What You’ll Learn, Explore, and Experience at ESPC 2026",
+   "link": "https://techcommunity.microsoft.com/t5/microsoft-365-blog/what-you-ll-learn-explore-and-experience-at-espc-2026/ba-p/4572576",
+   "source": "tc-m365",
+   "topic": "microsoft-365",
+   "date": "2026-11-11T16:18:37.000Z",
+   "updated": null,
+   "summary": "AI is changing the way organizations think about productivity, collaboration, knowledge, development, security, and business processes. But keeping up with the pace of change is only part of the challenge. The bigger question is how to turn all that innovation into something useful for your organiza",
+   "first": "2026-11-12T13:16:57.870Z",
+   "score": 4,
+   "reasons": [
+    "+1 source tc-m365",
+    "+4 niche (copilot, microsoft 365, sharepoint)",
+    "+2 user steps \"how to\"",
+    "-3 corporate/announcement \"What You’ll Learn\""
+   ],
+   "status": "below",
+   "hash": "c25f3ef1"
+  },
+  "https://blog.google/products/ads-commerce/invalid-traffic-overview-google-ads": {
+   "title": "We’re introducing a new transparency tool for invalid traffic in Google Ads.",
+   "link": "https://blog.google/products/ads-commerce/invalid-traffic-overview-google-ads/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "date": "2026-11-12T13:00:00.000Z",
+   "updated": null,
+   "summary": "Google Ads introduces the Invalid Traffic Overview Card for campaign transparency. See your savings and credits from November 2026. Get the details.",
+   "first": "2026-11-12T13:16:57.870Z",
+   "score": 3,
+   "reasons": [
+    "+2 launch \"introducing\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "4fcfff86"
+  },
+  "https://about.fb.com/news/2026/11/meta-new-agreements-clean-manufacturing-data-center-supply-chains": {
+   "title": "Meta’s New Agreements Bring Clean Manufacturing to Data Center Supply Chains",
+   "link": "https://about.fb.com/news/2026/11/meta-new-agreements-clean-manufacturing-data-center-supply-chains/",
+   "source": "meta-newsroom",
+   "topic": "online-safety",
+   "date": "2026-11-12T12:00:07.000Z",
+   "updated": null,
+   "summary": "We’re bringing clean manufacturing to our data centers and setting an industry standard by entering long-term purchase agreements with low-carbon producers across our supply chain. The post Meta’s New Agreements Bring Clean Manufacturing to Data Center Supply Chains appeared first on Meta Newsroom .",
+   "first": "2026-11-12T13:16:57.870Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "18aa6c8b"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63964": {
+   "title": "Final redemption under Sovereign Gold Bond (SGB) Scheme - Redemption Price for final redemption of SGB 2018-19 Series-III due on November 13, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63964",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "date": "2026-11-12T18:35:00.000Z",
+   "updated": null,
+   "summary": "In terms of GOI notification F.No.4(22)-B(W&M)/2018 dated October 08, 2018 (SGB 2018-19 Series-III-Issue date November 13, 2018) on Sovereign Gold Bond Scheme, the Gold Bond shall be repayable on the expiration of eight years from the date of issue of the Gold Bonds. Accordingly, the final redemptio",
+   "first": "2026-11-12T13:16:57.870Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"Price\""
+   ],
+   "status": "below",
+   "hash": "bb44a3a0"
   }
  }
 }
