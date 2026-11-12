@@ -1,0 +1,963 @@
+{
+ "version": 1,
+ "lastScan": "2026-11-12T08:57:28.416Z",
+ "seen": {
+  "https://openai.com/index/gilbert-tobin-sam-nickless": {
+   "title": "Gilbert + Tobin rethinks the business of law with AI",
+   "link": "https://openai.com/index/gilbert-tobin-sam-nickless",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "date": "2026-11-12T00:00:00.000Z",
+   "updated": null,
+   "summary": "A conversation with Sam Nickless, Partner and Chief Executive Officer at Gilbert + Tobin.",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -4,
+   "reasons": [
+    "+2 source openai-news",
+    "-4 customer story",
+    "-2 category (none)"
+   ],
+   "status": "below",
+   "hash": "bccde763"
+  },
+  "https://openai.com/index/chatgpt-plus-for-veterans": {
+   "title": "ChatGPT Plus for veterans and servicemembers",
+   "link": "https://openai.com/index/chatgpt-plus-for-veterans",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "date": "2026-11-11T08:00:00.000Z",
+   "updated": null,
+   "summary": "More than 20,000 veterans and transitioning service members have claimed a free year of ChatGPT Plus. See how they use it to prepare for civilian careers.",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": 6,
+   "reasons": [
+    "+2 source openai-news",
+    "+3 niche (chatgpt)",
+    "+1 plans/price/availability \"free\""
+   ],
+   "status": "below",
+   "hash": "7dfb9aff"
+  },
+  "https://openai.com/index/jiostar-vijay-seshadri": {
+   "title": "JioStar’s chief architect on AI discovery at 500M-user scale",
+   "link": "https://openai.com/index/jiostar-vijay-seshadri",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "date": "2026-11-11T00:00:00.000Z",
+   "updated": null,
+   "summary": "JioStar’s Vijay Seshadri explains AI discovery at 500M-user scale. Read his lessons on evals, guardrails, and taking AI into production.",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": 0,
+   "reasons": [
+    "+2 source openai-news",
+    "-2 category (none)"
+   ],
+   "status": "below",
+   "hash": "73183ffd"
+  },
+  "https://blog.google/innovation-and-ai/products/gemini-app/gemini-on-apple-carplay": {
+   "title": "Talk it through with Gemini, now on Apple CarPlay",
+   "link": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-on-apple-carplay/",
+   "source": "gemini-blog",
+   "topic": "ai-automation",
+   "date": "2026-11-11T17:00:00.000Z",
+   "updated": null,
+   "summary": "Gemini is now available on Apple CarPlay.",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": 6,
+   "reasons": [
+    "+1 source gemini-blog",
+    "+2 niche (gemini)",
+    "+2 launch \"now available\"",
+    "+1 also on google-keyword"
+   ],
+   "status": "below",
+   "hash": "c21f6080"
+  },
+  "https://workspaceupdates.googleblog.com/2026/11/publish-sheets-canvas-as-standalone-link.html": {
+   "title": "Publish a Sheets canvas as a standalone link",
+   "link": "http://workspaceupdates.googleblog.com/2026/11/publish-sheets-canvas-as-standalone-link.html",
+   "source": "workspace-updates",
+   "topic": "small-business-it",
+   "date": "2026-11-11T21:58:56.335Z",
+   "updated": "2026-11-11T21:58:56.336Z",
+   "summary": "Earlier this year we introduced Sheets canvas , which uses Gemini to turn spreadsheet data into interactive mini-apps like dashboards, kanban boards, and calendars. Starting today, you can publish a Sheets canvas directly to its own link, granting others read-only access to interact with the mini-ap",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": 7,
+   "reasons": [
+    "+1 source workspace-updates",
+    "+2 niche (gemini)",
+    "+2 launch \"introduced\"",
+    "+2 user steps \"you can\""
+   ],
+   "status": "below",
+   "hash": "97f1179c"
+  },
+  "https://workspaceupdates.googleblog.com/2026/11/organize-and-communicate-complex-information-with-numbered-and-nested-lists-in-Google-Chat.html": {
+   "title": "Organize and communicate complex information with numbered and nested lists in Google Chat",
+   "link": "http://workspaceupdates.googleblog.com/2026/11/organize-and-communicate-complex-information-with-numbered-and-nested-lists-in-Google-Chat.html",
+   "source": "workspace-updates",
+   "topic": "small-business-it",
+   "date": "2026-11-11T21:18:23.229Z",
+   "updated": "2026-11-11T21:18:23.229Z",
+   "summary": "You can now use numbered lists and nested lists in your Google Chat messages. Numbered lists work well for step-by-step instructions, rankings, and agendas. Nested lists let you break a main point into smaller details, which helps for meeting notes, project plans, and status updates. You can mix bul",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": 8,
+   "reasons": [
+    "+1 source workspace-updates",
+    "+2 niche (android)",
+    "+2 launch \"You can now\"",
+    "+2 user steps \"You can\"",
+    "+1 plans/price/availability \"plans\""
+   ],
+   "status": "below",
+   "hash": "f8a4eb7a"
+  },
+  "https://workspaceupdates.googleblog.com/2026/11/expanding-gemini-in-gmail-to-more-Google-Workspace-users.html": {
+   "title": "Expanding Gemini in Gmail to more Google Workspace users",
+   "link": "http://workspaceupdates.googleblog.com/2026/11/expanding-gemini-in-gmail-to-more-Google-Workspace-users.html",
+   "source": "workspace-updates",
+   "topic": "small-business-it",
+   "date": "2026-11-10T21:45:00.317Z",
+   "updated": "2026-11-10T21:45:00.317Z",
+   "summary": "We’re expanding the availability of some Gemini in Gmail features to more Google Workspace users aged 18 and older. Previously available to consumer accounts and specific Workspace editions, these tools are now being brought to the core Workspace experience by expanding availability to all Workspace",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": 6,
+   "reasons": [
+    "+1 source workspace-updates",
+    "+4 niche (gemini, google workspace, gmail)",
+    "+1 plans/price/availability \"available to\""
+   ],
+   "status": "below",
+   "hash": "366d8df3"
+  },
+  "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api": {
+   "title": "Gemini Decisions API: Fast, calibrated multimodal decisions",
+   "link": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "date": "2026-11-11T18:00:00.000Z",
+   "updated": null,
+   "summary": "Meet the Gemini Decisions API, powered by our state-of-the-art model Gemini Decision for fast, calibrated multimodal decisions.",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": 1,
+   "reasons": [
+    "+2 niche (gemini)",
+    "-1 narrow audience \"API\""
+   ],
+   "status": "below",
+   "hash": "a76cca46"
+  },
+  "https://blog.google/products-and-platforms/devices/googlebook/henry-cavill-googlebook-mustache-protocol": {
+   "title": "Built on Googlebook: Play Henry Cavill’s video game to support Movember",
+   "link": "https://blog.google/products-and-platforms/devices/googlebook/henry-cavill-googlebook-mustache-protocol/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "date": "2026-11-11T18:00:00.000Z",
+   "updated": null,
+   "summary": "Henry Cavill’s “Mustache Protocol” is live. See how the game came together on Googlebook, and help us raise $500,000 for men’s health.",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": 1,
+   "reasons": [
+    "+1 plans/price/availability \"$5\""
+   ],
+   "status": "below",
+   "hash": "d5a64272"
+  },
+  "https://blog.google/company-news/outreach-and-initiatives/creating-opportunity/veterans-day-2026": {
+   "title": "Google’s ongoing commitment to the veteran community",
+   "link": "https://blog.google/company-news/outreach-and-initiatives/creating-opportunity/veterans-day-2026/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "date": "2026-11-11T17:00:00.000Z",
+   "updated": null,
+   "summary": "On Veterans’ Day 2026, we’re spotlighting how Google invests in career pathways for veterans and the military community.",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -3,
+   "reasons": [
+    "-3 corporate/announcement \"commitment\""
+   ],
+   "status": "below",
+   "hash": "56971e06"
+  },
+  "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/cybersecurity-2027": {
+   "title": "Google Cloud leaders share what to expect in cybersecurity for 2027.",
+   "link": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/cybersecurity-2027/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "date": "2026-11-11T17:00:00.000Z",
+   "updated": null,
+   "summary": "In our Security 2027 analysis, leaders from across Google, Google Cloud, and Mandiant break down the critical trends shaping the next era of defense.",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "16c8f70d"
+  },
+  "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/professional-agentic-architect": {
+   "title": "Get certified as a Google Cloud Professional Agentic Architect.",
+   "link": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/professional-agentic-architect/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "date": "2026-11-11T17:00:00.000Z",
+   "updated": null,
+   "summary": "Today we announced Google Cloud's new Professional Agentic Architect certification.",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "92875a47"
+  },
+  "https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop": {
+   "title": "Try Tabletop: Customizable, collaborative spaces for groups to plan, play and do more together.",
+   "link": "https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "date": "2026-11-11T16:00:00.000Z",
+   "updated": null,
+   "summary": "Tabletop is a new Google Labs experiment for group collaboration. Build interactive itineraries, polls, and brackets with your team. Join the waitlist.",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -3,
+   "reasons": [
+    "+1 plans/price/availability \"plan\"",
+    "-4 customer story"
+   ],
+   "status": "below",
+   "hash": "1e85bfcd"
+  },
+  "https://blog.google/company-news/outreach-and-initiatives/arts-culture/esther-mahlangu": {
+   "title": "Experience the art and legacy of Dr. Esther Mahlangu",
+   "link": "https://blog.google/company-news/outreach-and-initiatives/arts-culture/esther-mahlangu/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "date": "2026-11-11T09:00:00.000Z",
+   "updated": null,
+   "summary": "A new online archive of Esther Mahlangu’s life and art is now on Google Arts & Culture.",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "46b298c3"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=579982": {
+   "title": "Dynamics 365 Customer Insights - Journeys: Create event experience that match your business structure by supporting leads, contacts, or both​",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=579982",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "date": "2026-11-12T01:35:00.000Z",
+   "updated": "2026-11-12T01:35:00.000Z",
+   "summary": "Align event registrations with the way your organization manages customer data. By supporting lead-based registration journeys and existing matching rules, you can avoid unnecessary Contact creation, improve data quality, and ensure event attendees follow the same lead management process used across",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -7,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 user steps \"you can\"",
+    "-3 corporate/announcement \"event\"",
+    "-5 category (In development, General Availability, Preview)"
+   ],
+   "status": "below",
+   "hash": "17021b28"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=579975": {
+   "title": "Power Automate: Direct triggers for desktop flows",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=579975",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "date": "2026-11-12T01:35:00.000Z",
+   "updated": "2026-11-12T01:35:00.000Z",
+   "summary": "Desktop flows will support direct triggers, enabling automations to start in response to supported events without requiring an intermediary cloud flow. This simplifies automation design and reduces the effort required to connect desktop flows to business processes. GA date: March CY2027 Preview date",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -6,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "-5 category (In development, General Availability, Preview)"
+   ],
+   "status": "below",
+   "hash": "be1b7f13"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=579974": {
+   "title": "Power Automate: Credentials - Integration with Delinea secret server",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=579974",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "date": "2026-11-12T01:35:00.000Z",
+   "updated": "2026-11-12T01:35:00.000Z",
+   "summary": "Power Automate will support Delinea Secret Server as an external credential provider for desktop flows. Organizations can securely use credentials managed in Delinea for machine sign-in and credential retrieval during attended and unattended automation. GA date: March CY2027",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -5,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "e4404385"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=579903": {
+   "title": "Dynamics 365 Customer Insights - Journeys: Send each message only once with deduplication for SMS and custom channels",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=579903",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "date": "2026-11-12T01:35:00.000Z",
+   "updated": "2026-11-12T01:35:00.000Z",
+   "summary": "Deduplicates recipients by contact point, so each phone number or custom channel address gets the message once per send. Eliminates manual post-send clean-up, wasted messaging spend and the customer annoyance of duplicate texts. Brings SMS and custom channels to parity with email's built-in deduplic",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -5,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "214901b1"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=579897": {
+   "title": "Outlook: Copilot Chat Sheet UX Update for Mobile",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=579897",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "date": "2026-11-12T01:35:00.000Z",
+   "updated": "2026-11-12T01:35:00.000Z",
+   "summary": "Copilot Chat in Outlook on iOS and Android is getting updated! You'll notice smoother animations, improved strings, and some small changes to the header, such as the new/temporary chat button being moved behind the ... button. GA date: December CY2026",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -1,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+4 niche (copilot, outlook, android)",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "d6ecf2ec"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=579193": {
+   "title": "Microsoft Edge: Top sites in Edge search bar",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=579193",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "date": "2026-11-12T01:35:00.000Z",
+   "updated": "2026-11-12T01:35:00.000Z",
+   "summary": "Adding easy access to top sites in Edge search bar on desktop. Users can add, edit, remove, or hide top sites. Admins can control available to this feature using the NewTabPageManagedQuickLinks and NewTabPageQuickLinksEnabled policies. GA date: January CY2027",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -2,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 user steps \"Users can\"",
+    "+1 plans/price/availability \"available to\"",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "a2660fc"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=578880": {
+   "title": "Microsoft 365: [Education] Practice presentations with Speaker Coach in Learning Activities",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=578880",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "date": "2026-11-12T01:35:00.000Z",
+   "updated": "2026-11-12T01:35:00.000Z",
+   "summary": "In learning activities, students can rehearse presentations, receive feedback on their delivery, and practice again with targeted suggestions to improve clarity and confidence. #education GA date: December CY2026",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -3,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 niche (microsoft 365)",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "177ca3ba"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=578877": {
+   "title": "Dynamics 365 Finance: Submit only validated records to Dynamics 365 Finance",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=578877",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "date": "2026-11-12T01:35:00.000Z",
+   "updated": "2026-11-12T01:35:00.000Z",
+   "summary": "The write to business rules engine configuration experience introduces an option to submit only records that have successfully passed Account structure validation. When enabled, Business Performance Planning filters the writeback dataset and submits only records marked as valid by account structure ",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -1,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 launch \"introduces\"",
+    "+2 user steps \"users can\"",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "87ac49dc"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=578863": {
+   "title": "Dynamics 365 Customer Insights - Journeys: Build audiences faster with reusable segment templates",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=578863",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "date": "2026-11-12T01:35:00.000Z",
+   "updated": "2026-11-12T01:35:00.000Z",
+   "summary": "Segment templates help you build audiences without recreating queries for each campaign. Choose a built-in template for common scenarios such as event attendance or email engagement, or save your own segment query as a reusable custom template. Add placeholders with hint text to guide marketers thro",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -7,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 user steps \"setup\"",
+    "-4 customer story",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "b32521ca"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=577545": {
+   "title": "Microsoft 365: [Education] Microsoft Learning Zone - Minecraft connected lessons",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=577545",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "date": "2026-11-12T01:35:00.000Z",
+   "updated": "2026-11-12T01:35:00.000Z",
+   "summary": "Bring Minecraft Education to every classroom with AI-powered tools that match curriculum goals to Build Challenges, blend lessons with project-based learning, launch directly from Learning Zone, and give you full visibility into participation, completion, and student understanding. #education GA dat",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -1,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 niche (microsoft 365)",
+    "+2 launch \"launch\"",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "78a4f87c"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=576273": {
+   "title": "Microsoft 365 admin center: Cross-Tenant Orchestrated Migration",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=576273",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "date": "2026-11-12T01:35:00.000Z",
+   "updated": "2026-11-12T01:35:00.000Z",
+   "summary": "Cross-Tenant Orchestrated Migration for User Data Migration (UDM) and Shared Data Migration (SDM) allows customers to move their Microsoft 365 data from one Microsoft tenant to another. UDM includes the ability to move user mailboxes, OneDrive accounts, Teams chats, and Teams meetings. SDM includes ",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": 1,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+4 niche (microsoft 365, teams meetings, onedrive)",
+    "+2 user steps \"Migration\"",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "7bafc52a"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=573238": {
+   "title": "Dynamics 365 Project Operations: Archive project cost actuals with long-term retention",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=573238",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "date": "2026-11-12T01:35:00.000Z",
+   "updated": "2026-11-12T01:35:00.000Z",
+   "summary": "Organizations managing high volumes of project transactions need to retain historical cost data without allowing years of completed transactions to continually increase the volume of active operational data. This capability enables organizations to archive processed project staging table cost actual",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -5,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+1 plans/price/availability \"eligible\"",
+    "-5 category (In development, General Availability, Preview)"
+   ],
+   "status": "below",
+   "hash": "bda9cc6b"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=577876": {
+   "title": "Dynamics 365 Project Operations: Optimize Project Operations - Allow to invoice future-dated transactions",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=577876",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "date": "2026-11-11T01:20:59.000Z",
+   "updated": "2026-11-11T01:20:59.000Z",
+   "summary": "Available for core and integrated. Currently, project invoices include transactions based on the invoice date, which can make it difficult to prepare invoices in advance when additional transactions are expected before the end of the billing period. With this feature, you can use the Accounting date",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -3,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 user steps \"you can\"",
+    "+1 plans/price/availability \"eligible\"",
+    "-5 category (In development, General Availability, Preview)"
+   ],
+   "status": "below",
+   "hash": "b0c68e4"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=579894": {
+   "title": "Microsoft Edge: Expanded enforcement controls for Data Loss Prevention connectors",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=579894",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "date": "2026-11-11T00:56:01.000Z",
+   "updated": "2026-11-11T00:56:01.000Z",
+   "summary": "Microsoft Edge for Business is expanding its existing Data Loss Prevention Enterprise Connector capabilities. Administrators will be able to configure more consistent enforcement across download, upload, paste, and print workflows. Additional controls include required bypass justification and admini",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -3,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 user steps \"configure\"",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "2f651f08"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=579860": {
+   "title": "Microsoft Teams: Tenant policy controls who can record and transcribe",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=579860",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "date": "2026-11-11T00:56:01.000Z",
+   "updated": "2026-11-11T00:56:01.000Z",
+   "summary": "Teams administrators can use meeting policies to control who can start recording and transcription, helping organizations apply consistent meeting settings. Administrators can restrict these permissions to organizers and co-organizers or extend them to presenters. They can also determine whether mee",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -3,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 niche (microsoft teams)",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "f667be2"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=579859": {
+   "title": "Microsoft Teams: Real-time queue metrics in the Queues app on Mobile",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=579859",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "date": "2026-11-11T00:56:01.000Z",
+   "updated": "2026-11-11T00:56:01.000Z",
+   "summary": "Calling representative and Supervisor leads can view real-time call queue metrics directly from the Queues app on Mobile, giving them greater visibility into current queue activity and performance while on the go. Users can quickly understand the state of their queues, monitor key operational metric",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -1,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 niche (microsoft teams)",
+    "+2 user steps \"Users can\"",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "95088889"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=579190": {
+   "title": "Outlook: More visibility into usage for recoverable items storage",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=579190",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "date": "2026-11-11T00:56:01.000Z",
+   "updated": "2026-11-11T00:56:01.000Z",
+   "summary": "You'll be able to see how much storage your recoverable items are using in Outlook. This gives you a clearer picture of your storage usage before you reach a limit. You can use this information to make more informed decisions about managing your mailbox. #newoutlookforwindows GA date: February CY202",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -1,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 niche (outlook)",
+    "+2 user steps \"You can\"",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "29f1ed0f"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=579189": {
+   "title": "Outlook: Expand or collapse all accounts at once",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=579189",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "date": "2026-11-11T00:56:01.000Z",
+   "updated": "2026-11-11T00:56:01.000Z",
+   "summary": "You'll be able to expand or collapse all accounts at once in Outlook's folder pane. You won't need to expand or collapse each account individually. This makes it easier to navigate multiple accounts or keep your folder pane compact. #newoutlookforwindows GA date: February CY2027",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -3,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 niche (outlook)",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "f9fa5b83"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=579188": {
+   "title": "Outlook: Remember your online archive folder pane state",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=579188",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "date": "2026-11-11T00:56:01.000Z",
+   "updated": "2026-11-11T00:56:01.000Z",
+   "summary": "Outlook will remember whether your online archive is expanded or collapsed when you return. Outlook on the web and the new Outlook for Windows will each keep their own saved state. This saves you from repeatedly expanding or collapsing your archive as you navigate your mailbox. #newoutlookforwindows",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -2,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+3 niche (outlook, windows)",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "987542d5"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=579187": {
+   "title": "Outlook: Keep folders expanded when you restart Outlook",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=579187",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "date": "2026-11-11T00:56:01.000Z",
+   "updated": "2026-11-11T00:56:01.000Z",
+   "summary": "Outlook will remember which folders and shared mailboxes you have expanded or collapsed when you restart the app. You can pick up where you left off without opening the same folder branches again. This makes returning to your usual folders easier. #newoutlookforwindows GA date: February CY2027",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -1,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 niche (outlook)",
+    "+2 user steps \"You can\"",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "84104fe4"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=579186": {
+   "title": "Outlook: Sort your subfolders from A to Z",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=579186",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "date": "2026-11-11T00:56:01.000Z",
+   "updated": "2026-11-11T00:56:01.000Z",
+   "summary": "You'll be able to sort a folder's subfolders alphabetically from the parent folder. This makes it easier to find the folder you need without rearranging subfolders one by one. It's a simple way to keep long folder lists organized. #newoutlookforwindows GA date: February CY2027",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -3,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 niche (outlook)",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "b85ea8a1"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=579185": {
+   "title": "Outlook: Keep folder sharing within your organization's policies",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=579185",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "date": "2026-11-11T00:56:01.000Z",
+   "updated": "2026-11-11T00:56:01.000Z",
+   "summary": "Folder sharing in Outlook will respect your organization's restrictions for Default and Anonymous permissions. When these restrictions are enabled, you won't be able to change either setting. Permissions granted directly to individual users will remain unaffected. This helps keep folder sharing alig",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -3,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 niche (outlook)",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "c43c51e7"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=577895": {
+   "title": "Dynamics 365 Contact Center: Quality Evaluation Agent - Review historical quality metrics in a unified dashboard",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=577895",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "date": "2026-11-11T00:56:01.000Z",
+   "updated": "2026-11-11T00:56:01.000Z",
+   "summary": "The quality evaluation historical dashboard provides aggregated insights from completed evaluations, helping organizations track quality trends over time. Users can view quality scores and trends across selected date ranges, with up to two years of historical data available. More info: https://learn",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -6,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+1 niche (agent)",
+    "+2 user steps \"Users can\"",
+    "-3 corporate/announcement \"Evaluation\"",
+    "-5 category (In development, General Availability, Preview)"
+   ],
+   "status": "below",
+   "hash": "a1827945"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=577860": {
+   "title": "Microsoft Power Platform governance and administration: Secure Dataverse record with column-based filtering",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=577860",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "date": "2026-11-11T00:56:01.000Z",
+   "updated": "2026-11-11T00:56:01.000Z",
+   "summary": "This enhancement introduces column-based security filtering, enabling records to be secured using attribute values rather than traditional ownership. This allows security admins to define access based on business dimensions such as region or department, making it ideal for scenarios where record own",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -3,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 launch \"introduces\"",
+    "+1 plans/price/availability \"region\"",
+    "-5 category (In development, General Availability, Preview)"
+   ],
+   "status": "below",
+   "hash": "6d662661"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=573703": {
+   "title": "Dynamics 365 Commerce: Design receipts using a modern, web-based designer in headquarters and print them on A4 paper or thermal printers from Store Commerce, supporting B2B scenarios",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=573703",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "date": "2026-11-11T00:56:01.000Z",
+   "updated": "2026-11-11T00:56:01.000Z",
+   "summary": "Applies to : Point of Sale (Store Commerce app and web), Commerce headquarters receipt format designer, Hardware Station, and Commerce Scale Unit. The modern receipt designer introduces a React-based designer in headquarters at Retail and Commerce > Channel setup > POS setup > POS > Receipt formats ",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -5,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 launch \"introduces\"",
+    "+2 user steps \"setup\"",
+    "-3 corporate/announcement \"paper\"",
+    "-5 category (In development, General Availability, Preview)"
+   ],
+   "status": "below",
+   "hash": "ded917f7"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=573612": {
+   "title": "Dynamics 365 Business Central: E-Documents - Self-billing enablement",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=573612",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "date": "2026-11-11T00:56:01.000Z",
+   "updated": "2026-11-11T00:56:01.000Z",
+   "summary": "Streamline self-billing by automatically creating, managing, and exchanging electronic documents for self-billed invoices as part of the invoice lifecycle. This reduces manual document handling while helping ensure self-billed transactions include the appropriate electronic documents in standardized",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -6,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "-5 category (In development, General Availability, Preview)"
+   ],
+   "status": "below",
+   "hash": "f4ffe7a5"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=573293": {
+   "title": "Microsoft Copilot (Microsoft 365): Copilot Cowork: Access Business Applications with Work IQ",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=573293",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "date": "2026-11-11T00:53:34.000Z",
+   "updated": "2026-11-11T00:53:34.000Z",
+   "summary": "Users can access Business Applications through Work IQ in Copilot Cowork and use Business Skills to complete end-to-end business processes grounded in their enterprise data and apps. This helps users move from finding the right business application to taking action across key workflows with less con",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": 0,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+4 niche (copilot, microsoft 365)",
+    "+2 user steps \"Users can\"",
+    "-5 category (In development, General Availability, Preview)"
+   ],
+   "status": "below",
+   "hash": "7d77db21"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=573290": {
+   "title": "Work IQ: Business Skills to manage your business processes in Work IQ MCP",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=573290",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "date": "2026-11-11T00:53:34.000Z",
+   "updated": "2026-11-11T00:53:34.000Z",
+   "summary": "Business skills are natural-language instructions that capture how your organization gets work done. They represent your business processes, policies, and domain knowledge in a format that agents can understand and follow. Each skill describes how to complete a specific type of work—the steps involv",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -3,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+1 niche (agents)",
+    "+2 user steps \"how to\"",
+    "-5 category (In development, General Availability, Preview)"
+   ],
+   "status": "below",
+   "hash": "2096394d"
+  },
+  "https://github.blog/changelog/2026-11-11-issue-types-and-fields-are-available-for-personal-accounts": {
+   "title": "Issue types and fields are available for personal accounts",
+   "link": "https://github.blog/changelog/2026-11-11-issue-types-and-fields-are-available-for-personal-accounts",
+   "source": "github-changelog",
+   "topic": "ai-engineering",
+   "date": "2026-11-11T17:16:46.000Z",
+   "updated": null,
+   "summary": "Issue types and issue fields are now generally available on repositories owned by personal accounts. This brings the same planning capabilities to individual developers and open source maintainers to standardize… The post Issue types and fields are available for personal accounts appeared first on T",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": 0,
+   "reasons": [
+    "-1 source github-changelog",
+    "+2 launch \"generally available\"",
+    "-1 in /news 2026-11-12-ntlm-signing-emudhra-openssh-kev"
+   ],
+   "status": "below",
+   "hash": "8a752f94",
+   "news": "2026-11-12-ntlm-signing-emudhra-openssh-kev"
+  },
+  "https://github.blog/changelog/2026-11-10-github-app-support-for-enterprise-copilot-seat-management": {
+   "title": "GitHub App support for Enterprise Copilot seat management",
+   "link": "https://github.blog/changelog/2026-11-10-github-app-support-for-enterprise-copilot-seat-management",
+   "source": "github-changelog",
+   "topic": "ai-engineering",
+   "date": "2026-11-11T00:10:31.000Z",
+   "updated": null,
+   "summary": "Enterprise GitHub Apps can now call the enterprise-level Copilot seat management APIs to control which users and enterprise teams are assigned Copilot seats. The Copilot seat management APIs are accessible… The post GitHub App support for Enterprise Copilot seat management appeared first on The GitH",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": 0,
+   "reasons": [
+    "-1 source github-changelog",
+    "+2 niche (copilot)",
+    "-1 in /news 2026-11-11-windows-23h2-end-kev-office-dependabot"
+   ],
+   "status": "below",
+   "hash": "ca3944ec",
+   "news": "2026-11-11-windows-23h2-end-kev-office-dependabot"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63963": {
+   "title": "Underwriting Auction for sale of Government Security for ₹34,000 crore on November 13, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63963",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "date": "2026-11-12T11:50:00.000Z",
+   "updated": null,
+   "summary": "Government of India has announced the sale (re-issue) of Government Security, as detailed below, through auction to be held on November 13, 2026 (Friday). As per the extant scheme of underwriting commitment notified on November 14, 2007, the amounts of Minimum Underwriting Commitment (MUC) and the m",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"₹3\""
+   ],
+   "status": "below",
+   "hash": "617cb02e"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63962": {
+   "title": "Result of the Overnight Variable Rate Reverse Repo (VRRR) auction held on November 12, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63962",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "date": "2026-11-12T11:40:00.000Z",
+   "updated": null,
+   "summary": "Tenor 1-day Notified Amount (in ₹ crore) 50,000 Total amount of offers received (in ₹ crore) 58,149 Amount accepted (in ₹ crore) 50,012 Cut off Rate (%) 5.49 Weighted Average Rate (%) 5.47 Partial Acceptance Percentage of offers received at cut off rate 59.56 Ajit Prasad Deputy General Manager (Comm",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "1808460b"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63961": {
+   "title": "RBI releases data on ECB / FCCB / RDB for September 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63961",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "date": "2026-11-12T11:35:00.000Z",
+   "updated": null,
+   "summary": "The Reserve Bank of India has today released the data on External Commercial Borrowings (ECB), Foreign Currency Convertible Bonds (FCCB) and Rupee Denominated Bonds (RDB) through General Permission and Special Permission for the month of September 2026. Ajit Prasad Deputy General Manager (Communicat",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"India\""
+   ],
+   "status": "below",
+   "hash": "24df76d3"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63960": {
+   "title": "RBI to conduct Overnight Variable Rate Reverse Repo (VRRR) auction under LAF on November 12, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63960",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "date": "2026-11-12T10:15:00.000Z",
+   "updated": null,
+   "summary": "On a review of current and evolving liquidity conditions, it has been decided to conduct a Variable Rate Reverse Repo (VRRR) auction on Thursday, November 12, 2026, as under: Sl. No. Notified Amount (₹ crore) Tenor (day) Window Timing Date of Reversal 1 50,000 1 10:45 AM to 11:15 AM November 13, 202",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "33841f14"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63959": {
+   "title": "Money Market Operations as on November 11, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63959",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "date": "2026-11-12T09:00:00.000Z",
+   "updated": null,
+   "summary": "(Amount in ₹ crore, Rate in Per cent) MONEY MARKETS @ --> Money Markets @ Volume (One Leg) Weighted Average Rate Range A. Overnight Segment (I+II+III+IV) 7,55,541.15 5.39 1.00-6.60 I. Call Money 15,202.33 5.59 4.30-5.70 II. Triparty Repo 5,53,968.65 5.35 4.51-5.55 III. Market Repo 1,78,772.07 5.48 1",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "47a9d2f4"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63958": {
+   "title": "Conversion/Switch of Government of India Securities",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63958",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "date": "2026-11-11T18:10:00.000Z",
+   "updated": null,
+   "summary": "Government of India announces the conversion/switch of its securities through auction for an aggregate amount of ₹25,000 crore (face value). The security-wise details of the conversion/switch are given as under: Date of Auction Source Securities Amount (FV) of Source Securities (in ₹ crore) Destinat",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"India\""
+   ],
+   "status": "below",
+   "hash": "8f7c68"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63957": {
+   "title": "Reserve Money and Money Supply for the fortnight ended on October 31, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63957",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "date": "2026-11-11T17:25:00.000Z",
+   "updated": null,
+   "summary": "The Reserve Bank has today released data on Reserve Money and Money Supply for the fortnight ended on October 31, 2026. Ajit Prasad Deputy General Manager (Communications) Press Release: 2026-2027/1479",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "8c689e1e"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63956": {
+   "title": "Treasury Bills: Full Auction Result",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63956",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "date": "2026-11-11T13:40:00.000Z",
+   "updated": null,
+   "summary": "(Amount in ₹ crore) Auction Results 91-Day 182-Day 364-Day I. Notified Amount 8,000 8,000 7,000 II. Competitive Bids Received (i) Number 132 91 146 (ii) Amount 27,046.800 20,021.500 21,548.500 III. Cut-off price (₹) / Yield 98.5581 96.8521 93.7900 (YTM: 5.8681%) (YTM: 6.5183%) (YTM: 6.6394%) IV. Com",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"price\""
+   ],
+   "status": "below",
+   "hash": "9905dd2d"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63955": {
+   "title": "91-Day, 182-Day and 364-Day T-Bill Auction Result: Cut-off",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63955",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "date": "2026-11-11T12:55:00.000Z",
+   "updated": null,
+   "summary": "T-Bill 91-Day 182-Day 364-Day I. Total Face Value Notified ₹8,000 Crore ₹8,000 Crore ₹7,000 Crore II. Cut-off Price (₹) and Implicit Yield at Cut-Off Price 98.5581 (YTM: 5.8681%) 96.8521 (YTM: 6.5183%) 93.7900 (YTM: 6.6394%) III. Total Face Value Accepted ₹8,000 Crore ₹8,000 Crore ₹7,000 Crore Ajit ",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"₹8\""
+   ],
+   "status": "below",
+   "hash": "592f572e"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63954": {
+   "title": "Money Market Operations as on November 10, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63954",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "date": "2026-11-11T11:30:00.000Z",
+   "updated": null,
+   "summary": "(Amount in ₹ crore, Rate in Per cent) MONEY MARKETS @ --> Money Markets @ Volume (One Leg) Weighted Average Rate Range A. Overnight Segment (I+II+III+IV) 0.00 - - I. Call Money 0.00 - - II. Triparty Repo 0.00 - - III. Market Repo 0.00 - - IV. Repo in Corporate Bond 0.00 - - B. Term Segment I. Notice",
+   "first": "2026-11-12T08:57:28.416Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "16d635bb"
+  }
+ }
+}
