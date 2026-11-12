@@ -257,6 +257,8 @@ export const UPDATE_SIGNAL = /\b(expand(s|ed|ing)?|now available (in|to|for)|mor
  * Returns { score, reasons[], reject } where reject is a reason string for items that can never qualify.
  */
 export function scoreItem(item, source, { now = Date.now(), freshHours = 36, threshold = 10 } = {}) {
+  // Security news feeds are scored differently: "leak" and "allegedly" are the subject there, not a rumour signal.
+  if (source.category === 'incident') return scoreIncident(item, source, { now, freshHours });
   const reasons = [];
   let score = 0;
   const add = (n, why) => {
@@ -308,6 +310,131 @@ export function scoreItem(item, source, { now = Date.now(), freshHours = 36, thr
   if (ageHours !== null && ageHours > freshHours) return { score, reasons, reject: `stale (${Math.round(ageHours)}h old)`, ageHours };
   if (ageHours !== null && ageHours < -24) return { score, reasons, reject: 'dated in the future', ageHours };
   return { score, reasons, reject: null, ageHours };
+}
+
+// ---------- security incidents ----------
+// Sources with "category": "incident" (security news and vendor security blogs). Big incidents on platforms EpiFive
+// readers use, or at Indian banks / UPI / Aadhaar, become a "what happened / am I affected / what to do now" guide.
+
+export const INCIDENT = /\b(breach(ed|es)?|leak(s|ed)?|hack(s|ed|ers?)?|compromis(e|ed|es)|hijack(s|ed|ing)?|stolen|steal(s|ers?|ing)?|exfiltrat\w*|ransomware|malware|infostealers?|spyware|backdoor(s|ed)?|phishing|supply[- ]chain attacks?|zero[- ]days?|0-days?|actively exploited|exploited in the wild|vulnerabilit(y|ies)|flaws?|cve-\d{4}-\d+|dark web|account takeovers?|credential stuffing|data exposure|exposed (data|records|database|customer))\b/i;
+// Platforms with a large EpiFive audience (each distinct match +3, capped at +4).
+export const MAJOR_PLATFORM = /\b(github|npm|pypi|microsoft 365|office 365|m365|outlook|exchange online|sharepoint|onedrive|microsoft teams|azure|entra|windows|google|gmail|chrome|android|apple|iphone|ios|macos|whatsapp|chatgpt|openai|claude|instagram|facebook|meta|aws|cloudflare|okta|salesforce|zoom|slack|telegram)\b/i;
+// Indian banks, payments and identity (+5): the consumer incidents Indian readers search for.
+export const INDIA_INCIDENT = /\b(sbi|state bank of india|hdfc bank|icici bank|axis bank|kotak|au small finance|small finance bank|punjab national bank|pnb|bank of baroda|canara bank|union bank of india|yes bank|indusind|idfc first|indian banks?|paytm|phonepe|bhim|upi|npci|aadhaar|uidai|digilocker|pan card|cert-in|reserve bank of india|rbi|airtel|jio|bsnl|irctc)\b/i;
+const SCALE = /\b\d+(\.\d+)?\+?\s*(million|billion|lakh|crore)\b|\b\d{1,3}(,\d{3})+\+?\s*(\w+\s)?(users|accounts|customers|repositor(y|ies)|repos|records|people|devices|sites|servers|packages|organi[sz]ations)\b/i;
+// What a reader has to do: patch, rotate, reset, check... (explicit), or user data/credentials were exposed (implied).
+export const USER_ACTION = /\b(patch(es|ed)?|update (now|immediately|to)|emergency (update|patch)|security updates?|fix(es|ed)?|rotate|revok(e|ed)|reset (your |their )?passwords?|change (your |their )?passwords?|enable (2fa|mfa|two[- ]factor)|check (if|whether|your)|are you affected|urg(es|ed) (users|customers)|warns? (users|customers)|advis(es|ory)|mitigat\w*|workaround|indicators of compromise|iocs?|uninstall|remove)\b/i;
+const AFFECTED = /\b(customers?|users?|accounts?|account holders|subscribers|developers?|repositor(y|ies)|repos|maintainers|patients|records)\b/i;
+const EXPOSURE = /\b(breach|leak|stolen|steal|hijack|compromis|exposed|exposure|dark web|ransomware|phishing)/i;
+const EXPLOITED = /\b(zero[- ]days?|0-days?|exploited|under (active )?attack|mass exploitation)\b/i;
+// A vulnerability on its own (fixed, nothing exploited or stolen) scores lower than a breach or an attack campaign.
+const VULN_ONLY = /^(vulnerabilit(y|ies)|flaws?|cve-\d{4}-\d+)$/i;
+// "A flaw could leak data" describes what a vulnerability might allow, not a breach that happened.
+const HYPOTHETICAL = /\b(could|may|might|can|lets?|allows?|enables?)\s+(\w+\s+){0,2}?(leak|expose|steal|hijack|compromise)\w*/gi;
+const INCIDENT_TOPICS = ['security-identity', 'online-safety'];
+// Sponsored posts, roundups and business news on security sites.
+const INCIDENT_NOISE = /\b(webinar|sponsored|podcast|recap|week in review|weekly|newsletter|funding|raises|acquir\w*|earnings|ipo|conference|summit|awards?|opinion|interview|buyer'?s guide|whitepaper|survey|predictions?|explained|what is)\b/i;
+export const INCIDENT_UPDATE = /\b(confirm(s|ed)?|disclos(es|ed|ure)|new details|now says|clarif\w*|(patch|fix)(es)? (released|available)|advisory|regulator|cert-in|rbi)\b/i;
+
+/** Score a security-incident item. Same return shape as scoreItem, plus category and a suggested site topic. */
+export function scoreIncident(item, source, { now = Date.now(), freshHours = 36 } = {}) {
+  const reasons = [];
+  let score = 0;
+  const add = (n, why) => {
+    if (!n) return;
+    score += n;
+    reasons.push(`${n > 0 ? '+' : ''}${n} ${why}`);
+  };
+  const title = item.title ?? '';
+  const text = `${title} ${item.summary ?? ''}`;
+  const india = INDIA_INCIDENT.test(text);
+  const base = { category: 'incident', topic: india ? 'online-safety' : source.topic ?? 'security-identity' };
+
+  if (!INCIDENT.test(text)) return { score: 0, reasons: ['not a security incident'], reject: 'not an incident', ...base };
+  const action = USER_ACTION.test(text);
+  if (!action && !(AFFECTED.test(text) && EXPOSURE.test(text))) {
+    return { score: 0, reasons: ['no concrete user action'], reject: 'incident without a user action', ...base };
+  }
+
+  add(source.weight ?? 0, `source ${source.id}`);
+  const found = [...text.replace(HYPOTHETICAL, ' flaw ').matchAll(new RegExp(INCIDENT.source, 'gi'))].map((m) => m[0]);
+  const exploited = EXPLOITED.test(text);
+  if (found.every((w) => VULN_ONLY.test(w)) && !exploited) add(2, `vulnerability "${found[0]}"`);
+  else add(3, `incident "${found.find((w) => !VULN_ONLY.test(w)) ?? found[0]}"`);
+  const majors = [...new Set((text.match(new RegExp(MAJOR_PLATFORM.source, 'gi')) ?? []).map((m) => m.toLowerCase()))];
+  add(Math.min(majors.length * 3, 4), `major platform (${majors.slice(0, 3).join(', ')})`);
+  if (india) add(5, `India banking/payments/identity "${text.match(INDIA_INCIDENT)[0]}"`);
+  if (SCALE.test(text)) add(2, `large scale "${text.match(SCALE)[0]}"`);
+  if (exploited) add(2, `exploited "${text.match(EXPLOITED)[0]}"`);
+  if (action) add(2, `user action "${text.match(USER_ACTION)[0]}"`);
+  else add(1, 'user data or credentials exposed');
+  if (INCIDENT_NOISE.test(title)) add(-5, `not an incident report "${title.match(INCIDENT_NOISE)[0]}"`);
+  if (item.alsoIn?.length) add(1, `also on ${item.alsoIn.slice(0, 2).join(', ')}`);
+  // Claims ("allegedly", "a group claims") are allowed here; the writer must label them as claims.
+  if (RUMOUR.test(text) || /\bclaim(s|ed)?\b/i.test(text)) reasons.push('contains claims: label them as claims');
+
+  const boosts = source.categoryBoost ?? {};
+  let cat = 0;
+  for (const c of item.categories ?? []) if (boosts[c] !== undefined) cat += boosts[c];
+  if (!(item.categories ?? []).length && boosts['(none)'] !== undefined) cat += boosts['(none)'];
+  add(cat, `category (${(item.categories ?? []).slice(0, 3).join(', ') || 'none'})`);
+
+  const date = Date.parse(item.date ?? '');
+  const ageHours = Number.isNaN(date) ? null : (now - date) / 3600e3;
+  if (ageHours !== null && ageHours > freshHours) return { score, reasons, reject: `stale (${Math.round(ageHours)}h old)`, ageHours, ...base };
+  if (ageHours !== null && ageHours < -24) return { score, reasons, reject: 'dated in the future', ageHours, ...base };
+  return { score, reasons, reject: null, ageHours, ...base };
+}
+
+// Words most security headlines share (as tokens() returns them, simple plural stemming applied).
+const SECURITY_WORDS = new Set(('patch patche patched fix fixe fixed flaw vulnerability bug critical remote code execution rce attack ' +
+  'attacker exploit exploited actively security update data breach leak leaked hacker hack hacked malware including could let ' +
+  'enable allow user customer warn warning campaign threat actor zero day cve cvss server after potential say report reported ' +
+  'third party provider vendor client platform service account system notifie notify exposed expose stolen information ' +
+  'personal detail access affected impact').split(' '));
+
+/**
+ * Two headlines about the same incident. Outlets word it differently, so this is looser than sameTopic, but it
+ * ignores generic security words ("patches", "flaw", "remote code execution") so unrelated advisories don't match.
+ */
+export function sameIncident(a, b) {
+  const A = tokens(a).filter((w) => !SECURITY_WORDS.has(w));
+  const B = new Set(tokens(b).filter((w) => !SECURITY_WORDS.has(w)));
+  const shared = A.filter((w) => B.has(w)).length;
+  const ratio = A.length ? shared / A.length : 0;
+  return (shared >= 4 && ratio >= 0.3) || (shared >= 3 && ratio >= 0.5);
+}
+
+/**
+ * Keep one item per incident: the highest-scored of several outlets' reports, and none for an incident that is
+ * already queued, being written or published (recent = [{ title }]). Marks the others with dupOf.
+ */
+export function markIncidentDuplicates(scored, recent = []) {
+  const kept = [];
+  for (const x of [...scored].filter((s) => s.category === 'incident').sort((a, b) => b.score - a.score)) {
+    const hit = recent.find((r) => sameIncident(x.item.title, r.title)) ?? kept.find((k) => sameIncident(x.item.title, k.item.title))?.item;
+    if (hit) {
+      x.dupOf = hit.title;
+      x.reasons.push(`same incident as "${hit.title.slice(0, 60)}"`);
+    } else kept.push(x);
+  }
+  return scored;
+}
+
+/** Signal that a covered launch or incident has news worth an update. */
+export const updateSignal = (text, category = 'launch') => (category === 'incident' ? INCIDENT_UPDATE : UPDATE_SIGNAL).test(text);
+
+/** Backlog slug from a headline. */
+export const slugify = (title) => tokens(title).filter((w) => /^[a-z0-9]+$/.test(w)).slice(0, 7).join('-') || 'launch';
+
+/** Backlog line for a launch or incident that could not be fast-tracked (daily cap or failed gate). */
+export function backlogLine({ title, date, topic, link, category = 'launch', reason, slug }) {
+  const t = cleanTitle(title);
+  const day = String(date ?? '').slice(0, 10);
+  if (category === 'incident') {
+    return `- [ ] ${slug ?? slugify(t)} | ${t}: what happened and what to do (incident ${day}) | ${topic} | incident guide (what happened / am I affected / what to do now / how to prevent it), primary sources first, from ${link} (fast-track incident, ${reason})`;
+  }
+  return `- [ ] ${slug ?? slugify(t)} | How to use ${t} (official launch ${day}) | ${topic} | set up or use the new feature, from ${link} (fast-track, ${reason})`;
 }
 
 /** +2 if a Google "trending now" query names the launch, +1 if Google autocomplete already completes its phrase. */
@@ -364,14 +491,21 @@ export function mergeDuplicates(items) {
  * Find what already covers an item.
  * posts: [{ slug, title, date, body }], news: [{ slug, body }], backlog: [{ slug, title, done }]
  */
-export function findCoverage(item, { posts = [], news = [], backlog = [] }) {
+export function findCoverage(item, { posts = [], news = [], backlog = [] }, { loose = false, now = Date.now() } = {}) {
   const key = normalizeUrl(item.link).replace(/^https:\/\//, '').split('#')[0];
   const inBody = (body) => body && body.toLowerCase().includes(key.toLowerCase()) && key.split('/').length > 2;
+  // Incidents (loose): another outlet's headline about an incident we already covered still counts as covered.
+  // Only security and online-safety posts are compared, and only recent ones (45 days) also by their opening
+  // paragraph, which carries the numbers and names; older how-tos would match on words like "client" or "Outlook".
+  const same = loose ? sameIncident : sameTopic;
+  const candidates = loose ? posts.filter((p) => !p.topic || INCIDENT_TOPICS.includes(p.topic)) : posts;
+  const recent = (p) => p.date && now - Date.parse(p.date) < 45 * 86400e3;
+  const intro = (p) => (loose && recent(p) ? (p.body ?? '').replace(/^---[\s\S]*?\n---/, '').slice(0, 600) : '');
   const post =
     posts.find((p) => inBody(p.body)) ??
-    posts.find((p) => sameTopic(item.title, `${p.title} ${p.slug.replace(/-/g, ' ')}`));
+    candidates.find((p) => same(item.title, `${p.title} ${p.slug.replace(/-/g, ' ')} ${intro(p)}`));
   const newsHit = news.find((n) => inBody(n.body));
-  const backlogHit = backlog.find((b) => !b.done && sameTopic(item.title, `${b.title} ${b.slug.replace(/-/g, ' ')}`));
+  const backlogHit = backlog.find((b) => !b.done && same(item.title, `${b.title} ${b.slug.replace(/-/g, ' ')}`));
   return { post: post ?? null, news: newsHit ?? null, backlog: backlogHit ?? null };
 }
 
@@ -449,16 +583,33 @@ const REQUIRED_SECTIONS = [
   ['sources', /^## (Sources|References)\s*$/m],
 ];
 
-/** Extra structure check for fast-track how-tos (the site's check-posts.mjs gate runs as well). */
-export function checkFastTrack(text, { kind = 'new', today } = {}) {
+// Security incident guides (automation/RADAR.md, "Security incidents").
+const INCIDENT_SECTIONS = [
+  ['what happened', /^## What happened\b/im],
+  ['am I affected', /^## (Am I affected|Are you affected|Who is affected)/im],
+  ['what to do now', /^## What to do\b/im],
+  ['how to prevent it', /^## (How to prevent|How to protect|Preventing|Prevention)/im],
+  ['what we checked', /^## What we checked\s*$/m],
+  ['sources', /^## (Sources|References)\s*$/m],
+];
+// A bare IPv4 address in an incident guide: indicators must be defanged as published (194.150.166[.]244).
+const BARE_IPV4 = /\b(?:25[0-5]|2[0-4]\d|1?\d?\d)(?:\.(?:25[0-5]|2[0-4]\d|1?\d?\d)){3}\b/;
+
+/** Extra structure check for fast-track how-tos and incident guides (the site's check-posts.mjs gate runs as well). */
+export function checkFastTrack(text, { kind = 'new', today, category = 'launch' } = {}) {
   const markdown = text.replace(/\r\n/g, '\n');
   const errors = [];
   const fm = markdown.match(/^---\n([\s\S]*?)\n---/);
   const front = fm?.[1] ?? '';
   const body = fm ? markdown.slice(fm[0].length) : markdown;
   if (kind === 'new') {
-    for (const [name, re] of REQUIRED_SECTIONS) if (!re.test(body)) errors.push(`missing a "## ..." section for: ${name}`);
+    const required = category === 'incident' ? INCIDENT_SECTIONS : REQUIRED_SECTIONS;
+    for (const [name, re] of required) if (!re.test(body)) errors.push(`missing a "## ..." section for: ${name}`);
     if (!/^faqs:/m.test(front)) errors.push('missing faqs in frontmatter (the FAQ)');
+    if (category === 'incident') {
+      const ip = body.match(BARE_IPV4);
+      if (ip) errors.push(`incident: IP address ${ip[0]} is not defanged; write indicators exactly as the source publishes them, e.g. 192.0.2[.]1`);
+    }
   } else {
     if (!/^updated:\s*'?\d{4}-\d{2}-\d{2}'?\s*$/m.test(front)) errors.push('update: frontmatter needs updated: YYYY-MM-DD');
     if (today && !new RegExp(`\\*\\*Updated ${today}[:.]?\\*\\*|\\*\\*Updated \\d{1,2} \\w+ \\d{4}[:.]?\\*\\*`).test(body)) {

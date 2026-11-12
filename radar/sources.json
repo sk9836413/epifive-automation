@@ -1,5 +1,5 @@
 {
-  "_about": "Launch radar sources: official feeds and pages only (no news sites, no rumours). 'verified' = HTTP 200 with parseable items from an honest user agent on that date. Weight shifts every item's score for that source (high-volume or broad feeds get 0 or less). categoryBoost adds points per feed category; '(none)' applies when an item has no category.",
+  "_about": "Launch radar sources: official feeds and pages only for launches (no news sites, no rumours). Sources with category 'incident' are security news and vendor security blogs, used only to discover incidents (scoreIncident in lib.mjs); the writer cites primary sources and labels claims (site automation/RADAR.md). 'verified' = HTTP 200 with parseable items from an honest user agent on that date. Weight shifts every item's score for that source (high-volume or broad feeds get 0 or less). categoryBoost adds points per feed category; '(none)' applies when an item has no category.",
   "settings": {
     "threshold": 10,
     "freshHours": 36,
@@ -38,7 +38,20 @@
     { "id": "meta-newsroom", "name": "Meta Newsroom", "url": "https://about.fb.com/news/feed/", "type": "rss", "weight": 0, "topic": "online-safety", "verified": "2026-11-12" },
     { "id": "anthropic-news", "name": "Anthropic News", "url": "https://www.anthropic.com/news", "type": "html-list", "linkPattern": "^/news/[a-z0-9-]+$", "weight": 1, "topic": "ai-automation", "verified": "2026-11-12" },
     { "id": "github-changelog", "name": "GitHub Changelog", "url": "https://github.blog/changelog/feed/", "type": "rss", "weight": -1, "topic": "ai-engineering", "verified": "2026-11-12" },
-    { "id": "rbi-press", "name": "Reserve Bank of India press releases", "url": "https://www.rbi.org.in/pressreleases_rss.xml", "type": "rss", "weight": -1, "topic": "online-safety", "verified": "2026-11-12" }
+    { "id": "rbi-press", "name": "Reserve Bank of India press releases", "url": "https://www.rbi.org.in/pressreleases_rss.xml", "type": "rss", "weight": -1, "topic": "online-safety", "verified": "2026-11-12" },
+
+    { "id": "thn", "name": "The Hacker News", "url": "https://feeds.feedburner.com/TheHackersNews", "type": "rss", "category": "incident", "weight": 1, "topic": "security-identity",
+      "note": "Security news: discovery only. The writer cites the primary source (vendor or company statement, researcher post, exchange filing, advisory) and labels unverified claims.", "verified": "2026-11-12" },
+    { "id": "bleepingcomputer", "name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/feed/", "type": "rss", "category": "incident", "weight": 1, "topic": "security-identity",
+      "categoryBoost": { "Security": 1, "Technology": -2, "Software": -1, "Mobile": -1, "Gaming": -3, "Deals": -6 }, "note": "Security news: discovery only (see thn).", "verified": "2026-11-12" },
+    { "id": "github-security-blog", "name": "GitHub Blog: Security", "url": "https://github.blog/security/feed/", "type": "rss", "category": "incident", "weight": 1, "topic": "security-identity",
+      "note": "Official GitHub security posts and advisories (also feature posts; those are rejected unless they describe an incident or vulnerability with a user action).", "verified": "2026-11-12" },
+    { "id": "ms-security-blog", "name": "Microsoft Security Blog", "url": "https://www.microsoft.com/en-us/security/blog/feed/", "type": "rss", "category": "incident", "weight": 0, "topic": "security-identity",
+      "note": "Official Microsoft threat intelligence and incident posts. Stands in for the MSRC blog, which has no working feed (see notUsed).", "verified": "2026-11-12" },
+    { "id": "theprint-tech", "name": "ThePrint: Tech", "url": "https://theprint.in/category/tech/feed/", "type": "rss", "category": "incident", "weight": 1, "topic": "online-safety",
+      "note": "Indian tech and business news, for Indian bank, UPI, Aadhaar and consumer breaches. Discovery only: cite the company's exchange filing or statement first.", "verified": "2026-11-12" },
+    { "id": "medianama", "name": "MediaNama", "url": "https://www.medianama.com/feed/", "type": "rss", "category": "incident", "weight": 1, "topic": "online-safety",
+      "note": "Indian tech policy news, for Indian consumer breaches and CERT-In or RBI actions. Discovery only (see theprint-tech).", "verified": "2026-11-12" }
   ],
   "notUsed": [
     { "name": "OpenAI Help Center release notes", "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes", "reason": "HTTP 403 bot challenge for automated clients (2026-11-12). ChatGPT launches are covered through the OpenAI News RSS (category Product); the writer may still open help.openai.com pages while researching." },
@@ -47,6 +60,9 @@
     { "name": "UIDAI (Aadhaar) press releases", "url": "https://uidai.gov.in/en/", "reason": "No feed; the press-release page returns 404 and the home page is rendered by JavaScript (2026-11-12)." },
     { "name": "NPCI press releases", "url": "https://www.npci.org.in/media/press-releases", "reason": "JavaScript app shell with no items in the HTML (2026-11-12)." },
     { "name": "DigiLocker", "url": "https://www.digilocker.gov.in/", "reason": "No news feed or dated announcements page (2026-11-12)." },
-    { "name": "Press Information Bureau RSS", "url": "https://pib.gov.in/RssMain.aspx?ModId=6&Lang=1&Regid=3", "reason": "HTTP 403 to automated clients (2026-11-12)." }
+    { "name": "Press Information Bureau RSS", "url": "https://pib.gov.in/RssMain.aspx?ModId=6&Lang=1&Regid=3", "reason": "HTTP 403 to automated clients (2026-11-12)." },
+    { "name": "CERT-In advisories and vulnerability notes", "url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBADVLIST", "reason": "No RSS; the home page is a frameset and the advisory and vulnerability-note list pages return a script shell or 'Page Requested Currently Not available' to automated clients (2026-11-12). The writer may still open CERT-In pages while researching." },
+    { "name": "Microsoft Security Response Center (MSRC) blog", "url": "https://msrc.microsoft.com/blog/feed", "reason": "The feed URL redirects to the HTML blog page (https://www.microsoft.com/en-us/msrc/blog), which renders its post list with JavaScript (2026-11-12). The Microsoft Security Blog feed (ms-security-blog) is used instead." },
+    { "name": "MSRC Security Update Guide RSS", "url": "https://api.msrc.microsoft.com/update-guide/rss", "reason": "Works, but lists every CVE (about 5,700 items, 3 MB) with no exploited-in-the-wild flag, so it would flood the radar (2026-11-12)." }
   ]
 }

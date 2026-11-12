@@ -1,5 +1,7 @@
 # Launch radar: watches official product feeds (radar/sources.json) and publishes a same-day step-by-step
 # how-to for a big launch ("fast track", site instructions automation/RADAR.md), on top of the daily article.
+# Sources with category "incident" (security news, vendor security blogs) add same-day security incident guides
+# ("what happened / am I affected / what to do now / how to prevent it"), under the same daily caps.
 #
 # When: no cron of its own. It starts whenever the scheduler requests the Daily article (43 3 and 43 4 UTC) or
 # Social media (13 5, 16 13 and 16 14 UTC) workflow, so it rides the scheduler's 5 existing slots (up to 5 scans
@@ -29,6 +31,11 @@ on:
         description: Fast-track this official URL now (skips the threshold and daily caps)
         type: string
         default: ''
+      force_category:
+        description: With force_url, write a launch how-to or a security incident guide
+        type: choice
+        options: [launch, incident]
+        default: launch
       task:
         description: Task JSON (write mode only; the scan fills it in)
         type: string
@@ -79,11 +86,12 @@ jobs:
         env:
           DRY: ${{ inputs.dry_run && 'true' || '' }}
           FORCE_URL: ${{ inputs.force_url }}
+          FORCE_CATEGORY: ${{ inputs.force_category }}
           TRIGGER: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.name || 'manual' }}
         run: |
           args=(scan --site site --out task.json --trigger "$TRIGGER")
           [ -n "$DRY" ] && args+=(--dry-run)
-          [ -n "$FORCE_URL" ] && args+=(--force-url "$FORCE_URL")
+          [ -n "$FORCE_URL" ] && args+=(--force-url "$FORCE_URL" --force-category "${FORCE_CATEGORY:-launch}")
           node radar/radar.mjs "${args[@]}" | tee -a "$GITHUB_STEP_SUMMARY"
 
       - name: Park expired launches in the site backlog
@@ -164,8 +172,9 @@ jobs:
             const t = JSON.parse(require("fs").readFileSync(".radar-task.json", "utf8"));
             if (!["new", "update"].includes(t.kind) || !t.key || !t.link) { console.error("Bad task"); process.exit(1); }
             if (t.kind === "update" && !/^[a-z0-9-]+$/.test(t.slug ?? "")) { console.error("Update without a valid slug"); process.exit(1); }
-            require("fs").appendFileSync(process.env.GITHUB_OUTPUT, `kind=${t.kind}\nkey=ok\nslug=${t.slug ?? ""}\n`);
-            console.log(`${t.kind}: ${t.title}\n${t.link}\nscore ${t.score}: ${(t.reasons ?? []).join("; ")}`);
+            const category = t.category === "incident" ? "incident" : "launch";
+            require("fs").appendFileSync(process.env.GITHUB_OUTPUT, `kind=${t.kind}\nkey=ok\nslug=${t.slug ?? ""}\ncategory=${category}\n`);
+            console.log(`${t.kind} (${category}): ${t.title}\n${t.link}\nscore ${t.score}: ${(t.reasons ?? []).join("; ")}`);
           '
           echo "today=$(TZ=Asia/Kolkata date +%F)" >> "$GITHUB_OUTPUT"
 
@@ -180,8 +189,11 @@ jobs:
             --max-turns 150
             --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node scripts/check-posts.mjs:*),Bash(node _radar/radar/radar.mjs check:*),Bash(ls:*),Bash(wc:*)"
           prompt: |
-            Launch radar fast-track, mode "${{ steps.task.outputs.kind }}". Today's date (IST) is ${{ steps.task.outputs.today }}.
-            The launch is described in .radar-task.json. Read automation/RADAR.md and follow it exactly (it builds on
+            Launch radar fast-track, mode "${{ steps.task.outputs.kind }}", category "${{ steps.task.outputs.category }}".
+            Today's date (IST) is ${{ steps.task.outputs.today }}. For category "incident", follow the "Security incidents"
+            section of RADAR.md (primary sources first, label claims as claims, name no individuals, no speculation, only
+            published indicators of compromise).
+            The item is described in .radar-task.json. Read automation/RADAR.md and follow it exactly (it builds on
             automation/WRITER.md, which you should also read). The repository is already checked out at the latest main.
             Do not run npm, git or a build, and do not edit automation/backlog.md or automation/log.md: later workflow
             steps check, build, publish and record. Never mention any person's name; publish under the EpiFive brand only.
@@ -218,10 +230,11 @@ jobs:
           FILE: ${{ steps.post.outputs.file }}
           SLUG: ${{ steps.post.outputs.slug }}
           KIND: ${{ steps.task.outputs.kind }}
+          CATEGORY: ${{ steps.task.outputs.category }}
           TODAY: ${{ steps.task.outputs.today }}
         run: |
           set +e
-          { node scripts/check-posts.mjs "$SLUG" && node _radar/radar/radar.mjs check --file "$FILE" --kind "$KIND" --today "$TODAY"; } > .radar-gate.txt 2>&1
+          { node scripts/check-posts.mjs "$SLUG" && node _radar/radar/radar.mjs check --file "$FILE" --kind "$KIND" --today "$TODAY" --category "$CATEGORY"; } > .radar-gate.txt 2>&1
           rc=$?
           cat .radar-gate.txt
           if [ $rc = 0 ]; then echo "ok=true" >> "$GITHUB_OUTPUT"; else echo "ok=false" >> "$GITHUB_OUTPUT"; fi
@@ -238,7 +251,7 @@ jobs:
             --max-turns 60
             --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node scripts/check-posts.mjs:*),Bash(node _radar/radar/radar.mjs check:*),Bash(ls:*),Bash(wc:*)"
           prompt: |
-            The quality gate failed for ${{ steps.post.outputs.file }} (launch radar, mode "${{ steps.task.outputs.kind }}",
+            The quality gate failed for ${{ steps.post.outputs.file }} (launch radar, mode "${{ steps.task.outputs.kind }}", category "${{ steps.task.outputs.category }}",
             today ${{ steps.task.outputs.today }}). The errors are in .radar-gate.txt. Fix them in that one file only,
             following automation/RADAR.md and automation/WRITER.md: add real, official-source content where something is
             missing, never invented facts. Re-run both checks named in RADAR.md until they pass. Edit no other file.
@@ -250,10 +263,11 @@ jobs:
           FILE: ${{ steps.post.outputs.file }}
           SLUG: ${{ steps.post.outputs.slug }}
           KIND: ${{ steps.task.outputs.kind }}
+          CATEGORY: ${{ steps.task.outputs.category }}
           TODAY: ${{ steps.task.outputs.today }}
         run: |
           set +e
-          { node scripts/check-posts.mjs "$SLUG" && node _radar/radar/radar.mjs check --file "$FILE" --kind "$KIND" --today "$TODAY"; } > .radar-gate.txt 2>&1
+          { node scripts/check-posts.mjs "$SLUG" && node _radar/radar/radar.mjs check --file "$FILE" --kind "$KIND" --today "$TODAY" --category "$CATEGORY"; } > .radar-gate.txt 2>&1
           rc=$?
           cat .radar-gate.txt
           if [ $rc = 0 ]; then echo "ok=true" >> "$GITHUB_OUTPUT"; else echo "ok=false" >> "$GITHUB_OUTPUT"; fi

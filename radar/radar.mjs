@@ -2,14 +2,14 @@
 // Launch radar: spots big product launches on official feeds and queues a same-day "fast-track" how-to.
 // See README section "Launch radar" and the site's automation/RADAR.md (the writer's instructions).
 //
-//   node radar/radar.mjs scan --site <site checkout> [--dry-run] [--force-url <url>] [--out task.json]
+//   node radar/radar.mjs scan --site <site checkout> [--dry-run] [--force-url <url> [--force-category incident]] [--out task.json]
 //        fetch every source, score and de-duplicate new items, log the run, pick at most one task
 //   node radar/radar.mjs record --task task.json --status published|failed|skipped [--slug s] [--title t]
 //        append the write job's outcome to radar/results.jsonl (the next scan folds it into state.json)
 //   node radar/radar.mjs site-apply --site . --task task.json --result published|failed [--file content/posts/x.md]
 //        edit automation/backlog.md and automation/log.md in the site checkout for that outcome
-//   node radar/radar.mjs check --file content/posts/x.md --kind new|update [--today YYYY-MM-DD]
-//        fast-track structure check (sections, FAQ, sources); exit 1 with the problems
+//   node radar/radar.mjs check --file content/posts/x.md --kind new|update [--today YYYY-MM-DD] [--category launch|incident]
+//        fast-track structure check (sections, FAQ, sources; incident guides: their own sections, defanged IPs)
 //
 // State (all in this public repo, no secrets): radar/state.json (items seen and their decisions),
 // radar/results.jsonl (write outcomes), radar/log/<YYYY-MM>.md (one block per run).
@@ -18,7 +18,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   parseSource, normalizeUrl, scoreItem, trendBoost, searchPhrase, findCoverage, parseBacklog, hashText,
-  istDate, todayCounts, mergeDuplicates, cleanTitle, parkInBacklog, markPublished, logLine, checkFastTrack, UPDATE_SIGNAL, tokens,
+  istDate, todayCounts, mergeDuplicates, parkInBacklog, markPublished, logLine, checkFastTrack, updateSignal,
+  markIncidentDuplicates, backlogLine,
 } from './lib.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -39,7 +40,6 @@ const opt = (name, fallback = undefined) => {
 const readJson = (f, fallback) => (fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : fallback);
 const readResults = () => (fs.existsSync(RESULTS) ? fs.readFileSync(RESULTS, 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l)) : []);
 const ghOutput = (key, value) => process.env.GITHUB_OUTPUT && fs.appendFileSync(process.env.GITHUB_OUTPUT, `${key}=${value}\n`);
-const slugify = (title) => tokens(title).filter((w) => /^[a-z0-9]+$/.test(w)).slice(0, 7).join('-') || 'launch';
 
 async function get(url, { timeout = 30000 } = {}) {
   const res = await fetch(url, { headers: { 'User-Agent': S.userAgent }, signal: AbortSignal.timeout(timeout), redirect: 'follow' });
@@ -60,7 +60,7 @@ function loadSite(site) {
   const posts = read('content/posts').map((f) => {
     const text = fs.readFileSync(path.join(dir('content/posts'), f), 'utf8').replace(/\r\n/g, '\n');
     const front = text.match(/^---\n([\s\S]*?)\n---/)?.[1] ?? '';
-    return { slug: f.replace(/\.mdx?$/, ''), title: frontValue(front, 'title'), date: frontValue(front, 'date'), body: text };
+    return { slug: f.replace(/\.mdx?$/, ''), title: frontValue(front, 'title'), date: frontValue(front, 'date'), topic: frontValue(front, 'topic'), body: text };
   });
   const news = read('content/news').map((f) => ({ slug: f.replace(/\.md$/, ''), body: fs.readFileSync(path.join(dir('content/news'), f), 'utf8') }));
   const backlogFile = path.join(site, 'automation', 'backlog.md');
@@ -135,14 +135,20 @@ async function scan() {
     }
     const s = scoreItem(item, item.source, { now, freshHours: S.freshHours, threshold: S.threshold });
     if (s.reject && key !== forceUrl) continue; // stale or rumour: never stored, re-checked for free next run
-    const cov = findCoverage(item, site);
+    const cov = findCoverage(item, site, { loose: s.category === 'incident', now });
     if (cov.news) s.score -= 1, s.reasons.push(`-1 in /news ${cov.news.slug}`);
     if (cov.backlog) s.reasons.push(`backlog ${cov.backlog.slug}`);
     scored.push({ key, item, hash, ...s, cov });
   }
 
+  // One guide per incident: drop other outlets' reports of the same incident, and incidents already queued,
+  // being written or published in the last 3 days.
+  const recentIncidents = Object.values(state.seen).filter((s) => s.category === 'incident' &&
+    ['queued', 'writing', 'published', 'updated'].includes(s.status) && now - Date.parse(s.first) < 3 * 86400e3);
+  markIncidentDuplicates(scored, recentIncidents);
+
   // 4. Cheap search-demand signals for the best few (Google Trends RSS + autocomplete, as in trend-signals.mjs).
-  const top = scored.filter((x) => x.score >= S.threshold - 2 && !x.cov.post).sort((a, b) => b.score - a.score).slice(0, S.trendLookups);
+  const top = scored.filter((x) => x.score >= S.threshold - 2 && !x.cov.post && !x.dupOf).sort((a, b) => b.score - a.score).slice(0, S.trendLookups);
   if (top.length) {
     const trending = [];
     for (const geo of ['US', 'IN']) {
@@ -170,8 +176,9 @@ async function scan() {
   // 5. Decide per item.
   for (const x of scored) {
     let status = x.score >= S.threshold ? 'queued' : 'below';
-    if (x.cov.post) {
-      const canUpdate = UPDATE_SIGNAL.test(`${x.item.title} ${x.item.summary}`) && x.score >= S.threshold - 2;
+    if (x.dupOf) status = 'duplicate';
+    else if (x.cov.post) {
+      const canUpdate = updateSignal(`${x.item.title} ${x.item.summary}`, x.category) && x.score >= S.threshold - 2;
       if (canUpdate) updates.push({ key: x.key, item: x.item, slug: x.cov.post.slug, score: x.score, why: `update to /blog/${x.cov.post.slug}` });
       status = canUpdate ? 'update-candidate' : 'duplicate';
       x.reasons.push(`covered by /blog/${x.cov.post.slug}`);
@@ -179,7 +186,8 @@ async function scan() {
     if (x.key === forceUrl) status = 'queued';
     x.status = status;
     state.seen[x.key] = {
-      title: x.item.title, link: x.item.link, source: x.item.source.id, topic: x.item.source.topic, date: x.item.date, updated: x.item.updated,
+      title: x.item.title, link: x.item.link, source: x.item.source.id, topic: x.topic ?? x.item.source.topic, category: x.category ?? 'launch',
+      date: x.item.date, updated: x.item.updated,
       summary: x.item.summary.slice(0, 300), first: new Date(now).toISOString(), score: x.score, reasons: x.reasons, status, hash: x.hash,
       backlog: x.cov.backlog?.slug, news: x.cov.news?.slug, post: x.cov.post?.slug,
     };
@@ -192,7 +200,7 @@ async function scan() {
     const age = (now - Date.parse(s.date ?? s.first)) / 3600e3;
     if (s.status === 'queued' && age > S.freshHours + 12) {
       s.status = 'expired';
-      parks.push({ key, line: `- [ ] ${slugify(cleanTitle(s.title))} | How to use ${cleanTitle(s.title)} (official launch ${String(s.date).slice(0, 10)}) | ${s.topic} | set up or use the new feature, from ${s.link} (fast-track, daily cap)` });
+      parks.push({ key, line: backlogLine({ ...s, reason: 'daily cap' }) });
     }
   }
 
@@ -202,14 +210,17 @@ async function scan() {
   let task = null;
   if (forceUrl && !state.seen[forceUrl]) note('Forced URL was not found in any fresh source item; using the URL alone.');
   if (forceUrl) {
-    const s = state.seen[forceUrl] ?? { title: opt('force-title', forceUrl), link: opt('force-url'), source: 'manual', topic: 'ai-automation', date: new Date(now).toISOString(), summary: '', score: 0, reasons: ['forced'] };
+    const forcedIncident = opt('force-category') === 'incident';
+    const s = state.seen[forceUrl] ?? { title: opt('force-title', forceUrl), link: opt('force-url'), source: 'manual', topic: forcedIncident ? 'security-identity' : 'ai-automation',
+      category: forcedIncident ? 'incident' : 'launch', date: new Date(now).toISOString(), summary: '', score: 0, reasons: ['forced'] };
+    if (forcedIncident) s.category = 'incident';
     state.seen[forceUrl] = s;
     task = { kind: 'new', key: forceUrl, forced: true };
   } else if (queued.length && counts.newPublished < S.maxNewPerDay && counts.attempts < S.maxAttemptsPerDay) {
     task = { kind: 'new', key: queued[0][0] };
   } else if (updates.length && counts.updates < S.maxUpdatesPerDay) {
     const u = updates.sort((a, b) => b.score - a.score)[0];
-    if (!state.seen[u.key]) state.seen[u.key] = { title: u.item.title, link: u.item.link, source: u.item.source.id, topic: u.item.source.topic, date: u.item.date, first: new Date(now).toISOString(), score: u.score, reasons: [] };
+    if (!state.seen[u.key]) state.seen[u.key] = { title: u.item.title, link: u.item.link, source: u.item.source.id, topic: u.item.source.topic, category: u.item.source.category ?? 'launch', date: u.item.date, first: new Date(now).toISOString(), score: u.score, reasons: [] };
     Object.assign(state.seen[u.key], { updated: u.item.updated, hash: hashText(`${u.item.title} ${u.item.summary}`), summary: u.item.summary.slice(0, 300) });
     task = { kind: 'update', key: u.key, slug: u.slug, why: u.why };
   }
@@ -218,7 +229,7 @@ async function scan() {
     const src = CONFIG.sources.find((x) => x.id === s.source);
     Object.assign(task, {
       today, title: s.title, link: s.link, published: s.date, summary: s.summary, score: s.score, reasons: s.reasons,
-      source: { id: s.source, name: src?.name ?? 'manual', feed: src?.url ?? null }, topic: s.topic,
+      source: { id: s.source, name: src?.name ?? 'manual', feed: src?.url ?? null }, topic: s.topic, category: s.category ?? 'launch',
       backlog: s.backlog ?? null, news: s.news ?? null, slug: task.slug ?? null, dryRun,
     });
     if (!dryRun) Object.assign(s, { status: 'writing', kind: task.kind, taskAt: new Date(now).toISOString(), attempts: (s.attempts ?? 0) + 1 });
@@ -294,8 +305,8 @@ function siteApply() {
     if (task.kind === 'new') backlog = markPublished(backlog, { slug, title: frontValue(front, 'title'), date: today });
     log = logLine(log, { date: today, slug, status: task.kind === 'update' ? 'fast-track update' : 'fast-track', words });
   } else if (result === 'failed' && task.kind === 'new') {
-    const slug = typeof opt('slug') === 'string' ? opt('slug') : slugify(cleanTitle(task.title));
-    backlog = parkInBacklog(backlog, `- [ ] ${slug} | How to use ${cleanTitle(task.title)} (official launch ${String(task.published).slice(0, 10)}) | ${task.topic} | set up or use the new feature, from ${task.link} (fast-track, failed gate)`);
+    const slug = typeof opt('slug') === 'string' ? opt('slug') : undefined;
+    backlog = parkInBacklog(backlog, backlogLine({ title: task.title, date: task.published, topic: task.topic, link: task.link, category: task.category, reason: 'failed gate', slug }));
   }
   fs.writeFileSync(backlogFile, backlog);
   fs.writeFileSync(logFile, log);
@@ -304,7 +315,10 @@ function siteApply() {
 
 function check() {
   const file = opt('file');
-  const errors = checkFastTrack(fs.readFileSync(file, 'utf8'), { kind: opt('kind', 'new'), today: typeof opt('today') === 'string' ? opt('today') : undefined });
+  const errors = checkFastTrack(fs.readFileSync(file, 'utf8'), {
+    kind: opt('kind', 'new'), today: typeof opt('today') === 'string' ? opt('today') : undefined,
+    category: opt('category') === 'incident' ? 'incident' : 'launch',
+  });
   if (errors.length) {
     console.error(`Fast-track check failed for ${file}:\n${errors.map((e) => `  - ${e}`).join('\n')}`);
     process.exit(1);

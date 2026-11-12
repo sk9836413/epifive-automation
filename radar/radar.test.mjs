@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {
   parseFeed, parseSitemap, parseHtmlList, parseDatedSections, normalizeUrl, scoreItem, mergeDuplicates, findCoverage,
   parseBacklog, sameTopic, todayCounts, parkInBacklog, markPublished, logLine, checkFastTrack, trendBoost, istDate, RADAR_MARK,
-  datesIn, daysToDeadline,
+  datesIn, daysToDeadline, scoreIncident, sameIncident, markIncidentDuplicates, backlogLine, updateSignal,
 } from './lib.mjs';
 
 const NOW = Date.parse('2026-11-10T14:00:00Z');
@@ -272,4 +272,142 @@ test('cleanTitle drops announcement wording for backlog titles', async () => {
 
 test('checkFastTrack accepts Windows line endings', () => {
   assert.deepEqual(checkFastTrack(GOOD.replace(/\n/g, '\r\n')), []);
+});
+
+// ---------- security incidents ----------
+
+const thn = { id: 'thn', weight: 1, topic: 'security-identity', category: 'incident' };
+const theprint = { id: 'theprint-tech', weight: 1, topic: 'online-safety', category: 'incident' };
+
+test('a large incident on a major platform clears the threshold and is tagged as an incident', () => {
+  const r = scoreItem(item({
+    title: 'Attacker Used 4,837 Hijacked GitHub Accounts to Run a CI Secret Stealer in 1,806+ Repositories',
+    summary: 'Probe pull requests from compromised accounts; rotate secrets.',
+  }), thn, { now: NOW });
+  assert.equal(r.reject, null);
+  assert.equal(r.category, 'incident');
+  assert.equal(r.topic, 'security-identity');
+  assert.ok(r.score >= 10, r.reasons.join('; '));
+});
+
+test('an Indian bank leak scores high, goes to online-safety, and claims are flagged instead of rejected', () => {
+  const r = scoreItem(item({
+    title: 'AU Small Finance Bank probes potential data leak after hacker group claims breach',
+    summary: 'The bank said a SaaS platform holds limited data relating to its vehicle loan customers. The group allegedly holds KYC records.',
+  }), theprint, { now: NOW });
+  assert.equal(r.reject, null);
+  assert.equal(r.topic, 'online-safety');
+  assert.ok(r.score >= 10, r.reasons.join('; '));
+  assert.ok(r.reasons.some((x) => x.includes('label them as claims')));
+  // The same "allegedly" wording on a launch feed is still a rumour.
+  assert.equal(scoreItem(item({ title: 'Galaxy phone allegedly leaked' }), plain, { now: NOW }).reject, 'rumour');
+});
+
+test('incident items need a concrete user action and must be incidents at all', () => {
+  assert.equal(scoreIncident(item({ title: 'The evolution of ransomware families since 2020' }), thn, { now: NOW }).reject, 'incident without a user action');
+  assert.equal(scoreIncident(item({ title: 'Google AI hub to begin operations in 2028' }), theprint, { now: NOW }).reject, 'not an incident');
+  assert.match(scoreIncident(item({ title: 'Old breach exposed customer emails', date: '2026-11-01T00:00:00Z' }), thn, { now: NOW }).reject, /^stale/);
+});
+
+test('an exploited zero-day on a major platform beats a routine patch for a niche product', () => {
+  const zeroDay = scoreIncident(item({ title: 'Google Issues Chrome Security Update for Actively Exploited Zero-Day' }), thn, { now: NOW });
+  const routine = scoreIncident(item({ title: 'Citrix Patches 12 NetScaler Flaws, Including Authentication Bypass' }), thn, { now: NOW });
+  assert.ok(zeroDay.score >= 10, zeroDay.reasons.join('; '));
+  assert.ok(routine.score < 10, routine.reasons.join('; '));
+  assert.ok(routine.reasons.some((x) => x.includes('vulnerability')));
+});
+
+test('sponsored posts and webinars on security feeds are pushed down', () => {
+  const r = scoreIncident(item({ title: 'Webinar: how to stop GitHub account takeover and rotate secrets' }), thn, { now: NOW });
+  assert.ok(r.score < 10);
+  assert.ok(r.reasons.some((x) => x.includes('not an incident report')));
+});
+
+test('sameIncident matches different outlets\' headlines but not unrelated advisories', () => {
+  assert.ok(sameIncident('Attacker Used 4,837 Hijacked GitHub Accounts to Run a CI Secret Stealer',
+    'Hijacked GitHub accounts push CI secret stealer to thousands of repositories'));
+  assert.ok(!sameIncident('SAP Patches Four CVSS 10.0 Flaws, Including Two Enabling Remote Code Execution',
+    'PTC Patches Critical Windchill and FlexPLM Flaw That Could Enable Remote Code Execution'));
+  assert.ok(!sameIncident('HDFC Bank customers targeted by phishing SMS', 'AU Small Finance Bank data leak: what happened and what to do'));
+});
+
+test('markIncidentDuplicates keeps the best report of an incident and drops ones already queued or written', () => {
+  const mk = (title, score) => ({ item: { title }, score, reasons: [], category: 'incident' });
+  const a = mk('Hijacked GitHub Accounts Push CI Secret Stealer to Thousands of Repositories', 12);
+  const b = mk('Attacker Used 4,837 Hijacked GitHub Accounts to Run a CI Secret Stealer', 10);
+  const c = mk('SBI says 3,897 customer records found on dark web', 11);
+  const launch = { item: { title: 'Hijacked GitHub accounts CI secret stealer' }, score: 9, reasons: [], category: 'launch' };
+  markIncidentDuplicates([a, b, c, launch], [{ title: 'SBI customer records on the dark web: 3,897 found' }]);
+  assert.equal(a.dupOf, undefined);
+  assert.equal(b.dupOf, a.item.title);
+  assert.ok(c.dupOf);
+  assert.equal(launch.dupOf, undefined);
+});
+
+test('findCoverage (loose) finds a recent incident post through its opening paragraph, not old how-tos', () => {
+  const posts = [{
+    slug: 'sbi-data-leak-dark-web-what-customers-should-do', title: 'SBI Data Leak on the Dark Web: What SBI Said and What to Do',
+    date: '2026-11-09', topic: 'online-safety',
+    body: "---\ntitle: x\n---\n\nState Bank of India said 3,897 customer records were found among records on the dark web.",
+  }];
+  const it = { title: 'SBI says 3,897 customer records found on dark web, probe on', link: 'https://example.com/sbi' };
+  assert.equal(findCoverage(it, { posts }, { loose: true, now: NOW }).post?.slug, posts[0].slug);
+  assert.equal(findCoverage(it, { posts }).post, null);
+  // The same words in an old post's intro, or in a post on another topic, do not count.
+  const old = [{ ...posts[0], date: '2026-08-01' }];
+  assert.equal(findCoverage(it, { posts: old }, { loose: true, now: NOW }).post, null);
+  const howto = [{ ...posts[0], topic: 'microsoft-365' }];
+  assert.equal(findCoverage(it, { posts: howto }, { loose: true, now: NOW }).post, null);
+});
+
+test('updateSignal uses incident wording for incidents', () => {
+  assert.ok(updateSignal('Bank confirms which customers were affected', 'incident'));
+  assert.ok(!updateSignal('Bank confirms which customers were affected', 'launch'));
+  assert.ok(updateSignal('Now available in India', 'launch'));
+});
+
+test('backlogLine parks incidents as incident guides and launches as how-tos', () => {
+  const base = { title: 'Introducing Widget Sync', date: '2026-11-12T10:00:00Z', topic: 'online-safety', link: 'https://example.com/a', reason: 'daily cap' };
+  assert.equal(backlogLine(base), '- [ ] widget-sync | How to use Widget Sync (official launch 2026-11-12) | online-safety | set up or use the new feature, from https://example.com/a (fast-track, daily cap)');
+  const inc = backlogLine({ ...base, title: 'SBI says customer records found on dark web', category: 'incident', reason: 'failed gate' });
+  assert.match(inc, /^- \[ \] sbi-say-customer-record-found-dark-web \| SBI says customer records found on dark web: what happened and what to do \(incident 2026-11-12\) \| online-safety \|/);
+  assert.match(inc, /\(fast-track incident, failed gate\)$/);
+  assert.deepEqual(parseBacklog(inc).map((b) => b.slug), ['sbi-say-customer-record-found-dark-web']);
+});
+
+const INCIDENT_GOOD = `---
+title: X
+faqs:
+  - question: q
+    answer: a
+---
+
+Intro.
+
+## What happened
+a
+## Am I affected?
+b
+## What to do now
+c
+## How to prevent it
+d
+## What we checked
+- e
+
+Last tested: 2026-11-12
+
+## Sources
+- https://example.com/filing.pdf
+`;
+
+test('checkFastTrack (incident) wants the incident sections and defanged IP addresses', () => {
+  assert.deepEqual(checkFastTrack(INCIDENT_GOOD, { category: 'incident' }), []);
+  // A launch how-to check would reject the same article.
+  assert.ok(checkFastTrack(INCIDENT_GOOD).length > 0);
+  const missing = checkFastTrack(INCIDENT_GOOD.replace('## Am I affected?\n', ''), { category: 'incident' });
+  assert.ok(missing.some((e) => e.includes('am I affected')));
+  const bare = checkFastTrack(INCIDENT_GOOD.replace('c\n', 'Block 194.150.166.244 now.\n'), { category: 'incident' });
+  assert.ok(bare.some((e) => e.includes('not defanged')));
+  assert.deepEqual(checkFastTrack(INCIDENT_GOOD.replace('c\n', 'Block 194.150.166[.]244 now.\n'), { category: 'incident' }), []);
 });
