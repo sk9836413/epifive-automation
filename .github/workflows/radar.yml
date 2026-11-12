@@ -1,0 +1,377 @@
+# Launch radar: watches official product feeds (radar/sources.json) and publishes a same-day step-by-step
+# how-to for a big launch ("fast track", site instructions automation/RADAR.md), on top of the daily article.
+#
+# When: no cron of its own. It starts whenever the scheduler requests the Daily article (43 3 and 43 4 UTC) or
+# Social media (13 5, 16 13 and 16 14 UTC) workflow, so it rides the scheduler's 5 existing slots (up to 5 scans
+# a day; a scan within 40 minutes of the last one is skipped). A scan is plain Node (a few seconds, no Claude).
+# Caps: at most 2 fast-track articles a day (3 attempts), 2 updates of existing posts a day. A draft that fails the
+# quality gate gets one fix attempt, then the launch is parked in automation/backlog.md "(fast-track, failed gate)".
+# Off switch: repository variable RADAR (automatic scans run only while it is "on").
+# Logs (public, no secrets): radar/log/<YYYY-MM>.md per scan, radar/results.jsonl per write.
+name: Launch radar
+
+on:
+  workflow_run:
+    workflows: [Daily article, Social media]
+    types: [requested]
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: scan (default) or write (started by a scan)
+        type: choice
+        options: [scan, write]
+        default: scan
+      dry_run:
+        description: Score and draft, but publish nothing and save no radar state
+        type: boolean
+        default: false
+      force_url:
+        description: Fast-track this official URL now (skips the threshold and daily caps)
+        type: string
+        default: ''
+      task:
+        description: Task JSON (write mode only; the scan fills it in)
+        type: string
+        default: ''
+
+permissions:
+  contents: write
+  actions: write
+  id-token: write
+
+env:
+  SITE_REMOTE: https://x-access-token:${{ secrets.SITE_REPO_TOKEN }}@github.com/sk9836413/EPIVIFE.git
+
+jobs:
+  scan:
+    # Automatic scans need the repository variable RADAR = on (the off switch); manual runs always work.
+    if: (github.event_name == 'workflow_run' && vars.RADAR == 'on') || (github.event_name == 'workflow_dispatch' && inputs.mode != 'write')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    concurrency:
+      group: radar-scan
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/checkout@v4
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+          path: site
+          sparse-checkout: |
+            content/posts
+            content/news
+            automation
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Unit tests
+        run: node --test radar/radar.test.mjs
+
+      - name: Scan
+        id: scan
+        shell: bash
+        env:
+          DRY: ${{ inputs.dry_run && 'true' || '' }}
+          FORCE_URL: ${{ inputs.force_url }}
+          TRIGGER: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.name || 'manual' }}
+        run: |
+          args=(scan --site site --out task.json --trigger "$TRIGGER")
+          [ -n "$DRY" ] && args+=(--dry-run)
+          [ -n "$FORCE_URL" ] && args+=(--force-url "$FORCE_URL")
+          node radar/radar.mjs "${args[@]}" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Park expired launches in the site backlog
+        if: steps.scan.outputs.parks == 'true' && !inputs.dry_run
+        working-directory: site
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3; do
+            git fetch -q "$SITE_REMOTE" main && git checkout -q -f -B radar FETCH_HEAD || { sleep 10; continue; }
+            node ../radar/radar.mjs site-apply --site . --task ../task.json
+            git add automation/backlog.md
+            git diff --cached --quiet && break
+            git commit -q -m "Radar: queue launches that missed the fast-track cap"
+            git push -q "$SITE_REMOTE" HEAD:main && break
+            sleep 10
+          done
+
+      - name: Save radar state and log
+        if: ${{ !inputs.dry_run }}
+        run: |
+          git add radar/state.json radar/log
+          git diff --cached --quiet && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Radar scan $(TZ=Asia/Kolkata date '+%F %H:%M') IST"
+          for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep 5; done
+
+      - name: Start the writer
+        if: steps.scan.outputs.kind != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DRY: ${{ inputs.dry_run && 'true' || 'false' }}
+        run: gh workflow run radar.yml --repo "$GITHUB_REPOSITORY" --ref main -f mode=write -f dry_run="$DRY" -f task="$(cat task.json)"
+
+  write:
+    if: github.event_name == 'workflow_dispatch' && inputs.mode == 'write'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    concurrency:
+      group: radar-write
+      cancel-in-progress: false
+    steps:
+      - name: Check Claude token
+        id: gate
+        env:
+          HAS_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN != '' }}
+        run: |
+          echo "ready=$HAS_TOKEN" >> "$GITHUB_OUTPUT"
+          if [ "$HAS_TOKEN" != "true" ]; then echo "::error::CLAUDE_CODE_OAUTH_TOKEN secret is not set."; exit 1; fi
+
+      - uses: actions/checkout@v4
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          path: _radar
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Task
+        id: task
+        env:
+          TASK: ${{ inputs.task }}
+        run: |
+          printf '%s' "$TASK" > .radar-task.json
+          printf '_radar/\n.radar-*\n' >> .git/info/exclude
+          node -e '
+            const t = JSON.parse(require("fs").readFileSync(".radar-task.json", "utf8"));
+            if (!["new", "update"].includes(t.kind) || !t.key || !t.link) { console.error("Bad task"); process.exit(1); }
+            if (t.kind === "update" && !/^[a-z0-9-]+$/.test(t.slug ?? "")) { console.error("Update without a valid slug"); process.exit(1); }
+            require("fs").appendFileSync(process.env.GITHUB_OUTPUT, `kind=${t.kind}\nkey=ok\nslug=${t.slug ?? ""}\n`);
+            console.log(`${t.kind}: ${t.title}\n${t.link}\nscore ${t.score}: ${(t.reasons ?? []).join("; ")}`);
+          '
+          echo "today=$(TZ=Asia/Kolkata date +%F)" >> "$GITHUB_OUTPUT"
+
+      - name: Write (Claude, attempt 1)
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          claude_args: |
+            --max-turns 150
+            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node scripts/check-posts.mjs:*),Bash(node _radar/radar/radar.mjs check:*),Bash(ls:*),Bash(wc:*)"
+          prompt: |
+            Launch radar fast-track, mode "${{ steps.task.outputs.kind }}". Today's date (IST) is ${{ steps.task.outputs.today }}.
+            The launch is described in .radar-task.json. Read automation/RADAR.md and follow it exactly (it builds on
+            automation/WRITER.md, which you should also read). The repository is already checked out at the latest main.
+            Do not run npm, git or a build, and do not edit automation/backlog.md or automation/log.md: later workflow
+            steps check, build, publish and record. Never mention any person's name; publish under the EpiFive brand only.
+
+      - name: Find the article
+        id: post
+        env:
+          KIND: ${{ steps.task.outputs.kind }}
+          SLUG: ${{ steps.task.outputs.slug }}
+        run: |
+          # Only content/posts may change; undo anything else the writer touched.
+          git status --porcelain --untracked-files=all | awk '{print $2}' | grep -v '^content/posts/' | while read -r f; do
+            echo "::warning::Reverting unexpected change: $f"
+            git checkout -q -- "$f" 2>/dev/null || rm -f "$f"
+          done
+          if [ "$KIND" = "new" ]; then
+            files=$(git status --porcelain --untracked-files=all content/posts | awk '/^\?\?/ {print $2}')
+          else
+            files=$(git status --porcelain content/posts | awk '{print $2}')
+          fi
+          count=$(printf '%s' "$files" | grep -c . || true)
+          if [ "$count" = "0" ]; then echo "::notice::The writer wrote nothing (RADAR-SKIP)."; exit 0; fi
+          if [ "$count" != "1" ]; then echo "::error::Expected one article, found $count: $files"; exit 1; fi
+          if [ "$KIND" = "update" ] && [ "$files" != "content/posts/$SLUG.md" ]; then echo "::error::Update changed $files, expected $SLUG"; exit 1; fi
+          slug=$(basename "$files" | sed -E 's/\.mdx?$//')
+          echo "file=$files" >> "$GITHUB_OUTPUT"
+          echo "slug=$slug" >> "$GITHUB_OUTPUT"
+          node -e 'require("fs").appendFileSync(process.env.GITHUB_OUTPUT, "title=" + require("gray-matter").read(process.argv[1]).data.title.replace(/\n/g, " ") + "\n")' "$files"
+
+      - name: Quality gate (attempt 1)
+        id: gate1
+        if: steps.post.outputs.file != ''
+        env:
+          FILE: ${{ steps.post.outputs.file }}
+          SLUG: ${{ steps.post.outputs.slug }}
+          KIND: ${{ steps.task.outputs.kind }}
+          TODAY: ${{ steps.task.outputs.today }}
+        run: |
+          set +e
+          { node scripts/check-posts.mjs "$SLUG" && node _radar/radar/radar.mjs check --file "$FILE" --kind "$KIND" --today "$TODAY"; } > .radar-gate.txt 2>&1
+          rc=$?
+          cat .radar-gate.txt
+          if [ $rc = 0 ]; then echo "ok=true" >> "$GITHUB_OUTPUT"; else echo "ok=false" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Fix (Claude, attempt 2)
+        if: steps.gate1.outputs.ok == 'false'
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          claude_args: |
+            --max-turns 60
+            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node scripts/check-posts.mjs:*),Bash(node _radar/radar/radar.mjs check:*),Bash(ls:*),Bash(wc:*)"
+          prompt: |
+            The quality gate failed for ${{ steps.post.outputs.file }} (launch radar, mode "${{ steps.task.outputs.kind }}",
+            today ${{ steps.task.outputs.today }}). The errors are in .radar-gate.txt. Fix them in that one file only,
+            following automation/RADAR.md and automation/WRITER.md: add real, official-source content where something is
+            missing, never invented facts. Re-run both checks named in RADAR.md until they pass. Edit no other file.
+
+      - name: Quality gate (attempt 2)
+        id: gate2
+        if: steps.gate1.outputs.ok == 'false'
+        env:
+          FILE: ${{ steps.post.outputs.file }}
+          SLUG: ${{ steps.post.outputs.slug }}
+          KIND: ${{ steps.task.outputs.kind }}
+          TODAY: ${{ steps.task.outputs.today }}
+        run: |
+          set +e
+          { node scripts/check-posts.mjs "$SLUG" && node _radar/radar/radar.mjs check --file "$FILE" --kind "$KIND" --today "$TODAY"; } > .radar-gate.txt 2>&1
+          rc=$?
+          cat .radar-gate.txt
+          if [ $rc = 0 ]; then echo "ok=true" >> "$GITHUB_OUTPUT"; else echo "ok=false" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Build
+        id: build
+        if: steps.gate1.outputs.ok == 'true' || steps.gate2.outputs.ok == 'true'
+        continue-on-error: true
+        run: npm run build
+
+      - name: Verdict
+        id: verdict
+        env:
+          FILE: ${{ steps.post.outputs.file }}
+          PASSED: ${{ (steps.gate1.outputs.ok == 'true' || steps.gate2.outputs.ok == 'true') && steps.build.outcome == 'success' }}
+        run: |
+          if [ -z "$FILE" ]; then r=skipped; elif [ "$PASSED" = "true" ]; then r=published; else r=failed; fi
+          echo "result=$r" >> "$GITHUB_OUTPUT"
+          echo "Verdict: $r"
+
+      - name: Upload the draft
+        if: always() && steps.post.outputs.file != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: radar-${{ steps.post.outputs.slug }}
+          path: |
+            ${{ steps.post.outputs.file }}
+            .radar-task.json
+            .radar-gate.txt
+          include-hidden-files: true
+          retention-days: 30
+
+      - name: Publish (or park a failed draft in the backlog)
+        id: publish
+        if: ${{ !inputs.dry_run && (steps.verdict.outputs.result == 'published' || (steps.verdict.outputs.result == 'failed' && steps.task.outputs.kind == 'new')) }}
+        env:
+          RESULT: ${{ steps.verdict.outputs.result }}
+          FILE: ${{ steps.post.outputs.file }}
+          SLUG: ${{ steps.post.outputs.slug }}
+          KIND: ${{ steps.task.outputs.kind }}
+          TITLE: ${{ steps.post.outputs.title }}
+          TODAY: ${{ steps.task.outputs.today }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          cp "$FILE" "$RUNNER_TEMP/post.md"
+          if [ "$RESULT" = "published" ]; then
+            [ "$KIND" = "update" ] && msg="Update article: $TITLE" || msg="Add fast-track article: $TITLE"
+          else
+            msg="Radar: park $SLUG (fast-track, failed gate)"
+          fi
+          done=""
+          # Re-apply on a fresh main each try, so a concurrent daily article never causes a rebase conflict.
+          for i in 1 2 3 4; do
+            git fetch -q "$SITE_REMOTE" main && git checkout -q -f -B radar-pub FETCH_HEAD || { sleep 10; continue; }
+            if [ "$RESULT" = "published" ]; then
+              cp "$RUNNER_TEMP/post.md" "$FILE"
+              node _radar/radar/radar.mjs site-apply --site . --task .radar-task.json --result published --file "$FILE" --date "$TODAY"
+              git add "$FILE" automation/backlog.md automation/log.md
+            else
+              rm -f "$FILE"
+              node _radar/radar/radar.mjs site-apply --site . --task .radar-task.json --result failed --slug "$SLUG" --date "$TODAY"
+              git add automation/backlog.md
+            fi
+            git diff --cached --quiet && { done=1; break; }
+            git commit -q -m "$msg" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+            git push -q "$SITE_REMOTE" HEAD:main && { done=1; break; }
+            sleep 10
+          done
+          [ -n "$done" ] || { echo "::error::Could not push to the site repo"; exit 1; }
+
+      # Pushes made by this job don't trigger the IndexNow workflow, so ping here once the page is live.
+      - name: Ping IndexNow
+        if: ${{ !inputs.dry_run && steps.verdict.outputs.result == 'published' && steps.publish.outcome == 'success' }}
+        env:
+          URL: https://www.epifive.com/blog/${{ steps.post.outputs.slug }}
+          KIND: ${{ steps.task.outputs.kind }}
+          TODAY: ${{ steps.task.outputs.today }}
+        run: |
+          for i in $(seq 1 40); do
+            if [ "$KIND" = "update" ]; then curl -s "$URL" | grep -q "Updated $TODAY" && break
+            else [ "$(curl -s -o /dev/null -w '%{http_code}' "$URL")" = "200" ] && break; fi
+            sleep 20
+          done
+          node scripts/seo/indexnow.mjs "$URL"
+
+      - name: Record the outcome
+        if: always() && steps.task.outputs.key == 'ok' && !inputs.dry_run
+        working-directory: _radar
+        env:
+          RESULT: ${{ steps.verdict.outputs.result }}
+          PUBLISHED: ${{ steps.publish.outcome }}
+          SLUG: ${{ steps.post.outputs.slug }}
+          TITLE: ${{ steps.post.outputs.title }}
+        run: |
+          status="${RESULT:-error}"
+          if [ "$status" = "published" ] && [ "$PUBLISHED" != "success" ]; then status=error; fi
+          args=(record --task ../.radar-task.json --status "$status")
+          [ -n "$SLUG" ] && args+=(--slug "$SLUG")
+          [ -n "$TITLE" ] && args+=(--title "$TITLE")
+          node radar/radar.mjs "${args[@]}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add radar/results.jsonl
+          git commit -q -m "Radar result: $status ${SLUG:-}"
+          for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep 5; done
+
+      - name: Summary
+        if: always()
+        env:
+          TITLE: ${{ steps.post.outputs.title }}
+          SLUG: ${{ steps.post.outputs.slug }}
+          FILE: ${{ steps.post.outputs.file }}
+          RESULT: ${{ steps.verdict.outputs.result }}
+          DRY: ${{ inputs.dry_run }}
+        run: |
+          {
+            echo "## Launch radar: ${RESULT:-error}"
+            echo
+            [ -n "$TITLE" ] && echo "**$TITLE**" && echo && echo "https://www.epifive.com/blog/$SLUG"
+            [ -n "$FILE" ] && [ -f "$FILE" ] && echo && echo "Words (including code): $(sed '1,/^---$/d' "$FILE" | wc -w)"
+            [ -n "$FILE" ] && [ -f "$FILE" ] && echo && echo '### Outline' && grep -E '^##+ ' "$FILE"
+            [ -f .radar-gate.txt ] && echo && echo '### Gate' && echo '```text' && cat .radar-gate.txt && echo '```'
+            [ "$DRY" = "true" ] && echo && echo "_Dry run: nothing was published._"
+          } >> "$GITHUB_STEP_SUMMARY"

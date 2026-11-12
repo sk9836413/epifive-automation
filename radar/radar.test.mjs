@@ -1,0 +1,246 @@
+// Unit tests for the launch radar (scoring, de-duplication, parsing, site edits). Run: node --test radar/
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import {
+  parseFeed, parseSitemap, parseHtmlList, parseDatedSections, normalizeUrl, scoreItem, mergeDuplicates, findCoverage,
+  parseBacklog, sameTopic, todayCounts, parkInBacklog, markPublished, logLine, checkFastTrack, trendBoost, istDate, RADAR_MARK,
+} from './lib.mjs';
+
+const NOW = Date.parse('2026-11-10T14:00:00Z');
+const openai = { id: 'openai-news', weight: 2, categoryBoost: { Product: 2, Startup: -3, '(none)': -2 } };
+const plain = { id: 'plain', weight: 0 };
+const item = (over = {}) => ({ title: '', link: 'https://example.com/x', summary: '', categories: [], date: '2026-11-10T10:00:00Z', ...over });
+
+// ---------- parsing ----------
+
+test('parseFeed reads RSS items with CDATA, categories and dates', () => {
+  const xml = `<rss><channel><item><title><![CDATA[Introducing Businesses in ChatGPT]]></title>
+    <link>https://openai.com/index/introducing-businesses-chatgpt</link><guid>abc</guid>
+    <category><![CDATA[Product]]></category><pubDate>Tue, 10 Nov 2026 10:00:00 GMT</pubDate>
+    <description>&lt;p&gt;Set up a Business Hub &amp;amp; agents.&lt;/p&gt;</description></item></channel></rss>`;
+  const [i] = parseFeed(xml);
+  assert.equal(i.title, 'Introducing Businesses in ChatGPT');
+  assert.equal(i.link, 'https://openai.com/index/introducing-businesses-chatgpt');
+  assert.deepEqual(i.categories, ['Product']);
+  assert.equal(i.date, '2026-11-10T10:00:00.000Z');
+  assert.equal(i.summary, 'Set up a Business Hub & agents.');
+});
+
+test('parseFeed reads Atom entries and prefers the alternate link', () => {
+  const xml = `<feed><entry><id>tag:1</id><published>2026-11-11T17:00:00.000-08:00</published><updated>2026-11-11T18:00:00Z</updated>
+    <category term="Google Chat"/><title type="text">Nested lists in Google Chat</title>
+    <link rel="replies" href="https://x/replies"/><link rel="alternate" type="text/html" href="http://workspaceupdates.googleblog.com/2026/11/lists.html"/>
+    <content type="html">You can now use nested lists.</content></entry></feed>`;
+  const [i] = parseFeed(xml);
+  assert.equal(i.link, 'http://workspaceupdates.googleblog.com/2026/11/lists.html');
+  assert.equal(i.date, '2026-11-12T01:00:00.000Z');
+  assert.deepEqual(i.categories, ['Google Chat']);
+});
+
+test('parseSitemap builds titles from slugs and filters by pattern', () => {
+  const xml = `<urlset><url><loc>https://blog.whatsapp.com/invite-anyone-to-a-call</loc><lastmod>2026-11-05T07:02:56-08:00</lastmod></url>
+    <url><loc>https://blog.whatsapp.com/</loc></url></urlset>`;
+  const items = parseSitemap(xml, { linkPattern: '^https://blog\\.whatsapp\\.com/[a-z0-9-]+$' });
+  assert.equal(items.length, 1);
+  assert.equal(items[0].title, 'Invite anyone to a call');
+  assert.equal(items[0].date, '2026-11-05T15:02:56.000Z');
+});
+
+test('parseHtmlList keeps headed links once, with the following <time> and <p>', () => {
+  const html = `<a href="/news/claude-for-chrome"><span><h3>Claude for Chrome</h3></span></a>
+    <a href="/news/claude-for-chrome"><p>Use Claude in your browser.</p></a><a href="/news/policy">Policy</a><time>Nov 9, 2026</time>`;
+  const items = parseHtmlList(html, { base: 'https://www.anthropic.com/news', linkPattern: '^/news/[a-z0-9-]+$' });
+  assert.equal(items.length, 1);
+  assert.equal(items[0].link, 'https://www.anthropic.com/news/claude-for-chrome');
+  assert.equal(items[0].title, 'Claude for Chrome');
+  assert.equal(items[0].summary, 'Use Claude in your browser.');
+  assert.ok(items[0].date.startsWith('2026-11-'));
+});
+
+test('parseDatedSections splits release notes by date and feature', () => {
+  const html = `<h2 class="x">2026.10.13</h2><div><h3 class="t">Introducing Gemini 4 Argon</h3><ul><li><p><b>What:</b> Rolling out globally.</p></li></ul>
+    <h3>Code in the macOS app</h3><p>What: Antigravity.</p></div><h2>2026.09.30</h2><h3>Older thing</h3>`;
+  const items = parseDatedSections(html, { url: 'https://gemini.google/us/release-notes/' });
+  assert.equal(items.length, 3);
+  assert.equal(items[0].title, 'Introducing Gemini 4 Argon');
+  assert.equal(items[0].date, '2026-10-13T12:00:00.000Z');
+  assert.match(items[0].summary, /Rolling out globally/);
+  assert.equal(items[0].link, 'https://gemini.google/us/release-notes/#2026-10-13-introducing-gemini-4-argon');
+  assert.equal(items[2].date, '2026-09-30T12:00:00.000Z');
+});
+
+// ---------- keys ----------
+
+test('normalizeUrl strips tracking, www, trailing slash and http, but keeps ids and our anchors', () => {
+  assert.equal(normalizeUrl('http://www.Example.com/a/b/?utm_source=x&id=5#top'), 'https://example.com/a/b?id=5');
+  assert.equal(normalizeUrl('https://www.microsoft.com/microsoft-365/roadmap?id=566523'), 'https://microsoft.com/microsoft-365/roadmap?id=566523');
+  assert.equal(normalizeUrl('https://gemini.google/us/release-notes/#2026-10-13-x'), 'https://gemini.google/us/release-notes#2026-10-13-x');
+});
+
+// ---------- scoring ----------
+
+test('a product launch with user steps clears the threshold (10)', () => {
+  const s = scoreItem(item({ title: 'Introducing Businesses in ChatGPT', summary: 'Businesses can set up a Business Hub. Available to Plus and Pro plans.', categories: ['Product'] }), openai, { now: NOW });
+  assert.equal(s.reject, null);
+  assert.ok(s.score >= 10, `score ${s.score}: ${s.reasons.join('; ')}`);
+});
+
+test('customer stories and corporate news score low', () => {
+  const story = scoreItem(item({ title: 'Singapore Airlines elevates travel & work with OpenAI technology', summary: 'ChatGPT Enterprise rollout.' }), openai, { now: NOW });
+  const corp = scoreItem(item({ title: 'Closing the AI guidance gap in education', categories: ['Company'] }), openai, { now: NOW });
+  assert.ok(story.score < 5, `story ${story.score}`);
+  assert.ok(corp.score < 5, `corp ${corp.score}`);
+});
+
+test('a how-to-able launch outranks a pure announcement from the same source', () => {
+  const howto = scoreItem(item({ title: 'You can now turn on passkeys for WhatsApp backups', summary: 'Rolling out to all users. Go to Settings to enable.' }), { id: 'whatsapp', weight: 2 }, { now: NOW });
+  const announce = scoreItem(item({ title: 'WhatsApp celebrates three billion users', summary: 'A milestone.' }), { id: 'whatsapp', weight: 2 }, { now: NOW });
+  assert.ok(howto.score > announce.score + 3, `${howto.score} vs ${announce.score}`);
+});
+
+test('rumours are rejected and stale items are not eligible', () => {
+  assert.equal(scoreItem(item({ title: 'iPhone 18 leak reportedly shows new button' }), plain, { now: NOW }).reject, 'rumour');
+  const stale = scoreItem(item({ title: 'Introducing ChatGPT Go', date: '2026-11-07T00:00:00Z' }), openai, { now: NOW, freshHours: 36 });
+  assert.match(stale.reject, /^stale/);
+});
+
+test('feed categories adjust the score, including items without a category', () => {
+  const a = scoreItem(item({ title: 'Cogent and OpenAI build cyber defense', categories: ['Startup'] }), openai, { now: NOW });
+  const b = scoreItem(item({ title: 'JioStar chief architect on AI discovery' }), openai, { now: NOW });
+  assert.ok(a.reasons.some((r) => r.startsWith('-3 category')));
+  assert.ok(b.reasons.some((r) => r.startsWith('-2 category')));
+});
+
+test('an item on two official feeds gets one entry with a cross-source bonus', () => {
+  const merged = mergeDuplicates([
+    { ...item({ title: 'Gemini now on Apple CarPlay', link: 'https://blog.google/x/' }), source: { id: 'keyword', weight: 0 } },
+    { ...item({ title: 'Gemini now on Apple CarPlay', link: 'https://blog.google/x?utm_source=rss' }), source: { id: 'gemini', weight: 1 } },
+    { ...item({ title: 'Something else', link: 'https://blog.google/y' }), source: { id: 'keyword', weight: 0 } },
+  ]);
+  assert.equal(merged.length, 2);
+  const g = merged.find((m) => m.title.startsWith('Gemini'));
+  assert.equal(g.source.id, 'gemini');
+  assert.deepEqual(g.alsoIn, ['keyword']);
+  assert.ok(scoreItem(g, g.source, { now: NOW }).reasons.some((r) => r.includes('also on keyword')));
+});
+
+test('trendBoost: +2 for a matching trending query, +1 for autocomplete', () => {
+  const it = item({ title: 'Introducing Businesses in ChatGPT' });
+  assert.equal(trendBoost(it, { trending: ['chatgpt businesses'], suggestions: [] }).boost, 2);
+  assert.equal(trendBoost(it, { trending: ['nfl scores'], suggestions: ['a', 'b'] }).boost, 1);
+  assert.equal(trendBoost(it, { trending: ['business news'], suggestions: ['a'] }).boost, 0);
+});
+
+// ---------- de-duplication ----------
+
+const posts = [
+  { slug: 'businesses-in-chatgpt-business-hub-business-agent', title: 'Businesses in ChatGPT: set up the Business Hub and Business Agents', body: 'See https://openai.com/index/introducing-businesses-chatgpt for details.' },
+  { slug: 'chatgpt-team-vs-claude-team-vs-gemini-business-pricing', title: 'ChatGPT Team vs Claude Team vs Gemini Business pricing', body: '' },
+  { slug: 'turn-on-passkeys-whatsapp', title: 'How to turn on WhatsApp passkeys on Android and iPhone', body: '' },
+];
+
+test('findCoverage matches a post that cites the official URL', () => {
+  const cov = findCoverage(item({ title: 'Introducing Businesses in ChatGPT', link: 'https://openai.com/index/introducing-businesses-chatgpt/' }), { posts });
+  assert.equal(cov.post.slug, 'businesses-in-chatgpt-business-hub-business-agent');
+});
+
+test('findCoverage matches by topic only when enough words agree (no false positive on short titles)', () => {
+  assert.equal(findCoverage(item({ title: 'WhatsApp passkeys now on iPhone and Android', link: 'https://blog.whatsapp.com/p' }), { posts }).post.slug, 'turn-on-passkeys-whatsapp');
+  assert.equal(findCoverage(item({ title: 'ChatGPT Plus for veterans', link: 'https://openai.com/index/v' }), { posts }).post, null);
+  assert.equal(sameTopic('Introducing Businesses in ChatGPT', 'ChatGPT Business vs Microsoft 365 Copilot'), false);
+});
+
+test('findCoverage reports /news and open backlog matches, ignoring done backlog items', () => {
+  const backlog = parseBacklog('- [ ] gemini-gmail-workspace-expand | Gemini in Gmail for more Google Workspace users | ai | x\n- [x] old-done | Gemini in Gmail for more Google Workspace users | 2026-10-01');
+  const news = [{ slug: '2026-11-11-brief', body: 'Read [Google](https://workspaceupdates.googleblog.com/2026/11/expanding-gemini.html).' }];
+  const cov = findCoverage(item({ title: 'Expanding Gemini in Gmail to more Google Workspace users', link: 'http://workspaceupdates.googleblog.com/2026/11/expanding-gemini.html' }), { posts: [], news, backlog });
+  assert.equal(cov.news.slug, '2026-11-11-brief');
+  assert.equal(cov.backlog.slug, 'gemini-gmail-workspace-expand');
+});
+
+// ---------- caps ----------
+
+test('todayCounts counts today\'s published fast-tracks and in-flight tasks, not dry runs', () => {
+  const today = istDate(NOW);
+  const results = [
+    { date: today, kind: 'new', status: 'published' },
+    { date: today, kind: 'new', status: 'failed' },
+    { date: today, kind: 'new', status: 'published', dryRun: true },
+    { date: '2026-11-09', kind: 'new', status: 'published' },
+    { date: today, kind: 'update', status: 'published' },
+  ];
+  const state = { seen: { a: { status: 'writing', kind: 'new', taskAt: new Date(NOW).toISOString() } } };
+  assert.deepEqual(todayCounts(results, state, today), { newPublished: 2, updates: 1, attempts: 3 });
+});
+
+// ---------- site edits ----------
+
+const BACKLOG = '# Article backlog\n\n## Queue\n\n<!-- trends -->\n- [ ] a-topic | A | x | y\n\n## Published\n- [x] old | Old | 2026-11-01\n';
+
+test('parkInBacklog adds failed items at the top of the queue under the radar marker, once', () => {
+  const line = '- [ ] chatgpt-business-hub | How to use X | ai-automation | set up (fast-track, failed gate)';
+  const once = parkInBacklog(BACKLOG, line);
+  const twice = parkInBacklog(once, line);
+  assert.equal(once, twice);
+  const lines = once.split('\n');
+  assert.equal(lines[lines.indexOf(RADAR_MARK) + 1], line);
+  assert.ok(lines.indexOf(RADAR_MARK) < lines.indexOf('- [ ] a-topic | A | x | y'));
+});
+
+test('markPublished removes the open item and adds a fast-track line under Published', () => {
+  const md = markPublished(`${BACKLOG}- [ ] new-slug | Draft | x | y\n`, { slug: 'new-slug', title: 'Final title', date: '2026-11-12' });
+  assert.ok(!md.includes('- [ ] new-slug'));
+  assert.match(md, /## Published\n- \[x\] new-slug \| Final title \| 2026-11-12 \(fast-track\)/);
+});
+
+test('fast-track log lines never trip the daily writer\'s once-a-day guard', () => {
+  const log = logLine('2026-11-11 | a | published | ~2000 words\n', { date: '2026-11-12', slug: 'x', status: 'fast-track', words: 1500 });
+  assert.match(log, /2026-11-12 \| x \| fast-track \| ~1500 words\n$/);
+  // article.yml: grep -q "^$today | .* | published |" automation/log.md
+  assert.ok(!log.split('\n').some((l) => /^2026-11-12 \| .* \| published \|/.test(l)));
+});
+
+// ---------- article checks ----------
+
+const GOOD = `---
+title: x
+faqs:
+  - question: q
+    answer: a
+---
+Intro.
+
+## What Businesses in ChatGPT is
+## Who it is for and availability
+## Requirements
+## How to set up the Business Hub, step by step
+## Limitations
+## Privacy and admin notes
+## What we checked
+Last tested: 2026-11-12
+## Sources
+- https://openai.com/index/introducing-businesses-chatgpt
+`;
+
+test('checkFastTrack passes a complete how-to and names missing sections', () => {
+  assert.deepEqual(checkFastTrack(GOOD), []);
+  const bad = checkFastTrack(GOOD.replace('## Limitations\n', '').replace(/faqs:[\s\S]*?answer: a\n/, ''));
+  assert.ok(bad.some((e) => e.includes('limitations')));
+  assert.ok(bad.some((e) => e.includes('faqs')));
+});
+
+test('checkFastTrack in update mode wants an updated date and a dated note', () => {
+  assert.equal(checkFastTrack(GOOD, { kind: 'update', today: '2026-11-12' }).length, 2);
+  const updated = GOOD.replace('faqs:', "updated: '2026-11-12'\nfaqs:").replace('Intro.', '**Updated 2026-11-12:** Now available in India.\n\nIntro.');
+  assert.deepEqual(checkFastTrack(updated, { kind: 'update', today: '2026-11-12' }), []);
+});
+
+test('cleanTitle drops announcement wording for backlog titles', async () => {
+  const { cleanTitle } = await import('./lib.mjs');
+  assert.equal(cleanTitle('Now available: OAuth authentication for Exchange migrations'), 'OAuth authentication for Exchange migrations');
+  assert.equal(cleanTitle('Introducing Businesses in ChatGPT'), 'Businesses in ChatGPT');
+});
+
+test('checkFastTrack accepts Windows line endings', () => {
+  assert.deepEqual(checkFastTrack(GOOD.replace(/\n/g, '\r\n')), []);
+});

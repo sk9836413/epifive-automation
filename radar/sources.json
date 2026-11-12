@@ -1,0 +1,50 @@
+{
+  "_about": "Launch radar sources: official feeds and pages only (no news sites, no rumours). 'verified' = HTTP 200 with parseable items from an honest user agent on that date. Weight shifts every item's score for that source (high-volume or broad feeds get 0 or less). categoryBoost adds points per feed category; '(none)' applies when an item has no category.",
+  "settings": {
+    "threshold": 10,
+    "freshHours": 36,
+    "maxNewPerDay": 2,
+    "maxAttemptsPerDay": 3,
+    "maxUpdatesPerDay": 2,
+    "minScanGapMinutes": 40,
+    "trendLookups": 5,
+    "userAgent": "EpiFiveRadar/1.0 (+https://www.epifive.com)"
+  },
+  "sources": [
+    { "id": "openai-news", "name": "OpenAI News", "url": "https://openai.com/news/rss.xml", "type": "rss", "weight": 2, "topic": "ai-automation",
+      "categoryBoost": { "Product": 2, "Company": 0, "Startup": -3, "Safety": -2, "Research": -2, "Global Affairs": -3, "Engineering": -1, "Security": -1, "(none)": -2 }, "verified": "2026-11-12" },
+    { "id": "ms365-blog", "name": "Microsoft 365 Blog", "url": "https://www.microsoft.com/en-us/microsoft-365/blog/feed/", "type": "rss", "weight": 2, "topic": "microsoft-365", "verified": "2026-11-12" },
+    { "id": "copilot-blog", "name": "Microsoft Copilot Blog", "url": "https://www.microsoft.com/en-us/copilot/blog/feed/", "type": "rss", "weight": 1, "topic": "ai-automation", "verified": "2026-11-12" },
+    { "id": "m365-roadmap", "name": "Microsoft 365 Roadmap", "url": "https://www.microsoft.com/releasecommunications/api/v2/m365/rss", "type": "rss", "weight": -1, "topic": "microsoft-365",
+      "categoryBoost": { "Launched": 1, "Rolling out": 1, "In development": -4, "Preview": -1 }, "verified": "2026-11-12" },
+    { "id": "tc-m365", "name": "Tech Community: Microsoft 365 Blog", "url": "https://techcommunity.microsoft.com/t5/s/gxcuf89792/rss/board?board.id=Microsoft_365blog", "type": "rss", "weight": 1, "topic": "microsoft-365", "verified": "2026-11-12" },
+    { "id": "tc-teams", "name": "Tech Community: Microsoft Teams Blog", "url": "https://techcommunity.microsoft.com/t5/s/gxcuf89792/rss/board?board.id=MicrosoftTeamsBlog", "type": "rss", "weight": 1, "topic": "microsoft-365", "verified": "2026-11-12" },
+    { "id": "tc-exchange", "name": "Tech Community: Exchange Team Blog", "url": "https://techcommunity.microsoft.com/t5/s/gxcuf89792/rss/board?board.id=Exchange", "type": "rss", "weight": 1, "topic": "microsoft-365", "verified": "2026-11-12" },
+    { "id": "tc-intune", "name": "Tech Community: Intune Customer Success", "url": "https://techcommunity.microsoft.com/t5/s/gxcuf89792/rss/board?board.id=IntuneCustomerSuccess", "type": "rss", "weight": 0, "topic": "security-identity", "verified": "2026-11-12" },
+    { "id": "tc-entra", "name": "Tech Community: Microsoft Entra Blog", "url": "https://techcommunity.microsoft.com/t5/s/gxcuf89792/rss/board?board.id=microsoft-entra-blog", "type": "rss", "weight": 0, "topic": "security-identity", "verified": "2026-11-12" },
+    { "id": "tc-windows-itpro", "name": "Tech Community: Windows IT Pro Blog", "url": "https://techcommunity.microsoft.com/t5/s/gxcuf89792/rss/board?board.id=Windows-ITPro-blog", "type": "rss", "weight": 1, "topic": "how-to-tips", "verified": "2026-11-12" },
+    { "id": "tc-excel", "name": "Tech Community: Excel Blog", "url": "https://techcommunity.microsoft.com/t5/s/gxcuf89792/rss/board?board.id=ExcelBlog", "type": "rss", "weight": 0, "topic": "microsoft-365", "verified": "2026-11-12" },
+    { "id": "windows-blog", "name": "Windows Blog", "url": "https://blogs.windows.com/feed/", "type": "rss", "weight": 1, "topic": "how-to-tips", "verified": "2026-11-12" },
+    { "id": "windows-insider", "name": "Windows Insider Blog", "url": "https://blogs.windows.com/windows-insider/feed/", "type": "rss", "weight": -2, "topic": "how-to-tips", "verified": "2026-11-12" },
+    { "id": "workspace-updates", "name": "Google Workspace Updates", "url": "https://workspaceupdates.googleblog.com/feeds/posts/default", "type": "atom", "weight": 1, "topic": "small-business-it", "verified": "2026-11-12" },
+    { "id": "google-keyword", "name": "Google: The Keyword", "url": "https://blog.google/rss/", "type": "rss", "weight": 0, "topic": "how-to-tips", "verified": "2026-11-12" },
+    { "id": "gemini-blog", "name": "Google: Gemini app blog", "url": "https://blog.google/products-and-platforms/products/gemini/rss/", "type": "rss", "weight": 1, "topic": "ai-automation", "verified": "2026-11-12" },
+    { "id": "gemini-release-notes", "name": "Gemini app release notes", "url": "https://gemini.google/us/release-notes/?hl=en", "page": "https://gemini.google/us/release-notes/", "type": "dated-sections", "weight": 1, "topic": "ai-automation", "verified": "2026-11-12" },
+    { "id": "android-blog", "name": "Google: Android blog", "url": "https://blog.google/products-and-platforms/platforms/android/rss/", "type": "rss", "weight": 1, "topic": "mobiles", "verified": "2026-11-12" },
+    { "id": "apple-newsroom", "name": "Apple Newsroom", "url": "https://www.apple.com/newsroom/rss-feed.rss", "type": "atom", "weight": 1, "topic": "mobiles", "verified": "2026-11-12" },
+    { "id": "whatsapp-blog", "name": "WhatsApp Blog (sitemap)", "url": "https://blog.whatsapp.com/sitemap.xml", "type": "sitemap", "linkPattern": "^https://blog\\.whatsapp\\.com/[a-z0-9-]+$", "weight": 2, "topic": "how-to-tips", "verified": "2026-11-12" },
+    { "id": "meta-newsroom", "name": "Meta Newsroom", "url": "https://about.fb.com/news/feed/", "type": "rss", "weight": 0, "topic": "online-safety", "verified": "2026-11-12" },
+    { "id": "anthropic-news", "name": "Anthropic News", "url": "https://www.anthropic.com/news", "type": "html-list", "linkPattern": "^/news/[a-z0-9-]+$", "weight": 1, "topic": "ai-automation", "verified": "2026-11-12" },
+    { "id": "github-changelog", "name": "GitHub Changelog", "url": "https://github.blog/changelog/feed/", "type": "rss", "weight": -1, "topic": "ai-engineering", "verified": "2026-11-12" },
+    { "id": "rbi-press", "name": "Reserve Bank of India press releases", "url": "https://www.rbi.org.in/pressreleases_rss.xml", "type": "rss", "weight": -1, "topic": "online-safety", "verified": "2026-11-12" }
+  ],
+  "notUsed": [
+    { "name": "OpenAI Help Center release notes", "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes", "reason": "HTTP 403 bot challenge for automated clients (2026-11-12). ChatGPT launches are covered through the OpenAI News RSS (category Product); the writer may still open help.openai.com pages while researching." },
+    { "name": "Perplexity blog and changelog", "url": "https://www.perplexity.ai/hub/blog", "reason": "HTTP 403 bot challenge for automated clients, no public RSS found (2026-11-12)." },
+    { "name": "Microsoft 365 Copilot Blog (Tech Community)", "url": "https://techcommunity.microsoft.com/t5/s/gxcuf89792/rss/board?board.id=Microsoft365CopilotBlog", "reason": "Feed returns no items (2026-11-12). Copilot launches come through the Microsoft 365 Blog, the Copilot blog and the roadmap." },
+    { "name": "UIDAI (Aadhaar) press releases", "url": "https://uidai.gov.in/en/", "reason": "No feed; the press-release page returns 404 and the home page is rendered by JavaScript (2026-11-12)." },
+    { "name": "NPCI press releases", "url": "https://www.npci.org.in/media/press-releases", "reason": "JavaScript app shell with no items in the HTML (2026-11-12)." },
+    { "name": "DigiLocker", "url": "https://www.digilocker.gov.in/", "reason": "No news feed or dated announcements page (2026-11-12)." },
+    { "name": "Press Information Bureau RSS", "url": "https://pib.gov.in/RssMain.aspx?ModId=6&Lang=1&Regid=3", "reason": "HTTP 403 to automated clients (2026-11-12)." }
+  ]
+}
