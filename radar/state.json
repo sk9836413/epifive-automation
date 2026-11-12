@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-12T13:16:57.870Z",
+ "lastScan": "2026-11-12T14:16:39.836Z",
  "seen": {
   "https://openai.com/index/gilbert-tobin-sam-nickless": {
    "title": "Gilbert + Tobin rethinks the business of law with AI",
@@ -1063,6 +1063,55 @@
    ],
    "status": "below",
    "hash": "bb44a3a0"
+  },
+  "https://blog.google/innovation-and-ai/technology/safety-security/intelligent-eyewear-privacy-protections": {
+   "title": "Designing for privacy on intelligent eyewear",
+   "link": "https://blog.google/innovation-and-ai/technology/safety-security/intelligent-eyewear-privacy-protections/",
+   "source": "android-blog",
+   "topic": "mobiles",
+   "date": "2026-11-12T14:00:00.000Z",
+   "updated": null,
+   "summary": "Learn more about privacy protections on intelligent eyewear.",
+   "first": "2026-11-12T14:16:39.836Z",
+   "score": 2,
+   "reasons": [
+    "+1 source android-blog",
+    "+1 also on google-keyword"
+   ],
+   "status": "below",
+   "hash": "27a4753e"
+  },
+  "https://blog.google/innovation-and-ai/technology/xr-ar/google-intelligent-eyewear-collections-pre-order": {
+   "title": "See our intelligent eyewear lineup and pre-order your pair",
+   "link": "https://blog.google/innovation-and-ai/technology/xr-ar/google-intelligent-eyewear-collections-pre-order/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "date": "2026-11-12T14:00:00.000Z",
+   "updated": null,
+   "summary": "Designed by Warby Parker and Gentle Monster and engineered by Samsung, Google's intelligent eyewear is now available for pre-order.",
+   "first": "2026-11-12T14:16:39.836Z",
+   "score": 2,
+   "reasons": [
+    "+2 launch \"now available\""
+   ],
+   "status": "below",
+   "hash": "1f1fd9ea"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63965": {
+   "title": "RBI to conduct 3-day Variable Rate Reverse Repo (VRRR) auction under LAF on November 13, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63965",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "date": "2026-11-12T19:05:00.000Z",
+   "updated": null,
+   "summary": "On a review of current and evolving liquidity conditions, it has been decided to conduct a Variable Rate Reverse Repo (VRRR) auction on Friday, November 13, 2026, as under: Sl. No. Notified Amount (₹ crore) Tenor (day) Window Timing Date of Reversal 1 75,000 3 09:30 AM to 10:00 AM November 16, 2026 ",
+   "first": "2026-11-12T14:16:39.836Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "6a33c6ee"
   }
  }
 }
