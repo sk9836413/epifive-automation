@@ -6,7 +6,7 @@
     "maxNewPerDay": 2,
     "maxAttemptsPerDay": 3,
     "maxUpdatesPerDay": 2,
-    "minScanGapMinutes": 40,
+    "minScanGapMinutes": 25,
     "trendLookups": 5,
     "userAgent": "EpiFiveRadar/1.0 (+https://www.epifive.com)"
   },

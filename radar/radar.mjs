@@ -188,6 +188,7 @@ async function scan() {
   // 6. Expire queued items that waited too long (daily cap) into the normal backlog.
   const parks = [];
   for (const [key, s] of Object.entries(state.seen)) {
+    if (key === forceUrl) continue; // a forced item is written now, never parked
     const age = (now - Date.parse(s.date ?? s.first)) / 3600e3;
     if (s.status === 'queued' && age > S.freshHours + 12) {
       s.status = 'expired';

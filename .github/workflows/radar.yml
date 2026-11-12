@@ -3,7 +3,7 @@
 #
 # When: no cron of its own. It starts whenever the scheduler requests the Daily article (43 3 and 43 4 UTC) or
 # Social media (13 5, 16 13 and 16 14 UTC) workflow, so it rides the scheduler's 5 existing slots (up to 5 scans
-# a day; a scan within 40 minutes of the last one is skipped). A scan is plain Node (a few seconds, no Claude).
+# a day; a scan within 25 minutes of the last one is skipped). A scan is plain Node (a few seconds, no Claude).
 # Caps: at most 2 fast-track articles a day (3 attempts), 2 updates of existing posts a day. A draft that fails the
 # quality gate gets one fix attempt, then the launch is parked in automation/backlog.md "(fast-track, failed gate)".
 # Off switch: repository variable RADAR (automatic scans run only while it is "on").
@@ -174,6 +174,8 @@ jobs:
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          # The write run is started by the scan job (github-actions bot), so the action must accept a bot actor.
+          allowed_bots: "*"
           claude_args: |
             --max-turns 150
             --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node scripts/check-posts.mjs:*),Bash(node _radar/radar/radar.mjs check:*),Bash(ls:*),Bash(wc:*)"
@@ -230,6 +232,8 @@ jobs:
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          # The write run is started by the scan job (github-actions bot), so the action must accept a bot actor.
+          allowed_bots: "*"
           claude_args: |
             --max-turns 60
             --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node scripts/check-posts.mjs:*),Bash(node _radar/radar/radar.mjs check:*),Bash(ls:*),Bash(wc:*)"
