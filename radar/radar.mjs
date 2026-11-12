@@ -133,7 +133,7 @@ async function scan() {
       }
       continue;
     }
-    const s = scoreItem(item, item.source, { now, freshHours: S.freshHours });
+    const s = scoreItem(item, item.source, { now, freshHours: S.freshHours, threshold: S.threshold });
     if (s.reject && key !== forceUrl) continue; // stale or rumour: never stored, re-checked for free next run
     const cov = findCoverage(item, site);
     if (cov.news) s.score -= 1, s.reasons.push(`-1 in /news ${cov.news.slug}`);

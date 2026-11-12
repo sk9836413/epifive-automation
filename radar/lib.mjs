@@ -216,6 +216,36 @@ const MONEY = /\b(price|pricing|plans?|subscriptions?|subscribers|free|paid|tier
 // Enterprise procurement and developer-only launches: real, but rarely a how-to for EpiFive readers.
 const NARROW = /\b(marketplace|api|sdk|developers?|enterprise customers|private preview)\b/i;
 const RETIRE = /\b(retir(e|es|ing|ement)|deprecat\w*|end of support|sunset\w*)\b/i;
+// Microsoft 365 services whose retirements EpiFive turns into migration how-tos (matched on title, summary or feed category).
+const M365_CHANGE = /\b(microsoft 365|m365|office 365|exchange|sharepoint|onedrive|outlook|teams|entra|azure ad|intune|defender|copilot|purview|microsoft graph|graph api)\b/i;
+export const RETIRE_WINDOW_DAYS = 120;
+const MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
+const MON = MONTHS.join('|');
+const EXACT_MDY = new RegExp(`\\b(${MON})\\s+(\\d{1,2})(?:st|nd|rd|th)?,?\\s+(20\\d{2})\\b`, 'gi');
+const EXACT_DMY = new RegExp(`\\b(\\d{1,2})\\s+(${MON})\\s+(20\\d{2})\\b`, 'gi');
+const MONTH_YEAR = new RegExp(`\\b(?:(early|mid|late|end of|the end of)[\\s-]+)?(${MON}),?\\s+(20\\d{2})\\b`, 'gi');
+
+/** Dates written in an announcement ("January 31, 2027", "31 January 2027", "mid-January 2027", "end of November 2026") as UTC ms. */
+export function datesIn(text = '') {
+  const out = [];
+  const mon = (m) => MONTHS.indexOf(m.toLowerCase());
+  for (const m of text.matchAll(EXACT_MDY)) out.push(Date.UTC(+m[3], mon(m[1]), +m[2]));
+  for (const m of text.matchAll(EXACT_DMY)) out.push(Date.UTC(+m[3], mon(m[2]), +m[1]));
+  for (const m of text.matchAll(MONTH_YEAR)) {
+    const y = +m[3];
+    const mo = mon(m[2]);
+    const part = (m[1] ?? '').toLowerCase();
+    const day = part === 'early' ? 5 : part === 'mid' ? 15 : part === 'late' ? 25 : new Date(Date.UTC(y, mo + 1, 0)).getUTCDate();
+    out.push(Date.UTC(y, mo, day));
+  }
+  return out;
+}
+
+/** Days until the soonest date in the text that falls between yesterday and RETIRE_WINDOW_DAYS ahead, else null. */
+export function daysToDeadline(text, now = Date.now()) {
+  const days = datesIn(text).map((t) => Math.ceil((t - now) / 864e5)).filter((d) => d >= -1 && d <= RETIRE_WINDOW_DAYS);
+  return days.length ? Math.min(...days) : null;
+}
 // Title-only negatives: customer stories and corporate news are not how-tos.
 const STORY = /\b(how .{1,40} uses?|customer stor(y|ies)|case study|scales|rethinks|transforms?|elevates?|reimagin\w*|with (openai|ai) technology|powered by|partners? with|partnership|collaborat\w*|builds? .{0,30} with)\b/i;
 const CORPORATE = /\b(funding|raises|earnings|quarter|acquir\w*|hiring|appoint\w*|economic|economy|elections?|midterms|research|paper|benchmark|grants?|fellowship|nonprofits?|evaluat\w*|podcast|webinar|events?|conference|summit|recap|what you.ll learn|keynote|interview|awards?|anniversary|sustainability|this week|guidance gap|careers?|mission|commitment|principles)\b/i;
@@ -226,7 +256,7 @@ export const UPDATE_SIGNAL = /\b(expand(s|ed|ing)?|now available (in|to|for)|mor
  * Score one item for "fast-track how-to" value.
  * Returns { score, reasons[], reject } where reject is a reason string for items that can never qualify.
  */
-export function scoreItem(item, source, { now = Date.now(), freshHours = 36 } = {}) {
+export function scoreItem(item, source, { now = Date.now(), freshHours = 36, threshold = 10 } = {}) {
   const reasons = [];
   let score = 0;
   const add = (n, why) => {
@@ -265,6 +295,13 @@ export function scoreItem(item, source, { now = Date.now(), freshHours = 36 } = 
   for (const c of item.categories ?? []) if (boosts[c] !== undefined) cat += boosts[c];
   if (!(item.categories ?? []).length && boosts['(none)'] !== undefined) cat += boosts['(none)'];
   add(cat, `category (${(item.categories ?? []).slice(0, 3).join(', ') || 'none'})`);
+
+  // A Microsoft 365 retirement or deprecation due within RETIRE_WINDOW_DAYS always clears the threshold:
+  // admins need the migration how-to before the date, whatever the headline wording.
+  if (RETIRE.test(text) && M365_CHANGE.test(`${text} ${(item.categories ?? []).join(' ')}`)) {
+    const days = daysToDeadline(text, now);
+    if (days !== null) add(Math.max(3, threshold + 1 - score), `M365 retirement due in ${Math.max(days, 0)} days`);
+  }
 
   const date = Date.parse(item.date ?? '');
   const ageHours = Number.isNaN(date) ? null : (now - date) / 3600e3;

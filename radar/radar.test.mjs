@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import {
   parseFeed, parseSitemap, parseHtmlList, parseDatedSections, normalizeUrl, scoreItem, mergeDuplicates, findCoverage,
   parseBacklog, sameTopic, todayCounts, parkInBacklog, markPublished, logLine, checkFastTrack, trendBoost, istDate, RADAR_MARK,
+  datesIn, daysToDeadline,
 } from './lib.mjs';
 
 const NOW = Date.parse('2026-11-10T14:00:00Z');
@@ -102,6 +103,34 @@ test('rumours are rejected and stale items are not eligible', () => {
   assert.equal(scoreItem(item({ title: 'iPhone 18 leak reportedly shows new button' }), plain, { now: NOW }).reject, 'rumour');
   const stale = scoreItem(item({ title: 'Introducing ChatGPT Go', date: '2026-11-07T00:00:00Z' }), openai, { now: NOW, freshHours: 36 });
   assert.match(stale.reject, /^stale/);
+});
+
+test('datesIn reads exact and month-level dates; daysToDeadline keeps the next 120 days only', () => {
+  const t = datesIn('Retirement starts mid-January 2027, completes by the end of November 2026; act by January 31, 2027 or 1 February 2027.');
+  for (const d of ['2027-01-15', '2026-11-30', '2027-01-31', '2027-02-01']) assert.ok(t.includes(Date.parse(d)), d);
+  assert.equal(daysToDeadline('Retires by the end of November 2026.', NOW), 20);
+  assert.equal(daysToDeadline('Retires in December 2027.', NOW), null);
+  assert.equal(daysToDeadline('Retired on March 1, 2026.', NOW), null);
+});
+
+test('an M365 retirement due within 120 days clears the threshold even from a low-weight Message Center feed', () => {
+  const mc = { id: 'mc-merill', weight: -2 };
+  const near = scoreItem(item({
+    title: 'MC1220762: Retirement notice: MDE and XDR Advanced Hunting APIs retiring; migrate to Microsoft Graph Security API',
+    summary: 'Full retirement February 1, 2027.', categories: ['Message Center', 'Microsoft Defender XDR'],
+  }), mc, { now: NOW });
+  assert.ok(near.score >= 10, `score ${near.score}: ${near.reasons.join('; ')}`);
+  assert.ok(near.reasons.some((r) => /M365 retirement due in \d+ days/.test(r)));
+
+  const viaCategory = scoreItem(item({ title: 'MC1546409: Retirement of off-network invitations', summary: 'Retires in late January 2027.', categories: ['Message Center', 'Microsoft Teams'] }), mc, { now: NOW });
+  assert.ok(viaCategory.score >= 10, `category match ${viaCategory.score}`);
+
+  const far = scoreItem(item({ title: 'MC1: Exchange Online feature retirement', summary: 'Retires in September 2027.', categories: ['Message Center'] }), mc, { now: NOW });
+  assert.ok(far.score < 10, `far ${far.score}`);
+  const offTopic = scoreItem(item({ title: 'MC2: Dynamics 365 Sales retirement of a legacy view', summary: 'Retires December 15, 2026.', categories: ['Message Center', 'Dynamics 365 Apps'] }), mc, { now: NOW });
+  assert.ok(offTopic.score < 10, `off-topic ${offTopic.score}`);
+  const routine = scoreItem(item({ title: 'MC3: Microsoft Teams: new meeting reactions rolling out', summary: 'Rolling out in December 2026.', categories: ['Message Center', 'Microsoft Teams'] }), mc, { now: NOW });
+  assert.ok(routine.score < 10, `routine ${routine.score}`);
 });
 
 test('feed categories adjust the score, including items without a category', () => {
