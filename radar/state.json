@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-13T04:43:44.233Z",
+ "lastScan": "2026-11-13T05:13:15.630Z",
  "seen": {
   "https://openai.com/index/gilbert-tobin-sam-nickless": {
    "title": "Gilbert + Tobin rethinks the business of law with AI",
@@ -1317,11 +1317,13 @@
     "+1 category (Security)",
     "+1 autocomplete (9)"
    ],
-   "status": "writing",
+   "status": "published",
    "hash": "7d54f949",
    "kind": "new",
    "taskAt": "2026-11-13T04:43:44.233Z",
-   "attempts": 1
+   "attempts": 1,
+   "slug": "apache-http-server-http2-rce-cve-2026-119618-patch",
+   "resultAt": "2026-11-13T04:50:16.556Z"
   },
   "https://bleepingcomputer.com/news/security/your-endpoint-management-platform-could-be-your-biggest-security-risk": {
    "title": "Your Endpoint Management Platform Could Be Your Biggest Security Risk",
@@ -2168,6 +2170,122 @@
    ],
    "status": "below",
    "hash": "b1c97d6d"
+  },
+  "https://bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide": {
+   "title": "Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide",
+   "link": "https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/",
+   "source": "bleepingcomputer",
+   "topic": "microsoft-365",
+   "category": "outage",
+   "date": "2026-11-12T20:15:16.000Z",
+   "updated": null,
+   "summary": "Microsoft is investigating a widespread outage affecting multiple Microsoft 365 services, including Outlook, Microsoft Teams, and Copilot, as users report connectivity problems worldwide. [...]",
+   "first": "2026-11-13T05:13:15.630Z",
+   "score": 13,
+   "reasons": [
+    "+1 source bleepingcomputer",
+    "+6 outage \"outage\"",
+    "+3 major platform (microsoft)",
+    "+1 scale \"Massive\"",
+    "+1 several services (microsoft 365, outlook, teams, copilot)",
+    "+1 autocomplete (4)"
+   ],
+   "status": "writing",
+   "hash": "6b3d848c",
+   "families": [
+    "microsoft"
+   ],
+   "kind": "new",
+   "extra": true,
+   "taskAt": "2026-11-13T05:13:15.630Z",
+   "attempts": 1
+  },
+  "https://status.cloud.microsoft/#2026-11-13-users-may-be-unable-to-connect-to-multiple-microsoft-365-ser": {
+   "title": "Users may be unable to connect to multiple Microsoft 365 services",
+   "link": "https://status.cloud.microsoft/#2026-11-13-users-may-be-unable-to-connect-to-multiple-microsoft-365-ser",
+   "source": "status-m365-admin",
+   "topic": "microsoft-365",
+   "category": "outage",
+   "date": "2026-11-13T04:57:55.000Z",
+   "updated": "2026-11-13T04:57:55.000Z",
+   "summary": "User impact: Users may be unable to connect to multiple Microsoft 365 services. More info: Features of the Microsoft 365 services below that interact with Exchange Online and email services are impacted. Elements of those services that do not depend on interaction with Exchange Online remain functio",
+   "first": "2026-11-13T05:13:15.630Z",
+   "score": 11,
+   "reasons": [
+    "+6 status-page incident \"service degradation\"",
+    "+3 major platform (microsoft)",
+    "+2 large incident (impact major, 19 service(s), multi-service/region)",
+    "same outage as \"Massive Microsoft 365 outage disrupts Outlook, Teams, Copilo\""
+   ],
+   "status": "duplicate",
+   "hash": "3a894ec2",
+   "families": [
+    "microsoft"
+   ]
+  },
+  "https://status.cloud.microsoft/#2026-11-13-users-may-be-unable-to-access-or-perform-several-actions-in-": {
+   "title": "Users may be unable to access or perform several actions in Microsoft 365 services",
+   "link": "https://status.cloud.microsoft/#2026-11-13-users-may-be-unable-to-access-or-perform-several-actions-in-",
+   "source": "status-m365-consumer",
+   "topic": "microsoft-365",
+   "category": "outage",
+   "date": "2026-11-13T04:24:54.757Z",
+   "updated": "2026-11-13T04:24:54.757Z",
+   "summary": "User impact: Users may be unable to access or perform several actions in Microsoft 365 services. Current status: We’re continuing our recovery efforts to restore service health throughout the affected environment. This issue impacts Outlook.com, OneDrive, OneNote, Microsoft To Do, Teams, and Microso",
+   "first": "2026-11-13T05:13:15.630Z",
+   "score": 11,
+   "reasons": [
+    "+6 status-page incident \"service degradation\"",
+    "+3 major platform (microsoft)",
+    "+2 large incident (impact major, 0 service(s))",
+    "same outage as \"Massive Microsoft 365 outage disrupts Outlook, Teams, Copilo\""
+   ],
+   "status": "duplicate",
+   "hash": "13dfd7ae",
+   "families": [
+    "microsoft"
+   ]
+  },
+  "https://githubstatus.com/incidents/dvy0t3mvh1lg": {
+   "title": "Impact across multiple GitHub products including Actions, Pages, and Copilot products.",
+   "link": "https://www.githubstatus.com/incidents/dvy0t3mvh1lg",
+   "source": "status-github",
+   "topic": "ai-engineering",
+   "category": "outage",
+   "date": "2026-11-11T20:48:12.260Z",
+   "updated": "2026-11-11T21:21:39.499Z",
+   "summary": "This incident has been resolved. Thank you for your patience and understanding as we addressed this issue. A detailed root cause analysis will be shared as soon as it is available.",
+   "first": "2026-11-13T05:13:15.630Z",
+   "score": 12,
+   "reasons": [
+    "+6 status-page incident \"resolved\"",
+    "+3 major platform (github)",
+    "+2 large incident (impact critical, 4 service(s), multi-service/region)",
+    "resolved or retrospective: may update an existing outage guide, never a new one",
+    "+1 autocomplete (10)"
+   ],
+   "status": "resolved",
+   "hash": "e00c824a",
+   "families": [
+    "github"
+   ]
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63968": {
+   "title": "Result of the 3-day Variable Rate Reverse Repo (VRRR) auction held on November 13, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63968",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-13T10:20:00.000Z",
+   "updated": null,
+   "summary": "Tenor 3-day Notified Amount (in ₹ crore) 75,000 Total amount of offers received (in ₹ crore) 38,592 Amount accepted (in ₹ crore) 38,592 Cut off Rate (%) 5.49 Weighted Average Rate (%) 5.49 Partial Acceptance Percentage of offers received at cut off rate NA Ajit Prasad Deputy General Manager (Communi",
+   "first": "2026-11-13T05:13:15.630Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "e9b56827"
   }
  }
 }
