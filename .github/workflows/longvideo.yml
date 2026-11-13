@@ -5,7 +5,11 @@ name: Long video
 
 # Started daily at 05:13 UTC by the Cloudflare scheduler (scheduler/index.js in EPIVIFE). The video is
 # uploaded private and YouTube publishes it at 14:00 UTC (10 AM ET). At 14:16 UTC the scheduler starts
-# mode "facebook": today's video goes to the Facebook Page as a normal 16:9 Page video (not a Reel). When the
+# mode "facebook": today's newest video that is not on Facebook yet goes to the Facebook Page as a normal 16:9 Page
+# video (not a Reel). publish_now (trending topics; the launch radar sets it for outage and incident guides): the
+# video is public on YouTube as soon as it is uploaded, and the same run sends it to the Facebook Page straight away
+# through the Graph API (when the META_* secrets exist; otherwise, or when that fails, the 14:16 UTC run sends it).
+# When the
 # META_* secrets exist it is uploaded straight through the Graph API (meta-post.mjs --long-video: title,
 # description with the article link and chapters, thumbnail), whatever FB_LONG_VIDEO says. Without them (or
 # when Meta rejects the token) and only when the repository variable FB_LONG_VIDEO is "on", it goes through
@@ -31,6 +35,10 @@ on:
         description: Upload to YouTube (off = render only, nothing is logged)
         type: boolean
         default: true
+      publish_now:
+        description: Trending topic - public on YouTube at once (not 14:00 UTC) and on the Facebook Page in the same run
+        type: boolean
+        default: false
 
 env:
   SITE_REMOTE: https://x-access-token:${{ secrets.SITE_REPO_TOKEN }}@github.com/sk9836413/EPIVIFE.git
@@ -70,6 +78,8 @@ jobs:
           SLUG_INPUT: ${{ inputs.slug }}
         run: |
           today=$(date -u +%F)
+          # "Today's video already uploaded" = a YouTube URL in today's log (a trending publish_now video counts too,
+          # so it replaces the daily one when it was made first).
           if [ "${{ inputs.force }}" != "true" ] && grep -q "^- $today | .* | yt: https://" automation/longvideo-log.md 2>/dev/null; then
             echo "::notice::Today's long video is already uploaded."
             echo "slug=" >> "$GITHUB_OUTPUT"
@@ -77,6 +87,12 @@ jobs:
           fi
           slug="$SLUG_INPUT"
           if [ -n "$slug" ] && { ! [[ "$slug" =~ ^[a-z0-9-]+$ ]] || ! ls content/posts/"$slug".md* > /dev/null 2>&1; }; then echo "::error::No article $slug"; exit 1; fi
+          # A run the launch radar started (github-actions[bot]) never makes a second video of the same article.
+          if [ -n "$slug" ] && [ "$GITHUB_ACTOR" = "github-actions[bot]" ] && grep -q "^- [0-9-]* | $slug | yt: https://" automation/longvideo-log.md 2>/dev/null; then
+            echo "::notice::$slug already has a long video; nothing to do."
+            echo "slug=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           echo "slug=$slug" >> "$GITHUB_OUTPUT"
           echo "dir=longvideo/$today" >> "$GITHUB_OUTPUT"
 
@@ -119,6 +135,8 @@ jobs:
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          # The launch radar starts trending videos with GITHUB_TOKEN (github-actions bot), so a bot actor is allowed.
+          allowed_bots: "*"
           claude_args: |
             --max-turns 60
             --allowedTools "Read,Write,Edit,Glob,Grep,Bash(node scripts/social/longvideo.mjs validate:*),Bash(node scripts/social/longvideo.mjs check:*),Bash(mkdir:*),Bash(ls:*)"
@@ -132,6 +150,8 @@ jobs:
 
             When you are done, run `node scripts/social/longvideo.mjs check ${{ steps.pick.outputs.dir }}`
             and fix every problem it reports until it passes.
+
+            ${{ inputs.publish_now && 'This topic is trending right now and the video goes public the moment it is uploaded: the first sentence names the problem exactly as viewers are living it (no intro), and the title leads with it.' || '' }}
 
             Do not render, upload, commit or push, and do not edit files outside that folder.
 
@@ -158,9 +178,13 @@ jobs:
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           DIR: ${{ steps.pick.outputs.dir }}
+          PUBLISH_NOW: ${{ inputs.publish_now }}
         run: |
           result="$RUNNER_TEMP/yt-result.json"
-          node scripts/social/youtube.mjs upload-long --dir "$DIR" --publish-hour 14 > "$result" || true
+          # Daily videos: private, published by YouTube at 14:00 UTC. publish_now: public at once.
+          when=(--publish-hour 14)
+          [ "$PUBLISH_NOW" = "true" ] && when=(--public-now)
+          node scripts/social/youtube.mjs upload-long --dir "$DIR" "${when[@]}" > "$result" || true
           cat "$result"
           status=$(node -p "try { JSON.parse(require('fs').readFileSync('$result','utf8').trim().split('\n').pop()).status } catch { 'error' }")
           echo "status=$status" >> "$GITHUB_OUTPUT"
@@ -172,10 +196,35 @@ jobs:
             *) echo "::error::YouTube upload failed; see the result above." ;;
           esac
 
+      # publish_now: YouTube is public already, so the Facebook Page gets the video now too (meta-post.mjs --long-video,
+      # published at once) instead of in the 14:16 UTC "facebook" run, which skips videos already on Facebook. No
+      # META_* secrets, a rejected token or a failed upload: the 14:16 UTC run sends it (with the Make fallback).
+      # The token only reaches this step and is never printed (public logs).
+      - name: Facebook Page now (publish_now)
+        id: fbnow
+        if: inputs.publish_now && steps.youtube.outputs.status == 'ok'
+        continue-on-error: true
+        env:
+          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+          META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+          DIR: ${{ steps.pick.outputs.dir }}
+        run: |
+          if [ -z "$META_PAGE_TOKEN" ] || [ -z "$META_PAGE_ID" ]; then echo "::notice::META_* secrets not set; the 14:16 UTC facebook run sends it."; exit 0; fi
+          result="$RUNNER_TEMP/meta-result.json"
+          node scripts/social/meta-post.mjs --long-video "$DIR" > "$result" \
+            || echo "::warning::The Facebook Page video upload failed; the 14:16 UTC facebook run retries it."
+          cat "$result"
+          echo "result=$result" >> "$GITHUB_OUTPUT"
+
       - name: Log and push
         if: steps.youtube.outcome == 'success' && steps.youtube.outputs.status != 'not-configured'
+        env:
+          FB_RESULT: ${{ steps.fbnow.outputs.result }}
         run: |
           node scripts/social/longvideo.mjs log "${{ steps.pick.outputs.dir }}" "${{ steps.youtube.outputs.result }}" | tee "$RUNNER_TEMP/log-line.txt"
+          if [ -n "$FB_RESULT" ] && [ -f "$FB_RESULT" ]; then
+            node scripts/social/longvideo.mjs log-facebook "${{ steps.article.outputs.slug }}" "$FB_RESULT" | tee -a "$RUNNER_TEMP/log-line.txt"
+          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add automation/longvideo-log.md
@@ -242,9 +291,16 @@ jobs:
         if: steps.gate.outputs.on == 'true'
         run: |
           today=$(date -u +%F)
-          slug=$(grep "^- $today | .* | yt: https://" automation/longvideo-log.md | tail -1 | cut -d'|' -f2 | tr -d ' ')
-          if [ -z "$slug" ]; then echo "::notice::No long video uploaded today."; exit 0; fi
-          if grep -Eq "^- $today | $slug | fb-long: (via make|https://)" automation/longvideo-log.md; then echo "::notice::Already sent to Facebook."; exit 0; fi
+          log=automation/longvideo-log.md
+          # The newest of today's uploaded videos that is not on Facebook yet (a publish_now video went out at once).
+          # Fields split on " | ": "- <date>", "<slug>", "yt: <url>" or "fb-long: <url | via make | error ...>".
+          # (The old check, grep -E with unescaped "|", matched today's YouTube line itself, so it always said
+          # "Already sent" and no long video ever reached the Page.)
+          uploaded=$(awk -F' [|] ' -v d="- $today" '$1 == d && $3 ~ /^yt: https:/ { print $2 }' "$log")
+          sent=$(awk -F' [|] ' -v d="- $today" '$1 == d && $3 ~ /^fb-long: (via make|https:)/ { print $2 }' "$log")
+          if [ -z "$uploaded" ]; then echo "::notice::No long video uploaded today."; exit 0; fi
+          slug=$(printf '%s\n' "$uploaded" | grep -vxF -f <(printf '%s\n' "$sent") | grep . | tail -1 || true)
+          if [ -z "$slug" ]; then echo "::notice::Already sent to Facebook."; exit 0; fi
           run=$(gh run list -R "$GITHUB_REPOSITORY" --workflow longvideo.yml --status success --limit 30 --json databaseId,createdAt \
             --jq "[.[] | select(.createdAt | startswith(\"$today\"))] | .[].databaseId" | while read -r id; do
               gh api "repos/$GITHUB_REPOSITORY/actions/runs/$id/artifacts" --jq ".artifacts[] | select(.name == \"longvideo-$slug\") | $id" ; done | head -1)

@@ -5,7 +5,7 @@ import {
   parseFeed, parseSitemap, parseHtmlList, parseDatedSections, normalizeUrl, scoreItem, mergeDuplicates, findCoverage,
   parseBacklog, sameTopic, todayCounts, parkInBacklog, markPublished, logLine, checkFastTrack, trendBoost, istDate, RADAR_MARK,
   datesIn, daysToDeadline, scoreIncident, sameIncident, markIncidentDuplicates, backlogLine, updateSignal,
-  scoreOutage, outageTerm, outageFamilies, pickNewTask, parseSource,
+  scoreOutage, outageTerm, outageFamilies, pickNewTask, parseSource, autoVideoPlan,
 } from './lib.mjs';
 
 const NOW = Date.parse('2026-11-10T14:00:00Z');
@@ -669,4 +669,79 @@ test('radar.mjs check --category outage runs the outage structure check', async 
   assert.match(r.stderr, /SLA credits/);
   assert.equal(run(good, 'launch').status, 1);
   fs.rmSync(dir, { recursive: true, force: true });
+});
+
+// ---------- trending videos ----------
+
+const AV_NOW = Date.parse('2026-11-13T04:50:00Z');
+const avTask = (over = {}) => ({ kind: 'new', key: 'k', category: 'launch', score: 10, title: 'T', ...over });
+const plan = (over = {}) => autoVideoPlan({ task: avTask(), status: 'published', slug: 'a-post', topic: 'microsoft-365', title: 'A post', now: AV_NOW, ...over });
+
+test('autoVideoPlan starts the pair for outages, incidents and scores of 12+', () => {
+  assert.equal(plan({ task: avTask({ category: 'outage', score: 0 }) }).dispatch, true);
+  assert.equal(plan({ task: avTask({ category: 'incident' }) }).reason, 'category incident');
+  assert.equal(plan({ task: avTask({ score: 12 }) }).dispatch, true);
+  const low = plan({ task: avTask({ score: 11 }) });
+  assert.equal(low.dispatch, false);
+  assert.match(low.reason, /not trending/);
+});
+
+test('autoVideoPlan only acts on a published new article', () => {
+  assert.equal(plan({ task: avTask({ kind: 'update', category: 'outage' }) }).dispatch, false);
+  assert.equal(plan({ task: avTask({ category: 'outage' }), status: 'failed' }).dispatch, false);
+  assert.equal(plan({ task: avTask({ category: 'outage' }), slug: null }).dispatch, false);
+});
+
+test('autoVideoPlan: at most one trending pair a UTC day', () => {
+  const t = avTask({ category: 'outage' });
+  const results = [{ autoVideo: '2026-11-12' }, { autoVideo: '2026-11-13', dryRun: true }];
+  assert.equal(plan({ task: t, results }).dispatch, true);
+  const capped = plan({ task: t, results: [...results, { autoVideo: '2026-11-13' }] });
+  assert.equal(capped.dispatch, false);
+  assert.match(capped.reason, /daily cap reached \(1\/1/);
+  // 23:30 UTC on the 12th is still the 12th (UTC day, like longvideo.yml), even though it is the 13th in IST.
+  assert.equal(plan({ task: t, results: [{ autoVideo: '2026-11-13' }], now: Date.parse('2026-11-12T23:30:00Z') }).dispatch, true);
+});
+
+test('autoVideoPlan replaces the daily long video only when it is not made yet', () => {
+  const t = avTask({ category: 'outage' });
+  assert.equal(plan({ task: t, longVideoLog: '- 2026-11-12 | x | yt: https://www.youtube.com/watch?v=1 | publish: x\n' }).replacesDaily, true);
+  assert.equal(plan({ task: t, longVideoLog: '- 2026-11-13 | x | yt: retry next run (quota)\n' }).replacesDaily, true);
+  assert.equal(plan({ task: t, longVideoLog: '- 2026-11-13 | x | yt: https://www.youtube.com/watch?v=1 | publish: x\r\n' }).replacesDaily, false);
+});
+
+test('autoVideoPlan: consumer topics get the Short only; the brief asks for a first-second hook', () => {
+  const p = plan({ task: avTask({ category: 'incident' }), topic: 'online-safety', title: 'Bank "leak"\n$(x)' });
+  assert.equal(p.short, true);
+  assert.equal(p.long, false);
+  assert.match(p.longSkipped, /online-safety/);
+  assert.match(p.brief, /^TRENDING NOW \(incident\): "Bank leak \(x\)"/);
+  assert.match(p.brief, /first second/);
+  assert.doesNotMatch(p.brief, /[\n`$\\]/);
+  assert.equal(plan({ task: avTask({ category: 'outage' }) }).long, true);
+});
+
+test('radar.mjs video-plan reads the article and the long video log from the site checkout', async () => {
+  const { spawnSync } = await import('node:child_process');
+  const fs = await import('node:fs');
+  const os = await import('node:os');
+  const path = await import('node:path');
+  const { fileURLToPath } = await import('node:url');
+  const site = fs.mkdtempSync(path.join(os.tmpdir(), 'radar-video-'));
+  fs.mkdirSync(path.join(site, 'content', 'posts'), { recursive: true });
+  fs.mkdirSync(path.join(site, 'automation'));
+  fs.writeFileSync(path.join(site, 'content', 'posts', 'm365-outage.md'), '---\r\ntitle: "Microsoft 365 outage: what to do"\r\ntopic: microsoft-365\r\n---\r\nBody\r\n');
+  fs.writeFileSync(path.join(site, 'automation', 'longvideo-log.md'), '- 2030-01-02 | other | yt: https://www.youtube.com/watch?v=1 | publish: x\n');
+  fs.writeFileSync(path.join(site, 'task.json'), JSON.stringify(avTask({ category: 'outage', score: 9 })));
+  const cli = fileURLToPath(new URL('./radar.mjs', import.meta.url));
+  const run = (now) => JSON.parse(spawnSync(process.execPath, [cli, 'video-plan', '--site', site, '--task', path.join(site, 'task.json'),
+    '--status', 'published', '--file', 'content/posts/m365-outage.md', '--now', now], { encoding: 'utf8' }).stdout);
+  const p = run('2030-01-02T04:00:00Z');
+  assert.equal(p.dispatch, true);
+  assert.equal(p.slug, 'm365-outage');
+  assert.equal(p.long, true);
+  assert.equal(p.replacesDaily, false);
+  assert.match(p.brief, /"Microsoft 365 outage: what to do"/);
+  assert.equal(run('2030-01-03T04:00:00Z').replacesDaily, true);
+  fs.rmSync(site, { recursive: true, force: true });
 });

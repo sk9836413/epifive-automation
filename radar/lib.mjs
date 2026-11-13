@@ -869,6 +869,52 @@ export function todayCounts(results, state, today) {
   };
 }
 
+// ---------- trending videos ----------
+
+/**
+ * Views on a trending topic (a big outage, a security incident) come in the first hours, so right after the radar
+ * publishes such a fast-track article the write job starts the Short (social.yml) and the long video (longvideo.yml
+ * with publish_now: public on YouTube and on the Facebook Page at once instead of the fixed 14:00 UTC slot).
+ * Trending = category outage or incident, or a score of at least minScore. At most maxPerDay pairs a UTC day
+ * (radar/results.jsonl entries with autoVideo = that day), so it never fights the daily long video slot: when the
+ * daily long video is not made yet, the trending one replaces it (longvideo.yml skips the daily run once today's
+ * log has a YouTube URL). Consumer topics (bank leaks, phones) get the Short only: the long video is a Microsoft
+ * 365-style screen walkthrough, which has nothing to show there.
+ */
+export const AUTO_VIDEO = {
+  minScore: 12,
+  categories: ['outage', 'incident'],
+  maxPerDay: 1,
+  shortOnlyTopics: ['online-safety', 'mobiles', 'laptops-hardware', 'how-to-tips'],
+};
+
+const HOOK_EXAMPLE = { outage: '"Outlook down right now?"', incident: '"Is your account affected?"', launch: '"It is live today:"' };
+
+export function autoVideoPlan({ task = {}, status, slug, topic = '', title = '', results = [], longVideoLog = '', now = Date.now(), settings = AUTO_VIDEO } = {}) {
+  const day = new Date(now).toISOString().slice(0, 10);
+  const no = (reason) => ({ dispatch: false, reason, day });
+  if (task.kind !== 'new') return no('not a new fast-track article');
+  if (status !== 'published') return no(`the article was not published (${status || 'no result'})`);
+  if (!/^[a-z0-9-]+$/.test(slug ?? '')) return no('no valid slug');
+  const category = ['outage', 'incident'].includes(task.category) ? task.category : 'launch';
+  const score = Number(task.score) || 0;
+  const why = settings.categories.includes(category) ? `category ${category}` : score >= settings.minScore ? `score ${score} >= ${settings.minScore}` : null;
+  if (!why) return no(`not trending (category ${category}, score ${score} < ${settings.minScore})`);
+  const used = results.filter((r) => r.autoVideo === day && !r.dryRun).length;
+  if (used >= settings.maxPerDay) return no(`daily cap reached (${used}/${settings.maxPerDay} trending video pair on ${day} UTC)`);
+  const long = !settings.shortOnlyTopics.includes(topic);
+  const dailyDone = longVideoLog.split(/\r?\n/).some((l) => l.startsWith(`- ${day} | `) && l.includes(' | yt: https://'));
+  const subject = String(title || task.title || slug).replace(/[\r\n"`$\\]+/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 120);
+  const brief = `TRENDING NOW (${category}): "${subject}". People are searching for this right now and the video goes out at once. `
+    + `Hook in the first second: open on the problem exactly as the viewer is living it (e.g. ${HOOK_EXAMPLE[category]}), no intro, `
+    + 'then what to do now. Facts and times only as the article states them.';
+  return {
+    dispatch: true, reason: why, day, slug, category, score, short: true, long,
+    ...(long ? { replacesDaily: !dailyDone } : { longSkipped: `topic ${topic} gets the Short only` }),
+    brief,
+  };
+}
+
 // ---------- site file edits (applied on a fresh checkout, so they never conflict) ----------
 
 export const RADAR_MARK = '<!-- radar fast-track -->';

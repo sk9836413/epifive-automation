@@ -11,6 +11,10 @@
 # Caps: at most 2 fast-track articles a day (3 attempts), plus 1 extra a day for a major outage once those are used
 # up, and 2 updates of existing posts a day. A draft that fails the
 # quality gate gets one fix attempt, then the launch is parked in automation/backlog.md "(fast-track, failed gate)".
+# Trending videos: when a new outage or incident guide, or a fast-track article that scored 12 or more, is published,
+# the write job starts the Short (social.yml, force) and the long video (longvideo.yml, publish_now: public on
+# YouTube and the Facebook Page at once) for it. At most 1 such pair a UTC day; consumer topics get the Short only
+# (radar/lib.mjs autoVideoPlan). A Social media run started that way (github-actions[bot]) starts no extra scan.
 # Off switch: repository variable RADAR (automatic scans run only while it is "on").
 # Logs (public, no secrets): radar/log/<YYYY-MM>.md per scan, radar/results.jsonl per write.
 name: Launch radar
@@ -55,7 +59,10 @@ env:
 jobs:
   scan:
     # Automatic scans need the repository variable RADAR = on (the off switch); manual runs always work.
-    if: (github.event_name == 'workflow_run' && vars.RADAR == 'on') || (github.event_name == 'workflow_dispatch' && inputs.mode != 'write')
+    # A Social media run this workflow started itself (the trending Short, github-actions[bot]) starts no extra scan.
+    if: >-
+      (github.event_name == 'workflow_run' && vars.RADAR == 'on' && github.event.workflow_run.triggering_actor.login != 'github-actions[bot]') ||
+      (github.event_name == 'workflow_dispatch' && inputs.mode != 'write')
     runs-on: ubuntu-latest
     timeout-minutes: 15
     concurrency:
@@ -359,6 +366,44 @@ jobs:
           done
           node scripts/seo/indexnow.mjs "$URL"
 
+      # Views on a trending topic come in the first hours: an outage or incident guide, or a fast-track article that
+      # scored 12+, starts the Short (social.yml, force) and the long video (longvideo.yml, publish_now = public on
+      # YouTube and the Facebook Page at once) as soon as the page is live. At most 1 pair a UTC day, counted in
+      # radar/results.jsonl (autoVideo); consumer topics get the Short only (radar/lib.mjs autoVideoPlan). GITHUB_TOKEN
+      # may start workflow_dispatch runs in this repo (actions: write, as the scan does for this job). Dry run: prints
+      # the commands only. Never fails the run.
+      - name: Trending Short and long video
+        id: videos
+        if: steps.verdict.outputs.result == 'published' && (inputs.dry_run || steps.publish.outcome == 'success')
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DRY: ${{ inputs.dry_run && 'true' || 'false' }}
+          FILE: ${{ steps.post.outputs.file }}
+        run: |
+          plan=$(node _radar/radar/radar.mjs video-plan --site . --task .radar-task.json --status published --file "$FILE")
+          echo "$plan"
+          get() { node -e 'const v = JSON.parse(process.argv[1])[process.argv[2]]; process.stdout.write(v == null ? "" : String(v))' "$plan" "$1"; }
+          if [ "$(get dispatch)" != true ]; then
+            echo "Trending videos: none ($(get reason))." | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          start() {
+            if [ "$DRY" = true ]; then echo "[dry run] gh workflow run $*"; else gh workflow run "$@" --repo "$GITHUB_REPOSITORY" --ref main; fi
+          }
+          slug=$(get slug)
+          start social.yml -f slug="$slug" -f force=true -f brief="$(get brief)"
+          # Counted for the daily cap as soon as anything started.
+          [ "$DRY" = true ] || echo "day=$(get day)" >> "$GITHUB_OUTPUT"
+          if [ "$(get long)" = true ]; then
+            start longvideo.yml -f mode=video -f slug="$slug" -f force=true -f publish_now=true -f upload=true
+            long="long video public at once"
+            [ "$(get replacesDaily)" = true ] && long="$long (replaces today's daily long video if it starts first)"
+          else
+            long="no long video: $(get longSkipped)"
+          fi
+          echo "Trending videos for $slug ($(get reason)): Short + $long.$([ "$DRY" = true ] && echo ' Dry run: nothing started.')" | tee -a "$GITHUB_STEP_SUMMARY"
+
       - name: Record the outcome
         if: always() && steps.task.outputs.key == 'ok' && !inputs.dry_run
         working-directory: _radar
@@ -367,10 +412,12 @@ jobs:
           PUBLISHED: ${{ steps.publish.outcome }}
           SLUG: ${{ steps.post.outputs.slug }}
           TITLE: ${{ steps.post.outputs.title }}
+          AUTO_VIDEO: ${{ steps.videos.outputs.day }}
         run: |
           status="${RESULT:-error}"
           if [ "$status" = "published" ] && [ "$PUBLISHED" != "success" ]; then status=error; fi
           args=(record --task ../.radar-task.json --status "$status")
+          [ -n "$AUTO_VIDEO" ] && args+=(--auto-video "$AUTO_VIDEO")
           [ -n "$SLUG" ] && args+=(--slug "$SLUG")
           [ -n "$TITLE" ] && args+=(--title "$TITLE")
           node radar/radar.mjs "${args[@]}"

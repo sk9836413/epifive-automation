@@ -4,8 +4,12 @@
 //
 //   node radar/radar.mjs scan --site <site checkout> [--dry-run] [--force-url <url> [--force-category incident|outage]] [--out task.json]
 //        fetch every source, score and de-duplicate new items, log the run, pick at most one task
-//   node radar/radar.mjs record --task task.json --status published|failed|skipped [--slug s] [--title t]
-//        append the write job's outcome to radar/results.jsonl (the next scan folds it into state.json)
+//   node radar/radar.mjs record --task task.json --status published|failed|skipped [--slug s] [--title t] [--auto-video YYYY-MM-DD]
+//        append the write job's outcome to radar/results.jsonl (the next scan folds it into state.json);
+//        --auto-video = the UTC day the trending Short + long video were started for it (the daily cap counts these)
+//   node radar/radar.mjs video-plan --task task.json --status published --file content/posts/x.md [--site .] [--now ISO]
+//        decide whether a published fast-track article gets the trending Short + long video now (lib.mjs autoVideoPlan);
+//        prints one JSON line
 //   node radar/radar.mjs site-apply --site . --task task.json --result published|failed [--file content/posts/x.md]
 //        edit automation/backlog.md and automation/log.md in the site checkout for that outcome
 //   node radar/radar.mjs check --file content/posts/x.md --kind new|update [--today YYYY-MM-DD] [--category launch|incident|outage]
@@ -20,7 +24,7 @@ import { fileURLToPath } from 'node:url';
 import {
   parseSource, normalizeUrl, scoreItem, trendBoost, searchPhrase, findCoverage, parseBacklog, hashText,
   istDate, todayCounts, mergeDuplicates, parkInBacklog, markPublished, logLine, checkFastTrack, updateSignal,
-  markIncidentDuplicates, backlogLine, pickNewTask,
+  markIncidentDuplicates, backlogLine, pickNewTask, autoVideoPlan,
 } from './lib.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -295,6 +299,7 @@ function record() {
   const entry = {
     at: new Date().toISOString(), date: istDate(), key: task.key, kind: task.kind, category: task.category ?? 'launch', status: opt('status'),
     ...(task.extra ? { extra: true } : {}),
+    ...(/^\d{4}-\d{2}-\d{2}$/.test(opt('auto-video') ?? '') ? { autoVideo: opt('auto-video') } : {}),
     slug: typeof opt('slug') === 'string' ? opt('slug') : task.slug ?? null, title: typeof opt('title') === 'string' ? opt('title') : task.title, dryRun: Boolean(task.dryRun),
   };
   fs.appendFileSync(RESULTS, `${JSON.stringify(entry)}\n`);
@@ -341,7 +346,24 @@ function check() {
   console.log(`Fast-track check passed (${file}).`);
 }
 
-const commands = { scan, record, 'site-apply': siteApply, check };
+// Trending Short + long video for a just-published fast-track article (run in the site checkout of the write job).
+function videoPlan() {
+  const site = opt('site', '.');
+  const file = opt('file');
+  const text = typeof file === 'string' && fs.existsSync(path.join(site, file)) ? fs.readFileSync(path.join(site, file), 'utf8').replace(/\r\n/g, '\n') : '';
+  const front = text.match(/^---\n([\s\S]*?)\n---/)?.[1] ?? '';
+  const logFile = path.join(site, 'automation', 'longvideo-log.md');
+  const plan = autoVideoPlan({
+    task: readJson(opt('task'), {}), status: opt('status'),
+    slug: typeof file === 'string' && text ? path.basename(file).replace(/\.mdx?$/, '') : null,
+    topic: frontValue(front, 'topic'), title: frontValue(front, 'title'), results: readResults(),
+    longVideoLog: fs.existsSync(logFile) ? fs.readFileSync(logFile, 'utf8') : '',
+    now: opt('now') ? Date.parse(opt('now')) : Date.now(),
+  });
+  console.log(JSON.stringify(plan));
+}
+
+const commands = { scan, record, 'site-apply': siteApply, check, 'video-plan': videoPlan };
 if (!commands[cmd]) {
   console.error(`Usage: node radar/radar.mjs <${Object.keys(commands).join('|')}> ...`);
   process.exit(2);

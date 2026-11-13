@@ -9,6 +9,10 @@ name: Social media
 # cartoon dialogue (SOCIAL.md "dialogue.json"; engine: characters/ in the public repo sk9836413/shyam-premi-sn).
 # Lip-sync runs on Kaggle when the KAGGLE_API_TOKEN secret exists, else still images with a speaker highlight; any
 # failure keeps the normal reel. Unset CHAR_SHORTS = every share is the normal reel, exactly as before.
+# Every share publishes at once (YouTube Short public, Facebook/Instagram Reels and the Make posts straight away), so
+# a trending one-off needs no extra switch: the launch radar starts it with slug + force + a hook brief right after
+# an outage or incident guide is published (radar.yml "Trending Short and long video"). Such a bot-started run skips
+# an article that was already shared, so it never doubles a scheduled share.
 on:
   workflow_dispatch:
     inputs:
@@ -159,6 +163,11 @@ jobs:
           fi
           slug="$SLUG_INPUT"
           if [ -n "$slug" ] && { ! [[ "$slug" =~ ^[a-z0-9-]+$ ]] || ! ls content/posts/"$slug".md* > /dev/null 2>&1; }; then echo "::error::No article $slug"; exit 1; fi
+          if [ -n "$slug" ] && [ "$GITHUB_ACTOR" = "github-actions[bot]" ] && grep -q "^- [0-9-]* | $slug | " automation/social-log.md; then
+            echo "::notice::$slug was already shared; the launch radar's trending share is skipped."
+            echo "slug=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           # Wednesday and Saturday: the day's first share is a promo (automation/PROMOS.md).
           if [ -z "$slug" ] && [ "$count" -eq 0 ]; then
             node scripts/social/promo.mjs > "$RUNNER_TEMP/promo.json"
@@ -187,6 +196,8 @@ jobs:
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          # The launch radar starts trending shares with GITHUB_TOKEN (github-actions bot), so a bot actor is allowed.
+          allowed_bots: "*"
           claude_args: |
             --max-turns 60
             --allowedTools "Read,Write,Edit,Glob,Grep,Bash(node scripts/social/card.mjs:*),Bash(node scripts/social/video.mjs:*),Bash(node scripts/social/validate.mjs:*),Bash(ffmpeg:*),Bash(mkdir:*),Bash(ls:*),Bash(rm ${{ steps.pick.outputs.dir }}/frame-*)"
