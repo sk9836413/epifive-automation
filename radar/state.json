@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-13T13:16:56.410Z",
+ "lastScan": "2026-11-13T14:16:39.516Z",
  "seen": {
   "https://openai.com/index/gilbert-tobin-sam-nickless": {
    "title": "Gilbert + Tobin rethinks the business of law with AI",
@@ -2595,6 +2595,25 @@
    ],
    "status": "below",
    "hash": "2ef3871d"
+  },
+  "https://apple.com/newsroom/2026/11/apple-homeview-available-today": {
+   "title": "Apple HomeView available today",
+   "link": "https://www.apple.com/newsroom/2026/11/apple-homeview-available-today/",
+   "source": "apple-newsroom",
+   "topic": "mobiles",
+   "category": "launch",
+   "date": "2026-11-13T13:59:07.218Z",
+   "updated": "2026-11-13T13:59:07.218Z",
+   "summary": "Customers can now purchase Apple HomeView and experience a new way to enjoy entertainment, stay connected, and manage their home.",
+   "first": "2026-11-13T14:16:39.516Z",
+   "score": 4,
+   "reasons": [
+    "+1 source apple-newsroom",
+    "+2 launch \"available today\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "74a0782f"
   }
  }
 }
