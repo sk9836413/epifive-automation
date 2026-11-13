@@ -566,6 +566,8 @@ export function outageTerm(text = '') {
 export const SCHEDULED = /\b(scheduled|planned) (maintenance|downtime|work|outage)\b|\bmaintenance (window|notice|scheduled)\b|\bwill be performing\b|^\s*scheduled\b/i;
 const RESOLVED_TITLE = /\b(resolved|restored|fixed|fixes|mitigated|recovered|back (up|online|to normal)|is back|are back|ends?|ended|over)\b|\[resolved\]|operating normally/i;
 const RESOLVED_STATUS = /^(resolved|postmortem|completed|service restored|restored|post-incident report published|false positive|available|operational)$/i;
+/** A status post that now says the outage is over (its status, or "resolved"/"[Resolved]" in the title). */
+export const statusClosed = (item) => RESOLVED_STATUS.test(String(item.status ?? '').trim()) || /\[resolved\]|\bresolved\b/i.test(item.title ?? '');
 // Retrospectives (root cause, PIR) and explainers: update material for an existing guide, not a new one.
 const OUTAGE_RETRO = /\b(root cause|post-incident|postmortem|post-mortem|rca|pir|explains? (what|why|how)|blames?|lessons|anniversary|a year after|last year|how to prepare|outage insurance|what caused)\b/i;
 const OUTAGE_WIDE = /\b(multiple|several|many|all) ((\w+|aws|google|github|microsoft 365) )?(services|products|regions|data ?cent(er|re)s|locations|apps)\b|\bmultipleservices\b|\bwidespread\b|\bglobal(ly)?\b|\bworldwide\b|\bnationwide\b|\ball (users|customers)\b|\bmajor outage\b|\bmassive\b/i;
@@ -804,6 +806,12 @@ export function mergeDuplicates(items) {
   return [...new Set(byKey.values())];
 }
 
+// Root-cause news about an outage: a headline about the cause or the vendor's review, or a status post that states
+// it ("Root cause: ..."). Not the promise in every Microsoft update ("we will share a full Post-Incident Report").
+const ROOT_CAUSE_TITLE = /\b(root[- ]cause|post-incident|postmortem|post-mortem|rca|pir|caused|blame[sd]?|explains?|cause of|what (caused|went wrong))\b/i;
+const ROOT_CAUSE_TEXT = /\broot cause\s*:\s*(?!n\/?a\b)\w|\bpost-incident report (?:has been |is )?(?:now )?(?:published|available)|\bpreliminary post-incident (?:report|review) (?:has been |is )?(?:now )?(?:published|available)/i;
+export const isRootCauseNews = (item) => ROOT_CAUSE_TITLE.test(item.title ?? '') || ROOT_CAUSE_TEXT.test(item.summary ?? '');
+
 /**
  * Find what already covers an item.
  * posts: [{ slug, title, date, body }], news: [{ slug, body }], backlog: [{ slug, title, done }]
@@ -815,10 +823,19 @@ export function findCoverage(item, { posts = [], news = [], backlog = [] }, { lo
     // An outage guide (a "## Post-incident review" section, or "outage"/"down" in its title or slug) from the last
     // 7 days on the same platform family covers every later report of that outage; older ones never do.
     const fam = families ?? outageFamilies(`${item.title} ${item.summary ?? ''}`);
-    const fresh = (p) => p.date && now - Date.parse(p.date) < 7 * 86400e3;
+    // A root-cause follow-up ("pir: pending" in its front matter) takes the vendor's root-cause news (a PIR/RCA, or a
+    // headline about the cause) and stays open to it for 14 days, since a final PIR can come days after resolution.
+    // Every other update (status, resolved) goes to the outage guide itself (no "pir:" key), as before.
+    const awaitingPir = (p) => /^pir:\s*['"]?pending\b/m.test(p.body ?? '');
+    const followUp = (p) => /^pir:/m.test(p.body ?? '');
+    const rootCause = isRootCauseNews(item);
+    const age = (p) => now - Date.parse(p.date);
+    const fresh = (p) => p.date && (age(p) < 7 * 86400e3 || (rootCause && awaitingPir(p) && age(p) < 14 * 86400e3));
     const isOutagePost = (p) => /^## Post-incident review/im.test(p.body ?? '') || /\b(outages?|down)\b/i.test(`${p.title} ${p.slug.replace(/-/g, ' ')}`);
-    const post = posts.find((p) => fresh(p) && isOutagePost(p) && inBody(p.body)) ??
-      posts.find((p) => fresh(p) && isOutagePost(p) && sameOutage({ title: item.title, families: fam }, { title: `${p.title} ${p.slug.replace(/-/g, ' ')}` }));
+    const live = posts.filter((p) => fresh(p) && isOutagePost(p));
+    const matches = [...live.filter((p) => inBody(p.body)),
+      ...live.filter((p) => sameOutage({ title: item.title, families: fam }, { title: `${p.title} ${p.slug.replace(/-/g, ' ')}` }))];
+    const post = (rootCause ? matches.find(awaitingPir) : matches.find((p) => !followUp(p))) ?? matches.find((p) => age(p) < 7 * 86400e3);
     const backlogHit = backlog.find((b) => !b.done && sameOutage({ title: item.title, families: fam }, { title: `${b.title} ${b.slug.replace(/-/g, ' ')}` }) && /outage/i.test(b.title));
     return { post: post ?? null, news: news.find((n) => inBody(n.body)) ?? null, backlog: backlogHit ?? null };
   }

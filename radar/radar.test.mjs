@@ -5,7 +5,7 @@ import {
   parseFeed, parseSitemap, parseHtmlList, parseDatedSections, normalizeUrl, scoreItem, mergeDuplicates, findCoverage,
   parseBacklog, sameTopic, todayCounts, parkInBacklog, markPublished, logLine, checkFastTrack, trendBoost, istDate, RADAR_MARK,
   datesIn, daysToDeadline, scoreIncident, sameIncident, markIncidentDuplicates, backlogLine, updateSignal,
-  scoreOutage, outageTerm, outageFamilies, pickNewTask, parseSource, autoVideoPlan,
+  scoreOutage, outageTerm, outageFamilies, pickNewTask, parseSource, autoVideoPlan, isRootCauseNews, statusClosed,
 } from './lib.mjs';
 
 const NOW = Date.parse('2026-11-10T14:00:00Z');
@@ -571,6 +571,36 @@ test('findCoverage (outage) matches only a recent outage post on the same platfo
   assert.equal(findCoverage({ title: 'GitHub outage', link: 'https://example.com/g' }, { posts: [post] }, { category: 'outage', now: NOW }).post, null);
   const howto = { slug: 'outlook-rules-how-to', title: 'How to set up Outlook rules', date: '2026-11-10', body: '---\n---\nx' };
   assert.equal(findCoverage(it, { posts: [howto] }, { category: 'outage', now: NOW }).post, null);
+});
+
+test('findCoverage (outage) sends root-cause news to the "pir: pending" follow-up, everything else to the guide', () => {
+  const guide = { slug: 'microsoft-365-outage-november-2026-what-to-do', title: 'Microsoft 365 Outage: Outlook Down, Status and What to Do', date: '2026-11-10', body: '---\n---\n## Post-incident review\n' };
+  const follow = { slug: 'microsoft-365-outage-november-2026-root-cause-it-admin-lessons', title: 'Microsoft 365 Outage: Root Cause and What IT Admins Should Learn', date: '2026-11-10', body: "---\npir: pending\n---\n## Post-incident review\n" };
+  const posts = [follow, guide]; // alphabetical order, as loadSite reads them
+  const opts = { category: 'outage', now: NOW };
+  const status = { title: 'Users may be unable to connect to multiple Microsoft 365 services', link: 'https://status.cloud.microsoft/#2026-11-11-x',
+    summary: 'Current status: recovery continues. We will share a full Post-Incident Report with root cause after mitigation is complete.' };
+  assert.equal(findCoverage(status, { posts }, opts).post?.slug, guide.slug);
+  assert.equal(findCoverage({ title: 'Microsoft 365 outage resolved', link: 'https://example.com/r' }, { posts }, opts).post?.slug, guide.slug);
+  assert.equal(findCoverage({ title: 'Microsoft explains what caused the Microsoft 365 outage', link: 'https://example.com/c' }, { posts }, opts).post?.slug, follow.slug);
+  const final = { ...status, link: 'https://status.cloud.microsoft/#2026-11-12-x', summary: 'Final status: resolved. Root cause: A configuration change to ...' };
+  assert.equal(findCoverage(final, { posts }, opts).post?.slug, follow.slug);
+  assert.equal(findCoverage({ ...status, summary: 'Root Cause: N/A' }, { posts }, opts).post?.slug, guide.slug);
+  // Root-cause news 10 days later still finds the follow-up; other news does not, and nothing finds an old guide.
+  const later = { category: 'outage', now: NOW + 10 * 86400e3 };
+  assert.equal(findCoverage({ title: 'Microsoft 365 outage root cause: post-incident report', link: 'https://example.com/p' }, { posts }, later).post?.slug, follow.slug);
+  assert.equal(findCoverage({ title: 'Microsoft 365 outage resolved', link: 'https://example.com/r' }, { posts }, later).post, null);
+  // Once the follow-up has the cause (pir: published), it is an ordinary outage post again.
+  const done = { ...follow, body: '---\npir: published\n---\n## Post-incident review\n' };
+  assert.equal(findCoverage(status, { posts: [done, guide] }, opts).post?.slug, guide.slug);
+});
+
+test('statusClosed and isRootCauseNews: what makes a seen outage status post worth an update', () => {
+  assert.ok(statusClosed({ title: 'Users may be unable to connect', status: 'service restored' }));
+  assert.ok(statusClosed({ title: 'Users may be unable to connect', status: 'Post-incident report published' }));
+  assert.ok(!statusClosed({ title: 'Users may be unable to connect', status: 'service degradation' }));
+  assert.ok(isRootCauseNews({ title: 'x', summary: 'Final status: restored. Root cause: a configuration change' }));
+  assert.ok(!isRootCauseNews({ title: 'x', summary: 'We will share a full Post-Incident Report with root cause and defense-in-depth actions' }));
 });
 
 test('daily cap: one extra slot a day for a major outage, launches stay capped at 2', () => {

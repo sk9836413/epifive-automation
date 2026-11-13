@@ -29,7 +29,7 @@ import { fileURLToPath } from 'node:url';
 import {
   parseSource, normalizeUrl, scoreItem, trendBoost, searchPhrase, findCoverage, parseBacklog, hashText,
   istDate, todayCounts, mergeDuplicates, parkInBacklog, markPublished, logLine, checkFastTrack, updateSignal,
-  markIncidentDuplicates, backlogLine, pickNewTask, autoVideoPlan,
+  markIncidentDuplicates, backlogLine, pickNewTask, autoVideoPlan, isRootCauseNews, statusClosed,
 } from './lib.mjs';
 import { ALERT, alertGate, buildAlertEmail, completeAddress, ensureAlertField, readArticle } from './alert.mjs';
 
@@ -144,6 +144,11 @@ async function scan() {
       if (['published', 'updated'].includes(seen.status) && seen.slug && hash !== seen.hash &&
           ((item.updated && item.updated !== seen.updated) || item.title !== seen.title)) {
         updates.push({ key, item, slug: seen.slug, score: seen.score, why: 'official source changed' });
+      } else if (seen.category === 'outage' && hash !== seen.hash && (statusClosed(item) || isRootCauseNews(item))) {
+        // An outage post we saw while it was open (e.g. the status page) now says it is over or states the root
+        // cause: update the guide that covers it. A picked update stores the new hash, so each change counts once.
+        const cov = findCoverage(item, site, { category: 'outage', now, families: seen.families });
+        if (cov.post) updates.push({ key, item, slug: cov.post.slug, score: Math.max(seen.score ?? 0, S.threshold), why: `outage closed or root cause: update to /blog/${cov.post.slug}` });
       }
       continue;
     }
