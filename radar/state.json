@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-13T16:18:13.639Z",
+ "lastScan": "2026-11-13T20:57:05.117Z",
  "seen": {
   "https://openai.com/index/gilbert-tobin-sam-nickless": {
    "title": "Gilbert + Tobin rethinks the business of law with AI",
@@ -2634,8 +2634,282 @@
     "+2 category (Product)",
     "+1 autocomplete (9)"
    ],
+   "status": "writing",
+   "hash": "4b6426be",
+   "kind": "new",
+   "extra": false,
+   "taskAt": "2026-11-13T20:57:05.117Z",
+   "attempts": 1
+  },
+  "https://bleepingcomputer.com/news/cryptocurrency/trezor-confirms-crypto-stealing-implants-in-three-wallets-releases-fix": {
+   "title": "Trezor confirms crypto-stealing implants in three wallets, releases fix",
+   "link": "https://www.bleepingcomputer.com/news/cryptocurrency/trezor-confirms-crypto-stealing-implants-in-three-wallets-releases-fix/",
+   "source": "bleepingcomputer",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-13T19:38:36.000Z",
+   "updated": null,
+   "summary": "Cryptocurrency hardware wallet maker Trezor has confirmed that three Safe 5 devices sold by Southeast Asian reseller CryptoBilis contained malicious hardware implants designed to steal wallet recovery phrases and send them to attackers over cellular networks. [...]",
+   "first": "2026-11-13T20:57:05.117Z",
+   "score": 7,
+   "reasons": [
+    "+1 source bleepingcomputer",
+    "+3 incident \"stealing\"",
+    "+2 user action \"fix\"",
+    "+1 category (CryptoCurrency, Security)"
+   ],
+   "status": "below",
+   "hash": "390b9f9b"
+  },
+  "https://blog.google/innovation-and-ai/products/gemini-app/google-wallet-gemini-app": {
+   "title": "Connect Google Wallet to Gemini for personal finance insights",
+   "link": "https://blog.google/innovation-and-ai/products/gemini-app/google-wallet-gemini-app/",
+   "source": "gemini-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-13T17:00:00.000Z",
+   "updated": null,
+   "summary": "All Gemini app users in the U.S. can connect Google Wallet to get responses informed by their spending habits.",
+   "first": "2026-11-13T20:57:05.117Z",
+   "score": 4,
+   "reasons": [
+    "+1 source gemini-blog",
+    "+2 niche (gemini)",
+    "+1 also on google-keyword"
+   ],
+   "status": "below",
+   "hash": "ebe933e3"
+  },
+  "https://blogs.windows.com/windows-insider/2026/11/13/announcing-new-builds-for-13-november-2026": {
+   "title": "Announcing new builds for 13 November 2026",
+   "link": "https://blogs.windows.com/windows-insider/2026/11/13/announcing-new-builds-for-13-november-2026/",
+   "source": "windows-blog",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-13T18:05:09.000Z",
+   "updated": null,
+   "summary": "Hello Windows Insiders, Today, we’re releasing new Windows 11 Insider Preview builds to the Beta (26H1), Experimental (26H1) and Experimental (Future Platforms) channels only. We will provide updates on the regular Beta and Experimental channels n The post Announcing new builds for 13 November 2026 ",
+   "first": "2026-11-13T20:57:05.117Z",
+   "score": 5,
+   "reasons": [
+    "+1 source windows-blog",
+    "+3 niche (windows 11, windows)",
+    "+1 also on windows-insider",
+    "covered by /blog/microsoft-365-outage-november-2026-what-to-do"
+   ],
+   "status": "duplicate",
+   "hash": "737fb540",
+   "post": "microsoft-365-outage-november-2026-what-to-do"
+  },
+  "https://thehackernews.com/2026/11/postgresql-patches-52-flaws-including.html": {
+   "title": "PostgreSQL Patches 52 Flaws, Including 22-Year-Old Bug Enabling Authenticated RCE",
+   "link": "https://thehackernews.com/2026/11/postgresql-patches-52-flaws-including.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-13T16:53:08.000Z",
+   "updated": null,
+   "summary": "A type confusion flaw in PostgreSQL lets a database user who can create objects run code on the server. Updates released yesterday fix it, along with 51 other security flaws. Full protection from this flaw also requires rebuilding any C-language extensions installed on the server. The flaw, tracked ",
+   "first": "2026-11-13T20:57:05.117Z",
+   "score": 5,
+   "reasons": [
+    "+1 source thn",
+    "+2 vulnerability \"Flaws\"",
+    "+2 user action \"Patches\""
+   ],
+   "status": "below",
+   "hash": "808ef003"
+  },
+  "https://workspaceupdates.googleblog.com/2026/11/weekly-recap-11-13-2026.html": {
+   "title": "Google Workspace Weekly Recap - November 13, 2026",
+   "link": "http://workspaceupdates.googleblog.com/2026/11/weekly-recap-11-13-2026.html",
+   "source": "workspace-updates",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-13T18:25:53.540Z",
+   "updated": "2026-11-13T18:25:53.540Z",
+   "summary": "Quickly confirm system-applied classification labels in Google Drive, Docs, Sheets, and Slides We’re making it faster to confirm automatically applied classification labels in Google Drive, Docs, Sheets, and Slides. Previously, files labeled by AI classification or default classification rules only ",
+   "first": "2026-11-13T20:57:05.117Z",
+   "score": 2,
+   "reasons": [
+    "+1 source workspace-updates",
+    "+3 niche (google workspace, google drive)",
+    "+1 plans/price/availability \"rollout\"",
+    "-3 corporate/announcement \"Recap\""
+   ],
+   "status": "below",
+   "hash": "dc02629a"
+  },
+  "https://blog.google/innovation-and-ai/technology/developers-tools/google-cloud-credits-gdp-ai-studio": {
+   "title": "Claim your Google Cloud Credits in Google AI Studio",
+   "link": "https://blog.google/innovation-and-ai/technology/developers-tools/google-cloud-credits-gdp-ai-studio/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-13T20:30:00.000Z",
+   "updated": null,
+   "summary": "Claim your Google Cloud Credits in Google AI Studio",
+   "first": "2026-11-13T20:57:05.117Z",
+   "score": 2,
+   "reasons": [
+    "+2 user steps \"Claim\""
+   ],
+   "status": "below",
+   "hash": "2358cfff"
+  },
+  "https://github.blog/changelog/2026-11-13-upcoming-deprecation-of-selected-github-copilot-models-in-december": {
+   "title": "Upcoming deprecation of selected GitHub Copilot models in December",
+   "link": "https://github.blog/changelog/2026-11-13-upcoming-deprecation-of-selected-github-copilot-models-in-december",
+   "source": "github-changelog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-13T20:40:05.000Z",
+   "updated": null,
+   "summary": "We will deprecate the following models across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on December 14, 2026: Model Deprecation date… The post Upcoming deprecation of selected GitHub Copilot models in December appeared first on T",
+   "first": "2026-11-13T20:57:05.117Z",
+   "score": 11,
+   "reasons": [
+    "-1 source github-changelog",
+    "+4 niche (copilot, github copilot, agent)",
+    "+1 retirement/migration",
+    "+7 M365 retirement due in 31 days"
+   ],
    "status": "queued",
-   "hash": "4b6426be"
+   "hash": "f7d021ce"
+  },
+  "https://github.blog/changelog/2026-11-13-github-enterprise-server-support-in-the-github-copilot-app": {
+   "title": "GitHub Enterprise Server support in the GitHub Copilot app",
+   "link": "https://github.blog/changelog/2026-11-13-github-enterprise-server-support-in-the-github-copilot-app",
+   "source": "github-changelog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-13T18:27:13.000Z",
+   "updated": null,
+   "summary": "You can now bring your work on GitHub Enterprise Server (GHES) into the GitHub Copilot app. Add your GHES account to work with remote repositories, issues, and pull requests. This… The post GitHub Enterprise Server support in the GitHub Copilot app appeared first on The GitHub Blog .",
+   "first": "2026-11-13T20:57:05.117Z",
+   "score": 6,
+   "reasons": [
+    "-1 source github-changelog",
+    "+3 niche (copilot, github copilot)",
+    "+2 launch \"You can now\"",
+    "+2 user steps \"You can\""
+   ],
+   "status": "below",
+   "hash": "97051ca7"
+  },
+  "https://github.blog/changelog/2026-11-13-gemini-4-hydrogen-in-github-copilot": {
+   "title": "Gemini 4 Hydrogen in GitHub Copilot",
+   "link": "https://github.blog/changelog/2026-11-13-gemini-4-hydrogen-in-github-copilot",
+   "source": "github-changelog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-13T18:23:48.000Z",
+   "updated": null,
+   "summary": "Gemini 4 Hydrogen, Google’s latest Flash model, is now generally available in GitHub Copilot. It is designed for fast, efficient agentic coding, tool use, and multistep workflows, with improved instruction… The post Gemini 4 Hydrogen in GitHub Copilot appeared first on The GitHub Blog .",
+   "first": "2026-11-13T20:57:05.117Z",
+   "score": 5,
+   "reasons": [
+    "-1 source github-changelog",
+    "+4 niche (copilot, gemini, github copilot)",
+    "+2 launch \"generally available\""
+   ],
+   "status": "below",
+   "hash": "9a93be3b"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=579977": {
+   "title": "Microsoft Copilot (Microsoft 365): Discover and act on recommended lead and opportunity actions in Sales agent",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=579977",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-13T19:37:39.000Z",
+   "updated": "2026-11-13T19:37:39.000Z",
+   "summary": "Sellers can discover and act on lead and opportunity recommendations that are already prioritized for them in Sales agent. A single prioritized list helps sellers see what needs attention without monitoring each agent separately or prioritizing the actions themselves. Sellers can review each recomme",
+   "first": "2026-11-13T20:57:05.117Z",
+   "score": -1,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+4 niche (copilot, microsoft 365, agent)",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "166d488"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=578908": {
+   "title": "Dynamics 365 Project Operations: Subcontracting UI Improvement",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=578908",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-13T19:37:39.000Z",
+   "updated": "2026-11-13T19:37:39.000Z",
+   "summary": "Some of the most commonly used business processes that project managers perform during subcontract management include the following tasks: Modify subcontract line Track subcontract usage Monitor billing progress for subcontracts Currently, project managers need to use multiple forms and interfaces t",
+   "first": "2026-11-13T20:57:05.117Z",
+   "score": -6,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "-5 category (In development, General Availability, Preview)"
+   ],
+   "status": "below",
+   "hash": "bb7b8aa"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=577875": {
+   "title": "Dynamics 365 Project Operations: Expense and material budget lines to have project end date as budget line end date during import",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=577875",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-13T19:37:39.000Z",
+   "updated": "2026-11-13T19:37:39.000Z",
+   "summary": "Project managers frequently create budgets by importing material and expense estimates. Currently, the imported budget lines default the end date to the same value as the start date, requiring users to manually update each budget line to reflect the actual project duration. This additional step incr",
+   "first": "2026-11-13T20:57:05.117Z",
+   "score": -4,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 launch \"introduces\"",
+    "-5 category (In development, General Availability, Preview)"
+   ],
+   "status": "below",
+   "hash": "3445be2"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=577749": {
+   "title": "Dynamics 365 Commerce: Configure quick operations on the transaction screen",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=577749",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-13T19:37:39.000Z",
+   "updated": "2026-11-13T19:37:39.000Z",
+   "summary": "Applies to : Point of Sale (Store Commerce) Setup : Store admin configures the control in the Commerce headquarters screen layout designer. You can add a new Quick Operations control to the transaction screen layout in the headquarters screen layout designer. Display a configurable set of operations",
+   "first": "2026-11-13T20:57:05.117Z",
+   "score": -4,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 user steps \"Configure\"",
+    "-5 category (In development, General Availability, Preview)"
+   ],
+   "status": "below",
+   "hash": "614f8600"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=577400": {
+   "title": "Dynamics 365 Finance: Enable Project and Item Requirement delivery address",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=577400",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-13T19:37:39.000Z",
+   "updated": "2026-11-13T19:37:39.000Z",
+   "summary": "Enable Project and Item Requirement Delivery Address Management This feature extends delivery address capabilities within integrated Project Operations by introducing delivery address support on Project, Project Task, and Material Estimate records. Delivery addresses can be selected from customer ad",
+   "first": "2026-11-13T20:57:05.117Z",
+   "score": -2,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 launch \"introducing\"",
+    "+2 user steps \"Enable\"",
+    "-5 category (In development, General Availability, Preview)"
+   ],
+   "status": "below",
+   "hash": "19896c6c"
   }
  }
 }
