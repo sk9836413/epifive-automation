@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-13T05:13:15.630Z",
+ "lastScan": "2026-11-13T13:16:56.410Z",
  "seen": {
   "https://openai.com/index/gilbert-tobin-sam-nickless": {
    "title": "Gilbert + Tobin rethinks the business of law with AI",
@@ -2190,7 +2190,7 @@
     "+1 several services (microsoft 365, outlook, teams, copilot)",
     "+1 autocomplete (4)"
    ],
-   "status": "writing",
+   "status": "published",
    "hash": "6b3d848c",
    "families": [
     "microsoft"
@@ -2198,7 +2198,9 @@
    "kind": "new",
    "extra": true,
    "taskAt": "2026-11-13T05:13:15.630Z",
-   "attempts": 1
+   "attempts": 1,
+   "slug": "microsoft-365-outage-november-2026-what-to-do",
+   "resultAt": "2026-11-13T05:23:21.622Z"
   },
   "https://status.cloud.microsoft/#2026-11-13-users-may-be-unable-to-connect-to-multiple-microsoft-365-ser": {
    "title": "Users may be unable to connect to multiple Microsoft 365 services",
@@ -2286,6 +2288,313 @@
    ],
    "status": "below",
    "hash": "e9b56827"
+  },
+  "https://techcommunity.microsoft.com/t5/windows-it-pro-blog/granular-controls-for-multiple-updates-in-windows-autopatch/ba-p/4572668": {
+   "title": "Granular controls for multiple updates in Windows Autopatch",
+   "link": "https://techcommunity.microsoft.com/t5/windows-it-pro-blog/granular-controls-for-multiple-updates-in-windows-autopatch/ba-p/4572668",
+   "source": "tc-windows-itpro",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-12T17:00:00.000Z",
+   "updated": null,
+   "summary": "Windows Autopatch now gives you even more control over how quality updates reach your devices. In Microsoft Intune, a single quality update policy can now manage multiple update types. This includes Windows quality updates, supported .NET Framework updates, and quick machine recovery updates. For ea",
+   "first": "2026-11-13T13:16:56.410Z",
+   "score": 5,
+   "reasons": [
+    "+1 source tc-windows-itpro",
+    "+2 niche (intune, windows)",
+    "+2 user steps \"you can\""
+   ],
+   "status": "below",
+   "hash": "652e2100"
+  },
+  "https://medianama.com/2026/11/223-microsoft-365-applications-global-outage": {
+   "title": "Microsoft 365 applications hit by global outage for over 10 hours",
+   "link": "https://www.medianama.com/2026/11/223-microsoft-365-applications-global-outage/",
+   "source": "medianama",
+   "topic": "microsoft-365",
+   "category": "outage",
+   "date": "2026-11-13T09:57:50.000Z",
+   "updated": null,
+   "summary": "While Microsoft said the outage happened because a number of servers had become unexpectedly unavailable, straining the remaining infrastructure, it also ascertained that it wasn't aware of any malicious activity was behind it. The post Microsoft 365 applications hit by global outage for over 10 hou",
+   "first": "2026-11-13T13:16:56.410Z",
+   "score": 11,
+   "reasons": [
+    "+1 source medianama",
+    "+6 outage \"outage\"",
+    "+3 major platform (microsoft)",
+    "+1 scale \"global\"",
+    "resolved or retrospective: may update an existing outage guide, never a new one",
+    "same outage as \"Massive Microsoft 365 outage disrupts Outlook, Teams, Copilo\"",
+    "covered by /blog/microsoft-365-outage-november-2026-what-to-do"
+   ],
+   "status": "duplicate",
+   "hash": "9c9f2120",
+   "families": [
+    "microsoft"
+   ],
+   "post": "microsoft-365-outage-november-2026-what-to-do"
+  },
+  "https://thehackernews.com/2026/11/silentair-hijacks-asian-telecom.html": {
+   "title": "SilentAir Hijacks Asian Telecom Networks to Intercept SMS 2FA Codes and Spy on Taiwanese Users",
+   "link": "https://thehackernews.com/2026/11/silentair-hijacks-asian-telecom.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-13T11:10:40.000Z",
+   "updated": null,
+   "summary": "A newly identified spying group used hacked equipment inside Asian mobile operators to intercept the calls and texts of selected people, mostly in Taiwan. Enea, a telecom and cybersecurity software company based in Stockholm, found the group's attack sources in at least six Asian countries and named",
+   "first": "2026-11-13T13:16:56.410Z",
+   "score": 5,
+   "reasons": [
+    "+1 source thn",
+    "+3 incident \"Hijacks\"",
+    "+1 user data or credentials exposed"
+   ],
+   "status": "below",
+   "hash": "be7b9a5b"
+  },
+  "https://github.blog/changelog/2026-11-13-manage-ai-scan-for-repositories-using-the-rest-api": {
+   "title": "Manage AI Scan for repositories using the REST API",
+   "link": "https://github.blog/changelog/2026-11-13-manage-ai-scan-for-repositories-using-the-rest-api",
+   "source": "github-changelog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-13T12:22:41.000Z",
+   "updated": null,
+   "summary": "You can now turn GitHub code scanning’s AI Scan for repositories on or off with the REST API at the organization and repository levels. This public preview adds a repository_scan… The post Manage AI Scan for repositories using the REST API appeared first on The GitHub Blog .",
+   "first": "2026-11-13T13:16:56.410Z",
+   "score": 2,
+   "reasons": [
+    "-1 source github-changelog",
+    "+2 launch \"You can now\"",
+    "+2 user steps \"You can\"",
+    "-1 narrow audience \"API\""
+   ],
+   "status": "below",
+   "hash": "ded044b5"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63976": {
+   "title": "Auction of State Government Securities",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63976",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-13T17:50:00.000Z",
+   "updated": null,
+   "summary": "The following State Governments have offered to sell stock by way of auction, for an aggregate amount of ₹23,300 Crore (Face Value). Sr. No. State Amount to be raised (₹ Crore) Tenor (Year) Type of Auction 1. Andhra Pradesh 1000 Re-issue of 7.68% Andhra Pradesh SGS 2051, issued on July 29, 2026 Pric",
+   "first": "2026-11-13T13:16:56.410Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"₹2\""
+   ],
+   "status": "below",
+   "hash": "34046e2d"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63975": {
+   "title": "Auction of 91-Day, 182-Day and 364-Day Treasury Bills",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63975",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-13T17:45:00.000Z",
+   "updated": null,
+   "summary": "Reserve Bank of India announces the auction of Government of India Treasury Bills as per the following details: Sr. No. Treasury Bill Notified Amount (₹ crore) Auction Date Settlement Date 1 91-Day 8,000 November 18, 2026 (Wednesday) November 19, 2026 (Thursday) 2 182-Day 8,000 3 364-Day 7,000 Total",
+   "first": "2026-11-13T13:16:56.410Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"India\""
+   ],
+   "status": "below",
+   "hash": "22b89faf"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63974": {
+   "title": "Developments in India’s Balance of Payments for the Month of September 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63974",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-13T17:30:00.000Z",
+   "updated": null,
+   "summary": "Preliminary data on India’s balance of payments (BoP) for September 2026 are presented in the following table. Major Items of India's Balance of Payments (US$ billion) Item September 2025 PR September 2026 P April-September 2025 PR April-September 2026 P A. Current Account (Net) [A.1 to A.4] -5.2 -7",
+   "first": "2026-11-13T13:16:56.410Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"India\""
+   ],
+   "status": "below",
+   "hash": "e404472e"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63973": {
+   "title": "Reserve Bank of India imposes monetary penalty on One Mobikwik Systems Limited",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63973",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-13T17:30:00.000Z",
+   "updated": null,
+   "summary": "Reserve Bank of India (RBI) has, by an order dated November 06, 2026, imposed a monetary penalty of ₹9.00 lakh (Rupees Nine Lakh only) on One Mobikwik Systems Limited (the company) for non-compliance with certain provisions of the directions issued by RBI on ‘Prepaid Payment lnstruments (PPIs)’ and ",
+   "first": "2026-11-13T13:16:56.410Z",
+   "score": 1,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 niche (fraud)",
+    "+1 plans/price/availability \"India\""
+   ],
+   "status": "below",
+   "hash": "ed4dc45d"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63972": {
+   "title": "Reserve Bank of India – Bulletin Weekly Statistical Supplement – Extract",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63972",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-13T17:00:00.000Z",
+   "updated": null,
+   "summary": "1. Reserve Bank of India - Liabilities and Assets* (₹ Crore) Item 2025 2026 Variation Nov. 7 Oct. 30 Nov. 6 Week Year 1 2 3 4 5 4 Loans and Advances 4.1 Central Government 0 0 0 0 0 4.2 State Governments 36937 20463 15415 -5048 -21522 * Data are provisional; difference, if any, is due to rounding of",
+   "first": "2026-11-13T13:16:56.410Z",
+   "score": 1,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 niche (exchange)",
+    "+1 plans/price/availability \"India\""
+   ],
+   "status": "below",
+   "hash": "5a027444"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63971": {
+   "title": "Scheduled Banks’ Statement of Position in India as on October 31, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63971",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-13T14:55:00.000Z",
+   "updated": null,
+   "summary": "(Amount in ₹ crore) SCHEDULED COMMERCIAL BANKS (Including RRBs, SFBs, PBs and LABs) ALL SCHEDULED BANKS 31-Oct-2025# 15-Oct-2026 31-Oct-2026 31-Oct-2025# 15-Oct-2026 31-Oct-2026 I LIABILITIES TO THE BKG.SYSTEM (A) a) Demand & Time deposits from banks 324591.97 409869.12 425426.98 331731.37 417736.16",
+   "first": "2026-11-13T13:16:56.410Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"India\""
+   ],
+   "status": "below",
+   "hash": "66f364a7"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63970": {
+   "title": "Government Stock - Full Auction Results",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63970",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-13T13:50:00.000Z",
+   "updated": null,
+   "summary": "(Amount in ₹ Crore) Auction Results 6.94% GS 2036 I. Notified Amount 34,000 II. Competitive Bids Received (i) Number 349 (ii) Amount 73,016.600 III. Cut-off price (₹) / Yield 97.43 (YTM: 7.3203%) IV. Competitive Bids Accepted (i) Number 146 (ii) Amount 33,947.718 V. Partial Allotment Percentage of C",
+   "first": "2026-11-13T13:16:56.410Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"price\""
+   ],
+   "status": "below",
+   "hash": "31c61cd3"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63969": {
+   "title": "Government Stock - Auction Results: Cut-off",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63969",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-13T13:10:00.000Z",
+   "updated": null,
+   "summary": "6.94% GS 2036 I. Notified Amount ₹34,000 crore II. Cut off Price (₹) / Implicit Yield at cut-off 97.43/7.3203% III. Amount accepted in the auction ₹34,000 crore IV. Devolvement on Primary Dealers NIL Ajit Prasad Deputy General Manager (Communications) Press Release: 2026-2027/1491",
+   "first": "2026-11-13T13:16:56.410Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"₹3\""
+   ],
+   "status": "below",
+   "hash": "3a014016"
+  },
+  "https://mc.merill.net/message/MC1551151": {
+   "title": "MC1551151: Microsoft Entra ID: Risk-based anti-bot verification (CAPTCHA) for SMS and voice multi-factor authentication",
+   "link": "https://mc.merill.net/message/MC1551151",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-13T01:42:38.000Z",
+   "updated": null,
+   "summary": "Starting mid-November 2026, Microsoft Entra ID will add risk-based CAPTCHA verification for SMS and voice MFA to prevent automated fraud. Some users may need to complete CAPTCHA before receiving codes or calls. Administrators should prepare users, ensure network readiness, and promote phishing-resis",
+   "first": "2026-11-13T13:16:56.410Z",
+   "score": 0,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 niche (entra, fraud)"
+   ],
+   "status": "below",
+   "hash": "d979908c"
+  },
+  "https://mc.merill.net/message/MC1551148": {
+   "title": "MC1551148: [Outlook for iOS and Android] Copilot Chat in Outlook UX improvements",
+   "link": "https://mc.merill.net/message/MC1551148",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-13T01:39:03.000Z",
+   "updated": null,
+   "summary": "Copilot Chat in Outlook for iOS and Android is being updated with a refreshed, consistent design across Microsoft 365 apps, improved chat interface, prompts, and navigation. Rollout starts mid-December 2026, completing by late January 2027. No admin action or compliance concerns are required.",
+   "first": "2026-11-13T13:16:56.410Z",
+   "score": 3,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (copilot, microsoft 365, outlook, android)",
+    "+1 plans/price/availability \"Rollout\""
+   ],
+   "status": "below",
+   "hash": "5935e2d2"
+  },
+  "https://mc.merill.net/message/MC1551147": {
+   "title": "MC1551147: Microsoft Word: Retirement of legacy compatibility settings",
+   "link": "https://mc.merill.net/message/MC1551147",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-13T01:38:10.000Z",
+   "updated": null,
+   "summary": "Microsoft Word will retire legacy compatibility settings for documents in Compatibility Mode starting December 2026 (Windows) and early 2027 (Mac). This may cause layout changes in older documents. No action is required, but review important documents if exact layout is critical.",
+   "first": "2026-11-13T13:16:56.410Z",
+   "score": 11,
+   "reasons": [
+    "-2 source mc-merill",
+    "+3 niche (microsoft word, windows, mac)",
+    "+1 retirement/migration",
+    "+9 M365 retirement due in 48 days"
+   ],
+   "status": "queued",
+   "hash": "aed26fa7"
+  },
+  "https://mc.merill.net/message/MC1551122": {
+   "title": "MC1551122: Power Platform - Information regarding the end of support for SharePoint temporary authentication URLs",
+   "link": "https://mc.merill.net/message/MC1551122",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-13T01:01:33.000Z",
+   "updated": null,
+   "summary": "Starting April 1, 2027, SharePoint temporary authentication URLs will be retired. Power Apps and Automate functionality that relies on these URLs will break when they are retired. How does this affect me? Any Power Apps app or Power Automate cloud flow that relies upon the temporary authentication U",
+   "first": "2026-11-13T13:16:56.410Z",
+   "score": 0,
+   "reasons": [
+    "-2 source mc-merill",
+    "+1 niche (sharepoint)",
+    "+1 retirement/migration"
+   ],
+   "status": "below",
+   "hash": "2ef3871d"
   }
  }
 }
