@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-12T14:16:39.836Z",
+ "lastScan": "2026-11-13T03:43:44.477Z",
  "seen": {
   "https://openai.com/index/gilbert-tobin-sam-nickless": {
    "title": "Gilbert + Tobin rethinks the business of law with AI",
@@ -1112,6 +1112,1039 @@
    ],
    "status": "below",
    "hash": "6a33c6ee"
+  },
+  "https://openai.com/business/customer-stories/amplitude": {
+   "title": "How Amplitude ships product improvements in 1–2 days with OpenAI",
+   "link": "https://openai.com/business/customer-stories/amplitude",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-12T20:00:00.000Z",
+   "updated": null,
+   "summary": "Built primarily on OpenAI models, Amplitude’s proactive product agent, Wave, identifies what to build, helps teams ship changes with coding agents, and measures the impact.",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 2,
+   "reasons": [
+    "+2 source openai-news",
+    "+2 niche (openai, agent)",
+    "-2 category (none)"
+   ],
+   "status": "below",
+   "hash": "55c61fd9"
+  },
+  "https://openai.com/business/customer-stories/gondola": {
+   "title": "Gondola doubles revenue as its team builds more with Codex",
+   "link": "https://openai.com/business/customer-stories/gondola",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-12T12:00:00.000Z",
+   "updated": null,
+   "summary": "Gondola helps creatives get credit and get hired, with Codex raising its lead engineer’s output by 50% and ChatGPT simplifying daily work.",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": -1,
+   "reasons": [
+    "+2 source openai-news",
+    "+4 niche (chatgpt, codex)",
+    "-4 customer story",
+    "-3 category (Startup)"
+   ],
+   "status": "below",
+   "hash": "87735ad9"
+  },
+  "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade": {
+   "title": "Google Search gets a major upgrade with Gemini 4 Hydrogen",
+   "link": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/",
+   "source": "gemini-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-12T18:00:00.000Z",
+   "updated": null,
+   "summary": "We are bringing Gemini 4 Hydrogen to Google Search globally to provide you with more helpful, visual, and intuitive responses.",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 6,
+   "reasons": [
+    "+1 source gemini-blog",
+    "+2 niche (gemini)",
+    "+2 user steps \"upgrade\"",
+    "+1 also on google-keyword"
+   ],
+   "status": "below",
+   "hash": "1889a281"
+  },
+  "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-hydrogen": {
+   "title": "Gemini 4 Hydrogen: everyday coding and agentic workflows for developers",
+   "link": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-hydrogen/",
+   "source": "gemini-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-12T18:00:00.000Z",
+   "updated": null,
+   "summary": "Build faster with Gemini 4 Hydrogen, Google’s new model for cost-efficient agentic coding and debugging. Start building in Google AI Studio today.",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 3,
+   "reasons": [
+    "+1 source gemini-blog",
+    "+2 niche (gemini)",
+    "-1 narrow audience \"developers\"",
+    "+1 also on google-keyword"
+   ],
+   "status": "below",
+   "hash": "1be9db92"
+  },
+  "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen": {
+   "title": "Introducing Gemini 4 Hydrogen",
+   "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+   "source": "gemini-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-12T18:00:00.000Z",
+   "updated": null,
+   "summary": "Today, we’re introducing Gemini 4 Hydrogen, our daily driver for agentic workflows",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 7,
+   "reasons": [
+    "+1 source gemini-blog",
+    "+2 niche (gemini)",
+    "+2 launch \"Introducing\"",
+    "+1 launch in the headline",
+    "+1 also on google-keyword"
+   ],
+   "status": "below",
+   "hash": "c338dcbd"
+  },
+  "https://blog.google/innovation-and-ai/products/gemini-app/research-with-gemini-in-chrome": {
+   "title": "Get quick answers from Gemini on any website.",
+   "link": "https://blog.google/innovation-and-ai/products/gemini-app/research-with-gemini-in-chrome/",
+   "source": "gemini-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-12T17:00:00.000Z",
+   "updated": null,
+   "summary": "Get quick answers with Gemini in Chrome. Summarize articles, compare products, and explain complex topics directly in your side panel. Try it now.",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 6,
+   "reasons": [
+    "+1 source gemini-blog",
+    "+2 niche (gemini)",
+    "+2 user steps \"Try it\"",
+    "+1 also on google-keyword"
+   ],
+   "status": "below",
+   "hash": "7dbd57c2"
+  },
+  "https://bleepingcomputer.com/news/security/new-worm-like-sckit-malware-targets-msps-in-screenconnect-attacks": {
+   "title": "New worm-like 'SCKit' malware targets MSPs in ScreenConnect attacks",
+   "link": "https://www.bleepingcomputer.com/news/security/new-worm-like-sckit-malware-targets-msps-in-screenconnect-attacks/",
+   "source": "bleepingcomputer",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-12T22:53:10.000Z",
+   "updated": null,
+   "summary": "A new worm-like malware toolkit named SCKit was deployed in the recent ScreenConnect attacks targeting managed service providers (MSPs), designed to spread from infected customer devices to MSP technicians' computers and compromise additional managed networks. [...]",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 6,
+   "reasons": [
+    "+1 source bleepingcomputer",
+    "+3 incident \"malware\"",
+    "+1 user data or credentials exposed",
+    "+1 category (Security)"
+   ],
+   "status": "below",
+   "hash": "2071cbc7"
+  },
+  "https://bleepingcomputer.com/news/security/hackers-compromise-4-800-github-accounts-to-steal-cloud-credentials": {
+   "title": "Hackers compromise 4,800 GitHub accounts to steal cloud credentials",
+   "link": "https://www.bleepingcomputer.com/news/security/hackers-compromise-4-800-github-accounts-to-steal-cloud-credentials/",
+   "source": "bleepingcomputer",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-12T22:25:30.000Z",
+   "updated": null,
+   "summary": "A new campaign dubbed 'wfx-loot' has unfolded on GitHub where threat actors used 4,837 compromised accounts to probe 61,764 repositories, open pull requests, and push secrets-stealing malware. [...]",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 11,
+   "reasons": [
+    "+1 source bleepingcomputer",
+    "+3 incident \"Hackers\"",
+    "+3 major platform (github)",
+    "+2 large scale \"4,800 GitHub accounts\"",
+    "+1 user data or credentials exposed",
+    "+1 category (Security)",
+    "covered by /blog/github-wfx-loot-ci-secret-stealer-check"
+   ],
+   "status": "duplicate",
+   "hash": "ec60f88d",
+   "post": "github-wfx-loot-ci-secret-stealer-check"
+  },
+  "https://bleepingcomputer.com/news/security/new-n-able-4everable2shell-zero-day-exploited-hours-after-poc-released": {
+   "title": "New N-able \"4EverAble2Shell\" zero-day exploited hours after PoC released",
+   "link": "https://www.bleepingcomputer.com/news/security/new-n-able-4everable2shell-zero-day-exploited-hours-after-poc-released/",
+   "source": "bleepingcomputer",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-12T19:51:16.000Z",
+   "updated": null,
+   "summary": "Hackers are actively exploiting a newly disclosed N-able N-central zero-day vulnerability dubbed \"4EverAble2Shell\" to compromise servers and deploy cryptocurrency miners, with researchers reporting at least 21 affected systems, including 19 running the company's latest security update. [...]",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 9,
+   "reasons": [
+    "+1 source bleepingcomputer",
+    "+3 incident \"zero-day\"",
+    "+2 exploited \"zero-day\"",
+    "+2 user action \"security update\"",
+    "+1 category (Security)"
+   ],
+   "status": "below",
+   "hash": "c16a0249"
+  },
+  "https://bleepingcomputer.com/news/security/apache-http-server-patches-critical-http-2-remote-code-execution-flaw": {
+   "title": "Apache HTTP Server patches critical HTTP/2 remote code execution flaw",
+   "link": "https://www.bleepingcomputer.com/news/security/apache-http-server-patches-critical-http-2-remote-code-execution-flaw/",
+   "source": "bleepingcomputer",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-12T19:12:55.000Z",
+   "updated": null,
+   "summary": "A critical vulnerability in the HTTP/2 module of Apache HTTP Server could be exploited by an unauthenticated attacker to obtain remote code execution (RCE). [...]",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 10,
+   "reasons": [
+    "+1 source bleepingcomputer",
+    "+3 incident \"flaw\"",
+    "+2 exploited \"exploited\"",
+    "+2 user action \"patches\"",
+    "+1 category (Security)",
+    "+1 autocomplete (9)"
+   ],
+   "status": "queued",
+   "hash": "7d54f949"
+  },
+  "https://bleepingcomputer.com/news/security/your-endpoint-management-platform-could-be-your-biggest-security-risk": {
+   "title": "Your Endpoint Management Platform Could Be Your Biggest Security Risk",
+   "link": "https://www.bleepingcomputer.com/news/security/your-endpoint-management-platform-could-be-your-biggest-security-risk/",
+   "source": "bleepingcomputer",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-12T15:00:10.000Z",
+   "updated": null,
+   "summary": "Endpoint management platforms can become powerful attack tools when compromised, allowing hackers to deploy malware, execute commands, and disrupt thousands of devices. Action1 explains how customer-controlled cryptographic authorization can prevent attackers from abusing sensitive endpoint operatio",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 6,
+   "reasons": [
+    "+1 source bleepingcomputer",
+    "+3 incident \"compromised\"",
+    "+1 user data or credentials exposed",
+    "+1 category (Security)"
+   ],
+   "status": "below",
+   "hash": "52b2eae3"
+  },
+  "https://bleepingcomputer.com/news/security/apify-rotates-api-tokens-prompts-2fa-resets-after-breach": {
+   "title": "Apify rotates API tokens, prompts 2FA resets after breach",
+   "link": "https://www.bleepingcomputer.com/news/security/apify-rotates-api-tokens-prompts-2fa-resets-after-breach/",
+   "source": "bleepingcomputer",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-12T14:36:47.000Z",
+   "updated": null,
+   "summary": "Apify has rotated critical internal secrets and revoked some third-party OAuth connections after detecting unauthorized access to its internal systems. [...]",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 7,
+   "reasons": [
+    "+1 source bleepingcomputer",
+    "+3 incident \"breach\"",
+    "+2 user action \"revoked\"",
+    "+1 category (Security)"
+   ],
+   "status": "below",
+   "hash": "35c49eb0"
+  },
+  "https://bleepingcomputer.com/news/security/baker-tilly-notifies-clients-of-data-breach-at-third-party-provider": {
+   "title": "Baker Tilly notifies clients of data breach at third-party provider",
+   "link": "https://www.bleepingcomputer.com/news/security/baker-tilly-notifies-clients-of-data-breach-at-third-party-provider/",
+   "source": "bleepingcomputer",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-11T23:01:31.000Z",
+   "updated": null,
+   "summary": "The Baker Tilly Advisory Group is notifying clients that a data breach has compromised certain personal information about them and their dependents. [...]",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 7,
+   "reasons": [
+    "+1 source bleepingcomputer",
+    "+3 incident \"breach\"",
+    "+2 user action \"Advisory\"",
+    "+1 category (Security)"
+   ],
+   "status": "below",
+   "hash": "e3ef3c81"
+  },
+  "https://bleepingcomputer.com/news/security/active-screenconnect-attacks-breach-msps-impact-dozens-of-organizations": {
+   "title": "Active ScreenConnect attacks breach MSPs, impact dozens of organizations",
+   "link": "https://www.bleepingcomputer.com/news/security/active-screenconnect-attacks-breach-msps-impact-dozens-of-organizations/",
+   "source": "bleepingcomputer",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-11T22:56:21.000Z",
+   "updated": null,
+   "summary": "ConnectWise is investigating an active malware campaign targeting managed service providers (MSPs) that uses compromised ScreenConnect environments to deploy rogue remote-access clients to customer devices. [...]",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 6,
+   "reasons": [
+    "+1 source bleepingcomputer",
+    "+3 incident \"breach\"",
+    "+1 user data or credentials exposed",
+    "+1 category (Security)"
+   ],
+   "status": "below",
+   "hash": "b6dffc15"
+  },
+  "https://thehackernews.com/2026/11/threatsday-59-linux-kernel-bugs-falcon.html": {
+   "title": "ThreatsDay: 59 Linux Kernel Bugs, Falcon Spyware, GSocket Backdoors + 17 More Stories",
+   "link": "https://thehackernews.com/2026/11/threatsday-59-linux-kernel-bugs-falcon.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-12T18:02:51.000Z",
+   "updated": null,
+   "summary": "A search result isn't always safe. An access request isn't always harmless. And a familiar account doesn't always mean a familiar person is using it. Simple things to remember. Yet a surprising amount of this week's trouble starts right there. Attackers are using fake websites, stolen access, and tr",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 5,
+   "reasons": [
+    "+1 source thn",
+    "+3 incident \"Spyware\"",
+    "+1 user data or credentials exposed"
+   ],
+   "status": "below",
+   "hash": "2dca24fb"
+  },
+  "https://thehackernews.com/2026/11/critical-red-hat-quay-flaw-lets.html": {
+   "title": "Critical Red Hat Quay Flaw Lets Attackers Read and Overwrite All Private Container Images in a Registry",
+   "link": "https://thehackernews.com/2026/11/critical-red-hat-quay-flaw-lets.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-12T16:27:01.000Z",
+   "updated": null,
+   "summary": "A critical flaw in Red Hat Quay allows an attacker who can access a Quay registry to read and overwrite private container images in every repository. Quay enables anonymous access by default, and while it is enabled, the attacker needs no account. When it is off, anyone with a valid account can stil",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 5,
+   "reasons": [
+    "+1 source thn",
+    "+2 vulnerability \"Flaw\"",
+    "+2 user action \"fixed\""
+   ],
+   "status": "below",
+   "hash": "19f4d2e1"
+  },
+  "https://thehackernews.com/2026/11/citrix-patches-12-netscaler-and-secure.html": {
+   "title": "Citrix Patches 12 NetScaler and Secure Access Client Flaws, Including Authentication Bypass",
+   "link": "https://thehackernews.com/2026/11/citrix-patches-12-netscaler-and-secure.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-12T15:38:49.000Z",
+   "updated": null,
+   "summary": "Citrix has released patches for multiple critical security flaws impacting NetScaler ADC, Citrix NetScaler Gateway, and NetScaler Console that could lead to denial-of-service (DoS) or an authentication bypass. The critical vulnerabilities that impact NetScaler ADC and NetScaler Gateway are listed be",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 5,
+   "reasons": [
+    "+1 source thn",
+    "+2 vulnerability \"Flaws\"",
+    "+2 user action \"Patches\""
+   ],
+   "status": "below",
+   "hash": "9a8ba20b"
+  },
+  "https://thehackernews.com/2026/11/186-fake-ai-domains-redirect-users-to.html": {
+   "title": "186 Fake AI Domains Redirect Users to ClickFix Lures, Browser Malware, and Search Hijackers",
+   "link": "https://thehackernews.com/2026/11/186-fake-ai-domains-redirect-users-to.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-12T15:15:40.000Z",
+   "updated": null,
+   "summary": "Cybersecurity researchers have found that lookalike domains masquerading as artificial intelligence (AI) tools are being used to serve ClickFix-style lures, browser-hijacking malware, and a set of extensions that hijack user searches. This delivery pattern has been codenamed TypoPrompting by Island.",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 5,
+   "reasons": [
+    "+1 source thn",
+    "+3 incident \"Malware\"",
+    "+1 user data or credentials exposed"
+   ],
+   "status": "below",
+   "hash": "729bf446"
+  },
+  "https://thehackernews.com/2026/11/sckit-malware-targets-screenconnect.html": {
+   "title": "SCKit Malware Turns ScreenConnect Support Sessions Into Potential MSP Attack Paths",
+   "link": "https://thehackernews.com/2026/11/sckit-malware-targets-screenconnect.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-12T13:08:28.000Z",
+   "updated": null,
+   "summary": "The ongoing campaign targeting ConnectWise ScreenConnect deployments involves the exploitation of a now-patched critical security flaw in the remote access software, and not a new vulnerability, it has emerged. Blackpoint Cyber's Adversary Pursuit Group (APG), which shared the details with The Hacke",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 6,
+   "reasons": [
+    "+1 source thn",
+    "+3 incident \"Malware\"",
+    "+2 user action \"patched\""
+   ],
+   "status": "below",
+   "hash": "b41bb4a9"
+  },
+  "https://thehackernews.com/2026/11/google-cloud-warns-three-amd-turin-cpu.html": {
+   "title": "Google Cloud Warns Three AMD Turin CPU Flaws Could Leak Data Across Processes in VMs",
+   "link": "https://thehackernews.com/2026/11/google-cloud-warns-three-amd-turin-cpu.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-12T12:09:14.000Z",
+   "updated": null,
+   "summary": "Google Cloud VMs on AMD Turin chips need a guest OS patch and a stop-and-start to protect against three CPU side-channel flaws, Google said this week. The company has already applied mitigations against attacks between VMs, and between VMs and the host. Inside a VM, the flaws may let an attacker wit",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 9,
+   "reasons": [
+    "+1 source thn",
+    "+2 vulnerability \"Flaws\"",
+    "+3 major platform (google)",
+    "+2 user action \"patch\"",
+    "contains claims: label them as claims",
+    "+1 autocomplete (10)"
+   ],
+   "status": "below",
+   "hash": "7e6d0f24"
+  },
+  "https://thehackernews.com/2026/11/new-n-central-exploits-work-against.html": {
+   "title": "New N-central Exploits Work Against Patched Servers, Enable Root RCE and Windows SYSTEM Access",
+   "link": "https://thehackernews.com/2026/11/new-n-central-exploits-work-against.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-12T11:51:43.000Z",
+   "updated": null,
+   "summary": "N-able on Thursday said it's investigating a new public disclosure containing claims of additional vulnerabilities in on-premise versions of N-central running version 2026.4.1 HF2. \"Based on our initial review, the server issue described depends on a non-default configuration in which the Legacy API",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 8,
+   "reasons": [
+    "+1 source thn",
+    "+2 vulnerability \"vulnerabilities\"",
+    "+3 major platform (windows)",
+    "+2 user action \"Patched\"",
+    "contains claims: label them as claims"
+   ],
+   "status": "below",
+   "hash": "406296cc"
+  },
+  "https://thehackernews.com/2026/11/calendar-invites-and-live-proxies.html": {
+   "title": "Calendar Invites and Live Proxies: Inside a Google Session Hijacking Campaign",
+   "link": "https://thehackernews.com/2026/11/calendar-invites-and-live-proxies.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-12T11:51:31.000Z",
+   "updated": null,
+   "summary": "Since mid-August 2026, a phishing operation has been stealing live Google sessions from corporate users. Every check defenders normally lean on to judge a link came back clean, and the operator designed it that way on purpose. The Threat Research team at Material Security spotted the campaign and ha",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 8,
+   "reasons": [
+    "+1 source thn",
+    "+3 incident \"Hijacking\"",
+    "+3 major platform (google)",
+    "+1 user data or credentials exposed",
+    "contains claims: label them as claims"
+   ],
+   "status": "below",
+   "hash": "b8105cee"
+  },
+  "https://thehackernews.com/2026/11/ptc-patches-critical-windchill-and.html": {
+   "title": "PTC Patches Critical Windchill and FlexPLM Flaw That Could Enable Remote Code Execution",
+   "link": "https://thehackernews.com/2026/11/ptc-patches-critical-windchill-and.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-12T11:33:15.000Z",
+   "updated": null,
+   "summary": "PTC has released patches for a new critical vulnerability impacting Windchill and FlexPLM software that, if successfully exploited, could result in remote code execution. The security flaw, tracked as CVE-2026-126325, carries a CVSS v4 score of 9.2 out of a maximum of 10.0. It has been described as ",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 8,
+   "reasons": [
+    "+1 source thn",
+    "+3 incident \"Flaw\"",
+    "+2 exploited \"exploited\"",
+    "+2 user action \"Patches\""
+   ],
+   "status": "below",
+   "hash": "8e50fdfb"
+  },
+  "https://thehackernews.com/2026/11/critical-pre-auth-mongodb-flaw-cve-2026.html": {
+   "title": "Critical Pre-Auth MongoDB Flaw (CVE-2026-118383) Can Crash Lagging Servers on Failover",
+   "link": "https://thehackernews.com/2026/11/critical-pre-auth-mongodb-flaw-cve-2026.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-12T09:25:00.000Z",
+   "updated": null,
+   "summary": "A critical flaw in MongoDB Server allows an unauthenticated attacker to send two requests that trigger a crash on the database server. The crash occurs only if that server is later chosen to take over as the main server while it still lacks some recent changes. MongoDB, the company that makes the da",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 5,
+   "reasons": [
+    "+1 source thn",
+    "+2 vulnerability \"Flaw\"",
+    "+2 user action \"fixed\""
+   ],
+   "status": "below",
+   "hash": "b251920f"
+  },
+  "https://thehackernews.com/2026/11/nodejs-fixes-16-flaws-including-http2.html": {
+   "title": "Node.js Fixes 16 Flaws, Including HTTP/2 Bugs That Crash Servers and Leak Other Connections' Data",
+   "link": "https://thehackernews.com/2026/11/nodejs-fixes-16-flaws-including-http2.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-12T08:20:37.000Z",
+   "updated": null,
+   "summary": "A flaw fixed in Node.js this week lets unauthenticated clients crash servers that use the runtime's built-in HTTP/2 support on the 24.x and 26.x release lines. A second HTTP/2 flaw can cause a server to send a client pieces of its memory, including responses intended for other connections. Fixed ver",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 6,
+   "reasons": [
+    "+1 source thn",
+    "+3 incident \"Leak\"",
+    "+2 user action \"Fixes\"",
+    "contains claims: label them as claims"
+   ],
+   "status": "below",
+   "hash": "52e637f8"
+  },
+  "https://thehackernews.com/2026/11/4837-hijacked-github-accounts-ran-ci.html": {
+   "title": "Attacker Used 4,837 Hijacked GitHub Accounts to Run a CI Secret Stealer in 1,806+ Repositories",
+   "link": "https://thehackernews.com/2026/11/4837-hijacked-github-accounts-ran-ci.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-12T06:42:47.000Z",
+   "updated": null,
+   "summary": "Starting Tuesday, an attacker used stolen credentials for 4,837 GitHub accounts to plant a secret stealer in repositories those accounts could write to, according to Aikido Security, a security software company. The stealer is built to take the secrets and cloud credentials that a repository's CI wo",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 10,
+   "reasons": [
+    "+1 source thn",
+    "+3 incident \"Hijacked\"",
+    "+3 major platform (github)",
+    "+2 large scale \"1,806+ Repositories\"",
+    "+1 user data or credentials exposed",
+    "covered by /blog/github-wfx-loot-ci-secret-stealer-check"
+   ],
+   "status": "duplicate",
+   "hash": "ac64f15",
+   "post": "github-wfx-loot-ci-secret-stealer-check"
+  },
+  "https://thehackernews.com/2026/11/critical-apache-http2-flaw-could-let.html": {
+   "title": "Critical Apache HTTP/2 Flaw Could Let Unauthenticated Attackers Execute Code Remotely",
+   "link": "https://thehackernews.com/2026/11/critical-apache-http2-flaw-could-let.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-12T05:12:26.000Z",
+   "updated": null,
+   "summary": "A critical flaw in Apache HTTP Server's HTTP/2 module, mod_http2, can let a remote attacker run code on the server. Tracked as CVE-2026-119618, it affects versions 2.4.55 through 2.4.70 and is fixed in version 2.4.71, released yesterday. Only servers with HTTP/2 enabled are affected, according to Re",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 5,
+   "reasons": [
+    "+1 source thn",
+    "+2 vulnerability \"Flaw\"",
+    "+2 user action \"fixed\""
+   ],
+   "status": "below",
+   "hash": "4133a9b1"
+  },
+  "https://thehackernews.com/2026/11/screenconnect-attacks-target-at-least.html": {
+   "title": "ScreenConnect Attacks Target at Least 288 Endpoints Across 48 Organizations With Rogue Clients",
+   "link": "https://thehackernews.com/2026/11/screenconnect-attacks-target-at-least.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-12T04:39:48.000Z",
+   "updated": null,
+   "summary": "ConnectWise has taken the precautionary step of disabling five third-party extensions in partner environments following reports of unauthorized access. In an advisory posted on its site, the company said there is no evidence that the incident involves a compromise of its infrastructure or a vulnerab",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 6,
+   "reasons": [
+    "+1 source thn",
+    "+3 incident \"compromise\"",
+    "+2 user action \"advisory\""
+   ],
+   "status": "below",
+   "hash": "4b98e346"
+  },
+  "https://blog.google/innovation-and-ai/models-and-research/google-labs/new-google-flow-tools": {
+   "title": "5 new Google Flow Tools designed by visual artists",
+   "link": "https://blog.google/innovation-and-ai/models-and-research/google-labs/new-google-flow-tools/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-12T20:30:00.000Z",
+   "updated": null,
+   "summary": "Designed by filmmakers and visual artists, five new Google Flow Tools will help you bring your next story to life.",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "bdcc74f8"
+  },
+  "https://blog.google/company-news/outreach-and-initiatives/sustainability/saving-giant-kelp-australia": {
+   "title": "Scientists are using Google AI to help restore giant kelp forests.",
+   "link": "https://blog.google/company-news/outreach-and-initiatives/sustainability/saving-giant-kelp-australia/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-12T17:00:00.000Z",
+   "updated": null,
+   "summary": "Underwater forests of giant kelp protect coastlines, provide habitat, and support marine ecosystems — but they’re disappearing worldwide due to ocean warming. As COP31 k…",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "c8587ea0"
+  },
+  "https://blog.google/company-news/outreach-and-initiatives/google-org/phd-fellows-2026": {
+   "title": "Meet the 2026 Google PhD Fellows",
+   "link": "https://blog.google/company-news/outreach-and-initiatives/google-org/phd-fellows-2026/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-12T17:00:00.000Z",
+   "updated": null,
+   "summary": "Google.org is providing $13 million in funding to support the 2026 Google PhD Fellows.",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 1,
+   "reasons": [
+    "+1 plans/price/availability \"$1\""
+   ],
+   "status": "below",
+   "hash": "f13a351"
+  },
+  "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/energy-impact-program-west-virginia": {
+   "title": "We're launching a $10 million Energy Impact Program in West Virginia.",
+   "link": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/energy-impact-program-west-virginia/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-12T17:00:00.000Z",
+   "updated": null,
+   "summary": "Google is launching a $10 million Energy Impact Program in West Virginia to fund home repairs and efficiency upgrades. Check your eligibility today.",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 4,
+   "reasons": [
+    "+2 launch \"launching\"",
+    "+1 plans/price/availability \"$1\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "8feec1bf"
+  },
+  "https://microsoft.com/en-us/security/blog/2026/11/11/global-socket-how-threat-actors-weaponizing-gsocket-stealthy-c2": {
+   "title": "The global socket: how threat actors are weaponizing GSocket for stealthy C2",
+   "link": "https://www.microsoft.com/en-us/security/blog/2026/11/11/global-socket-how-threat-actors-weaponizing-gsocket-stealthy-c2/",
+   "source": "ms-security-blog",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-11T19:49:57.000Z",
+   "updated": null,
+   "summary": "Threat actors are deploying GSocket on compromised Linux servers to keep encrypted remote access after the original vulnerability is patched. Learn how to detect, investigate, and remediate this activity. The post The global socket: how threat actors are weaponizing GSocket for stealthy C2 appeared ",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 5,
+   "reasons": [
+    "+3 incident \"compromised\"",
+    "+2 user action \"patched\""
+   ],
+   "status": "below",
+   "hash": "36b19ab"
+  },
+  "https://microsoft.com/en-us/security/blog/2026/11/11/lessons-from-59-linux-kernel-bug-reports": {
+   "title": "Lessons from 59 Linux Kernel Bug Reports",
+   "link": "https://www.microsoft.com/en-us/security/blog/2026/11/11/lessons-from-59-linux-kernel-bug-reports/",
+   "source": "ms-security-blog",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-11T16:55:00.000Z",
+   "updated": null,
+   "summary": "Microsoft FORGE Lab researchers used codename MDASH to investigate Linux kernel vulnerabilities, resulting in 59 upstream bug reports, 33 assigned CVEs, and 38 merged fixes. The research includes eight demonstrated local root privilege-escalation exploits and examines the challenges of turning AI-ge",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 4,
+   "reasons": [
+    "+2 vulnerability \"vulnerabilities\"",
+    "+2 user action \"fixes\"",
+    "same incident as \"ThreatsDay: 59 Linux Kernel Bugs, Falcon Spyware, GSocket Ba\""
+   ],
+   "status": "duplicate",
+   "hash": "1019ba48"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63966": {
+   "title": "Money Market Operations as on November 12, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63966",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-13T09:00:00.000Z",
+   "updated": null,
+   "summary": "(Amount in ₹ crore, Rate in Per cent) MONEY MARKETS @ --> Money Markets @ Volume (One Leg) Weighted Average Rate Range A. Overnight Segment (I+II+III+IV) 7,89,769.30 5.36 3.00-7.40 I. Call Money 16,530.81 5.45 4.30-5.60 II. Triparty Repo 5,65,118.15 5.35 5.05-5.65 III. Market Repo 2,01,298.24 5.39 3",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "b87d58da"
+  },
+  "https://github.blog/changelog/2026-11-12-actions-for-arm32-linux-windows-retirement": {
+   "title": "Actions for ARM32 Linux & Windows retirement",
+   "link": "https://github.blog/changelog/2026-11-12-actions-for-arm32-linux-windows-retirement",
+   "source": "github-changelog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-12T20:59:36.000Z",
+   "updated": null,
+   "summary": "GitHub Actions hosted runners will be ending support for ARM32 job execution on Windows and Linux by 8th Dec 2026. This follows our end of support for node20 where Node… The post Actions for ARM32 Linux & Windows retirement appeared first on The GitHub Blog .",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 1,
+   "reasons": [
+    "-1 source github-changelog",
+    "+1 niche (windows)",
+    "+1 retirement/migration"
+   ],
+   "status": "below",
+   "hash": "25b9b0fc"
+  },
+  "https://github.blog/changelog/2026-11-12-secret-scanning-adds-a-detector-for-cloudflare": {
+   "title": "Secret scanning detects Cloudflare service tokens",
+   "link": "https://github.blog/changelog/2026-11-12-secret-scanning-adds-a-detector-for-cloudflare",
+   "source": "github-changelog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-12T14:38:25.000Z",
+   "updated": null,
+   "summary": "Secret scanning now detects Cloudflare service tokens. Detectors added Secret scanning now automatically detects the following new secret type in your repositories. Provider Secret type Cloudflare cloudflare_access_service_token Partner secrets are… The post Secret scanning detects Cloudflare servic",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": -1,
+   "reasons": [
+    "-1 source github-changelog"
+   ],
+   "status": "below",
+   "hash": "b090e2a4"
+  },
+  "https://github.blog/changelog/2026-11-12-public-monitoring-alerts-now-have-direct-links": {
+   "title": "Public monitoring alerts now have direct links",
+   "link": "https://github.blog/changelog/2026-11-12-public-monitoring-alerts-now-have-direct-links",
+   "source": "github-changelog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-12T14:37:38.000Z",
+   "updated": null,
+   "summary": "You can now access individual public monitoring alerts with a direct link to each alert. In your enterprise’s Public monitoring view, click an alert number to open the alert. You… The post Public monitoring alerts now have direct links appeared first on The GitHub Blog .",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 3,
+   "reasons": [
+    "-1 source github-changelog",
+    "+2 launch \"You can now\"",
+    "+2 user steps \"You can\""
+   ],
+   "status": "below",
+   "hash": "d4c797e7"
+  },
+  "https://mc.merill.net/message/MC1551001": {
+   "title": "MC1551001: Prevent issues with NetApp SMB shares: Learn about new Windows Server security requirements",
+   "link": "https://mc.merill.net/message/MC1551001",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-12T22:55:55.000Z",
+   "updated": null,
+   "summary": "What and why:Microsoft introduced additional security requirements for LDAP authentication on Active Directory domain controllers starting with the October 13, 2026, Windows security updates. These changes require Kerberos service tickets used for LDAP authentication to match the LDAP service princi",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 1,
+   "reasons": [
+    "-2 source mc-merill",
+    "+1 niche (windows)",
+    "+2 launch \"introduced\""
+   ],
+   "status": "below",
+   "hash": "ba9ebeb0"
+  },
+  "https://mc.merill.net/message/MC1491832": {
+   "title": "MC1491832: (UPDATED) Take action to prevent RD Web Access rendering failures",
+   "link": "https://mc.merill.net/message/MC1491832",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-12T22:55:53.000Z",
+   "updated": null,
+   "summary": "Updated November 12, 2026: We are informing regarding November updates for Windows Server which address this change. What and why:The Remote Desktop Web Access (RD Web Access) experience included with Windows Server relies on Extensible Stylesheet Language Transformations (XSLT) to render its web in",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 1,
+   "reasons": [
+    "-2 source mc-merill",
+    "+1 niche (windows)",
+    "+2 user steps \"disable\""
+   ],
+   "status": "below",
+   "hash": "96fd0306"
+  },
+  "https://mc.merill.net/message/MC1550797": {
+   "title": "MC1550797: 60-day reminder: Hardening changes for ReFS volumes on removable media",
+   "link": "https://mc.merill.net/message/MC1550797",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-12T18:01:41.000Z",
+   "updated": null,
+   "summary": "What and why:Microsoft is making hardening changes to the Resilient File System (ReFS). The changes improve the security posture of Windows by adding visibility into unsupported external ReFS configurations and by providing controls to block affected volumes. The changes apply to all supported Windo",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 0,
+   "reasons": [
+    "-2 source mc-merill",
+    "+1 niche (windows)",
+    "+1 plans/price/availability \"Rollout\""
+   ],
+   "status": "below",
+   "hash": "315b8880"
+  },
+  "https://mc.merill.net/message/MC1550796": {
+   "title": "MC1550796: Windows Office Hours: November 19, 2026",
+   "link": "https://mc.merill.net/message/MC1550796",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-12T18:01:37.000Z",
+   "updated": null,
+   "summary": "If you are an IT admin with questions about managing and updating Windows, we want to help. Every third Thursday of the month, we host a live chat-based event on the Tech Community called Windows Office Hours. Members of the Windows, Microsoft Intune, Windows Autopilot, Windows Autopatch, and Window",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 0,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 niche (intune, windows)"
+   ],
+   "status": "below",
+   "hash": "c45490f9"
+  },
+  "https://mc.merill.net/message/MC1387578": {
+   "title": "MC1387578: Microsoft Defender for Office 365: Localized default mark and notify email template",
+   "link": "https://mc.merill.net/message/MC1387578",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-12T17:30:22.000Z",
+   "updated": null,
+   "summary": "Microsoft Defender for Office 365 will localize the default \"Mark and notify\" email template based on users' Outlook language settings, improving clarity in user-reported message notifications. Rollout starts June 2026 globally, with no changes to message classification or custom templates. No actio",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 3,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (office 365, outlook, defender)",
+    "+1 plans/price/availability \"Rollout\""
+   ],
+   "status": "below",
+   "hash": "19452a1"
+  },
+  "https://mc.merill.net/message/MC1509796": {
+   "title": "MC1509796: Microsoft Teams: Enhanced channel meeting experience",
+   "link": "https://mc.merill.net/message/MC1509796",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-12T17:25:11.000Z",
+   "updated": null,
+   "summary": "Microsoft Teams will enhance channel meetings, allowing scheduling from Teams calendar and Outlook, easier discovery for channel members, and delegate scheduling. Rollout starts November 2026, completing by September 2027 across environments. No admin action needed; informing users is recommended. N",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 3,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (microsoft teams, outlook)",
+    "+1 plans/price/availability \"Rollout\""
+   ],
+   "status": "below",
+   "hash": "54f6982d"
+  },
+  "https://mc.merill.net/message/MC1409304": {
+   "title": "MC1409304: Microsoft Teams: Facilitator proactively detects and resolves knowledge gaps in meetings",
+   "link": "https://mc.merill.net/message/MC1409304",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-12T17:21:11.000Z",
+   "updated": null,
+   "summary": "Microsoft Teams introduces Facilitator, an AI feature that detects and resolves knowledge gaps in meetings by providing relevant answers via web search in the chat. Available from February 2027, it requires Microsoft 365 Copilot (Premium) and must be manually enabled. Admin controls and user opt-out",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 6,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (copilot, microsoft 365, microsoft teams)",
+    "+2 launch \"introduces\"",
+    "+2 user steps \"opt-out\""
+   ],
+   "status": "below",
+   "hash": "d2dcdc8c"
+  },
+  "https://mc.merill.net/message/MC1550540": {
+   "title": "MC1550540: Microsoft 365 Copilot: Copilot Workspaces is replacing standalone agent selection with agentic chat",
+   "link": "https://mc.merill.net/message/MC1550540",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-12T16:19:36.000Z",
+   "updated": null,
+   "summary": "Microsoft 365 Copilot Workspaces will replace standalone agent selection (Researcher, Analyst, Designer) with an agentic chat that applies skills based on user requests. This simplifies workflows without losing capabilities. The change begins December 2026 in Frontier preview, with no admin action r",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 2,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (copilot, microsoft 365, agent)"
+   ],
+   "status": "below",
+   "hash": "4c9c851d"
+  },
+  "https://mc.merill.net/message/MC1550542": {
+   "title": "MC1550542: Microsoft Teams: Updated recording and transcript access setting behavior for town halls and webinars",
+   "link": "https://mc.merill.net/message/MC1550542",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-12T16:19:15.000Z",
+   "updated": null,
+   "summary": "Microsoft Teams is updating the \"Who has access to the recording or transcript\" option for Events App town halls and webinars. It will depend on the RecordingForTownhall or RecordingForWebinar settings instead of AllowCloudRecording. The change rolls out worldwide in early to mid-November 2026 with ",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 2,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 niche (microsoft teams)",
+    "+2 launch \"rolls out\""
+   ],
+   "status": "below",
+   "hash": "da47ec46"
+  },
+  "https://mc.merill.net/message/MC1550533": {
+   "title": "MC1550533: Scheduled prompts in Microsoft 365 Copilot are moving to native Copilot scheduling and the Tasks view",
+   "link": "https://mc.merill.net/message/MC1550533",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-12T16:15:07.000Z",
+   "updated": null,
+   "summary": "Microsoft 365 Copilot is moving scheduled prompts from Power Platform to native Copilot scheduling, enabling automatic execution of one-time or recurring tasks within Microsoft 365 compliance boundaries. The Power Platform-based experience retires December 31, 2026. Users manage tasks via the Copilo",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 11,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (copilot, microsoft 365)",
+    "+1 retirement/migration",
+    "+8 M365 retirement due in 48 days"
+   ],
+   "status": "writing",
+   "hash": "ba825a42",
+   "kind": "new",
+   "taskAt": "2026-11-13T03:43:44.477Z",
+   "attempts": 1
+  },
+  "https://mc.merill.net/message/MC1535647": {
+   "title": "MC1535647: Microsoft Copilot app: Updates to Home and navigation",
+   "link": "https://mc.merill.net/message/MC1535647",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-11T22:15:05.000Z",
+   "updated": null,
+   "summary": "Microsoft Copilot app updates include a new Home with integrated Chat, Cowork, Projects, and Workspaces. Projects organize related tasks and files without storing content, available on major platforms. Workspaces replace Notebooks for team collaboration. Rollout starts late October 2026; licensing a",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 1,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 niche (copilot)",
+    "+1 plans/price/availability \"Rollout\""
+   ],
+   "status": "below",
+   "hash": "497a31c6"
+  },
+  "https://mc.merill.net/message/MC1470885": {
+   "title": "MC1470885: M365 Copilot: Tell Copilot what you need directly from the Copilot button in Word, Excel, and PowerPoint",
+   "link": "https://mc.merill.net/message/MC1470885",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-11T21:51:22.000Z",
+   "updated": null,
+   "summary": "Microsoft 365 Copilot now features a prompt input directly on the Copilot button in Word, Excel, and PowerPoint, enabling faster, contextual content creation without leaving the workflow. Rolling out worldwide from September to December 2026 on Windows, macOS, and web, it requires no admin action bu",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 4,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (copilot, m365, excel, windows)",
+    "+2 launch \"Rolling out\""
+   ],
+   "status": "below",
+   "hash": "a3c0b8a5"
+  },
+  "https://mc.merill.net/message/MC1529467": {
+   "title": "MC1529467: Microsoft Windows: Updates to address compromised eMudhra certificate authority keys",
+   "link": "https://mc.merill.net/message/MC1529467",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-11T18:41:32.000Z",
+   "updated": null,
+   "summary": "Microsoft will release updates by November 16, 2026, to remove trust for compromised eMudhra certificate authorities in Windows, Edge, and WebView2. Organizations must allow automatic updates, manage disconnected devices, and replace affected certificates to maintain security. Updates block affected",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": -2,
+   "reasons": [
+    "-2 source mc-merill",
+    "+1 niche (windows)",
+    "-1 in /news 2026-10-29-entra-memberof-retirement-emudhra-ca-block"
+   ],
+   "status": "below",
+   "hash": "fc6cb5dd",
+   "news": "2026-10-29-entra-memberof-retirement-emudhra-ca-block"
+  },
+  "https://mc.merill.net/message/MC1546430": {
+   "title": "MC1546430: 'Add explainer video' Skill in PPT Copilot",
+   "link": "https://mc.merill.net/message/MC1546430",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-11T18:37:46.000Z",
+   "updated": null,
+   "summary": "The rollout of the \"Add explainer video\" skill in PowerPoint Copilot is paused. This feature converts static slides into animated explainer videos for Frontier users on desktop, Mac, and web. No admin action or compliance concerns are required. Updates will be shared via Message center.",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 3,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (copilot, powerpoint, mac)",
+    "+1 plans/price/availability \"rollout\""
+   ],
+   "status": "below",
+   "hash": "73bb3c11"
+  },
+  "https://mc.merill.net/message/MC1549242": {
+   "title": "MC1549242: NTLM signing security improvements in Windows",
+   "link": "https://mc.merill.net/message/MC1549242",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-11T18:03:18.000Z",
+   "updated": null,
+   "summary": "What and why:New NTLM signing security improvements address CVE-2026-118737. Starting November 2026, Windows updates enable clients to offer NTLM message signing by default for non-anonymous connections. This change helps reduce exposure to NTLM relay attacks and provides auditing to identify connec",
+   "first": "2026-11-13T03:43:44.477Z",
+   "score": 1,
+   "reasons": [
+    "-2 source mc-merill",
+    "+1 niche (windows)",
+    "+2 user steps \"enable\"",
+    "+1 plans/price/availability \"Rollout\"",
+    "-1 in /news 2026-11-12-ntlm-signing-emudhra-openssh-kev"
+   ],
+   "status": "below",
+   "hash": "8427875b",
+   "news": "2026-11-12-ntlm-signing-emudhra-openssh-kev"
   }
  }
 }
