@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-13T14:16:39.516Z",
+ "lastScan": "2026-11-13T16:18:13.639Z",
  "seen": {
   "https://openai.com/index/gilbert-tobin-sam-nickless": {
    "title": "Gilbert + Tobin rethinks the business of law with AI",
@@ -2614,6 +2614,28 @@
    ],
    "status": "below",
    "hash": "74a0782f"
+  },
+  "https://openai.com/index/introducing-chatgpt-wallet": {
+   "title": "Introducing ChatGPT Wallet",
+   "link": "https://openai.com/index/introducing-chatgpt-wallet",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-13T15:00:00.000Z",
+   "updated": null,
+   "summary": "Introducing ChatGPT Wallet, a secure way for agents in ChatGPT Work, Codex, and dots to complete purchases with user approval and existing card protections.",
+   "first": "2026-11-13T16:18:13.639Z",
+   "score": 12,
+   "reasons": [
+    "+2 source openai-news",
+    "+4 niche (chatgpt, codex, agents)",
+    "+2 launch \"Introducing\"",
+    "+1 launch in the headline",
+    "+2 category (Product)",
+    "+1 autocomplete (9)"
+   ],
+   "status": "queued",
+   "hash": "4b6426be"
   }
  }
 }
