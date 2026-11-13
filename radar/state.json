@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-13T03:43:44.477Z",
+ "lastScan": "2026-11-13T04:43:44.233Z",
  "seen": {
   "https://openai.com/index/gilbert-tobin-sam-nickless": {
    "title": "Gilbert + Tobin rethinks the business of law with AI",
@@ -1317,8 +1317,11 @@
     "+1 category (Security)",
     "+1 autocomplete (9)"
    ],
-   "status": "queued",
-   "hash": "7d54f949"
+   "status": "writing",
+   "hash": "7d54f949",
+   "kind": "new",
+   "taskAt": "2026-11-13T04:43:44.233Z",
+   "attempts": 1
   },
   "https://bleepingcomputer.com/news/security/your-endpoint-management-platform-could-be-your-biggest-security-risk": {
    "title": "Your Endpoint Management Platform Could Be Your Biggest Security Risk",
@@ -2041,11 +2044,13 @@
     "+1 retirement/migration",
     "+8 M365 retirement due in 48 days"
    ],
-   "status": "writing",
+   "status": "published",
    "hash": "ba825a42",
    "kind": "new",
    "taskAt": "2026-11-13T03:43:44.477Z",
-   "attempts": 1
+   "attempts": 1,
+   "slug": "copilot-scheduled-prompts-power-platform-retirement-migrate",
+   "resultAt": "2026-11-13T03:54:07.140Z"
   },
   "https://mc.merill.net/message/MC1535647": {
    "title": "MC1535647: Microsoft Copilot app: Updates to Home and navigation",
@@ -2145,6 +2150,24 @@
    "status": "below",
    "hash": "8427875b",
    "news": "2026-11-12-ntlm-signing-emudhra-openssh-kev"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63967": {
+   "title": "Result of Underwriting Auction conducted on November 13, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63967",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-13T09:55:00.000Z",
+   "updated": null,
+   "summary": "In the underwriting auction conducted on November 13, 2026, for Additional Competitive Underwriting (ACU) of the undernoted Government security, the Reserve Bank of India has set the cut-off rate for underwriting commission payable to Primary Dealers as given below: Nomenclature of the Security Noti",
+   "first": "2026-11-13T04:43:44.233Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"India\""
+   ],
+   "status": "below",
+   "hash": "b1c97d6d"
   }
  }
 }
