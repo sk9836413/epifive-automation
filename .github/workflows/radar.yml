@@ -397,4 +397,5 @@ jobs:
             [ -n "$FILE" ] && [ -f "$FILE" ] && echo && echo '### Outline' && grep -E '^##+ ' "$FILE"
             [ -f .radar-gate.txt ] && echo && echo '### Gate' && echo '```text' && cat .radar-gate.txt && echo '```'
             [ "$DRY" = "true" ] && echo && echo "_Dry run: nothing was published._"
+            true # the last test above is false on real runs; without this the step (and the run) showed "failed"
           } >> "$GITHUB_STEP_SUMMARY"
