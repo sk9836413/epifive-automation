@@ -5,6 +5,7 @@ import {
   parseFeed, parseSitemap, parseHtmlList, parseDatedSections, normalizeUrl, scoreItem, mergeDuplicates, findCoverage,
   parseBacklog, sameTopic, todayCounts, parkInBacklog, markPublished, logLine, checkFastTrack, trendBoost, istDate, RADAR_MARK,
   datesIn, daysToDeadline, scoreIncident, sameIncident, markIncidentDuplicates, backlogLine, updateSignal,
+  scoreOutage, outageTerm, outageFamilies, pickNewTask, parseSource,
 } from './lib.mjs';
 
 const NOW = Date.parse('2026-11-10T14:00:00Z');
@@ -199,7 +200,7 @@ test('todayCounts counts today\'s published fast-tracks and in-flight tasks, not
     { date: today, kind: 'update', status: 'published' },
   ];
   const state = { seen: { a: { status: 'writing', kind: 'new', taskAt: new Date(NOW).toISOString() } } };
-  assert.deepEqual(todayCounts(results, state, today), { newPublished: 2, updates: 1, attempts: 3 });
+  assert.deepEqual(todayCounts(results, state, today), { newPublished: 2, updates: 1, attempts: 3, outageExtra: 0 });
 });
 
 // ---------- site edits ----------
@@ -410,4 +411,262 @@ test('checkFastTrack (incident) wants the incident sections and defanged IP addr
   const bare = checkFastTrack(INCIDENT_GOOD.replace('c\n', 'Block 194.150.166.244 now.\n'), { category: 'incident' });
   assert.ok(bare.some((e) => e.includes('not defanged')));
   assert.deepEqual(checkFastTrack(INCIDENT_GOOD.replace('c\n', 'Block 194.150.166[.]244 now.\n'), { category: 'incident' }), []);
+});
+
+// ---------- service outages ----------
+
+const bc = { id: 'bleepingcomputer', weight: 1, topic: 'security-identity', category: 'incident',
+  categoryBoost: { Security: 1, Technology: -2, Software: -1, Mobile: -1, Gaming: -3, Deals: -6 } };
+const statusSrc = (over = {}) => ({ id: 'status-x', category: 'outage', weight: 0, platform: 'cloudflare', topic: 'cloud', minImpact: 'major', minComponents: 2, ...over });
+const statusItem = (over = {}) => item({ title: 'Increased errors', status: 'investigating', impact: 'major', components: ['CDN/Cache', 'Workers', 'DNS'], ...over });
+
+test('the BleepingComputer Microsoft 365 outage report clears the threshold as an outage on its own', () => {
+  const r = scoreItem(item({
+    title: 'Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide',
+    summary: 'Microsoft is investigating a widespread outage affecting multiple Microsoft 365 services, including Outlook, Microsoft Teams, and Copilot, as users report connectivity problems worldwide. [...]',
+    categories: ['Microsoft'],
+  }), bc, { now: NOW });
+  assert.equal(r.reject, null);
+  assert.equal(r.category, 'outage');
+  assert.equal(r.topic, 'microsoft-365');
+  assert.equal(r.resolved, false);
+  assert.deepEqual(r.families, ['microsoft']);
+  assert.ok(r.score >= 10, `${r.score}: ${r.reasons.join('; ')}`);
+});
+
+test('"Outlook down for thousands" and Indian bank / UPI outages clear the threshold', () => {
+  for (const title of ['Outlook down for thousands of users worldwide', 'Gmail is down: users unable to send email', 'UPI down: PhonePe, Google Pay payments failing nationwide']) {
+    const r = scoreItem(item({ title }), bc, { now: NOW });
+    assert.equal(r.category, 'outage', title);
+    assert.ok(r.score >= 10, `${title}: ${r.score} ${r.reasons.join('; ')}`);
+  }
+  assert.equal(scoreItem(item({ title: 'SBI down: YONO app and net banking outage hits customers' }), bc, { now: NOW }).topic, 'online-safety');
+});
+
+test('outageTerm ignores download, crackdown, shutdown, "shuts down", "cracks down", "down payment" and money "down"', () => {
+  for (const t of ['How to download Outlook for Windows', 'Government crackdown on UPI fraud apps', 'Microsoft announces shutdown of Skype for Business',
+    'WhatsApp shuts down feature for older phones', 'RBI cracks down on UPI apps', 'HDFC Bank cuts down payment for car loans',
+    'Microsoft shares are down 3% after earnings', 'Breakdown of the Microsoft 365 price changes']) {
+    assert.equal(outageTerm(t), null, t);
+  }
+  for (const t of ['Outlook down for thousands', 'Microsoft 365 is down', 'AWS went down again', 'GitHub down worldwide', 'Teams outage']) {
+    assert.ok(outageTerm(t)?.strong, t);
+  }
+  // Not routed to outages at all: still scored (and rejected) as security news.
+  assert.notEqual(scoreItem(item({ title: 'How to download Outlook for Windows' }), bc, { now: NOW }).category, 'outage');
+});
+
+test('outages need a major platform, and feature/explainer headlines are pushed down', () => {
+  assert.equal(scoreOutage(item({ title: 'Small hosting firm suffers outage' }), bc, { now: NOW }).reject, 'outage outside the major platforms');
+  assert.ok(scoreItem(item({ title: 'Microsoft Teams adds outage alerts for admins' }), bc, { now: NOW }).score < 10);
+  assert.deepEqual(outageFamilies('Outage at HDFC Bank and UPI'), ['upi', 'hdfc']);
+});
+
+test('a security incident that mentions a disruption stays a security incident', () => {
+  const r = scoreItem(item({ title: 'Ransomware attack on HDFC Bank vendor exposed customer data; bank urges customers to reset passwords', summary: 'Some disruption to services.' }), bc, { now: NOW });
+  assert.equal(r.category, 'incident');
+});
+
+test('scheduled maintenance never qualifies and resolved outages never start a new article', () => {
+  const cf = statusSrc();
+  assert.equal(scoreItem(statusItem({ title: 'Scheduled maintenance in FRA (Frankfurt) on 2026-11-20', status: 'scheduled', components: ['Frankfurt, Germany - (FRA)'] }), cf, { now: NOW }).reject, 'scheduled maintenance');
+  assert.equal(scoreItem(statusItem({ title: 'FRA (Frankfurt) on 2026-11-20', status: 'scheduled' }), cf, { now: NOW }).reject, 'scheduled maintenance');
+  assert.equal(scoreOutage(item({ title: 'Cloudflare scheduled maintenance in FRA causes outage warnings' }), bc, { now: NOW }).reject, 'scheduled maintenance');
+  assert.notEqual(scoreItem(item({ title: 'Cloudflare scheduled maintenance in FRA causes outage warnings' }), bc, { now: NOW }).reject, null);
+  const done = scoreItem(statusItem({ status: 'resolved', impact: 'critical' }), cf, { now: NOW });
+  assert.equal(done.reject, null);
+  assert.equal(done.resolved, true);
+  const news = scoreItem(item({ title: 'Microsoft 365 outage resolved after 14 hours, Outlook and Teams restored' }), bc, { now: NOW });
+  assert.equal(news.category, 'outage');
+  assert.equal(news.resolved, true);
+  assert.ok(updateSignal('Microsoft 365 outage resolved', 'outage'));
+  assert.ok(!updateSignal('Microsoft 365 outage continues', 'outage'));
+  assert.equal(scoreItem(item({ title: 'Microsoft explains what caused the Microsoft 365 outage' }), bc, { now: NOW }).resolved, true);
+});
+
+test('status-page incidents: only open, large incidents qualify (impact and components gate, single PoPs ignored)', () => {
+  const cf = statusSrc();
+  const big = scoreItem(statusItem({ title: 'Cloudflare dashboard and API errors', impact: 'major' }), cf, { now: NOW });
+  assert.equal(big.reject, null);
+  assert.equal(big.category, 'outage');
+  assert.ok(big.score >= 10, big.reasons.join('; '));
+  assert.equal(scoreItem(statusItem({ impact: 'minor' }), cf, { now: NOW }).reject, 'below the major-incident gate');
+  assert.equal(scoreItem(statusItem({ title: 'Network performance issues in St. Louis', impact: 'major', components: [] }), cf, { now: NOW }).reject, 'below the major-incident gate');
+  // GitHub: critical needs 4 components (it marks several incidents a week critical).
+  const gh = statusSrc({ platform: 'github', minComponents: 4, minComponentsCritical: 4 });
+  assert.ok(scoreItem(statusItem({ title: 'Incident with Actions and Pages', impact: 'critical', components: ['Actions', 'Pages', 'Webhooks'] }), gh, { now: NOW }).reject);
+  assert.equal(scoreItem(statusItem({ title: 'Impact across multiple GitHub products', impact: 'critical', components: ['Actions', 'Pages', 'Webhooks', 'Copilot'] }), gh, { now: NOW }).reject, null);
+  // Google Workspace: Gmail alone is big enough when critical, Google Keep is not.
+  const gws = statusSrc({ platform: 'google', minComponentsCritical: 2, criticalProducts: '^(Gmail|Google Drive)$' });
+  assert.equal(scoreItem(statusItem({ impact: 'critical', components: ['Gmail'] }), gws, { now: NOW }).reject, null);
+  assert.ok(scoreItem(statusItem({ impact: 'critical', components: ['Google Keep'] }), gws, { now: NOW }).reject);
+  // A pages that only posts big incidents (assumeMajor), and an open incident kept fresh by its latest update.
+  const m365 = statusSrc({ platform: 'microsoft', assumeMajor: true, topic: 'microsoft-365' });
+  const old = scoreItem(statusItem({ components: [], date: '2026-11-08T16:17:00Z', updated: '2026-11-10T12:00:00Z' }), m365, { now: NOW });
+  assert.equal(old.reject, null);
+});
+
+test('status parsers: Statuspage, Google incidents.json, status.cloud.microsoft, AWS RSS anchors', () => {
+  const sp = parseSource(JSON.stringify({ incidents: [{ id: 'abc', name: 'Increased errors', status: 'investigating', impact: 'major', started_at: '2026-11-10T10:00:00Z', updated_at: '2026-11-10T11:00:00Z',
+    incident_updates: [{ body: 'We are investigating.' }], components: [{ name: 'Workers' }, { name: 'St. Louis, United States - (STL)' }] }] }),
+  { type: 'statuspage-json', url: 'https://www.cloudflarestatus.com/api/v2/incidents.json' });
+  assert.equal(sp[0].link, 'https://www.cloudflarestatus.com/incidents/abc');
+  assert.deepEqual(sp[0].components, ['Workers']);
+  assert.equal(sp[0].impact, 'major');
+
+  const g = parseSource(JSON.stringify([{ id: 'x', begin: '2026-11-10T09:00:00+00:00', end: null, modified: '2026-11-10T10:00:00+00:00', severity: 'high', status_impact: 'SERVICE_OUTAGE',
+    service_name: 'Gmail', external_desc: '**Summary:**\nUsers cannot send email. **Description:** more', most_recent_update: { status: 'SERVICE_OUTAGE', text: '**Summary:** Investigating.' },
+    affected_products: [{ title: 'Gmail' }], uri: 'incidents/x' }]), { type: 'google-status-json', page: 'https://www.google.com/appsstatus/dashboard/' });
+  assert.equal(g[0].title, 'Gmail: Users cannot send email.');
+  assert.equal(g[0].link, 'https://www.google.com/appsstatus/dashboard/incidents/x');
+  assert.equal(g[0].impact, 'critical');
+  assert.equal(g[0].status, 'investigating');
+
+  const ms = { type: 'ms-status-json', page: 'https://status.cloud.microsoft/' };
+  assert.deepEqual(parseSource(JSON.stringify({ Id: null, Title: null, Message: 'No issues', Status: 'Available' }), ms), []);
+  const m = parseSource(JSON.stringify({ Id: '274b', AuthoredDateTime: '2026-11-13T04:22:48+00:00', LastUpdatedTime: '2026-11-13T04:22:48+00:00',
+    Title: 'Users may be unable to connect to multiple Microsoft 365 services', Status: 'Service degradation',
+    Message: '<div>User impact: x</div><div>- Exchange Online: Users may be unable to access their mailbox.</div><div>- Microsoft Teams: Presence may be delayed.</div>' }), ms);
+  assert.ok(m[0].link.startsWith('https://status.cloud.microsoft/#2026-11-13-users-may-be-unable-to-connect'), m[0].link);
+  assert.ok(normalizeUrl(m[0].link).includes('#2026-11-13-users-may-be'), 'the dated anchor survives normalizeUrl');
+  assert.deepEqual(m[0].components, ['Exchange Online', 'Microsoft Teams']);
+  assert.throws(() => parseSource('{"hello":1}', { type: 'statuspage-json', url: 'https://x.example/' }));
+
+  const aws = parseSource(`<rss><channel>
+    <item><title>Service disruption: Increased Error Rates</title><link>https://status.aws.amazon.com/</link><pubDate>Tue, 10 Nov 2026 10:00:00 PST</pubDate>
+      <guid isPermaLink="false">https://status.aws.amazon.com/#multipleservices-us-east-1_1794431489</guid><description>x</description></item>
+    <item><title>Service is operating normally: [RESOLVED] Elevated API errors</title><link>https://status.aws.amazon.com/</link><pubDate>Tue, 10 Nov 2026 09:00:00 PST</pubDate>
+      <guid isPermaLink="false">https://status.aws.amazon.com/#ec2-ap-south-1_1794431000</guid><description>y</description></item></channel></rss>`,
+  { type: 'rss', anchorFromGuid: true });
+  assert.notEqual(normalizeUrl(aws[0].link), normalizeUrl(aws[1].link));
+  const awsSrc = statusSrc({ platform: 'aws', minComponents: 3, minComponentsCritical: 2 });
+  const first = scoreItem(aws[0], awsSrc, { now: NOW });
+  assert.equal(first.reject, null, first.reasons.join('; '));
+  assert.equal(scoreItem(aws[1], awsSrc, { now: NOW }).reject, 'below the major-incident gate');
+});
+
+test('one outage per platform family: a status post and a news report of the same outage are one', () => {
+  const mk = (title, score, families, resolved = false) => ({ item: { title }, score, reasons: [], category: 'outage', families, resolved });
+  const news = mk('Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide', 12, ['microsoft']);
+  const status = mk('Users may be unable to connect to multiple Microsoft 365 services', 11, ['microsoft']);
+  const gh = mk('Impact across multiple GitHub products', 11, ['github']);
+  markIncidentDuplicates([news, status, gh], []);
+  assert.equal(news.dupOf, undefined);
+  assert.equal(status.dupOf, news.item.title);
+  assert.equal(gh.dupOf, undefined);
+  const again = mk('Outlook down for second day', 11, ['microsoft']);
+  markIncidentDuplicates([again], [{ title: 'Microsoft 365 outage', category: 'outage', families: ['microsoft'] }]);
+  assert.ok(again.dupOf);
+  // Security incidents are not de-duplicated against outages.
+  const inc = { item: { title: 'Microsoft 365 outage phishing campaign steals credentials' }, score: 10, reasons: [], category: 'incident' };
+  markIncidentDuplicates([inc], [{ title: 'Microsoft 365 outage', category: 'outage', families: ['microsoft'] }]);
+  assert.equal(inc.dupOf, undefined);
+});
+
+test('findCoverage (outage) matches only a recent outage post on the same platform', () => {
+  const post = { slug: 'microsoft-365-outage-outlook-teams-what-to-do', title: 'Microsoft 365 outage: Outlook and Teams down, what to do', date: '2026-11-10', topic: 'microsoft-365', body: '---\n---\n## Post-incident review\n' };
+  const it = { title: 'Microsoft 365 outage resolved', link: 'https://example.com/m' };
+  assert.equal(findCoverage(it, { posts: [post] }, { category: 'outage', now: NOW }).post?.slug, post.slug);
+  assert.equal(findCoverage(it, { posts: [{ ...post, date: '2026-10-01' }] }, { category: 'outage', now: NOW }).post, null);
+  assert.equal(findCoverage({ title: 'GitHub outage', link: 'https://example.com/g' }, { posts: [post] }, { category: 'outage', now: NOW }).post, null);
+  const howto = { slug: 'outlook-rules-how-to', title: 'How to set up Outlook rules', date: '2026-11-10', body: '---\n---\nx' };
+  assert.equal(findCoverage(it, { posts: [howto] }, { category: 'outage', now: NOW }).post, null);
+});
+
+test('daily cap: one extra slot a day for a major outage, launches stay capped at 2', () => {
+  const S = { maxNewPerDay: 2, maxAttemptsPerDay: 3, maxOutageExtraPerDay: 1 };
+  const launch = ['l', { category: 'launch', score: 14 }];
+  const outage = ['o', { category: 'outage', score: 11 }];
+  // Normal slots free: the best item, no extra.
+  assert.deepEqual(pickNewTask([launch, outage], { newPublished: 1, attempts: 1, outageExtra: 0 }, S), { key: 'l', extra: false });
+  // Cap reached: a launch waits, an outage takes the extra slot (third fast-track of the day).
+  assert.equal(pickNewTask([launch], { newPublished: 2, attempts: 2, outageExtra: 0 }, S), null);
+  assert.deepEqual(pickNewTask([launch, outage], { newPublished: 2, attempts: 2, outageExtra: 0 }, S), { key: 'o', extra: true });
+  // The extra slot is used: a fourth (another outage) waits.
+  assert.equal(pickNewTask([outage], { newPublished: 2, attempts: 2, outageExtra: 1 }, S), null);
+  // Attempts cap (3 incl. failures) also hands over to the extra slot for outages only.
+  assert.deepEqual(pickNewTask([outage], { newPublished: 1, attempts: 3, outageExtra: 0 }, S), { key: 'o', extra: true });
+
+  // todayCounts keeps extra-slot tasks out of the normal counts.
+  const today = istDate(NOW);
+  const results = [
+    { date: today, kind: 'new', status: 'published' },
+    { date: today, kind: 'new', status: 'published' },
+    { date: today, kind: 'new', status: 'published', category: 'outage', extra: true },
+  ];
+  assert.deepEqual(todayCounts(results, { seen: {} }, today), { newPublished: 2, updates: 0, attempts: 2, outageExtra: 1 });
+  const writing = { seen: { o: { status: 'writing', kind: 'new', extra: true, taskAt: new Date(NOW).toISOString() } } };
+  assert.equal(todayCounts(results.slice(0, 2), writing, today).outageExtra, 1);
+});
+
+test('backlogLine parks outages as outage guides', () => {
+  const line = backlogLine({ title: 'Massive Microsoft 365 outage disrupts Outlook', date: '2026-11-12T20:15:16Z', topic: 'microsoft-365', link: 'https://example.com/o', category: 'outage', reason: 'daily cap' });
+  assert.match(line, /: what happened, status and what to do \(outage 2026-11-12\) \| microsoft-365 \| outage guide/);
+  assert.match(line, /\(fast-track outage, daily cap\)$/);
+});
+
+const OUTAGE_GOOD = `---
+title: X
+faqs:
+  - question: q
+    answer: a
+---
+
+**Status as of 10:30 IST, 13 November 2026:** Microsoft says recovery is ongoing.
+
+## What happened
+| Time (IST) | Time (ET) | Update |
+|---|---|---|
+| 21:47, 12 Nov | 11:17, 12 Nov | Microsoft opened EX1550543 |
+## How to check status
+a
+## What users can do now
+b
+## What admins should do
+c
+## SLA credits
+d
+## Post-incident review
+e
+## What we checked
+- f
+
+Last tested: 2026-11-13
+
+## Sources
+- https://status.cloud.microsoft/
+`;
+
+test('checkFastTrack (outage) wants the outage sections, an IST+ET timeline and a status-as-of line', () => {
+  assert.deepEqual(checkFastTrack(OUTAGE_GOOD, { category: 'outage' }), []);
+  assert.ok(checkFastTrack(OUTAGE_GOOD).length > 0);
+  assert.ok(checkFastTrack(OUTAGE_GOOD.replace('## SLA credits\n', ''), { category: 'outage' }).some((e) => e.includes('SLA credits')));
+  assert.ok(checkFastTrack(OUTAGE_GOOD.replace('## Post-incident review\n', ''), { category: 'outage' }).some((e) => e.includes('post-incident review')));
+  assert.ok(checkFastTrack(OUTAGE_GOOD.replace('**Status as of 10:30 IST, 13 November 2026:**', 'Status:'), { category: 'outage' }).some((e) => e.includes('as of')));
+  assert.ok(checkFastTrack(OUTAGE_GOOD.replace('| Time (ET) ', '| Time (UTC) ').replace('11:17, 12 Nov', '16:17, 12 Nov'), { category: 'outage' }).some((e) => e.includes('ET')));
+  assert.ok(checkFastTrack(OUTAGE_GOOD.replace('Last tested: 2026-11-13\n', ''), { category: 'outage' }).some((e) => e.includes('Last tested')));
+  // Update mode still wants the status line.
+  const upd = OUTAGE_GOOD.replace('faqs:', "updated: '2026-11-14'\nfaqs:").replace('**Status as of', '**Updated 2026-11-14:** Resolved.\n\n**Status as of');
+  assert.deepEqual(checkFastTrack(upd, { kind: 'update', today: '2026-11-14', category: 'outage' }), []);
+});
+
+test('radar.mjs check --category outage runs the outage structure check', async () => {
+  const { spawnSync } = await import('node:child_process');
+  const fs = await import('node:fs');
+  const os = await import('node:os');
+  const path = await import('node:path');
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'radar-check-'));
+  const good = path.join(dir, 'good.md');
+  const bad = path.join(dir, 'bad.md');
+  fs.writeFileSync(good, OUTAGE_GOOD);
+  fs.writeFileSync(bad, OUTAGE_GOOD.replace('## SLA credits\n', ''));
+  const { fileURLToPath } = await import('node:url');
+  const cli = fileURLToPath(new URL('./radar.mjs', import.meta.url));
+  const run = (f, cat) => spawnSync(process.execPath, [cli, 'check', '--file', f, '--kind', 'new', '--category', cat], { encoding: 'utf8' });
+  assert.equal(run(good, 'outage').status, 0);
+  const r = run(bad, 'outage');
+  assert.equal(r.status, 1);
+  assert.match(r.stderr, /SLA credits/);
+  assert.equal(run(good, 'launch').status, 1);
+  fs.rmSync(dir, { recursive: true, force: true });
 });

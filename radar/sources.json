@@ -1,11 +1,12 @@
 {
-  "_about": "Launch radar sources: official feeds and pages only for launches (no news sites, no rumours). Sources with category 'incident' are security news and vendor security blogs, used only to discover incidents (scoreIncident in lib.mjs); the writer cites primary sources and labels claims (site automation/RADAR.md). 'verified' = HTTP 200 with parseable items from an honest user agent on that date. Weight shifts every item's score for that source (high-volume or broad feeds get 0 or less). categoryBoost adds points per feed category; '(none)' applies when an item has no category.",
+  "_about": "Launch radar sources: official feeds and pages only for launches (no news sites, no rumours). Sources with category 'incident' are security news and vendor security blogs, used only to discover incidents (scoreIncident in lib.mjs) and service outages on major platforms (scoreOutage); the writer cites primary sources and labels claims (site automation/RADAR.md). Sources with category 'outage' are official status pages: only open, large incidents qualify (impact and component gates: minImpact, minComponents, minComponentsCritical, assumeMajor), never scheduled maintenance, and resolved ones can only update an existing outage guide; allowEmpty = an empty feed is normal (no incident). 'verified' = HTTP 200 with parseable items from an honest user agent on that date. Weight shifts every item's score for that source (high-volume or broad feeds get 0 or less). categoryBoost adds points per feed category; '(none)' applies when an item has no category.",
   "settings": {
     "threshold": 10,
     "freshHours": 36,
     "maxNewPerDay": 2,
     "maxAttemptsPerDay": 3,
     "maxUpdatesPerDay": 2,
+    "maxOutageExtraPerDay": 1,
     "minScanGapMinutes": 25,
     "trendLookups": 5,
     "userAgent": "EpiFiveRadar/1.0 (+https://www.epifive.com)"
@@ -43,7 +44,8 @@
     { "id": "thn", "name": "The Hacker News", "url": "https://feeds.feedburner.com/TheHackersNews", "type": "rss", "category": "incident", "weight": 1, "topic": "security-identity",
       "note": "Security news: discovery only. The writer cites the primary source (vendor or company statement, researcher post, exchange filing, advisory) and labels unverified claims.", "verified": "2026-11-12" },
     { "id": "bleepingcomputer", "name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/feed/", "type": "rss", "category": "incident", "weight": 1, "topic": "security-identity",
-      "categoryBoost": { "Security": 1, "Technology": -2, "Software": -1, "Mobile": -1, "Gaming": -3, "Deals": -6 }, "note": "Security news: discovery only (see thn).", "verified": "2026-11-12" },
+      "categoryBoost": { "Security": 1, "Technology": -2, "Software": -1, "Mobile": -1, "Gaming": -3, "Deals": -6 },
+      "note": "All-news feed (not security-only; e.g. /news/microsoft/ stories arrive with category 'Microsoft'). Security news and service outages: discovery only (see thn). Outage wording on a major platform is scored by scoreOutage; only the Gaming/Deals category penalties apply there.", "verified": "2026-11-13" },
     { "id": "github-security-blog", "name": "GitHub Blog: Security", "url": "https://github.blog/security/feed/", "type": "rss", "category": "incident", "weight": 1, "topic": "security-identity",
       "note": "Official GitHub security posts and advisories (also feature posts; those are rejected unless they describe an incident or vulnerability with a user action).", "verified": "2026-11-12" },
     { "id": "ms-security-blog", "name": "Microsoft Security Blog", "url": "https://www.microsoft.com/en-us/security/blog/feed/", "type": "rss", "category": "incident", "weight": 0, "topic": "security-identity",
@@ -51,7 +53,33 @@
     { "id": "theprint-tech", "name": "ThePrint: Tech", "url": "https://theprint.in/category/tech/feed/", "type": "rss", "category": "incident", "weight": 1, "topic": "online-safety",
       "note": "Indian tech and business news, for Indian bank, UPI, Aadhaar and consumer breaches. Discovery only: cite the company's exchange filing or statement first.", "verified": "2026-11-12" },
     { "id": "medianama", "name": "MediaNama", "url": "https://www.medianama.com/feed/", "type": "rss", "category": "incident", "weight": 1, "topic": "online-safety",
-      "note": "Indian tech policy news, for Indian consumer breaches and CERT-In or RBI actions. Discovery only (see theprint-tech).", "verified": "2026-11-12" }
+      "note": "Indian tech policy news, for Indian consumer breaches and CERT-In or RBI actions. Discovery only (see theprint-tech).", "verified": "2026-11-12" },
+
+    { "id": "status-m365-admin", "name": "Microsoft 365 status (status.cloud.microsoft, admin center post)", "url": "https://status.cloud.microsoft/api/posts/mac", "page": "https://status.cloud.microsoft/", "type": "ms-status-json",
+      "category": "outage", "platform": "microsoft", "weight": 0, "topic": "microsoft-365", "allowEmpty": true, "assumeMajor": true,
+      "note": "Public, no auth. Microsoft posts here only when a broad Microsoft 365 incident stops admins from reading Service health; Status 'Available' = no incident (no items). Tenant Service health (incident IDs such as EX1550543) needs Graph auth and is not used.", "verified": "2026-11-13" },
+    { "id": "status-m365-consumer", "name": "Microsoft 365 consumer status (status.cloud.microsoft)", "url": "https://status.cloud.microsoft/api/posts/m365Consumer", "page": "https://status.cloud.microsoft/", "type": "ms-status-json",
+      "category": "outage", "platform": "microsoft", "weight": 0, "topic": "microsoft-365", "allowEmpty": true, "assumeMajor": true,
+      "note": "Public, no auth. Outlook.com, OneDrive, Teams (free) and Microsoft 365 consumer incidents; services listed as 'Operational' are skipped.", "verified": "2026-11-13" },
+    { "id": "status-azure", "name": "Azure status RSS", "url": "https://azure.status.microsoft/en-us/status/feed/", "type": "rss",
+      "category": "outage", "platform": "microsoft", "weight": 0, "topic": "cloud", "allowEmpty": true, "assumeMajor": true,
+      "note": "Lists only active broad-impact Azure incidents (narrower ones go to each subscription's Service Health), so an empty channel is normal. Status/impact come from the item wording.", "verified": "2026-11-13" },
+    { "id": "status-google-workspace", "name": "Google Workspace Status Dashboard (incidents.json)", "url": "https://www.google.com/appsstatus/dashboard/incidents.json", "page": "https://www.google.com/appsstatus/dashboard/", "type": "google-status-json",
+      "category": "outage", "platform": "google", "weight": 0, "topic": "small-business-it", "minImpact": "major", "minComponents": 2, "minComponentsCritical": 2,
+      "criticalProducts": "^(Gmail|Google Drive|Google Meet|Google Docs|Google Calendar|Google Chat)$",
+      "note": "About 280 KB, full history with severity (high = critical, medium = major) and affected products. Qualifies: high severity on 2+ products or on Gmail/Drive/Meet/Docs/Calendar/Chat, or medium on 2+ products. The Atom feed (dashboard/en/feed.atom) carries only the latest update and no severity.", "verified": "2026-11-13" },
+    { "id": "status-google-cloud", "name": "Google Cloud Service Health (incidents.json)", "url": "https://status.cloud.google.com/incidents.json", "page": "https://status.cloud.google.com/", "type": "google-status-json",
+      "category": "outage", "platform": "google", "weight": 0, "topic": "cloud", "minImpact": "major", "minComponents": 5,
+      "note": "About 290 KB. Qualifies: high severity, or medium on 5+ products or 3+ regions (single-product regional issues stay out).", "verified": "2026-11-13" },
+    { "id": "status-github", "name": "GitHub Status (Statuspage incidents.json)", "url": "https://www.githubstatus.com/api/v2/incidents.json", "type": "statuspage-json",
+      "category": "outage", "platform": "github", "weight": 0, "topic": "ai-engineering", "minImpact": "major", "minComponents": 4, "minComponentsCritical": 4,
+      "note": "About 300 KB, last 50 incidents with impact and components. GitHub marks several incidents a week major or critical, so only 4+ components (or 'multiple services' wording) qualify. history.rss has no impact field.", "verified": "2026-11-13" },
+    { "id": "status-cloudflare", "name": "Cloudflare Status (Statuspage incidents.json)", "url": "https://www.cloudflarestatus.com/api/v2/incidents.json", "type": "statuspage-json",
+      "category": "outage", "platform": "cloudflare", "weight": 0, "topic": "cloud", "minImpact": "major", "minComponents": 2,
+      "note": "About 120 KB. Scheduled maintenance is a separate endpoint, so none of it appears here; single-PoP components ('City, Country - (XXX)') are not counted. history.rss is not used: its 25 items are almost all per-city scheduled maintenance.", "verified": "2026-11-13" },
+    { "id": "status-aws", "name": "AWS Health Dashboard RSS (all services)", "url": "https://status.aws.amazon.com/rss/all.rss", "type": "rss", "anchorFromGuid": true,
+      "category": "outage", "platform": "aws", "weight": 0, "topic": "cloud", "minImpact": "major", "minComponents": 3, "minComponentsCritical": 2,
+      "note": "About 70 KB; one item per service and region, every item linking to the same page (anchorFromGuid keeps them apart). A single service in one region never qualifies; 'Multiple services' events or multi-service/multi-region wording do. Titles prefixed 'Service is operating normally' / [RESOLVED] are resolved.", "verified": "2026-11-13" }
   ],
   "notUsed": [
     { "name": "OpenAI Help Center release notes", "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes", "reason": "HTTP 403 bot challenge for automated clients (2026-11-12). ChatGPT launches are covered through the OpenAI News RSS (category Product); the writer may still open help.openai.com pages while researching." },
@@ -63,6 +91,10 @@
     { "name": "Press Information Bureau RSS", "url": "https://pib.gov.in/RssMain.aspx?ModId=6&Lang=1&Regid=3", "reason": "HTTP 403 to automated clients (2026-11-12)." },
     { "name": "CERT-In advisories and vulnerability notes", "url": "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBADVLIST", "reason": "No RSS; the home page is a frameset and the advisory and vulnerability-note list pages return a script shell or 'Page Requested Currently Not available' to automated clients (2026-11-12). The writer may still open CERT-In pages while researching." },
     { "name": "Microsoft Security Response Center (MSRC) blog", "url": "https://msrc.microsoft.com/blog/feed", "reason": "The feed URL redirects to the HTML blog page (https://www.microsoft.com/en-us/msrc/blog), which renders its post list with JavaScript (2026-11-12). The Microsoft Security Blog feed (ms-security-blog) is used instead." },
+    { "name": "Cloudflare and GitHub status history.rss", "url": "https://www.cloudflarestatus.com/history.rss", "reason": "Works, but Cloudflare's 25 items were all per-city scheduled maintenance and neither feed has an impact field (2026-11-13). Their Statuspage /api/v2/incidents.json is used instead (impact, components, no maintenance)." },
+    { "name": "Google Workspace status Atom feed", "url": "https://www.google.com/appsstatus/dashboard/en/feed.atom", "reason": "Works but holds only the latest update, with no severity (2026-11-13); incidents.json is used instead." },
+    { "name": "AWS Health (health.aws.amazon.com)", "url": "https://health.aws.amazon.com/health/status", "reason": "JavaScript app shell (2026-11-13); the classic RSS at status.aws.amazon.com/rss/all.rss still works and is used." },
+    { "name": "Microsoft 365 Service health (tenant, incident IDs like EX1550543 / MO1550821)", "url": "https://graph.microsoft.com/v1.0/admin/serviceAnnouncement/issues", "reason": "Needs an Entra app with ServiceHealth.Read.All (auth); not used. The public status.cloud.microsoft posts (status-m365-admin, status-m365-consumer) and news feeds cover big outages." },
     { "name": "MSRC Security Update Guide RSS", "url": "https://api.msrc.microsoft.com/update-guide/rss", "reason": "Works, but lists every CVE (about 5,700 items, 3 MB) with no exploited-in-the-wild flag, so it would flood the radar (2026-11-12)." }
   ]
 }

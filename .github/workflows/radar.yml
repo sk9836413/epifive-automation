@@ -2,11 +2,14 @@
 # how-to for a big launch ("fast track", site instructions automation/RADAR.md), on top of the daily article.
 # Sources with category "incident" (security news, vendor security blogs) add same-day security incident guides
 # ("what happened / am I affected / what to do now / how to prevent it"), under the same daily caps.
+# Big service outages on major platforms (news feeds, and status pages with category "outage") add outage guides
+# ("what happened / how to check status / what users and admins can do / SLA credits / post-incident review").
 #
 # When: no cron of its own. It starts whenever the scheduler requests the Daily article (43 3 and 43 4 UTC) or
 # Social media (13 5, 16 13 and 16 14 UTC) workflow, so it rides the scheduler's 5 existing slots (up to 5 scans
 # a day; a scan within 25 minutes of the last one is skipped). A scan is plain Node (a few seconds, no Claude).
-# Caps: at most 2 fast-track articles a day (3 attempts), 2 updates of existing posts a day. A draft that fails the
+# Caps: at most 2 fast-track articles a day (3 attempts), plus 1 extra a day for a major outage once those are used
+# up, and 2 updates of existing posts a day. A draft that fails the
 # quality gate gets one fix attempt, then the launch is parked in automation/backlog.md "(fast-track, failed gate)".
 # Off switch: repository variable RADAR (automatic scans run only while it is "on").
 # Logs (public, no secrets): radar/log/<YYYY-MM>.md per scan, radar/results.jsonl per write.
@@ -32,9 +35,9 @@ on:
         type: string
         default: ''
       force_category:
-        description: With force_url, write a launch how-to or a security incident guide
+        description: With force_url, write a launch how-to, a security incident guide or an outage guide
         type: choice
-        options: [launch, incident]
+        options: [launch, incident, outage]
         default: launch
       task:
         description: Task JSON (write mode only; the scan fills it in)
@@ -172,7 +175,7 @@ jobs:
             const t = JSON.parse(require("fs").readFileSync(".radar-task.json", "utf8"));
             if (!["new", "update"].includes(t.kind) || !t.key || !t.link) { console.error("Bad task"); process.exit(1); }
             if (t.kind === "update" && !/^[a-z0-9-]+$/.test(t.slug ?? "")) { console.error("Update without a valid slug"); process.exit(1); }
-            const category = t.category === "incident" ? "incident" : "launch";
+            const category = ["incident", "outage"].includes(t.category) ? t.category : "launch";
             require("fs").appendFileSync(process.env.GITHUB_OUTPUT, `kind=${t.kind}\nkey=ok\nslug=${t.slug ?? ""}\ncategory=${category}\n`);
             console.log(`${t.kind} (${category}): ${t.title}\n${t.link}\nscore ${t.score}: ${(t.reasons ?? []).join("; ")}`);
           '
@@ -192,7 +195,9 @@ jobs:
             Launch radar fast-track, mode "${{ steps.task.outputs.kind }}", category "${{ steps.task.outputs.category }}".
             Today's date (IST) is ${{ steps.task.outputs.today }}. For category "incident", follow the "Security incidents"
             section of RADAR.md (primary sources first, label claims as claims, name no individuals, no speculation, only
-            published indicators of compromise).
+            published indicators of compromise). For category "outage", follow the "Outages" section of RADAR.md (status
+            "as of <time> IST" with a timestamp, vendor status updates quoted exactly with times, IST and ET timeline, no
+            speculation on the cause beyond what the vendor said, SLA credits only from the vendor's SLA document).
             The item is described in .radar-task.json. Read automation/RADAR.md and follow it exactly (it builds on
             automation/WRITER.md, which you should also read). The repository is already checked out at the latest main.
             Do not run npm, git or a build, and do not edit automation/backlog.md or automation/log.md: later workflow

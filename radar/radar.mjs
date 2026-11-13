@@ -2,14 +2,15 @@
 // Launch radar: spots big product launches on official feeds and queues a same-day "fast-track" how-to.
 // See README section "Launch radar" and the site's automation/RADAR.md (the writer's instructions).
 //
-//   node radar/radar.mjs scan --site <site checkout> [--dry-run] [--force-url <url> [--force-category incident]] [--out task.json]
+//   node radar/radar.mjs scan --site <site checkout> [--dry-run] [--force-url <url> [--force-category incident|outage]] [--out task.json]
 //        fetch every source, score and de-duplicate new items, log the run, pick at most one task
 //   node radar/radar.mjs record --task task.json --status published|failed|skipped [--slug s] [--title t]
 //        append the write job's outcome to radar/results.jsonl (the next scan folds it into state.json)
 //   node radar/radar.mjs site-apply --site . --task task.json --result published|failed [--file content/posts/x.md]
 //        edit automation/backlog.md and automation/log.md in the site checkout for that outcome
-//   node radar/radar.mjs check --file content/posts/x.md --kind new|update [--today YYYY-MM-DD] [--category launch|incident]
-//        fast-track structure check (sections, FAQ, sources; incident guides: their own sections, defanged IPs)
+//   node radar/radar.mjs check --file content/posts/x.md --kind new|update [--today YYYY-MM-DD] [--category launch|incident|outage]
+//        fast-track structure check (sections, FAQ, sources; incident guides: their own sections, defanged IPs;
+//        outage guides: their own sections, IST + ET timeline, a "status as of <time> IST" line)
 //
 // State (all in this public repo, no secrets): radar/state.json (items seen and their decisions),
 // radar/results.jsonl (write outcomes), radar/log/<YYYY-MM>.md (one block per run).
@@ -19,7 +20,7 @@ import { fileURLToPath } from 'node:url';
 import {
   parseSource, normalizeUrl, scoreItem, trendBoost, searchPhrase, findCoverage, parseBacklog, hashText,
   istDate, todayCounts, mergeDuplicates, parkInBacklog, markPublished, logLine, checkFastTrack, updateSignal,
-  markIncidentDuplicates, backlogLine,
+  markIncidentDuplicates, backlogLine, pickNewTask,
 } from './lib.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -108,10 +109,13 @@ async function scan() {
   const errors = [];
   await Promise.all(CONFIG.sources.map(async (source) => {
     try {
-      const items = parseSource(await get(source.url), source);
-      if (!items.length) throw new Error('no items parsed');
+      const body = await get(source.url);
+      const items = parseSource(body, source);
+      // Status pages (allowEmpty) list nothing while all is well; anything but an empty feed or JSON is an error.
+      if (!items.length && !(source.allowEmpty && /<channel|<feed|^\s*[[{]/.test(body))) throw new Error('no items parsed');
       for (const item of items) fetched.push({ ...item, source });
       source._count = items.length;
+      source._ok = true;
     } catch (e) {
       errors.push(`${source.id}: ${e.message}`);
       source._count = 0;
@@ -135,15 +139,15 @@ async function scan() {
     }
     const s = scoreItem(item, item.source, { now, freshHours: S.freshHours, threshold: S.threshold });
     if (s.reject && key !== forceUrl) continue; // stale or rumour: never stored, re-checked for free next run
-    const cov = findCoverage(item, site, { loose: s.category === 'incident', now });
+    const cov = findCoverage(item, site, { loose: s.category === 'incident', now, category: s.category, families: s.families });
     if (cov.news) s.score -= 1, s.reasons.push(`-1 in /news ${cov.news.slug}`);
     if (cov.backlog) s.reasons.push(`backlog ${cov.backlog.slug}`);
     scored.push({ key, item, hash, ...s, cov });
   }
 
-  // One guide per incident: drop other outlets' reports of the same incident, and incidents already queued,
-  // being written or published in the last 3 days.
-  const recentIncidents = Object.values(state.seen).filter((s) => s.category === 'incident' &&
+  // One guide per incident (and per outage, by platform family): drop other outlets' reports of the same incident,
+  // and incidents already queued, being written or published in the last 3 days.
+  const recentIncidents = Object.values(state.seen).filter((s) => ['incident', 'outage'].includes(s.category) &&
     ['queued', 'writing', 'published', 'updated'].includes(s.status) && now - Date.parse(s.first) < 3 * 86400e3);
   markIncidentDuplicates(scored, recentIncidents);
 
@@ -176,7 +180,9 @@ async function scan() {
   // 5. Decide per item.
   for (const x of scored) {
     let status = x.score >= S.threshold ? 'queued' : 'below';
-    if (x.dupOf) status = 'duplicate';
+    // A resolved outage or a retrospective never starts a new article; it can only update an outage guide.
+    if (x.resolved && status === 'queued') status = 'resolved';
+    if (x.dupOf && !(x.category === 'outage' && x.cov.post)) status = 'duplicate';
     else if (x.cov.post) {
       const canUpdate = updateSignal(`${x.item.title} ${x.item.summary}`, x.category) && x.score >= S.threshold - 2;
       if (canUpdate) updates.push({ key: x.key, item: x.item, slug: x.cov.post.slug, score: x.score, why: `update to /blog/${x.cov.post.slug}` });
@@ -189,6 +195,7 @@ async function scan() {
       title: x.item.title, link: x.item.link, source: x.item.source.id, topic: x.topic ?? x.item.source.topic, category: x.category ?? 'launch',
       date: x.item.date, updated: x.item.updated,
       summary: x.item.summary.slice(0, 300), first: new Date(now).toISOString(), score: x.score, reasons: x.reasons, status, hash: x.hash,
+      ...(x.families ? { families: x.families } : {}),
       backlog: x.cov.backlog?.slug, news: x.cov.news?.slug, post: x.cov.post?.slug,
     };
   }
@@ -197,27 +204,34 @@ async function scan() {
   const parks = [];
   for (const [key, s] of Object.entries(state.seen)) {
     if (key === forceUrl) continue; // a forced item is written now, never parked
-    const age = (now - Date.parse(s.date ?? s.first)) / 3600e3;
+    // An outage counts from when the radar first saw it (a long incident can start days before it is found), and an
+    // outage that waited too long is old news, so it expires without a backlog item.
+    const age = (now - Date.parse(s.category === 'outage' ? s.first : s.date ?? s.first)) / 3600e3;
     if (s.status === 'queued' && age > S.freshHours + 12) {
       s.status = 'expired';
-      parks.push({ key, line: backlogLine({ ...s, reason: 'daily cap' }) });
+      if (s.category !== 'outage') parks.push({ key, line: backlogLine({ ...s, reason: 'daily cap' }) });
     }
   }
 
-  // 7. Pick at most one task: a new launch first (within the daily caps), else an update.
+  // 7. Pick at most one task: a new launch first (within the daily caps; a major outage may use one extra slot
+  // a day once they are used up), else an update.
   const counts = todayCounts(results, state, today);
+  const maxExtra = S.maxOutageExtraPerDay ?? 1;
   const queued = Object.entries(state.seen).filter(([, s]) => s.status === 'queued').sort((a, b) => b[1].score - a[1].score);
+  const pick = pickNewTask(queued, counts, { maxNewPerDay: S.maxNewPerDay, maxAttemptsPerDay: S.maxAttemptsPerDay, maxOutageExtraPerDay: maxExtra });
   let task = null;
   if (forceUrl && !state.seen[forceUrl]) note('Forced URL was not found in any fresh source item; using the URL alone.');
   if (forceUrl) {
-    const forcedIncident = opt('force-category') === 'incident';
-    const s = state.seen[forceUrl] ?? { title: opt('force-title', forceUrl), link: opt('force-url'), source: 'manual', topic: forcedIncident ? 'security-identity' : 'ai-automation',
-      category: forcedIncident ? 'incident' : 'launch', date: new Date(now).toISOString(), summary: '', score: 0, reasons: ['forced'] };
-    if (forcedIncident) s.category = 'incident';
+    const forced = ['incident', 'outage'].includes(opt('force-category')) ? opt('force-category') : null;
+    const s = state.seen[forceUrl] ?? { title: opt('force-title', forceUrl), link: opt('force-url'), source: 'manual',
+      topic: forced === 'incident' ? 'security-identity' : forced === 'outage' ? 'microsoft-365' : 'ai-automation',
+      category: forced ?? 'launch', date: new Date(now).toISOString(), summary: '', score: 0, reasons: ['forced'] };
+    if (forced) s.category = forced;
     state.seen[forceUrl] = s;
     task = { kind: 'new', key: forceUrl, forced: true };
-  } else if (queued.length && counts.newPublished < S.maxNewPerDay && counts.attempts < S.maxAttemptsPerDay) {
-    task = { kind: 'new', key: queued[0][0] };
+  } else if (pick) {
+    task = { kind: 'new', key: pick.key, ...(pick.extra ? { extra: true } : {}) };
+    if (pick.extra) note('Major outage: using the extra outage slot (daily cap reached).');
   } else if (updates.length && counts.updates < S.maxUpdatesPerDay) {
     const u = updates.sort((a, b) => b.score - a.score)[0];
     if (!state.seen[u.key]) state.seen[u.key] = { title: u.item.title, link: u.item.link, source: u.item.source.id, topic: u.item.source.topic, category: u.item.source.category ?? 'launch', date: u.item.date, first: new Date(now).toISOString(), score: u.score, reasons: [] };
@@ -232,7 +246,7 @@ async function scan() {
       source: { id: s.source, name: src?.name ?? 'manual', feed: src?.url ?? null }, topic: s.topic, category: s.category ?? 'launch',
       backlog: s.backlog ?? null, news: s.news ?? null, slug: task.slug ?? null, dryRun,
     });
-    if (!dryRun) Object.assign(s, { status: 'writing', kind: task.kind, taskAt: new Date(now).toISOString(), attempts: (s.attempts ?? 0) + 1 });
+    if (!dryRun) Object.assign(s, { status: 'writing', kind: task.kind, extra: Boolean(task.extra), taskAt: new Date(now).toISOString(), attempts: (s.attempts ?? 0) + 1 });
   }
   if (parks.length) task = { ...(task ?? { kind: 'none' }), parks };
 
@@ -241,7 +255,7 @@ async function scan() {
   const block = [
     `## ${ist} IST (${trigger}${dryRun ? ', dry run' : ''})`,
     '',
-    `Fetched ${fetched.length} items from ${CONFIG.sources.filter((s) => s._count).length}/${CONFIG.sources.length} sources; ${scored.length} new and fresh; today: ${counts.newPublished}/${S.maxNewPerDay} fast-track, ${counts.updates}/${S.maxUpdatesPerDay} updates.`,
+    `Fetched ${fetched.length} items from ${CONFIG.sources.filter((s) => s._ok).length}/${CONFIG.sources.length} sources; ${scored.length} new and fresh; today: ${counts.newPublished}/${S.maxNewPerDay} fast-track, ${counts.outageExtra}/${maxExtra} outage extra, ${counts.updates}/${S.maxUpdatesPerDay} updates.`,
     ...(errors.length ? [`Errors: ${errors.join('; ')}`] : []),
     '',
     '| Score | Source | Decision | Item |',
@@ -250,7 +264,7 @@ async function scan() {
       `| ${x.score} | ${x.item.source.id} | ${x.status} | [${x.item.title.replace(/\|/g, '/').slice(0, 90)}](${x.item.link}) — ${x.reasons.join('; ').replace(/\|/g, '/')} |`),
     ...updates.map((u) => `| ${u.score} | ${u.item.source.id} | update | [${u.item.title.slice(0, 90)}](${u.item.link}) — ${u.why} |`),
     '',
-    `Task: ${task?.kind && task.kind !== 'none' ? `${task.kind} "${task.title}"${task.slug ? ` -> /blog/${task.slug}` : ''}` : 'none'}${parks.length ? `; parked ${parks.length} expired item(s) in backlog.md` : ''}`,
+    `Task: ${task?.kind && task.kind !== 'none' ? `${task.kind}${task.extra ? ' (outage extra slot)' : ''} "${task.title}"${task.slug ? ` -> /blog/${task.slug}` : ''}` : 'none'}${parks.length ? `; parked ${parks.length} expired item(s) in backlog.md` : ''}`,
     '',
   ];
   console.log(block.join('\n'));
@@ -279,7 +293,8 @@ function record() {
   const task = readJson(opt('task'), {});
   if (!task.key) throw new Error('task has no key');
   const entry = {
-    at: new Date().toISOString(), date: istDate(), key: task.key, kind: task.kind, status: opt('status'),
+    at: new Date().toISOString(), date: istDate(), key: task.key, kind: task.kind, category: task.category ?? 'launch', status: opt('status'),
+    ...(task.extra ? { extra: true } : {}),
     slug: typeof opt('slug') === 'string' ? opt('slug') : task.slug ?? null, title: typeof opt('title') === 'string' ? opt('title') : task.title, dryRun: Boolean(task.dryRun),
   };
   fs.appendFileSync(RESULTS, `${JSON.stringify(entry)}\n`);
@@ -317,7 +332,7 @@ function check() {
   const file = opt('file');
   const errors = checkFastTrack(fs.readFileSync(file, 'utf8'), {
     kind: opt('kind', 'new'), today: typeof opt('today') === 'string' ? opt('today') : undefined,
-    category: opt('category') === 'incident' ? 'incident' : 'launch',
+    category: ['incident', 'outage'].includes(opt('category')) ? opt('category') : 'launch',
   });
   if (errors.length) {
     console.error(`Fast-track check failed for ${file}:\n${errors.map((e) => `  - ${e}`).join('\n')}`);
