@@ -857,7 +857,7 @@ export const istDate =(t = Date.now()) => new Date(new Date(t).getTime() + 5.5 *
  * Tasks that used the major-outage extra slot (extra: true) count only toward outageExtra (attempts, any outcome).
  */
 export function todayCounts(results, state, today) {
-  const r = results.filter((x) => x.date === today && !x.dryRun);
+  const r = results.filter((x) => x.date === today && !x.dryRun && x.type !== 'alert');
   const writing = Object.values(state.seen ?? {}).filter((s) => s.status === 'writing' && istDate(Date.parse(s.taskAt)) === today);
   const rn = r.filter((x) => !x.extra);
   const wn = writing.filter((s) => !s.extra);

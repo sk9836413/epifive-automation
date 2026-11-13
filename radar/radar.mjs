@@ -15,9 +15,14 @@
 //   node radar/radar.mjs check --file content/posts/x.md --kind new|update [--today YYYY-MM-DD] [--category launch|incident|outage]
 //        fast-track structure check (sections, FAQ, sources; incident guides: their own sections, defanged IPs;
 //        outage guides: their own sections, IST + ET timeline, a "status as of <time> IST" line)
+//   node radar/radar.mjs alert --task task.json --status published --file content/posts/x.md [--site .] [--dry-run] [--now ISO]
+//        email alert for a new outage / incident guide (radar/alert.mjs): gate (1 per incident, 2 a day, never an
+//        update or a resolved outage), wait until the page is live, one Resend broadcast to "Alerts: outage" /
+//        "Alerts: security", logged in radar/results.jsonl. --dry-run prints the decision and the email, sends nothing
+//        and writes nothing. Env: RESEND_API_KEY, optional ALERT_POSTAL_ADDRESS.
 //
 // State (all in this public repo, no secrets): radar/state.json (items seen and their decisions),
-// radar/results.jsonl (write outcomes), radar/log/<YYYY-MM>.md (one block per run).
+// radar/results.jsonl (write outcomes and alert sends), radar/log/<YYYY-MM>.md (one block per run).
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -26,6 +31,7 @@ import {
   istDate, todayCounts, mergeDuplicates, parkInBacklog, markPublished, logLine, checkFastTrack, updateSignal,
   markIncidentDuplicates, backlogLine, pickNewTask, autoVideoPlan,
 } from './lib.mjs';
+import { ALERT, alertGate, buildAlertEmail, completeAddress, ensureAlertField, readArticle } from './alert.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const STATE = path.join(HERE, 'state.json');
@@ -97,7 +103,7 @@ async function scan() {
   // 1. Fold write outcomes into state; a task that never reported back within 3 hours is retried once.
   for (const r of results) {
     const s = state.seen[r.key];
-    if (!s || r.dryRun || (s.resultAt && s.resultAt >= r.at)) continue;
+    if (r.type === 'alert' || !s || r.dryRun || (s.resultAt && s.resultAt >= r.at)) continue;
     // "error" = the write job broke before a verdict (e.g. Claude usage limit): retry once, then give up.
     const status = r.status === 'published' ? (r.kind === 'update' ? 'updated' : 'published')
       : r.status === 'error' ? ((s.attempts ?? 1) >= 2 ? 'failed' : 'queued') : r.status;
@@ -249,6 +255,7 @@ async function scan() {
       today, title: s.title, link: s.link, published: s.date, summary: s.summary, score: s.score, reasons: s.reasons,
       source: { id: s.source, name: src?.name ?? 'manual', feed: src?.url ?? null }, topic: s.topic, category: s.category ?? 'launch',
       backlog: s.backlog ?? null, news: s.news ?? null, slug: task.slug ?? null, dryRun,
+      ...(s.families?.length ? { families: s.families } : {}),
     });
     if (!dryRun) Object.assign(s, { status: 'writing', kind: task.kind, extra: Boolean(task.extra), taskAt: new Date(now).toISOString(), attempts: (s.attempts ?? 0) + 1 });
   }
@@ -318,6 +325,12 @@ function siteApply() {
   const file = opt('file');
   const result = opt('result');
   if (result === 'published' && typeof file === 'string') {
+    // A new outage / incident guide gets "alert: outage|security" (the site's email alert box) if the writer left it out.
+    if (task.kind === 'new') {
+      const original = fs.readFileSync(path.join(site, file), 'utf8');
+      const withAlert = ensureAlertField(original, task.category);
+      if (withAlert !== original) fs.writeFileSync(path.join(site, file), withAlert);
+    }
     const text = fs.readFileSync(path.join(site, file), 'utf8').replace(/\r\n/g, '\n');
     const front = text.match(/^---\n([\s\S]*?)\n---/)?.[1] ?? '';
     const slug = path.basename(file).replace(/\.mdx?$/, '');
@@ -363,7 +376,120 @@ function videoPlan() {
   console.log(JSON.stringify(plan));
 }
 
-const commands = { scan, record, 'site-apply': siteApply, check, 'video-plan': videoPlan };
+// Email alert for a just-published outage / incident guide (radar/alert.mjs). Never throws on a send problem: the
+// outcome is logged and the job carries on. Logs are public: statuses only, never addresses, keys or API bodies.
+async function alert() {
+  const site = opt('site', '.');
+  const file = opt('file');
+  const dryRun = Boolean(opt('dry-run'));
+  const now = opt('now') ? Date.parse(opt('now')) : Date.now();
+  const task = readJson(opt('task'), {});
+  const text = typeof file === 'string' && fs.existsSync(path.join(site, file)) ? fs.readFileSync(path.join(site, file), 'utf8') : '';
+  const slug = text ? path.basename(file).replace(/\.mdx?$/, '') : null;
+  const article = text ? readArticle(text) : null;
+  const status = opt('status');
+  const gate = alertGate({ task, status, slug, article, results: readResults(), now });
+  const log = (fields) => {
+    if (dryRun) return;
+    const entry = {
+      at: new Date(now).toISOString(), date: istDate(now), type: 'alert', kind: 'alert', alert: gate.kind, category: task.category,
+      key: task.key, slug, ...(task.families?.length ? { families: task.families } : {}), ...fields,
+    };
+    fs.appendFileSync(RESULTS, `${JSON.stringify(entry)}\n`);
+  };
+  if (!gate.kind) {
+    console.log(`Alert: none (${gate.reason}).`);
+    return;
+  }
+  const address = (process.env.ALERT_POSTAL_ADDRESS || '').trim() || ALERT.defaultAddress;
+  const mail = article?.title ? buildAlertEmail({ kind: gate.kind, slug, article, address }) : null;
+  if (dryRun) {
+    console.log(`[dry run] gate: ${gate.send ? 'SEND' : 'skip'} (${gate.reason})`);
+    if (mail) {
+      console.log(`[dry run] to Resend segment "${mail.segment}", from ${ALERT.from}, reply-to ${ALERT.replyTo}`);
+      console.log(`[dry run] subject: ${mail.subject}\n[dry run] preview: ${mail.previewText}\n----- text -----\n${mail.text}\n----------------`);
+      if (opt('html')) console.log(mail.html);
+    }
+    console.log('[dry run] nothing sent, nothing logged.');
+    return;
+  }
+  if (!gate.send) {
+    console.log(`Alert: skipped (${gate.reason}).`);
+    log({ status: 'skipped', reason: gate.reason });
+    return;
+  }
+  if (!completeAddress(address)) console.log('::warning::ALERT_POSTAL_ADDRESS is not a complete postal address; the alert footer uses the city line only.');
+  if (!process.env.RESEND_API_KEY) {
+    console.log('Alert: RESEND_API_KEY not set; not sent.');
+    log({ status: 'failed', reason: 'RESEND_API_KEY not set' });
+    return;
+  }
+
+  // The link must work when the email lands: wait (up to ~10 min) for the page to be live.
+  let live = false;
+  for (let i = 0; i < 30 && !live; i++) {
+    try {
+      live = (await fetch(`${ALERT.site}/blog/${slug}`, { signal: AbortSignal.timeout(15000) })).status === 200;
+    } catch {
+      live = false;
+    }
+    if (!live) await new Promise((r) => setTimeout(r, 20000));
+  }
+  if (!live) {
+    console.log('Alert: the page is not live yet; not sent.');
+    log({ status: 'skipped', reason: 'page not live after 10 minutes' });
+    return;
+  }
+
+  const headers = { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, 'Content-Type': 'application/json' };
+  let segment = null;
+  try {
+    let after = '';
+    for (let page = 0; page < 20 && !segment; page++) {
+      const res = await fetch(`https://api.resend.com/segments?limit=100${after ? `&after=${encodeURIComponent(after)}` : ''}`, { headers });
+      console.log(`Resend segments: HTTP ${res.status}`);
+      if (!res.ok) break;
+      const list = await res.json();
+      segment = list.data?.find((s) => s.name === mail.segment)?.id ?? null;
+      if (!list.has_more || !list.data?.length) break;
+      after = list.data[list.data.length - 1].id;
+    }
+  } catch (e) {
+    console.log(`Resend segments: ${e.name}`);
+  }
+  if (!segment) {
+    console.log(`Alert: no "${mail.segment}" segment (no signups yet, or the lookup failed); not sent.`);
+    log({ status: 'skipped', reason: 'segment missing (no signups yet) or lookup failed' });
+    return;
+  }
+  try {
+    const res = await fetch('https://api.resend.com/broadcasts', {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({
+        name: `${gate.kind === 'outage' ? 'Outage' : 'Security'} alert ${slug}`.slice(0, 120),
+        segment_id: segment,
+        from: ALERT.from,
+        reply_to: ALERT.replyTo,
+        subject: mail.subject,
+        preview_text: mail.previewText,
+        html: mail.html,
+        text: mail.text,
+        send: true,
+      }),
+    });
+    console.log(`Resend broadcast: HTTP ${res.status}`);
+    const body = await res.json().catch(() => ({}));
+    if (res.ok) log({ status: 'sent', broadcast: body.id ?? null, subject: mail.subject });
+    else log({ status: 'failed', reason: `HTTP ${res.status}` });
+  } catch (e) {
+    console.log(`Resend broadcast: ${e.name}`);
+    // A timeout may still have sent it: count it as sent so a retry can never send a second alert.
+    log({ status: 'sent', broadcast: null, subject: mail.subject, reason: `uncertain (${e.name})` });
+  }
+}
+
+const commands = { scan, record, 'site-apply': siteApply, check, 'video-plan': videoPlan, alert };
 if (!commands[cmd]) {
   console.error(`Usage: node radar/radar.mjs <${Object.keys(commands).join('|')}> ...`);
   process.exit(2);

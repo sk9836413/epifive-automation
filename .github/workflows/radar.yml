@@ -15,6 +15,10 @@
 # the write job starts the Short (social.yml, force) and the long video (longvideo.yml, publish_now: public on
 # YouTube and the Facebook Page at once) for it. At most 1 such pair a UTC day; consumer topics get the Short only
 # (radar/lib.mjs autoVideoPlan). A Social media run started that way (github-actions[bot]) starts no extra scan.
+# Email alerts: when a new outage guide (or security incident guide) is published and live, the write job sends one
+# short Resend broadcast to the readers who signed up in the article box (segments "Alerts: outage" / "Alerts: security"):
+# 1 per incident, at most 2 a day (1 security), never for an update or a resolved outage (radar/alert.mjs). Secret
+# RESEND_API_KEY; optional ALERT_POSTAL_ADDRESS (the CAN-SPAM postal footer). Logged in radar/results.jsonl (type alert).
 # Off switch: repository variable RADAR (automatic scans run only while it is "on").
 # Logs (public, no secrets): radar/log/<YYYY-MM>.md per scan, radar/results.jsonl per write.
 name: Launch radar
@@ -94,7 +98,7 @@ jobs:
           node-version: 24
 
       - name: Unit tests
-        run: node --test radar/radar.test.mjs
+        run: node --test radar/radar.test.mjs radar/alert.test.mjs
 
       - name: Scan
         id: scan
@@ -371,6 +375,23 @@ jobs:
             sleep 20
           done
           node scripts/seo/indexnow.mjs "$URL"
+
+      # Email alert to the "Outage alerts" / "Security alerts" list for a new outage or incident guide (radar/alert.mjs):
+      # 1 per incident, at most 2 a day, never an update or a resolved outage; waits until the page is live. Appends to
+      # _radar/radar/results.jsonl, which "Record the outcome" commits. Dry run: prints the email, sends and logs nothing.
+      # Never fails the run.
+      - name: Email alert
+        if: steps.verdict.outputs.result == 'published' && (inputs.dry_run || steps.publish.outcome == 'success') && (steps.task.outputs.category == 'outage' || steps.task.outputs.category == 'incident')
+        continue-on-error: true
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          ALERT_POSTAL_ADDRESS: ${{ secrets.ALERT_POSTAL_ADDRESS }}
+          DRY: ${{ inputs.dry_run && 'true' || 'false' }}
+          FILE: ${{ steps.post.outputs.file }}
+        run: |
+          args=(alert --site . --task .radar-task.json --status published --file "$FILE")
+          [ "$DRY" = true ] && args+=(--dry-run)
+          node _radar/radar/radar.mjs "${args[@]}" | tee -a "$GITHUB_STEP_SUMMARY"
 
       # Views on a trending topic come in the first hours: an outage or incident guide, or a fast-track article that
       # scored 12+, starts the Short (social.yml, force) and the long video (longvideo.yml, publish_now = public on
