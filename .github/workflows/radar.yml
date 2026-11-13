@@ -23,6 +23,11 @@ on:
   workflow_run:
     workflows: [Daily article, Social media]
     types: [requested]
+  # Hourly scan (owner approved 13 Nov 2026, "jod do") so an overnight outage or launch is caught within about an
+  # hour. GitHub's own scheduler (free for this public repo), not the Cloudflare scheduler, whose 5 slots are fixed.
+  # The scan is a ~5 s Node script with no Claude; the 25-minute gap and the daily caps still apply.
+  schedule:
+    - cron: '23 * * * *'
   workflow_dispatch:
     inputs:
       mode:
@@ -62,6 +67,7 @@ jobs:
     # A Social media run this workflow started itself (the trending Short, github-actions[bot]) starts no extra scan.
     if: >-
       (github.event_name == 'workflow_run' && vars.RADAR == 'on' && github.event.workflow_run.triggering_actor.login != 'github-actions[bot]') ||
+      (github.event_name == 'schedule' && vars.RADAR == 'on') ||
       (github.event_name == 'workflow_dispatch' && inputs.mode != 'write')
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -97,7 +103,7 @@ jobs:
           DRY: ${{ inputs.dry_run && 'true' || '' }}
           FORCE_URL: ${{ inputs.force_url }}
           FORCE_CATEGORY: ${{ inputs.force_category }}
-          TRIGGER: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.name || 'manual' }}
+          TRIGGER: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.name || github.event_name == 'schedule' && 'hourly schedule' || 'manual' }}
         run: |
           args=(scan --site site --out task.json --trigger "$TRIGGER")
           [ -n "$DRY" ] && args+=(--dry-run)
