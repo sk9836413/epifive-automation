@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-14T04:43:46.301Z",
+ "lastScan": "2026-11-14T05:13:18.843Z",
  "seen": {
   "https://openai.com/index/gilbert-tobin-sam-nickless": {
    "title": "Gilbert + Tobin rethinks the business of law with AI",
@@ -2961,7 +2961,7 @@
     "same outage as \"Massive Microsoft 365 outage disrupts Outlook, Teams, Copilo\"",
     "covered by /blog/microsoft-365-outage-november-2026-what-to-do"
    ],
-   "status": "writing",
+   "status": "updated",
    "hash": "dceade7b",
    "families": [
     "microsoft"
@@ -2970,7 +2970,9 @@
    "kind": "update",
    "extra": false,
    "taskAt": "2026-11-14T04:43:46.301Z",
-   "attempts": 1
+   "attempts": 1,
+   "slug": "microsoft-365-outage-november-2026-what-to-do",
+   "resultAt": "2026-11-14T04:51:52.311Z"
   },
   "https://microsoft.com/microsoft-365/roadmap?id=579917": {
    "title": "Dynamics 365 Project Operations: Enable caching of role prices when pricing estimates",
