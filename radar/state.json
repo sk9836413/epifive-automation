@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-13T20:57:05.117Z",
+ "lastScan": "2026-11-14T01:30:25.603Z",
  "seen": {
   "https://openai.com/index/gilbert-tobin-sam-nickless": {
    "title": "Gilbert + Tobin rethinks the business of law with AI",
@@ -2574,8 +2574,12 @@
     "+1 retirement/migration",
     "+9 M365 retirement due in 48 days"
    ],
-   "status": "queued",
-   "hash": "aed26fa7"
+   "status": "writing",
+   "hash": "aed26fa7",
+   "kind": "new",
+   "extra": false,
+   "taskAt": "2026-11-14T01:30:25.603Z",
+   "attempts": 1
   },
   "https://mc.merill.net/message/MC1551122": {
    "title": "MC1551122: Power Platform - Information regarding the end of support for SharePoint temporary authentication URLs",
@@ -2634,12 +2638,13 @@
     "+2 category (Product)",
     "+1 autocomplete (9)"
    ],
-   "status": "writing",
+   "status": "skipped",
    "hash": "4b6426be",
    "kind": "new",
    "extra": false,
    "taskAt": "2026-11-13T20:57:05.117Z",
-   "attempts": 1
+   "attempts": 1,
+   "resultAt": "2026-11-13T20:58:18.592Z"
   },
   "https://bleepingcomputer.com/news/cryptocurrency/trezor-confirms-crypto-stealing-implants-in-three-wallets-releases-fix": {
    "title": "Trezor confirms crypto-stealing implants in three wallets, releases fix",
@@ -2910,6 +2915,299 @@
    ],
    "status": "below",
    "hash": "19896c6c"
+  },
+  "https://openai.com/business/customer-stories/shield": {
+   "title": "Shield helps technicians hand off legacy portal work with OpenAI",
+   "link": "https://openai.com/business/customer-stories/shield",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-13T08:00:00.000Z",
+   "updated": null,
+   "summary": "Shield uses OpenAI to help IT technicians hand off work in legacy portals. Its Forge agents navigate systems so technicians can focus on issues needing their judgment.",
+   "first": "2026-11-14T01:30:25.603Z",
+   "score": 2,
+   "reasons": [
+    "+2 source openai-news",
+    "+2 niche (openai, agents)",
+    "-2 category (none)"
+   ],
+   "status": "below",
+   "hash": "30d029e8"
+  },
+  "https://status.cloud.microsoft/#2026-11-14-users-may-be-unable-to-access-or-perform-several-actions-in-": {
+   "title": "Users may be unable to access or perform several actions in Microsoft 365 services",
+   "link": "https://status.cloud.microsoft/#2026-11-14-users-may-be-unable-to-access-or-perform-several-actions-in-",
+   "source": "status-m365-consumer",
+   "topic": "microsoft-365",
+   "category": "outage",
+   "date": "2026-11-14T00:39:14.323Z",
+   "updated": "2026-11-14T00:39:14.323Z",
+   "summary": "User impact: Users may be unable to access or perform several actions in Microsoft 365 services. Current status: We're observing sustained recovery of impacted services across the previously affected environments. We're monitoring service health metrics for an extended period to ensure no further ac",
+   "first": "2026-11-14T01:30:25.603Z",
+   "score": 11,
+   "reasons": [
+    "+6 status-page incident \"service degradation\"",
+    "+3 major platform (microsoft)",
+    "+2 large incident (impact major, 0 service(s))",
+    "same outage as \"Massive Microsoft 365 outage disrupts Outlook, Teams, Copilo\"",
+    "covered by /blog/microsoft-365-outage-november-2026-what-to-do"
+   ],
+   "status": "update-candidate",
+   "hash": "57904333",
+   "families": [
+    "microsoft"
+   ],
+   "post": "microsoft-365-outage-november-2026-what-to-do"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=579917": {
+   "title": "Dynamics 365 Project Operations: Enable caching of role prices when pricing estimates",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=579917",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-14T00:06:56.000Z",
+   "updated": "2026-11-14T00:06:56.000Z",
+   "summary": "Project Operations calculates cost and sales estimates for resource assignments, including daily, time-phased estimates. These calculations can repeatedly use the same role-pricing information across assignments and dates. With this feature enabled, Project Operations caches and reuses applicable ro",
+   "first": "2026-11-14T01:30:25.603Z",
+   "score": -2,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 user steps \"Enable\"",
+    "+1 plans/price/availability \"pricing\"",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "edc82377"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=579915": {
+   "title": "Dynamics 365 Project Operations: Cancel actual from entry journals",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=579915",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-14T00:02:22.000Z",
+   "updated": "2026-11-14T00:02:22.000Z",
+   "summary": "The Entry Journal Actual Cancellation feature enables users to cancel actuals created by confirming entry journals. Users select eligible actuals, review them in a system-generated correction journal, and confirm the journal to create reversing actuals. The original actuals are marked Adjusted , pre",
+   "first": "2026-11-14T01:30:25.603Z",
+   "score": -4,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+1 plans/price/availability \"eligible\"",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "eeda6149"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=580452": {
+   "title": "Microsoft Teams: Chat for organizers and presenters in structured meetings and webinars in GCC High and DoD",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=580452",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-13T23:01:18.000Z",
+   "updated": "2026-11-13T23:01:18.000Z",
+   "summary": "Organizers, co-organizers, and presenters can chat privately in a separate chat from attendees. This chat is available to access before, during, and after the event. GA date: December CY2026",
+   "first": "2026-11-14T01:30:25.603Z",
+   "score": -2,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 niche (microsoft teams)",
+    "+1 plans/price/availability \"available to\"",
+    "-4 category (In development, General Availability, GCC High)"
+   ],
+   "status": "below",
+   "hash": "401bb8be"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=579980": {
+   "title": "Dynamics 365 Business Central: Copilot and agents - Fill forms faster with Autofill - Auto paste",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=579980",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-13T23:01:18.000Z",
+   "updated": "2026-11-13T23:01:18.000Z",
+   "summary": "Save time entering information into Business Central with Auto paste. Building on Autofill, Auto paste uses AI to identify relevant information from text or HTML copied to your clipboard and map it to the appropriate fields on a Business Central page. Benefits Reduce manual data entry when bringing ",
+   "first": "2026-11-14T01:30:25.603Z",
+   "score": -3,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+3 niche (copilot, agents)",
+    "-5 category (In development, General Availability, Preview)"
+   ],
+   "status": "below",
+   "hash": "3120ac91"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=579973": {
+   "title": "Dynamics 365 Project Operations: Enable multiple addresses for accounts",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=579973",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-13T23:01:18.000Z",
+   "updated": "2026-11-13T23:01:18.000Z",
+   "summary": "Enable multiple addresses for customer accounts and use the appropriate invoice and delivery addresses across project quotations, project contracts, and project invoices. Users can select from existing customer addresses or create new addresses when needed. Selected addresses flow through the projec",
+   "first": "2026-11-14T01:30:25.603Z",
+   "score": -3,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 user steps \"Enable\"",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "57a86263"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=579899": {
+   "title": "Power Apps: Use the modernized Personal settings experience",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=579899",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-13T23:01:18.000Z",
+   "updated": "2026-11-13T23:01:18.000Z",
+   "summary": "The Personal settings experience in model-driven apps has been modernized with clearer organization, updated navigation, and a more consistent design. Users can select a button to return to the classic Personal settings experience if needed. Availability Field Value Release Channel Weekly Version 26",
+   "first": "2026-11-14T01:30:25.603Z",
+   "score": -3,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 user steps \"Users can\"",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "eb5c005f"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=578907": {
+   "title": "Dynamics 365 Project Operations: Use item requirements from stocked material estimates",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=578907",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-13T23:01:18.000Z",
+   "updated": "2026-11-13T23:01:18.000Z",
+   "summary": "Confirm demand on a stocked material estimate in Dataverse to create an item requirement in finance and operations. This connects material estimates to supply chain processes for procurement and proactive planning, rather than limiting them to materials already on hand. In Dataverse, you can request",
+   "first": "2026-11-14T01:30:25.603Z",
+   "score": -3,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 user steps \"you can\"",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "94657a70"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=577854": {
+   "title": "Dynamics 365 Finance: Build reports with Project to profit data model",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=577854",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-13T23:01:18.000Z",
+   "updated": "2026-11-13T23:01:18.000Z",
+   "summary": "Project to Profit value chain mainly contains business processes: Govern projects Manage project contracts Manage project resources and schedule Manage project delivery Manage project financials Monitor and analyze project performance More info: https://learn.microsoft.com/en-us/dynamics365/finance/",
+   "first": "2026-11-14T01:30:25.603Z",
+   "score": -10,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "-4 customer story",
+    "-5 category (In development, General Availability, Preview)"
+   ],
+   "status": "below",
+   "hash": "da65f52d"
+  },
+  "https://mc.merill.net/message/MC1536065": {
+   "title": "MC1536065: Microsoft 365 Copilot: Suggestions to continue in another Copilot experience",
+   "link": "https://mc.merill.net/message/MC1536065",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-13T18:30:38.000Z",
+   "updated": null,
+   "summary": "Microsoft 365 Copilot will suggest switching to a better-fit Copilot mode (e.g., Cowork) after a user’s chat prompt, maintaining conversation context. Rollout starts mid-November 2026 for Standard and mid-December 2026 for Deferred audiences. No admin action is required; inform users accordingly.",
+   "first": "2026-11-14T01:30:25.603Z",
+   "score": 2,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (copilot, microsoft 365)",
+    "+1 plans/price/availability \"Rollout\"",
+    "-1 in /news 2026-11-03-sspr-registered-methods-power-platform-models"
+   ],
+   "status": "below",
+   "hash": "ec7f5ba5",
+   "news": "2026-11-03-sspr-registered-methods-power-platform-models"
+  },
+  "https://mc.merill.net/message/MC1551898": {
+   "title": "MC1551898: Out-of-band update released to address Windows licensing and activation errors",
+   "link": "https://mc.merill.net/message/MC1551898",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-13T18:08:01.000Z",
+   "updated": null,
+   "summary": "Microsoft has released a new Windows out-of-band (OOB) update today, November 13, 2026, to address an issue that affects a limited number of enterprise devices after installing the November 2026 Windows security update. Certain Windows licensing and activation operations using the Software Licensing",
+   "first": "2026-11-14T01:30:25.603Z",
+   "score": 1,
+   "reasons": [
+    "-2 source mc-merill",
+    "+1 niche (windows)",
+    "+2 user steps \"configure\""
+   ],
+   "status": "below",
+   "hash": "2c4316e6"
+  },
+  "https://mc.merill.net/message/MC1551897": {
+   "title": "MC1551897: 60-Day Reminder: Windows 10 Enterprise LTSC 2021 will reach end of updates on January 13, 2027",
+   "link": "https://mc.merill.net/message/MC1551897",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-13T18:07:58.000Z",
+   "updated": null,
+   "summary": "On January 13, 2027, Windows 10 Enterprise LTSC 2021 will reach the end of mainstream support. The January 2027 Windows security update will be the last update provided during mainstream support. After that date, monthly security updates will continue only for Windows 10 Enterprise LTSC 2021 devices",
+   "first": "2026-11-14T01:30:25.603Z",
+   "score": 1,
+   "reasons": [
+    "-2 source mc-merill",
+    "+3 niche (windows 10, windows)"
+   ],
+   "status": "below",
+   "hash": "d2007b2a"
+  },
+  "https://mc.merill.net/message/MC1551896": {
+   "title": "MC1551896: 60-Day Reminder: Windows Server 2016 reaches the end of extended support on January 13, 2027",
+   "link": "https://mc.merill.net/message/MC1551896",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-13T18:07:54.000Z",
+   "updated": null,
+   "summary": "On January 13, 2027, all editions of Windows Server 2016 will reach the end of extended support. The January 2027 Windows security update will be the last update provided during extended support. After that date, monthly security updates will continue only for Windows Server 2016 devices enrolled in",
+   "first": "2026-11-14T01:30:25.603Z",
+   "score": -1,
+   "reasons": [
+    "-2 source mc-merill",
+    "+1 niche (windows)"
+   ],
+   "status": "below",
+   "hash": "62359038"
+  },
+  "https://mc.merill.net/message/MC1486295": {
+   "title": "MC1486295: Microsoft OneDrive and SharePoint: Generate smart tables of contents for PDFs on the web with Copilot",
+   "link": "https://mc.merill.net/message/MC1486295",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-13T17:19:46.000Z",
+   "updated": null,
+   "summary": "The announcement that Microsoft 365 Copilot users can generate AI-created, hierarchical, clickable tables of contents for PDFs in OneDrive and SharePoint on the web, is now canceled. The feature is user-initiated, respects permissions, supports saving by editors, and may have inaccuracies, especiall",
+   "first": "2026-11-14T01:30:25.603Z",
+   "score": 4,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (copilot, microsoft 365, onedrive)",
+    "+2 user steps \"users can\""
+   ],
+   "status": "below",
+   "hash": "3e2adb44"
   }
  }
 }
