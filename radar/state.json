@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-14T15:54:30.006Z",
+ "lastScan": "2026-11-14T17:36:39.812Z",
  "seen": {
   "https://openai.com/index/gilbert-tobin-sam-nickless": {
    "title": "Gilbert + Tobin rethinks the business of law with AI",
@@ -3534,6 +3534,45 @@
    ],
    "status": "below",
    "hash": "3a445b6b"
+  },
+  "https://claude.com/resources/articles/building-always-on-agents": {
+   "title": "Building always-on agents",
+   "link": "https://claude.com/resources/articles/building-always-on-agents",
+   "source": "claude-articles",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-13T12:00:00.000Z",
+   "updated": null,
+   "summary": "Always-on agents run indefinitely, deciding how and when to act across many sessions. This guide walks through their core primitives and how they fit together.",
+   "first": "2026-11-14T17:36:39.812Z",
+   "score": 7,
+   "reasons": [
+    "+1 source claude-articles",
+    "+3 niche (claude, agents)",
+    "+2 user steps \"how to\"",
+    "+1 plans/price/availability \"per user\""
+   ],
+   "status": "below",
+   "hash": "3f12e5d6"
+  },
+  "https://claude.com/resources/articles/claude-tag-guide-for-startups": {
+   "title": "The Claude Tag guide for startups",
+   "link": "https://claude.com/resources/articles/claude-tag-guide-for-startups",
+   "source": "claude-articles",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-13T12:00:00.000Z",
+   "updated": null,
+   "summary": "How leading startups use Claude Tag to ship faster and scale operations",
+   "first": "2026-11-14T17:36:39.812Z",
+   "score": 5,
+   "reasons": [
+    "+1 source claude-articles",
+    "+3 niche (claude, agent)",
+    "+1 plans/price/availability \"rollout\""
+   ],
+   "status": "below",
+   "hash": "32dc27a1"
   }
  }
 }
