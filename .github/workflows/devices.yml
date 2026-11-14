@@ -2,6 +2,9 @@
 # from the manufacturers' official spec pages, following automation/DEVICES.md.
 # Started daily by the Cloudflare scheduler (43 4 UTC, 10:13 IST) with the default count of 3;
 # skips when automation/devices-log.md already has today's date (unless force=true).
+# Launch mode: the launch radar (radar.yml, Tier 3) starts it with force=true and focus "Launch mode: <devices>" when a
+# manufacturer's own newsroom announces a phone, laptop, desktop, tablet or wearable (at most 2 runs a day). Those runs
+# log "YYYY-MM-DD launch | ..." so the daily run's once-a-day check still runs the daily 3.
 name: Device specs
 
 on:
@@ -79,6 +82,8 @@ jobs:
             Focus: ${{ inputs.focus || 'none (rotate categories as DEVICES.md says)' }}.
             Only create new content/devices/<slug>.json files, append to automation/devices-log.md and
             regenerate src/data/vs-pairs.json with node scripts/seo/build-vs-pairs.mjs.
+            If the focus starts with "Launch mode:", follow the "Launch mode" section of DEVICES.md instead of
+            section 1: only the devices named there (a "refresh <slug> =" entry may update that one existing file).
 
       - name: Claude's report
         if: always() && steps.claude.outputs.execution_file != ''

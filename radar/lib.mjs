@@ -159,6 +159,44 @@ export function parseDatedSections(html, { url }) {
   return items;
 }
 
+/**
+ * Release notes written as Markdown (e.g. the Gemini API changelog, whose page carries its Markdown in a <noscript>
+ * block): "## November 12, 2026" sections, one item per top-level bullet, titled by its bold lead.
+ */
+export function parseDatedMarkdown(body, { url }) {
+  const text = decodeEntities(body).replace(/\r\n/g, '\n');
+  const items = [];
+  const parts = text.split(/^##\s+([A-Z][a-z]+ \d{1,2}, \d{4})[^\n]*$/m);
+  for (let i = 1; i + 1 < parts.length; i += 2) {
+    const t = Date.parse(`${parts[i]} 12:00 UTC`);
+    if (Number.isNaN(t)) continue;
+    const day = new Date(t).toISOString().slice(0, 10);
+    for (const b of parts[i + 1].split(/^\*\s+/m).slice(1)) {
+      const block = b.split(/^#{1,3}\s/m)[0];
+      const flat = block.replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/`/g, '').replace(/\s+/g, ' ').trim();
+      const lead = flat.match(/^\*\*(.+?)\*\*:?\s*/);
+      const title = (lead ? lead[1] : flat.split(/(?<=[.!?])\s/)[0]).replace(/\*\*/g, '').replace(/:$/, '').trim().slice(0, 200);
+      if (!title) continue;
+      const summary = (lead ? flat.slice(lead[0].length) : flat).replace(/\*\*/g, '').slice(0, 700);
+      items.push({ title, link: `${url}#${day}-${anchorSlug(title).slice(0, 50)}`, guid: `${day}-${anchorSlug(title)}`, date: `${day}T12:00:00.000Z`, updated: null, summary, categories: [] });
+    }
+  }
+  return items;
+}
+
+/**
+ * Hugging Face trending models (JSON API), kept only for the official accounts listed in the source (orgs). A signal:
+ * the day page labels it as such; createdAt is when the repository was created.
+ */
+export function parseHfModels(body, { orgs = [] } = {}) {
+  const allow = new Set(orgs.map((o) => o.toLowerCase()));
+  return (JSON.parse(body) ?? []).filter((m) => m?.id && allow.has(m.id.split('/')[0].toLowerCase())).map((m) => ({
+    title: `${m.id.split('/')[1]} model published on Hugging Face by ${m.id.split('/')[0]}`,
+    link: `https://huggingface.co/${m.id}`, guid: m.id, date: m.createdAt ?? null, updated: null,
+    summary: `${m.id} (${m.pipeline_tag ?? 'model'}), trending on Hugging Face.`, categories: [m.pipeline_tag].filter(Boolean),
+  }));
+}
+
 // ---------- status pages (category "outage") ----------
 // Status items carry three extra fields that scoreOutage gates on: status (the latest incident status),
 // impact (none|minor|major|critical) and components (affected services; single Cloudflare PoPs are dropped).
@@ -269,6 +307,10 @@ export function parseSource(body, source) {
       return parseHtmlList(body, { base: source.url, linkPattern: source.linkPattern });
     case 'dated-sections':
       return parseDatedSections(body, { url: source.page ?? source.url.split('?')[0] });
+    case 'dated-markdown':
+      return parseDatedMarkdown(body, { url: source.page ?? source.url.split('?')[0] });
+    case 'hf-models-json':
+      return parseHfModels(body, source);
     default:
       throw new Error(`unknown source type ${source.type}`);
   }

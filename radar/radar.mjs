@@ -28,14 +28,21 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   parseSource, normalizeUrl, scoreItem, trendBoost, searchPhrase, findCoverage, parseBacklog, hashText,
-  istDate, todayCounts, mergeDuplicates, parkInBacklog, markPublished, logLine, checkFastTrack, updateSignal,
+  istDate, todayCounts, mergeDuplicates, daysToDeadline, parkInBacklog, markPublished, logLine, checkFastTrack, updateSignal,
   markIncidentDuplicates, backlogLine, pickNewTask, autoVideoPlan, isRootCauseNews, statusClosed, pageDetail,
 } from './lib.mjs';
+import {
+  BRIEF, classifyBrief, briefItem, mergeIntoDays, tier1Floor, storyKey, detectDevice, detectAiModel, findDeviceSlug, emptyDay,
+  touchDay, updateIndex, linesPrompt, parseLinesAnswer, applyLines, templateLines, deviceFocus,
+} from './brief.mjs';
 import { ALERT, alertGate, buildAlertEmail, completeAddress, ensureAlertField, readArticle } from './alert.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const STATE = path.join(HERE, 'state.json');
 const RESULTS = path.join(HERE, 'results.jsonl');
+// Tier 2 day pages: radar/live/<IST date>.json + index.json, served by the site at /news/live/<date>.
+const LIVE = path.join(HERE, 'live');
+const SITE_URL = 'https://www.epifive.com';
 const CONFIG = JSON.parse(fs.readFileSync(path.join(HERE, 'sources.json'), 'utf8'));
 const S = CONFIG.settings;
 
@@ -149,7 +156,10 @@ async function scan() {
   // 3. Score new items; look for updates to launches we already covered.
   const scored = [];
   const updates = [];
-  for (const item of mergeDuplicates(fetched)) {
+  const merged = mergeDuplicates(fetched);
+  for (const item of merged) {
+    // Aggregators and trending lists (role "signal") feed only the hourly news page, never a fast-track article.
+    if (item.source.role === 'signal') continue;
     const key = normalizeUrl(item.link);
     const seen = state.seen[key];
     const hash = hashText(`${item.title} ${item.summary}`);
@@ -168,6 +178,10 @@ async function scan() {
     }
     const s = scoreItem(item, item.source, { now, freshHours: S.freshHours, threshold: S.threshold });
     if (s.reject && key !== forceUrl) continue; // stale or rumour: never stored, re-checked for free next run
+    // Tier-1 floors (brief.mjs): flagship device or AI model, big AI price drop, AI model retirement due soon.
+    const floor = tier1Floor(item, item.source, { score: s.score, threshold: S.threshold, daysToDeadline: daysToDeadline(`${item.title} ${item.summary}`, now) });
+    if (floor) s.score += floor.points, s.reasons.push(`+${floor.points} ${floor.why}`);
+    s.story = storyKey({ device: detectDevice(item, item.source), ai: detectAiModel(item, item.source) }) ?? undefined;
     const cov = findCoverage(item, site, { loose: s.category === 'incident', now, category: s.category, families: s.families });
     if (cov.news) s.score -= 1, s.reasons.push(`-1 in /news ${cov.news.slug}`);
     if (cov.backlog) s.reasons.push(`backlog ${cov.backlog.slug}`);
@@ -179,6 +193,16 @@ async function scan() {
   const recentIncidents = Object.values(state.seen).filter((s) => ['incident', 'outage'].includes(s.category) &&
     ['queued', 'writing', 'published', 'updated'].includes(s.status) && now - Date.parse(s.first) < 3 * 86400e3);
   markIncidentDuplicates(scored, recentIncidents);
+  // One fast-track per device or AI model: the Gemini blog, the API changelog and The Keyword announcing the same
+  // model are one story (story key from brief.mjs), and so is a model already queued or covered in the last 3 days.
+  const recentStories = Object.entries(state.seen).filter(([, s]) => s.story && ['queued', 'writing', 'published', 'updated'].includes(s.status) &&
+    now - Date.parse(s.first) < 3 * 86400e3);
+  const keptStories = new Map();
+  for (const x of scored.filter((y) => y.story && !y.dupOf).sort((a, b) => b.score - a.score)) {
+    const hit = recentStories.find(([k, s]) => s.story === x.story && k !== x.key)?.[1] ?? keptStories.get(x.story);
+    if (hit) x.dupOf = hit.title, x.reasons.push(`same story as "${hit.title.slice(0, 60)}"`);
+    else keptStories.set(x.story, { title: x.item.title });
+  }
 
   // 4. Cheap search-demand signals for the best few (Google Trends RSS + autocomplete, as in trend-signals.mjs).
   const top = scored.filter((x) => x.score >= S.threshold - 2 && !x.cov.post && !x.dupOf).sort((a, b) => b.score - a.score).slice(0, S.trendLookups);
@@ -225,6 +249,7 @@ async function scan() {
       date: x.item.date, updated: x.item.updated,
       summary: x.item.summary.slice(0, 300), first: new Date(now).toISOString(), score: x.score, reasons: x.reasons, status, hash: x.hash,
       ...(x.families ? { families: x.families } : {}),
+      ...(x.story ? { story: x.story } : {}),
       backlog: x.cov.backlog?.slug, news: x.cov.news?.slug, post: x.cov.post?.slug,
     };
   }
@@ -280,6 +305,9 @@ async function scan() {
   }
   if (parks.length) task = { ...(task ?? { kind: 'none' }), parks };
 
+  // 7b. Tier 2 (the hourly "Tech news today" page) and Tier 3 (device launches for the device portal).
+  const brief = await buildBrief({ merged, state, site, siteDir: opt('site', '.'), now, today, task, dryRun, errors });
+
   // 8. Log, save, hand over.
   const ist = new Date(now + 5.5 * 3600e3).toISOString().slice(0, 16).replace('T', ' ');
   const block = [
@@ -294,15 +322,19 @@ async function scan() {
       `| ${x.score} | ${x.item.source.id} | ${x.status} | [${x.item.title.replace(/\|/g, '/').slice(0, 90)}](${x.item.link}) — ${x.reasons.join('; ').replace(/\|/g, '/')} |`),
     ...updates.map((u) => `| ${u.score} | ${u.item.source.id} | update | [${u.item.title.slice(0, 90)}](${u.item.link}) — ${u.why} |`),
     '',
+    ...brief.log,
+    '',
     `Task: ${task?.kind && task.kind !== 'none' ? `${task.kind}${task.extra ? ' (outage extra slot)' : ''} "${task.title}"${task.slug ? ` -> /blog/${task.slug}` : ''}` : 'none'}${parks.length ? `; parked ${parks.length} expired item(s) in backlog.md` : ''}`,
     '',
   ];
   console.log(block.join('\n'));
   if (!dryRun) {
     state.lastScan = new Date(now).toISOString();
-    // Keep the state small: forget non-published items after 14 days.
+    // Keep the state small: forget non-published items after 14 days, and low scorers (most of the ~90 sources' items,
+    // e.g. AWS What's New) after 3 days: by then they are stale, so a feed that still lists them never re-queues them.
     for (const [k, s] of Object.entries(state.seen)) {
-      if (!['published', 'updated', 'writing'].includes(s.status) && now - Date.parse(s.first) > 14 * 86400e3) delete state.seen[k];
+      const keepDays = s.status === 'below' && (s.score ?? 0) < S.threshold - 4 ? 3 : 14;
+      if (!['published', 'updated', 'writing'].includes(s.status) && now - Date.parse(s.first) > keepDays * 86400e3) delete state.seen[k];
     }
     fs.writeFileSync(STATE, `${JSON.stringify(state, null, 1)}\n`);
     const logFile = path.join(HERE, 'log', `${ist.slice(0, 7)}.md`);
@@ -315,6 +347,189 @@ async function scan() {
   ghOutput('task', json);
   ghOutput('kind', task?.kind && task.kind !== 'none' ? task.kind : '');
   ghOutput('parks', parks.length ? 'true' : '');
+  ghOutput('brief_pending', brief.pending ? 'true' : '');
+  ghOutput('brief_ping', brief.ping ?? '');
+  ghOutput('devices_count', brief.devices ? String(brief.devices.count) : '');
+  ghOutput('devices_focus', brief.devices?.focus ?? '');
+}
+
+// ---------- Tier 2 / Tier 3: the hourly news page and device launches ----------
+
+const dayFile = (date) => path.join(LIVE, `${date}.json`);
+const shiftDate = (date, days) => new Date(Date.parse(`${date}T12:00:00Z`) + days * 864e5).toISOString().slice(0, 10);
+const deviceSlugs = (siteDir) => {
+  const dir = path.join(siteDir, 'content', 'devices');
+  return fs.existsSync(dir) ? fs.readdirSync(dir).filter((f) => f.endsWith('.json')).map((f) => f.replace(/\.json$/, '')) : [];
+};
+
+/**
+ * Put every relevant, fresh item from every source on today's page (radar/live/<date>.json), once per story across
+ * sources and the last BRIEF.lookbackDays days; link items that became a Tier-1 article; queue official device launches
+ * for the device portal. New items get template lines now (official text only) and are listed in the pending file for
+ * the one batched Claude call (`brief-apply` swaps in Claude's lines where they pass validation).
+ */
+async function buildBrief({ merged, state, site, siteDir, now, today, task, dryRun, errors }) {
+  const days = {};
+  for (let i = 0; i < BRIEF.lookbackDays; i++) {
+    const d = shiftDate(today, -i);
+    const page = readJson(dayFile(d), null) ?? (i === 0 ? emptyDay(d) : null);
+    if (page) days[d] = page;
+  }
+  const listed = new Set(Object.values(days).flatMap((d) => d.items.map((it) => it.key)));
+  const candidates = [];
+  for (const item of merged) {
+    const key = normalizeUrl(item.link);
+    const t = Date.parse(item.date ?? '');
+    // Undated items are skipped: an old post with no date must never look like today's news.
+    if (listed.has(key) || Number.isNaN(t) || now - t > S.freshHours * 3600e3 || t - now > 24 * 3600e3) continue;
+    const src = item.source;
+    const scores = {};
+    if (src.category === 'incident' || src.category === 'outage') {
+      const sc = scoreItem(item, src, { now, freshHours: S.freshHours, threshold: S.threshold });
+      if (sc.category === 'outage') Object.assign(scores, { outageScore: sc.reject ? null : sc.score, outageCategory: src.category !== 'outage' });
+      else scores.incidentScore = sc.reject ? null : sc.score;
+    }
+    const cls = classifyBrief(item, src, scores);
+    if (!cls.include) continue;
+    const it = briefItem(item, src, cls, { now });
+    if (src.label) it.source.label = src.label;
+    const cov = findCoverage(item, site, { loose: cls.kind === 'security', now, category: cls.kind === 'outage' ? 'outage' : undefined });
+    if (cov.post) it.post = cov.post.slug;
+    candidates.push(it);
+  }
+  const page = days[today];
+  const before = Object.fromEntries(Object.entries(days).map(([d, pg]) => [d, JSON.stringify(pg)]));
+  const { added, upgraded, skipped } = mergeIntoDays(candidates, days, today, { now });
+
+  // Official text for items whose feed carries no summary (sitemaps, card lists): the page's own description.
+  const thin = added.filter((it) => !it.reported && (it.summary ?? '').length < 80).slice(0, 12);
+  await Promise.all(thin.map(async (it) => {
+    try {
+      it.summary = pageDetail(await get(it.source.url, { timeout: 20000 })).slice(0, 700);
+    } catch (e) {
+      errors.push(`brief detail ${it.sourceId}: ${e.message}`);
+    }
+  }));
+
+  // Tier-1 links: an item whose official link became a fast-track article (now or earlier) links to it.
+  const slugs = deviceSlugs(siteDir);
+  for (const d of Object.values(days)) {
+    for (const it of d.items) {
+      const seen = state.seen[it.key];
+      if (seen?.slug && ['published', 'updated'].includes(seen.status) && it.post !== seen.slug) it.post = seen.slug, it.tier = 1;
+      if (task?.kind === 'new' && task.key === it.key && it.tier !== 1) it.tier = 1;
+      if (it.device && !it.devicePage) {
+        const slug = findDeviceSlug(it.device, slugs);
+        if (slug) it.devicePage = slug;
+      }
+    }
+  }
+
+  // New and upgraded items: template lines now, Claude's lines in brief-apply (at most BRIEF.maxNewPerRun a run).
+  const fresh = [...added, ...upgraded.filter((it) => !it.lines?.length)];
+  for (const it of fresh) {
+    it.lines = templateLines(it);
+    it.linesBy = 'template';
+  }
+  const pending = fresh.slice(0, BRIEF.maxNewPerRun);
+
+  // Tier 3: official device launches go to the device portal (devices.yml, launch mode), at most
+  // S.maxDeviceRunsPerDay runs a day and 3 devices a run.
+  state.devices ??= {};
+  for (const it of added) {
+    const src = merged.find((m) => normalizeUrl(m.link) === it.key);
+    const d = src ? detectDevice(src, src.source) : null;
+    if (!d?.official || state.devices[d.key]) continue;
+    state.devices[d.key] = {
+      model: d.model, brand: d.brand, category: d.category, link: it.source.url, date: it.time, first: new Date(now).toISOString(),
+      status: 'queued', slug: findDeviceSlug(d, slugs),
+    };
+  }
+  let devices = null;
+  const runsToday = new Set(Object.values(state.devices).filter((d) => d.dispatchedAt && istDate(Date.parse(d.dispatchedAt)) === today).map((d) => d.dispatchedAt));
+  const queuedDevices = Object.values(state.devices).filter((d) => d.status === 'queued' && now - Date.parse(d.first) < 7 * 86400e3);
+  if (queuedDevices.length && runsToday.size < (S.maxDeviceRunsPerDay ?? 2)) {
+    const batch = queuedDevices.slice(0, 3);
+    devices = { count: batch.length, focus: deviceFocus(batch) };
+    if (!dryRun) for (const d of batch) Object.assign(d, { status: 'dispatched', dispatchedAt: new Date(now).toISOString() });
+  }
+  for (const [k, d] of Object.entries(state.devices)) if (now - Date.parse(d.first) > 30 * 86400e3) delete state.devices[k];
+
+  // dateModified moves only when a page really changed.
+  const changedDays = Object.values(days).filter((d) => JSON.stringify(d) !== before[d.date]);
+  for (const d of changedDays) touchDay(d, now);
+  const changed = changedDays.includes(page);
+  let ping = null;
+  if (!dryRun) {
+    fs.mkdirSync(LIVE, { recursive: true });
+    let index = readJson(path.join(LIVE, 'index.json'), { days: [] });
+    for (const d of changedDays) {
+      fs.writeFileSync(dayFile(d.date), `${JSON.stringify(d, null, 1)}\n`);
+      if (d.items.length) index = updateIndex(index, d);
+    }
+    // IndexNow at most once an hour, and only when today's page changed.
+    if (changed && page.items.length && (!index.lastIndexNow || now - Date.parse(index.lastIndexNow) >= 55 * 60e3)) {
+      ping = `${SITE_URL}/news/live/${today}`;
+      index.lastIndexNow = new Date(now).toISOString();
+    }
+    fs.writeFileSync(path.join(LIVE, 'index.json'), `${JSON.stringify(index, null, 1)}\n`);
+    const out = opt('brief-out');
+    if (typeof out === 'string') {
+      const dateOf = (it) => Object.values(days).find((d) => d.items.includes(it))?.date ?? today;
+      fs.writeFileSync(out, JSON.stringify({ items: pending.map((it) => ({ id: it.id, date: dateOf(it) })) }));
+      fs.writeFileSync(`${out}.prompt.txt`, linesPrompt(pending));
+    }
+  }
+  const byKind = {};
+  for (const it of added) byKind[it.kind] = (byKind[it.kind] ?? 0) + 1;
+  const kinds = Object.entries(byKind).map(([k, n]) => `${n} ${k}`).join(', ');
+  const log = [
+    `Tech news today (${SITE_URL}/news/live/${today}): +${added.length} item(s)${kinds ? ` (${kinds})` : ''}, ${upgraded.length} upgraded, ` +
+      `${page.items.length} on the page; ${skipped.length} skipped (already listed or capped)${pending.length ? `; ${pending.length} sent for Claude lines` : ''}.`,
+    ...added.slice(0, 20).map((it) => `- [${it.kind}${it.reported ? ', reported' : ''}] ${it.headline.slice(0, 100)} (${it.sourceId}, score ${it.score})`),
+    ...(devices ? [`Device portal: ${devices.focus.slice(0, 400)}`] : []),
+  ];
+  return { log, pending: pending.length > 0, ping, devices };
+}
+
+/**
+ * Swap in Claude's lines for the items listed by `scan --brief-out` where they pass validateLines (every number from the
+ * source, no speculation, no first person); the template lines from the official text stay otherwise.
+ */
+function briefApply() {
+  const pending = readJson(opt('pending'), { items: [] });
+  const answerFile = opt('answer');
+  let answer = typeof answerFile === 'string' && fs.existsSync(answerFile) ? parseLinesAnswer(fs.readFileSync(answerFile, 'utf8')) : {};
+  // claude -p --output-format json wraps the answer text in { result }.
+  if (typeof answer.result === 'string') answer = parseLinesAnswer(answer.result);
+  const byDate = {};
+  for (const p of pending.items) (byDate[p.date] ??= []).push(p.id);
+  let claude = 0;
+  let template = 0;
+  for (const [date, ids] of Object.entries(byDate)) {
+    const page = readJson(dayFile(date), null);
+    if (!page) continue;
+    const items = page.items.filter((it) => ids.includes(it.id));
+    const r = applyLines(items, answer);
+    claude += r.claude;
+    template += r.template;
+    for (const it of items) if (it.linesBy === 'template') console.log(`  template: ${it.headline.slice(0, 80)} (${it.linesNote})`);
+    fs.writeFileSync(dayFile(date), `${JSON.stringify(page, null, 1)}\n`);
+  }
+  console.log(`Brief lines: ${claude} by Claude (validated), ${template} from the official text (template).`);
+}
+
+/** IndexNow ping for the day page (the scan decides when: the page changed, at most once an hour). */
+async function indexNow() {
+  const url = opt('url');
+  if (typeof url !== 'string' || !url.startsWith(`${SITE_URL}/`)) throw new Error('--url must be an epifive.com URL');
+  const key = '5bbd01230376e7468f09aef0ef85403c'; // public: served at https://www.epifive.com/<key>.txt
+  const res = await fetch('https://api.indexnow.org/indexnow', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    body: JSON.stringify({ host: 'www.epifive.com', key, keyLocation: `${SITE_URL}/${key}.txt`, urlList: [url] }),
+  });
+  console.log(`IndexNow: HTTP ${res.status} for ${url}`);
 }
 
 // ---------- record / site-apply / check ----------
@@ -508,7 +723,7 @@ async function alert() {
   }
 }
 
-const commands = { scan, record, 'site-apply': siteApply, check, 'video-plan': videoPlan, alert };
+const commands = { scan, record, 'site-apply': siteApply, check, 'video-plan': videoPlan, alert, 'brief-apply': briefApply, indexnow: indexNow };
 if (!commands[cmd]) {
   console.error(`Usage: node radar/radar.mjs <${Object.keys(commands).join('|')}> ...`);
   process.exit(2);

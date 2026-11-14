@@ -19,8 +19,19 @@
 # short Resend broadcast to the readers who signed up in the article box (segments "Alerts: outage" / "Alerts: security"):
 # 1 per incident, at most 2 a day (1 security), never for an update or a resolved outage (radar/alert.mjs). Secret
 # RESEND_API_KEY; optional ALERT_POSTAL_ADDRESS (the CAN-SPAM postal footer). Logged in radar/results.jsonl (type alert).
+# Tiers (radar/brief.mjs, owner asked 14 Nov 2026 for every IT/tech/AI/device update within about an hour):
+#   Tier 1 = the fast-track article above (caps unchanged); flagship devices (new iPhone, Galaxy S/Z, Pixel), new
+#            flagship AI models from OpenAI/Anthropic/Google/Meta, big AI price drops and AI model retirements due within
+#            120 days get a score floor, still inside the same 2 + 1 outage cap.
+#   Tier 2 = every relevant item from every source on ONE page per day, radar/live/<IST date>.json, served live by the
+#            site at https://www.epifive.com/news/live/<date> (Pages Function, no site rebuild). 2-4 factual lines per
+#            item from one batched Claude call per scan (haiku, no tools; lines are checked so every number comes from
+#            the official text, else template lines from the official text). Dedupe across sources and 3 days.
+#            IndexNow ping for the day page at most once an hour, only when it changed.
+#   Tier 3 = official device launches start devices.yml in launch mode (spec page from the maker's official page only),
+#            at most 2 runs a day, 3 devices a run.
 # Off switch: repository variable RADAR (automatic scans run only while it is "on").
-# Logs (public, no secrets): radar/log/<YYYY-MM>.md per scan, radar/results.jsonl per write.
+# Logs (public, no secrets): radar/log/<YYYY-MM>.md per scan, radar/results.jsonl per write, radar/live/ day pages.
 name: Launch radar
 
 on:
@@ -91,6 +102,7 @@ jobs:
           sparse-checkout: |
             content/posts
             content/news
+            content/devices
             automation
 
       - uses: actions/setup-node@v4
@@ -98,7 +110,7 @@ jobs:
           node-version: 24
 
       - name: Unit tests
-        run: node --test radar/radar.test.mjs radar/alert.test.mjs
+        run: node --test radar/radar.test.mjs radar/alert.test.mjs radar/brief.test.mjs
 
       - name: Scan
         id: scan
@@ -109,7 +121,7 @@ jobs:
           FORCE_CATEGORY: ${{ inputs.force_category }}
           TRIGGER: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.name || github.event_name == 'schedule' && 'hourly schedule' || 'manual' }}
         run: |
-          args=(scan --site site --out task.json --trigger "$TRIGGER")
+          args=(scan --site site --out task.json --brief-out "$RUNNER_TEMP/brief.json" --trigger "$TRIGGER")
           [ -n "$DRY" ] && args+=(--dry-run)
           [ -n "$FORCE_URL" ] && args+=(--force-url "$FORCE_URL" --force-category "${FORCE_CATEGORY:-launch}")
           node radar/radar.mjs "${args[@]}" | tee -a "$GITHUB_STEP_SUMMARY"
@@ -130,15 +142,56 @@ jobs:
             sleep 10
           done
 
+      # Tier 2: one batched Claude call for the new items on today's news page (haiku, no tools, one turn). The scan
+      # already wrote template lines from the official text, so a failure here (usage limit, timeout) changes nothing.
+      - name: News page lines (Claude)
+        id: lines
+        if: steps.scan.outputs.brief_pending == 'true' && !inputs.dry_run
+        continue-on-error: true
+        timeout-minutes: 6
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          npm install -g @anthropic-ai/claude-code --silent --no-audit --no-fund
+          claude -p --model haiku --tools "" --max-turns 1 --output-format text \
+            --system-prompt "You write short factual lines for a technology news page. Use only the facts in the input. Answer with JSON only." \
+            < "$RUNNER_TEMP/brief.json.prompt.txt" > "$RUNNER_TEMP/brief-answer.txt"
+          wc -c "$RUNNER_TEMP/brief-answer.txt"
+
+      - name: News page lines (check and apply)
+        if: steps.scan.outputs.brief_pending == 'true' && !inputs.dry_run
+        run: node radar/radar.mjs brief-apply --pending "$RUNNER_TEMP/brief.json" --answer "$RUNNER_TEMP/brief-answer.txt" | tee -a "$GITHUB_STEP_SUMMARY"
+
       - name: Save radar state and log
         if: ${{ !inputs.dry_run }}
         run: |
-          git add radar/state.json radar/log
+          git add radar/state.json radar/log radar/live
           git diff --cached --quiet && exit 0
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -q -m "Radar scan $(TZ=Asia/Kolkata date '+%F %H:%M') IST"
           for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep 5; done
+
+      # The news page reads radar/live from this public repo (raw.githubusercontent.com, cached up to 5 minutes), so it is
+      # live once the push lands. IndexNow: only when today's page changed, at most once an hour (the scan decides).
+      - name: Ping IndexNow for the news page
+        if: steps.scan.outputs.brief_ping != '' && !inputs.dry_run
+        continue-on-error: true
+        env:
+          URL: ${{ steps.scan.outputs.brief_ping }}
+        run: |
+          sleep 60
+          node radar/radar.mjs indexnow --url "$URL"
+
+      # Tier 3: official device launches go to the device portal (devices.yml launch mode: the maker's spec page only).
+      - name: Start the device portal job
+        if: steps.scan.outputs.devices_count != '' && !inputs.dry_run
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          COUNT: ${{ steps.scan.outputs.devices_count }}
+          FOCUS: ${{ steps.scan.outputs.devices_focus }}
+        run: gh workflow run devices.yml --repo "$GITHUB_REPOSITORY" --ref main -f count="$COUNT" -f focus="$FOCUS" -f force=true
 
       - name: Start the writer
         if: steps.scan.outputs.kind != ''
