@@ -431,7 +431,9 @@ async function buildBrief({ merged, state, site, siteDir, now, today, task, dryR
     it.lines = templateLines(it);
     it.linesBy = 'template';
   }
-  const pending = fresh.slice(0, BRIEF.maxNewPerRun);
+  // Plus today's items still on template lines that Claude never answered (over the per-run cap, or the call failed).
+  const retry = page.items.filter((it) => it.linesBy === 'template' && !it.linesNote && (it.linesTries ?? 0) < 3 && !fresh.includes(it));
+  const pending = [...fresh, ...retry].slice(0, BRIEF.maxNewPerRun);
 
   // Tier 3: official device launches go to the device portal (devices.yml, launch mode), at most
   // S.maxDeviceRunsPerDay runs a day and 3 devices a run.
@@ -506,10 +508,18 @@ function briefApply() {
   for (const p of pending.items) (byDate[p.date] ??= []).push(p.id);
   let claude = 0;
   let template = 0;
+  const noAnswer = !Object.keys(answer).length;
   for (const [date, ids] of Object.entries(byDate)) {
     const page = readJson(dayFile(date), null);
     if (!page) continue;
     const items = page.items.filter((it) => ids.includes(it.id));
+    if (noAnswer) {
+      // The Claude call failed (usage limit, timeout): keep the template lines and let the next scan retry (twice).
+      for (const it of items) it.linesTries = (it.linesTries ?? 0) + 1;
+      template += items.length;
+      fs.writeFileSync(dayFile(date), `${JSON.stringify(page, null, 1)}\n`);
+      continue;
+    }
     const r = applyLines(items, answer);
     claude += r.claude;
     template += r.template;
