@@ -382,6 +382,9 @@ async function buildBrief({ merged, state, site, siteDir, now, today, task, dryR
     const t = Date.parse(item.date ?? '');
     // Undated items are skipped: an old post with no date must never look like today's news.
     if (listed.has(key) || Number.isNaN(t) || now - t > S.freshHours * 3600e3 || t - now > 24 * 3600e3) continue;
+    // Today's page lists today's news: an item from an earlier IST day (e.g. one that hit yesterday's caps) stays off,
+    // except one published in the last 6 hours (found just after midnight).
+    if (istDate(t) !== today && now - t > 6 * 3600e3) continue;
     const src = item.source;
     const scores = {};
     if (src.category === 'incident' || src.category === 'outage') {
