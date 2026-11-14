@@ -9,6 +9,7 @@
     "maxOutageExtraPerDay": 1,
     "minScanGapMinutes": 25,
     "trendLookups": 5,
+    "detailPerSource": 6,
     "userAgent": "EpiFiveRadar/1.0 (+https://www.epifive.com)"
   },
   "sources": [
@@ -37,7 +38,10 @@
     { "id": "apple-newsroom", "name": "Apple Newsroom", "url": "https://www.apple.com/newsroom/rss-feed.rss", "type": "atom", "weight": 1, "topic": "mobiles", "verified": "2026-11-12" },
     { "id": "whatsapp-blog", "name": "WhatsApp Blog (sitemap)", "url": "https://blog.whatsapp.com/sitemap.xml", "type": "sitemap", "linkPattern": "^https://blog\\.whatsapp\\.com/[a-z0-9-]+$", "weight": 2, "topic": "how-to-tips", "verified": "2026-11-12" },
     { "id": "meta-newsroom", "name": "Meta Newsroom", "url": "https://about.fb.com/news/feed/", "type": "rss", "weight": 0, "topic": "online-safety", "verified": "2026-11-12" },
-    { "id": "anthropic-news", "name": "Anthropic News", "url": "https://www.anthropic.com/news", "type": "html-list", "linkPattern": "^/news/[a-z0-9-]+$", "weight": 1, "topic": "ai-automation", "verified": "2026-11-12" },
+    { "id": "anthropic-news", "name": "Anthropic News", "url": "https://www.anthropic.com/news", "type": "html-list", "linkPattern": "^/news/[a-z0-9-]+$", "weight": 1, "topic": "ai-automation", "detail": true,
+      "note": "Since autumn 2026 this page carries mostly company news (IPO, policy, partnerships); Claude product launches are posted on claude.com (claude-articles).", "verified": "2026-11-14" },
+    { "id": "claude-articles", "name": "Claude by Anthropic: articles (product updates)", "url": "https://claude.com/resources/articles", "type": "html-list", "linkPattern": "^/resources/articles/[a-z0-9-]+$", "weight": 1, "topic": "ai-automation", "detail": true,
+      "note": "Where Claude launches are announced (e.g. Claude for Manufacturing on 12 Nov 2026, which never appeared on anthropic.com/news). Cards carry the date as text ('Nov 12, 2026') and the summary inside the link; no RSS (rss.xml 404) and the sitemap has no dates; claude.com/blog redirects here. detail: true = the article page of each new, fresh item is read for scoring (settings.detailPerSource).", "verified": "2026-11-14" },
     { "id": "github-changelog", "name": "GitHub Changelog", "url": "https://github.blog/changelog/feed/", "type": "rss", "weight": -1, "topic": "ai-engineering", "verified": "2026-11-12" },
     { "id": "rbi-press", "name": "Reserve Bank of India press releases", "url": "https://www.rbi.org.in/pressreleases_rss.xml", "type": "rss", "weight": -1, "topic": "online-safety", "verified": "2026-11-12" },
 

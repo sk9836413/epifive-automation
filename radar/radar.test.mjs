@@ -6,7 +6,9 @@ import {
   parseBacklog, sameTopic, todayCounts, parkInBacklog, markPublished, logLine, checkFastTrack, trendBoost, istDate, RADAR_MARK,
   datesIn, daysToDeadline, scoreIncident, sameIncident, markIncidentDuplicates, backlogLine, updateSignal,
   scoreOutage, outageTerm, outageFamilies, pickNewTask, parseSource, autoVideoPlan, isRootCauseNews, statusClosed,
+  cardDate, pageDetail, M365_TIE_BOOST,
 } from './lib.mjs';
+import { readFileSync } from 'node:fs';
 
 const NOW = Date.parse('2026-11-10T14:00:00Z');
 const openai = { id: 'openai-news', weight: 2, categoryBoost: { Product: 2, Startup: -3, '(none)': -2 } };
@@ -57,6 +59,73 @@ test('parseHtmlList keeps headed links once, with the following <time> and <p>',
   assert.equal(items[0].title, 'Claude for Chrome');
   assert.equal(items[0].summary, 'Use Claude in your browser.');
   assert.ok(items[0].date.startsWith('2026-11-'));
+});
+
+// claude.com/resources/articles card markup as served on 14 Nov 2026 (SVG and classes trimmed).
+const CLAUDE_CARDS = `<a href="/resources/articles/claude-for-manufacturing" class="card"><div><span><div><svg></svg></div>Article</span><span>Nov 12, 2026</span></div>
+  <div><div><h3>Introducing Claude for Manufacturing</h3><p>A new plugin with 17 skills and four connectors helps manufacturers draft quotes, quality reports, and supplier requests from the systems they already run.</p></div></div></a>
+  <a href="/resources/articles/claude-meetings" class="card"><div><span>Article</span><span>Nov 13, 2026</span></div><div><h3>Introducing Claude Meetings</h3><p>Meetings summary.</p></div></a>`;
+const MANUFACTURING_PAGE = `<html><head><meta name="description" content="Claude for Manufacturing drafts quotes, quality reports, and supplier requests from your plant’s own records, for your team to review and approve."/>
+  <script>var x = "<p>not text</p>";</script></head><body><nav><ul><li>Claude for Google Workspace</li></ul></nav><main><article><h1>Introducing Claude for Manufacturing</h1>
+  <p>It draws on a company's own records through connectors to Autodesk Fusion, Infor, Microsoft 365, and Oracle NetSuite.</p>
+  <h2>How to get started</h2><ul><li>The plugin is available on Team or Enterprise plans. Install the plugin.</li><li>Tell Claude, "Set us up."</li></ul></article></main></body></html>`;
+// Another claude.com post: the site menu links "Claude for Microsoft 365", the post itself never mentions it.
+const MEETINGS_PAGE = `<html><head><meta name="description" content="Add Claude to your video call."/></head><body>
+  <header><ul><li><a href="/claude-for-microsoft-365">Claude for Microsoft 365</a></li></ul></header>
+  <main><article><h1>Introducing Claude Meetings</h1><p>Claude joins your video call and drafts the follow-up.</p></article></main></body></html>`;
+
+test('parseHtmlList reads claude.com cards: text date and summary inside the link', () => {
+  const items = parseHtmlList(CLAUDE_CARDS, { base: 'https://claude.com/resources/articles', linkPattern: '^/resources/articles/[a-z0-9-]+$' });
+  assert.equal(items.length, 2);
+  assert.equal(items[0].link, 'https://claude.com/resources/articles/claude-for-manufacturing');
+  assert.equal(items[0].title, 'Introducing Claude for Manufacturing');
+  assert.equal(items[0].date, '2026-11-12T12:00:00.000Z');
+  assert.match(items[0].summary, /^A new plugin with 17 skills/);
+  // Each card keeps its own date, not the next card's.
+  assert.equal(items[1].date, '2026-11-13T12:00:00.000Z');
+  assert.equal(cardDate('Published November 3, 2026'), '2026-11-03T12:00:00.000Z');
+  assert.equal(cardDate('no date here'), null);
+});
+
+test('pageDetail keeps the meta description and body text, not scripts', () => {
+  const d = pageDetail(MANUFACTURING_PAGE);
+  assert.match(d, /^Claude for Manufacturing drafts quotes/);
+  assert.match(d, /Microsoft 365/);
+  assert.match(d, /Set us up/);
+  assert.doesNotMatch(d, /not text/);
+  assert.doesNotMatch(d, /Google Workspace/);
+  assert.doesNotMatch(pageDetail(MEETINGS_PAGE), /Microsoft 365/);
+});
+
+test('Claude for Manufacturing (12 Nov 2026) clears the threshold from claude.com once the article text is read', () => {
+  const source = { id: 'claude-articles', weight: 1, topic: 'ai-automation' };
+  const [card] = parseHtmlList(CLAUDE_CARDS, { base: 'https://claude.com/resources/articles', linkPattern: '^/resources/articles/[a-z0-9-]+$' });
+  const now = Date.parse('2026-11-12T20:00:00Z');
+  const cardOnly = scoreItem(card, source, { now });
+  const withDetail = scoreItem({ ...card, detail: pageDetail(MANUFACTURING_PAGE) }, source, { now });
+  assert.equal(withDetail.reject, null);
+  assert.ok(cardOnly.score < 10, `card only ${cardOnly.score}`);
+  assert.ok(withDetail.score >= 10, `with detail ${withDetail.score}: ${withDetail.reasons.join('; ')}`);
+  assert.ok(withDetail.reasons.some((r) => r.startsWith(`+${M365_TIE_BOOST} launch works with Microsoft 365`)));
+});
+
+test('the Microsoft 365 tie-in boost needs a launch, and Microsoft\'s own feeds do not get it twice', () => {
+  const third = { id: 'vendor', weight: 0, topic: 'ai-automation' };
+  const ms = { id: 'ms365-blog', weight: 0, topic: 'microsoft-365' };
+  const launch = item({ title: 'Introducing the Acme connector', summary: 'Works with Microsoft 365 files.' });
+  const notLaunch = item({ title: 'Our view on Microsoft 365 security', summary: 'Opinion.' });
+  const tie = (s) => s.reasons.some((r) => r.includes('launch works with Microsoft 365'));
+  assert.ok(tie(scoreItem(launch, third, { now: NOW })));
+  assert.ok(!tie(scoreItem(notLaunch, third, { now: NOW })));
+  assert.ok(!tie(scoreItem(launch, ms, { now: NOW })));
+});
+
+test('sources.json watches claude.com articles with article detail, and the old Anthropic page parse still works', () => {
+  const cfg = JSON.parse(readFileSync(new URL('./sources.json', import.meta.url), 'utf8'));
+  const src = cfg.sources.find((s) => s.id === 'claude-articles');
+  assert.ok(src && src.url === 'https://claude.com/resources/articles' && src.type === 'html-list' && src.detail === true);
+  assert.equal(parseSource(CLAUDE_CARDS, src).length, 2);
+  assert.ok(cfg.settings.detailPerSource > 0);
 });
 
 test('parseDatedSections splits release notes by date and feature', () => {

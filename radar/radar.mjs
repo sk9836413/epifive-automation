@@ -29,7 +29,7 @@ import { fileURLToPath } from 'node:url';
 import {
   parseSource, normalizeUrl, scoreItem, trendBoost, searchPhrase, findCoverage, parseBacklog, hashText,
   istDate, todayCounts, mergeDuplicates, parkInBacklog, markPublished, logLine, checkFastTrack, updateSignal,
-  markIncidentDuplicates, backlogLine, pickNewTask, autoVideoPlan, isRootCauseNews, statusClosed,
+  markIncidentDuplicates, backlogLine, pickNewTask, autoVideoPlan, isRootCauseNews, statusClosed, pageDetail,
 } from './lib.mjs';
 import { ALERT, alertGate, buildAlertEmail, completeAddress, ensureAlertField, readArticle } from './alert.mjs';
 
@@ -131,6 +131,20 @@ async function scan() {
       source._count = 0;
     }
   }));
+
+  // 2b. Sources with "detail": true list only a title and a line; read the article page of each new, fresh item
+  // (at most S.detailPerSource per source) so connectors, plans and setup steps in the body count for the score.
+  for (const source of CONFIG.sources.filter((x) => x.detail && x._ok)) {
+    const fresh = fetched.filter((x) => x.source === source && !state.seen[normalizeUrl(x.link)] &&
+      (!x.date || now - Date.parse(x.date) <= S.freshHours * 3600e3)).slice(0, S.detailPerSource ?? 6);
+    await Promise.all(fresh.map(async (x) => {
+      try {
+        x.detail = pageDetail(await get(x.link, { timeout: 20000 }));
+      } catch (e) {
+        errors.push(`${source.id} detail ${x.link}: ${e.message}`);
+      }
+    }));
+  }
 
   // 3. Score new items; look for updates to launches we already covered.
   const scored = [];

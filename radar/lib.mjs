@@ -74,9 +74,22 @@ export function parseSitemap(xml, { linkPattern } = {}) {
     });
 }
 
+// A date written as text on a listing card ("Nov 12, 2026", "November 12, 2026").
+const CARD_DATE = /\b(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*\.?\s+(\d{1,2}),?\s+(20\d{2})\b/i;
+const MON3 = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+
+/** A text date on a card as ISO (noon UTC, so a date-only post is not aged by the runner's time zone), else null. */
+export function cardDate(text = '') {
+  const m = text.match(CARD_DATE);
+  if (!m) return null;
+  const mo = MON3.indexOf(m[1].slice(0, 3).toLowerCase());
+  return new Date(Date.UTC(+m[3], mo, +m[2], 12)).toISOString();
+}
+
 /**
  * A news listing page: every <a href> matching linkPattern that contains a heading (h1-h4) is a post.
- * The date is the first <time> after the link, the summary the first <p>.
+ * Card layouts (claude.com/resources/articles) put the date as text and the summary <p> inside the link; older
+ * layouts (anthropic.com/news) put a <time> and the summary <p> after it. Inside the link wins.
  */
 export function parseHtmlList(html, { base, linkPattern }) {
   const re = new RegExp(linkPattern);
@@ -85,24 +98,41 @@ export function parseHtmlList(html, { base, linkPattern }) {
     const href = decodeEntities(m[1]);
     const path = href.startsWith('http') ? new URL(href).pathname : href.split(/[?#]/)[0];
     if (!re.test(path)) continue;
-    const heading = m[2].match(/<h[1-4][^>]*>([\s\S]*?)<\/h[1-4]>/i);
+    const inner = m[2];
+    const heading = inner.match(/<h[1-4][^>]*>([\s\S]*?)<\/h[1-4]>/i);
     if (!heading) continue;
     const link = new URL(href, base).toString();
     if (out.has(link)) continue;
     const after = html.slice(m.index, m.index + 3000);
     const time = after.match(/<time\b([^>]*)>([^<]*)<\/time>/i);
-    const dt = time ? toIso(time[1].match(/datetime="([^"]+)"/)?.[1] ?? time[2]) : null;
+    const innerTime = inner.match(/<time\b/i);
+    const dt = (!innerTime && cardDate(stripTags(inner.replace(heading[0], ' '))))
+      || (time ? toIso(time[1].match(/datetime="([^"]+)"/)?.[1] ?? time[2]) : null);
+    const p = inner.match(/<p\b[^>]*>([\s\S]*?)<\/p>/i) ?? after.slice(m[0].length).match(/<p\b[^>]*>([\s\S]*?)<\/p>/i);
     out.set(link, {
       title: stripTags(heading[1]),
       link,
       guid: link,
       date: dt,
       updated: null,
-      summary: stripTags(after.slice(m[0].length).match(/<p\b[^>]*>([\s\S]*?)<\/p>/i)?.[1] ?? '').slice(0, 400),
+      summary: stripTags(p?.[1] ?? '').slice(0, 400),
       categories: [],
     });
   }
   return [...out.values()];
+}
+
+/**
+ * Text of an article page for scoring (sources with "detail": true): the meta description plus the paragraphs,
+ * capped. Listing cards often omit what matters to EpiFive readers (e.g. "connectors to ... Microsoft 365").
+ */
+export function pageDetail(html = '', max = 4000) {
+  const meta = html.match(/<meta\b[^>]*(?:name|property)="(?:og:)?description"[^>]*content="([^"]*)"/i)?.[1] ?? '';
+  // Only the post itself: site navigation ("Claude for Microsoft 365", "Pricing") must not score every page.
+  const main = html.match(/<article\b[\s\S]*<\/article>/i)?.[0] ?? html.match(/<main\b[\s\S]*<\/main>/i)?.[0] ?? html;
+  const body = main.replace(/<script\b[\s\S]*?<\/script>|<style\b[\s\S]*?<\/style>|<nav\b[\s\S]*?<\/nav>/gi, ' ');
+  const paras = [...body.matchAll(/<(p|li|h[2-4])\b[^>]*>([\s\S]*?)<\/\1>/gi)].map((x) => stripTags(x[2])).filter(Boolean);
+  return stripTags(`${meta} ${paras.join(' ')}`).slice(0, max);
 }
 
 /** Release-notes page: <h2>YYYY.MM.DD</h2> sections, each feature an <h3> followed by its "What:" paragraph. */
@@ -318,6 +348,8 @@ const RETIRE = /\b(retir(e|es|ing|ement)|deprecat\w*|end of support|sunset\w*)\b
 // Microsoft 365 services whose retirements EpiFive turns into migration how-tos (matched on title, summary or feed category).
 const M365_CHANGE = /\b(microsoft 365|m365|office 365|exchange|sharepoint|onedrive|outlook|teams|entra|azure ad|intune|defender|copilot|purview|microsoft graph|graph api)\b/i;
 export const RETIRE_WINDOW_DAYS = 120;
+const M365_NAME = /\b(microsoft 365|m365|office 365)\b/i;
+export const M365_TIE_BOOST = 2;
 const MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
 const MON = MONTHS.join('|');
 const EXACT_MDY = new RegExp(`\\b(${MON})\\s+(\\d{1,2})(?:st|nd|rd|th)?,?\\s+(20\\d{2})\\b`, 'gi');
@@ -368,6 +400,8 @@ export function scoreItem(item, source, { now = Date.now(), freshHours = 36, thr
   };
   const title = item.title ?? '';
   const text = `${title} ${item.summary ?? ''}`;
+  // Article text fetched for "detail" sources: counts for products, user steps and plans, not for launch wording.
+  const full = item.detail ? `${text} ${item.detail}` : text;
 
   if (RUMOUR.test(text)) return { score: -99, reasons: ['rumour/leak wording'], reject: 'rumour' };
 
@@ -375,7 +409,7 @@ export function scoreItem(item, source, { now = Date.now(), freshHours = 36, thr
   let niche = 0;
   const hits = [];
   for (const [re, w] of NICHE) {
-    const m = text.match(re);
+    const m = full.match(re);
     if (m) {
       niche += w;
       hits.push(m[0].toLowerCase());
@@ -383,9 +417,12 @@ export function scoreItem(item, source, { now = Date.now(), freshHours = 36, thr
   }
   add(Math.min(niche, NICHE_CAP), `niche (${hits.slice(0, 4).join(', ')})`);
   if (LAUNCH.test(text)) add(2, `launch "${text.match(LAUNCH)[0]}"`);
-  if (ACTION.test(text)) add(2, `user steps "${text.match(ACTION)[0]}"`);
-  if (MONEY.test(text)) add(1, `plans/price/availability "${text.match(MONEY)[0]}"`);
+  if (ACTION.test(full)) add(2, `user steps "${full.match(ACTION)[0]}"`);
+  if (MONEY.test(full)) add(1, `plans/price/availability "${full.match(MONEY)[0]}"`);
   if (LAUNCH.test(title)) add(1, 'launch in the headline');
+  // A non-Microsoft launch that works with Microsoft 365 (a connector, an add-in) is exactly what EpiFive's
+  // M365 admins need a how-to for; Microsoft's own feeds already earn this through the niche list.
+  if (LAUNCH.test(text) && source.topic !== 'microsoft-365' && M365_NAME.test(full)) add(M365_TIE_BOOST, `launch works with Microsoft 365 "${full.match(M365_NAME)[0]}"`);
   if (RETIRE.test(text)) add(1, 'retirement/migration');
   if (NARROW.test(title)) add(-1, `narrow audience "${title.match(NARROW)[0]}"`);
   if (item.alsoIn?.length) add(1, `also on ${item.alsoIn.slice(0, 2).join(', ')}`);
