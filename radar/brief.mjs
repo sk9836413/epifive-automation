@@ -8,7 +8,7 @@
 //           served live by the site at /news/live/<date> (one page per day, never one page per item).
 //   Tier 3  phone / laptop / desktop / tablet / wearable launches on a manufacturer's own newsroom: queued for the
 //           device portal (devices.yml, launch mode, official spec page only) and listed in the day's page.
-import { sameTopic, sameIncident, normalizeUrl, hashText, RUMOUR, stripTags, outageFamilies, istDate } from './lib.mjs';
+import { sameTopic, sameIncident, normalizeUrl, hashText, RUMOUR, stripTags, outageFamilies } from './lib.mjs';
 
 export const BRIEF = {
   maxItemsPerDay: 80, // a day page never grows past this (best scores first)
@@ -276,7 +276,8 @@ export function classifyBrief(item, source, { incidentScore = null, outageScore 
 /** Entity key for a story: a device or AI model when there is one ("device:samsung galaxy s27", "ai:gpt-6.1:release"). */
 export function storyKey(x) {
   if (x.device?.key) return `device:${x.device.key}`;
-  if (x.kind === 'outage' && x.families?.length) return `outage:${[...x.families].sort().join('+')}:${istDate(Date.parse(x.time ?? '') || Date.now())}`;
+  // One outage per platform family within the lookback days (a status post and news reports of it, or its day two).
+  if (x.kind === 'outage' && x.families?.length) return `outage:${[...x.families].sort().join('+')}`;
   if (x.ai?.model) return `ai:${x.ai.model.toLowerCase().replace(/\s+/g, ' ')}:${x.ai.kind}`;
   return null;
 }
@@ -377,7 +378,7 @@ export function briefItem(item, source, cls, { now = Date.now() } = {}) {
 
 // ---------- writing the lines ----------
 
-const SENTENCES = (s) => String(s).split(/(?<=[.!?])\s+(?=[A-Z0-9"“'‘(])/).map((t) => t.trim()).filter((t) => t.length > 20);
+const SENTENCES = (s) => String(s).replace(/\s*(\[(\.\.\.|…)\]|\[&hellip;\])\s*$/, '').split(/(?<=[.!?])\s+(?=[A-Z0-9"“'‘(])/).map((t) => t.trim()).filter((t) => t.length > 20);
 const AVAIL = /\b(available|availability|rolling out|starts? at|pric(e|es|ed|ing)|per (user|month|seat)|regions?|countries|in india|generally available|preview|free|paid|plans?|pre-?order|on sale|from \w+ \d{1,2})\b|[$₹€£]\s?\d/i;
 
 /**

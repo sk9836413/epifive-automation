@@ -25,7 +25,9 @@
    },
    "sourceId": "status-m365-consumer",
    "reported": false,
-   "also": [],
+   "also": [
+    "MediaNama"
+   ],
    "post": "microsoft-365-outage-november-2026-what-to-do",
    "device": null,
    "ai": null,
@@ -87,7 +89,7 @@
    "also": [
     "windows-insider"
    ],
-   "post": "microsoft-365-outage-november-2026-what-to-do",
+   "post": null,
    "device": null,
    "ai": null,
    "score": 7,
@@ -672,40 +674,6 @@
    "ai": null,
    "score": 3,
    "story": null
-  },
-  {
-   "id": "9f877116",
-   "key": "https://medianama.com/2026/11/223-microsoft-365-applications-global-outage",
-   "time": "2026-11-13T09:57:50.000Z",
-   "seen": "2026-11-14T18:02:12.270Z",
-   "kind": "outage",
-   "tier": 2,
-   "headline": "Microsoft 365 applications hit by global outage for over 10 hours",
-   "summary": "While Microsoft said the outage happened because a number of servers had become unexpectedly unavailable, straining the remaining infrastructure, it also ascertained that it wasn't aware of any malicious activity was behind it. The post Microsoft 365 applications hit by global outage for over 10 hours appeared first on MEDIANAMA .",
-   "lines": [
-    "Reported by MediaNama: Microsoft 365 applications were hit by a global outage lasting over 10 hours.",
-    "Microsoft said the outage happened because a number of servers became unexpectedly unavailable, straining the remaining infrastructure.",
-    "Microsoft said it was not aware of any malicious activity behind the outage."
-   ],
-   "linesBy": "claude",
-   "source": {
-    "name": "MediaNama",
-    "url": "https://www.medianama.com/2026/11/223-microsoft-365-applications-global-outage/"
-   },
-   "sourceId": "medianama",
-   "reported": true,
-   "also": [
-    "TechCrunch",
-    "GSMArena news"
-   ],
-   "post": "microsoft-365-outage-november-2026-root-cause-it-admin-lessons",
-   "device": null,
-   "ai": null,
-   "families": [
-    "microsoft"
-   ],
-   "score": 11,
-   "story": "outage:microsoft:2026-11-13"
   },
   {
    "id": "f55a6eca",

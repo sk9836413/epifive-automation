@@ -333,3 +333,14 @@ test('sources.json: every source has a fetch status; signals never reach Tier 1;
   assert.ok(cfg.notUsed.every((n) => n.name && n.url && n.reason));
   assert.ok(cfg.settings.maxNewPerDay <= 2 && cfg.settings.maxOutageExtraPerDay <= 1, 'Tier-1 cap stays 2 a day + 1 outage extra');
 });
+
+test('sameStory: an outage on a status page and a news report of it are one story (by platform family, across days)', () => {
+  const status = mk('Users may be unable to access Microsoft 365 services', 'https://status.cloud.microsoft/#a', src({ id: 'status-m365-consumer', category: 'outage' }), { date: '2026-11-13T10:00:00Z', scores: { outageScore: 11 } });
+  const news = mk('Microsoft 365 applications hit by global outage for over 10 hours', 'https://www.medianama.com/b', src({ id: 'medianama', category: 'incident', newsOutlet: true }), { scores: { outageScore: 11, outageCategory: true } });
+  assert.equal(status.kind, 'outage');
+  assert.equal(news.kind, 'outage');
+  assert.equal(storyKey(status), 'outage:microsoft');
+  assert.equal(sameStory(status, news), true);
+  const gh = mk('GitHub is down for many users', 'https://www.bleepingcomputer.com/c', src({ id: 'bleepingcomputer', category: 'incident', newsOutlet: true }), { scores: { outageScore: 10, outageCategory: true } });
+  assert.equal(sameStory(status, gh), false);
+});

@@ -29,7 +29,7 @@ import { fileURLToPath } from 'node:url';
 import {
   parseSource, normalizeUrl, scoreItem, trendBoost, searchPhrase, findCoverage, parseBacklog, hashText,
   istDate, todayCounts, mergeDuplicates, daysToDeadline, parkInBacklog, markPublished, logLine, checkFastTrack, updateSignal,
-  markIncidentDuplicates, backlogLine, pickNewTask, autoVideoPlan, isRootCauseNews, statusClosed, pageDetail,
+  markIncidentDuplicates, backlogLine, pickNewTask, autoVideoPlan, isRootCauseNews, statusClosed, pageDetail, sameTopic, sameIncident,
 } from './lib.mjs';
 import {
   BRIEF, classifyBrief, briefItem, mergeIntoDays, tier1Floor, storyKey, detectDevice, detectAiModel, findDeviceSlug, emptyDay,
@@ -394,7 +394,10 @@ async function buildBrief({ merged, state, site, siteDir, now, today, task, dryR
     const it = briefItem(item, src, cls, { now });
     if (src.label) it.source.label = src.label;
     const cov = findCoverage(item, site, { loose: cls.kind === 'security', now, category: cls.kind === 'outage' ? 'outage' : undefined });
-    if (cov.post) it.post = cov.post.slug;
+    // A guide that only cites the item's link (e.g. an outage guide quoting an Insider build post) is not its guide:
+    // link it only when it is about the same thing.
+    const about = (p) => `${p.title} ${p.slug.replace(/-/g, ' ')}`;
+    if (cov.post && (cls.kind === 'outage' || (cls.kind === 'security' ? sameIncident(item.title, about(cov.post)) : sameTopic(item.title, about(cov.post))))) it.post = cov.post.slug;
     candidates.push(it);
   }
   const page = days[today];
