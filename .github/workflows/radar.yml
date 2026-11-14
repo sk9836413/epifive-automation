@@ -42,7 +42,7 @@ on:
   # hour. GitHub's own scheduler (free for this public repo), not the Cloudflare scheduler, whose 5 slots are fixed.
   # The scan is a ~5 s Node script with no Claude; the 25-minute gap and the daily caps still apply.
   schedule:
-    - cron: '23 * * * *'
+    - cron: '7,23,38,53 * * * *'   # four tries an hour: GitHub drops many scheduled runs; the 25-minute gap guard keeps it to ~1-2 scans an hour
   workflow_dispatch:
     inputs:
       mode:
