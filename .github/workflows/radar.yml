@@ -165,7 +165,8 @@ jobs:
       - name: Save radar state and log
         if: ${{ !inputs.dry_run }}
         run: |
-          git add radar/state.json radar/log radar/live
+          git add radar/state.json radar/log
+          if [ -d radar/live ]; then git add radar/live; fi
           git diff --cached --quiet && exit 0
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
