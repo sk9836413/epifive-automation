@@ -1,0 +1,251 @@
+{
+ "date": "2026-11-15",
+ "title": "Tech news today, 15 November 2026",
+ "published": "2026-11-14T18:38:28.597Z",
+ "updated": "2026-11-14T18:38:28.597Z",
+ "items": [
+  {
+   "id": "93d93e4f",
+   "key": "https://mc.merill.net/message/MC1552397",
+   "time": "2026-11-13T23:49:22.000Z",
+   "seen": "2026-11-14T18:38:28.597Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1552397: Microsoft SharePoint: Resources web part and Announcements capabilities expand to all sites",
+   "summary": "The Resources web part and Announcements capabilities are expanding to all SharePoint sites, allowing site owners to share links and updates more flexibly. Rollout starts mid-November 2026 worldwide and mid-December 2026 for GCC/DoD, with no admin action required.",
+   "lines": [
+    "Microsoft is expanding the Resources web part and Announcements capabilities to all SharePoint sites, letting site owners share links and updates more flexibly.",
+    "Rollout starts mid-November 2026 worldwide and mid-December 2026 for GCC/DoD, with no admin action required.",
+    "Because no admin action is required, IT teams mainly need to prepare end users for changes on SharePoint sites."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1552397"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "9ddb8ca4",
+   "key": "https://mc.merill.net/message/MC1552389",
+   "time": "2026-11-13T23:45:06.000Z",
+   "seen": "2026-11-14T18:38:28.597Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1552389: Microsoft 365 Copilot: Workforce Intelligence plugin available in Copilot Cowork",
+   "summary": "The Workforce Intelligence plugin in Microsoft 365 Copilot Cowork, launching November 16, 2026, helps leaders explore organizational structure and skills via natural language. It respects existing data permissions, supports team learning, requires admin setup, and is not for employee evaluation or performance management.",
+   "lines": [
+    "Microsoft launched the Workforce Intelligence plugin in Microsoft 365 Copilot Cowork, helping leaders explore organizational structure and skills through natural language.",
+    "The plugin launches November 16, 2026, respects existing data permissions, supports team learning, and requires admin setup.",
+    "The plugin is not for employee evaluation or performance management, which matters for HR and management policy planning."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1552389"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "93db7ce6",
+   "key": "https://mc.merill.net/message/MC1552387",
+   "time": "2026-11-13T23:43:58.000Z",
+   "seen": "2026-11-14T18:38:28.597Z",
+   "kind": "retirement",
+   "tier": 2,
+   "headline": "MC1552387: Retired: Microsoft Defender for Identity classic alerts (Remote code execution attempt and pass-the-hash)",
+   "summary": "Microsoft Defender for Identity will retire two classic alerts—Remote code execution attempt and pass-the-hash—by late November 2026. Users should create custom detection rules for RCE and rely on Defender for Endpoint for pass-the-hash monitoring. No compliance issues are identified.",
+   "lines": [
+    "Microsoft Defender for Identity will retire two classic alerts, Remote code execution attempt and pass-the-hash, by late November 2026.",
+    "Users should create custom detection rules for RCE and rely on Defender for Endpoint for pass-the-hash monitoring.",
+    "The notice states that no compliance issues are identified, so security teams mainly need to replace alert coverage."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1552387"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "58cd89cb",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-batch-eks-security-context",
+   "time": "2026-11-13T08:00:00.000Z",
+   "seen": "2026-11-14T18:38:28.597Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "AWS Batch on Amazon EKS adds Linux capabilities, seccomp, and pod-level settings",
+   "summary": "AWS Batch now supports additional Kubernetes security context settings in Amazon EKS job definitions, including Linux capabilities, seccomp profiles, and pod-level settings. For EKS clusters that enforce the Kubernetes Pod Security Standards restricted profile, you can now run AWS Batch jobs with only the privileges and system calls they require. To get started, use the RegisterJobDefinition API to set capabilities and seccompProfile in a container's securityContext , or set securityContext in podProperties to define pod-wide settings such as fsGroup . Container-level settings override pod-level defaults. You can configure these settings through the AWS Management Console, AWS CLI, AWS SDKs,",
+   "lines": [
+    "AWS Batch now supports additional Kubernetes security context settings in Amazon EKS job definitions, including Linux capabilities, seccomp profiles, and pod-level settings.",
+    "For EKS clusters that enforce the Pod Security Standards restricted profile, jobs can run with only the privileges and system calls they require.",
+    "Container-level settings override pod-level defaults, and the settings can be configured through the AWS Management Console, AWS CLI, and AWS SDKs.",
+    "This helps platform teams apply least-privilege settings to batch workloads running on EKS."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-batch-eks-security-context/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "73367ed9",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-marketplace-vat-credit-notes",
+   "time": "2026-11-13T08:00:00.000Z",
+   "seen": "2026-11-14T18:38:28.597Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "AWS Marketplace now supports VAT credit notes for deemed supply refunds",
+   "summary": "AWS Marketplace sellers can now submit Value Added Tax (VAT) credit notes for refunded deemed supply transactions through a self-service experience in AWS Partner Central. Previously, VAT was disbursed to sellers for eligible transactions, and when a buyer was later refunded, sellers had to contact AWS to submit the corresponding credit note. This launch simplifies post-refund VAT documentation for sellers. Sellers can view eligible refund line items in the VAT on deemed supply section, select the refunds covered by a credit note, upload a PDF or the applicable electronic invoice format, and track the submission status. Sellers can consolidate multiple eligible refunds into a single credit n",
+   "lines": [
+    "AWS Marketplace sellers can now submit VAT credit notes for refunded deemed supply transactions through a self-service experience in AWS Partner Central.",
+    "Previously, sellers had to contact AWS to submit the credit note after a buyer was refunded.",
+    "Sellers can select covered refunds, upload a PDF or electronic invoice, track submission status, and consolidate multiple eligible refunds.",
+    "This simplifies post-refund VAT documentation, which matters for finance teams that manage marketplace refunds."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-marketplace-vat-credit-notes/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "c6c083d8",
+   "key": "https://mc.merill.net/message/MC1552503",
+   "time": "2026-11-14T03:38:06.000Z",
+   "seen": "2026-11-14T18:38:28.597Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1552503: Copilot Studio - Credit visibility in run view & monitor in workflows",
+   "summary": "We are announcing Copilot Credit visibility in run view and monitors in workflows in Copilot Studio. This feature reached general availability on November 11, 2026. How does this affect me? Makers will now be able to see how many Copilot Credits each workflow run consumes directly from the workflow designer. This allows makers to predict and control the cost of automation before scaling it to production, and to quickly identify which steps are driving consumption. This feature brings the followi...",
+   "lines": [
+    "Microsoft Copilot Studio now shows Copilot Credit visibility in workflow run views and monitors.",
+    "The feature reached general availability on November 11, 2026.",
+    "Makers can see how many Copilot Credits each workflow run consumes from the workflow designer and identify which steps drive consumption.",
+    "This helps makers predict and control automation cost before scaling workflows to production."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1552503"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "e595e8e0",
+   "key": "https://mc.merill.net/message/MC1450128",
+   "time": "2026-11-14T00:35:18.000Z",
+   "seen": "2026-11-14T18:38:28.597Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1450128: Microsoft Purview: Adaptive scopes add lifecycle status evaluation controls for recipients and site owners",
+   "summary": "Microsoft Purview is updating adaptive scopes to evaluate only active recipients and site owners by default, with options to include inactive or soft-deleted ones. This includes ISO 8601 duration support in queries. Rollout starts December 2026 (preview) and April 2027 (general availability). No immediate action required.",
+   "lines": [
+    "Microsoft Purview is updating adaptive scopes to evaluate only active recipients and site owners by default.",
+    "Options are available to include inactive or soft-deleted recipients and site owners, and ISO 8601 duration support is added to queries.",
+    "Rollout starts December 2026 in preview and April 2027 for general availability, with no immediate action required.",
+    "This changes which recipients and site owners are in scope by default, which matters for compliance and governance teams."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1450128"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "9f877116",
+   "key": "https://medianama.com/2026/11/223-microsoft-365-applications-global-outage",
+   "time": "2026-11-13T09:57:50.000Z",
+   "seen": "2026-11-14T18:38:28.597Z",
+   "kind": "outage",
+   "tier": 2,
+   "headline": "Microsoft 365 applications hit by global outage for over 10 hours",
+   "summary": "While Microsoft said the outage happened because a number of servers had become unexpectedly unavailable, straining the remaining infrastructure, it also ascertained that it wasn't aware of any malicious activity was behind it. The post Microsoft 365 applications hit by global outage for over 10 hours appeared first on MEDIANAMA .",
+   "lines": [
+    "Reported by MediaNama: Microsoft 365 applications were hit by a global outage lasting over 10 hours.",
+    "Microsoft said a number of servers became unexpectedly unavailable, straining the remaining infrastructure.",
+    "Microsoft said it was not aware of any malicious activity behind the outage.",
+    "For IT teams, the outage underscores the need for continuity plans for cloud productivity services."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "MediaNama",
+    "url": "https://www.medianama.com/2026/11/223-microsoft-365-applications-global-outage/"
+   },
+   "sourceId": "medianama",
+   "reported": true,
+   "also": [
+    "TechCrunch",
+    "GSMArena news"
+   ],
+   "post": "microsoft-365-outage-november-2026-root-cause-it-admin-lessons",
+   "device": null,
+   "ai": null,
+   "families": [
+    "microsoft"
+   ],
+   "score": 11,
+   "story": "outage:microsoft"
+  }
+ ],
+ "description": "8 technology updates from official sources, updated hourly: Microsoft 365 applications hit by global outage for over 10 hours; MC1552397: Microsoft SharePoint: Resources web part and Announcements capabilities expand to all sites; MC1552389: Microsoft 365 Copilot: Workforce Intelligence plugin avail"
+}

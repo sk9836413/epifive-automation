@@ -2,7 +2,7 @@
  "date": "2026-11-14",
  "title": "Tech news today, 14 November 2026",
  "published": "2026-11-14T18:02:12.270Z",
- "updated": "2026-11-14T18:02:12.270Z",
+ "updated": "2026-11-14T18:38:28.597Z",
  "items": [
   {
    "id": "8f56716a",
@@ -308,7 +308,7 @@
    "time": "2026-11-13T23:48:40.000Z",
    "seen": "2026-11-14T18:02:12.270Z",
    "kind": "retirement",
-   "tier": 2,
+   "tier": 1,
    "headline": "MC1552394: Microsoft Viva Engage: Retirement of Teams town hall event creation",
    "summary": "Starting December 7, 2026, users cannot create Teams town hall events from Viva Engage; previously scheduled events will continue. Organizers must use the new Events experience in Viva Engage or Microsoft Teams. Organizations should inform teams and update documentation accordingly before this date.",
    "lines": [
@@ -1042,5 +1042,5 @@
    "story": null
   }
  ],
- "description": "37 technology updates from official sources, updated hourly: Users may be unable to access or perform several actions in Microsoft 365 services; Microsoft 365 applications hit by global outage for over 10 hours; Introducing ChatGPT Wallet."
+ "description": "36 technology updates from official sources, updated hourly: Users may be unable to access or perform several actions in Microsoft 365 services; MC1552394: Microsoft Viva Engage: Retirement of Teams town hall event creation; Introducing ChatGPT Wallet."
 }

@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-14T18:02:12.270Z",
+ "lastScan": "2026-11-14T18:38:28.597Z",
  "seen": {
   "https://openai.com/index/gilbert-tobin-sam-nickless": {
    "title": "Gilbert + Tobin rethinks the business of law with AI",
@@ -3359,8 +3359,12 @@
     "-3 corporate/announcement \"event\"",
     "+13 M365 retirement due in 23 days"
    ],
-   "status": "queued",
-   "hash": "4b9133f6"
+   "status": "writing",
+   "hash": "4b9133f6",
+   "kind": "new",
+   "extra": false,
+   "taskAt": "2026-11-14T18:38:28.597Z",
+   "attempts": 1
   },
   "https://mc.merill.net/message/MC1552392": {
    "title": "MC1552392: Microsoft Teams: Automatic recording indicator for call queue calls on Mobile",
