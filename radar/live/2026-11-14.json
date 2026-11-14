@@ -1,0 +1,1078 @@
+{
+ "date": "2026-11-14",
+ "title": "Tech news today, 14 November 2026",
+ "published": "2026-11-14T18:02:12.270Z",
+ "updated": "2026-11-14T18:02:12.270Z",
+ "items": [
+  {
+   "id": "8f56716a",
+   "key": "https://status.cloud.microsoft/#2026-11-14-users-may-be-unable-to-access-or-perform-several-actions-in-",
+   "time": "2026-11-14T03:51:29.300Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "outage",
+   "tier": 1,
+   "headline": "Users may be unable to access or perform several actions in Microsoft 365 services",
+   "summary": "User impact: Users may have been unable to access or perform several actions in Microsoft 365 services. Final status: We've confirmed that the services across the previously affected environments have fully recovered and the backlog of email messages has been processed, thus this issue is remediated. Start time: Thursday, November 12, 2026, at 10:05 AM UTC End time: Friday, November 13, 2026, at 4:10 PM UTC This is the final update for the event.",
+   "lines": [
+    "Users may have been unable to access or perform several actions in Microsoft 365 services.",
+    "The issue started November 12, 2026, at 10:05 AM UTC and ended November 13, 2026, at 4:10 PM UTC.",
+    "Microsoft confirmed that services in the previously affected environments have fully recovered and the email backlog has been processed."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 consumer status (status.cloud.microsoft)",
+    "url": "https://status.cloud.microsoft/#2026-11-14-users-may-be-unable-to-access-or-perform-several-actions-in-"
+   },
+   "sourceId": "status-m365-consumer",
+   "reported": false,
+   "also": [],
+   "post": "microsoft-365-outage-november-2026-what-to-do",
+   "device": null,
+   "ai": null,
+   "families": [
+    "microsoft"
+   ],
+   "score": 11,
+   "story": "outage:microsoft:2026-11-14"
+  },
+  {
+   "id": "d2de5a6f",
+   "key": "https://openai.com/index/introducing-chatgpt-wallet",
+   "time": "2026-11-13T15:00:00.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Introducing ChatGPT Wallet",
+   "summary": "Introducing ChatGPT Wallet, a secure way for agents in ChatGPT Work, Codex, and dots to complete purchases with user approval and existing card protections.",
+   "lines": [
+    "OpenAI introduced ChatGPT Wallet, which lets agents in ChatGPT Work, Codex, and dots complete purchases.",
+    "Purchases require user approval and are covered by existing card protections.",
+    "Business users planning to use agent-driven purchasing can review how approvals and card protections apply."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "OpenAI News",
+    "url": "https://openai.com/index/introducing-chatgpt-wallet"
+   },
+   "sourceId": "openai-news",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 9,
+   "story": null
+  },
+  {
+   "id": "112ec8b4",
+   "key": "https://blogs.windows.com/windows-insider/2026/11/13/announcing-new-builds-for-13-november-2026",
+   "time": "2026-11-13T18:05:09.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Announcing new builds for 13 November 2026",
+   "summary": "Hello Windows Insiders, Today, we’re releasing new Windows 11 Insider Preview builds to the Beta (26H1), Experimental (26H1) and Experimental (Future Platforms) channels only. We will provide updates on the regular Beta and Experimental channels n The post Announcing new builds for 13 November 2026 appeared first on Windows Blog .",
+   "lines": [
+    "Microsoft released new Windows 11 Insider Preview builds to the Beta (26H1), Experimental (26H1), and Experimental (Future Platforms) channels only.",
+    "Microsoft said it will provide updates on the regular Beta and Experimental channels.",
+    "IT teams testing Windows Insider builds should note which channels received this release."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Windows Blog",
+    "url": "https://blogs.windows.com/windows-insider/2026/11/13/announcing-new-builds-for-13-november-2026/"
+   },
+   "sourceId": "windows-blog",
+   "reported": false,
+   "also": [
+    "windows-insider"
+   ],
+   "post": "microsoft-365-outage-november-2026-what-to-do",
+   "device": null,
+   "ai": null,
+   "score": 7,
+   "story": null
+  },
+  {
+   "id": "40de8a2f",
+   "key": "https://mc.merill.net/message/MC1461529",
+   "time": "2026-11-14T01:05:15.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "retirement",
+   "tier": 2,
+   "headline": "MC1461529: Release Planner Retirement: D365, Power Platform, and Dataverse Move to AI at Work",
+   "summary": "Release Planner is now retired. To stay informed about upcoming capabilities and prepare your organization for feature rollout and adoption, use the resources shared below. To view product availability for Dynamics 365, Power Platform and Copilot Studio, visit the new Learn page at https://aka.ms/d365-product-availability. Starting this fall, Dynamics 365, Power Platform, and Dataverse roadmap content is joining the AI at Work roadmap, giving customers a single destination to discover upcoming c...",
+   "lines": [
+    "Microsoft has retired Release Planner.",
+    "Starting this fall, Dynamics 365, Power Platform, and Dataverse roadmap content moves to the AI at Work roadmap.",
+    "A new Learn page provides product availability for Dynamics 365, Power Platform, and Copilot Studio."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1461529"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 7,
+   "story": null
+  },
+  {
+   "id": "be02f5ea",
+   "key": "https://github.blog/changelog/2026-11-13-gemini-4-hydrogen-in-github-copilot",
+   "time": "2026-11-13T18:23:48.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "ai-model",
+   "tier": 2,
+   "headline": "Gemini 4 Hydrogen in GitHub Copilot",
+   "summary": "Gemini 4 Hydrogen, Google’s latest Flash model, is now generally available in GitHub Copilot. It is designed for fast, efficient agentic coding, tool use, and multistep workflows, with improved instruction… The post Gemini 4 Hydrogen in GitHub Copilot appeared first on The GitHub Blog .",
+   "lines": [
+    "Gemini 4 Hydrogen, Google's latest Flash model, is now generally available in GitHub Copilot.",
+    "The model is designed for fast, efficient agentic coding, tool use, and multistep workflows.",
+    "Developers and IT teams managing GitHub Copilot can evaluate the model for agentic coding tasks."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "GitHub Changelog",
+    "url": "https://github.blog/changelog/2026-11-13-gemini-4-hydrogen-in-github-copilot"
+   },
+   "sourceId": "github-changelog",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": {
+    "model": "Gemini 4 Hydrogen",
+    "kind": "release"
+   },
+   "score": 6,
+   "story": "ai:gemini 4 hydrogen:release"
+  },
+  {
+   "id": "e7bcd85d",
+   "key": "https://mc.merill.net/message/MC1551897",
+   "time": "2026-11-13T18:07:58.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "retirement",
+   "tier": 2,
+   "headline": "MC1551897: 60-Day Reminder: Windows 10 Enterprise LTSC 2021 will reach end of updates on January 13, 2027",
+   "summary": "On January 13, 2027, Windows 10 Enterprise LTSC 2021 will reach the end of mainstream support. The January 2027 Windows security update will be the last update provided during mainstream support. After that date, monthly security updates will continue only for Windows 10 Enterprise LTSC 2021 devices enrolled in Extended Security Updates (ESU). To help keep your devices protected and supported, we recommend updating to the latest Long-Term Servicing Channel release, Windows 11 Enterprise LTSC 202...",
+   "lines": [
+    "On January 13, 2027, Windows 10 Enterprise LTSC 2021 reaches the end of mainstream support.",
+    "The January 2027 Windows security update is the last update provided during mainstream support.",
+    "After that date, monthly security updates continue only for devices enrolled in Extended Security Updates (ESU). Microsoft recommends updating to the latest Long-Term Servicing Channel release."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1551897"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null
+  },
+  {
+   "id": "9b9cc2bd",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/kiro-grok-4-7-aws-govcloud-us",
+   "time": "2026-11-13T13:13:00.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "ai-model",
+   "tier": 2,
+   "headline": "Grok 4.7 now available on Kiro in AWS GovCloud (US)",
+   "summary": "A new model is now available in the Kiro IDE and CLI for the AWS GovCloud (US) Regions. Grok 4.7 is SpaceXSI's most capable model for coding and knowledge work. It's built to stay focused through hard tasks that run for hours, and it checks its work before moving on. Compared with Grok 4.6, it plans and recovers from errors more reliably in repo-scale coding work. Grok 4.7 is available with experimental support and a 500K context window. Requests up to 200K tokens use a 2.7x credit multiplier, and requests over 200K tokens are billed at 5.4x. Kiro administrators control which models are available to their users, so organizations can align model access with their internal policies. Ensure you",
+   "lines": [
+    "Grok 4.7 is now available in the Kiro IDE and CLI for the AWS GovCloud (US) Regions, with experimental support.",
+    "The model has a 500K context window. Requests up to 200K tokens use a 2.7x credit multiplier, and requests over 200K tokens are billed at 5.4x.",
+    "Kiro administrators control which models their users can access, so organizations can align model access with internal policies."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/kiro-grok-4-7-aws-govcloud-us/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": {
+    "model": "Grok 4.7",
+    "kind": "release"
+   },
+   "score": 6,
+   "story": "ai:grok 4.7:release"
+  },
+  {
+   "id": "f8b94073",
+   "key": "https://blog.google/innovation-and-ai/products/gemini-app/google-wallet-gemini-app",
+   "time": "2026-11-13T17:00:00.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Connect Google Wallet to Gemini for personal finance insights",
+   "summary": "All Gemini app users in the U.S. can connect Google Wallet to get responses informed by their spending habits.",
+   "lines": [
+    "Google added the ability to connect Google Wallet to the Gemini app.",
+    "All Gemini app users in the U.S. can connect Google Wallet to get responses informed by their spending habits."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google: Gemini app blog",
+    "url": "https://blog.google/innovation-and-ai/products/gemini-app/google-wallet-gemini-app/"
+   },
+   "sourceId": "gemini-blog",
+   "reported": false,
+   "also": [
+    "google-keyword"
+   ],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "912d29c6",
+   "key": "https://apple.com/newsroom/2026/11/apple-homeview-available-today",
+   "time": "2026-11-13T13:59:07.218Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Apple HomeView available today",
+   "summary": "Customers can now purchase Apple HomeView and experience a new way to enjoy entertainment, stay connected, and manage their home.",
+   "lines": [
+    "Customers can now purchase Apple HomeView.",
+    "Apple describes HomeView as a way to enjoy entertainment, stay connected, and manage the home."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Apple Newsroom",
+    "url": "https://www.apple.com/newsroom/2026/11/apple-homeview-available-today/"
+   },
+   "sourceId": "apple-newsroom",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "20c81dbd",
+   "key": "https://github.blog/changelog/2026-11-13-upcoming-deprecation-of-selected-github-copilot-models-in-december",
+   "time": "2026-11-13T20:40:05.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "retirement",
+   "tier": 2,
+   "headline": "Upcoming deprecation of selected GitHub Copilot models in December",
+   "summary": "We will deprecate the following models across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on December 14, 2026: Model Deprecation date… The post Upcoming deprecation of selected GitHub Copilot models in December appeared first on The GitHub Blog .",
+   "lines": [
+    "GitHub will deprecate selected GitHub Copilot models on December 14, 2026.",
+    "The deprecation applies across all GitHub Copilot experiences, including Copilot Chat, inline edits, ask and agent modes, and code completions.",
+    "Teams that rely on the affected models should plan for the change before that date."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "GitHub Changelog",
+    "url": "https://github.blog/changelog/2026-11-13-upcoming-deprecation-of-selected-github-copilot-models-in-december"
+   },
+   "sourceId": "github-changelog",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": "github-copilot-model-deprecation-december-2026",
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "94d93fe2",
+   "key": "https://mc.merill.net/message/MC1552394",
+   "time": "2026-11-13T23:48:40.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "retirement",
+   "tier": 2,
+   "headline": "MC1552394: Microsoft Viva Engage: Retirement of Teams town hall event creation",
+   "summary": "Starting December 7, 2026, users cannot create Teams town hall events from Viva Engage; previously scheduled events will continue. Organizers must use the new Events experience in Viva Engage or Microsoft Teams. Organizations should inform teams and update documentation accordingly before this date.",
+   "lines": [
+    "Starting December 7, 2026, users cannot create Teams town hall events from Viva Engage. Previously scheduled events will continue.",
+    "Organizers must use the new Events experience in Viva Engage or Microsoft Teams.",
+    "Organizations should inform teams and update documentation before December 7, 2026."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1552394"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "d8bcc0c0",
+   "key": "https://mc.merill.net/message/MC1551898",
+   "time": "2026-11-13T18:08:01.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "MC1551898: Out-of-band update released to address Windows licensing and activation errors",
+   "summary": "Microsoft has released a new Windows out-of-band (OOB) update today, November 13, 2026, to address an issue that affects a limited number of enterprise devices after installing the November 2026 Windows security update. Certain Windows licensing and activation operations using the Software Licensing Management Tool (SLMGR) might fail with error 0x80041008 (Invalid parameter). This primarily affects organizations using slmgr.vbs commands or automated processes to configure Key Management Service...",
+   "lines": [
+    "Microsoft released an out-of-band Windows update on November 13, 2026, to address Windows licensing and activation errors.",
+    "The issue affects a limited number of enterprise devices after the November 2026 Windows security update is installed.",
+    "Certain SLMGR licensing and activation operations might fail with error 0x80041008 (Invalid parameter), mainly for organizations using slmgr.vbs commands or automated processes."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1551898"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "e6bcd6ca",
+   "key": "https://mc.merill.net/message/MC1551896",
+   "time": "2026-11-13T18:07:54.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "retirement",
+   "tier": 2,
+   "headline": "MC1551896: 60-Day Reminder: Windows Server 2016 reaches the end of extended support on January 13, 2027",
+   "summary": "On January 13, 2027, all editions of Windows Server 2016 will reach the end of extended support. The January 2027 Windows security update will be the last update provided during extended support. After that date, monthly security updates will continue only for Windows Server 2016 devices enrolled in Extended Security Updates (ESU). Support for Windows Server 2016 Essentials features, including Remote Web Access and related Essentials-specific functionality, also ends on January 13, 2027. Any Win...",
+   "lines": [
+    "On January 13, 2027, all editions of Windows Server 2016 reach the end of extended support.",
+    "The January 2027 Windows security update is the last update provided during extended support. After that date, monthly security updates continue only for devices enrolled in ESU.",
+    "Support for Windows Server 2016 Essentials features, including Remote Web Access, also ends on January 13, 2027."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1551896"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "264e3d7d",
+   "key": "https://blog.cloudflare.com/spend-management",
+   "time": "2026-11-13T14:00:00.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Introducing Spend Management: Spending limits and alerts for Cloudflare",
+   "summary": "Spend Management adds opt-in spending caps for Cloudflare Workers and Durable Objects, and more products soon. Here is how we built the metering pipeline that turns usage into runtime decisions.",
+   "lines": [
+    "Cloudflare introduced Spend Management, which adds opt-in spending caps for Cloudflare Workers and Durable Objects.",
+    "Cloudflare said more products will be supported soon."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Cloudflare Blog",
+    "url": "https://blog.cloudflare.com/spend-management/"
+   },
+   "sourceId": "cloudflare-blog",
+   "sourceMax": 4,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "d3fc0ecf",
+   "key": "https://azure.microsoft.com/updates?id=578818",
+   "time": "2026-11-13T19:54:45.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "retirement",
+   "tier": 2,
+   "headline": "Retirement: Azure Data Share will be retired on November 12, 2029",
+   "summary": "Azure Data Share will retire on November 12, 2029. Before that date, transition your data sharing workloads to Microsoft Fabric, which offers External data sharing, Cross tenant delegated shortcuts and IQ share or an appropriate data-source-specific shari",
+   "lines": [
+    "Azure Data Share will retire on November 12, 2029.",
+    "Microsoft recommends moving data sharing workloads to Microsoft Fabric before that date, which offers External data sharing and Cross tenant delegated shortcuts."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Azure Updates",
+    "url": "https://azure.microsoft.com/updates?id=578818"
+   },
+   "sourceId": "azure-updates",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "4bd01a82",
+   "key": "https://github.blog/changelog/2026-11-13-github-enterprise-server-support-in-the-github-copilot-app",
+   "time": "2026-11-13T18:27:13.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "GitHub Enterprise Server support in the GitHub Copilot app",
+   "summary": "You can now bring your work on GitHub Enterprise Server (GHES) into the GitHub Copilot app. Add your GHES account to work with remote repositories, issues, and pull requests. This… The post GitHub Enterprise Server support in the GitHub Copilot app appeared first on The GitHub Blog .",
+   "lines": [
+    "GitHub Enterprise Server (GHES) work can now be used in the GitHub Copilot app.",
+    "Users can add a GHES account to work with remote repositories, issues, and pull requests."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "GitHub Changelog",
+    "url": "https://github.blog/changelog/2026-11-13-github-enterprise-server-support-in-the-github-copilot-app"
+   },
+   "sourceId": "github-changelog",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "dd979c32",
+   "key": "https://github.blog/changelog/2026-11-13-manage-ai-scan-for-repositories-using-the-rest-api",
+   "time": "2026-11-13T12:22:41.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Manage AI Scan for repositories using the REST API",
+   "summary": "You can now turn GitHub code scanning’s AI Scan for repositories on or off with the REST API at the organization and repository levels. This public preview adds a repository_scan… The post Manage AI Scan for repositories using the REST API appeared first on The GitHub Blog .",
+   "lines": [
+    "GitHub added REST API support to turn AI Scan for repositories on or off in code scanning.",
+    "The control is available at the organization and repository levels and is in public preview."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "GitHub Changelog",
+    "url": "https://github.blog/changelog/2026-11-13-manage-ai-scan-for-repositories-using-the-rest-api"
+   },
+   "sourceId": "github-changelog",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "94a5a1d3",
+   "key": "https://cloud.google.com/blog/products/data-analytics/enterprise-ai-agent-observability-with-bigquery-and-looker",
+   "time": "2026-11-13T17:00:00.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "New AI agent observability and governance across BigQuery and Looker",
+   "summary": "As enterprises move AI agents from experimental prototypes into production, data and platform teams are discovering that deploying an agent is only half the battle — you also need to see how it reasons, which data it touches, and what it costs to run. Today, we are announcing expanded AI agent observability and evaluation capabilities across Google Data Cloud, giving you unified visibility into your first-party (1P) data agents in BigQuery and Looker as well as custom third-party (3P) agents built with agent development frameworks such as Agent Development Kit (ADK) or LangGraph. Putting conversational and autonomous agents into production requires solving three operational challenges: traci",
+   "lines": [
+    "Google Cloud announced expanded AI agent observability and evaluation capabilities across Google Data Cloud.",
+    "The capabilities cover first-party data agents in BigQuery and Looker and custom third-party agents built with Agent Development Kit (ADK) or LangGraph.",
+    "Data and platform teams can see how agents reason, which data they touch, and what they cost to run."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google Cloud Blog",
+    "url": "https://cloud.google.com/blog/products/data-analytics/enterprise-ai-agent-observability-with-bigquery-and-looker/"
+   },
+   "sourceId": "gcloud-blog",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "e0c3e998",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/aurora-postgresql-cloudformation",
+   "time": "2026-11-13T16:00:00.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Aurora PostgreSQL with express configuration now supported in CloudFormation",
+   "summary": "Aurora PostgreSQL now supports express configuration in AWS CloudFormation for infrastructure as code deployment. This launch enables you to automate the infrastructure deployment of your Aurora clusters through CloudFormation templates while benefiting from the speed of express configuration. Aurora PostgreSQL clusters created with express configuration allow you to create and query an Aurora serverless database in seconds. The new withExpressConfiguration createOnly property on the AWS::RDS::DBCluster resource creates both the cluster and its primary database instance from one property declaration. You don't need to model or manage the instance separately in your CloudFormation template. T",
+   "lines": [
+    "Aurora PostgreSQL now supports express configuration in AWS CloudFormation.",
+    "The new withExpressConfiguration createOnly property on the AWS::RDS::DBCluster resource creates the cluster and its primary database instance from one property declaration.",
+    "Teams using infrastructure as code do not need to model or manage the instance separately in their templates."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/aurora-postgresql-cloudformation/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "1db6dc22",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/security-hub-cspm-org-policies",
+   "time": "2026-11-13T08:00:00.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "AWS Security Hub CSPM now supports centralized configuration with AWS Organizations declarative policies",
+   "summary": "AWS Security Hub CSPM now supports AWS Organizations declarative policies. You can use them to enable Security Hub CSPM across all accounts and Regions in your organization and to define which security standards and controls are enabled. Policies can apply broadly to every account and Region, or target specific account and Region combinations. Declarative policies help keep each account's configuration aligned with its attached policy, which helps prevent configuration drift. You can also apply them automatically to new accounts, so each account starts with a baseline configuration as soon as it's created. Declarative policies are now the recommended way to manage Security Hub CSPM across an",
+   "lines": [
+    "AWS Security Hub CSPM now supports AWS Organizations declarative policies.",
+    "The policies can enable Security Hub CSPM across all accounts and Regions and define which security standards and controls are enabled.",
+    "Policies can apply automatically to new accounts and help keep each account's configuration aligned with its attached policy."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/security-hub-cspm-org-policies/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "61572398",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/bedrock-agentcore-oauth2-discovery",
+   "time": "2026-11-13T08:00:00.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Amazon Bedrock AgentCore Identity now supports OAuth 2.0 discovery URLs",
+   "summary": "Amazon Bedrock AgentCore Identity now supports OAuth 2.0 authorization server discovery URLs for both inbound JWT authorization and outbound OAuth credential providers. This update enables developers to configure AgentCore with OAuth 2.0 authorization servers that do not use OpenID Connect (OIDC). Previously, AgentCore Identity accepted only OIDC discovery URLs. Authorization servers that implement OAuth 2.0 without OIDC publish their metadata at a different well-known path and could not be used with AgentCore. With this launch, you can use either OIDC or OAuth 2.0 authorization server discovery URLs when you configure a JWT authorizer or a custom OAuth credential provider on AgentCore. This",
+   "lines": [
+    "Amazon Bedrock AgentCore Identity now supports OAuth 2.0 authorization server discovery URLs for inbound JWT authorization and outbound OAuth credential providers.",
+    "Previously, AgentCore Identity accepted only OIDC discovery URLs.",
+    "Authorization servers that implement OAuth 2.0 without OIDC can now be used with AgentCore."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/bedrock-agentcore-oauth2-discovery/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "55ea61d8",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/secrets-manager-cross-account",
+   "time": "2026-11-13T08:00:00.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "AWS Secrets Manager now supports cross-account replication",
+   "summary": "AWS Secrets Manager now supports cross-account replication, enabling you to maintain a synchronized copy of a primary secret in a secondary AWS account for cross-account access, backup, and disaster recovery. Cross-account replication extends the existing multi-Region replication capability across account boundaries. With cross-account replication, platform or security teams can own and rotate a secret centrally, and each consuming account gets a local, always-current copy without any shared KMS keys or cross-account secret policies. The replica secret is a full, independent resource, encrypted with a customer managed KMS key owned by the replica account. Secrets Manager updates it automatic",
+   "lines": [
+    "AWS Secrets Manager now supports cross-account replication of a primary secret into a secondary AWS account.",
+    "The replica is a full, independent resource encrypted with a customer managed KMS key owned by the replica account, with no shared KMS keys or cross-account secret policies required.",
+    "Platform or security teams can rotate a secret centrally while each consuming account keeps a local, current copy."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/secrets-manager-cross-account/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "5f4ce18a",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-studio-layout-customization",
+   "time": "2026-11-13T08:00:00.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Amazon SageMaker Unified Studio now supports layout customization for designations",
+   "summary": "Amazon SageMaker Unified Studio now supports layout customization, a new capability that gives domain administrators control over which tools and left navigation items project members see based on their designation. Organizations with data engineering, analytics, and machine learning teams on a single platform can configure a layout within each designation definition, and that layout applies across every project in the domain without per-project configuration. Previously, all project members saw the same interface regardless of their role, creating confusion and potential governance issues. With layout customization, administrators define a layout as part of a designation that specifies whic",
+   "lines": [
+    "Amazon SageMaker Unified Studio now supports layout customization for designations.",
+    "Domain administrators can set which tools and left navigation items project members see based on their designation, and the layout applies across every project in the domain.",
+    "Previously, all project members saw the same interface regardless of their role."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-studio-layout-customization/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "9f877116",
+   "key": "https://medianama.com/2026/11/223-microsoft-365-applications-global-outage",
+   "time": "2026-11-13T09:57:50.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "outage",
+   "tier": 2,
+   "headline": "Microsoft 365 applications hit by global outage for over 10 hours",
+   "summary": "While Microsoft said the outage happened because a number of servers had become unexpectedly unavailable, straining the remaining infrastructure, it also ascertained that it wasn't aware of any malicious activity was behind it. The post Microsoft 365 applications hit by global outage for over 10 hours appeared first on MEDIANAMA .",
+   "lines": [
+    "Reported by MediaNama: Microsoft 365 applications were hit by a global outage lasting over 10 hours.",
+    "Microsoft said the outage happened because a number of servers became unexpectedly unavailable, straining the remaining infrastructure.",
+    "Microsoft said it was not aware of any malicious activity behind the outage."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "MediaNama",
+    "url": "https://www.medianama.com/2026/11/223-microsoft-365-applications-global-outage/"
+   },
+   "sourceId": "medianama",
+   "reported": true,
+   "also": [
+    "TechCrunch",
+    "GSMArena news"
+   ],
+   "post": "microsoft-365-outage-november-2026-root-cause-it-admin-lessons",
+   "device": null,
+   "ai": null,
+   "families": [
+    "microsoft"
+   ],
+   "score": 11,
+   "story": "outage:microsoft:2026-11-13"
+  },
+  {
+   "id": "f55a6eca",
+   "key": "https://bleepingcomputer.com/news/cryptocurrency/trezor-confirms-crypto-stealing-implants-in-three-wallets-releases-fix",
+   "time": "2026-11-13T19:38:36.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Trezor confirms crypto-stealing implants in three wallets, releases fix",
+   "summary": "Cryptocurrency hardware wallet maker Trezor has confirmed that three Safe 5 devices sold by Southeast Asian reseller CryptoBilis contained malicious hardware implants designed to steal wallet recovery phrases and send them to attackers over cellular networks. [...]",
+   "lines": [
+    "Reported by BleepingComputer: Trezor confirmed that three Safe 5 devices sold by Southeast Asian reseller CryptoBilis contained malicious hardware implants.",
+    "The implants were designed to steal wallet recovery phrases and send them to attackers over cellular networks.",
+    "Trezor released a fix."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/cryptocurrency/trezor-confirms-crypto-stealing-implants-in-three-wallets-releases-fix/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [
+    "The Hacker News"
+   ],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 7,
+   "story": null
+  },
+  {
+   "id": "63c765e4",
+   "key": "https://gsmarena.com/samsung_galaxy_a18_4g_singapore_price_sale_date-news-75483.php",
+   "time": "2026-11-14T08:31:02.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "device",
+   "tier": 2,
+   "headline": "Samsung Galaxy A18 4G launched in Singapore, but with a different chip",
+   "summary": "The Samsung Galaxy A18 4G, unveiled in Europe in September, has debuted in Singapore, but with a different chip under the hood. The Galaxy A18 4G available in Europe is powered by Samsung's Exynos 1610 SoC, while the Singapore model uses MediaTek's Helio G99+ SoC. Aside from having different chips, the European and Singaporean Galaxy A18 4G share the same hardware, which includes a 6.7\" 90Hz FullHD+ Super AMOLED display, a 5,000 mAh battery with 25W charging, an IP64 rating, and a side-mounted fingerprint scanner. The Galaxy A18 4G features a 13MP selfie camera on the front and a...",
+   "lines": [
+    "The Samsung Galaxy A18 4G, unveiled in Europe in September, has debuted in Singapore, but with a different chip under the hood.",
+    "The Galaxy A18 4G available in Europe is powered by Samsung's Exynos 1610 SoC, while the Singapore model uses MediaTek's Helio G99+ SoC.",
+    "Reported by GSMArena news; not yet confirmed on an official page."
+   ],
+   "linesBy": "template",
+   "source": {
+    "name": "GSMArena news",
+    "url": "https://www.gsmarena.com/samsung_galaxy_a18_4g_singapore_price_sale_date-news-75483.php"
+   },
+   "sourceId": "gsmarena-news",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": {
+    "model": "Samsung Galaxy A18 4G",
+    "brand": "Samsung",
+    "category": "phone",
+    "key": "samsung galaxy a18 4g"
+   },
+   "ai": null,
+   "score": 7,
+   "story": "device:samsung galaxy a18 4g"
+  },
+  {
+   "id": "feb4af0c",
+   "key": "https://thehackernews.com/2026/11/postgresql-patches-52-flaws-including.html",
+   "time": "2026-11-13T16:53:08.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "PostgreSQL Patches 52 Flaws, Including 22-Year-Old Bug Enabling Authenticated RCE",
+   "summary": "A type confusion flaw in PostgreSQL lets a database user who can create objects run code on the server. Updates released yesterday fix it, along with 51 other security flaws. Full protection from this flaw also requires rebuilding any C-language extensions installed on the server. The flaw, tracked as CVE-2026-6460, has a CVSS score of 8.8. Any code run this way has the rights of the operating",
+   "lines": [
+    "A type confusion flaw in PostgreSQL lets a database user who can create objects run code on the server.",
+    "Reported by The Hacker News; not yet confirmed on an official page."
+   ],
+   "linesBy": "template",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/postgresql-patches-52-flaws-including.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "cf11af63",
+   "key": "https://thehackernews.com/2026/11/silentair-hijacks-asian-telecom.html",
+   "time": "2026-11-13T11:10:40.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "SilentAir Hijacks Asian Telecom Networks to Intercept SMS 2FA Codes and Spy on Taiwanese Users",
+   "summary": "A newly identified spying group used hacked equipment inside Asian mobile operators to intercept the calls and texts of selected people, mostly in Taiwan. Enea, a telecom and cybersecurity software company based in Stockholm, found the group's attack sources in at least six Asian countries and named it SilentAir this week. It assessed with high confidence that SilentAir is a state-level actor,",
+   "lines": [
+    "A newly identified spying group used hacked equipment inside Asian mobile operators to intercept the calls and texts of selected people, mostly in Taiwan.",
+    "Enea, a telecom and cybersecurity software company based in Stockholm, found the group's attack sources in at least six Asian countries and named it SilentAir this week.",
+    "Reported by The Hacker News; not yet confirmed on an official page."
+   ],
+   "linesBy": "template",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/silentair-hijacks-asian-telecom.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "99c6068c",
+   "key": "https://techcrunch.com/2026/11/13/uber-confirms-hackers-stole-thousands-of-drivers-license-information-in-data-breach",
+   "time": "2026-11-13T14:57:55.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Uber confirms hackers stole thousands of drivers’ license information in data breach",
+   "summary": "The ridesharing giant said drivers' license information stored by AI cloud company Fireworks AI was stolen during a security incident.",
+   "lines": [
+    "The ridesharing giant said drivers' license information stored by AI cloud company Fireworks AI was stolen during a security incident.",
+    "Reported by TechCrunch; not yet confirmed on an official page."
+   ],
+   "linesBy": "template",
+   "source": {
+    "name": "TechCrunch",
+    "url": "https://techcrunch.com/2026/11/13/uber-confirms-hackers-stole-thousands-of-drivers-license-information-in-data-breach/"
+   },
+   "sourceId": "techcrunch",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "0eca0639",
+   "key": "https://engadget.com/2316881/uber-drivers-information-stolen-in-a-third-party-hack",
+   "time": "2026-11-14T16:47:44.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Uber drivers' information stolen in a third-party hack",
+   "summary": "Uber sends warning to drivers whose information was stolen in a data breach.",
+   "lines": [
+    "Uber sends warning to drivers whose information was stolen in a data breach.",
+    "Reported by Engadget; not yet confirmed on an official page."
+   ],
+   "linesBy": "template",
+   "source": {
+    "name": "Engadget",
+    "url": "https://www.engadget.com/2316881/uber-drivers-information-stolen-in-a-third-party-hack/"
+   },
+   "sourceId": "engadget",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "11360275",
+   "key": "https://bleepingcomputer.com/news/security/cursor-confirms-security-breach-led-to-malicious-claude-code-extension",
+   "time": "2026-11-14T17:27:25.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Cursor confirms security breach led to malicious Claude Code extension",
+   "summary": "Cursor confirmed it suffered a security breach that let hackers distribute a malicious Claude Code extension through its marketplace after stealing credentials from AI infrastructure provider Fireworks AI. [...]",
+   "lines": [
+    "Cursor confirmed it suffered a security breach that let hackers distribute a malicious Claude Code extension through its marketplace after stealing credentials from AI infrastructure provider Fireworks AI. [...]",
+    "Reported by BleepingComputer; not yet confirmed on an official page."
+   ],
+   "linesBy": "template",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/cursor-confirms-security-breach-led-to-malicious-claude-code-extension/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "0278b313",
+   "key": "https://bleepingcomputer.com/news/security/check-point-gateways-hacked-via-php2shell-to-deploy-vmware-esxi-wiper",
+   "time": "2026-11-13T16:21:43.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Check Point gateways hacked via PHP2Shell to deploy VMware ESXi wiper",
+   "summary": "Vulnerable Check Point Security Gateway instances have been targeted in PHP2Shell attacks that deployed data-wiping malware on VMware ESXi hosts. [...]",
+   "lines": [
+    "Vulnerable Check Point Security Gateway instances have been targeted in PHP2Shell attacks that deployed data-wiping malware on VMware ESXi hosts. [...]",
+    "Reported by BleepingComputer; not yet confirmed on an official page."
+   ],
+   "linesBy": "template",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/check-point-gateways-hacked-via-php2shell-to-deploy-vmware-esxi-wiper/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [
+    "The Hacker News"
+   ],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "16363340",
+   "key": "https://bleepingcomputer.com/news/security/check-point-patches-zero-day-that-lets-hackers-get-root-access",
+   "time": "2026-11-13T10:44:22.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Check Point warns of zero-day flaw exploited for root access",
+   "summary": "Check Point Software has released emergency hotfixes to address a high-severity flaw that hackers have been exploiting to gain root privileges and establish persistence on vulnerable devices since late October. [...]",
+   "lines": [
+    "Check Point Software has released emergency hotfixes to address a high-severity flaw that hackers have been exploiting to gain root privileges and establish persistence on vulnerable devices since late October. [...]",
+    "Reported by BleepingComputer; not yet confirmed on an official page."
+   ],
+   "linesBy": "template",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/check-point-patches-zero-day-that-lets-hackers-get-root-access/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "9d12e24c",
+   "key": "https://thehackernews.com/2026/11/attackers-exploit-unrealircd-flaw-that.html",
+   "time": "2026-11-14T12:38:35.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Attackers Exploit UnrealIRCd Flaw That Enables Server-Level Command Injection",
+   "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added a high-severity security flaw impacting UnrealIRCd, an open-source Internet Relay Chat (IRC) server, to its Known Exploited Vulnerabilities (KEV) catalog, following reports of active exploitation. The vulnerability, tracked as CVE-2026-114713 (CVSS score: 8.6), is a case of improper neutralization of delimiters",
+   "lines": [
+    "Cybersecurity and Infrastructure Security Agency (CISA) on Friday added a high-severity security flaw impacting UnrealIRCd, an open-source Internet Relay Chat (IRC) server, to its Known Exploited Vulnerabilities (KEV) catalog, following reports of active exploitation.",
+    "Reported by The Hacker News; not yet confirmed on an official page."
+   ],
+   "linesBy": "template",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/attackers-exploit-unrealircd-flaw-that.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "7364d4e1",
+   "key": "https://thehackernews.com/2026/11/new-mior-and-skyfall-attacks-let-rogue.html",
+   "time": "2026-11-13T15:27:05.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "New Mior and Skyfall Attacks Let Rogue Cloud Hosts Steal Secrets From AMD SEV-SNP VMs",
+   "summary": "Two attacks made public this week allow a malicious host to read data inside AMD SEV-SNP-protected virtual machines (VMs), which are built to keep the server's operator out. One of them, Mior, can also modify a VM's memory and fake the signed report confirming which software it runs. Both need control of the server's hypervisor, and Mior also needs control of the server's BIOS. Researchers",
+   "lines": [
+    "Two attacks made public this week allow a malicious host to read data inside AMD SEV-SNP-protected virtual machines (VMs), which are built to keep the server's operator out.",
+    "Reported by The Hacker News; not yet confirmed on an official page."
+   ],
+   "linesBy": "template",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/new-mior-and-skyfall-attacks-let-rogue.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "78d01c64",
+   "key": "https://thehackernews.com/2026/11/fbi-says-north-korean-hackers-stole.html",
+   "time": "2026-11-13T14:28:58.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "FBI Says North Korean Hackers Stole Over $400 Million in Crypto Using Deepfake Video Calls",
+   "summary": "The U.S. Federal Bureau of Investigation (FBI) has established that threat actors tied to the Democratic People's Republic of Korea (DPRK aka North Korea) have stolen more than $400 million worth of cryptocurrency as part of a social engineering scheme codenamed FaceStealer in the last 18 months. As part of a coordinated set of actions announced by the U.S. government, the cloud-based",
+   "lines": [
+    "Federal Bureau of Investigation (FBI) has established that threat actors tied to the Democratic People's Republic of Korea (DPRK aka North Korea) have stolen more than $400 million worth of cryptocurrency as part of a social engineering scheme codenamed FaceStealer in the last 18 months.",
+    "Reported by The Hacker News; not yet confirmed on an official page."
+   ],
+   "linesBy": "template",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/fbi-says-north-korean-hackers-stole.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "02c7e643",
+   "key": "https://thehackernews.com/2026/11/operation-endgame-takes-down-gootloader.html",
+   "time": "2026-11-13T10:55:03.000Z",
+   "seen": "2026-11-14T18:02:12.270Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Operation Endgame Takes Down Gootloader, CastleRAT and StealC Servers, Seizes 6.4M Stolen Logins",
+   "summary": "An international police operation took down servers behind Gootloader, CastleRAT and StealC this week. Criminals used the three malware tools to gain access to computers, steal passwords, and launch ransomware attacks. Police also seized about 6.4 million stolen logins belonging to more than 40,000 victims, according to Germany's Federal Criminal Police Office (BKA). Gootloader is a loader:",
+   "lines": [
+    "The Hacker News: Operation Endgame Takes Down Gootloader, CastleRAT and StealC Servers, Seizes 6.4M Stolen Logins.",
+    "Reported by The Hacker News; not yet confirmed on an official page."
+   ],
+   "linesBy": "template",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/operation-endgame-takes-down-gootloader.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  }
+ ],
+ "description": "37 technology updates from official sources, updated hourly: Users may be unable to access or perform several actions in Microsoft 365 services; Microsoft 365 applications hit by global outage for over 10 hours; Introducing ChatGPT Wallet."
+}
