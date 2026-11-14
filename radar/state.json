@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-14T03:43:44.961Z",
+ "lastScan": "2026-11-14T04:43:46.301Z",
  "seen": {
   "https://openai.com/index/gilbert-tobin-sam-nickless": {
    "title": "Gilbert + Tobin rethinks the business of law with AI",
@@ -2781,12 +2781,14 @@
     "+1 retirement/migration",
     "+7 M365 retirement due in 31 days"
    ],
-   "status": "writing",
+   "status": "published",
    "hash": "f7d021ce",
    "kind": "new",
    "extra": false,
    "taskAt": "2026-11-14T03:43:44.961Z",
-   "attempts": 1
+   "attempts": 1,
+   "slug": "github-copilot-model-deprecation-december-2026",
+   "resultAt": "2026-11-14T03:52:28.418Z"
   },
   "https://github.blog/changelog/2026-11-13-github-enterprise-server-support-in-the-github-copilot-app": {
    "title": "GitHub Enterprise Server support in the GitHub Copilot app",
@@ -2948,8 +2950,8 @@
    "topic": "microsoft-365",
    "category": "outage",
    "date": "2026-11-14T00:39:14.323Z",
-   "updated": "2026-11-14T00:39:14.323Z",
-   "summary": "User impact: Users may be unable to access or perform several actions in Microsoft 365 services. Current status: We're observing sustained recovery of impacted services across the previously affected environments. We're monitoring service health metrics for an extended period to ensure no further ac",
+   "updated": "2026-11-14T03:51:29.300Z",
+   "summary": "User impact: Users may have been unable to access or perform several actions in Microsoft 365 services. Final status: We've confirmed that the services across the previously affected environments have fully recovered and the backlog of email messages has been processed, thus this issue is remediated",
    "first": "2026-11-14T01:30:25.603Z",
    "score": 11,
    "reasons": [
@@ -2959,12 +2961,16 @@
     "same outage as \"Massive Microsoft 365 outage disrupts Outlook, Teams, Copilo\"",
     "covered by /blog/microsoft-365-outage-november-2026-what-to-do"
    ],
-   "status": "update-candidate",
-   "hash": "57904333",
+   "status": "writing",
+   "hash": "dceade7b",
    "families": [
     "microsoft"
    ],
-   "post": "microsoft-365-outage-november-2026-what-to-do"
+   "post": "microsoft-365-outage-november-2026-what-to-do",
+   "kind": "update",
+   "extra": false,
+   "taskAt": "2026-11-14T04:43:46.301Z",
+   "attempts": 1
   },
   "https://microsoft.com/microsoft-365/roadmap?id=579917": {
    "title": "Dynamics 365 Project Operations: Enable caching of role prices when pricing estimates",
