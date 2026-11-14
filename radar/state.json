@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-14T09:07:55.427Z",
+ "lastScan": "2026-11-14T13:17:03.527Z",
  "seen": {
   "https://openai.com/index/gilbert-tobin-sam-nickless": {
    "title": "Gilbert + Tobin rethinks the business of law with AI",
@@ -3497,6 +3497,43 @@
    ],
    "status": "below",
    "hash": "ec5c6b35"
+  },
+  "https://techcommunity.microsoft.com/t5/intune-customer-success/support-tip-why-windows-driver-recommendations-may-vary-between/ba-p/4572700": {
+   "title": "Support tip: Why Windows driver recommendations may vary between deployment rings",
+   "link": "https://techcommunity.microsoft.com/t5/intune-customer-success/support-tip-why-windows-driver-recommendations-may-vary-between/ba-p/4572700",
+   "source": "tc-intune",
+   "topic": "security-identity",
+   "category": "launch",
+   "date": "2026-11-13T17:26:10.000Z",
+   "updated": null,
+   "summary": "By: Dorin Mardari – Sr Technical Support Engineer | Microsoft Intune Managing Windows driver updates across deployment rings might give results that seem inconsistent. You might expect the same update to behave the same way everywhere, but Windows Update evaluates updates separately for the devices ",
+   "first": "2026-11-14T13:17:03.527Z",
+   "score": 4,
+   "reasons": [
+    "+2 niche (intune, windows)",
+    "+2 launch \"arrive\""
+   ],
+   "status": "below",
+   "hash": "7ba89d2"
+  },
+  "https://mc.merill.net/message/MC1552503": {
+   "title": "MC1552503: Copilot Studio - Credit visibility in run view & monitor in workflows",
+   "link": "https://mc.merill.net/message/MC1552503",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-14T03:38:06.000Z",
+   "updated": null,
+   "summary": "We are announcing Copilot Credit visibility in run view and monitors in workflows in Copilot Studio. This feature reached general availability on November 11, 2026. How does this affect me? Makers will now be able to see how many Copilot Credits each workflow run consumes directly from the workflow ",
+   "first": "2026-11-14T13:17:03.527Z",
+   "score": 2,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 niche (copilot)",
+    "+2 launch \"general availability\""
+   ],
+   "status": "below",
+   "hash": "3a445b6b"
   }
  }
 }
