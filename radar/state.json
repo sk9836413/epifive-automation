@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-15T13:17:01.193Z",
+ "lastScan": "2026-11-15T14:16:36.653Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -3444,7 +3444,7 @@
     "+3 major platform (aws)",
     "+2 large incident (impact major, 1 service(s), multi-service/region)"
    ],
-   "status": "writing",
+   "status": "published",
    "hash": "e9ff6f18",
    "families": [
     "aws"
@@ -3452,7 +3452,9 @@
    "kind": "new",
    "extra": true,
    "taskAt": "2026-11-15T13:17:01.193Z",
-   "attempts": 1
+   "attempts": 1,
+   "slug": "aws-us-east-1-outage-november-2026-what-to-do",
+   "resultAt": "2026-11-15T13:24:45.360Z"
   }
  },
  "devices": {}

@@ -2,7 +2,7 @@
  "date": "2026-11-15",
  "title": "Tech news today, 15 November 2026",
  "published": "2026-11-14T18:38:28.597Z",
- "updated": "2026-11-15T13:17:01.193Z",
+ "updated": "2026-11-15T14:16:36.653Z",
  "items": [
   {
    "id": "4d2c00f3",
@@ -140,7 +140,7 @@
    "sourceId": "status-aws",
    "reported": false,
    "also": [],
-   "post": null,
+   "post": "aws-us-east-1-outage-november-2026-what-to-do",
    "device": null,
    "ai": null,
    "families": [
