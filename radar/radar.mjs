@@ -30,7 +30,9 @@ import {
   parseSource, normalizeUrl, scoreItem, trendBoost, searchPhrase, findCoverage, parseBacklog, hashText,
   istDate, todayCounts, mergeDuplicates, daysToDeadline, parkInBacklog, markPublished, logLine, checkFastTrack, updateSignal,
   markIncidentDuplicates, backlogLine, pickNewTask, autoVideoPlan, isRootCauseNews, statusClosed, pageDetail, sameTopic, sameIncident,
+  scoreOutage, outageFamilies, outageTerm,
 } from './lib.mjs';
+import { selectTrending } from './trending.mjs';
 import {
   BRIEF, classifyBrief, briefItem, mergeIntoDays, tier1Floor, storyKey, detectDevice, detectAiModel, findDeviceSlug, emptyDay,
   touchDay, updateIndex, linesPrompt, parseLinesAnswer, applyLines, templateLines, deviceFocus,
@@ -160,6 +162,10 @@ async function scan() {
   for (const item of merged) {
     // Aggregators and trending lists (role "signal") feed only the hourly news page, never a fast-track article.
     if (item.source.role === 'signal') continue;
+    // News aggregators (role "trending": Techmeme, Google News) feed the page's trending tier only, except a clearly-IT
+    // outage (a platform the outage guides cover), which goes through the existing outage logic as from any news outlet.
+    const trendingSource = item.source.role === 'trending';
+    if (trendingSource && !itOutage(item)) continue;
     const key = normalizeUrl(item.link);
     const seen = state.seen[key];
     const hash = hashText(`${item.title} ${item.summary}`);
@@ -176,7 +182,9 @@ async function scan() {
       }
       continue;
     }
-    const s = scoreItem(item, item.source, { now, freshHours: S.freshHours, threshold: S.threshold });
+    const s = trendingSource
+      ? scoreOutage(item, { ...item.source, weight: item.source.outageWeight ?? 0 }, { now, freshHours: S.freshHours })
+      : scoreItem(item, item.source, { now, freshHours: S.freshHours, threshold: S.threshold });
     if (s.reject && key !== forceUrl) continue; // stale or rumour: never stored, re-checked for free next run
     // Tier-1 floors (brief.mjs): flagship device or AI model, big AI price drop, AI model retirement due soon.
     const floor = tier1Floor(item, item.source, { score: s.score, threshold: S.threshold, daysToDeadline: daysToDeadline(`${item.title} ${item.summary}`, now) });
@@ -306,7 +314,7 @@ async function scan() {
   if (parks.length) task = { ...(task ?? { kind: 'none' }), parks };
 
   // 7b. Tier 2 (the hourly "Tech news today" page) and Tier 3 (device launches for the device portal).
-  const brief = await buildBrief({ merged, state, site, siteDir: opt('site', '.'), now, today, task, dryRun, errors });
+  const brief = await buildBrief({ merged, fetched, state, site, siteDir: opt('site', '.'), now, today, task, dryRun, errors });
 
   // 8. Log, save, hand over.
   const ist = new Date(now + 5.5 * 3600e3).toISOString().slice(0, 16).replace('T', ' ');
@@ -355,6 +363,9 @@ async function scan() {
 
 // ---------- Tier 2 / Tier 3: the hourly news page and device launches ----------
 
+/** A clearly-IT outage in a news aggregator item: outage wording in the headline and a platform the outage guides cover. */
+const itOutage = (item) => Boolean(outageTerm(item.title ?? '') && outageFamilies(`${item.title ?? ''} ${item.summary ?? ''}`).length);
+
 const dayFile = (date) => path.join(LIVE, `${date}.json`);
 const shiftDate = (date, days) => new Date(Date.parse(`${date}T12:00:00Z`) + days * 864e5).toISOString().slice(0, 10);
 const deviceSlugs = (siteDir) => {
@@ -368,7 +379,7 @@ const deviceSlugs = (siteDir) => {
  * for the device portal. New items get template lines now (official text only) and are listed in the pending file for
  * the one batched Claude call (`brief-apply` swaps in Claude's lines where they pass validation).
  */
-async function buildBrief({ merged, state, site, siteDir, now, today, task, dryRun, errors }) {
+async function buildBrief({ merged, fetched = [], state, site, siteDir, now, today, task, dryRun, errors }) {
   const days = {};
   for (let i = 0; i < BRIEF.lookbackDays; i++) {
     const d = shiftDate(today, -i);
@@ -385,9 +396,17 @@ async function buildBrief({ merged, state, site, siteDir, now, today, task, dryR
     // Today's page lists today's news: an item from an earlier IST day (e.g. one that hit yesterday's caps) stays off,
     // except one published in the last 6 hours (found just after midnight).
     if (istDate(t) !== today && now - t > 6 * 3600e3) continue;
-    const src = item.source;
+    let src = item.source;
     const scores = {};
-    if (src.category === 'incident' || src.category === 'outage') {
+    if (src.role === 'trending') {
+      // News aggregators: a clearly-IT outage is listed like any news outlet's outage report (by the outlet's name);
+      // everything else goes through the trending tier below.
+      if (!itOutage(item)) continue;
+      const sc = scoreOutage(item, { ...src, weight: src.outageWeight ?? 0 }, { now, freshHours: S.freshHours });
+      if (sc.reject) continue;
+      Object.assign(scores, { outageScore: sc.score, outageCategory: true });
+      src = { ...src, name: item.outlet || src.name, newsOutlet: true };
+    } else if (src.category === 'incident' || src.category === 'outage') {
       const sc = scoreItem(item, src, { now, freshHours: S.freshHours, threshold: S.threshold });
       if (sc.category === 'outage') Object.assign(scores, { outageScore: sc.reject ? null : sc.score, outageCategory: src.category !== 'outage' });
       else scores.incidentScore = sc.reject ? null : sc.score;
@@ -403,6 +422,19 @@ async function buildBrief({ merged, state, site, siteDir, now, today, task, dryR
     if (cov.post && (cls.kind === 'outage' || (cls.kind === 'security' ? sameIncident(item.title, about(cov.post)) : sameTopic(item.title, about(cov.post))))) it.post = cov.post.slug;
     candidates.push(it);
   }
+  // Trending tier (radar/trending.mjs): big stories that Techmeme lists or 3+ reputable outlets cover (leadership and
+  // IPOs at major tech companies, big product/AI/space/EV milestones, critical-infrastructure outages), safety-filtered,
+  // own cap (BRIEF.trendingMaxPerDay, in mergeIntoDays).
+  const pool = fetched.filter((x) => x.source.role === 'trending' || x.source.outlet)
+    .map((x) => ({ ...x, outlet: x.outlet || x.source.outlet }))
+    .filter((x) => !(x.source.role === 'trending' && itOutage(x)));
+  const trend = selectTrending(pool, {
+    now, today, freshHours: S.freshHours, posts: site.posts,
+    listed: [...Object.values(days).flatMap((d) => d.items.map((it) => ({ headline: it.headline, key: it.key, trendKey: it.trendKey, day: d.date }))),
+      ...candidates.map((it) => ({ headline: it.headline, key: it.key, day: 'this run' }))],
+  });
+  candidates.push(...trend.items);
+
   const page = days[today];
   const before = Object.fromEntries(Object.entries(days).map(([d, pg]) => [d, JSON.stringify(pg)]));
   const { added, upgraded, skipped } = mergeIntoDays(candidates, days, today, { now });
@@ -494,7 +526,10 @@ async function buildBrief({ merged, state, site, siteDir, now, today, task, dryR
   const log = [
     `Tech news today (${SITE_URL}/news/live/${today}): +${added.length} item(s)${kinds ? ` (${kinds})` : ''}, ${upgraded.length} upgraded, ` +
       `${page.items.length} on the page; ${skipped.length} skipped (already listed or capped)${pending.length ? `; ${pending.length} sent for Claude lines` : ''}.`,
-    ...added.slice(0, 20).map((it) => `- [${it.kind}${it.reported ? ', reported' : ''}] ${it.headline.slice(0, 100)} (${it.sourceId}, score ${it.score})`),
+    ...added.slice(0, 20).map((it) => `- [${it.kind}${it.trending ? `, trending ${it.trendKey}` : ''}${it.reported ? ', reported' : ''}] ${it.headline.slice(0, 100)} (${it.trending ? it.source.name : it.sourceId}, score ${it.score})`),
+    `Trending tier: ${trend.items.length} candidate(s) from ${trend.clusters} story cluster(s); ${added.filter((it) => it.trending).length} added (cap ${BRIEF.trendingMaxPerDay}/day).`,
+    ...[...trend.skipped, ...skipped.filter((x) => /trending cap/.test(x.why))].filter((x) => !/^not trending/.test(x.why)).slice(0, 8)
+      .map((x) => `- trending skipped: ${String(x.title).slice(0, 90)} (${x.why})`),
     ...(devices ? [`Device portal: ${devices.focus.slice(0, 400)}`] : []),
   ];
   return { log, pending: pending.length > 0, ping, devices };

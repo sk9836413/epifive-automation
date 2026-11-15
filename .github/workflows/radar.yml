@@ -28,6 +28,9 @@
 #            item from one batched Claude call per scan (haiku, no tools; lines are checked so every number comes from
 #            the official text, else template lines from the official text). Dedupe across sources and 3 days.
 #            IndexNow ping for the day page at most once an hour, only when it changed.
+#            Trending tier (radar/trending.mjs, owner asked 15 Nov 2026): big general tech stories from Techmeme and Google
+#            News that Techmeme lists or 3+ reputable outlets cover (leadership/IPOs at major tech companies, big product,
+#            AI, space and EV milestones, critical-infrastructure outages), safety-filtered, "Reported by <outlet>", 4 a day.
 #   Tier 3 = official device launches start devices.yml in launch mode (spec page from the maker's official page only),
 #            at most 2 runs a day, 3 devices a run.
 # Off switch: repository variable RADAR (automatic scans run only while it is "on").

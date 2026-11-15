@@ -6,7 +6,8 @@ import {
   BRIEF, detectDevice, findDeviceSlug, detectAiModel, tier1Floor, classifyBrief, storyKey, sameStory, mergeIntoDays, briefItem,
   emptyDay, templateLines, validateLines, parseLinesAnswer, applyLines, linesPrompt, touchDay, updateIndex, deviceFocus, briefHeadline,
 } from './brief.mjs';
-import { parseDatedMarkdown, parseHfModels, parseSource } from './lib.mjs';
+import { parseDatedMarkdown, parseHfModels, parseSource, parseTechmeme, parseGoogleNews } from './lib.mjs';
+import { trendTopic, reputableOutlet, similarTitles, clusterTrending, neutralHeadline, selectTrending } from './trending.mjs';
 
 const NOW = Date.parse('2026-11-14T10:00:00Z');
 const src = (o = {}) => ({ id: 'src', name: 'Source', weight: 0, ...o });
@@ -129,6 +130,8 @@ test('classifyBrief: launches, retirements and model news go on the page; market
 test('classifyBrief: aggregators are "reported" and only for device, AI model, outage or security stories', () => {
   const dev = classifyBrief(item('Samsung Galaxy A18 4G launched in Singapore', 'https://www.gsmarena.com/x'), src({ role: 'signal', weight: -3, briefWeight: 0 }));
   assert.deepEqual([dev.include, dev.kind, dev.reported], [true, 'device', true]);
+  // A Cybercab story from an aggregator is not a device, AI model, outage or security story: it reaches the page only
+  // through the trending tier (Techmeme or 3+ reputable outlets; see the trending tests below), never through this path.
   assert.equal(classifyBrief(item('Tesla starts taking Cybercab orders for personal use', 'https://www.engadget.com/x'), verge).include, false);
   assert.equal(classifyBrief(item('Amazon’s new Kindle Colorsoft is a premium e-reader', 'https://techcrunch.com/x'), verge).include, false);
   assert.equal(classifyBrief(item('Oppo Reno17 full specs tipped ahead of launch', 'https://www.gsmarena.com/x'), verge).include, false);
@@ -343,4 +346,193 @@ test('sameStory: an outage on a status page and a news report of it are one stor
   assert.equal(sameStory(status, news), true);
   const gh = mk('GitHub is down for many users', 'https://www.bleepingcomputer.com/c', src({ id: 'bleepingcomputer', category: 'incident', newsOutlet: true }), { scores: { outageScore: 10, outageCategory: true } });
   assert.equal(sameStory(status, gh), false);
+});
+
+// ---------- trending tier (radar/trending.mjs): Techmeme / Google News, 3+ reputable outlets, safety, own cap ----------
+
+const T_NOW = Date.parse('2026-11-15T06:00:00Z'); // 11:30 IST
+const T_TODAY = '2026-11-15';
+const tsrc = (id) => ({ id, name: id, role: 'trending', weight: -4 });
+const news = (title, outlet, link, o = {}) => ({ title, outlet, link, date: '2026-11-15T03:00:00Z', summary: '', related: [], source: tsrc(o.sourceId ?? 'gnews-bigtech'), ...o });
+
+test('parseTechmeme and parseGoogleNews: outlet, original link (gift token dropped), grouped outlets', () => {
+  const tm = `<rss><channel><item><title>Tesla opens Cybercab orders to select customers in the US (Reuters)</title>
+<link>https://www.techmeme.com/261115/p1#a261115p1</link>
+<description><![CDATA[<A HREF="https://www.reuters.com/business/autos/tesla-cybercab-orders-2026-11-14/?accessToken=abc&utm_source=x"><IMG SRC="x.jpg"></A>
+<P><A HREF="https://www.techmeme.com/261115/p1#a261115p1" TITLE="Techmeme permalink"><IMG SRC="pml.png"></A> <A HREF="https://www.reuters.com/">Reuters</A>:<BR>
+<SPAN><B><A HREF="https://www.reuters.com/business/autos/tesla-cybercab-orders-2026-11-14/?accessToken=abc&utm_source=x">Tesla opens Cybercab orders to select customers in the US</A></B></SPAN>&nbsp; &mdash;&nbsp; Tesla began taking orders for its two-seat Cybercab on Friday.</P>]]></description>
+<pubDate>Sat, 14 Nov 2026 21:05:01 -0500</pubDate><guid>https://www.techmeme.com/261115/p1#a261115p1</guid></item></channel></rss>`;
+  const [t] = parseTechmeme(tm);
+  assert.equal(t.title, 'Tesla opens Cybercab orders to select customers in the US');
+  assert.equal(t.outlet, 'Reuters');
+  assert.equal(t.link, 'https://www.reuters.com/business/autos/tesla-cybercab-orders-2026-11-14/');
+  assert.equal(t.techmeme, true);
+  assert.match(t.summary, /^Tesla began taking orders for its two-seat Cybercab on Friday\.$/);
+  assert.equal(parseSource(tm, { type: 'techmeme-rss' }).length, 1);
+  const gn = `<rss><channel><item><title>SpaceX catches Starship upper stage in historic first - CNBC</title><link>https://news.google.com/rss/articles/A1?oc=5</link>
+<guid isPermaLink="false">A1</guid><pubDate>Sat, 14 Nov 2026 21:14:00 GMT</pubDate><description>&lt;ol&gt;&lt;li&gt;&lt;a href="https://news.google.com/rss/articles/A1?oc=5" target="_blank"&gt;SpaceX catches Starship upper stage in historic first&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color="#6f6f6f"&gt;CNBC&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="https://news.google.com/rss/articles/B2?oc=5" target="_blank"&gt;SpaceX Starship returns to landing pad from orbit&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color="#6f6f6f"&gt;Reuters&lt;/font&gt;&lt;/li&gt;&lt;/ol&gt;</description><source url="https://www.cnbc.com">CNBC</source></item></channel></rss>`;
+  const [g] = parseGoogleNews(gn);
+  assert.deepEqual([g.title, g.outlet], ['SpaceX catches Starship upper stage in historic first', 'CNBC']);
+  assert.deepEqual(g.related, [{ link: 'https://news.google.com/rss/articles/B2?oc=5', title: 'SpaceX Starship returns to landing pad from orbit', outlet: 'Reuters' }]);
+});
+
+test('trendTopic: leadership, IPO, space/EV/product milestones and infrastructure outages; not earnings, stocks, funding, deals or opinion', () => {
+  const key = (t) => trendTopic(t).key ?? `x:${trendTopic(t).reject}`;
+  assert.equal(key('Nvidia CEO Jensen Huang resigns; company names interim chief executive'), 'leadership:nvidia');
+  assert.equal(key('NVIDIA Announces CEO Transition'), 'leadership:nvidia');
+  assert.equal(key('Anthropic sets IPO price range, implying a valuation of about $1.3 trillion'), 'ipo:anthropic');
+  assert.equal(key('Nvidia and Alphabet agree to buy Anthropic stock at its IPO price'), 'ipo:anthropic'); // the company next to "IPO"
+  assert.equal(key('SpaceX catches Starship upper stage with launch tower for first time'), 'milestone:spacex');
+  assert.equal(key('Google CEO hails SpaceX Starship catch as historic'), 'milestone:spacex');
+  assert.equal(key('Tesla starts taking Cybercab orders for personal use'), 'milestone:tesla');
+  assert.equal(key('FAA orders nationwide ground stop after telecom failure'), 'infra-outage:aviation');
+  assert.equal(key('Nationwide 911 outage leaves callers unable to reach dispatchers in three states'), 'infra-outage:911');
+  assert.equal(key('Chase customers report bank outage as app and ATMs go down'), 'infra-outage:banking');
+  // A clearly-IT outage uses the existing outage logic, not this tier.
+  assert.equal(key('Microsoft 365 outage disrupts Outlook and Teams worldwide'), 'x:IT outage (existing outage logic)');
+  for (const t of ['Nvidia reports record third-quarter revenue, beats estimates', 'Tesla shares jump 8% as investors cheer robotaxi plans',
+    'AI startup Databento raises $100M Series C at a $1.1B valuation', 'Best Black Friday deals on Apple MacBooks', 'Why Anthropic angered its peers',
+    'Opinion | What Nvidia gets wrong', 'Unconfirmed: iPhone 20 Pro leaked in video', 'Italy fines Meta over Android photo access',
+    'Space Shuttle Endeavour new LA home opens at science center']) {
+    assert.ok(!trendTopic(t).key, t);
+  }
+});
+
+test('reputableOutlet: allowlist by name or article host; Google News links say nothing', () => {
+  assert.equal(reputableOutlet('AP News'), 'AP');
+  assert.equal(reputableOutlet('Bloomberg.com'), 'Bloomberg');
+  assert.equal(reputableOutlet('The Wall Street Journal'), 'WSJ');
+  assert.equal(reputableOutlet('', 'https://www.theverge.com/news/1'), 'The Verge');
+  assert.equal(reputableOutlet('Forbes', 'https://www.forbes.com/x'), null);
+  assert.equal(reputableOutlet('Fox Business', 'https://news.google.com/rss/articles/x'), null);
+});
+
+test('clustering: one story across outlets by topic, company and title; Google News grouping counts toward 3 outlets', () => {
+  assert.equal(similarTitles('SpaceX catches upper stage of Starship rocket in historic first', 'SpaceX Starship returns to landing pad from orbit, acing test for reusable rockets'), true);
+  assert.equal(similarTitles('Apple unveils new iPad Pro with M6 chip', 'Apple launches Home Collection smart speakers'), false);
+  const e = (title, outlet, o = {}) => ({ title, outlet, link: `https://example.com/${encodeURIComponent(title)}`, related: [], topic: trendTopic(title), ...o });
+  const clusters = clusterTrending([
+    e('SpaceX catches upper stage of Starship rocket in historic first', 'CNBC'),
+    e('SpaceX Starship returns to landing pad from orbit, acing test for reusable rockets', 'Reuters'),
+    e('SpaceX makes history as Starship spacecraft caught by launch tower', 'Fox Business'),
+    e('Apple unveils new iPad Pro with M6 chip', 'The Verge'),
+    e('Apple launches Home Collection smart speakers', 'Engadget'),
+    e('FAA orders nationwide ground stop', 'Local TV', { related: [{ title: 'Flights halted nationwide', outlet: 'AP News', link: 'https://news.google.com/a' }, { title: 'x', outlet: 'Reuters', link: 'https://news.google.com/b' }] }),
+    e('Ground stop lifted as FAA restores telecom system', 'BBC'),
+  ]);
+  const by = Object.fromEntries(clusters.map((c) => [c.members[0].title.slice(0, 12), c]));
+  assert.equal(clusters.length, 4);
+  assert.equal(by['SpaceX catch'].members.length, 3);
+  assert.deepEqual([...by['SpaceX catch'].outlets].sort(), ['CNBC', 'Reuters']); // Fox Business is not on the allowlist
+  assert.equal(by['SpaceX catch'].trending, false);
+  assert.deepEqual([...by['FAA orders n'].outlets].sort(), ['AP', 'BBC', 'Reuters']);
+  assert.equal(by['FAA orders n'].trending, true);
+  assert.equal(by['Apple unveil'].members.length, 1); // two different Apple launches are two stories
+});
+
+test('selectTrending: a Cybercab story is listed only through the trending tier (Techmeme, or 3+ reputable outlets)', () => {
+  const engadget = news('Tesla starts taking Cybercab orders for personal use', 'Engadget', 'https://www.engadget.com/transportation/tesla-cybercab-orders.html', { source: { id: 'engadget', name: 'Engadget', role: 'signal', outlet: 'Engadget' } });
+  // One outlet only: not trending.
+  let r = selectTrending([engadget], { now: T_NOW, today: T_TODAY });
+  assert.equal(r.items.length, 0);
+  assert.match(r.skipped[0].why, /not trending \(1 reputable outlet/);
+  // Three reputable outlets: listed, attributed to the first-ranked outlet with a link, the others noted.
+  r = selectTrending([engadget,
+    news('Tesla invites select customers to buy Cybercab for personal use', 'Reuters', 'https://news.google.com/rss/articles/R1'),
+    news('Tesla Opens Sales of Autonomous Cybercab for Select Customers', 'WSJ', 'https://news.google.com/rss/articles/W1')], { now: T_NOW, today: T_TODAY });
+  assert.equal(r.items.length, 1);
+  const it = r.items[0];
+  assert.deepEqual([it.trending, it.trendKey, it.reported, it.source.name, it.tier], [true, 'milestone:tesla', true, 'Reuters', 2]);
+  assert.deepEqual(it.also, ['WSJ', 'Engadget']);
+  assert.equal(it.story, 'trend:milestone:tesla');
+  const lines = templateLines(it);
+  assert.equal(lines[0], 'Reported by Reuters: Tesla invites select customers to buy Cybercab for personal use.');
+  assert.equal(lines.at(-1), 'Also reported by WSJ, Engadget.');
+  assert.ok(lines.length >= 2 && lines.length <= 4);
+  // On Techmeme's top headlines with one reputable outlet: listed too.
+  const tm = news('Tesla opens Cybercab orders to select customers in the US', 'Reuters', 'https://www.reuters.com/autos/cybercab', { techmeme: true, source: tsrc('techmeme') });
+  r = selectTrending([tm], { now: T_NOW, today: T_TODAY });
+  assert.deepEqual([r.items.length, r.items[0].techmeme], [1, true]);
+  assert.equal(templateLines(r.items[0]).at(-1), 'Listed among the top headlines on Techmeme.');
+  // Yesterday's story (IST) older than 6 hours is not today's news.
+  assert.equal(selectTrending([{ ...tm, date: '2026-11-14T10:00:00Z' }], { now: T_NOW, today: T_TODAY }).items.length, 0);
+});
+
+test('safety filter: scandal and allegation headlines are dropped or cut to the neutral headline fact', () => {
+  assert.equal(neutralHeadline('Oracle president Alex Example resigns amid board investigation into conduct', 'leadership:oracle'), 'Oracle president Alex Example resigns');
+  assert.equal(neutralHeadline('Oracle president resigns; affair allegations detailed', 'leadership:oracle'), 'Oracle president resigns');
+  assert.equal(neutralHeadline('Affair allegations end Oracle president tenure', 'leadership:oracle'), null);
+  // Only a scandal headline (Techmeme lists it): nothing neutral left, so the story is dropped.
+  const onlyScandal = news('Oracle president resigned after affair with a staffer, sources say', 'Bloomberg', 'https://www.bloomberg.com/x', { techmeme: true, source: tsrc('techmeme') });
+  const scandal = selectTrending([{ ...onlyScandal, title: 'Oracle president steps down as affair allegations mount' }], { now: T_NOW, today: T_TODAY });
+  assert.equal(scandal.items[0].headline, 'Oracle president steps down');
+  const none = selectTrending([{ ...onlyScandal, title: 'Affair allegations: Oracle president steps down' }], { now: T_NOW, today: T_TODAY });
+  assert.equal(none.items.length, 0);
+  assert.match(none.skipped[0].why, /safety filter/);
+  // A blocked headline is cut to its first clause, and the outlet's snippet is then not used.
+  const r = selectTrending([{ ...onlyScandal, summary: 'The executive had a relationship with a staffer, people said.' }], { now: T_NOW, today: T_TODAY });
+  assert.equal(r.items[0].headline, 'Oracle president resigned');
+  assert.equal(r.items[0].summary, '');
+  // Lines: blocked words, names that are not in the headline, and investment advice fail validation.
+  const it = r.items[0];
+  assert.deepEqual(validateLines(['Reported by Bloomberg: Oracle president resigned.', 'Listed among the top headlines on Techmeme.'], it), []);
+  assert.match(validateLines(['Reported by Bloomberg: the president resigned after an affair.'], it).join(), /blocked word: affair/);
+  assert.match(validateLines(['Reported by Bloomberg: Oracle president resigned; Jane Roe was involved.'], it).join(), /name not in the headline: Jane Roe/);
+  assert.match(validateLines(['Reported by Bloomberg: Oracle president resigned; investors should buy the dip.'], it).join(), /investment advice/);
+  assert.match(linesPrompt([it]), /never mention personal allegations/);
+});
+
+test('trending caps and dedupe: 4 a day on top of the other items, never twice for one story, not when an article covers it', () => {
+  const story = (n, title) => selectTrending([news(title, 'Reuters', `https://www.reuters.com/${n}`, { techmeme: true })], { now: T_NOW, today: T_TODAY }).items[0];
+  const titles = ['Nvidia CEO resigns, company names interim chief', 'SpaceX catches Starship upper stage', 'Anthropic files for IPO',
+    'Tesla starts Cybercab deliveries', 'FAA orders nationwide ground stop', 'OpenAI CFO steps down'];
+  const cands = titles.map((t, i) => story(i, t));
+  assert.ok(cands.every(Boolean), 'every headline is a trending candidate');
+  const official = item('Introducing Spend Management for Cloudflare', 'https://blog.cloudflare.com/x');
+  const days = { [T_TODAY]: { ...emptyDay(T_TODAY), items: [briefItem(official, src({ id: 'cloudflare-blog' }), classifyBrief(official, src({ id: 'cloudflare-blog' })), { now: T_NOW })] } };
+  const r = mergeIntoDays(cands, days, T_TODAY, { now: T_NOW });
+  assert.equal(r.added.length, 4);
+  assert.equal(r.skipped.filter((x) => /trending cap 4\/day/.test(x.why)).length, 2);
+  assert.equal(days[T_TODAY].items.length, 5); // the official item does not count toward the trending cap
+  assert.equal(BRIEF.trendingMaxPerDay, 4);
+  // The next run: the cap is already used.
+  assert.equal(mergeIntoDays([story(9, 'Intel CEO steps down')], days, T_TODAY, { now: T_NOW }).added.length, 0);
+  // Dedupe against the day pages (another wording of a listed story, also a manual item without a trendKey) ...
+  const listed = [{ headline: 'SpaceX catches the Starship upper stage with its launch tower for the first time', key: 'manual:1', day: T_TODAY }];
+  const again = selectTrending([news('SpaceX Starship returns from orbit and is caught by launch tower', 'Reuters', 'https://www.reuters.com/s', { techmeme: true })], { now: T_NOW, today: T_TODAY, listed });
+  assert.equal(again.items.length, 0);
+  assert.match(again.skipped[0].why, /already listed 2026-11-15 \(milestone:spacex\)/);
+  // ... and against recent articles.
+  const posts = [{ slug: 'faa-ground-stop-what-happened', title: 'FAA ground stop: what happened and what travelers can do', date: '2026-11-14' }];
+  const covered = selectTrending([news('FAA orders nationwide ground stop', 'Reuters', 'https://www.reuters.com/f', { techmeme: true })], { now: T_NOW, today: T_TODAY, posts });
+  assert.match(covered.skipped[0].why, /covered by \/blog\/faa-ground-stop-what-happened/);
+});
+
+test('trending sources: never a Tier-1 article (IT outages use the existing outage logic) and never on the page outside the tier', () => {
+  const cfg = JSON.parse(fs.readFileSync(new URL('./sources.json', import.meta.url), 'utf8'));
+  const trending = cfg.sources.filter((s) => s.role === 'trending');
+  assert.deepEqual(trending.map((s) => s.id), ['techmeme', 'gnews-tech', 'gnews-leadership', 'gnews-ipo', 'gnews-milestones', 'gnews-infra']);
+  for (const s of trending) {
+    assert.ok(s.weight <= -4, `${s.id}: below every other source, so a merged duplicate keeps the outlet's own item`);
+    assert.ok(['techmeme-rss', 'gnews-rss'].includes(s.type), s.id);
+    assert.ok(!/key=|api[_-]?key|token=/i.test(s.url), `${s.id}: no API keys`);
+  }
+  for (const id of ['the-verge', 'techcrunch', 'engadget', 'bleepingcomputer']) assert.ok(reputableOutlet(cfg.sources.find((s) => s.id === id).outlet), id);
+  const tm = cfg.sources.find((s) => s.id === 'techmeme');
+  assert.equal(tier1Floor(item('Apple unveils iPhone 18 Pro', 'https://www.apple.com/x'), tm, { score: 5 }), null);
+  assert.equal(classifyBrief(item('SpaceX catches Starship upper stage', 'https://www.reuters.com/x'), tm).include, false);
+  const it = classifyBrief(item('Microsoft 365 outage hits Outlook and Teams for thousands', 'https://www.reuters.com/x'), { ...tm, newsOutlet: true }, { outageScore: 9, outageCategory: true });
+  assert.deepEqual([it.include, it.kind, it.reported], [true, 'outage', true]);
+});
+
+test('trending: an official source for a trending story replaces it and is written from the official text', () => {
+  const t = selectTrending([news('Anthropic files for IPO on Nasdaq', 'Reuters', 'https://www.reuters.com/a', { techmeme: true })], { now: T_NOW, today: T_TODAY }).items[0];
+  const days = { [T_TODAY]: { ...emptyDay(T_TODAY), items: [t] } };
+  const off = briefItem(item('Anthropic files for IPO on Nasdaq', 'https://www.anthropic.com/news/ipo'), src({ id: 'anthropic-news', name: 'Anthropic News' }), { include: true, kind: 'launch', score: 5, reported: false }, { now: T_NOW });
+  const r = mergeIntoDays([off], days, T_TODAY, { now: T_NOW });
+  assert.equal(r.upgraded.length, 1);
+  const it = days[T_TODAY].items[0];
+  assert.deepEqual([it.trending, it.reported, it.source.name, it.kind], [false, false, 'Anthropic News', 'launch']);
+  assert.ok(it.also.includes('Reuters'));
+  assert.notEqual(templateLines(it)[0].slice(0, 12), 'Reported by ');
 });

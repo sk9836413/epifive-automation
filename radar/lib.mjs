@@ -197,6 +197,69 @@ export function parseHfModels(body, { orgs = [] } = {}) {
   }));
 }
 
+// ---------- news aggregators (role "trending", Tier 2 only: radar/trending.mjs) ----------
+// Both return the usual item fields plus outlet (who reported it) and related ([{ title, outlet, link }]: other
+// outlets on the same story, as the aggregator grouped them). Discovery only: the day page links the outlet.
+
+/**
+ * Techmeme RSS (www.techmeme.com/feed.xml): its top headlines. The title ends with "(Outlet)"; the description holds
+ * the original article link, the outlet name and a snippet. link = the original article (not the Techmeme permalink).
+ */
+export function parseTechmeme(xml) {
+  const items = [];
+  for (const [, block] of xml.matchAll(/<item\b[^>]*>([\s\S]*?)<\/item>/gi)) {
+    const raw = stripTags(tag(block, 'title'));
+    const desc = decodeEntities(tag(block, 'description'));
+    const hrefs = [...desc.matchAll(/<a\s[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi)].map((m) => ({ href: m[1], text: stripTags(m[2]) }));
+    const article = hrefs.find((h) => !/techmeme\.com/i.test(h.href) && h.text.length > 20) ?? hrefs.find((h) => !/techmeme\.com/i.test(h.href));
+    const outletLink = hrefs.find((h) => h.text && h.text.length <= 40 && /^https?:\/\/[^/]+\/?$/i.test(h.href));
+    const suffix = raw.match(/\s\(([^()]{2,40})\)\s*$/);
+    const outlet = outletLink?.text || suffix?.[1] || '';
+    const title = suffix ? raw.slice(0, suffix.index).trim() : raw;
+    const snippet = stripTags(desc.split(/&mdash;|—/).slice(1).join(' ')).replace(/^\s*[-–]\s*/, '');
+    const permalink = decodeEntities(tag(block, 'link')).trim();
+    if (!title || !(article?.href || permalink)) continue;
+    // Gift-link tokens and trackers off (Bloomberg accessToken, utm_*); the article URL itself stays as published.
+    let link = article?.href ?? permalink;
+    try {
+      const u = new URL(link);
+      for (const k of [...u.searchParams.keys()]) if (/^(accesstoken|utm_|smid|sref|giftcopy|share|cmpid|mod)/i.test(k)) u.searchParams.delete(k);
+      link = u.toString();
+    } catch {
+      // keep as is
+    }
+    items.push({
+      title, link, guid: decodeEntities(tag(block, 'guid')).trim() || permalink, permalink,
+      date: toIso(tag(block, 'pubDate')), updated: null, summary: snippet.slice(0, 700), categories: [], outlet, related: [], techmeme: true,
+    });
+  }
+  return items;
+}
+
+/**
+ * Google News RSS (topic or search feeds). Title "Headline - Outlet"; <source> names the outlet; the description is a
+ * list of the stories Google grouped with it (title + outlet each). Links are news.google.com redirects.
+ */
+export function parseGoogleNews(xml) {
+  const items = [];
+  for (const [, block] of xml.matchAll(/<item\b[^>]*>([\s\S]*?)<\/item>/gi)) {
+    const outlet = stripTags(tag(block, 'source'));
+    let title = stripTags(tag(block, 'title'));
+    if (outlet && title.endsWith(` - ${outlet}`)) title = title.slice(0, -(outlet.length + 3)).trim();
+    else title = title.replace(/\s+-\s+[^-]{2,60}$/, '').trim();
+    const desc = decodeEntities(tag(block, 'description'));
+    const related = [...desc.matchAll(/<a\s[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>(?:&nbsp;|\s| )*<font[^>]*>([\s\S]*?)<\/font>/gi)]
+      .map((m) => ({ link: m[1], title: stripTags(m[2]), outlet: stripTags(m[3]) })).filter((r) => r.title && r.outlet);
+    const link = decodeEntities(tag(block, 'link')).trim();
+    if (!title || !link) continue;
+    items.push({
+      title, link, guid: decodeEntities(tag(block, 'guid')).trim(), date: toIso(tag(block, 'pubDate')), updated: null, summary: '',
+      categories: [], outlet, related: related.filter((r) => r.link !== link),
+    });
+  }
+  return items;
+}
+
 // ---------- status pages (category "outage") ----------
 // Status items carry three extra fields that scoreOutage gates on: status (the latest incident status),
 // impact (none|minor|major|critical) and components (affected services; single Cloudflare PoPs are dropped).
@@ -311,6 +374,10 @@ export function parseSource(body, source) {
       return parseDatedMarkdown(body, { url: source.page ?? source.url.split('?')[0] });
     case 'hf-models-json':
       return parseHfModels(body, source);
+    case 'techmeme-rss':
+      return parseTechmeme(body);
+    case 'gnews-rss':
+      return parseGoogleNews(body);
     default:
       throw new Error(`unknown source type ${source.type}`);
   }

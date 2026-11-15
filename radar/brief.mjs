@@ -18,7 +18,15 @@ export const BRIEF = {
   maxNewPerRun: 25, // items written per hourly run (one batched Claude call)
   maxLines: 4,
   maxLineChars: 320,
+  // Trending tier (radar/trending.mjs): big stories from news aggregators (Techmeme, Google News) that Techmeme lists or
+  // 3+ reputable outlets cover. Its own cap, separate from the Tier-1 article caps in sources.json settings.
+  trendingMaxPerDay: 4,
 };
+
+// Trending-tier safety (radar/trending.mjs and validateLines): never personal allegations, scandals, crime or private
+// lives, and no investment advice. A hit drops the sentence, or the whole item when no neutral headline fact is left.
+export const TREND_BLOCKED = /\b(affairs?|extramarital|scandals?|allegations?|alleged(ly)?|accus(e|ed|es|ing|ations?)|sexual(ly)?|sex|harass(ed|es|ing|ment)?|misconduct|cheat(s|ed|ing)?|infidelity|mistress|lovers?|romantic|divorc(e|ed|es)|married|wife|husband|girlfriend|boyfriend|spy|spies|spying|espionage|cia|fbi|arrest(s|ed)?|indict(ed|ment)?|charged with|criminal|crimes?|probe (into|of)|investigat(ion|ions|ing|ed)|tantrums?|abus(e|ed|ive)|lawsuits?|sues|sued|suing|personal (life|conduct|relationship)|secret (relationship|life))\b/i;
+export const INVEST_ADVICE = /\b((buy|sell|hold)( the)? (stock|shares|dip)|price targets?|(buy|sell|outperform|underperform) rating|investors? should|should (you )?(buy|sell|invest)|worth (buying|investing)|financial advice|investment advice)\b/i;
 
 // ---------- device launches (Tier 3) ----------
 
@@ -150,7 +158,7 @@ export function detectAiModel(item, source = {}) {
  * OpenAI, Bedrock, the OpenAI/Anthropic/Gemini APIs) due within the retirement window. Returns { points, why } or null.
  */
 export function tier1Floor(item, source, { score, threshold = 10, daysToDeadline } = {}) {
-  if (source.role === 'signal' || source.category === 'incident' || source.category === 'outage') return null;
+  if (['signal', 'trending'].includes(source.role) || source.category === 'incident' || source.category === 'outage') return null;
   const floor = (why) => ({ points: Math.max(3, threshold + 1 - score), why });
   const device = detectDevice(item, source);
   if (device?.official && device.flagship) return floor(`flagship device launch (${device.model})`);
@@ -229,6 +237,9 @@ export function classifyBrief(item, source, { incidentScore = null, outageScore 
     if (outageScore !== null) score = outageScore;
     return out(outageScore !== null && outageScore >= 6, 'outage');
   }
+  // News aggregators (role "trending") reach the page only through the trending tier (radar/trending.mjs: Techmeme or
+  // 3+ reputable outlets, allowed topics, safety filter, own cap), or above as an IT outage.
+  if (source.role === 'trending') return out(false, 'trending');
   if (source.category === 'incident') {
     // Security feeds: a scored incident (4+), or a headline about an attack, breach or exploited flaw.
     if (NOISE.test(title)) return out(false, 'security');
@@ -279,6 +290,8 @@ export function storyKey(x) {
   // One outage per platform family within the lookback days (a status post and news reports of it, or its day two).
   if (x.kind === 'outage' && x.families?.length) return `outage:${[...x.families].sort().join('+')}`;
   if (x.ai?.model) return `ai:${x.ai.model.toLowerCase().replace(/\s+/g, ' ')}:${x.ai.kind}`;
+  // Trending tier: topic and company or infrastructure ("leadership:nvidia", "infra-outage:aviation").
+  if (x.trendKey) return `trend:${x.trendKey}`;
   return null;
 }
 
@@ -313,6 +326,9 @@ export function mergeIntoDays(candidates, days, today, { now = Date.now(), caps 
   const listed = Object.values(days).flatMap((d) => d.items.map((it) => ({ it, day: d.date })));
   const perSource = {};
   for (const it of page.items) perSource[it.sourceId] = (perSource[it.sourceId] ?? 0) + 1;
+  // The trending tier has its own daily cap (radar/trending.mjs items carry trending: true).
+  let trending = page.items.filter((it) => it.trending).length;
+  const trendCap = caps.trendingMaxPerDay ?? BRIEF.trendingMaxPerDay;
   const ordered = [...candidates].sort((a, b) => (official(b) - official(a)) || b.score - a.score);
   for (const c of ordered) {
     const hit = listed.find(({ it }) => sameStory(c, it)) ?? added.map((it) => ({ it, day: today })).find(({ it }) => sameStory(c, it));
@@ -323,6 +339,9 @@ export function mergeIntoDays(candidates, days, today, { now = Date.now(), caps 
           reported: false, key: c.key, headline: c.headline, source: c.source, sourceId: c.sourceId, summary: c.summary,
           lines: [], linesBy: null, also: [...new Set([...(it.also ?? []), it.source.name])], upgradedAt: new Date(now).toISOString(),
         });
+        // A trending-tier item that now has an official source is written from the official text like any other item
+        // (it keeps its trendKey and story for dedupe, and no longer counts toward the trending cap).
+        if (it.trending) Object.assign(it, { trending: false, kind: c.kind });
         upgraded.push(it);
       } else if (c.source.name !== it.source.name && !(it.also ?? []).includes(c.source.name)) {
         it.also = [...(it.also ?? []), c.source.name];
@@ -330,7 +349,11 @@ export function mergeIntoDays(candidates, days, today, { now = Date.now(), caps 
       } else skipped.push({ title: c.headline, why: `already listed ${hit.day}` });
       continue;
     }
-    const max = c.sourceMax ?? caps.maxPerSourcePerDay;
+    if (c.trending && trending >= trendCap) {
+      skipped.push({ title: c.headline, why: `trending cap ${trendCap}/day` });
+      continue;
+    }
+    const max = c.trending ? trendCap : c.sourceMax ?? caps.maxPerSourcePerDay;
     if ((perSource[c.sourceId] ?? 0) >= max) {
       skipped.push({ title: c.headline, why: `source cap ${max}/day (${c.sourceId})` });
       continue;
@@ -340,6 +363,7 @@ export function mergeIntoDays(candidates, days, today, { now = Date.now(), caps 
       continue;
     }
     perSource[c.sourceId] = (perSource[c.sourceId] ?? 0) + 1;
+    if (c.trending) trending++;
     added.push(c);
   }
   page.items.push(...added);
@@ -386,6 +410,7 @@ const AVAIL = /\b(available|availability|rolling out|starts? at|pric(e|es|ed|ing
  * what happened (the source's own first sentence), and availability/price when the text states them.
  */
 export function templateLines(it) {
+  if (it.trending) return trendingTemplateLines(it);
   const sentences = SENTENCES(it.summary ?? '').filter((s) => !/^(read more|learn more|click|subscribe|the post .* appeared first)/i.test(s) &&
     !/https?:\/\/|aka\.ms\/|\.\.\.$|…$|\bvisit\b/i.test(s));
   const lines = [];
@@ -396,6 +421,39 @@ export function templateLines(it) {
   if (avail) lines.push(avail.slice(0, BRIEF.maxLineChars));
   if (it.reported) lines.push(it.source.label ?? `Reported by ${it.source.name}; not yet confirmed on an official page.`);
   return lines;
+}
+
+/**
+ * Trending-tier lines: a neutral 2-4 sentence factual summary attributed to the outlet. "Reported by <outlet>:
+ * <headline>.", one sentence from the outlet's own snippet when it is neutral and names no one beyond the headline,
+ * and the other reputable outlets (or Techmeme) that carry the story.
+ */
+export function trendingTemplateLines(it) {
+  const lines = [`Reported by ${it.source.name}: ${it.headline}.`.slice(0, BRIEF.maxLineChars)];
+  const extra = SENTENCES(it.summary ?? '').find((s) => !trendingLineErrors(s, it).length && !/["“”]|\b(said|says|told|according)\b/i.test(s) &&
+    !/\b(I|we|you|our|my)\b/.test(s) && s.length <= 240);
+  if (extra) lines.push(extra);
+  const others = (it.also ?? []).filter((o) => o !== it.source.name).slice(0, 3);
+  if (others.length) lines.push(`Also reported by ${others.join(', ')}.`);
+  else if (it.techmeme) lines.push('Listed among the top headlines on Techmeme.');
+  return lines;
+}
+
+// Capitalised names in a line ("Jensen Huang", "Air Traffic Control"): runs of two or more capitalised words.
+const NAME_RUNS = (s) => (String(s).match(/\b[A-Z][a-zA-Z'’.-]+(?:\s+[A-Z][a-zA-Z'’.-]+)+/g) ?? []);
+const NAME_FILLER = /^(The|A|An|Reported|Also|Listed|On|In|At|For|And|Of|By|It|Its|This|That|After|Before|Following)$/;
+
+/** Extra checks for a trending-tier line: safety words, investment advice, and no names that the headline lacks. */
+export function trendingLineErrors(line, it) {
+  const errors = [];
+  if (TREND_BLOCKED.test(line)) errors.push(`blocked word: ${line.match(TREND_BLOCKED)[0]}`);
+  if (INVEST_ADVICE.test(line)) errors.push('investment advice');
+  const known = `${it.headline} ${it.source?.name ?? ''} ${(it.also ?? []).join(' ')} Techmeme`.toLowerCase();
+  for (const run of NAME_RUNS(line)) {
+    const words = run.split(/\s+/).filter((w) => !NAME_FILLER.test(w));
+    if (words.length >= 2 && !words.every((w) => known.includes(w.toLowerCase().replace(/(['’]s|['’.])$/, '')))) errors.push(`name not in the headline: ${run}`);
+  }
+  return errors;
 }
 
 /** Numbers as written ("1.5", "$7.50", "120", "2026"), for the no-invented-facts check. */
@@ -422,6 +480,7 @@ export function validateLines(lines, it) {
     if (/https?:\/\/|<[a-z/]|\]\(|\*\*|^#/i.test(line)) errors.push('markup or URL in a line');
     if (FIRST_PERSON.test(line.replace(/\b(US|U\.S\.)\b/g, ''))) errors.push(`first person: ${line.slice(0, 60)}`);
     if (SPECULATION.test(line) && !it.reported) errors.push(`speculation: ${line.slice(0, 60)}`);
+    if (it.trending) errors.push(...trendingLineErrors(line, it));
     for (const n of numbersIn(line)) if (!known.has(n)) errors.push(`number not in the source: ${n}`);
   }
   return errors;
@@ -431,6 +490,7 @@ export function validateLines(lines, it) {
 export function linesPrompt(items) {
   const input = items.map((it) => ({
     id: it.id, kind: it.kind, reported: it.reported, source: it.source.name, headline: it.headline, text: (it.summary ?? '').slice(0, 700),
+    ...(it.trending ? { trending: true, alsoReportedBy: (it.also ?? []).slice(0, 3) } : {}),
   }));
   return [
     'Write the entries for an hourly technology news page for IT admins and business users.',
@@ -441,6 +501,9 @@ export function linesPrompt(items) {
     'Rules: use only facts in the headline and text given; never add a number, price, date, version, region or name that',
     'is not there; no speculation, no first person, no marketing adjectives, no links, no Markdown. For items with',
     '"reported": true, start line 1 with "Reported by <source>:". If the text is too thin, write fewer lines.',
+    'Items with "trending": true are big general tech stories: write a neutral factual summary of what happened only;',
+    'never mention personal allegations, scandals, relationships, crimes or investigations, never name a person who is',
+    'not in the headline, and give no investment advice or stock opinion.',
     'Answer with JSON only, no prose before or after: {"<id>": ["line", "line"], ...}',
     '',
     JSON.stringify(input, null, 1),
