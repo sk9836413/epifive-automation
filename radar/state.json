@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-14T22:46:43.266Z",
+ "lastScan": "2026-11-15T02:10:59.818Z",
  "seen": {
   "https://openai.com/index/gilbert-tobin-sam-nickless": {
    "title": "Gilbert + Tobin rethinks the business of law with AI",
@@ -3465,12 +3465,14 @@
     "+1 retirement/migration",
     "+11 M365 retirement due in 11 days"
    ],
-   "status": "writing",
+   "status": "published",
    "hash": "c031a792",
    "kind": "new",
    "extra": false,
    "taskAt": "2026-11-14T22:46:43.266Z",
-   "attempts": 1
+   "attempts": 1,
+   "slug": "defender-for-identity-classic-alerts-retire-migrate",
+   "resultAt": "2026-11-14T22:52:56.515Z"
   },
   "https://mc.merill.net/message/MC1552386": {
    "title": "MC1552386: Microsoft 365 Copilot: Page context for open tabs in the Copilot desktop app built-in browser",
@@ -4378,6 +4380,21 @@
    ],
    "status": "below",
    "hash": "2b9005a4"
+  },
+  "https://news.samsung.com/global/samsungs-latest-products-recognized-by-consumer-technology-association-ahead-of-ces-2027": {
+   "title": "Samsung’s Latest Products Recognized by Consumer Technology Association Ahead of CES 2027",
+   "link": "https://news.samsung.com/global/samsungs-latest-products-recognized-by-consumer-technology-association-ahead-of-ces-2027",
+   "source": "samsung-global",
+   "topic": "mobiles",
+   "category": "launch",
+   "date": "2026-11-15T08:00:00.000Z",
+   "updated": null,
+   "summary": "Samsung Electronics, a global leader in technology, today announced that a range of its products and services have been recognized by the Consumer Technology Association (CTA)® as part of the CES Innovation Awards® 2027 program, doubling the number of Best of Innovation winners from 2026. The CES In",
+   "first": "2026-11-15T02:10:59.818Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "426437f0"
   }
  },
  "devices": {}
