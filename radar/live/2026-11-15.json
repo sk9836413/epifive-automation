@@ -2,7 +2,7 @@
  "date": "2026-11-15",
  "title": "Tech news today, 15 November 2026",
  "published": "2026-11-14T18:38:28.597Z",
- "updated": "2026-11-15T04:09:08.755Z",
+ "updated": "2026-11-15T13:17:01.193Z",
  "items": [
   {
    "id": "4d2c00f3",
@@ -117,7 +117,38 @@
    "ai": null,
    "score": 8,
    "story": null
+  },
+  {
+   "id": "0407fff6",
+   "key": "https://status.aws.amazon.com/#2026-11-15-multipleservices-us-east-1-service-impact-increased-conne",
+   "time": "2026-11-15T13:15:45.000Z",
+   "seen": "2026-11-15T13:17:01.193Z",
+   "kind": "outage",
+   "tier": 1,
+   "headline": "Service impact: Increased Connectivity issues in US-EAST-1",
+   "summary": "We continue to investigate Connectivity issues in the US-EAST-1 Region. IAM Identity center sign-in requests and AWS SignUps are impacted at this time. We can confirm errors when attempted to authenticate when using identity center or when using services that rely on IAM Identity center. For Kiro users, logins from social sign in methods are not impacted at this time. There are no workarounds for impacted customers.",
+   "lines": [
+    "AWS is investigating connectivity issues in the US-EAST-1 Region that affect IAM Identity Center sign-in requests and AWS sign-ups.",
+    "Users see authentication errors when signing in through IAM Identity Center or services that rely on it. Logins for Kiro users using social sign-in methods are not affected at this time.",
+    "IT teams using IAM Identity Center for access in US-EAST-1 may be unable to sign in, and AWS states there are no workarounds for affected customers."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS Health Dashboard RSS (all services)",
+    "url": "https://status.aws.amazon.com/#2026-11-15-multipleservices-us-east-1-service-impact-increased-conne"
+   },
+   "sourceId": "status-aws",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "families": [
+    "aws"
+   ],
+   "score": 11,
+   "story": "outage:aws"
   }
  ],
- "description": "4 technology updates from official sources, updated hourly: FAA ground stop: officials cite aging telecom equipment, not AI; investigation ongoing; SpaceX catches the Starship upper stage with its launch tower for the first time; Anthropic IPO range implies a valuation of about $1.3 trillion, below "
+ "description": "5 technology updates from official sources, updated hourly: FAA ground stop: officials cite aging telecom equipment, not AI; investigation ongoing; Service impact: Increased Connectivity issues in US-EAST-1; SpaceX catches the Starship upper stage with its launch tower for the first time."
 }
