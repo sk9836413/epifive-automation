@@ -2,7 +2,7 @@
  "date": "2026-11-15",
  "title": "Tech news today, 15 November 2026",
  "published": "2026-11-14T18:38:28.597Z",
- "updated": "2026-11-15T14:16:36.653Z",
+ "updated": "2026-11-15T16:32:46.024Z",
  "items": [
   {
    "id": "4d2c00f3",
@@ -148,7 +148,68 @@
    ],
    "score": 11,
    "story": "outage:aws"
+  },
+  {
+   "id": "8456c8bd",
+   "key": "https://bloomberg.com/news/newsletters/2026-11-15/apple-siri-ai-app-integrations-power-smart-glasses-iphone-duo-2-face-id-plan",
+   "time": "2026-11-15T16:30:00.000Z",
+   "seen": "2026-11-15T16:32:46.024Z",
+   "kind": "trending",
+   "topic": "milestone",
+   "tier": 2,
+   "trending": true,
+   "trendKey": "milestone:apple",
+   "techmeme": true,
+   "headline": "Sources: Apple plans to unveil smart glasses at WWDC and ship them by the end of 2027, focusing heavily on integration of third-party iPhone apps with Siri AI",
+   "summary": "Also: A look at the race to bring Face ID to the iPhone Duo. … Apple's just-announced Siri AI integrations are the centerpiece …",
+   "lines": [
+    "Reported by Bloomberg: Sources say Apple plans to unveil smart glasses at WWDC and ship them by the end of 2027.",
+    "The plan focuses heavily on integrating third-party iPhone apps with Siri AI.",
+    "Apple's just-announced Siri AI integrations are described as the centerpiece of the plan."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Bloomberg",
+    "url": "https://www.bloomberg.com/news/newsletters/2026-11-15/apple-siri-ai-app-integrations-power-smart-glasses-iphone-duo-2-face-id-plan"
+   },
+   "sourceId": "techmeme",
+   "sourceMax": 4,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 10,
+   "story": "trend:milestone:apple"
+  },
+  {
+   "id": "cb08f4a5",
+   "key": "https://bleepingcomputer.com/news/security/tsmc-employee-data-breach-linked-to-cloud-provider",
+   "time": "2026-11-15T15:23:48.000Z",
+   "seen": "2026-11-15T16:32:46.024Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "TSMC employee data breach linked to cloud provider",
+   "summary": "Taiwan Semiconductor Manufacturing Company (TSMC) confirmed that personal employee data has been leaked online after a threat actor put 6.9GB of information allegedly stolen from the company up for auction. [...]",
+   "lines": [
+    "Reported by BleepingComputer: Taiwan Semiconductor Manufacturing Company (TSMC) confirmed that personal employee data has been leaked online.",
+    "A threat actor put 6.9GB of information, allegedly stolen from the company, up for auction.",
+    "The breach is linked to a cloud provider, which may matter to IT teams reviewing third-party data handling and access controls."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/tsmc-employee-data-breach-linked-to-cloud-provider/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
   }
  ],
- "description": "5 technology updates from official sources, updated hourly: FAA ground stop: officials cite aging telecom equipment, not AI; investigation ongoing; Service impact: Increased Connectivity issues in US-EAST-1; SpaceX catches the Starship upper stage with its launch tower for the first time."
+ "description": "7 technology updates from official sources, updated hourly: FAA ground stop: officials cite aging telecom equipment, not AI; investigation ongoing; Service impact: Increased Connectivity issues in US-EAST-1; Sources: Apple plans to unveil smart glasses at WWDC and ship them by the end of 2027, focus"
 }
