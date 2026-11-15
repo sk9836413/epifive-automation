@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-15T16:32:46.024Z",
+ "lastScan": "2026-11-15T21:11:52.179Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -3426,7 +3426,7 @@
     "same outage as \"Service impact: Increased Connectivity issues in US-EAST-1\"",
     "covered by /blog/aws-us-east-1-outage-november-2026-what-to-do"
    ],
-   "status": "writing",
+   "status": "updated",
    "hash": "15b6b946",
    "families": [
     "aws"
@@ -3435,7 +3435,30 @@
    "kind": "update",
    "extra": false,
    "taskAt": "2026-11-15T16:32:46.024Z",
-   "attempts": 1
+   "attempts": 1,
+   "slug": "aws-us-east-1-outage-november-2026-what-to-do",
+   "resultAt": "2026-11-15T16:40:56.965Z"
+  },
+  "https://bleepingcomputer.com/news/security/fbi-warns-artex-ai-hacking-tool-is-powering-global-cyberattacks": {
+   "title": "FBI warns ARTEX AI hacking tool is powering global cyberattacks",
+   "link": "https://www.bleepingcomputer.com/news/security/fbi-warns-artex-ai-hacking-tool-is-powering-global-cyberattacks/",
+   "source": "bleepingcomputer",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-15T18:29:53.000Z",
+   "updated": null,
+   "summary": "The FBI is warning that hackers are using an AI-powered penetration testing framework called ARTEX to automate cyberattacks against organizations worldwide, including a recent ConnectWise supply-chain breach that compromised Microsoft 365 customer environments. [...]",
+   "first": "2026-11-15T21:11:52.179Z",
+   "score": 9,
+   "reasons": [
+    "+1 source bleepingcomputer",
+    "+3 incident \"hackers\"",
+    "+3 major platform (microsoft 365)",
+    "+1 user data or credentials exposed",
+    "+1 category (Security)"
+   ],
+   "status": "below",
+   "hash": "a088ec3d"
   }
  },
  "devices": {}
