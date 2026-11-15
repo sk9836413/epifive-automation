@@ -2,7 +2,122 @@
  "date": "2026-11-15",
  "title": "Tech news today, 15 November 2026",
  "published": "2026-11-14T18:38:28.597Z",
- "updated": "2026-11-14T18:38:28.597Z",
- "items": [],
- "description": "8 technology updates from official sources, updated hourly: Microsoft 365 applications hit by global outage for over 10 hours; MC1552397: Microsoft SharePoint: Resources web part and Announcements capabilities expand to all sites; MC1552389: Microsoft 365 Copilot: Workforce Intelligence plugin avail"
+ "updated": "2026-11-15T04:09:08.755Z",
+ "items": [
+  {
+   "id": "4d2c00f3",
+   "key": "https://faa.gov/newsroom/faa-statement-nationwide-ground-stop",
+   "time": "2026-11-15T04:09:08.755Z",
+   "seen": "2026-11-15T04:09:08.755Z",
+   "kind": "outage",
+   "tier": 1,
+   "headline": "FAA ground stop: officials cite aging telecom equipment, not AI; investigation ongoing",
+   "summary": "The FAA stopped departures nationwide on 13 November after communication issues hit multiple Air Route Traffic Control Centers; AVweb reports the stop ran from about 3:54 p.m. to 8:15 p.m. EST. Transportation Secretary Sean Duffy blamed overloaded legacy switches and routers during a contractor's copper-to-fiber work, and FAA Administrator Bryan Bedford said there was \"zero evidence of anything AI-related\" (NPR, TechCrunch). This is the official preliminary explanation; the root cause analysis is ongoing.",
+   "lines": [
+    "The FAA stopped departures nationwide on 13 November after communication issues hit multiple Air Route Traffic Control Centers; AVweb reports the stop ran from about 3:54 p.m. to 8:15 p.m. EST.",
+    "Transportation Secretary Sean Duffy blamed overloaded legacy switches and routers during a contractor's copper-to-fiber work, and FAA Administrator Bryan Bedford said there was \"zero evidence of anything AI-related\" (NPR, TechCrunch).",
+    "This is the official preliminary explanation; the root cause analysis is ongoing."
+   ],
+   "linesBy": "manual",
+   "source": {
+    "name": "FAA",
+    "url": "https://www.faa.gov/newsroom/faa-statement-nationwide-ground-stop"
+   },
+   "sourceId": "manual",
+   "reported": false,
+   "also": [],
+   "post": "faa-ground-stop-ai-blamed-telecom-change-management-lessons",
+   "device": null,
+   "ai": null,
+   "score": 12,
+   "story": null
+  },
+  {
+   "id": "d0b55305",
+   "key": "https://cnbc.com/2026/11/14/spacex-plans-to-try-first-ever-catch-of-starship-rocket-from-orbit.html",
+   "time": "2026-11-14T21:20:00.000Z",
+   "seen": "2026-11-15T04:09:08.755Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "SpaceX catches the Starship upper stage with its launch tower for the first time",
+   "summary": "Reported by CNBC: SpaceX caught the upper stage of its Starship rocket with the launch tower's mechanical arms at Starbase, Texas, on Saturday, 14 November, during Test Flight 15. The ship flew around the Earth 14 times before the catch; it was the first flight on which SpaceX tried to catch both the booster and the upper stage. The Super Heavy booster was not caught: it was diverted to a Gulf of Mexico splashdown on Friday and exploded before hitting the water, CNBC reported.",
+   "lines": [
+    "Reported by CNBC: SpaceX caught the upper stage of its Starship rocket with the launch tower's mechanical arms at Starbase, Texas, on Saturday, 14 November, during Test Flight 15.",
+    "The ship flew around the Earth 14 times before the catch; it was the first flight on which SpaceX tried to catch both the booster and the upper stage.",
+    "The Super Heavy booster was not caught: it was diverted to a Gulf of Mexico splashdown on Friday and exploded before hitting the water, CNBC reported."
+   ],
+   "linesBy": "manual",
+   "source": {
+    "name": "CNBC",
+    "url": "https://www.cnbc.com/2026/11/14/spacex-plans-to-try-first-ever-catch-of-starship-rocket-from-orbit.html"
+   },
+   "sourceId": "manual",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 8,
+   "story": null
+  },
+  {
+   "id": "e8833956",
+   "key": "https://fortune.com/2026/11/10/anthropic-lower-than-expected-ipo-valuation-smart-strategy-or-red-flag",
+   "time": "2026-11-15T04:09:08.755Z",
+   "seen": "2026-11-15T04:09:08.755Z",
+   "kind": "update",
+   "tier": 2,
+   "headline": "Anthropic IPO range implies a valuation of about $1.3 trillion, below earlier talk",
+   "summary": "Reported by Fortune: Anthropic expects to price its shares at $70 to $78 each on 18 November and begin trading on Nasdaq under the ticker ANT the following day. Fortune reports that the range translates to a valuation of roughly $1.26 trillion to $1.41 trillion, lower than the roughly $2 trillion some investors and analysts had projected. This is a summary of news reports, not investment advice.",
+   "lines": [
+    "Reported by Fortune: Anthropic expects to price its shares at $70 to $78 each on 18 November and begin trading on Nasdaq under the ticker ANT the following day.",
+    "Fortune reports that the range translates to a valuation of roughly $1.26 trillion to $1.41 trillion, lower than the roughly $2 trillion some investors and analysts had projected.",
+    "This is a summary of news reports, not investment advice."
+   ],
+   "linesBy": "manual",
+   "source": {
+    "name": "Fortune",
+    "url": "https://fortune.com/2026/11/10/anthropic-lower-than-expected-ipo-valuation-smart-strategy-or-red-flag/"
+   },
+   "sourceId": "manual",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 8,
+   "story": null
+  },
+  {
+   "id": "2bcaf90f",
+   "key": "https://electrek.co/2026/11/13/tesla-cybercab-personal-use-orders-299-subscription-geofence",
+   "time": "2026-11-15T04:09:08.755Z",
+   "seen": "2026-11-15T04:09:08.755Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Tesla opens invite-only Cybercab orders for personal use, with a required $299 monthly subscription",
+   "summary": "Reported by Electrek: Tesla's Robotaxi account announced invitations on 13 November; the order page lists the Cybercab at $29,990 before taxes, with a $1,000 non-refundable deposit and estimated delivery in December 2026 in Austin, Texas. A $299-a-month subscription is required to operate the car, which has no steering wheel or pedals, and it works only inside Tesla's Robotaxi service areas, Electrek and Engadget report. Electrek lists Robotaxi service in eight cities: Austin, Dallas, Houston, Fort Worth and San Antonio in Texas, and Miami, Orlando and Tampa in Florida.",
+   "lines": [
+    "Reported by Electrek: Tesla's Robotaxi account announced invitations on 13 November; the order page lists the Cybercab at $29,990 before taxes, with a $1,000 non-refundable deposit and estimated delivery in December 2026 in Austin, Texas.",
+    "A $299-a-month subscription is required to operate the car, which has no steering wheel or pedals, and it works only inside Tesla's Robotaxi service areas, Electrek and Engadget report.",
+    "Electrek lists Robotaxi service in eight cities: Austin, Dallas, Houston, Fort Worth and San Antonio in Texas, and Miami, Orlando and Tampa in Florida."
+   ],
+   "linesBy": "manual",
+   "source": {
+    "name": "Electrek",
+    "url": "https://electrek.co/2026/11/13/tesla-cybercab-personal-use-orders-299-subscription-geofence/"
+   },
+   "sourceId": "manual",
+   "reported": true,
+   "also": [
+    "Engadget"
+   ],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 8,
+   "story": null
+  }
+ ],
+ "description": "4 technology updates from official sources, updated hourly: FAA ground stop: officials cite aging telecom equipment, not AI; investigation ongoing; SpaceX catches the Starship upper stage with its launch tower for the first time; Anthropic IPO range implies a valuation of about $1.3 trillion, below "
 }
