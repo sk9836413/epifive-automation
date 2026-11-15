@@ -2,7 +2,7 @@
  "date": "2026-11-14",
  "title": "Tech news today, 14 November 2026",
  "published": "2026-11-14T18:02:12.270Z",
- "updated": "2026-11-14T22:46:43.266Z",
+ "updated": "2026-11-15T09:33:51.711Z",
  "items": [
   {
    "id": "8f56716a",
@@ -870,7 +870,9 @@
    },
    "sourceId": "bleepingcomputer",
    "reported": true,
-   "also": [],
+   "also": [
+    "The Hacker News"
+   ],
    "post": null,
    "device": null,
    "ai": null,
