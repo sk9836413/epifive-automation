@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-15T21:11:52.179Z",
+ "lastScan": "2026-11-16T01:06:41.912Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -3459,6 +3459,60 @@
    ],
    "status": "below",
    "hash": "a088ec3d"
+  },
+  "https://openai.com/index/step-toward-defining-the-standard-model": {
+   "title": "A step toward defining the Standard Model on a lattice",
+   "link": "https://openai.com/index/step-toward-defining-the-standard-model",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-15T22:00:01.000Z",
+   "updated": null,
+   "summary": "Explore a candidate nonperturbative lattice definition of the Standard Model and how GPT-6 Astra helped turn the idea into a detailed proof.",
+   "first": "2026-11-16T01:06:41.912Z",
+   "score": 2,
+   "reasons": [
+    "+2 source openai-news"
+   ],
+   "status": "below",
+   "hash": "61503d92"
+  },
+  "https://openai.com/index/our-new-blog-for-science": {
+   "title": "Our new blog for science",
+   "link": "https://openai.com/index/our-new-blog-for-science",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-15T22:00:00.000Z",
+   "updated": null,
+   "summary": "The OpenAI science blog shares new findings, practical methods, and firsthand accounts from researchers using AI to advance scientific discovery.",
+   "first": "2026-11-16T01:06:41.912Z",
+   "score": 3,
+   "reasons": [
+    "+2 source openai-news",
+    "+1 niche (openai)"
+   ],
+   "status": "below",
+   "hash": "f59acf77"
+  },
+  "https://blogs.nvidia.com/blog/ai-day-seoul-wrapup": {
+   "title": "AI Day Seoul Brings Together Korea’s Industry Leaders, Startups and Developer Communities",
+   "link": "https://blogs.nvidia.com/blog/ai-day-seoul-wrapup/",
+   "source": "nvidia-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-16T00:00:28.000Z",
+   "updated": null,
+   "summary": "Over two days at COEX, more than 2,000 attendees converged for AI Day Seoul, bringing together Korea’s industry leaders, startups and developer communities advancing physical AI and AI agents. At the plenary sessions, Deepu Talla, vice president of robotics and edge AI at NVIDIA, said Korea is “punc",
+   "first": "2026-11-16T01:06:41.912Z",
+   "score": -1,
+   "reasons": [
+    "-1 source nvidia-news",
+    "+1 niche (agents)",
+    "-1 narrow audience \"Developer\""
+   ],
+   "status": "below",
+   "hash": "5530dab3"
   }
  },
  "devices": {}

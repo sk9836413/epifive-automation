@@ -2,7 +2,7 @@
  "date": "2026-11-16",
  "title": "Tech news today, 16 November 2026",
  "published": "2026-11-15T21:11:52.179Z",
- "updated": "2026-11-15T21:11:52.179Z",
+ "updated": "2026-11-16T01:06:41.912Z",
  "items": [
   {
    "id": "448a0f6c",
@@ -31,7 +31,63 @@
    "ai": null,
    "score": 9,
    "story": null
+  },
+  {
+   "id": "a74dce9c",
+   "key": "https://openai.com/index/our-new-blog-for-science",
+   "time": "2026-11-15T22:00:00.000Z",
+   "seen": "2026-11-16T01:06:41.912Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Our new blog for science",
+   "summary": "The OpenAI science blog shares new findings, practical methods, and firsthand accounts from researchers using AI to advance scientific discovery.",
+   "lines": [
+    "OpenAI launched a science blog that shares new findings, practical methods, and firsthand accounts from researchers.",
+    "The blog covers researchers using AI to advance scientific discovery.",
+    "For IT teams and business users, the blog is a source for how researchers apply AI in scientific work."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "OpenAI News",
+    "url": "https://openai.com/index/our-new-blog-for-science"
+   },
+   "sourceId": "openai-news",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "08cf3fe0",
+   "key": "https://openai.com/index/step-toward-defining-the-standard-model",
+   "time": "2026-11-15T22:00:01.000Z",
+   "seen": "2026-11-16T01:06:41.912Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "A step toward defining the Standard Model on a lattice",
+   "summary": "Explore a candidate nonperturbative lattice definition of the Standard Model and how GPT-6 Astra helped turn the idea into a detailed proof.",
+   "lines": [
+    "OpenAI published an article on a candidate nonperturbative lattice definition of the Standard Model.",
+    "The article says GPT-6 Astra helped turn the idea into a detailed proof.",
+    "For IT teams and business users, the item shows AI models being used to assist with advanced theoretical physics research."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "OpenAI News",
+    "url": "https://openai.com/index/step-toward-defining-the-standard-model"
+   },
+   "sourceId": "openai-news",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
   }
  ],
- "description": "1 technology update from official sources, updated hourly: FBI warns ARTEX AI hacking tool is powering global cyberattacks."
+ "description": "3 technology updates from official sources, updated hourly: FBI warns ARTEX AI hacking tool is powering global cyberattacks; Our new blog for science; A step toward defining the Standard Model on a lattice."
 }
