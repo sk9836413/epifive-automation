@@ -21,6 +21,10 @@ on:
         type: string
         default: ''
 
+env:
+  # Instagram caption wording of the "Comment GUIDE" ask (see social.yml).
+  COMMENT_FUNNEL_IG: ${{ vars.COMMENT_FUNNEL_IG }}
+
 permissions:
   contents: write
 

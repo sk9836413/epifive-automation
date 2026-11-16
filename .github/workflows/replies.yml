@@ -1,0 +1,117 @@
+# "Comment a keyword, get the link" (owner, 16 Nov 2026): answers comments such as GUIDE, LINK, PDF, CHECKLIST,
+# MIGRATE, DMARC, FIX or QUOTE (and Hinglish asks like "link bhejo") on EpiFive's YouTube videos, Facebook Page posts and
+# Reels, and Instagram posts and Reels, with the video's own guide or a www.epifive.com/get/<keyword> page (UTM tagged).
+# Script: scripts/social/comment-replies.mjs in the site repo (keywords: scripts/social/comment-keywords.mjs).
+#
+# When: no cron of its own and no change to the Cloudflare scheduler. It runs after each Launch radar run (the radar
+# already runs several times an hour), and a run within 50 minutes of the last one is skipped, so about once an hour.
+# Quota: YouTube ~2-4 units a run to read (one commentThreads.list for the whole channel) + 50 per reply; max 8
+# replies a run and 30 per platform a day, so at most ~1,500 units a day in the worst case (EpiFive's budget ~5,000).
+# No spam: one reply per comment and per person per video, never our own comments, 2 s between writes; a rate limit
+# ends the run; a policy or permission error pauses that platform until a manual run with "resume".
+# Instagram/Facebook private replies (DMs) run only when the repository variable META_DM is "on" (Meta allows private
+# replies to people without a role on the app only with Advanced Access); a permission error switches them off
+# ("dm: blocked" in the log) and the public reply is used.
+#
+# Switches (repository variables): COMMENT_REPLIES = "on" for the automatic runs (manual runs always work);
+# COMMENT_REPLY_PLATFORMS = which platforms (default youtube,facebook,instagram; drop instagram when ManyChat answers
+# Instagram comments, so nobody gets two replies); META_DM = "on" for private replies.
+# Logs (public, counts only, no names or comment texts): replies/log/<YYYY-MM>.md; state (hashed ids): replies/state.json.
+name: Comment replies
+
+on:
+  workflow_run:
+    workflows: [Launch radar]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Read and decide, but post nothing and save no state
+        type: boolean
+        default: false
+      platforms:
+        description: Platforms (comma-separated; empty = the COMMENT_REPLY_PLATFORMS variable or all three)
+        type: string
+        default: ''
+      max:
+        description: Most replies in this run
+        type: string
+        default: '8'
+      resume:
+        description: Clear a pause after fixing its cause (youtube, facebook, instagram, dm or all)
+        type: string
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: comment-replies
+  cancel-in-progress: false
+
+jobs:
+  reply:
+    if: github.event_name == 'workflow_dispatch' || vars.COMMENT_REPLIES == 'on'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Due?
+        id: gate
+        run: |
+          mkdir -p replies
+          if [ "${{ github.event_name }}" = workflow_dispatch ]; then exit 0; fi
+          last=$(node -e "try { console.log(Date.parse(require('./replies/state.json').lastRun) || 0) } catch { console.log(0) }")
+          if [ $(( $(date +%s%3N) - last )) -lt $(( 50 * 60 * 1000 )) ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"; echo "::notice::Last run under 50 minutes ago; skipped."
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.skip != 'true'
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+          path: site
+          sparse-checkout: |
+            content/posts
+            scripts/social
+            automation
+
+      - uses: actions/setup-node@v4
+        if: steps.gate.outputs.skip != 'true'
+        with:
+          node-version: 24
+
+      - name: Reply
+        if: steps.gate.outputs.skip != 'true'
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+          META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          META_DM: ${{ vars.META_DM }}
+          PLATFORMS: ${{ inputs.platforms || vars.COMMENT_REPLY_PLATFORMS || 'youtube,facebook,instagram' }}
+          MAX: ${{ inputs.max || '8' }}
+          RESUME: ${{ inputs.resume }}
+          DRY: ${{ inputs.dry_run }}
+        run: |
+          set -- --state ../replies/state.json --log-dir ../replies/log --photos-log ../photos/log.md --platforms "$PLATFORMS" --max "$MAX"
+          [ -n "$RESUME" ] && set -- "$@" --resume "$RESUME"
+          [ "$DRY" = "true" ] && set -- "$@" --dry-run
+          cd site && node scripts/social/comment-replies.mjs "$@" | tee "$RUNNER_TEMP/result.json"
+          { echo '```json'; cat "$RUNNER_TEMP/result.json"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Save state and log
+        if: steps.gate.outputs.skip != 'true' && !inputs.dry_run
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add replies
+          git diff --cached --quiet && exit 0
+          git commit -qm "Comment replies $(date -u '+%F %H:%M') UTC"
+          for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep 5; done

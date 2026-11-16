@@ -43,6 +43,9 @@ on:
 
 env:
   SITE_REMOTE: https://x-access-token:${{ secrets.SITE_REPO_TOKEN }}@github.com/sk9836413/EPIVIFE.git
+  # Caption wording of the "Comment GUIDE" ask on Instagram (scripts/social/post.mjs): "manychat" or "dm" promises the guide
+  # in a DM (ManyChat or META_DM answers Instagram comments by DM); unset = "we'll reply with the guide" (public reply).
+  COMMENT_FUNNEL_IG: ${{ vars.COMMENT_FUNNEL_IG }}
 
 permissions:
   contents: write
