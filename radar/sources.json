@@ -3,8 +3,8 @@
   "settings": {
     "threshold": 10,
     "freshHours": 36,
-    "maxNewPerDay": 1,
-    "maxAttemptsPerDay": 2,
+    "maxNewPerDay": 2,
+    "maxAttemptsPerDay": 3,
     "maxUpdatesPerDay": 2,
     "maxOutageExtraPerDay": 1,
     "maxDeviceRunsPerDay": 2,
