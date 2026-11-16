@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-16T13:17:11.645Z",
+ "lastScan": "2026-11-16T14:16:37.759Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -3168,6 +3168,331 @@
    ],
    "status": "below",
    "hash": "683cb0c"
+  },
+  "https://blog.google/products-and-platforms/products/shopping/black-friday-cyber-monday-shopping-tips-2026": {
+   "title": "How to find the best Black Friday deals and shop smarter",
+   "link": "https://blog.google/products-and-platforms/products/shopping/black-friday-cyber-monday-shopping-tips-2026/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-16T14:00:00.000Z",
+   "updated": null,
+   "summary": "Track price drops, organize your cart, and find thoughtful gifts faster this Black Friday and Cyber Monday with these Google tools.",
+   "first": "2026-11-16T14:16:37.759Z",
+   "score": 3,
+   "reasons": [
+    "+2 user steps \"How to\"",
+    "+1 plans/price/availability \"price\""
+   ],
+   "status": "below",
+   "hash": "6f4dece3"
+  },
+  "https://blog.google/products-and-platforms/products/maps/ask-maps-holiday-travel-features-2026": {
+   "title": "New Ask Maps features to help with holiday travel and prep",
+   "link": "https://blog.google/products-and-platforms/products/maps/ask-maps-holiday-travel-features-2026/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-16T14:00:00.000Z",
+   "updated": null,
+   "summary": "Plan holiday road trips, get route tips, find local appointments, and search your saved lists with new Ask Maps features.",
+   "first": "2026-11-16T14:16:37.759Z",
+   "score": 1,
+   "reasons": [
+    "+1 plans/price/availability \"Plan\""
+   ],
+   "status": "below",
+   "hash": "264fbb5b"
+  },
+  "https://blog.google/products-and-platforms/products/maps/holiday-thanksgiving-travel-trends-2026": {
+   "title": "Navigate holiday traffic and crowds with Google Maps trends",
+   "link": "https://blog.google/products-and-platforms/products/maps/holiday-thanksgiving-travel-trends-2026/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-16T14:00:00.000Z",
+   "updated": null,
+   "summary": "See the best and worst times to drive, run errands, and visit trending holiday spots with 2026 Google Maps data",
+   "first": "2026-11-16T14:16:37.759Z",
+   "score": 1,
+   "reasons": [
+    "+1 niche (google maps)"
+   ],
+   "status": "below",
+   "hash": "9115d733"
+  },
+  "https://blog.google/products-and-platforms/products/search/holiday-prep-search-2026": {
+   "title": "4 ways Search can help with your holiday plans",
+   "link": "https://blog.google/products-and-platforms/products/search/holiday-prep-search-2026/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-16T14:00:00.000Z",
+   "updated": null,
+   "summary": "Here are four ways Search can help tackle your seasonal to-do list.",
+   "first": "2026-11-16T14:16:37.759Z",
+   "score": 1,
+   "reasons": [
+    "+1 plans/price/availability \"plans\""
+   ],
+   "status": "below",
+   "hash": "f51afbfc"
+  },
+  "https://blog.google/products-and-platforms/products/maps/ask-maps-is-coming-to-europe": {
+   "title": "Ask Maps is coming to Europe.",
+   "link": "https://blog.google/products-and-platforms/products/maps/ask-maps-is-coming-to-europe/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-16T14:00:00.000Z",
+   "updated": null,
+   "summary": "Ask Maps is the biggest update to Google Maps in over a decade. Powered by the world’s freshest map and Gemini models, it answers complex, real-world questions a map cou…",
+   "first": "2026-11-16T14:16:37.759Z",
+   "score": 3,
+   "reasons": [
+    "+3 niche (gemini, google maps)"
+   ],
+   "status": "below",
+   "hash": "27fff437"
+  },
+  "https://news.lenovo.com/harnessing-ai-and-hpc-to-push-the-frontiers-of-human-knowledge": {
+   "title": "Harnessing AI and HPC to Push the Frontiers of Human Knowledge",
+   "link": "https://news.lenovo.com/harnessing-ai-and-hpc-to-push-the-frontiers-of-human-knowledge/",
+   "source": "lenovo-news",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-16T14:00:50.000Z",
+   "updated": null,
+   "summary": "AI is reshaping high-performance computing, opening new possibilities for researchers while creating unprecedented demands for compute performance, scalability, and efficiency. Lenovo and AMD are helping research organizations build the infrastructure to meet these demands.",
+   "first": "2026-11-16T14:16:37.759Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "d5280e78"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63984": {
+   "title": "RBI to conduct 2-day Variable Rate Reverse Repo (VRRR) auction under LAF on November 17, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63984",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-16T19:25:00.000Z",
+   "updated": null,
+   "summary": "On a review of current and evolving liquidity conditions, it has been decided to conduct a Variable Rate Reverse Repo (VRRR) auction on Tuesday, November 17, 2026, as under: Sl. No. Notified Amount (₹ crore) Tenor (day) Window Timing Date of Reversal 1 50,000 2 09:30 AM to 10:00 AM November 19, 2026",
+   "first": "2026-11-16T14:16:37.759Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "6bc80cce"
+  },
+  "https://salesforce.com/blog/small-business/account-based-marketing": {
+   "title": "Account-Based Marketing for Small Business: A Practical Starter Guide",
+   "link": "https://www.salesforce.com/blog/small-business/account-based-marketing/",
+   "source": "salesforce-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-16T14:00:00.000Z",
+   "updated": null,
+   "summary": "What is ABM all about? Let’s talk accounts, marketing, and niche promotional tactics.",
+   "first": "2026-11-16T14:16:37.759Z",
+   "score": -1,
+   "reasons": [
+    "-1 source salesforce-blog"
+   ],
+   "status": "below",
+   "hash": "dadfcf50"
+  },
+  "https://ir.amd.com/news-events/press-releases/detail/1306/amd-completes-acquisition-of-world-labs": {
+   "title": "AMD Completes Acquisition of World Labs",
+   "link": "https://ir.amd.com/news-events/press-releases/detail/1306/amd-completes-acquisition-of-world-labs",
+   "source": "amd-press",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-16T14:05:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-16T14:16:37.759Z",
+   "score": -1,
+   "reasons": [
+    "-1 source amd-press"
+   ],
+   "status": "below",
+   "hash": "247060cb"
+  },
+  "https://dell.com/en-us/blog/dell-technologies-and-amd-offer-more-ways-to-deploy-ai-from-first-node-to-full-rack": {
+   "title": "Dell Technologies and AMD Offer More Ways to Deploy AI, From First Node to Full Rack",
+   "link": "https://www.dell.com/en-us/blog/dell-technologies-and-amd-offer-more-ways-to-deploy-ai-from-first-node-to-full-rack",
+   "source": "dell-blog",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-16T14:00:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-16T14:16:37.759Z",
+   "score": -1,
+   "reasons": [
+    "-1 source dell-blog"
+   ],
+   "status": "below",
+   "hash": "edabb38d"
+  },
+  "https://dell.com/en-us/blog/dell-ai-data-platform-makes-data-agent-ready-at-sc26": {
+   "title": "Dell AI Data Platform Makes Data Agent-Ready at SC26",
+   "link": "https://www.dell.com/en-us/blog/dell-ai-data-platform-makes-data-agent-ready-at-sc26",
+   "source": "dell-blog",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-16T14:00:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-16T14:16:37.759Z",
+   "score": 0,
+   "reasons": [
+    "-1 source dell-blog",
+    "+1 niche (agent)"
+   ],
+   "status": "below",
+   "hash": "d4a9c1a"
+  },
+  "https://dell.com/en-us/blog/why-ai-fabrics-need-one-source-of-truth": {
+   "title": "Why AI Fabrics Need One Source of Truth",
+   "link": "https://www.dell.com/en-us/blog/why-ai-fabrics-need-one-source-of-truth",
+   "source": "dell-blog",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-16T14:00:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-16T14:16:37.759Z",
+   "score": -1,
+   "reasons": [
+    "-1 source dell-blog"
+   ],
+   "status": "below",
+   "hash": "b3fbccaa"
+  },
+  "https://dell.com/en-us/blog/advancing-enterprise-ai-through-dell-s-growing-ecosystem": {
+   "title": "Advancing Enterprise AI Through Dell’s Growing Ecosystem",
+   "link": "https://www.dell.com/en-us/blog/advancing-enterprise-ai-through-dell-s-growing-ecosystem",
+   "source": "dell-blog",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-16T14:00:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-16T14:16:37.759Z",
+   "score": -1,
+   "reasons": [
+    "-1 source dell-blog"
+   ],
+   "status": "below",
+   "hash": "fd9f3816"
+  },
+  "https://dell.com/en-us/blog/dell-brings-codex-to-dell-ai-factory-with-openai": {
+   "title": "Dell Brings Codex to Dell AI Factory with OpenAI",
+   "link": "https://www.dell.com/en-us/blog/dell-brings-codex-to-dell-ai-factory-with-openai",
+   "source": "dell-blog",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-16T14:00:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-16T14:16:37.759Z",
+   "score": 1,
+   "reasons": [
+    "-1 source dell-blog",
+    "+2 niche (openai, codex)"
+   ],
+   "status": "below",
+   "hash": "83f31712"
+  },
+  "https://dell.com/en-us/blog/one-view-of-your-infrastructure-from-server-to-rack": {
+   "title": "One View of Your Infrastructure, from Server to Rack",
+   "link": "https://www.dell.com/en-us/blog/one-view-of-your-infrastructure-from-server-to-rack",
+   "source": "dell-blog",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-16T13:45:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-16T14:16:37.759Z",
+   "score": -1,
+   "reasons": [
+    "-1 source dell-blog"
+   ],
+   "status": "below",
+   "hash": "bfa3d7b2"
+  },
+  "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold": {
+   "title": "GTIG AI Threat Tracker: Agentic Threat Activity Crosses a Significant Threshold",
+   "link": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold/",
+   "source": "gcloud-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-16T14:00:00.000Z",
+   "updated": null,
+   "summary": "Written by: Aurora Blum, Kelli Vanderlee, Jess Xia, David Mainor Executive Summary As threat actors increasingly move beyond basic prompting to deploying autonomous multi-agent frameworks , automated vulnerability exploitation pipelines, and alternative monetization schemes like LLMJacking , the adv",
+   "first": "2026-11-16T14:16:37.759Z",
+   "score": 0,
+   "reasons": [
+    "-1 source gcloud-blog",
+    "+1 niche (agent)"
+   ],
+   "status": "below",
+   "hash": "5ad6571a"
+  },
+  "https://cloud.google.com/blog/products/identity-security/how-isvs-are-unlocking-european-workloads-on-google-cloud-dedicated": {
+   "title": "How ISVs are unlocking European workloads using Google Cloud Dedicated technology",
+   "link": "https://cloud.google.com/blog/products/identity-security/how-isvs-are-unlocking-european-workloads-on-google-cloud-dedicated/",
+   "source": "gcloud-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-16T08:05:00.000Z",
+   "updated": null,
+   "summary": "Across Europe, organizations handling sensitive workloads in regulated sectors — such as financial services, healthcare, critical infrastructure, and the public sector — are trying to modernize their infrastructure while adhering to strict local data governance standards, including SecNumCloud in Fr",
+   "first": "2026-11-16T14:16:37.759Z",
+   "score": -1,
+   "reasons": [
+    "-1 source gcloud-blog"
+   ],
+   "status": "below",
+   "hash": "d0874a21"
+  },
+  "https://cloud.google.com/blog/products/identity-security/inside-the-new-data-boundary-experience": {
+   "title": "Inside the new Google Cloud Data Boundary experience",
+   "link": "https://cloud.google.com/blog/products/identity-security/inside-the-new-data-boundary-experience/",
+   "source": "gcloud-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-16T08:05:00.000Z",
+   "updated": null,
+   "summary": "Digital sovereignty is evolving from a standard compliance requirement into a powerful strategic advantage for regulated industries worldwide. From European frameworks designed to meet sovereign standards (DORA, EHDS, GDPR) to FedRAMP/ILs/ITARs in the U.S., or expanding mandates across Asia-Pacific ",
+   "first": "2026-11-16T14:16:37.759Z",
+   "score": -1,
+   "reasons": [
+    "-1 source gcloud-blog"
+   ],
+   "status": "below",
+   "hash": "1d124f53"
+  },
+  "https://changelog.shopify.com/posts/improved-bot-detection-for-cart-and-checkout-activity": {
+   "title": "Improved bot detection for cart and checkout activity",
+   "link": "https://changelog.shopify.com/posts/improved-bot-detection-for-cart-and-checkout-activity",
+   "source": "shopify-changelog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-16T14:00:00.000Z",
+   "updated": null,
+   "summary": "We’ve improved how Shopify Analytics detects bot traffic in cart and checkout activity. As a result, reports that include a human based filter might show a small dip in sessions. Orders, sales and customer data is not a part of this change. Learn more about bot traffic in Analytics",
+   "first": "2026-11-16T14:16:37.759Z",
+   "score": -2,
+   "reasons": [
+    "-2 source shopify-changelog"
+   ],
+   "status": "below",
+   "hash": "4ec57b0c"
   }
  },
  "devices": {}
