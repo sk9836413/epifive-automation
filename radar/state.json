@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-16T01:06:41.912Z",
+ "lastScan": "2026-11-16T04:43:45.673Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -96,45 +96,6 @@
    "status": "below",
    "hash": "366d8df3"
   },
-  "https://openai.com/business/customer-stories/amplitude": {
-   "title": "How Amplitude ships product improvements in 1–2 days with OpenAI",
-   "link": "https://openai.com/business/customer-stories/amplitude",
-   "source": "openai-news",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-12T20:00:00.000Z",
-   "updated": null,
-   "summary": "Built primarily on OpenAI models, Amplitude’s proactive product agent, Wave, identifies what to build, helps teams ship changes with coding agents, and measures the impact.",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": 2,
-   "reasons": [
-    "+2 source openai-news",
-    "+2 niche (openai, agent)",
-    "-2 category (none)"
-   ],
-   "status": "below",
-   "hash": "55c61fd9"
-  },
-  "https://openai.com/business/customer-stories/gondola": {
-   "title": "Gondola doubles revenue as its team builds more with Codex",
-   "link": "https://openai.com/business/customer-stories/gondola",
-   "source": "openai-news",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-12T12:00:00.000Z",
-   "updated": null,
-   "summary": "Gondola helps creatives get credit and get hired, with Codex raising its lead engineer’s output by 50% and ChatGPT simplifying daily work.",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": -1,
-   "reasons": [
-    "+2 source openai-news",
-    "+4 niche (chatgpt, codex)",
-    "-4 customer story",
-    "-3 category (Startup)"
-   ],
-   "status": "below",
-   "hash": "87735ad9"
-  },
   "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade": {
    "title": "Google Search gets a major upgrade with Gemini 4 Hydrogen",
    "link": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/",
@@ -154,26 +115,6 @@
    ],
    "status": "below",
    "hash": "1889a281"
-  },
-  "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-hydrogen": {
-   "title": "Gemini 4 Hydrogen: everyday coding and agentic workflows for developers",
-   "link": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-hydrogen/",
-   "source": "gemini-blog",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-12T18:00:00.000Z",
-   "updated": null,
-   "summary": "Build faster with Gemini 4 Hydrogen, Google’s new model for cost-efficient agentic coding and debugging. Start building in Google AI Studio today.",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": 3,
-   "reasons": [
-    "+1 source gemini-blog",
-    "+2 niche (gemini)",
-    "-1 narrow audience \"developers\"",
-    "+1 also on google-keyword"
-   ],
-   "status": "below",
-   "hash": "1be9db92"
   },
   "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen": {
    "title": "Introducing Gemini 4 Hydrogen",
@@ -388,82 +329,6 @@
    "status": "below",
    "hash": "b6dffc15"
   },
-  "https://thehackernews.com/2026/11/threatsday-59-linux-kernel-bugs-falcon.html": {
-   "title": "ThreatsDay: 59 Linux Kernel Bugs, Falcon Spyware, GSocket Backdoors + 17 More Stories",
-   "link": "https://thehackernews.com/2026/11/threatsday-59-linux-kernel-bugs-falcon.html",
-   "source": "thn",
-   "topic": "security-identity",
-   "category": "incident",
-   "date": "2026-11-12T18:02:51.000Z",
-   "updated": null,
-   "summary": "A search result isn't always safe. An access request isn't always harmless. And a familiar account doesn't always mean a familiar person is using it. Simple things to remember. Yet a surprising amount of this week's trouble starts right there. Attackers are using fake websites, stolen access, and tr",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": 5,
-   "reasons": [
-    "+1 source thn",
-    "+3 incident \"Spyware\"",
-    "+1 user data or credentials exposed"
-   ],
-   "status": "below",
-   "hash": "2dca24fb"
-  },
-  "https://thehackernews.com/2026/11/critical-red-hat-quay-flaw-lets.html": {
-   "title": "Critical Red Hat Quay Flaw Lets Attackers Read and Overwrite All Private Container Images in a Registry",
-   "link": "https://thehackernews.com/2026/11/critical-red-hat-quay-flaw-lets.html",
-   "source": "thn",
-   "topic": "security-identity",
-   "category": "incident",
-   "date": "2026-11-12T16:27:01.000Z",
-   "updated": null,
-   "summary": "A critical flaw in Red Hat Quay allows an attacker who can access a Quay registry to read and overwrite private container images in every repository. Quay enables anonymous access by default, and while it is enabled, the attacker needs no account. When it is off, anyone with a valid account can stil",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": 5,
-   "reasons": [
-    "+1 source thn",
-    "+2 vulnerability \"Flaw\"",
-    "+2 user action \"fixed\""
-   ],
-   "status": "below",
-   "hash": "19f4d2e1"
-  },
-  "https://thehackernews.com/2026/11/citrix-patches-12-netscaler-and-secure.html": {
-   "title": "Citrix Patches 12 NetScaler and Secure Access Client Flaws, Including Authentication Bypass",
-   "link": "https://thehackernews.com/2026/11/citrix-patches-12-netscaler-and-secure.html",
-   "source": "thn",
-   "topic": "security-identity",
-   "category": "incident",
-   "date": "2026-11-12T15:38:49.000Z",
-   "updated": null,
-   "summary": "Citrix has released patches for multiple critical security flaws impacting NetScaler ADC, Citrix NetScaler Gateway, and NetScaler Console that could lead to denial-of-service (DoS) or an authentication bypass. The critical vulnerabilities that impact NetScaler ADC and NetScaler Gateway are listed be",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": 5,
-   "reasons": [
-    "+1 source thn",
-    "+2 vulnerability \"Flaws\"",
-    "+2 user action \"Patches\""
-   ],
-   "status": "below",
-   "hash": "9a8ba20b"
-  },
-  "https://thehackernews.com/2026/11/186-fake-ai-domains-redirect-users-to.html": {
-   "title": "186 Fake AI Domains Redirect Users to ClickFix Lures, Browser Malware, and Search Hijackers",
-   "link": "https://thehackernews.com/2026/11/186-fake-ai-domains-redirect-users-to.html",
-   "source": "thn",
-   "topic": "security-identity",
-   "category": "incident",
-   "date": "2026-11-12T15:15:40.000Z",
-   "updated": null,
-   "summary": "Cybersecurity researchers have found that lookalike domains masquerading as artificial intelligence (AI) tools are being used to serve ClickFix-style lures, browser-hijacking malware, and a set of extensions that hijack user searches. This delivery pattern has been codenamed TypoPrompting by Island.",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": 5,
-   "reasons": [
-    "+1 source thn",
-    "+3 incident \"Malware\"",
-    "+1 user data or credentials exposed"
-   ],
-   "status": "below",
-   "hash": "729bf446"
-  },
   "https://thehackernews.com/2026/11/sckit-malware-targets-screenconnect.html": {
    "title": "SCKit Malware Turns ScreenConnect Support Sessions Into Potential MSP Attack Paths",
    "link": "https://thehackernews.com/2026/11/sckit-malware-targets-screenconnect.html",
@@ -567,25 +432,6 @@
    "status": "below",
    "hash": "8e50fdfb"
   },
-  "https://thehackernews.com/2026/11/critical-pre-auth-mongodb-flaw-cve-2026.html": {
-   "title": "Critical Pre-Auth MongoDB Flaw (CVE-2026-118383) Can Crash Lagging Servers on Failover",
-   "link": "https://thehackernews.com/2026/11/critical-pre-auth-mongodb-flaw-cve-2026.html",
-   "source": "thn",
-   "topic": "security-identity",
-   "category": "incident",
-   "date": "2026-11-12T09:25:00.000Z",
-   "updated": null,
-   "summary": "A critical flaw in MongoDB Server allows an unauthenticated attacker to send two requests that trigger a crash on the database server. The crash occurs only if that server is later chosen to take over as the main server while it still lacks some recent changes. MongoDB, the company that makes the da",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": 5,
-   "reasons": [
-    "+1 source thn",
-    "+2 vulnerability \"Flaw\"",
-    "+2 user action \"fixed\""
-   ],
-   "status": "below",
-   "hash": "b251920f"
-  },
   "https://thehackernews.com/2026/11/nodejs-fixes-16-flaws-including-http2.html": {
    "title": "Node.js Fixes 16 Flaws, Including HTTP/2 Bugs That Crash Servers and Leak Other Connections' Data",
    "link": "https://thehackernews.com/2026/11/nodejs-fixes-16-flaws-including-http2.html",
@@ -629,25 +475,6 @@
    "hash": "ac64f15",
    "post": "github-wfx-loot-ci-secret-stealer-check"
   },
-  "https://thehackernews.com/2026/11/critical-apache-http2-flaw-could-let.html": {
-   "title": "Critical Apache HTTP/2 Flaw Could Let Unauthenticated Attackers Execute Code Remotely",
-   "link": "https://thehackernews.com/2026/11/critical-apache-http2-flaw-could-let.html",
-   "source": "thn",
-   "topic": "security-identity",
-   "category": "incident",
-   "date": "2026-11-12T05:12:26.000Z",
-   "updated": null,
-   "summary": "A critical flaw in Apache HTTP Server's HTTP/2 module, mod_http2, can let a remote attacker run code on the server. Tracked as CVE-2026-119618, it affects versions 2.4.55 through 2.4.70 and is fixed in version 2.4.71, released yesterday. Only servers with HTTP/2 enabled are affected, according to Re",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": 5,
-   "reasons": [
-    "+1 source thn",
-    "+2 vulnerability \"Flaw\"",
-    "+2 user action \"fixed\""
-   ],
-   "status": "below",
-   "hash": "4133a9b1"
-  },
   "https://thehackernews.com/2026/11/screenconnect-attacks-target-at-least.html": {
    "title": "ScreenConnect Attacks Target at Least 288 Endpoints Across 48 Organizations With Rogue Clients",
    "link": "https://thehackernews.com/2026/11/screenconnect-attacks-target-at-least.html",
@@ -666,90 +493,6 @@
    ],
    "status": "below",
    "hash": "4b98e346"
-  },
-  "https://blog.google/innovation-and-ai/models-and-research/google-labs/new-google-flow-tools": {
-   "title": "5 new Google Flow Tools designed by visual artists",
-   "link": "https://blog.google/innovation-and-ai/models-and-research/google-labs/new-google-flow-tools/",
-   "source": "google-keyword",
-   "topic": "how-to-tips",
-   "category": "launch",
-   "date": "2026-11-12T20:30:00.000Z",
-   "updated": null,
-   "summary": "Designed by filmmakers and visual artists, five new Google Flow Tools will help you bring your next story to life.",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": 0,
-   "reasons": [],
-   "status": "below",
-   "hash": "bdcc74f8"
-  },
-  "https://blog.google/company-news/outreach-and-initiatives/sustainability/saving-giant-kelp-australia": {
-   "title": "Scientists are using Google AI to help restore giant kelp forests.",
-   "link": "https://blog.google/company-news/outreach-and-initiatives/sustainability/saving-giant-kelp-australia/",
-   "source": "google-keyword",
-   "topic": "how-to-tips",
-   "category": "launch",
-   "date": "2026-11-12T17:00:00.000Z",
-   "updated": null,
-   "summary": "Underwater forests of giant kelp protect coastlines, provide habitat, and support marine ecosystems — but they’re disappearing worldwide due to ocean warming. As COP31 k…",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": 0,
-   "reasons": [],
-   "status": "below",
-   "hash": "c8587ea0"
-  },
-  "https://blog.google/company-news/outreach-and-initiatives/google-org/phd-fellows-2026": {
-   "title": "Meet the 2026 Google PhD Fellows",
-   "link": "https://blog.google/company-news/outreach-and-initiatives/google-org/phd-fellows-2026/",
-   "source": "google-keyword",
-   "topic": "how-to-tips",
-   "category": "launch",
-   "date": "2026-11-12T17:00:00.000Z",
-   "updated": null,
-   "summary": "Google.org is providing $13 million in funding to support the 2026 Google PhD Fellows.",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": 1,
-   "reasons": [
-    "+1 plans/price/availability \"$1\""
-   ],
-   "status": "below",
-   "hash": "f13a351"
-  },
-  "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/energy-impact-program-west-virginia": {
-   "title": "We're launching a $10 million Energy Impact Program in West Virginia.",
-   "link": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/energy-impact-program-west-virginia/",
-   "source": "google-keyword",
-   "topic": "how-to-tips",
-   "category": "launch",
-   "date": "2026-11-12T17:00:00.000Z",
-   "updated": null,
-   "summary": "Google is launching a $10 million Energy Impact Program in West Virginia to fund home repairs and efficiency upgrades. Check your eligibility today.",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": 4,
-   "reasons": [
-    "+2 launch \"launching\"",
-    "+1 plans/price/availability \"$1\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "8feec1bf"
-  },
-  "https://microsoft.com/en-us/security/blog/2026/11/11/global-socket-how-threat-actors-weaponizing-gsocket-stealthy-c2": {
-   "title": "The global socket: how threat actors are weaponizing GSocket for stealthy C2",
-   "link": "https://www.microsoft.com/en-us/security/blog/2026/11/11/global-socket-how-threat-actors-weaponizing-gsocket-stealthy-c2/",
-   "source": "ms-security-blog",
-   "topic": "security-identity",
-   "category": "incident",
-   "date": "2026-11-11T19:49:57.000Z",
-   "updated": null,
-   "summary": "Threat actors are deploying GSocket on compromised Linux servers to keep encrypted remote access after the original vulnerability is patched. Learn how to detect, investigate, and remediate this activity. The post The global socket: how threat actors are weaponizing GSocket for stealthy C2 appeared ",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": 5,
-   "reasons": [
-    "+3 incident \"compromised\"",
-    "+2 user action \"patched\""
-   ],
-   "status": "below",
-   "hash": "36b19ab"
   },
   "https://microsoft.com/en-us/security/blog/2026/11/11/lessons-from-59-linux-kernel-bug-reports": {
    "title": "Lessons from 59 Linux Kernel Bug Reports",
@@ -770,191 +513,6 @@
    "status": "duplicate",
    "hash": "1019ba48"
   },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63966": {
-   "title": "Money Market Operations as on November 12, 2026",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63966",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-13T09:00:00.000Z",
-   "updated": null,
-   "summary": "(Amount in ₹ crore, Rate in Per cent) MONEY MARKETS @ --> Money Markets @ Volume (One Leg) Weighted Average Rate Range A. Overnight Segment (I+II+III+IV) 7,89,769.30 5.36 3.00-7.40 I. Call Money 16,530.81 5.45 4.30-5.60 II. Triparty Repo 5,65,118.15 5.35 5.05-5.65 III. Market Repo 2,01,298.24 5.39 3",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": -1,
-   "reasons": [
-    "-1 source rbi-press"
-   ],
-   "status": "below",
-   "hash": "b87d58da"
-  },
-  "https://github.blog/changelog/2026-11-12-actions-for-arm32-linux-windows-retirement": {
-   "title": "Actions for ARM32 Linux & Windows retirement",
-   "link": "https://github.blog/changelog/2026-11-12-actions-for-arm32-linux-windows-retirement",
-   "source": "github-changelog",
-   "topic": "ai-engineering",
-   "category": "launch",
-   "date": "2026-11-12T20:59:36.000Z",
-   "updated": null,
-   "summary": "GitHub Actions hosted runners will be ending support for ARM32 job execution on Windows and Linux by 8th Dec 2026. This follows our end of support for node20 where Node… The post Actions for ARM32 Linux & Windows retirement appeared first on The GitHub Blog .",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": 1,
-   "reasons": [
-    "-1 source github-changelog",
-    "+1 niche (windows)",
-    "+1 retirement/migration"
-   ],
-   "status": "below",
-   "hash": "25b9b0fc"
-  },
-  "https://github.blog/changelog/2026-11-12-secret-scanning-adds-a-detector-for-cloudflare": {
-   "title": "Secret scanning detects Cloudflare service tokens",
-   "link": "https://github.blog/changelog/2026-11-12-secret-scanning-adds-a-detector-for-cloudflare",
-   "source": "github-changelog",
-   "topic": "ai-engineering",
-   "category": "launch",
-   "date": "2026-11-12T14:38:25.000Z",
-   "updated": null,
-   "summary": "Secret scanning now detects Cloudflare service tokens. Detectors added Secret scanning now automatically detects the following new secret type in your repositories. Provider Secret type Cloudflare cloudflare_access_service_token Partner secrets are… The post Secret scanning detects Cloudflare servic",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": -1,
-   "reasons": [
-    "-1 source github-changelog"
-   ],
-   "status": "below",
-   "hash": "b090e2a4"
-  },
-  "https://github.blog/changelog/2026-11-12-public-monitoring-alerts-now-have-direct-links": {
-   "title": "Public monitoring alerts now have direct links",
-   "link": "https://github.blog/changelog/2026-11-12-public-monitoring-alerts-now-have-direct-links",
-   "source": "github-changelog",
-   "topic": "ai-engineering",
-   "category": "launch",
-   "date": "2026-11-12T14:37:38.000Z",
-   "updated": null,
-   "summary": "You can now access individual public monitoring alerts with a direct link to each alert. In your enterprise’s Public monitoring view, click an alert number to open the alert. You… The post Public monitoring alerts now have direct links appeared first on The GitHub Blog .",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": 3,
-   "reasons": [
-    "-1 source github-changelog",
-    "+2 launch \"You can now\"",
-    "+2 user steps \"You can\""
-   ],
-   "status": "below",
-   "hash": "d4c797e7"
-  },
-  "https://mc.merill.net/message/MC1551001": {
-   "title": "MC1551001: Prevent issues with NetApp SMB shares: Learn about new Windows Server security requirements",
-   "link": "https://mc.merill.net/message/MC1551001",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-12T22:55:55.000Z",
-   "updated": null,
-   "summary": "What and why:Microsoft introduced additional security requirements for LDAP authentication on Active Directory domain controllers starting with the October 13, 2026, Windows security updates. These changes require Kerberos service tickets used for LDAP authentication to match the LDAP service princi",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": 1,
-   "reasons": [
-    "-2 source mc-merill",
-    "+1 niche (windows)",
-    "+2 launch \"introduced\""
-   ],
-   "status": "below",
-   "hash": "ba9ebeb0"
-  },
-  "https://mc.merill.net/message/MC1491832": {
-   "title": "MC1491832: (UPDATED) Take action to prevent RD Web Access rendering failures",
-   "link": "https://mc.merill.net/message/MC1491832",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-12T22:55:53.000Z",
-   "updated": null,
-   "summary": "Updated November 12, 2026: We are informing regarding November updates for Windows Server which address this change. What and why:The Remote Desktop Web Access (RD Web Access) experience included with Windows Server relies on Extensible Stylesheet Language Transformations (XSLT) to render its web in",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": 1,
-   "reasons": [
-    "-2 source mc-merill",
-    "+1 niche (windows)",
-    "+2 user steps \"disable\""
-   ],
-   "status": "below",
-   "hash": "96fd0306"
-  },
-  "https://mc.merill.net/message/MC1550797": {
-   "title": "MC1550797: 60-day reminder: Hardening changes for ReFS volumes on removable media",
-   "link": "https://mc.merill.net/message/MC1550797",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-12T18:01:41.000Z",
-   "updated": null,
-   "summary": "What and why:Microsoft is making hardening changes to the Resilient File System (ReFS). The changes improve the security posture of Windows by adding visibility into unsupported external ReFS configurations and by providing controls to block affected volumes. The changes apply to all supported Windo",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": 0,
-   "reasons": [
-    "-2 source mc-merill",
-    "+1 niche (windows)",
-    "+1 plans/price/availability \"Rollout\""
-   ],
-   "status": "below",
-   "hash": "315b8880"
-  },
-  "https://mc.merill.net/message/MC1550796": {
-   "title": "MC1550796: Windows Office Hours: November 19, 2026",
-   "link": "https://mc.merill.net/message/MC1550796",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-12T18:01:37.000Z",
-   "updated": null,
-   "summary": "If you are an IT admin with questions about managing and updating Windows, we want to help. Every third Thursday of the month, we host a live chat-based event on the Tech Community called Windows Office Hours. Members of the Windows, Microsoft Intune, Windows Autopilot, Windows Autopatch, and Window",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": 0,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 niche (intune, windows)"
-   ],
-   "status": "below",
-   "hash": "c45490f9"
-  },
-  "https://mc.merill.net/message/MC1387578": {
-   "title": "MC1387578: Microsoft Defender for Office 365: Localized default mark and notify email template",
-   "link": "https://mc.merill.net/message/MC1387578",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-12T17:30:22.000Z",
-   "updated": null,
-   "summary": "Microsoft Defender for Office 365 will localize the default \"Mark and notify\" email template based on users' Outlook language settings, improving clarity in user-reported message notifications. Rollout starts June 2026 globally, with no changes to message classification or custom templates. No actio",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": 3,
-   "reasons": [
-    "-2 source mc-merill",
-    "+4 niche (office 365, outlook, defender)",
-    "+1 plans/price/availability \"Rollout\""
-   ],
-   "status": "below",
-   "hash": "19452a1"
-  },
-  "https://mc.merill.net/message/MC1509796": {
-   "title": "MC1509796: Microsoft Teams: Enhanced channel meeting experience",
-   "link": "https://mc.merill.net/message/MC1509796",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-12T17:25:11.000Z",
-   "updated": null,
-   "summary": "Microsoft Teams will enhance channel meetings, allowing scheduling from Teams calendar and Outlook, easier discovery for channel members, and delegate scheduling. Rollout starts November 2026, completing by September 2027 across environments. No admin action needed; informing users is recommended. N",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": 3,
-   "reasons": [
-    "-2 source mc-merill",
-    "+4 niche (microsoft teams, outlook)",
-    "+1 plans/price/availability \"Rollout\""
-   ],
-   "status": "below",
-   "hash": "54f6982d"
-  },
   "https://mc.merill.net/message/MC1409304": {
    "title": "MC1409304: Microsoft Teams: Facilitator proactively detects and resolves knowledge gaps in meetings",
    "link": "https://mc.merill.net/message/MC1409304",
@@ -974,43 +532,6 @@
    ],
    "status": "below",
    "hash": "d2dcdc8c"
-  },
-  "https://mc.merill.net/message/MC1550540": {
-   "title": "MC1550540: Microsoft 365 Copilot: Copilot Workspaces is replacing standalone agent selection with agentic chat",
-   "link": "https://mc.merill.net/message/MC1550540",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-12T16:19:36.000Z",
-   "updated": null,
-   "summary": "Microsoft 365 Copilot Workspaces will replace standalone agent selection (Researcher, Analyst, Designer) with an agentic chat that applies skills based on user requests. This simplifies workflows without losing capabilities. The change begins December 2026 in Frontier preview, with no admin action r",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": 2,
-   "reasons": [
-    "-2 source mc-merill",
-    "+4 niche (copilot, microsoft 365, agent)"
-   ],
-   "status": "below",
-   "hash": "4c9c851d"
-  },
-  "https://mc.merill.net/message/MC1550542": {
-   "title": "MC1550542: Microsoft Teams: Updated recording and transcript access setting behavior for town halls and webinars",
-   "link": "https://mc.merill.net/message/MC1550542",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-12T16:19:15.000Z",
-   "updated": null,
-   "summary": "Microsoft Teams is updating the \"Who has access to the recording or transcript\" option for Events App town halls and webinars. It will depend on the RecordingForTownhall or RecordingForWebinar settings instead of AllowCloudRecording. The change rolls out worldwide in early to mid-November 2026 with ",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": 2,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 niche (microsoft teams)",
-    "+2 launch \"rolls out\""
-   ],
-   "status": "below",
-   "hash": "da47ec46"
   },
   "https://mc.merill.net/message/MC1550533": {
    "title": "MC1550533: Scheduled prompts in Microsoft 365 Copilot are moving to native Copilot scheduling and the Tasks view",
@@ -1036,123 +557,6 @@
    "attempts": 1,
    "slug": "copilot-scheduled-prompts-power-platform-retirement-migrate",
    "resultAt": "2026-11-13T03:54:07.140Z"
-  },
-  "https://mc.merill.net/message/MC1535647": {
-   "title": "MC1535647: Microsoft Copilot app: Updates to Home and navigation",
-   "link": "https://mc.merill.net/message/MC1535647",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-11T22:15:05.000Z",
-   "updated": null,
-   "summary": "Microsoft Copilot app updates include a new Home with integrated Chat, Cowork, Projects, and Workspaces. Projects organize related tasks and files without storing content, available on major platforms. Workspaces replace Notebooks for team collaboration. Rollout starts late October 2026; licensing a",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": 1,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 niche (copilot)",
-    "+1 plans/price/availability \"Rollout\""
-   ],
-   "status": "below",
-   "hash": "497a31c6"
-  },
-  "https://mc.merill.net/message/MC1470885": {
-   "title": "MC1470885: M365 Copilot: Tell Copilot what you need directly from the Copilot button in Word, Excel, and PowerPoint",
-   "link": "https://mc.merill.net/message/MC1470885",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-11T21:51:22.000Z",
-   "updated": null,
-   "summary": "Microsoft 365 Copilot now features a prompt input directly on the Copilot button in Word, Excel, and PowerPoint, enabling faster, contextual content creation without leaving the workflow. Rolling out worldwide from September to December 2026 on Windows, macOS, and web, it requires no admin action bu",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": 4,
-   "reasons": [
-    "-2 source mc-merill",
-    "+4 niche (copilot, m365, excel, windows)",
-    "+2 launch \"Rolling out\""
-   ],
-   "status": "below",
-   "hash": "a3c0b8a5"
-  },
-  "https://mc.merill.net/message/MC1529467": {
-   "title": "MC1529467: Microsoft Windows: Updates to address compromised eMudhra certificate authority keys",
-   "link": "https://mc.merill.net/message/MC1529467",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-11T18:41:32.000Z",
-   "updated": null,
-   "summary": "Microsoft will release updates by November 16, 2026, to remove trust for compromised eMudhra certificate authorities in Windows, Edge, and WebView2. Organizations must allow automatic updates, manage disconnected devices, and replace affected certificates to maintain security. Updates block affected",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": -2,
-   "reasons": [
-    "-2 source mc-merill",
-    "+1 niche (windows)",
-    "-1 in /news 2026-10-29-entra-memberof-retirement-emudhra-ca-block"
-   ],
-   "status": "below",
-   "hash": "fc6cb5dd",
-   "news": "2026-10-29-entra-memberof-retirement-emudhra-ca-block"
-  },
-  "https://mc.merill.net/message/MC1546430": {
-   "title": "MC1546430: 'Add explainer video' Skill in PPT Copilot",
-   "link": "https://mc.merill.net/message/MC1546430",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-11T18:37:46.000Z",
-   "updated": null,
-   "summary": "The rollout of the \"Add explainer video\" skill in PowerPoint Copilot is paused. This feature converts static slides into animated explainer videos for Frontier users on desktop, Mac, and web. No admin action or compliance concerns are required. Updates will be shared via Message center.",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": 3,
-   "reasons": [
-    "-2 source mc-merill",
-    "+4 niche (copilot, powerpoint, mac)",
-    "+1 plans/price/availability \"rollout\""
-   ],
-   "status": "below",
-   "hash": "73bb3c11"
-  },
-  "https://mc.merill.net/message/MC1549242": {
-   "title": "MC1549242: NTLM signing security improvements in Windows",
-   "link": "https://mc.merill.net/message/MC1549242",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-11T18:03:18.000Z",
-   "updated": null,
-   "summary": "What and why:New NTLM signing security improvements address CVE-2026-118737. Starting November 2026, Windows updates enable clients to offer NTLM message signing by default for non-anonymous connections. This change helps reduce exposure to NTLM relay attacks and provides auditing to identify connec",
-   "first": "2026-11-13T03:43:44.477Z",
-   "score": 1,
-   "reasons": [
-    "-2 source mc-merill",
-    "+1 niche (windows)",
-    "+2 user steps \"enable\"",
-    "+1 plans/price/availability \"Rollout\"",
-    "-1 in /news 2026-11-12-ntlm-signing-emudhra-openssh-kev"
-   ],
-   "status": "below",
-   "hash": "8427875b",
-   "news": "2026-11-12-ntlm-signing-emudhra-openssh-kev"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63967": {
-   "title": "Result of Underwriting Auction conducted on November 13, 2026",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63967",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-13T09:55:00.000Z",
-   "updated": null,
-   "summary": "In the underwriting auction conducted on November 13, 2026, for Additional Competitive Underwriting (ACU) of the undernoted Government security, the Reserve Bank of India has set the cut-off rate for underwriting commission payable to Primary Dealers as given below: Nomenclature of the Security Noti",
-   "first": "2026-11-13T04:43:44.233Z",
-   "score": 0,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 plans/price/availability \"India\""
-   ],
-   "status": "below",
-   "hash": "b1c97d6d"
   },
   "https://bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide": {
    "title": "Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide",
@@ -3513,6 +2917,60 @@
    ],
    "status": "below",
    "hash": "5530dab3"
+  },
+  "https://apple.com/newsroom/2026/11/apple-launches-research-study-to-explore-the-use-of-ai-for-health": {
+   "title": "Apple launches research study to explore the use of AI for health",
+   "link": "https://www.apple.com/newsroom/2026/11/apple-launches-research-study-to-explore-the-use-of-ai-for-health/",
+   "source": "apple-newsroom",
+   "topic": "mobiles",
+   "category": "launch",
+   "date": "2026-11-16T01:18:33.934Z",
+   "updated": "2026-11-16T01:18:33.934Z",
+   "summary": "Apple today announced the launch of the Apple Health AI Usage Study in the United States, which includes a virtual research study and associated app.",
+   "first": "2026-11-16T04:43:45.673Z",
+   "score": 1,
+   "reasons": [
+    "+1 source apple-newsroom",
+    "+2 launch \"launches\"",
+    "+1 launch in the headline",
+    "-3 corporate/announcement \"research\""
+   ],
+   "status": "below",
+   "hash": "abcfe51d"
+  },
+  "https://news.samsung.com/global/inside-dakar-2026-how-galaxy-innovation-shaped-the-athlete-experience": {
+   "title": "Inside Dakar 2026: How Galaxy Innovation Shaped the Athlete Experience",
+   "link": "https://news.samsung.com/global/inside-dakar-2026-how-galaxy-innovation-shaped-the-athlete-experience",
+   "source": "samsung-global",
+   "topic": "mobiles",
+   "category": "launch",
+   "date": "2026-11-16T08:00:00.000Z",
+   "updated": null,
+   "summary": "The Youth Olympic Games Dakar 2026 opened in Senegal on October 31, giving young athletes a defining stage to test their limits and grow on and off the field. As a Worldwide Olympic and Paralympic Partner, Samsung Electronics has been a constant force behind that journey — bringing Galaxy technology",
+   "first": "2026-11-16T04:43:45.673Z",
+   "score": 1,
+   "reasons": [
+    "+1 niche (galaxy)"
+   ],
+   "status": "below",
+   "hash": "f3ab25fc"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63977": {
+   "title": "Money Market Operations as on November 13, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63977",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-16T09:00:00.000Z",
+   "updated": null,
+   "summary": "(Amount in ₹ crore, Rate in Per cent) MONEY MARKETS @ --> Money Markets @ Volume (One Leg) Weighted Average Rate Range A. Overnight Segment (I+II+III+IV) 7,75,521.41 5.62 1.00-7.40 I. Call Money 13,875.06 5.61 4.30-5.85 II. Triparty Repo 5,40,144.75 5.65 5.47-5.88 III. Market Repo 2,14,125.25 5.55 1",
+   "first": "2026-11-16T04:43:45.673Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "2d0d25b2"
   }
  },
  "devices": {}
