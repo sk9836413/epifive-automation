@@ -1,17 +1,28 @@
 {
  "version": 1,
- "lastRun": "2026-11-16T17:32:25.600Z",
+ "lastRun": "2026-11-16T18:11:08.534Z",
  "paused": {},
  "dm": {
-  "status": "off"
+  "status": "on",
+  "at": "2026-11-16T18:11:08.534Z"
  },
- "handled": {},
- "pairs": {},
+ "handled": {
+  "ea301480e43ccb40": "2026-11-16"
+ },
+ "pairs": {
+  "52ee0e99ded20b7e": "2026-11-16"
+ },
  "firstComments": {
   "vbxhbIjFRLY": "2026-11-16",
   "hzEwxtOHuhg": "2026-11-16",
   "GuNK9cHV70Y": "2026-11-16",
-  "w4AcsRuCwiA": "2026-11-16"
+  "w4AcsRuCwiA": "2026-11-16",
+  "HqLD_GomQnU": "2026-11-16",
+  "sZBIBUHT5zU": "2026-11-16"
  },
- "days": {}
+ "days": {
+  "2026-11-16": {
+   "instagram": 1
+  }
+ }
 }
