@@ -56,10 +56,13 @@ jobs:
         run: |
           today=$(TZ=Asia/Kolkata date +%F)
           echo "today=$today" >> "$GITHUB_OUTPUT"
-          # One article a day: a late scheduled run after a manual one (or vice versa) does nothing.
-          if [ "${{ inputs.dry_run }}" != "true" ] && grep -q "^$today | .* | published |" automation/log.md; then
+          # Articles per IST day: repo variable ARTICLES_PER_DAY (default 1; owner 16 Nov 2026: 5-10 a day). Each scheduler
+          # dispatch writes at most one; once today's count is reached, later runs do nothing.
+          max="${{ vars.ARTICLES_PER_DAY || '1' }}"
+          n=$(grep -c "^$today | .* | published |" automation/log.md || true)
+          if [ "${{ inputs.dry_run }}" != "true" ] && [ "${n:-0}" -ge "$max" ]; then
             echo "done=true" >> "$GITHUB_OUTPUT"
-            echo "::notice::An article was already published on $today; nothing to do."
+            echo "::notice::$n of $max articles already published on $today; nothing to do."
           fi
 
       - name: Research and write (Claude)
