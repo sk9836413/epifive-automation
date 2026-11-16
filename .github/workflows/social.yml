@@ -13,6 +13,17 @@ name: Social media
 # a trending one-off needs no extra switch: the launch radar starts it with slug + force + a hook brief right after
 # an outage or incident guide is published (radar.yml "Trending Short and long video"). Such a bot-started run skips
 # an article that was already shared, so it never doubles a scheduled share.
+#
+# Owner plan, 16 Nov 2026 (automation/SOCIAL.md "Video policy"): ONE fix/how-to topic a day (scripts/social/pick.mjs +
+# video-kind.mjs). News (outages, CEO/corporate news, retirements, security incidents, launches) gets no video, even on a
+# forced or radar-started run, unless allow_news is set. At most one share per UTC day; only an owner's manual force adds
+# another (the radar's bot runs never do). Two versions of the topic: the Hinglish Reel/Short goes out at once (18:46 IST
+# run = Indian evening) on Facebook, Instagram and YouTube (language "hi"); the English one at the next English slot
+# 5+ hours later (scripts/social/slots.mjs, default 00:30 UTC = 7:30 PM New York, variable EN_SLOT_UTC): YouTube and
+# Facebook schedule it natively, the Instagram copy is queued in reels/queue.jsonl of this repo for reels-later.yml
+# (only when the variable REELS_LATER is "on"; otherwise Instagram gets the Hinglish Reel only). No Facebook link post
+# any more (the Reel captions carry the guide link). HINGLISH_REELS = "off" turns the Hinglish version off; when its
+# checks fail (validate --part hi, the Whisper check) the share goes out in English only, at once, as before.
 on:
   workflow_dispatch:
     inputs:
@@ -38,6 +49,10 @@ on:
         default: ''
       dry_run:
         description: Write and render everything, publish and log nothing (the media stay in the run's artifact)
+        type: boolean
+        default: false
+      allow_news:
+        description: Make the video even if the article is news (outage, CEO, retirement, incident, launch); off = skip it
         type: boolean
         default: false
 
@@ -147,12 +162,14 @@ jobs:
         env:
           SLUG_INPUT: ${{ inputs.slug }}
         run: |
-          # At most SHARES_PER_DAY shares a day (repository variable, default 1): each scheduler
-          # trigger shares one article until the day's count is reached; force skips the check.
+          # One topic a day (owner plan, 16 Nov 2026; it replaces SHARES_PER_DAY): each scheduler trigger after the
+          # day's share does nothing. Only an owner's manual force run shares another; the radar's bot runs never do.
           today=$(date -u +%F)
-          max="${{ vars.SHARES_PER_DAY || 1 }}"
+          max=1
           count=$(grep -c "^- $today | " automation/social-log.md || true)
-          if [ "${{ inputs.force }}" != "true" ] && [ "$count" -ge "$max" ]; then
+          owner_force=false
+          if [ "${{ inputs.force }}" = "true" ] && [ "$GITHUB_ACTOR" != "github-actions[bot]" ]; then owner_force=true; fi
+          if [ "$owner_force" != "true" ] && [ "$count" -ge "$max" ]; then
             echo "::notice::Already shared $count of $max articles on $today; nothing to do."
             echo "slug=" >> "$GITHUB_OUTPUT"
             exit 0
@@ -180,8 +197,26 @@ jobs:
               echo "Promo share: $slug"
             fi
           fi
+          # A promo article that is not a fix/how-to waits; the day's best fix goes out instead.
+          if [ -n "$slug" ] && [ -z "$SLUG_INPUT" ] && [ "$(node scripts/social/video-kind.mjs "$slug" | node -p 'JSON.parse(require("fs").readFileSync(0, "utf8")).video')" != true ]; then
+            echo "::notice::Promo article $slug is not a fix/how-to; the day's fix article goes out instead."
+            slug=""
+            echo "brief<<EOF_BRIEF" >> "$GITHUB_OUTPUT"; echo "EOF_BRIEF" >> "$GITHUB_OUTPUT"
+          fi
           [ -n "$slug" ] || slug="$(node scripts/social/pick.mjs)"
+          # Fix/how-to only: news never gets a Short or Reel, even on a forced or radar-started run, unless allow_news.
+          if [ -n "$slug" ]; then
+            kind=$(node scripts/social/video-kind.mjs "$slug")
+            echo "Video kind: $kind"
+            if [ "$(node -p 'JSON.parse(process.argv[1]).video' "$kind")" != true ] && [ "${{ inputs.allow_news }}" != "true" ]; then
+              echo "::notice::$slug is not a fix/how-to ($kind); no video (owner plan, 16 Nov 2026). Run with allow_news to override."
+              echo "slug=" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+          fi
           echo "slug=$slug" >> "$GITHUB_OUTPUT"
+          # Two versions (Hinglish now, English 5+ hours later) unless HINGLISH_REELS is "off".
+          echo "hinglish=$([ "${{ vars.HINGLISH_REELS }}" = off ] && echo false || echo true)" >> "$GITHUB_OUTPUT"
           # The day's second share is the Max & Riya character Short when CHAR_SHORTS is "on" (or format=dialogue).
           fmt=reel
           if [ "${{ inputs.format }}" = dialogue ] || { [ "${{ vars.CHAR_SHORTS }}" = on ] && [ "$count" -eq 1 ] && [ -z "$SLUG_INPUT" ]; }; then fmt=dialogue; fi
@@ -202,8 +237,8 @@ jobs:
           # The launch radar starts trending shares with GITHUB_TOKEN (github-actions bot), so a bot actor is allowed.
           allowed_bots: "*"
           claude_args: |
-            --max-turns 60
-            --allowedTools "Read,Write,Edit,Glob,Grep,Bash(node scripts/social/card.mjs:*),Bash(node scripts/social/video.mjs:*),Bash(node scripts/social/validate.mjs:*),Bash(ffmpeg:*),Bash(mkdir:*),Bash(ls:*),Bash(rm ${{ steps.pick.outputs.dir }}/frame-*)"
+            --max-turns 90
+            --allowedTools "Read,Write,Edit,Glob,Grep,Bash(node scripts/social/card.mjs:*),Bash(node scripts/social/video.mjs:*),Bash(node scripts/social/validate.mjs:*),Bash(ffmpeg:*),Bash(mkdir:*),Bash(ls:*),Bash(rm ${{ steps.pick.outputs.dir }}/frame-*),Bash(rm ${{ steps.pick.outputs.dir }}/hi/frame-*)"
           prompt: |
             Prepare the social media drafts for the EpiFive article `${{ steps.pick.outputs.slug }}`
             (content/posts/${{ steps.pick.outputs.slug }}.md, live at https://www.epifive.com/blog/${{ steps.pick.outputs.slug }}).
@@ -218,14 +253,49 @@ jobs:
 
             ${{ steps.pick.outputs.format == 'dialogue' && 'This share is a "Max & Riya" character Short: also write dialogue.json exactly as SOCIAL.md section "dialogue.json" describes (Riya states the problem in the first line, Max gives the steps of points.txt). Every other file is written and rendered as usual.' || '' }}
 
+            ${{ steps.pick.outputs.hinglish == 'true' && 'After the English files, write the Hinglish version in the subfolder hi/ exactly as SOCIAL.md section "Hinglish Reel" describes (Roman-script Hinglish, English tech terms kept in English, its own cover, captions and YouTube title, different from the English ones) and render hi/reel.mp4 with video.mjs --lang hi as shown in "Render and check the media". validate.mjs checks both versions.' || '' }}
+
             Do not publish anything, do not commit, do not push and do not edit files outside the draft folder.
             Later workflow steps publish and log the result.
 
       - name: Validate drafts
         if: steps.pick.outputs.slug != ''
         run: |
-          rm -f "${{ steps.pick.outputs.dir }}"/frame-*
-          node scripts/social/validate.mjs "${{ steps.pick.outputs.slug }}" "${{ steps.pick.outputs.dir }}"
+          rm -f "${{ steps.pick.outputs.dir }}"/frame-* "${{ steps.pick.outputs.dir }}"/hi/frame-*
+          node scripts/social/validate.mjs "${{ steps.pick.outputs.slug }}" "${{ steps.pick.outputs.dir }}" --part en
+
+      - name: Cache Whisper model
+        if: steps.pick.outputs.slug != '' && steps.pick.outputs.hinglish == 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: faster-whisper-small-v1
+
+      # The Hinglish version goes out only when its drafts pass (validate --part hi) and a Whisper check hears the English
+      # tech terms and every error code in its voice-over (scripts/social/hinglish-check.py); otherwise English only.
+      # Then the English slot: the next EN_SLOT_UTC (default 00:30) at least 5 hours away (scripts/social/slots.mjs).
+      - name: Hinglish version check
+        id: hi
+        if: steps.pick.outputs.slug != '' && steps.pick.outputs.hinglish == 'true'
+        env:
+          DIR: ${{ steps.pick.outputs.dir }}
+          EN_SLOT_UTC: ${{ vars.EN_SLOT_UTC }}
+        run: |
+          ok=false
+          if node scripts/social/validate.mjs "${{ steps.pick.outputs.slug }}" "$DIR" --part hi; then
+            "$PYTHON" -m pip install -q faster-whisper > /dev/null 2>&1 || echo "::warning::faster-whisper install failed"
+            if "$PYTHON" scripts/social/hinglish-check.py --audio "$DIR/hi/reel.mp4" --narration "$DIR/hi/narration.txt" > "$DIR/hi/voice-check.json"; then ok=true; fi
+            cat "$DIR/hi/voice-check.json"
+          fi
+          if [ "$ok" = true ]; then
+            en_at=$(node scripts/social/slots.mjs english)
+            echo "en_at=$en_at" >> "$GITHUB_OUTPUT"
+            echo "- Hinglish version: ok, published now; English version at $en_at" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "::warning::The Hinglish version did not pass its checks; this share goes out in English only."
+            echo "- Hinglish version: failed its checks (English only, at once)" >> "$GITHUB_STEP_SUMMARY"
+          fi
+          echo "ok=$ok" >> "$GITHUB_OUTPUT"
 
       - name: Character engine (public repo shyam-premi-sn)
         if: steps.pick.outputs.slug != '' && steps.pick.outputs.format == 'dialogue'
@@ -300,14 +370,28 @@ jobs:
           DIR: ${{ steps.pick.outputs.dir }}
           VIDEO: ${{ steps.media.outputs.social }}
           DRY_RUN: ${{ inputs.dry_run }}
+          HI: ${{ steps.hi.outputs.ok == 'true' }}
+          EN_AT: ${{ steps.hi.outputs.en_at }}
         run: |
           echo "direct=false" >> "$GITHUB_OUTPUT"
           if [ -z "$META_PAGE_TOKEN" ] || [ -z "$META_PAGE_ID" ]; then
             echo "::notice::META_* secrets not set; Facebook and Instagram go through Make."
             exit 0
           fi
-          set -- --slug "$SLUG" --video "$VIDEO" --fb "$DIR/facebook.txt" --fb-reel "$DIR/fb-reel.txt" --ig "$DIR/instagram.txt"
-          if [ "$DRY_RUN" = "true" ]; then node scripts/social/meta-post.mjs "$@" --dry-run || true; exit 0; fi
+          # One topic, two Reels per platform: Hinglish now (Facebook + Instagram), the English Facebook Reel scheduled
+          # for EN_AT (Meta publishes it); the English Instagram Reel is queued below. English only when Hinglish failed.
+          # No Facebook link post (owner plan: Reels only; the caption carries the guide link).
+          if [ "$HI" = true ]; then
+            set -- --slug "$SLUG" --video "$DIR/hi/reel.mp4" --fb-reel "$DIR/hi/fb-reel.txt" --ig "$DIR/hi/instagram.txt" --lang hi
+          else
+            set -- --slug "$SLUG" --video "$VIDEO" --fb-reel "$DIR/fb-reel.txt" --ig "$DIR/instagram.txt"
+          fi
+          en=(--slug "$SLUG" --video "$VIDEO" --fb-reel "$DIR/fb-reel.txt" --only fb-reel --publish-at "$EN_AT")
+          if [ "$DRY_RUN" = "true" ]; then
+            node scripts/social/meta-post.mjs "$@" --dry-run || true
+            [ "$HI" = true ] && { node scripts/social/meta-post.mjs "${en[@]}" --dry-run || true; }
+            exit 0
+          fi
           result="$RUNNER_TEMP/meta-result.json"
           node scripts/social/meta-post.mjs "$@" > "$result" || echo "::warning::Some Facebook/Instagram posts failed; see the result line."
           cat "$result"
@@ -315,6 +399,12 @@ jobs:
           if [ "$status" = ok ] || [ "$status" = partial-failure ]; then
             echo "direct=true" >> "$GITHUB_OUTPUT"
             echo "result=$result" >> "$GITHUB_OUTPUT"
+            if [ "$HI" = true ]; then
+              en_result="$RUNNER_TEMP/meta-en-result.json"
+              node scripts/social/meta-post.mjs "${en[@]}" > "$en_result" || echo "::warning::Scheduling the English Facebook Reel failed; see the result line."
+              cat "$en_result"
+              echo "en_result=$en_result" >> "$GITHUB_OUTPUT"
+            fi
           else
             echo "::warning::The Graph API path did not run ($status); Make posts Facebook and Instagram instead."
           fi
@@ -364,13 +454,26 @@ jobs:
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           DIR: ${{ steps.pick.outputs.dir }}
+          HI: ${{ steps.hi.outputs.ok == 'true' }}
+          EN_AT: ${{ steps.hi.outputs.en_at }}
         run: |
           if [ -z "$YT_REFRESH_TOKEN" ]; then
             echo "result=drafts-only" >> "$GITHUB_OUTPUT"
             echo "::notice::YouTube credentials not set; drafts only."
             exit 0
           fi
-          node scripts/social/youtube.mjs upload --video "${{ steps.media.outputs.youtube }}" --meta "$DIR/youtube.txt" --captions "${{ steps.media.outputs.captions }}" \
+          # Two Shorts of one topic (quota: ~550 units each from the 10k bucket, the upload itself has its own bucket):
+          # the Hinglish one public now (language "hi", playlist "Tech fixes in Hinglish"), the English one private
+          # until EN_AT (language "en"; YouTube publishes it, comment-replies.mjs adds its first comment once public).
+          en=()
+          if [ "$HI" = true ]; then
+            node scripts/social/youtube.mjs upload --video "$DIR/hi/reel.mp4" --meta "$DIR/hi/youtube.txt" --captions "$DIR/hi/captions.srt" \
+              --lang hi --playlist-name "Tech fixes in Hinglish" > "$RUNNER_TEMP/yt-hi-result.json" || echo "::warning::Hinglish YouTube upload failed; see the log line."
+            cat "$RUNNER_TEMP/yt-hi-result.json"
+            echo "hi_result=$RUNNER_TEMP/yt-hi-result.json" >> "$GITHUB_OUTPUT"
+            en=(--publish-at "$EN_AT")
+          fi
+          node scripts/social/youtube.mjs upload --video "${{ steps.media.outputs.youtube }}" --meta "$DIR/youtube.txt" --captions "${{ steps.media.outputs.captions }}" "${en[@]}" \
             > "$RUNNER_TEMP/yt-result.json" || echo "::warning::YouTube upload failed; see the log line."
           cat "$RUNNER_TEMP/yt-result.json"
           echo "result=$RUNNER_TEMP/yt-result.json" >> "$GITHUB_OUTPUT"
@@ -379,9 +482,17 @@ jobs:
         if: >-
           steps.pick.outputs.slug != '' && steps.make.outcome == 'success' &&
           steps.meta.outcome != 'failure' && steps.youtube.outcome == 'success'
+        env:
+          HI_YT: ${{ steps.youtube.outputs.hi_result }}
+          EN_META: ${{ steps.meta.outputs.en_result }}
+          IG_EN: ${{ steps.hi.outputs.ok == 'true' && steps.meta.outputs.direct == 'true' && (vars.REELS_LATER == 'on' && format('queued {0}', steps.hi.outputs.en_at) || 'off (REELS_LATER not on)') || '' }}
         run: |
+          set --
+          [ -n "$HI_YT" ] && set -- "$@" --hi-yt "$HI_YT"
+          [ -n "$EN_META" ] && set -- "$@" --en-meta "$EN_META"
+          [ -n "$IG_EN" ] && set -- "$@" --en-ig "$IG_EN"
           node scripts/social/log.mjs "${{ steps.pick.outputs.slug }}" "${{ steps.meta.outputs.result || 'drafts-only' }}" \
-            "${{ steps.youtube.outputs.result }}" "${{ steps.make.outputs.result }}" | tee "$RUNNER_TEMP/log-line.txt"
+            "${{ steps.youtube.outputs.result }}" "${{ steps.make.outputs.result }}" "$@" | tee "$RUNNER_TEMP/log-line.txt"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add automation/social-log.md
@@ -413,3 +524,23 @@ jobs:
           path: ${{ steps.pick.outputs.dir }}
           retention-days: 90
           if-no-files-found: ignore
+
+      # The English Instagram Reel waits for its slot (Instagram's API cannot schedule): queued in reels/queue.jsonl of
+      # this repo; reels-later.yml posts it from this run's artifact. Only when the variable REELS_LATER is "on".
+      - name: Queue the English Instagram Reel
+        if: >-
+          steps.pick.outputs.slug != '' && !inputs.dry_run && vars.REELS_LATER == 'on' &&
+          steps.hi.outputs.ok == 'true' && steps.meta.outputs.direct == 'true'
+        continue-on-error: true
+        env:
+          SLUG: ${{ steps.pick.outputs.slug }}
+          EN_AT: ${{ steps.hi.outputs.en_at }}
+        run: |
+          git clone -q --depth 1 "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" "$RUNNER_TEMP/auto"
+          cd "$RUNNER_TEMP/auto"
+          node reels/queue.mjs add --file reels/queue.jsonl --slug "$SLUG" --run "${{ github.run_id }}" --artifact "social-$SLUG" --due "$EN_AT"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reels/queue.jsonl
+          git commit -qm "Queue English Instagram Reel: $SLUG at $EN_AT"
+          for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep 5; done

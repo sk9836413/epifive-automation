@@ -34,6 +34,10 @@ concurrency:
 
 jobs:
   photos:
+    # Owner plan, 16 Nov 2026: Facebook and Instagram get two Reels a day (English + Hinglish) and no other posts that
+    # crowd them (reach ~0 at 5-11 followers; the Reels are the only format shown to non-followers). The scheduled
+    # carousel runs only when the repository variable PHOTO_POSTS is "on"; a manual run with a slug or dry_run still works.
+    if: vars.PHOTO_POSTS == 'on' || inputs.dry_run || inputs.slug != ''
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:

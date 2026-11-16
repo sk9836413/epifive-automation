@@ -39,6 +39,10 @@ on:
         description: Trending topic - public on YouTube at once (not 14:00 UTC) and on the Facebook Page in the same run
         type: boolean
         default: false
+      allow_news:
+        description: Make the video even if the named article is news (outage, CEO, retirement, incident, launch)
+        type: boolean
+        default: false
 
 env:
   SITE_REMOTE: https://x-access-token:${{ secrets.SITE_REPO_TOKEN }}@github.com/sk9836413/EPIVIFE.git
@@ -114,6 +118,17 @@ jobs:
         if: steps.gate.outputs.ready == 'true' && steps.pick.outputs.dir != ''
         run: |
           slug="${{ steps.pick.outputs.slug }}"
+          # Owner plan, 16 Nov 2026: how-to videos only. A named article that is news (outage, CEO/corporate, retirement,
+          # security incident, launch; scripts/social/video-kind.mjs) gets no long video unless allow_news is set.
+          # (longvideo.mjs pick already skips news.)
+          if [ -n "$slug" ] && [ "${{ inputs.allow_news }}" != "true" ]; then
+            kind=$(node scripts/social/video-kind.mjs "$slug")
+            if [ "$(node -p 'JSON.parse(process.argv[1]).kind' "$kind")" = news ]; then
+              echo "::notice::$slug is news ($kind); no long video (owner plan, 16 Nov 2026). Run with allow_news to override."
+              echo "slug=" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+          fi
           [ -n "$slug" ] || slug="$(node scripts/social/longvideo.mjs pick)"
           echo "slug=$slug" >> "$GITHUB_OUTPUT"
           if [ -z "$slug" ]; then echo "::notice::No suitable article left for a long video."; else echo "Long video for $slug"; mkdir -p "${{ steps.pick.outputs.dir }}"; fi

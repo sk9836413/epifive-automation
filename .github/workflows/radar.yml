@@ -456,6 +456,9 @@ jobs:
       # radar/results.jsonl (autoVideo); consumer topics get the Short only (radar/lib.mjs autoVideoPlan). GITHUB_TOKEN
       # may start workflow_dispatch runs in this repo (actions: write, as the scan does for this job). Dry run: prints
       # the commands only. Never fails the run.
+      # Owner plan, 16 Nov 2026: videos only for fixes/how-tos. Outage and incident guides (news) start nothing; any other
+      # article only when the site's classifier (scripts/social/video-kind.mjs) calls it a fix. social.yml and
+      # longvideo.yml check again (no allow_news here) and social.yml keeps to one topic a UTC day.
       - name: Trending Short and long video
         id: videos
         if: steps.verdict.outputs.result == 'published' && (inputs.dry_run || steps.publish.outcome == 'success')

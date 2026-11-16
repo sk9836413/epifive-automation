@@ -6,7 +6,7 @@ import {
   parseBacklog, sameTopic, todayCounts, parkInBacklog, markPublished, logLine, checkFastTrack, trendBoost, istDate, RADAR_MARK,
   datesIn, daysToDeadline, scoreIncident, sameIncident, markIncidentDuplicates, backlogLine, updateSignal,
   scoreOutage, outageTerm, outageFamilies, pickNewTask, parseSource, autoVideoPlan, isRootCauseNews, statusClosed,
-  cardDate, pageDetail, M365_TIE_BOOST,
+  cardDate, pageDetail, M365_TIE_BOOST, AUTO_VIDEO,
 } from './lib.mjs';
 import { readFileSync } from 'node:fs';
 
@@ -774,9 +774,28 @@ test('radar.mjs check --category outage runs the outage structure check', async 
 
 const AV_NOW = Date.parse('2026-11-13T04:50:00Z');
 const avTask = (over = {}) => ({ kind: 'new', key: 'k', category: 'launch', score: 10, title: 'T', ...over });
-const plan = (over = {}) => autoVideoPlan({ task: avTask(), status: 'published', slug: 'a-post', topic: 'microsoft-365', title: 'A post', now: AV_NOW, ...over });
+const FIX = { kind: 'fix', video: true, reasons: ['title: how-to'] };
+// The old trending rules for outage/incident guides, now only reachable with the news categories switched off.
+const OLD = { ...AUTO_VIDEO, categories: ['outage', 'incident'], newsCategories: [] };
+const plan = (over = {}) => autoVideoPlan({ task: avTask(), status: 'published', slug: 'a-post', topic: 'microsoft-365', title: 'A post', now: AV_NOW, videoKind: FIX, settings: OLD, ...over });
 
-test('autoVideoPlan starts the pair for outages, incidents and scores of 12+', () => {
+test('autoVideoPlan (owner plan, 16 Nov 2026): outage and incident news never get a video', () => {
+  for (const category of ['outage', 'incident']) {
+    const p = plan({ settings: AUTO_VIDEO, task: avTask({ category, score: 20 }) });
+    assert.equal(p.dispatch, false);
+    assert.match(p.reason, new RegExp(`${category} news gets no video`));
+  }
+});
+
+test('autoVideoPlan: a launch needs the site classifier to call it a fix/how-to', () => {
+  assert.equal(plan({ settings: AUTO_VIDEO, task: avTask({ score: 12 }) }).dispatch, true);
+  const news = plan({ settings: AUTO_VIDEO, task: avTask({ score: 15 }), videoKind: { kind: 'news', video: false, reasons: ['title: launch news'] } });
+  assert.equal(news.dispatch, false);
+  assert.match(news.reason, /not a fix\/how-to \(news: title: launch news\)/);
+  assert.match(plan({ settings: AUTO_VIDEO, task: avTask({ score: 15 }), videoKind: null }).reason, /no classifier result/);
+});
+
+test('autoVideoPlan starts the pair for outages, incidents and scores of 12+ (old rules)', () => {
   assert.equal(plan({ task: avTask({ category: 'outage', score: 0 }) }).dispatch, true);
   assert.equal(plan({ task: avTask({ category: 'incident' }) }).reason, 'category incident');
   assert.equal(plan({ task: avTask({ score: 12 }) }).dispatch, true);
@@ -835,12 +854,24 @@ test('radar.mjs video-plan reads the article and the long video log from the sit
   const cli = fileURLToPath(new URL('./radar.mjs', import.meta.url));
   const run = (now) => JSON.parse(spawnSync(process.execPath, [cli, 'video-plan', '--site', site, '--task', path.join(site, 'task.json'),
     '--status', 'published', '--file', 'content/posts/m365-outage.md', '--now', now], { encoding: 'utf8' }).stdout);
+  // Owner plan, 16 Nov 2026: an outage guide is news, so no video.
+  const news = run('2030-01-02T04:00:00Z');
+  assert.equal(news.dispatch, false);
+  assert.match(news.reason, /outage news gets no video/);
+  // A high-scoring fix article: the site's classifier (scripts/social/video-kind.mjs, stubbed here) decides.
+  fs.mkdirSync(path.join(site, 'scripts', 'social'), { recursive: true });
+  fs.writeFileSync(path.join(site, 'scripts', 'social', 'video-kind.mjs'),
+    'export const classifyPost = (d) => ({ kind: /fix/i.test(d.title) ? "fix" : "other", video: /fix/i.test(d.title), reasons: [d.description || ""] });\n');
+  fs.writeFileSync(path.join(site, 'content', 'posts', 'm365-outage.md'), '---\ntitle: "Outlook search not working: fix it"\ndescription: >-\n  Folded\n  text\ntopic: microsoft-365\n---\nBody\n');
+  fs.writeFileSync(path.join(site, 'task.json'), JSON.stringify(avTask({ category: 'launch', score: 13 })));
   const p = run('2030-01-02T04:00:00Z');
   assert.equal(p.dispatch, true);
   assert.equal(p.slug, 'm365-outage');
   assert.equal(p.long, true);
   assert.equal(p.replacesDaily, false);
-  assert.match(p.brief, /"Microsoft 365 outage: what to do"/);
+  assert.match(p.brief, /"Outlook search not working: fix it"/);
   assert.equal(run('2030-01-03T04:00:00Z').replacesDaily, true);
+  fs.writeFileSync(path.join(site, 'content', 'posts', 'm365-outage.md'), '---\ntitle: "New Copilot feature launches"\ntopic: microsoft-365\n---\nBody\n');
+  assert.match(run('2030-01-02T04:00:00Z').reason, /not a fix\/how-to/);
   fs.rmSync(site, { recursive: true, force: true });
 });

@@ -1043,23 +1043,31 @@ export function todayCounts(results, state, today) {
  * daily long video is not made yet, the trending one replaces it (longvideo.yml skips the daily run once today's
  * log has a YouTube URL). Consumer topics (bank leaks, phones) get the Short only: the long video is a Microsoft
  * 365-style screen walkthrough, which has nothing to show there.
+ *
+ * Owner plan, 16 Nov 2026: videos are made ONLY for practical fixes and how-tos. Outage and incident guides (news) get
+ * no video at all (newsCategories), and any other fast-track article only when the site's classifier
+ * (scripts/social/video-kind.mjs, passed in as videoKind) says it is a fix/how-to. social.yml checks it again and caps
+ * the day at one topic, so a trending fix becomes the day's share only when none went out yet.
  */
 export const AUTO_VIDEO = {
   minScore: 12,
-  categories: ['outage', 'incident'],
+  categories: [],
+  newsCategories: ['outage', 'incident'],
   maxPerDay: 1,
   shortOnlyTopics: ['online-safety', 'mobiles', 'laptops-hardware', 'how-to-tips'],
 };
 
 const HOOK_EXAMPLE = { outage: '"Outlook down right now?"', incident: '"Is your account affected?"', launch: '"It is live today:"' };
 
-export function autoVideoPlan({ task = {}, status, slug, topic = '', title = '', results = [], longVideoLog = '', now = Date.now(), settings = AUTO_VIDEO } = {}) {
+export function autoVideoPlan({ task = {}, status, slug, topic = '', title = '', results = [], longVideoLog = '', now = Date.now(), settings = AUTO_VIDEO, videoKind = null } = {}) {
   const day = new Date(now).toISOString().slice(0, 10);
   const no = (reason) => ({ dispatch: false, reason, day });
   if (task.kind !== 'new') return no('not a new fast-track article');
   if (status !== 'published') return no(`the article was not published (${status || 'no result'})`);
   if (!/^[a-z0-9-]+$/.test(slug ?? '')) return no('no valid slug');
   const category = ['outage', 'incident'].includes(task.category) ? task.category : 'launch';
+  if ((settings.newsCategories || []).includes(category)) return no(`${category} news gets no video (owner plan, 16 Nov 2026: fix/how-to videos only)`);
+  if (!videoKind?.video) return no(`not a fix/how-to (${videoKind ? `${videoKind.kind}: ${(videoKind.reasons || []).join('; ')}` : 'no classifier result'}): no video`);
   const score = Number(task.score) || 0;
   const why = settings.categories.includes(category) ? `category ${category}` : score >= settings.minScore ? `score ${score} >= ${settings.minScore}` : null;
   if (!why) return no(`not trending (category ${category}, score ${score} < ${settings.minScore})`);

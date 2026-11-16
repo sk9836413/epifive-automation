@@ -102,7 +102,8 @@ jobs:
           RESUME: ${{ inputs.resume }}
           DRY: ${{ inputs.dry_run }}
         run: |
-          set -- --state ../replies/state.json --log-dir ../replies/log --photos-log ../photos/log.md --platforms "$PLATFORMS" --max "$MAX"
+          # reels/log.md: the English Instagram Reels posted hours after the share (reels-later.yml).
+          set -- --state ../replies/state.json --log-dir ../replies/log --photos-log ../photos/log.md --extra-log ../reels/log.md --platforms "$PLATFORMS" --max "$MAX"
           [ -n "$RESUME" ] && set -- "$@" --resume "$RESUME"
           [ "$DRY" = "true" ] && set -- "$@" --dry-run
           cd site && node scripts/social/comment-replies.mjs "$@" | tee "$RUNNER_TEMP/result.json"

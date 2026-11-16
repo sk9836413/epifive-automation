@@ -25,7 +25,7 @@
 // radar/results.jsonl (write outcomes and alert sends), radar/log/<YYYY-MM>.md (one block per run).
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import {
   parseSource, normalizeUrl, scoreItem, trendBoost, searchPhrase, findCoverage, parseBacklog, hashText,
   istDate, todayCounts, mergeDuplicates, daysToDeadline, parkInBacklog, markPublished, logLine, checkFastTrack, updateSignal,
@@ -645,18 +645,47 @@ function check() {
 }
 
 // Trending Short + long video for a just-published fast-track article (run in the site checkout of the write job).
-function videoPlan() {
+// Owner plan, 16 Nov 2026: only fix/how-to articles get a video. The site's classifier decides
+// (scripts/social/video-kind.mjs in the site checkout); without it nothing is dispatched.
+async function videoKindFor(site, front, slug) {
+  const lib = path.resolve(site, 'scripts', 'social', 'video-kind.mjs');
+  if (!slug || !fs.existsSync(lib)) return null;
+  // Plain, quoted or folded (">-") scalars: what the site's posts use.
+  const field = (key) => {
+    const m = front.match(new RegExp(`^${key}:[ \\t]*(.*)$`, 'm'));
+    if (!m) return undefined;
+    const v = m[1].trim();
+    if (!/^[>|][-+]?$/.test(v)) return v.replace(/^['"]|['"]$/g, '');
+    const block = [];
+    for (const l of front.slice(m.index + m[0].length).split('\n').slice(1)) {
+      if (/^\s+\S/.test(l)) block.push(l.trim());
+      else break;
+    }
+    return block.join(' ');
+  };
+  const data = Object.fromEntries(['title', 'seoTitle', 'description', 'seoDescription', 'topic', 'alert', 'pir', 'video']
+    .map((k) => [k, field(k)]).filter(([, v]) => v !== undefined));
+  try {
+    const { classifyPost } = await import(pathToFileURL(lib).href);
+    return classifyPost(data, slug);
+  } catch (e) {
+    return { kind: 'error', video: false, reasons: [String(e.message).slice(0, 120)] };
+  }
+}
+
+async function videoPlan() {
   const site = opt('site', '.');
   const file = opt('file');
   const text = typeof file === 'string' && fs.existsSync(path.join(site, file)) ? fs.readFileSync(path.join(site, file), 'utf8').replace(/\r\n/g, '\n') : '';
   const front = text.match(/^---\n([\s\S]*?)\n---/)?.[1] ?? '';
   const logFile = path.join(site, 'automation', 'longvideo-log.md');
+  const slug = typeof file === 'string' && text ? path.basename(file).replace(/\.mdx?$/, '') : null;
   const plan = autoVideoPlan({
-    task: readJson(opt('task'), {}), status: opt('status'),
-    slug: typeof file === 'string' && text ? path.basename(file).replace(/\.mdx?$/, '') : null,
+    task: readJson(opt('task'), {}), status: opt('status'), slug,
     topic: frontValue(front, 'topic'), title: frontValue(front, 'title'), results: readResults(),
     longVideoLog: fs.existsSync(logFile) ? fs.readFileSync(logFile, 'utf8') : '',
     now: opt('now') ? Date.parse(opt('now')) : Date.now(),
+    videoKind: await videoKindFor(site, front, slug),
   });
   console.log(JSON.stringify(plan));
 }
