@@ -2,7 +2,7 @@
  "date": "2026-11-16",
  "title": "Tech news today, 16 November 2026",
  "published": "2026-11-15T21:11:52.179Z",
- "updated": "2026-11-16T04:43:45.673Z",
+ "updated": "2026-11-16T07:53:52.335Z",
  "items": [
   {
    "id": "448a0f6c",
@@ -115,7 +115,63 @@
    "ai": null,
    "score": 5,
    "story": null
+  },
+  {
+   "id": "7fe54da3",
+   "key": "https://thehackernews.com/2026/11/amazon-uncovers-ai-agent-campaign.html",
+   "time": "2026-11-16T07:34:21.000Z",
+   "seen": "2026-11-16T07:53:52.335Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Amazon Uncovers AI Agent Campaign Targeting LiteLLM, Dify, and Other Apps for API Keys",
+   "summary": "Attackers' AI agents have been hunting for weak spots in internet-exposed AI apps such as LiteLLM, One API, and Dify to steal the AI provider keys stored inside, according to the agents' own records. The records, which Amazon's threat intelligence team captured with decoy servers, describe stolen keys being used to run the AI models that powered the search for more keys. The team said this",
+   "lines": [
+    "Reported by The Hacker News: Amazon's threat intelligence team uncovered an AI agent campaign that targets internet-exposed AI apps such as LiteLLM, One API, and Dify to steal stored AI provider keys.",
+    "The attackers' AI agents' own records, captured by Amazon using decoy servers, describe stolen keys being used to run the AI models that powered the search for more keys.",
+    "For IT teams, AI apps exposed to the internet and the API keys stored inside them are a target for automated attacks."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/amazon-uncovers-ai-agent-campaign.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "73bef739",
+   "key": "https://thehackernews.com/2026/11/bo-team-exploits-log4shell-in-vmware.html",
+   "time": "2026-11-16T06:53:34.000Z",
+   "seen": "2026-11-16T07:53:52.335Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "BO Team Exploits Log4Shell in VMware vCenter, Compromises Russian Firm's Code-Signing Server",
+   "summary": "An investigation into suspicious activity within a Russian software developer's network has uncovered a months-long compromise of its development infrastructure and a software code-signing server. The activity, documented by Kaspersky's ICS CERT team after it was contacted by the affected developer in June 2025, has been attributed to a threat actor named BO Team (aka Black Owl, Hoody Hyena,",
+   "lines": [
+    "Reported by The Hacker News: Kaspersky's ICS CERT team documented a months-long compromise of a Russian software developer's development infrastructure and a code-signing server.",
+    "The developer contacted Kaspersky in June 2025, and the activity has been attributed to a threat actor named BO Team, also known as Black Owl and Hoody Hyena.",
+    "For IT teams, the compromise of a code-signing server is a risk because attackers who control signing infrastructure can sign malicious software that appears legitimate."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/bo-team-exploits-log4shell-in-vmware.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
   }
  ],
- "description": "4 technology updates from official sources, updated hourly: FBI warns ARTEX AI hacking tool is powering global cyberattacks; Our new blog for science; Apple launches research study to explore the use of AI for health."
+ "description": "6 technology updates from official sources, updated hourly: FBI warns ARTEX AI hacking tool is powering global cyberattacks; Our new blog for science; Apple launches research study to explore the use of AI for health."
 }
