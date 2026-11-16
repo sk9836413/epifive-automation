@@ -2,7 +2,7 @@
  "date": "2026-11-16",
  "title": "Tech news today, 16 November 2026",
  "published": "2026-11-15T21:11:52.179Z",
- "updated": "2026-11-16T07:53:52.335Z",
+ "updated": "2026-11-16T13:17:11.645Z",
  "items": [
   {
    "id": "448a0f6c",
@@ -171,7 +171,183 @@
    "ai": null,
    "score": 5,
    "story": null
+  },
+  {
+   "id": "89c28ad5",
+   "key": "https://news.samsung.com/in/from-indian-roads-to-global-wrists-how-engineers-at-samsungs-noida-rd-centre-are-helping-shape-the-new-galaxy-watch-experience",
+   "time": "2026-11-16T13:17:11.645Z",
+   "seen": "2026-11-16T13:17:11.645Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "From Indian Roads to Global Wrists: How Engineers at Samsung’s Noida R&D Centre Are Helping Shape the New Galaxy Watch Experience",
+   "summary": "What does an auto-rickshaw on an Indian road have to do with a Galaxy Watch sold anywhere in the world? For engineers at Samsung Research Institute–Noida (SRI-N), the answer lies at the heart of how wearable technology is developed and tested. During the development of auto cycle detection, Indian engineers found that the algorithm being […]",
+   "lines": [
+    "Indian engineers at Samsung Research Institute–Noida (SRI-N) worked on auto cycle detection for the Galaxy Watch during its development.",
+    "The work drew on observations from auto-rickshaws on Indian roads.",
+    "The article shows how regional engineering work contributes to wearable features used worldwide."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Samsung Newsroom India",
+    "url": "https://news.samsung.com/in/from-indian-roads-to-global-wrists-how-engineers-at-samsungs-noida-rd-centre-are-helping-shape-the-new-galaxy-watch-experience"
+   },
+   "sourceId": "samsung-india",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "5a2e60b5",
+   "key": "https://theregister.com/saas/2026/11/16/microsoft-blames-monster-email-outage-on-software-defect-introduced-in-july-fix/5310026",
+   "time": "2026-11-16T12:10:00.000Z",
+   "seen": "2026-11-16T13:17:11.645Z",
+   "kind": "trending",
+   "topic": "milestone",
+   "tier": 2,
+   "trending": true,
+   "trendKey": "milestone:microsoft",
+   "techmeme": true,
+   "headline": "Preliminary report: Microsoft attributes a major 365 and Exchange outage to a software defect introduced in a July 2026 update for network gateway servers",
+   "summary": "Microsoft has blamed last week's epic outage on a change it made in July that lurked in the network gateway servers until a surge …",
+   "lines": [
+    "Reported by The Register: Microsoft attributed a major 365 and Exchange outage to a software defect in a July 2026 update for network gateway servers.",
+    "According to the preliminary report, a change Microsoft made in July remained dormant in the network gateway servers until a surge.",
+    "The attribution is relevant to IT teams tracking the reliability of 365 and Exchange services and of gateway server updates."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Register",
+    "url": "https://www.theregister.com/saas/2026/11/16/microsoft-blames-monster-email-outage-on-software-defect-introduced-in-july-fix/5310026"
+   },
+   "sourceId": "techmeme",
+   "sourceMax": 4,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 10,
+   "story": "trend:milestone:microsoft"
+  },
+  {
+   "id": "4f51334a",
+   "key": "https://thehackernews.com/2026/11/retadup-worm-resurfaces-7-years-after.html",
+   "time": "2026-11-16T12:33:18.000Z",
+   "seen": "2026-11-16T13:17:11.645Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Retadup Worm Resurfaces 7 Years After Takedown to Spread CoffeeLoader Malware",
+   "summary": "Cybersecurity researchers have disclosed details of a new variant of CoffeeLoader, a malware designed to deliver additional payloads to infected machines. \"On launch, the NSIS-based installer executable dropped a file named '7z.dll' into a temporary directory and ran it through rundll32.exe,\" Kaspersky said in an analysis published today. \"The '7z.dll' file was a patched version of the",
+   "lines": [
+    "Reported by The Hacker News: Researchers disclosed a new variant of CoffeeLoader, a malware designed to deliver additional payloads to infected machines.",
+    "Kaspersky said the NSIS-based installer dropped a file named '7z.dll' into a temporary directory and ran it through rundll32.exe.",
+    "The headline links the activity to the Retadup worm, which resurfaced 7 years after a takedown.",
+    "Relevant to IT teams monitoring endpoints for installers that run DLL files through rundll32.exe."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/retadup-worm-resurfaces-7-years-after.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null
+  },
+  {
+   "id": "bc7fa4ff",
+   "key": "https://thehackernews.com/2026/11/six-unpatched-danfoss-refrigeration.html",
+   "time": "2026-11-16T12:34:21.000Z",
+   "seen": "2026-11-16T13:17:11.645Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Six Unpatched Danfoss Refrigeration Controller Flaws Could Allow Remote Takeover Without Login",
+   "summary": "Six flaws in Danfoss AK-SM800A refrigeration controllers could let a remote attacker take over a controller without logging in, Dutch security consultancy Midnight Blue said earlier this week. No patch is available, and the researchers say the newest firmware, version 5.4.0, does not fix the flaws. Government cybersecurity agencies in Belgium, Ireland and Germany told operators this week to",
+   "lines": [
+    "Reported by The Hacker News: Six unpatched flaws in Danfoss AK-SM800A refrigeration controllers could let a remote attacker take over a controller without logging in, according to Dutch security consultancy Midnight Blue.",
+    "No patch is available, and the researchers say the newest firmware, version 5.4.0, does not fix the flaws.",
+    "Cybersecurity agencies in Belgium, Ireland and Germany told operators this week, according to the report.",
+    "Operators of these controllers face exposure with no available patch, which matters for facilities and IT teams that manage them."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/six-unpatched-danfoss-refrigeration.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "8d185ab3",
+   "key": "https://bleepingcomputer.com/news/linux/new-noisytcp-linux-kernel-flaw-lets-attackers-crash-servers",
+   "time": "2026-11-16T09:30:04.000Z",
+   "seen": "2026-11-16T13:17:11.645Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "New NoisyTCP vulnerability lets attackers crash Linux servers",
+   "summary": "An 11-year-old Linux kernel vulnerability, dubbed NoisyTCP, affects almost all Linux distributions and lets attackers crash systems running Nginx, Apache, and SSH servers with default configurations. [...]",
+   "lines": [
+    "Reported by BleepingComputer: A new vulnerability named NoisyTCP, an 11-year-old Linux kernel flaw, affects almost all Linux distributions.",
+    "It lets attackers crash systems running Nginx, Apache, and SSH servers with default configurations.",
+    "IT teams running Linux servers with these services in default configurations may want to review their exposure."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/linux/new-noisytcp-linux-kernel-flaw-lets-attackers-crash-servers/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "51725a09",
+   "key": "https://thehackernews.com/2026/11/sansar-linux-cryptomining-malware-uses.html",
+   "time": "2026-11-16T09:32:57.000Z",
+   "seen": "2026-11-16T13:17:11.645Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "SANSAR Linux Cryptomining Malware Uses Modified NVIDIA Library to Hide GPU Activity",
+   "summary": "A financially motivated threat activity cluster tracked as REF3364 has been attributed to a Linux-focused cryptocurrency mining operation that tampers with the readings used to detect high GPU workloads. Central to the intrusion is a toolkit called SANSAR, a Rust-based orchestrator that receives commands over the TOR anonymity network to manage CPU and GPU miners. The activity was observed in",
+   "lines": [
+    "Reported by The Hacker News: A Linux-focused cryptomining operation tracked as REF3364 uses a modified NVIDIA library to hide GPU activity.",
+    "Its central toolkit, SANSAR, is a Rust-based orchestrator that receives commands over the TOR anonymity network to manage CPU and GPU miners.",
+    "IT teams may want to monitor Linux hosts for unexpected CPU and GPU mining workloads."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/sansar-linux-cryptomining-malware-uses.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
   }
  ],
- "description": "6 technology updates from official sources, updated hourly: FBI warns ARTEX AI hacking tool is powering global cyberattacks; Our new blog for science; Apple launches research study to explore the use of AI for health."
+ "description": "12 technology updates from official sources, updated hourly: Preliminary report: Microsoft attributes a major 365 and Exchange outage to a software defect introduced in a July 2026 update for network gateway servers; FBI warns ARTEX AI hacking tool is powering global cyberattacks; Retadup Worm Resur"
 }

@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-16T07:53:52.335Z",
+ "lastScan": "2026-11-16T13:17:11.645Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -659,25 +659,6 @@
     "github"
    ]
   },
-  "https://techcommunity.microsoft.com/t5/windows-it-pro-blog/granular-controls-for-multiple-updates-in-windows-autopatch/ba-p/4572668": {
-   "title": "Granular controls for multiple updates in Windows Autopatch",
-   "link": "https://techcommunity.microsoft.com/t5/windows-it-pro-blog/granular-controls-for-multiple-updates-in-windows-autopatch/ba-p/4572668",
-   "source": "tc-windows-itpro",
-   "topic": "how-to-tips",
-   "category": "launch",
-   "date": "2026-11-12T17:00:00.000Z",
-   "updated": null,
-   "summary": "Windows Autopatch now gives you even more control over how quality updates reach your devices. In Microsoft Intune, a single quality update policy can now manage multiple update types. This includes Windows quality updates, supported .NET Framework updates, and quick machine recovery updates. For ea",
-   "first": "2026-11-13T13:16:56.410Z",
-   "score": 5,
-   "reasons": [
-    "+1 source tc-windows-itpro",
-    "+2 niche (intune, windows)",
-    "+2 user steps \"you can\""
-   ],
-   "status": "below",
-   "hash": "652e2100"
-  },
   "https://medianama.com/2026/11/223-microsoft-365-applications-global-outage": {
    "title": "Microsoft 365 applications hit by global outage for over 10 hours",
    "link": "https://www.medianama.com/2026/11/223-microsoft-365-applications-global-outage/",
@@ -705,228 +686,6 @@
    ],
    "post": "microsoft-365-outage-november-2026-what-to-do"
   },
-  "https://thehackernews.com/2026/11/silentair-hijacks-asian-telecom.html": {
-   "title": "SilentAir Hijacks Asian Telecom Networks to Intercept SMS 2FA Codes and Spy on Taiwanese Users",
-   "link": "https://thehackernews.com/2026/11/silentair-hijacks-asian-telecom.html",
-   "source": "thn",
-   "topic": "security-identity",
-   "category": "incident",
-   "date": "2026-11-13T11:10:40.000Z",
-   "updated": null,
-   "summary": "A newly identified spying group used hacked equipment inside Asian mobile operators to intercept the calls and texts of selected people, mostly in Taiwan. Enea, a telecom and cybersecurity software company based in Stockholm, found the group's attack sources in at least six Asian countries and named",
-   "first": "2026-11-13T13:16:56.410Z",
-   "score": 5,
-   "reasons": [
-    "+1 source thn",
-    "+3 incident \"Hijacks\"",
-    "+1 user data or credentials exposed"
-   ],
-   "status": "below",
-   "hash": "be7b9a5b"
-  },
-  "https://github.blog/changelog/2026-11-13-manage-ai-scan-for-repositories-using-the-rest-api": {
-   "title": "Manage AI Scan for repositories using the REST API",
-   "link": "https://github.blog/changelog/2026-11-13-manage-ai-scan-for-repositories-using-the-rest-api",
-   "source": "github-changelog",
-   "topic": "ai-engineering",
-   "category": "launch",
-   "date": "2026-11-13T12:22:41.000Z",
-   "updated": null,
-   "summary": "You can now turn GitHub code scanning’s AI Scan for repositories on or off with the REST API at the organization and repository levels. This public preview adds a repository_scan… The post Manage AI Scan for repositories using the REST API appeared first on The GitHub Blog .",
-   "first": "2026-11-13T13:16:56.410Z",
-   "score": 2,
-   "reasons": [
-    "-1 source github-changelog",
-    "+2 launch \"You can now\"",
-    "+2 user steps \"You can\"",
-    "-1 narrow audience \"API\""
-   ],
-   "status": "below",
-   "hash": "ded044b5"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63976": {
-   "title": "Auction of State Government Securities",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63976",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-13T17:50:00.000Z",
-   "updated": null,
-   "summary": "The following State Governments have offered to sell stock by way of auction, for an aggregate amount of ₹23,300 Crore (Face Value). Sr. No. State Amount to be raised (₹ Crore) Tenor (Year) Type of Auction 1. Andhra Pradesh 1000 Re-issue of 7.68% Andhra Pradesh SGS 2051, issued on July 29, 2026 Pric",
-   "first": "2026-11-13T13:16:56.410Z",
-   "score": 0,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 plans/price/availability \"₹2\""
-   ],
-   "status": "below",
-   "hash": "34046e2d"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63975": {
-   "title": "Auction of 91-Day, 182-Day and 364-Day Treasury Bills",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63975",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-13T17:45:00.000Z",
-   "updated": null,
-   "summary": "Reserve Bank of India announces the auction of Government of India Treasury Bills as per the following details: Sr. No. Treasury Bill Notified Amount (₹ crore) Auction Date Settlement Date 1 91-Day 8,000 November 18, 2026 (Wednesday) November 19, 2026 (Thursday) 2 182-Day 8,000 3 364-Day 7,000 Total",
-   "first": "2026-11-13T13:16:56.410Z",
-   "score": 0,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 plans/price/availability \"India\""
-   ],
-   "status": "below",
-   "hash": "22b89faf"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63974": {
-   "title": "Developments in India’s Balance of Payments for the Month of September 2026",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63974",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-13T17:30:00.000Z",
-   "updated": null,
-   "summary": "Preliminary data on India’s balance of payments (BoP) for September 2026 are presented in the following table. Major Items of India's Balance of Payments (US$ billion) Item September 2025 PR September 2026 P April-September 2025 PR April-September 2026 P A. Current Account (Net) [A.1 to A.4] -5.2 -7",
-   "first": "2026-11-13T13:16:56.410Z",
-   "score": 0,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 plans/price/availability \"India\""
-   ],
-   "status": "below",
-   "hash": "e404472e"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63973": {
-   "title": "Reserve Bank of India imposes monetary penalty on One Mobikwik Systems Limited",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63973",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-13T17:30:00.000Z",
-   "updated": null,
-   "summary": "Reserve Bank of India (RBI) has, by an order dated November 06, 2026, imposed a monetary penalty of ₹9.00 lakh (Rupees Nine Lakh only) on One Mobikwik Systems Limited (the company) for non-compliance with certain provisions of the directions issued by RBI on ‘Prepaid Payment lnstruments (PPIs)’ and ",
-   "first": "2026-11-13T13:16:56.410Z",
-   "score": 1,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 niche (fraud)",
-    "+1 plans/price/availability \"India\""
-   ],
-   "status": "below",
-   "hash": "ed4dc45d"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63972": {
-   "title": "Reserve Bank of India – Bulletin Weekly Statistical Supplement – Extract",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63972",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-13T17:00:00.000Z",
-   "updated": null,
-   "summary": "1. Reserve Bank of India - Liabilities and Assets* (₹ Crore) Item 2025 2026 Variation Nov. 7 Oct. 30 Nov. 6 Week Year 1 2 3 4 5 4 Loans and Advances 4.1 Central Government 0 0 0 0 0 4.2 State Governments 36937 20463 15415 -5048 -21522 * Data are provisional; difference, if any, is due to rounding of",
-   "first": "2026-11-13T13:16:56.410Z",
-   "score": 1,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 niche (exchange)",
-    "+1 plans/price/availability \"India\""
-   ],
-   "status": "below",
-   "hash": "5a027444"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63971": {
-   "title": "Scheduled Banks’ Statement of Position in India as on October 31, 2026",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63971",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-13T14:55:00.000Z",
-   "updated": null,
-   "summary": "(Amount in ₹ crore) SCHEDULED COMMERCIAL BANKS (Including RRBs, SFBs, PBs and LABs) ALL SCHEDULED BANKS 31-Oct-2025# 15-Oct-2026 31-Oct-2026 31-Oct-2025# 15-Oct-2026 31-Oct-2026 I LIABILITIES TO THE BKG.SYSTEM (A) a) Demand & Time deposits from banks 324591.97 409869.12 425426.98 331731.37 417736.16",
-   "first": "2026-11-13T13:16:56.410Z",
-   "score": 0,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 plans/price/availability \"India\""
-   ],
-   "status": "below",
-   "hash": "66f364a7"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63970": {
-   "title": "Government Stock - Full Auction Results",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63970",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-13T13:50:00.000Z",
-   "updated": null,
-   "summary": "(Amount in ₹ Crore) Auction Results 6.94% GS 2036 I. Notified Amount 34,000 II. Competitive Bids Received (i) Number 349 (ii) Amount 73,016.600 III. Cut-off price (₹) / Yield 97.43 (YTM: 7.3203%) IV. Competitive Bids Accepted (i) Number 146 (ii) Amount 33,947.718 V. Partial Allotment Percentage of C",
-   "first": "2026-11-13T13:16:56.410Z",
-   "score": 0,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 plans/price/availability \"price\""
-   ],
-   "status": "below",
-   "hash": "31c61cd3"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63969": {
-   "title": "Government Stock - Auction Results: Cut-off",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63969",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-13T13:10:00.000Z",
-   "updated": null,
-   "summary": "6.94% GS 2036 I. Notified Amount ₹34,000 crore II. Cut off Price (₹) / Implicit Yield at cut-off 97.43/7.3203% III. Amount accepted in the auction ₹34,000 crore IV. Devolvement on Primary Dealers NIL Ajit Prasad Deputy General Manager (Communications) Press Release: 2026-2027/1491",
-   "first": "2026-11-13T13:16:56.410Z",
-   "score": 0,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 plans/price/availability \"₹3\""
-   ],
-   "status": "below",
-   "hash": "3a014016"
-  },
-  "https://mc.merill.net/message/MC1551151": {
-   "title": "MC1551151: Microsoft Entra ID: Risk-based anti-bot verification (CAPTCHA) for SMS and voice multi-factor authentication",
-   "link": "https://mc.merill.net/message/MC1551151",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-13T01:42:38.000Z",
-   "updated": null,
-   "summary": "Starting mid-November 2026, Microsoft Entra ID will add risk-based CAPTCHA verification for SMS and voice MFA to prevent automated fraud. Some users may need to complete CAPTCHA before receiving codes or calls. Administrators should prepare users, ensure network readiness, and promote phishing-resis",
-   "first": "2026-11-13T13:16:56.410Z",
-   "score": 0,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 niche (entra, fraud)"
-   ],
-   "status": "below",
-   "hash": "d979908c"
-  },
-  "https://mc.merill.net/message/MC1551148": {
-   "title": "MC1551148: [Outlook for iOS and Android] Copilot Chat in Outlook UX improvements",
-   "link": "https://mc.merill.net/message/MC1551148",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-13T01:39:03.000Z",
-   "updated": null,
-   "summary": "Copilot Chat in Outlook for iOS and Android is being updated with a refreshed, consistent design across Microsoft 365 apps, improved chat interface, prompts, and navigation. Rollout starts mid-December 2026, completing by late January 2027. No admin action or compliance concerns are required.",
-   "first": "2026-11-13T13:16:56.410Z",
-   "score": 3,
-   "reasons": [
-    "-2 source mc-merill",
-    "+4 niche (copilot, microsoft 365, outlook, android)",
-    "+1 plans/price/availability \"Rollout\""
-   ],
-   "status": "below",
-   "hash": "5935e2d2"
-  },
   "https://mc.merill.net/message/MC1551147": {
    "title": "MC1551147: Microsoft Word: Retirement of legacy compatibility settings",
    "link": "https://mc.merill.net/message/MC1551147",
@@ -952,25 +711,6 @@
    "attempts": 1,
    "slug": "word-legacy-compatibility-settings-retirement-check",
    "resultAt": "2026-11-14T01:37:35.691Z"
-  },
-  "https://mc.merill.net/message/MC1551122": {
-   "title": "MC1551122: Power Platform - Information regarding the end of support for SharePoint temporary authentication URLs",
-   "link": "https://mc.merill.net/message/MC1551122",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-13T01:01:33.000Z",
-   "updated": null,
-   "summary": "Starting April 1, 2027, SharePoint temporary authentication URLs will be retired. Power Apps and Automate functionality that relies on these URLs will break when they are retired. How does this affect me? Any Power Apps app or Power Automate cloud flow that relies upon the temporary authentication U",
-   "first": "2026-11-13T13:16:56.410Z",
-   "score": 0,
-   "reasons": [
-    "-2 source mc-merill",
-    "+1 niche (sharepoint)",
-    "+1 retirement/migration"
-   ],
-   "status": "below",
-   "hash": "2ef3871d"
   },
   "https://apple.com/newsroom/2026/11/apple-homeview-available-today": {
    "title": "Apple HomeView available today",
@@ -3148,6 +2888,286 @@
    ],
    "status": "below",
    "hash": "274f41f8"
+  },
+  "https://openai.com/index/lvmh-media-division-partnership": {
+   "title": "LVMH’s Media Division announces strategic partnership with OpenAI",
+   "link": "https://openai.com/index/lvmh-media-division-partnership",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-16T09:00:00.000Z",
+   "updated": null,
+   "summary": "LVMH’s Media Division and OpenAI announce a partnership to support journalism with AI and make its publications more accessible through ChatGPT.",
+   "first": "2026-11-16T13:17:11.645Z",
+   "score": 2,
+   "reasons": [
+    "+2 source openai-news",
+    "+4 niche (chatgpt, openai)",
+    "-4 customer story"
+   ],
+   "status": "below",
+   "hash": "9bc413df"
+  },
+  "https://openai.com/index/the-kings-trust-and-openai": {
+   "title": "The King’s Trust and OpenAI launch £1m partnership",
+   "link": "https://openai.com/index/the-kings-trust-and-openai",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-16T00:00:00.000Z",
+   "updated": null,
+   "summary": "The King’s Trust and OpenAI launch a £1m partnership to help up to 25,000 young people across the UK build practical AI skills for work.",
+   "first": "2026-11-16T13:17:11.645Z",
+   "score": -1,
+   "reasons": [
+    "+2 source openai-news",
+    "+1 niche (openai)",
+    "+2 launch \"launch\"",
+    "+1 launch in the headline",
+    "-4 customer story",
+    "-3 category (Global Affairs)"
+   ],
+   "status": "below",
+   "hash": "3f0d2f47"
+  },
+  "https://thehackernews.com/2026/11/six-unpatched-danfoss-refrigeration.html": {
+   "title": "Six Unpatched Danfoss Refrigeration Controller Flaws Could Allow Remote Takeover Without Login",
+   "link": "https://thehackernews.com/2026/11/six-unpatched-danfoss-refrigeration.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-16T12:34:21.000Z",
+   "updated": null,
+   "summary": "Six flaws in Danfoss AK-SM800A refrigeration controllers could let a remote attacker take over a controller without logging in, Dutch security consultancy Midnight Blue said earlier this week. No patch is available, and the researchers say the newest firmware, version 5.4.0, does not fix the flaws. ",
+   "first": "2026-11-16T13:17:11.645Z",
+   "score": 5,
+   "reasons": [
+    "+1 source thn",
+    "+2 vulnerability \"Flaws\"",
+    "+2 user action \"patch\""
+   ],
+   "status": "below",
+   "hash": "c7f62318"
+  },
+  "https://thehackernews.com/2026/11/retadup-worm-resurfaces-7-years-after.html": {
+   "title": "Retadup Worm Resurfaces 7 Years After Takedown to Spread CoffeeLoader Malware",
+   "link": "https://thehackernews.com/2026/11/retadup-worm-resurfaces-7-years-after.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-16T12:33:18.000Z",
+   "updated": null,
+   "summary": "Cybersecurity researchers have disclosed details of a new variant of CoffeeLoader, a malware designed to deliver additional payloads to infected machines. \"On launch, the NSIS-based installer executable dropped a file named '7z.dll' into a temporary directory and ran it through rundll32.exe,\" Kasper",
+   "first": "2026-11-16T13:17:11.645Z",
+   "score": 6,
+   "reasons": [
+    "+1 source thn",
+    "+3 incident \"Malware\"",
+    "+2 user action \"patched\""
+   ],
+   "status": "below",
+   "hash": "c3e0c16b"
+  },
+  "https://blog.google/company-news/inside-google/around-the-globe/google-europe/united-kingdom/what-teenagers-really-think-about-online-safety-and-ai": {
+   "title": "What teenagers really think about online safety and AI",
+   "link": "https://blog.google/company-news/inside-google/around-the-globe/google-europe/united-kingdom/what-teenagers-really-think-about-online-safety-and-ai/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-16T08:00:00.000Z",
+   "updated": null,
+   "summary": "CEO of ParentZone, Vicki Shotbolt, explains how UK teens are digitally curious and alert to online risks, relying on parent support and using AI creatively to learn.",
+   "first": "2026-11-16T13:17:11.645Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "35bc16c1"
+  },
+  "https://blog.google/company-news/inside-google/around-the-globe/google-europe/united-kingdom/helping-teens-navigate-online-news-and-information": {
+   "title": "Helping teens navigate online news and information",
+   "link": "https://blog.google/company-news/inside-google/around-the-globe/google-europe/united-kingdom/helping-teens-navigate-online-news-and-information/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-16T08:00:00.000Z",
+   "updated": null,
+   "summary": "Rachel Huggins, CEO of Internet Matters, explains how UK teens navigate AI and online news, highlighting the need for media literacy support from educators, platforms, a…",
+   "first": "2026-11-16T13:17:11.645Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "78970bc"
+  },
+  "https://blog.google/company-news/inside-google/around-the-globe/google-europe/united-kingdom/listening-to-teens-on-online-safety": {
+   "title": "Listening to teens on online safety",
+   "link": "https://blog.google/company-news/inside-google/around-the-globe/google-europe/united-kingdom/listening-to-teens-on-online-safety/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-16T08:00:00.000Z",
+   "updated": null,
+   "summary": "Will Gardner, CEO of Childnet, explains how teenagers are embracing AI creatively and responsibly, emphasising the vital role of listening to young voices when navigatin…",
+   "first": "2026-11-16T13:17:11.645Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "11308963"
+  },
+  "https://news.samsung.com/in/samsungs-latest-products-recognized-by-consumer-technology-association-ahead-of-ces-2027": {
+   "title": "Samsung’s Latest Products Recognized by Consumer Technology Association Ahead of CES 2027",
+   "link": "https://news.samsung.com/in/samsungs-latest-products-recognized-by-consumer-technology-association-ahead-of-ces-2027",
+   "source": "samsung-india",
+   "topic": "mobiles",
+   "category": "launch",
+   "date": "2026-11-16T15:59:38.000Z",
+   "updated": null,
+   "summary": "Samsung Electronics, a global leader in technology, today announced that a range of its products and services have been recognized by the Consumer Technology Association (CTA)® as part of the CES Innovation Awards® 2027 program, doubling the number of Best of Innovation winners from 2026. The CES In",
+   "first": "2026-11-16T13:17:11.645Z",
+   "score": 1,
+   "reasons": [
+    "+1 also on samsung-global"
+   ],
+   "status": "below",
+   "hash": "426437f0"
+  },
+  "https://news.samsung.com/in/from-indian-roads-to-global-wrists-how-engineers-at-samsungs-noida-rd-centre-are-helping-shape-the-new-galaxy-watch-experience": {
+   "title": "From Indian Roads to Global Wrists: How Engineers at Samsung’s Noida R&D Centre Are Helping Shape the New Galaxy Watch Experience",
+   "link": "https://news.samsung.com/in/from-indian-roads-to-global-wrists-how-engineers-at-samsungs-noida-rd-centre-are-helping-shape-the-new-galaxy-watch-experience",
+   "source": "samsung-india",
+   "topic": "mobiles",
+   "category": "launch",
+   "date": "2026-11-16T15:42:15.000Z",
+   "updated": null,
+   "summary": "What does an auto-rickshaw on an Indian road have to do with a Galaxy Watch sold anywhere in the world? For engineers at Samsung Research Institute–Noida (SRI-N), the answer lies at the heart of how wearable technology is developed and tested. During the development of auto cycle detection, Indian e",
+   "first": "2026-11-16T13:17:11.645Z",
+   "score": 1,
+   "reasons": [
+    "+1 niche (galaxy)"
+   ],
+   "status": "below",
+   "hash": "9e3e2c3c"
+  },
+  "https://news.samsung.com/in/from-a-chamarajanagar-farm-in-karnataka-to-a-tech-job-ruchitha-breaks-new-ground": {
+   "title": "From a Chamarajanagar Farm in Karnataka to a Tech Job: Ruchitha Breaks New Ground",
+   "link": "https://news.samsung.com/in/from-a-chamarajanagar-farm-in-karnataka-to-a-tech-job-ruchitha-breaks-new-ground",
+   "source": "samsung-india",
+   "topic": "mobiles",
+   "category": "launch",
+   "date": "2026-11-16T14:30:28.000Z",
+   "updated": null,
+   "summary": "Ruchitha S. grew up in Yeragamballi, where her family’s two acres of farmland provide its main income. Now, the engineering student is preparing to begin a career in technology after securing a placement at Coupa as an Associate Cloud Software Engineer. She is the first in her family to pursue an en",
+   "first": "2026-11-16T13:17:11.645Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "ee05373c"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63983": {
+   "title": "Auction of Government of India Dated Securities",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63983",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-16T17:45:00.000Z",
+   "updated": null,
+   "summary": "Government of India (GoI) has announced the sale (re-issue) of two dated securities for a notified amount of ₹33,000 crore as per the following details: Sr No Security Date of Repayment Notified Amount (₹ Crore) GoI specific Notification Auction Date Settlement Date 1 6.53% GS 2031 Sep 07, 2031 19,0",
+   "first": "2026-11-16T13:17:11.645Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"India\""
+   ],
+   "status": "below",
+   "hash": "dffff6b3"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63982": {
+   "title": "Result: Conversion/Switch Auction of Government of India Securities",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63982",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-16T14:55:00.000Z",
+   "updated": null,
+   "summary": "A. Source Security 7.38% GS 2027 8.26% GS 2027 7.37% GS 2028 7.26% GS 2029 7.10% GS 2029 7.04% GS 2029 B. Notified Amount (in ₹ crore) 5,000 2,000 4,000 4,000 5,000 5,000 Destination Security 7.18% GS 2037 7.40% GS 2062 6.83% GS 2039 7.73% GS 2034 6.64% GS 2035 7.41% GS 2036 C. i. No. of offers rece",
+   "first": "2026-11-16T13:17:11.645Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"India\""
+   ],
+   "status": "below",
+   "hash": "98b0b46a"
+  },
+  "https://blogs.vmware.com/cloud-foundation/2026/11/16/know-the-moment-your-vcf-platform-changes-alerting-on-new-services-runtime-nodes": {
+   "title": "Know the Moment Your VCF Platform Changes: Alerting on New Services Runtime Nodes",
+   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/16/know-the-moment-your-vcf-platform-changes-alerting-on-new-services-runtime-nodes/",
+   "source": "vmware-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-16T13:12:02.000Z",
+   "updated": null,
+   "summary": "A VCF Operations alert that detects new Services Runtime node VMs by name and IP address. VMware Cloud Foundation (VCF) management services in VCF 9.1.x run on VCF services runtime, a Kubernetes-based layer whose worker nodes are ordinary virtual machines in your management domain. When you scale ou",
+   "first": "2026-11-16T13:17:11.645Z",
+   "score": 1,
+   "reasons": [
+    "-1 source vmware-blog",
+    "+2 user steps \"upgrade\""
+   ],
+   "status": "below",
+   "hash": "94d8457"
+  },
+  "https://blogs.vmware.com/cloud-foundation/2026/11/16/building-a-vcf-9-1-installer-depot-offline-without-a-download-token": {
+   "title": "Building a VCF 9.1 Installer Depot Offline, without a Download Token",
+   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/16/building-a-vcf-9-1-installer-depot-offline-without-a-download-token/",
+   "source": "vmware-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-16T08:33:04.000Z",
+   "updated": null,
+   "summary": "In 9.1, the VCF Download Tool (VCFDT) needs an activation code tied to an entitled site. A username and password don’t work in 9.x. If you’re a Broadcom partner or an employee, your portal login can usually download individual files from the Broadcom Support Portal, but it often can’t generate an ac",
+   "first": "2026-11-16T13:17:11.645Z",
+   "score": 2,
+   "reasons": [
+    "-1 source vmware-blog",
+    "+1 niche (password)",
+    "+2 user steps \"Download\""
+   ],
+   "status": "below",
+   "hash": "7a841d50"
+  },
+  "https://news.sap.com/2026/11/order-management-built-straight-into-sap-dataxstream": {
+   "title": "Order Management Built Straight into SAP",
+   "link": "https://news.sap.com/2026/11/order-management-built-straight-into-sap-dataxstream/",
+   "source": "sap-news",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-16T12:15:00.000Z",
+   "updated": null,
+   "summary": "The fewer systems you have to stitch together, the fewer things there are to break.",
+   "first": "2026-11-16T13:17:11.645Z",
+   "score": -1,
+   "reasons": [
+    "-1 source sap-news"
+   ],
+   "status": "below",
+   "hash": "fc7c88bc"
+  },
+  "https://elevenlabs.io/blog/postnord": {
+   "title": "How the Nordics' leading postal operator rebuilt its customer support on ElevenAgents",
+   "link": "https://elevenlabs.io/blog/postnord",
+   "source": "elevenlabs-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-17T12:00:00.000Z",
+   "updated": null,
+   "summary": "Yahoo used the ElevenAgents platform to add conversational voice to its new Yahoo Scout AI answer tool, going from kickoff to production in 6 weeks.",
+   "first": "2026-11-16T13:17:11.645Z",
+   "score": -2,
+   "reasons": [
+    "-2 source elevenlabs-blog"
+   ],
+   "status": "below",
+   "hash": "683cb0c"
   }
  },
  "devices": {}
