@@ -2,7 +2,7 @@
  "date": "2026-11-16",
  "title": "Tech news today, 16 November 2026",
  "published": "2026-11-15T21:11:52.179Z",
- "updated": "2026-11-16T13:17:11.645Z",
+ "updated": "2026-11-16T17:55:38.036Z",
  "items": [
   {
    "id": "448a0f6c",
@@ -25,7 +25,9 @@
    },
    "sourceId": "bleepingcomputer",
    "reported": true,
-   "also": [],
+   "also": [
+    "TechCrunch"
+   ],
    "post": null,
    "device": null,
    "ai": null,
@@ -347,7 +349,243 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "16408c26",
+   "key": "https://openai.com/index/more-ways-to-move-care-forward-with-chatgpt-for-healthcare",
+   "time": "2026-11-16T06:00:00.000Z",
+   "seen": "2026-11-16T17:55:38.036Z",
+   "kind": "launch",
+   "tier": 1,
+   "headline": "More ways to move care forward with ChatGPT for Healthcare",
+   "summary": "Introducing computer-use agents, improved clinical answers, and new healthcare plugins that work across healthcare software to get real work done.",
+   "lines": [
+    "OpenAI introduced computer-use agents, improved clinical answers, and new healthcare plugins for ChatGPT for Healthcare.",
+    "The plugins are described as working across healthcare software to help teams get real work done.",
+    "IT teams supporting clinical workflows may find the plugins relevant because they are said to work across existing healthcare software."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "OpenAI News",
+    "url": "https://openai.com/index/more-ways-to-move-care-forward-with-chatgpt-for-healthcare"
+   },
+   "sourceId": "openai-news",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 8,
+   "story": null
+  },
+  {
+   "id": "d6f8e9cb",
+   "key": "https://openai.com/index/advancing-computer-use-for-healthcare-teams",
+   "time": "2026-11-16T06:00:00.000Z",
+   "seen": "2026-11-16T17:55:38.036Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Advancing computer-use agents for healthcare teams",
+   "summary": "",
+   "lines": [
+    "OpenAI published an item titled \"Advancing computer-use agents for healthcare teams.\""
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "OpenAI News",
+    "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams"
+   },
+   "sourceId": "openai-news",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 7,
+   "story": null
+  },
+  {
+   "id": "140a6b0c",
+   "key": "https://nvidianews.nvidia.com/news/nvidia-introduces-nemotron-for-science-to-accelerate-discoveries-with-agents",
+   "time": "2026-11-16T16:00:00.000Z",
+   "seen": "2026-11-16T17:55:38.036Z",
+   "kind": "ai-model",
+   "tier": 2,
+   "headline": "NVIDIA Introduces Nemotron for Science to Accelerate Discoveries With Agents",
+   "summary": "NVIDIA today introduced NVIDIA Nemotron for Science, bringing together scientific applications of its NVIDIA Nemotron™ 3.5 Super VL open model, a new open chemistry dataset and post-training recipes to help researchers build specialized agents for scientific discovery.",
+   "lines": [
+    "NVIDIA introduced Nemotron for Science, which combines scientific applications of its Nemotron 3.5 Super VL open model, a new open chemistry dataset, and post-training recipes.",
+    "The tools are meant to help researchers build specialized agents for scientific discovery.",
+    "Research and chemistry teams may use these open resources as a starting point for building domain-specific agents."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "NVIDIA Newsroom",
+    "url": "https://nvidianews.nvidia.com/news/nvidia-introduces-nemotron-for-science-to-accelerate-discoveries-with-agents"
+   },
+   "sourceId": "nvidia-news",
+   "sourceMax": 4,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": {
+    "model": "Nemotron for",
+    "kind": "release"
+   },
+   "score": 6,
+   "story": "ai:nemotron for:release"
+  },
+  {
+   "id": "6ce33ed9",
+   "key": "https://openai.com/index/our-first-phase-of-embedded-assessments",
+   "time": "2026-11-16T08:00:00.000Z",
+   "seen": "2026-11-16T17:55:38.036Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Our first phase of embedded assessments",
+   "summary": "OpenAI begins embedded assessments with Apollo Research, METR, and Transluce, and Goodfire to independently evaluate model alignment, safeguards, and monitoring systems.",
+   "lines": [
+    "OpenAI began the first phase of embedded assessments with Apollo Research, METR, Transluce, and Goodfire.",
+    "The assessments are meant to independently evaluate model alignment, safeguards, and monitoring systems.",
+    "Teams evaluating AI vendors may consider independent reviews of safeguards and monitoring when assessing risk."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "OpenAI News",
+    "url": "https://openai.com/index/our-first-phase-of-embedded-assessments"
+   },
+   "sourceId": "openai-news",
+   "reported": false,
+   "also": [
+    "techmeme"
+   ],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "f554c4db",
+   "key": "https://github.blog/changelog/2026-11-16-take-github-mobile-with-you-on-iphone-duo",
+   "time": "2026-11-16T14:30:07.000Z",
+   "seen": "2026-11-16T17:55:38.036Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Take GitHub Mobile with you on iPhone Duo",
+   "summary": "GitHub Mobile now supports iPhone Duo, with a layout that adapts when unfolded and vertical tabs to help you move between key areas like Copilot, Pull Requests, Issues, and Notifications.… The post Take GitHub Mobile with you on iPhone Duo appeared first on The GitHub Blog .",
+   "lines": [
+    "GitHub Mobile now supports iPhone Duo, with a layout that adapts when the device is unfolded.",
+    "Vertical tabs help users move between Copilot, Pull Requests, Issues, and Notifications.",
+    "Developers and project teams who use GitHub on mobile can reach key areas of the platform more easily on this device."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "GitHub Changelog",
+    "url": "https://github.blog/changelog/2026-11-16-take-github-mobile-with-you-on-iphone-duo"
+   },
+   "sourceId": "github-changelog",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "74014070",
+   "key": "https://thehackernews.com/2026/11/google-finds-hackers-using-ai-agents-to.html",
+   "time": "2026-11-16T14:00:00.000Z",
+   "seen": "2026-11-16T17:55:38.036Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Google Finds Hackers Using AI Agents to Build and Run Exploits From Software Patches",
+   "summary": "Google on Monday revealed that adversarial use of artificial intelligence (AI) by threat actors has gone beyond manual prompting to deploying autonomous multi-agent offensive frameworks like ARTEX, CAIRN, CyberStrikeAI, and PentAGI to execute multi-stage intrusions at greater operational velocity. In tandem, threat actors are leveraging the power and capabilities of large language models (LLMs)",
+   "lines": [
+    "Reported by The Hacker News: Google revealed that threat actors are using autonomous multi-agent offensive frameworks, such as ARTEX, CAIRN, CyberStrikeAI, and PentAGI, to run multi-stage intrusions.",
+    "Threat actors are also using large language models as part of these operations, according to the report.",
+    "Security teams may need to account for AI agents that can build and run exploits from software patches at greater speed."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/google-finds-hackers-using-ai-agents-to.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [
+    "gnews-tech"
+   ],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 10,
+   "story": null
+  },
+  {
+   "id": "7af445eb",
+   "key": "https://gsmarena.com/watch_xiaomis_global_launch_event_for_the_xiaomi_18_pro_and_xiaomi_18_pro_max_here-news-75494.php",
+   "time": "2026-11-16T17:26:02.000Z",
+   "seen": "2026-11-16T17:55:38.036Z",
+   "kind": "device",
+   "tier": 2,
+   "headline": "Watch the Xiaomi 18 Pro and Xiaomi 18 Pro Max global launch event here",
+   "summary": "The time has come for Xiaomi to bring its latest flagship smartphones to the global market. After having launched the Xiaomi 18 Pro and Xiaomi 18 Pro Max in China in September, the company is now unleashing them across the world with a special unveiling event taking place tomorrow in Paris, France, at 14:00 local time, which is 13:00 in the UK and Portugal, 15:00 in Eastern Europe, 18:30 in India, and 8 AM in New York. If you're interested in watching the event live, you can do so right here. The phones will be joined by the Xiaomi Watch S5 41mm, the Xiaomi Smart Band 11 NFC, and...",
+   "lines": [
+    "Reported by GSMArena news: Xiaomi will hold a global launch event in Paris, France, for the Xiaomi 18 Pro and Xiaomi 18 Pro Max, which launched in China in September.",
+    "The event starts at 14:00 local time in Paris, and the phones will be joined by the Xiaomi Watch S5 41mm and Xiaomi Smart Band 11 NFC.",
+    "The item covers consumer flagship phones and wearables, so its relevance to IT teams is mainly device planning."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "GSMArena news",
+    "url": "https://www.gsmarena.com/watch_xiaomis_global_launch_event_for_the_xiaomi_18_pro_and_xiaomi_18_pro_max_here-news-75494.php"
+   },
+   "sourceId": "gsmarena-news",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": {
+    "model": "Xiaomi 18 Pro",
+    "brand": "Xiaomi",
+    "category": "phone",
+    "key": "xiaomi 18 pro"
+   },
+   "ai": null,
+   "score": 7,
+   "story": "device:xiaomi 18 pro"
+  },
+  {
+   "id": "4e93b769",
+   "key": "https://bleepingcomputer.com/news/security/fandango-says-hackers-stole-payment-card-details-from-checkout-pages",
+   "time": "2026-11-16T15:44:21.000Z",
+   "seen": "2026-11-16T17:55:38.036Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Fandango says hackers stole payment card details from checkout pages",
+   "summary": "Ticket seller Fandango Media is notifying customers about a data breach that exposed payment card details entered on its checkout pages. [...]",
+   "lines": [
+    "Reported by BleepingComputer: Fandango Media is notifying customers about a data breach in which hackers stole payment card details entered on its checkout pages.",
+    "Businesses that run payment pages may want to review checkout security and their customer notification processes."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/fandango-says-hackers-stole-payment-card-details-from-checkout-pages/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null
   }
  ],
- "description": "12 technology updates from official sources, updated hourly: Preliminary report: Microsoft attributes a major 365 and Exchange outage to a software defect introduced in a July 2026 update for network gateway servers; FBI warns ARTEX AI hacking tool is powering global cyberattacks; Retadup Worm Resur"
+ "description": "20 technology updates from official sources, updated hourly: More ways to move care forward with ChatGPT for Healthcare; Preliminary report: Microsoft attributes a major 365 and Exchange outage to a software defect introduced in a July 2026 update for network gateway servers; Google Finds Hackers Us"
 }

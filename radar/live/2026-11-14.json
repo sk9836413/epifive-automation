@@ -2,7 +2,7 @@
  "date": "2026-11-14",
  "title": "Tech news today, 14 November 2026",
  "published": "2026-11-14T18:02:12.270Z",
- "updated": "2026-11-15T09:33:51.711Z",
+ "updated": "2026-11-16T17:55:38.036Z",
  "items": [
   {
    "id": "8f56716a",
@@ -26,7 +26,8 @@
    "sourceId": "status-m365-consumer",
    "reported": false,
    "also": [
-    "MediaNama"
+    "MediaNama",
+    "BleepingComputer"
    ],
    "post": "microsoft-365-outage-november-2026-what-to-do",
    "device": null,

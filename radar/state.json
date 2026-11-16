@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-16T14:16:37.759Z",
+ "lastScan": "2026-11-16T17:55:38.036Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -711,25 +711,6 @@
    "attempts": 1,
    "slug": "word-legacy-compatibility-settings-retirement-check",
    "resultAt": "2026-11-14T01:37:35.691Z"
-  },
-  "https://apple.com/newsroom/2026/11/apple-homeview-available-today": {
-   "title": "Apple HomeView available today",
-   "link": "https://www.apple.com/newsroom/2026/11/apple-homeview-available-today/",
-   "source": "apple-newsroom",
-   "topic": "mobiles",
-   "category": "launch",
-   "date": "2026-11-13T13:59:07.218Z",
-   "updated": "2026-11-13T13:59:07.218Z",
-   "summary": "Customers can now purchase Apple HomeView and experience a new way to enjoy entertainment, stay connected, and manage their home.",
-   "first": "2026-11-13T14:16:39.516Z",
-   "score": 4,
-   "reasons": [
-    "+1 source apple-newsroom",
-    "+2 launch \"available today\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "74a0782f"
   },
   "https://openai.com/index/introducing-chatgpt-wallet": {
    "title": "Introducing ChatGPT Wallet",
@@ -3493,6 +3474,742 @@
    ],
    "status": "below",
    "hash": "4ec57b0c"
+  },
+  "https://openai.com/index/expanding-chatgpt-for-academic-researchers": {
+   "title": "Broadening access to AI for scientists",
+   "link": "https://openai.com/index/expanding-chatgpt-for-academic-researchers",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-16T17:00:00.000Z",
+   "updated": null,
+   "summary": "We’re expanding our ChatGPT for Academic Researchers program to offer 200,000 researchers worldwide free access to our frontier models.",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": 4,
+   "reasons": [
+    "+2 source openai-news",
+    "+3 niche (chatgpt)",
+    "+1 plans/price/availability \"free\"",
+    "-2 category (Research)"
+   ],
+   "status": "below",
+   "hash": "e1077c5e"
+  },
+  "https://openai.com/index/strengthening-online-child-safety": {
+   "title": "Strengthening the fight against online child sexual abuse with new tools and support",
+   "link": "https://openai.com/index/strengthening-online-child-safety",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-16T17:00:00.000Z",
+   "updated": null,
+   "summary": "New tools, practical guidance, and partnerships will help prevent, detect and respond to online child sexual exploitation and abuse.",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": 0,
+   "reasons": [
+    "+2 source openai-news",
+    "-2 category (Safety)"
+   ],
+   "status": "below",
+   "hash": "88e1014"
+  },
+  "https://openai.com/index/science-at-the-frontier": {
+   "title": "Science at the Frontier: How scientists use ChatGPT",
+   "link": "https://openai.com/index/science-at-the-frontier",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-16T12:00:00.000Z",
+   "updated": null,
+   "summary": "Explore how more than 1,800 scientists use ChatGPT in research. See findings on daily workflows, reported productivity, and expectations for discovery.",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": -1,
+   "reasons": [
+    "+2 source openai-news",
+    "+3 niche (chatgpt)",
+    "-4 customer story",
+    "-2 category (Research)"
+   ],
+   "status": "below",
+   "hash": "7bf05271"
+  },
+  "https://openai.com/index/our-first-phase-of-embedded-assessments": {
+   "title": "Our first phase of embedded assessments",
+   "link": "https://openai.com/index/our-first-phase-of-embedded-assessments",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-16T08:00:00.000Z",
+   "updated": null,
+   "summary": "OpenAI begins embedded assessments with Apollo Research, METR, and Transluce, and Goodfire to independently evaluate model alignment, safeguards, and monitoring systems.",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": 2,
+   "reasons": [
+    "+2 source openai-news",
+    "+1 niche (openai)",
+    "+1 also on techmeme",
+    "-2 category (Safety)"
+   ],
+   "status": "below",
+   "hash": "c23eb2e0"
+  },
+  "https://openai.com/index/advancing-computer-use-for-healthcare-teams": {
+   "title": "Advancing computer-use agents for healthcare teams",
+   "link": "https://openai.com/index/advancing-computer-use-for-healthcare-teams",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-16T06:00:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": 5,
+   "reasons": [
+    "+2 source openai-news",
+    "+1 niche (agents)",
+    "+2 category (Product)"
+   ],
+   "status": "below",
+   "hash": "32a271e1"
+  },
+  "https://openai.com/index/more-ways-to-move-care-forward-with-chatgpt-for-healthcare": {
+   "title": "More ways to move care forward with ChatGPT for Healthcare",
+   "link": "https://openai.com/index/more-ways-to-move-care-forward-with-chatgpt-for-healthcare",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-16T06:00:00.000Z",
+   "updated": null,
+   "summary": "Introducing computer-use agents, improved clinical answers, and new healthcare plugins that work across healthcare software to get real work done.",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": 10,
+   "reasons": [
+    "+2 source openai-news",
+    "+4 niche (chatgpt, agents)",
+    "+2 launch \"Introducing\"",
+    "+2 category (Product)"
+   ],
+   "status": "writing",
+   "hash": "4a7422bf",
+   "kind": "new",
+   "extra": false,
+   "taskAt": "2026-11-16T17:55:38.036Z",
+   "attempts": 1
+  },
+  "https://thehackernews.com/2026/11/google-finds-hackers-using-ai-agents-to.html": {
+   "title": "Google Finds Hackers Using AI Agents to Build and Run Exploits From Software Patches",
+   "link": "https://thehackernews.com/2026/11/google-finds-hackers-using-ai-agents-to.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-16T14:00:00.000Z",
+   "updated": null,
+   "summary": "Google on Monday revealed that adversarial use of artificial intelligence (AI) by threat actors has gone beyond manual prompting to deploying autonomous multi-agent offensive frameworks like ARTEX, CAIRN, CyberStrikeAI, and PentAGI to execute multi-stage intrusions at greater operational velocity. I",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": 10,
+   "reasons": [
+    "+1 source thn",
+    "+3 incident \"Hackers\"",
+    "+3 major platform (google)",
+    "+2 user action \"Patches\"",
+    "+1 also on gnews-tech"
+   ],
+   "status": "queued",
+   "hash": "d4cdf828"
+  },
+  "https://bleepingcomputer.com/news/microsoft/microsoft-says-months-old-bug-caused-global-microsoft-365-outage": {
+   "title": "Microsoft says months-old bug caused global Microsoft 365 outage",
+   "link": "https://www.bleepingcomputer.com/news/microsoft/microsoft-says-months-old-bug-caused-global-microsoft-365-outage/",
+   "source": "bleepingcomputer",
+   "topic": "microsoft-365",
+   "category": "outage",
+   "date": "2026-11-16T16:43:24.000Z",
+   "updated": null,
+   "summary": "Microsoft says a software bug introduced in July caused last week's worldwide Microsoft 365 outage, triggering a cascading failure that left more than 80% of its networking gateway servers unresponsive. [...]",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": 11,
+   "reasons": [
+    "+1 source bleepingcomputer",
+    "+6 outage \"outage\"",
+    "+3 major platform (microsoft)",
+    "+1 scale \"global\"",
+    "backlog microsoft-365-outlook-teams-down-what-to-do-business-continuity-plan",
+    "same outage as \"Users may be unable to access or perform several actions in \"",
+    "covered by /blog/microsoft-365-outage-november-2026-root-cause-it-admin-lessons"
+   ],
+   "status": "duplicate",
+   "hash": "a78aa77f",
+   "families": [
+    "microsoft"
+   ],
+   "backlog": "microsoft-365-outlook-teams-down-what-to-do-business-continuity-plan",
+   "post": "microsoft-365-outage-november-2026-root-cause-it-admin-lessons"
+  },
+  "https://bleepingcomputer.com/news/security/fandango-says-hackers-stole-payment-card-details-from-checkout-pages": {
+   "title": "Fandango says hackers stole payment card details from checkout pages",
+   "link": "https://www.bleepingcomputer.com/news/security/fandango-says-hackers-stole-payment-card-details-from-checkout-pages/",
+   "source": "bleepingcomputer",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-16T15:44:21.000Z",
+   "updated": null,
+   "summary": "Ticket seller Fandango Media is notifying customers about a data breach that exposed payment card details entered on its checkout pages. [...]",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": 6,
+   "reasons": [
+    "+1 source bleepingcomputer",
+    "+3 incident \"hackers\"",
+    "+1 user data or credentials exposed",
+    "+1 category (Security)"
+   ],
+   "status": "below",
+   "hash": "97b2c00"
+  },
+  "https://bleepingcomputer.com/news/security/7-tips-for-complying-with-cjis-password-and-mfa-requirements": {
+   "title": "7 Tips For Complying with CJIS Password and MFA Requirements",
+   "link": "https://www.bleepingcomputer.com/news/security/7-tips-for-complying-with-cjis-password-and-mfa-requirements/",
+   "source": "bleepingcomputer",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-16T15:01:11.000Z",
+   "updated": null,
+   "summary": "The FBI's latest CJIS Security Policy requires law enforcement agencies to strengthen password protections and enforce MFA across privileged and non-privileged accounts. Specops Software outlines seven practical steps to meet these requirements, block compromised passwords, and maintain compliance. ",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": 6,
+   "reasons": [
+    "+1 source bleepingcomputer",
+    "+3 incident \"compromised\"",
+    "+1 user data or credentials exposed",
+    "+1 category (Security)"
+   ],
+   "status": "below",
+   "hash": "601b48f9"
+  },
+  "https://blog.google/products/publisher-connections/new-google-admob-tools": {
+   "title": "New Google AdMob AI tools help app creators build, fix, and grow faster",
+   "link": "https://blog.google/products/publisher-connections/new-google-admob-tools/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-16T17:00:00.000Z",
+   "updated": null,
+   "summary": "New Google AdMob AI tools help app developers fix setups fast, protect brand safety, and automate monetization in code.",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "f82c426"
+  },
+  "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/training-performance-benchmarks-tpus": {
+   "title": "New AI training performance benchmarks for Google TPUs",
+   "link": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/training-performance-benchmarks-tpus/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-16T16:00:00.000Z",
+   "updated": null,
+   "summary": "In the latest MLPerf Training v6.1 benchmark round, Google Cloud published 10 results across seventh-generation Ironwood TPUs and NVIDIA Grace Blackwell GPUs, spanning f…",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "88406a2f"
+  },
+  "https://zoom.com/en/blog/rise-of-personal-agents": {
+   "title": "The rise of personal agents: is your contact center ready?",
+   "link": "https://www.zoom.com/en/blog/rise-of-personal-agents/",
+   "source": "zoom-blog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-16T15:25:36.000Z",
+   "updated": null,
+   "summary": "Personal AI agents are completing purchases, negotiating discounts, booking appointments, and calling your service teams on behalf of customers. Here is what it means for CX leaders.",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": 1,
+   "reasons": [
+    "+1 niche (agents)"
+   ],
+   "status": "below",
+   "hash": "60925c99"
+  },
+  "https://github.blog/changelog/2026-11-16-bulk-start-ai-scan-for-repositories": {
+   "title": "Bulk start AI Scan for repositories",
+   "link": "https://github.blog/changelog/2026-11-16-bulk-start-ai-scan-for-repositories",
+   "source": "github-changelog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-16T15:50:22.000Z",
+   "updated": null,
+   "summary": "AI Scan for repositories finds security vulnerabilities on your repository’s default branch. It covers languages CodeQL doesn’t support and finds additional issues in languages CodeQL already analyzes. Findings appear in… The post Bulk start AI Scan for repositories appeared first on The GitHub Blog",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": -1,
+   "reasons": [
+    "-1 source github-changelog"
+   ],
+   "status": "below",
+   "hash": "696160d6"
+  },
+  "https://github.blog/changelog/2026-11-16-take-github-mobile-with-you-on-iphone-duo": {
+   "title": "Take GitHub Mobile with you on iPhone Duo",
+   "link": "https://github.blog/changelog/2026-11-16-take-github-mobile-with-you-on-iphone-duo",
+   "source": "github-changelog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-16T14:30:07.000Z",
+   "updated": null,
+   "summary": "GitHub Mobile now supports iPhone Duo, with a layout that adapts when unfolded and vertical tabs to help you move between key areas like Copilot, Pull Requests, Issues, and Notifications.… The post Take GitHub Mobile with you on iPhone Duo appeared first on The GitHub Blog .",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": 5,
+   "reasons": [
+    "-1 source github-changelog",
+    "+4 niche (copilot, iphone)",
+    "+2 launch \"now supports\""
+   ],
+   "status": "below",
+   "hash": "a1615dc0"
+  },
+  "https://blog.webex.com/collaboration/in-their-words-why-webex-by-cisco-customers-made-2027-trustradius-buyers-choice": {
+   "title": "In their words: why Webex by Cisco customers made it a 2027 ...",
+   "link": "https://blog.webex.com/collaboration/in-their-words-why-webex-by-cisco-customers-made-2027-trustradius-buyers-choice/",
+   "source": "webex-blog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-16T16:52:00.000Z",
+   "updated": null,
+   "summary": "Explore why Cisco’s Webex Contact Center, Webex App, Webex Meetings, and Webex Calling earned 2027 TrustRadius Buyer’s Choice Awards. The post In their words: why Webex by Cisco customers made it a 2027 ... appeared first on Webex Blog .",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": -1,
+   "reasons": [
+    "-1 source webex-blog"
+   ],
+   "status": "below",
+   "hash": "d0e8c401"
+  },
+  "https://crowdstrike.com/en-us/blog/supply-chain-risk-from-backdoored-lora-models": {
+   "title": "Hidden in the Weights: Supply Chain Risk from Backdoored LoRA Models",
+   "link": "https://www.crowdstrike.com/en-us/blog/supply-chain-risk-from-backdoored-lora-models/",
+   "source": "crowdstrike-blog",
+   "topic": "security-identity",
+   "category": "launch",
+   "date": "2026-11-16T06:00:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": -1,
+   "reasons": [
+    "-1 source crowdstrike-blog"
+   ],
+   "status": "below",
+   "hash": "5fc2d8af"
+  },
+  "https://blogs.nvidia.com/blog/lambda-photonics": {
+   "title": "Lambda Boosts AI Factory Resiliency and Efficiency With NVIDIA Photonics",
+   "link": "https://blogs.nvidia.com/blog/lambda-photonics/",
+   "source": "nvidia-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-16T16:00:51.000Z",
+   "updated": null,
+   "summary": "To train an AI model, thousands of GPUs have to work together, requiring a network that’s fast, efficient and resilient. Lambda is tackling the network piece of the puzzle with NVIDIA Photonics co-packaged optics (CPO) switches. The cloud provider is using the switches to connect NVIDIA GB300 NVL72 ",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": -1,
+   "reasons": [
+    "-1 source nvidia-news"
+   ],
+   "status": "below",
+   "hash": "c8ad59d9"
+  },
+  "https://blogs.nvidia.com/blog/slurm-quantum-computing-supercomputing": {
+   "title": "NVIDIA Expands Slurm to Bring Quantum Computing Into Supercomputing",
+   "link": "https://blogs.nvidia.com/blog/slurm-quantum-computing-supercomputing/",
+   "source": "nvidia-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-16T16:00:47.000Z",
+   "updated": null,
+   "summary": "Quantum processor deployments at supercomputing centers have grown nearly sevenfold over the past five years, with nearly 30 supercomputing centers around the world now in the process of deploying over 50 quantum processors. Many of these centers use Slurm to run scientific supercomputing workloads,",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": -1,
+   "reasons": [
+    "-1 source nvidia-news"
+   ],
+   "status": "below",
+   "hash": "97d5c49a"
+  },
+  "https://blogs.nvidia.com/blog/mlperf-training-endpoints-vera-rubin": {
+   "title": "NVIDIA Sweeps MLPerf Training and Endpoints as Vera Rubin Debuts With Leading Performance",
+   "link": "https://blogs.nvidia.com/blog/mlperf-training-endpoints-vera-rubin/",
+   "source": "nvidia-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-16T16:00:25.000Z",
+   "updated": null,
+   "summary": "In its MLPerf benchmarks debut, with results released today, the NVIDIA Vera Rubin platform delivers leading performance across training, post-training and agentic inference. NVIDIA swept every MLPerf Training v6.1 benchmark and, in its first MLPerf Endpoints submission, delivered more than 10x gene",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": -1,
+   "reasons": [
+    "-1 source nvidia-news"
+   ],
+   "status": "below",
+   "hash": "b0cbb60"
+  },
+  "https://blogs.nvidia.com/blog/cuda-x-libraries-agents-accelerate-scientific-discovery": {
+   "title": "NVIDIA CUDA-X Libraries Give Agents the Tools to Accelerate Scientific Discovery",
+   "link": "https://blogs.nvidia.com/blog/cuda-x-libraries-agents-accelerate-scientific-discovery/",
+   "source": "nvidia-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-16T16:00:16.000Z",
+   "updated": null,
+   "summary": "With expanded NVIDIA CUDA-X libraries, including cuPhoton, cuPotential and cuSpa, researchers can sift through vast amounts of data to accelerate research, from astrophysics and materials science to single-cell biology. The speedups are helping scientists analyze larger datasets and model more compl",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": 0,
+   "reasons": [
+    "-1 source nvidia-news",
+    "+1 niche (agents)"
+   ],
+   "status": "below",
+   "hash": "f895da88"
+  },
+  "https://blogs.nvidia.com/blog/20-years-cuda": {
+   "title": "CUDA at 20: How the Platform Transformed Scientific Computing",
+   "link": "https://blogs.nvidia.com/blog/20-years-cuda/",
+   "source": "nvidia-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-16T16:00:11.000Z",
+   "updated": null,
+   "summary": "This week at SC26, NVIDIA is marking two decades of CUDA by honoring the researchers, developers and engineers who helped make GPU computing a foundation for modern science and AI. CUDA’s 20th anniversary presents an occasion to reflect across computing eras, from the people who wrote the very first",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": -1,
+   "reasons": [
+    "-1 source nvidia-news"
+   ],
+   "status": "below",
+   "hash": "f09dfd61"
+  },
+  "https://blogs.nvidia.com/blog/rubin-hpc": {
+   "title": "NVIDIA Announces Rubin HPC — A New GPU to Accelerate Agents for Science, Engineering and Analytics",
+   "link": "https://blogs.nvidia.com/blog/rubin-hpc/",
+   "source": "nvidia-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-16T16:00:01.000Z",
+   "updated": null,
+   "summary": "Announced today at SC26, NVIDIA Rubin HPC is a new GPU in the NVIDIA Vera Rubin platform designed to accelerate simulation and data processing for science, engineering and analytics workflows. As agents help scientists and engineers explore more candidate materials, molecules and designs, they rely ",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": 0,
+   "reasons": [
+    "-1 source nvidia-news",
+    "+1 niche (agents)"
+   ],
+   "status": "below",
+   "hash": "2cf435fa"
+  },
+  "https://nvidianews.nvidia.com/news/nvidia-announces-collaboration-with-ibm-and-fermi-national-accelerator-laboratory-to-launch-quantum-classical-codesign-platform-plus-error-correction-breakthrough-to-advance-practical-quantum-computing": {
+   "title": "NVIDIA Announces Collaboration With IBM and Fermi National Accelerator Laboratory to Launch Quantum-Classical Codesign Platform, Plus Error-Correction Breakthrough to Advance Practical Quantum Computing",
+   "link": "https://nvidianews.nvidia.com/news/nvidia-announces-collaboration-with-ibm-and-fermi-national-accelerator-laboratory-to-launch-quantum-classical-codesign-platform-plus-error-correction-breakthrough-to-advance-practical-quantum-computing",
+   "source": "nvidia-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-16T16:00:00.000Z",
+   "updated": null,
+   "summary": "NVIDIA today announced plans for new collaborations with IBM and the U.S. Department of Energy’s Fermi National Accelerator Laboratory that will span research into next-generation modular architectures for quantum computers, scientific applications and supercomputing integration.",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": -1,
+   "reasons": [
+    "-1 source nvidia-news",
+    "+2 launch \"Launch\"",
+    "+1 plans/price/availability \"plans\"",
+    "+1 launch in the headline",
+    "-4 customer story"
+   ],
+   "status": "below",
+   "hash": "9e142521"
+  },
+  "https://nvidianews.nvidia.com/news/nvidia-expands-vera-cpu-platform-to-accelerate-scientific-discovery": {
+   "title": "NVIDIA Expands Vera CPU Platform to Accelerate Scientific Discovery",
+   "link": "https://nvidianews.nvidia.com/news/nvidia-expands-vera-cpu-platform-to-accelerate-scientific-discovery",
+   "source": "nvidia-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-16T16:00:00.000Z",
+   "updated": null,
+   "summary": "NVIDIA today announced the NVIDIA Vera CPU rack-scale platform for high-performance computing — combining NVIDIA’s first fully custom data center CPU with the gold standard for HPC networking to drive extreme efficiency and throughput for state-of-the-art scientific modeling, simulation and agentic ",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": -1,
+   "reasons": [
+    "-1 source nvidia-news"
+   ],
+   "status": "below",
+   "hash": "1d9787d6"
+  },
+  "https://nvidianews.nvidia.com/news/nvidia-introduces-nemotron-for-science-to-accelerate-discoveries-with-agents": {
+   "title": "NVIDIA Introduces Nemotron for Science to Accelerate Discoveries With Agents",
+   "link": "https://nvidianews.nvidia.com/news/nvidia-introduces-nemotron-for-science-to-accelerate-discoveries-with-agents",
+   "source": "nvidia-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-16T16:00:00.000Z",
+   "updated": null,
+   "summary": "NVIDIA today introduced NVIDIA Nemotron for Science, bringing together scientific applications of its NVIDIA Nemotron™ 3.5 Super VL open model, a new open chemistry dataset and post-training recipes to help researchers build specialized agents for scientific discovery.",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": 3,
+   "reasons": [
+    "-1 source nvidia-news",
+    "+1 niche (agents)",
+    "+2 launch \"Introduces\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "247ede5e",
+   "story": "ai:nemotron for:release"
+  },
+  "https://news.sap.com/2026/11/sap-completes-acquisition-of-techwolf": {
+   "title": "SAP Completes Acquisition of TechWolf",
+   "link": "https://news.sap.com/2026/11/sap-completes-acquisition-of-techwolf/",
+   "source": "sap-news",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-16T15:00:00.000Z",
+   "updated": null,
+   "summary": "WALLDORF — SAP has completed the acquisition of the AI work intelligence platform provider.",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": -1,
+   "reasons": [
+    "-1 source sap-news"
+   ],
+   "status": "below",
+   "hash": "504d2475"
+  },
+  "https://intel.com/content/www/us/en/newsroom/news/data-center/why-intel-gpu-d270-belongs-in-the-hpc-conversation.html": {
+   "title": "Intel GPU D270 for high-performance computing",
+   "link": "https://www.intel.com/content/www/us/en/newsroom/news/data-center/why-intel-gpu-d270-belongs-in-the-hpc-conversation.html",
+   "source": "intel-newsroom",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-16T12:00:00.000Z",
+   "updated": null,
+   "summary": "Data Center",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": -1,
+   "reasons": [
+    "-1 source intel-newsroom"
+   ],
+   "status": "below",
+   "hash": "cf467367"
+  },
+  "https://cloud.google.com/blog/products/storage-data-transfer/maximizing-ai-accelerator-roi-with-purpose-built-storage": {
+   "title": "Beyond the compute bottleneck: Maximizing the ROI of AI accelerators with purpose-built storage",
+   "link": "https://cloud.google.com/blog/products/storage-data-transfer/maximizing-ai-accelerator-roi-with-purpose-built-storage/",
+   "source": "gcloud-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-16T17:00:00.000Z",
+   "updated": null,
+   "summary": "There’s a lot more to AI infrastructure than just buying accelerators. Indeed, the infrastructure mandate for enterprise AI has shifted from acquiring accelerators to keeping them fully utilized. Next to these expensive accelerators, storage accounts for only a small sliver of total AI spend. Howeve",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": -1,
+   "reasons": [
+    "-1 source gcloud-blog"
+   ],
+   "status": "below",
+   "hash": "19ba02ed"
+  },
+  "https://cloud.google.com/blog/products/databases/2026-gartner-mq-cloud-operational-databases-management-systems": {
+   "title": "Google is a Leader in the 2026 Gartner® Magic Quadrant™ for Cloud Operational Database Management Systems",
+   "link": "https://cloud.google.com/blog/products/databases/2026-gartner-mq-cloud-operational-databases-management-systems/",
+   "source": "gcloud-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-16T08:30:00.000Z",
+   "updated": null,
+   "summary": "Google has been recognized as a Leader and positioned furthest in vision in the 2026 Gartner® Magic Quadrant™ for Cloud Operational Database Management Systems (Cloud ODBMS). This recognition comes as we cross into the era of agentic AI. Leading enterprises are in their journey of deploying autonomo",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": 0,
+   "reasons": [
+    "-1 source gcloud-blog",
+    "+1 niche (agents)"
+   ],
+   "status": "below",
+   "hash": "321d526b"
+  },
+  "https://dell.com/en-us/blog/the-robot-that-thinks-on-its-feet": {
+   "title": "The Robot That Thinks on Its Feet",
+   "link": "https://www.dell.com/en-us/blog/the-robot-that-thinks-on-its-feet",
+   "source": "dell-blog",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-16T15:00:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": -1,
+   "reasons": [
+    "-1 source dell-blog"
+   ],
+   "status": "below",
+   "hash": "719a98b1"
+  },
+  "https://docker.com/blog/docker-sandboxes-firecrawl-web-access": {
+   "title": "Give sandboxed agents live web access with the Firecrawl kit for Docker Sandboxes",
+   "link": "https://www.docker.com/blog/docker-sandboxes-firecrawl-web-access/",
+   "source": "docker-blog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-16T14:00:00.000Z",
+   "updated": null,
+   "summary": "Give AI coding agents live web access with the Firecrawl kit for Docker Sandboxes. Learn to search, scrape, and crawl websites with network controls.",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": 0,
+   "reasons": [
+    "-1 source docker-blog",
+    "+1 niche (agents)"
+   ],
+   "status": "below",
+   "hash": "4c1816e6"
+  },
+  "https://elevenlabs.io/blog/autotorino-agents": {
+   "title": "Autotorino automates dealership calls with ElevenAgents",
+   "link": "https://elevenlabs.io/blog/autotorino-agents",
+   "source": "elevenlabs-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-16T12:00:00.000Z",
+   "updated": null,
+   "summary": "Automated call handling more than doubled call volume capacity across the dealer network by using ElevenLabs.",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": -2,
+   "reasons": [
+    "-2 source elevenlabs-blog"
+   ],
+   "status": "below",
+   "hash": "6fbe985a"
+  },
+  "https://elevenlabs.io/blog/the-year-of-more": {
+   "title": "The Year of More: $200,000 for what you create next",
+   "link": "https://elevenlabs.io/blog/the-year-of-more",
+   "source": "elevenlabs-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-16T12:00:00.000Z",
+   "updated": null,
+   "summary": "The new ElevenCreative competition rewards work that brings voice, sound, image, and video together.",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": -1,
+   "reasons": [
+    "-2 source elevenlabs-blog",
+    "+1 plans/price/availability \"$2\""
+   ],
+   "status": "below",
+   "hash": "67149029"
+  },
+  "https://aws.amazon.com/blogs/machine-learning/modernizing-mainframe-assembler-to-java-using-amazon-bedrock-and-aws-transform": {
+   "title": "Modernizing mainframe Assembler to Java using Amazon Bedrock and AWS Transform",
+   "link": "https://aws.amazon.com/blogs/machine-learning/modernizing-mainframe-assembler-to-java-using-amazon-bedrock-and-aws-transform/",
+   "source": "aws-ml-blog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-16T17:29:29.000Z",
+   "updated": null,
+   "summary": "Legacy mainframe Assembler applications are costly to maintain and hard to staff. This post presents a multi-stage, AI-powered methodology using Amazon Bedrock, Kiro IDE, and AWS Transform to extract business rules, convert Assembler through an intermediate COBOL stage, and deploy modernized Java Sp",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": -7,
+   "reasons": [
+    "-3 source aws-ml-blog",
+    "-4 customer story"
+   ],
+   "status": "below",
+   "hash": "9c3eaa0e"
+  },
+  "https://aws.amazon.com/blogs/machine-learning/novo-nordisk-modernizes-manufacturing-process-documents-with-amazon-bedrock-agentcore": {
+   "title": "Novo Nordisk modernizes manufacturing process documents with Amazon Bedrock AgentCore",
+   "link": "https://aws.amazon.com/blogs/machine-learning/novo-nordisk-modernizes-manufacturing-process-documents-with-amazon-bedrock-agentcore/",
+   "source": "aws-ml-blog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-16T17:04:11.000Z",
+   "updated": null,
+   "summary": "Novo Nordisk's Manufacturing Technology team within the Tablet area team built a process-intelligence assistant on Amazon Bedrock AgentCore, using a GraphRAG architecture that pairs a knowledge graph in Amazon Neptune with hybrid search in Amazon OpenSearch Serverless to turn millions of controlled ",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": -3,
+   "reasons": [
+    "-3 source aws-ml-blog"
+   ],
+   "status": "below",
+   "hash": "d89b082"
+  },
+  "https://aws.amazon.com/blogs/machine-learning/get-answers-from-tables-with-tabular-search-in-amazon-bedrock-managed-knowledge-base": {
+   "title": "Get answers from tables with tabular search in Amazon Bedrock Managed Knowledge Base",
+   "link": "https://aws.amazon.com/blogs/machine-learning/get-answers-from-tables-with-tabular-search-in-amazon-bedrock-managed-knowledge-base/",
+   "source": "aws-ml-blog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-16T16:12:16.000Z",
+   "updated": null,
+   "summary": "Amazon Bedrock Managed Knowledge Base now supports tabular search, so agentic retrieval can answer questions over CSV, XLSX, and XLS files. It looks up values and runs calculations across every relevant row, then combines the results with facts from related documents to answer multi-step analytical ",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": -1,
+   "reasons": [
+    "-3 source aws-ml-blog",
+    "+2 launch \"now supports\""
+   ],
+   "status": "below",
+   "hash": "93b6a476"
+  },
+  "https://aws.amazon.com/blogs/machine-learning/best-practices-for-writing-denied-topics-in-amazon-bedrock-guardrails": {
+   "title": "Best practices for writing Denied Topics in Amazon Bedrock Guardrails",
+   "link": "https://aws.amazon.com/blogs/machine-learning/best-practices-for-writing-denied-topics-in-amazon-bedrock-guardrails/",
+   "source": "aws-ml-blog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-16T15:48:01.000Z",
+   "updated": null,
+   "summary": "With Denied Topics in Amazon Bedrock Guardrails, you block a content category by describing it in plain language, and the guardrail matches by meaning rather than keyword, which can block more than you intend. This post presents eight best practices for writing a topic precisely enough that the guar",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": -3,
+   "reasons": [
+    "-3 source aws-ml-blog"
+   ],
+   "status": "below",
+   "hash": "c048a596"
+  },
+  "https://aws.amazon.com/blogs/machine-learning/customize-answers-per-tenant-in-amazon-bedrock-managed-knowledge-base": {
+   "title": "Customize answers per tenant in Amazon Bedrock Managed Knowledge Base",
+   "link": "https://aws.amazon.com/blogs/machine-learning/customize-answers-per-tenant-in-amazon-bedrock-managed-knowledge-base/",
+   "source": "aws-ml-blog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-16T15:46:28.000Z",
+   "updated": null,
+   "summary": "Retrieval instructions in Amazon Bedrock Managed Knowledge Base set the voice, format, retrieval guidance, and answer policy for each tenant on shared knowledge bases. This post shows how to give each tenant its own answers, keep tenant data apart with metadata filters, scope access with IAM tags, a",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": 1,
+   "reasons": [
+    "-3 source aws-ml-blog",
+    "+2 launch \"roll out\"",
+    "+2 user steps \"how to\""
+   ],
+   "status": "below",
+   "hash": "a4ff2123"
+  },
+  "https://aws.amazon.com/blogs/machine-learning/use-prompt-caching-with-open-weight-models-on-amazon-bedrock": {
+   "title": "Use prompt caching with open-weight models on Amazon Bedrock",
+   "link": "https://aws.amazon.com/blogs/machine-learning/use-prompt-caching-with-open-weight-models-on-amazon-bedrock/",
+   "source": "aws-ml-blog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-16T15:42:41.000Z",
+   "updated": null,
+   "summary": "Many generative AI applications resend the same long context on every request. Prompt caching lets open-weight models on Amazon Bedrock reuse it to reduce input cost and latency. This post shows implicit and explicit caching through the Chat Completions API and applies caching to an OpenCode coding ",
+   "first": "2026-11-16T17:55:38.036Z",
+   "score": -2,
+   "reasons": [
+    "-3 source aws-ml-blog",
+    "+1 niche (agent)"
+   ],
+   "status": "below",
+   "hash": "7217ea20"
   }
  },
  "devices": {}
