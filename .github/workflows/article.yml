@@ -109,6 +109,24 @@ jobs:
         if: steps.post.outputs.slug != ''
         run: node scripts/check-posts.mjs "${{ steps.post.outputs.slug }}"
 
+      # Google drip (EPIVIFE src/lib/google-drip.ts, owner 16 Nov 2026): new posts are held back from Google (googlebot
+      # noindex, Google sitemap) while Bing gets everything at once. Each day the best held posts (GOOGLE_RELEASES_PER_DAY,
+      # 3) are released here, plus this run's article at once if the backlog marked it trending/outage. The frontmatter
+      # changes ride in the article commit below, so releases cost no extra Pages build. Optional secret
+      # BING_WEBMASTER_API_KEY adds Bing clicks/impressions to the pick.
+      - name: Google drip (release held posts to Google)
+        id: drip
+        if: steps.post.outputs.slug != '' && !inputs.dry_run
+        continue-on-error: true
+        env:
+          BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}
+        run: |
+          node scripts/seo/google-drip.mjs release --new "${{ steps.post.outputs.slug }}" --files-out "$RUNNER_TEMP/drip-files" | tee "$RUNNER_TEMP/drip.json"
+          if [ -s "$RUNNER_TEMP/drip-files" ]; then
+            echo "released=true" >> "$GITHUB_OUTPUT"
+            echo "url=$(node -e "console.log(require(process.argv[1]).released[0]?.url ?? '')" "$RUNNER_TEMP/drip.json")" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Build
         if: steps.post.outputs.slug != ''
         run: npm run build
@@ -122,7 +140,12 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add "$FILE" automation/backlog.md automation/log.md
-          git commit -q -m "Add article: $TITLE" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+          drip=""
+          if [ -s "$RUNNER_TEMP/drip-files" ]; then
+            xargs git add -- < "$RUNNER_TEMP/drip-files"
+            drip="Google drip: released $(grep -c '^content/posts/' "$RUNNER_TEMP/drip-files") held post(s) to Google."
+          fi
+          git commit -q -m "Add article: $TITLE" ${drip:+-m "$drip"} -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
           for i in 1 2 3; do git pull -q --rebase "$SITE_REMOTE" main && git push -q "$SITE_REMOTE" HEAD:main && break; sleep 10; done
 
       # Pushes made with GITHUB_TOKEN don't trigger indexnow.yml, so ping here.
@@ -140,6 +163,23 @@ jobs:
             -d "{\"host\":\"www.epifive.com\",\"key\":\"5bbd01230376e7468f09aef0ef85403c\",\"keyLocation\":\"https://www.epifive.com/5bbd01230376e7468f09aef0ef85403c.txt\",\"urlList\":[\"$URL\"]}" \
             -w '\nHTTP %{http_code}\n'
 
+      # Released posts reach Google through the sitemap lastmod (their release date); re-submitting /sitemap.xml asks
+      # Google to read it again. Runs after the IndexNow step, which waits until the deploy with this commit is live.
+      - name: Re-submit the Google sitemap
+        if: steps.drip.outputs.released == 'true' && !inputs.dry_run
+        continue-on-error: true
+        env:
+          GSC_CLIENT_ID: ${{ secrets.GSC_CLIENT_ID }}
+          GSC_CLIENT_SECRET: ${{ secrets.GSC_CLIENT_SECRET }}
+          GSC_REFRESH_TOKEN: ${{ secrets.GSC_REFRESH_TOKEN }}
+          GSC_SITE: ${{ secrets.GSC_SITE }}
+          URL: ${{ steps.drip.outputs.url }}
+        run: |
+          if [ -n "$URL" ] && curl -s "$URL" | grep -q 'name="googlebot" content="noindex'; then
+            echo "::warning::$URL still has the googlebot noindex (deploy not live yet?); submitting the sitemap anyway."
+          fi
+          node scripts/seo/gsc.mjs submit-sitemap
+
       - name: Summary
         if: always() && steps.post.outputs.slug != ''
         run: |
@@ -150,6 +190,7 @@ jobs:
             echo
             echo "Words (including code): $(sed '1,/^---$/d' "${{ steps.post.outputs.file }}" | wc -w)"
             if [ "${{ inputs.dry_run }}" = "true" ]; then echo; echo "_Dry run: not published._"; fi
+            if [ -s "$RUNNER_TEMP/drip.json" ]; then echo; echo "Google drip:"; echo '```json'; cat "$RUNNER_TEMP/drip.json"; echo '```'; fi
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Upload the article
