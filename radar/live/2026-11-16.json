@@ -2,7 +2,7 @@
  "date": "2026-11-16",
  "title": "Tech news today, 16 November 2026",
  "published": "2026-11-15T21:11:52.179Z",
- "updated": "2026-11-16T17:55:38.036Z",
+ "updated": "2026-11-16T18:20:43.316Z",
  "items": [
   {
    "id": "448a0f6c",
@@ -501,7 +501,7 @@
    "time": "2026-11-16T14:00:00.000Z",
    "seen": "2026-11-16T17:55:38.036Z",
    "kind": "security",
-   "tier": 2,
+   "tier": 1,
    "headline": "Google Finds Hackers Using AI Agents to Build and Run Exploits From Software Patches",
    "summary": "Google on Monday revealed that adversarial use of artificial intelligence (AI) by threat actors has gone beyond manual prompting to deploying autonomous multi-agent offensive frameworks like ARTEX, CAIRN, CyberStrikeAI, and PentAGI to execute multi-stage intrusions at greater operational velocity. In tandem, threat actors are leveraging the power and capabilities of large language models (LLMs)",
    "lines": [
@@ -585,7 +585,69 @@
    "ai": null,
    "score": 6,
    "story": null
+  },
+  {
+   "id": "addbac7d",
+   "key": "https://techcrunch.com/2026/11/16/openai-releases-a-new-image-classifier-and-chatgpt-warnings-to-combat-csam",
+   "time": "2026-11-16T18:10:01.000Z",
+   "seen": "2026-11-16T18:20:43.316Z",
+   "kind": "trending",
+   "topic": "milestone",
+   "tier": 2,
+   "trending": true,
+   "trendKey": "milestone:openai",
+   "techmeme": true,
+   "headline": "OpenAI announces tools to combat CSAM, including an image classifier and new warning screens to prevent users from accessing material that sexualizes children",
+   "summary": "OpenAI today announced new tools to combat child sexual abuse material (CSAM) amid growing safety concerns around the use of AI tools.",
+   "lines": [
+    "Reported by TechCrunch: OpenAI announces tools to combat CSAM, including an image classifier and new warning screens to prevent users from accessing material that sexualizes children.",
+    "Listed among the top headlines on Techmeme."
+   ],
+   "linesBy": "template",
+   "source": {
+    "name": "TechCrunch",
+    "url": "https://techcrunch.com/2026/11/16/openai-releases-a-new-image-classifier-and-chatgpt-warnings-to-combat-csam/"
+   },
+   "sourceId": "techmeme",
+   "sourceMax": 4,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 10,
+   "story": "trend:milestone:openai",
+   "linesNote": "blocked word: sexual"
+  },
+  {
+   "id": "15cfff7f",
+   "key": "https://engadget.com/2318001/gta-6-hacker-pleads-guilty-to-stealing-and-leaking-gameplay-footage",
+   "time": "2026-11-16T17:50:38.000Z",
+   "seen": "2026-11-16T18:20:43.316Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "GTA 6 hacker pleads guilty to stealing and leaking gameplay footage",
+   "summary": "Arion Kurtaj was deemed fit to stand trial earlier this year after breaching Rockstar's systems in 2022",
+   "lines": [
+    "Reported by Engadget: A GTA 6 hacker pleaded guilty to stealing and leaking gameplay footage.",
+    "Arion Kurtaj was deemed fit to stand trial earlier this year after breaching Rockstar's systems in 2022.",
+    "The case shows how unauthorized access to company systems can expose unreleased content, a risk for businesses that store sensitive data."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Engadget",
+    "url": "https://www.engadget.com/2318001/gta-6-hacker-pleads-guilty-to-stealing-and-leaking-gameplay-footage/"
+   },
+   "sourceId": "engadget",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
   }
  ],
- "description": "20 technology updates from official sources, updated hourly: More ways to move care forward with ChatGPT for Healthcare; Preliminary report: Microsoft attributes a major 365 and Exchange outage to a software defect introduced in a July 2026 update for network gateway servers; Google Finds Hackers Us"
+ "description": "22 technology updates from official sources, updated hourly: Google Finds Hackers Using AI Agents to Build and Run Exploits From Software Patches; More ways to move care forward with ChatGPT for Healthcare; Preliminary report: Microsoft attributes a major 365 and Exchange outage to a software defect"
 }

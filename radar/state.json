@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-16T17:55:38.036Z",
+ "lastScan": "2026-11-16T18:20:43.316Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -3589,12 +3589,13 @@
     "+2 launch \"Introducing\"",
     "+2 category (Product)"
    ],
-   "status": "writing",
+   "status": "skipped",
    "hash": "4a7422bf",
    "kind": "new",
    "extra": false,
    "taskAt": "2026-11-16T17:55:38.036Z",
-   "attempts": 1
+   "attempts": 1,
+   "resultAt": "2026-11-16T17:58:37.389Z"
   },
   "https://thehackernews.com/2026/11/google-finds-hackers-using-ai-agents-to.html": {
    "title": "Google Finds Hackers Using AI Agents to Build and Run Exploits From Software Patches",
@@ -3614,8 +3615,12 @@
     "+2 user action \"Patches\"",
     "+1 also on gnews-tech"
    ],
-   "status": "queued",
-   "hash": "d4cdf828"
+   "status": "writing",
+   "hash": "d4cdf828",
+   "kind": "new",
+   "extra": false,
+   "taskAt": "2026-11-16T18:20:43.316Z",
+   "attempts": 1
   },
   "https://bleepingcomputer.com/news/microsoft/microsoft-says-months-old-bug-caused-global-microsoft-365-outage": {
    "title": "Microsoft says months-old bug caused global Microsoft 365 outage",
@@ -4210,6 +4215,45 @@
    ],
    "status": "below",
    "hash": "7217ea20"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/waf-advanced-rate-rules-available": {
+   "title": "AWS WAF advanced rate-based rules are now available in AWS GovCloud (US), Thailand, and Mexico",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/waf-advanced-rate-rules-available/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-16T08:00:00.000Z",
+   "updated": null,
+   "summary": "AWS WAF advanced rate-based rules are now available in the Asia Pacific (Thailand), Mexico (Central), AWS GovCloud (US-East), and AWS GovCloud (US-West) Regions. Customers in these Regions can now aggregate requests using custom keys and choose a 1 or 2 minute evaluation window in addition to the ex",
+   "first": "2026-11-16T18:20:43.316Z",
+   "score": 4,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now available\"",
+    "+2 user steps \"you can\"",
+    "+1 plans/price/availability \"Regions\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "b6bc4cd4"
+  },
+  "https://aws.amazon.com/blogs/machine-learning/how-moengage-built-agentic-customer-engagement-on-amazon-bedrock-agentcore": {
+   "title": "How MoEngage built agentic customer engagement on Amazon Bedrock AgentCore",
+   "link": "https://aws.amazon.com/blogs/machine-learning/how-moengage-built-agentic-customer-engagement-on-amazon-bedrock-agentcore/",
+   "source": "aws-ml-blog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-16T18:16:07.000Z",
+   "updated": null,
+   "summary": "MoEngage built Merlin AI, a set of AI agents on Amazon Bedrock and Amazon Bedrock AgentCore that let marketing and product teams draft, analyze, and adjust campaigns from a single conversation. Learn how MoEngage turned its existing APIs into MCP tools and kept each tenant's data isolated while givi",
+   "first": "2026-11-16T18:20:43.316Z",
+   "score": -2,
+   "reasons": [
+    "-3 source aws-ml-blog",
+    "+1 niche (agents)"
+   ],
+   "status": "below",
+   "hash": "f9ec6b86"
   }
  },
  "devices": {}
