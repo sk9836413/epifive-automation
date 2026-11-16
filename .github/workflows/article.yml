@@ -16,6 +16,7 @@ env:
 permissions:
   contents: write
   id-token: write
+  actions: write # the chain step below starts the next article of the day
 
 concurrency:
   group: article
@@ -161,3 +162,19 @@ jobs:
             automation/backlog.md
             automation/log.md
           retention-days: 30
+      # Owner, 16 Nov 2026: 5-10 articles a day, but the scheduler starts this workflow only at 09:13 and 10:13 IST. So a
+      # published run starts the next one until ARTICLES_PER_DAY is reached (workflow_dispatch with GITHUB_TOKEN is allowed).
+      - name: Next article of the day
+        if: steps.post.outputs.slug != '' && !inputs.dry_run
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MAX: ${{ vars.ARTICLES_PER_DAY || '1' }}
+        run: |
+          today=$(TZ=Asia/Kolkata date +%F)
+          n=$(grep -c "^$today | .* | published |" automation/log.md || true)
+          if [ "${n:-0}" -lt "$MAX" ]; then
+            gh workflow run article.yml --repo "$GITHUB_REPOSITORY" --ref main
+            echo "::notice::$n of $MAX articles published today: started the next one."
+          else
+            echo "::notice::$n of $MAX articles published today: done for the day."
+          fi
