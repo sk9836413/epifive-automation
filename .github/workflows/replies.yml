@@ -3,8 +3,10 @@
 # Reels, and Instagram posts and Reels, with the video's own guide or a www.epifive.com/get/<keyword> page (UTM tagged).
 # Script: scripts/social/comment-replies.mjs in the site repo (keywords: scripts/social/comment-keywords.mjs).
 #
-# When: no cron of its own and no change to the Cloudflare scheduler. It runs after each Launch radar run (the radar
-# already runs several times an hour), and a run within 50 minutes of the last one is skipped, so about once an hour.
+# When: no cron of its own and no change to the Cloudflare scheduler. It runs when a Launch radar, Social media, Long
+# video, Photo posts or Daily article run completes (the scheduler's slots plus the radar's own GitHub schedule, which
+# GitHub often drops), and a run within 50 minutes of the last one is skipped: about 8-12 runs a day, with gaps of a few
+# hours overnight.
 # Quota: YouTube ~2-4 units a run to read (one commentThreads.list for the whole channel) + 50 per reply; max 8
 # replies a run and 30 per platform a day, so at most ~1,500 units a day in the worst case (EpiFive's budget ~5,000).
 # No spam: one reply per comment and per person per video, never our own comments, 2 s between writes; a rate limit
@@ -21,7 +23,7 @@ name: Comment replies
 
 on:
   workflow_run:
-    workflows: [Launch radar]
+    workflows: [Launch radar, Social media, Long video, Photo posts, Daily article]
     types: [completed]
   workflow_dispatch:
     inputs:
