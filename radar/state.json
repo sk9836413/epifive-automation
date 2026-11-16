@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-16T04:43:45.673Z",
+ "lastScan": "2026-11-16T05:13:17.574Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -658,23 +658,6 @@
    "families": [
     "github"
    ]
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63968": {
-   "title": "Result of the 3-day Variable Rate Reverse Repo (VRRR) auction held on November 13, 2026",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63968",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-13T10:20:00.000Z",
-   "updated": null,
-   "summary": "Tenor 3-day Notified Amount (in ₹ crore) 75,000 Total amount of offers received (in ₹ crore) 38,592 Amount accepted (in ₹ crore) 38,592 Cut off Rate (%) 5.49 Weighted Average Rate (%) 5.49 Partial Acceptance Percentage of offers received at cut off rate NA Ajit Prasad Deputy General Manager (Communi",
-   "first": "2026-11-13T05:13:15.630Z",
-   "score": -1,
-   "reasons": [
-    "-1 source rbi-press"
-   ],
-   "status": "below",
-   "hash": "e9b56827"
   },
   "https://techcommunity.microsoft.com/t5/windows-it-pro-blog/granular-controls-for-multiple-updates-in-windows-autopatch/ba-p/4572668": {
    "title": "Granular controls for multiple updates in Windows Autopatch",
