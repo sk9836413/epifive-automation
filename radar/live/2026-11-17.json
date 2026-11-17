@@ -2,7 +2,7 @@
  "date": "2026-11-17",
  "title": "Tech news today, 17 November 2026",
  "published": "2026-11-17T01:53:48.910Z",
- "updated": "2026-11-17T04:43:45.167Z",
+ "updated": "2026-11-17T05:13:15.156Z",
  "items": [
   {
    "id": "61cc4914",
@@ -701,7 +701,35 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "10dc7f14",
+   "key": "https://thehackernews.com/2026/11/n-able-patches-17-n-central-flaws-as.html",
+   "time": "2026-11-17T05:00:34.000Z",
+   "seen": "2026-11-17T05:13:15.156Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "N-able Patches 17 N-central Flaws as Attackers Exploit Earlier Bugs to Deploy Crypto Miners",
+   "summary": "N-able has released a new security update to address additional critical security flaws impacting N-central. Describing N-central 2026.4 Hotfix 3 as a critical security update, the company said it includes a number of security patches and fixes that enhance the security of the Remote Monitoring and Management (RMM) and Unified Endpoint Management (UEM) platform. \"HF3 builds on the",
+   "lines": [
+    "Reported by The Hacker News: N-able released N-central 2026.4 Hotfix 3, which it describes as a critical security update that patches 17 N-central flaws.",
+    "The update includes security patches and fixes intended to enhance the Remote Monitoring and Management (RMM) and Unified Endpoint Management (UEM) platform.",
+    "Attackers are reported to be exploiting earlier N-central bugs to deploy crypto miners, so IT teams running N-central have a reason to review this update."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/n-able-patches-17-n-central-flaws-as.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
   }
  ],
- "description": "24 technology updates from official sources, updated hourly: Bank of America, Chase, Wells Fargo, and other US bank customers report online service issues; Chase blames a technical issue, not a cyber issue, for the delays; High volume phishing campaign uses Microsoft 365 outage lures to target multi"
+ "description": "25 technology updates from official sources, updated hourly: Bank of America, Chase, Wells Fargo, and other US bank customers report online service issues; Chase blames a technical issue, not a cyber issue, for the delays; High volume phishing campaign uses Microsoft 365 outage lures to target multi"
 }

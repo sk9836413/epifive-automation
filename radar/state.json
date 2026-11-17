@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-17T04:43:45.167Z",
+ "lastScan": "2026-11-17T05:13:15.156Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -5022,6 +5022,82 @@
    ],
    "status": "below",
    "hash": "4695e692"
+  },
+  "https://techcommunity.microsoft.com/t5/exchange-team-blog/reject-direct-send-now-generally-available-in-exchange-online/ba-p/4573787": {
+   "title": "Reject Direct Send now Generally Available in Exchange Online",
+   "link": "https://techcommunity.microsoft.com/t5/exchange-team-blog/reject-direct-send-now-generally-available-in-exchange-online/ba-p/4573787",
+   "source": "tc-exchange",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-16T16:18:57.000Z",
+   "updated": null,
+   "summary": "In April 2025, we introduced the Reject Direct Send setting in Public Preview to give Exchange Online admins a way to block unauthenticated Direct Send traffic that uses their own domains. Today, we’re pleased to announce that Reject Direct Send is now Generally Available for Exchange Online worldwi",
+   "first": "2026-11-17T05:13:15.156Z",
+   "score": 5,
+   "reasons": [
+    "+1 source tc-exchange",
+    "+1 niche (exchange)",
+    "+2 launch \"Generally Available\"",
+    "+1 launch in the headline",
+    "covered by /blog/reject-direct-send-exchange-online"
+   ],
+   "status": "duplicate",
+   "hash": "986f6f67",
+   "post": "reject-direct-send-exchange-online"
+  },
+  "https://thehackernews.com/2026/11/n-able-patches-17-n-central-flaws-as.html": {
+   "title": "N-able Patches 17 N-central Flaws as Attackers Exploit Earlier Bugs to Deploy Crypto Miners",
+   "link": "https://thehackernews.com/2026/11/n-able-patches-17-n-central-flaws-as.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-17T05:00:34.000Z",
+   "updated": null,
+   "summary": "N-able has released a new security update to address additional critical security flaws impacting N-central. Describing N-central 2026.4 Hotfix 3 as a critical security update, the company said it includes a number of security patches and fixes that enhance the security of the Remote Monitoring and ",
+   "first": "2026-11-17T05:13:15.156Z",
+   "score": 5,
+   "reasons": [
+    "+1 source thn",
+    "+2 vulnerability \"Flaws\"",
+    "+2 user action \"Patches\""
+   ],
+   "status": "below",
+   "hash": "57f364eb"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63986": {
+   "title": "Result of the 2-day Variable Rate Reverse Repo (VRRR) auction held on November 17, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63986",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-17T10:35:00.000Z",
+   "updated": null,
+   "summary": "Tenor 2-day Notified Amount (in ₹ crore) 50,000 Total amount of offers received (in ₹ crore) 7,627 Amount accepted (in ₹ crore) 7,627 Cut off Rate (%) 5.49 Weighted Average Rate (%) 5.49 Partial Acceptance Percentage of offers received at cut off rate NA Ajit Prasad Deputy General Manager (Communica",
+   "first": "2026-11-17T05:13:15.156Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "e8c67644"
+  },
+  "https://mc.merill.net/message/MC1449182": {
+   "title": "MC1449182: Microsoft 365 Copilot: Copilot Pages and Notebooks Creation in OneDrive",
+   "link": "https://mc.merill.net/message/MC1449182",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-16T17:10:38.000Z",
+   "updated": null,
+   "summary": "Starting mid-October 2026, newly created Microsoft 365 Copilot Pages and Notebooks will be stored in OneDrive for Business, enabling existing governance, compliance, data protection, retention, and lifecycle management. Existing Copilot content remains unchanged; no user action is required.",
+   "first": "2026-11-17T05:13:15.156Z",
+   "score": 2,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (copilot, microsoft 365, onedrive)"
+   ],
+   "status": "below",
+   "hash": "d6515e0f"
   }
  },
  "devices": {}
