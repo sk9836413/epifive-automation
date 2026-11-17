@@ -2,7 +2,7 @@
  "date": "2026-11-17",
  "title": "Tech news today, 17 November 2026",
  "published": "2026-11-17T01:53:48.910Z",
- "updated": "2026-11-17T13:17:00.230Z",
+ "updated": "2026-11-17T14:16:41.801Z",
  "items": [
   {
    "id": "61cc4914",
@@ -1048,7 +1048,34 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "9896e730",
+   "key": "https://openai.com/index/introducing-openai-for-chile",
+   "time": "2026-11-17T00:00:00.000Z",
+   "seen": "2026-11-17T14:16:41.801Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Introducing OpenAI for Chile",
+   "summary": "OpenAI and the Government of Chile are partnering to support responsible AI adoption, build public-sector skills and help local startups develop AI applications.",
+   "lines": [
+    "OpenAI and the Government of Chile are partnering to support responsible AI adoption, build public-sector skills and help local startups develop AI applications.",
+    "For IT and business teams, the partnership points to government and startup interest in AI skills and applications in Chile."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "OpenAI News",
+    "url": "https://openai.com/index/introducing-openai-for-chile"
+   },
+   "sourceId": "openai-news",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
   }
  ],
- "description": "36 technology updates from official sources, updated hourly: Bank of America, Chase, Wells Fargo, and other US bank customers report online service issues; Chase blames a technical issue, not a cyber issue, for the delays; Hijacked Optimizely Scripts Served Card Skimmer and iOS Exploit Kits to CNN, "
+ "description": "37 technology updates from official sources, updated hourly: Bank of America, Chase, Wells Fargo, and other US bank customers report online service issues; Chase blames a technical issue, not a cyber issue, for the delays; Hijacked Optimizely Scripts Served Card Skimmer and iOS Exploit Kits to CNN, "
 }

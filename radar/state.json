@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-17T13:17:00.230Z",
+ "lastScan": "2026-11-17T14:16:41.801Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -930,43 +930,6 @@
    "attempts": 1,
    "slug": "defender-for-identity-classic-alerts-retire-migrate",
    "resultAt": "2026-11-14T22:52:56.515Z"
-  },
-  "https://techcommunity.microsoft.com/t5/intune-customer-success/support-tip-why-windows-driver-recommendations-may-vary-between/ba-p/4572700": {
-   "title": "Support tip: Why Windows driver recommendations may vary between deployment rings",
-   "link": "https://techcommunity.microsoft.com/t5/intune-customer-success/support-tip-why-windows-driver-recommendations-may-vary-between/ba-p/4572700",
-   "source": "tc-intune",
-   "topic": "security-identity",
-   "category": "launch",
-   "date": "2026-11-13T17:26:10.000Z",
-   "updated": null,
-   "summary": "By: Dorin Mardari – Sr Technical Support Engineer | Microsoft Intune Managing Windows driver updates across deployment rings might give results that seem inconsistent. You might expect the same update to behave the same way everywhere, but Windows Update evaluates updates separately for the devices ",
-   "first": "2026-11-14T13:17:03.527Z",
-   "score": 4,
-   "reasons": [
-    "+2 niche (intune, windows)",
-    "+2 launch \"arrive\""
-   ],
-   "status": "below",
-   "hash": "7ba89d2"
-  },
-  "https://mc.merill.net/message/MC1552503": {
-   "title": "MC1552503: Copilot Studio - Credit visibility in run view & monitor in workflows",
-   "link": "https://mc.merill.net/message/MC1552503",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-14T03:38:06.000Z",
-   "updated": null,
-   "summary": "We are announcing Copilot Credit visibility in run view and monitors in workflows in Copilot Studio. This feature reached general availability on November 11, 2026. How does this affect me? Makers will now be able to see how many Copilot Credits each workflow run consumes directly from the workflow ",
-   "first": "2026-11-14T13:17:03.527Z",
-   "score": 2,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 niche (copilot)",
-    "+2 launch \"general availability\""
-   ],
-   "status": "below",
-   "hash": "3a445b6b"
   },
   "https://claude.com/resources/articles/building-always-on-agents": {
    "title": "Building always-on agents",
@@ -5552,6 +5515,146 @@
    ],
    "status": "below",
    "hash": "a37ed149"
+  },
+  "https://openai.com/index/introducing-openai-for-chile": {
+   "title": "Introducing OpenAI for Chile",
+   "link": "https://openai.com/index/introducing-openai-for-chile",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-17T00:00:00.000Z",
+   "updated": null,
+   "summary": "OpenAI and the Government of Chile are partnering to support responsible AI adoption, build public-sector skills and help local startups develop AI applications.",
+   "first": "2026-11-17T14:16:41.801Z",
+   "score": 3,
+   "reasons": [
+    "+2 source openai-news",
+    "+1 niche (openai)",
+    "+2 launch \"Introducing\"",
+    "+1 launch in the headline",
+    "-3 category (Global Affairs)"
+   ],
+   "status": "below",
+   "hash": "d544c533"
+  },
+  "https://blog.google/company-news/outreach-and-initiatives/arts-culture/colonial-williamsburg-centennial": {
+   "title": "Celebrate 100 years of Colonial Williamsburg online",
+   "link": "https://blog.google/company-news/outreach-and-initiatives/arts-culture/colonial-williamsburg-centennial/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-17T14:00:00.000Z",
+   "updated": null,
+   "summary": "Tour reconstructed landmarks, flip through 18th-century newspapers, and watch a historic dessert come to life with Google Arts & Culture.",
+   "first": "2026-11-17T14:16:41.801Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "aa0bbf6c"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63991": {
+   "title": "RBI to conduct Overnight Variable Rate Reverse Repo (VRRR) auction under LAF on November 18, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63991",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-17T19:05:00.000Z",
+   "updated": null,
+   "summary": "On a review of current and evolving liquidity conditions, it has been decided to conduct a Variable Rate Reverse Repo (VRRR) auction on Wednesday, November 18, 2026, as under: Sl. No. Notified Amount (₹ crore) Tenor (day) Window Timing Date of Reversal 1 50,000 1 9:30 AM to 10:00 AM November 19, 202",
+   "first": "2026-11-17T14:16:41.801Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "49f184b5"
+  },
+  "https://news.sap.com/2026/11/sap-named-leader-idc-marketscape-supply-chain-assessments": {
+   "title": "Advancing Supply Chain Planning: SAP Named a Leader in Multiple 2026 IDC MarketScape Assessments",
+   "link": "https://news.sap.com/2026/11/sap-named-leader-idc-marketscape-supply-chain-assessments/",
+   "source": "sap-news",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-17T13:15:00.000Z",
+   "updated": null,
+   "summary": "It's an important moment for supply chain leaders, with persistent disruption, changing demand, and rapid advances in AI.",
+   "first": "2026-11-17T14:16:41.801Z",
+   "score": -1,
+   "reasons": [
+    "-1 source sap-news"
+   ],
+   "status": "below",
+   "hash": "4440a266"
+  },
+  "https://dell.com/en-us/blog/what-ai-looks-like-when-it-works-for-everyone": {
+   "title": "What AI Looks Like When it Works for Everyone",
+   "link": "https://www.dell.com/en-us/blog/what-ai-looks-like-when-it-works-for-everyone",
+   "source": "dell-blog",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-17T14:00:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-17T14:16:41.801Z",
+   "score": -1,
+   "reasons": [
+    "-1 source dell-blog"
+   ],
+   "status": "below",
+   "hash": "9332d53d"
+  },
+  "https://salesforce.com/blog/carter-shopper-agent": {
+   "title": "Meet Carter, the Shopper Agent that Works Like Your Best Sales Associate",
+   "link": "https://www.salesforce.com/blog/carter-shopper-agent/",
+   "source": "salesforce-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-17T14:00:00.000Z",
+   "updated": null,
+   "summary": "Carter helps your customers find the right product in your catalog, even if they don’t know exactly what they’re looking for.",
+   "first": "2026-11-17T14:16:41.801Z",
+   "score": 0,
+   "reasons": [
+    "-1 source salesforce-blog",
+    "+1 niche (agent)"
+   ],
+   "status": "below",
+   "hash": "7083a6fe"
+  },
+  "https://salesforce.com/blog/small-business/ecommerce-tips-for-black-friday": {
+   "title": "6 Tips to Sell Out for Black Friday (Ecommerce Holiday Strategies for Startups)",
+   "link": "https://www.salesforce.com/blog/small-business/ecommerce-tips-for-black-friday/",
+   "source": "salesforce-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-17T14:00:00.000Z",
+   "updated": null,
+   "summary": "Black Friday is a great day to sell out your online store. Try these ecommerce tips.",
+   "first": "2026-11-17T14:16:41.801Z",
+   "score": -1,
+   "reasons": [
+    "-1 source salesforce-blog"
+   ],
+   "status": "below",
+   "hash": "d4d265d0"
+  },
+  "https://qualcomm.com/news/releases/2026/11/qualcomm-and-cirrascale-collaborate-to-advance-next-generation--": {
+   "title": "Qualcomm and cirrascale collaborate to advance next generation  ",
+   "link": "https://www.qualcomm.com/news/releases/2026/11/qualcomm-and-cirrascale-collaborate-to-advance-next-generation--",
+   "source": "qualcomm-releases",
+   "topic": "mobiles",
+   "category": "launch",
+   "date": "2026-11-17T00:00:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-17T14:16:41.801Z",
+   "score": -5,
+   "reasons": [
+    "-1 source qualcomm-releases",
+    "-4 customer story"
+   ],
+   "status": "below",
+   "hash": "cac0a388"
   }
  },
  "devices": {}
