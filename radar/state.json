@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-17T06:50:12.773Z",
+ "lastScan": "2026-11-17T10:30:16.234Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -5240,6 +5240,194 @@
    ],
    "status": "below",
    "hash": "ee03c87a"
+  },
+  "https://openai.com/index/strengthening-nato-allied-cyber-defences-ai": {
+   "title": "Strengthening NATO and allied cyber defenses with AI",
+   "link": "https://openai.com/index/strengthening-nato-allied-cyber-defences-ai",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-17T00:00:00.000Z",
+   "updated": null,
+   "summary": "How OpenAI is working with NATO and allied cyber agencies to help trusted defenders find vulnerabilities, test fixes and protect essential systems.",
+   "first": "2026-11-17T10:30:16.234Z",
+   "score": 0,
+   "reasons": [
+    "+2 source openai-news",
+    "+1 niche (openai)",
+    "-3 category (Global Affairs)"
+   ],
+   "status": "below",
+   "hash": "9bfb1b7"
+  },
+  "https://thehackernews.com/2026/11/hijacked-optimizely-scripts-served-card.html": {
+   "title": "Hijacked Optimizely Scripts Served Card Skimmer and iOS Exploit Kits to CNN, BBC and Zoom Visitors",
+   "link": "https://thehackernews.com/2026/11/hijacked-optimizely-scripts-served-card.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-17T07:12:13.000Z",
+   "updated": null,
+   "summary": "An attacker exploited a flaw in Optimizely Web Experimentation to plant malicious code in some of the scripts that customers' websites load from the service, Optimizely said early today. Visitors to sites run by at least 178 organizations, including CNN, the BBC and Zoom, received the code yesterday",
+   "first": "2026-11-17T10:30:16.234Z",
+   "score": 11,
+   "reasons": [
+    "+1 source thn",
+    "+3 incident \"Hijacked\"",
+    "+4 major platform (ios, zoom)",
+    "+2 exploited \"exploited\"",
+    "+1 user data or credentials exposed"
+   ],
+   "status": "queued",
+   "hash": "1125095e"
+  },
+  "https://medianama.com/2026/11/223-google-project-zero-vulnerability-2027": {
+   "title": "Google’s Project Zero to reduce vulnerability disclosure to 60 days by 2027",
+   "link": "https://www.medianama.com/2026/11/223-google-project-zero-vulnerability-2027/",
+   "source": "medianama",
+   "topic": "online-safety",
+   "category": "incident",
+   "date": "2026-11-17T08:53:51.000Z",
+   "updated": null,
+   "summary": "The reduction in time to fix security flaws from 90 days to 60 in 2027 and then to 30 by January 2028 has been announced as the Project Zero team found \"a vulnerability reported today presents a much higher immediate risk than one reported last year\". The post Google’s Project Zero to reduce vulnera",
+   "first": "2026-11-17T10:30:16.234Z",
+   "score": 8,
+   "reasons": [
+    "+1 source medianama",
+    "+2 vulnerability \"vulnerability\"",
+    "+3 major platform (google)",
+    "+2 user action \"fix\"",
+    "same incident as \"Google Project Zero cuts bug disclosures to 30 days amid AI \""
+   ],
+   "status": "duplicate",
+   "hash": "df3ef33a"
+  },
+  "https://medianama.com/2026/11/223-cert-in-flags-new-emudhra-security-flaw": {
+   "title": "CERT-In flags new security flaw in eMudhra’s emBridge weeks after certificate controversy",
+   "link": "https://www.medianama.com/2026/11/223-cert-in-flags-new-emudhra-security-flaw/",
+   "source": "medianama",
+   "topic": "online-safety",
+   "category": "incident",
+   "date": "2026-11-17T06:54:18.000Z",
+   "updated": null,
+   "summary": "A vulnerability in eMudhra's emBridge software could allow attackers on the same local network to view file and folder names on affected computers. The company says it has fixed the issue. The post CERT-In flags new security flaw in eMudhra’s emBridge weeks after certificate controversy appeared fir",
+   "first": "2026-11-17T10:30:16.234Z",
+   "score": 10,
+   "reasons": [
+    "+1 source medianama",
+    "+2 vulnerability \"flaw\"",
+    "+5 India banking/payments/identity \"CERT-In\"",
+    "+2 user action \"fixed\""
+   ],
+   "status": "queued",
+   "hash": "51ee46da"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63988": {
+   "title": "Directions under Section 35A read with Section 56 of the Banking Regulation Act, 1949 – Nagar Sahakari Bank Ltd., Etawah – Extension of Period",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63988",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-17T15:15:00.000Z",
+   "updated": null,
+   "summary": "The Reserve Bank of India issued Directions under Section 35A read with Section 56 of the Banking Regulation Act, 1949 to Nagar Sahakari Bank Ltd., Etawah, vide Directive No. LKO.DOS.SED.No.S29/12-03-000/2026-2027 dated May 15, 2026, for a period of six months up to close of business on November 18,",
+   "first": "2026-11-17T10:30:16.234Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"India\""
+   ],
+   "status": "below",
+   "hash": "19e5d365"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63987": {
+   "title": "Result of Yield/Price Based Auction of State Government Securities",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63987",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-17T15:05:00.000Z",
+   "updated": null,
+   "summary": "Sr. No State Amount to be raised (₹ Crore) Amount Accepted (₹ Crore) Cut off Price (₹)/ Yield (%) Tenor (Year) 1. Andhra Pradesh 1000 1000 95.24/8.1280 Re-issue of 7.68% Andhra Pradesh SGS 2051, issued on July 29, 2026 2. Goa* 100 - - Re-issue of 7.80% Goa SGS 2037, issued on September 16, 2026 3. K",
+   "first": "2026-11-17T10:30:16.234Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"Price\""
+   ],
+   "status": "below",
+   "hash": "d7c337e8"
+  },
+  "https://nvidianews.nvidia.com/news/nvidia-board-of-directors-establishes-national-security-and-export-control-oversight-committee": {
+   "title": "NVIDIA Board of Directors Establishes National Security and Export Control Oversight Committee",
+   "link": "https://nvidianews.nvidia.com/news/nvidia-board-of-directors-establishes-national-security-and-export-control-oversight-committee",
+   "source": "nvidia-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-17T10:00:00.000Z",
+   "updated": null,
+   "summary": "NVIDIA (NASDAQ: NVDA) today announced that the Board of Directors has established the National Security and Export Control Oversight Committee, a new standing committee responsible for board-level oversight of the company’s national security policies, export control compliance and global trade risk ",
+   "first": "2026-11-17T10:30:16.234Z",
+   "score": 0,
+   "reasons": [
+    "-1 source nvidia-news",
+    "+1 also on techmeme"
+   ],
+   "status": "below",
+   "hash": "acc05081"
+  },
+  "https://news.sap.com/2026/11/thomas-saueressig-to-leave-sap-executive-board": {
+   "title": "Thomas Saueressig to Leave SAP Executive Board",
+   "link": "https://news.sap.com/2026/11/thomas-saueressig-to-leave-sap-executive-board/",
+   "source": "sap-news",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-17T08:00:00.000Z",
+   "updated": null,
+   "summary": "WALLDORF — Saueressig will remain fully in charge of his current responsibilities until end of March 2027.",
+   "first": "2026-11-17T10:30:16.234Z",
+   "score": -1,
+   "reasons": [
+    "-1 source sap-news"
+   ],
+   "status": "below",
+   "hash": "7d3f26fd"
+  },
+  "https://cloud.google.com/blog/topics/startups/sovereign-ai-on-your-terms-our-new-startup-accelerator-is-open": {
+   "title": "Building Sovereign AI in Europe, With Europe: Our New Startup Accelerator",
+   "link": "https://cloud.google.com/blog/topics/startups/sovereign-ai-on-your-terms-our-new-startup-accelerator-is-open/",
+   "source": "gcloud-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-17T08:30:00.000Z",
+   "updated": null,
+   "summary": "Today we’re announcing an open call for applications for the Google for Startups Accelerator: Sovereign AI . Available in Europe and Israel, this initiative supports startups that are building cutting-edge AI solutions for European regulatory environments. Artificial intelligence represents an estim",
+   "first": "2026-11-17T10:30:16.234Z",
+   "score": 1,
+   "reasons": [
+    "-1 source gcloud-blog",
+    "+2 launch \"Available in\""
+   ],
+   "status": "below",
+   "hash": "e8269f7a"
+  },
+  "https://cloud.google.com/blog/products/identity-security/sovereign-ai-on-your-terms-made-with-europe": {
+   "title": "Sovereign AI in Europe: New ways to control your AI stack",
+   "link": "https://cloud.google.com/blog/products/identity-security/sovereign-ai-on-your-terms-made-with-europe/",
+   "source": "gcloud-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-17T08:00:00.000Z",
+   "updated": null,
+   "summary": "Today in Brussels, public sector leaders, policymakers and partners are meeting at the Sovereign AI Summit to discuss how to build the next decade of Europe's public services, healthcare, and finance with AI under European control. We're here with our European partners to help deliver it. Achieving ",
+   "first": "2026-11-17T10:30:16.234Z",
+   "score": 1,
+   "reasons": [
+    "-1 source gcloud-blog",
+    "+2 user steps \"how to\""
+   ],
+   "status": "below",
+   "hash": "1ccd196d"
   }
  },
  "devices": {}

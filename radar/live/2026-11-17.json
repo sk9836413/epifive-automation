@@ -2,7 +2,7 @@
  "date": "2026-11-17",
  "title": "Tech news today, 17 November 2026",
  "published": "2026-11-17T01:53:48.910Z",
- "updated": "2026-11-17T06:50:12.773Z",
+ "updated": "2026-11-17T10:30:16.234Z",
  "items": [
   {
    "id": "61cc4914",
@@ -349,7 +349,9 @@
    },
    "sourceId": "bleepingcomputer",
    "reported": true,
-   "also": [],
+   "also": [
+    "MediaNama"
+   ],
    "post": null,
    "device": null,
    "ai": null,
@@ -437,7 +439,9 @@
    "sourceId": "techcrunch",
    "sourceMax": 3,
    "reported": true,
-   "also": [],
+   "also": [
+    "BleepingComputer"
+   ],
    "post": null,
    "device": null,
    "ai": null,
@@ -788,7 +792,147 @@
    "ai": null,
    "score": 4,
    "story": null
+  },
+  {
+   "id": "fe5938f8",
+   "key": "https://techcommunity.microsoft.com/t5/exchange-team-blog/reject-direct-send-now-generally-available-in-exchange-online/ba-p/4573787",
+   "time": "2026-11-16T18:59:20.000Z",
+   "seen": "2026-11-17T10:30:16.234Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Reject Direct Send now Generally Available in Exchange Online",
+   "summary": "In April 2025, we introduced the Reject Direct Send setting in Public Preview to give Exchange Online admins a way to block unauthenticated Direct Send traffic that uses their own domains. Today, we’re pleased to announce that Reject Direct Send is now Generally Available for Exchange Online worldwide tenants. Thank you to everyone who enabled the setting during Public Preview and shared feedback through the blog comments, the feedback mailbox, support and our MVP community. Your feedback shaped the improvements we made ahead of GA, including the Change Optics Report, which is now also Generally Available. Customers have already embraced the setting: more than 70,000 organizations have enabl",
+   "lines": [
+    "Reject Direct Send, a setting that blocks unauthenticated Direct Send traffic that uses an organization's own domains, is now Generally Available for Exchange Online worldwide tenants.",
+    "The setting was introduced in Public Preview in April 2025. The Change Optics Report is also now Generally Available.",
+    "IT admins running Exchange Online can use a generally available control to block unauthenticated Direct Send traffic that uses their own domains."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Tech Community: Exchange Team Blog",
+    "url": "https://techcommunity.microsoft.com/t5/exchange-team-blog/reject-direct-send-now-generally-available-in-exchange-online/ba-p/4573787"
+   },
+   "sourceId": "tc-exchange",
+   "reported": false,
+   "also": [],
+   "post": "reject-direct-send-exchange-online",
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null
+  },
+  {
+   "id": "cc804ae8",
+   "key": "https://cloud.google.com/blog/topics/startups/sovereign-ai-on-your-terms-our-new-startup-accelerator-is-open",
+   "time": "2026-11-17T08:30:00.000Z",
+   "seen": "2026-11-17T10:30:16.234Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Building Sovereign AI in Europe, With Europe: Our New Startup Accelerator",
+   "summary": "Today we’re announcing an open call for applications for the Google for Startups Accelerator: Sovereign AI . Available in Europe and Israel, this initiative supports startups that are building cutting-edge AI solutions for European regulatory environments. Artificial intelligence represents an estimated €1.2 trillion economic opportunity for Europe . To realize this potential, European enterprises and public institutions need to adopt advanced AI while also meeting crucial data governance requirements, including the EU AI Act , NIS2 , DORA , and national frameworks such as SecNumCloud and BSI's cloud security and sovereignty principles . We want ambitious founders to build in Europe, with so",
+   "lines": [
+    "Google announced an open call for applications for the Google for Startups Accelerator: Sovereign AI, which supports startups building AI solutions for European regulatory environments.",
+    "The program is available in Europe and Israel.",
+    "The initiative addresses the need for European enterprises and public institutions to adopt AI while meeting data governance requirements such as the EU AI Act, NIS2 and DORA."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google Cloud Blog",
+    "url": "https://cloud.google.com/blog/topics/startups/sovereign-ai-on-your-terms-our-new-startup-accelerator-is-open/"
+   },
+   "sourceId": "gcloud-blog",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "d788da37",
+   "key": "https://thehackernews.com/2026/11/hijacked-optimizely-scripts-served-card.html",
+   "time": "2026-11-17T07:12:13.000Z",
+   "seen": "2026-11-17T10:30:16.234Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Hijacked Optimizely Scripts Served Card Skimmer and iOS Exploit Kits to CNN, BBC and Zoom Visitors",
+   "summary": "An attacker exploited a flaw in Optimizely Web Experimentation to plant malicious code in some of the scripts that customers' websites load from the service, Optimizely said early today. Visitors to sites run by at least 178 organizations, including CNN, the BBC and Zoom, received the code yesterday, according to Report URI, a firm that monitors the scripts websites run. The code was built to",
+   "lines": [
+    "Reported by The Hacker News: An attacker exploited a flaw in Optimizely Web Experimentation to inject malicious code into some scripts that customers' websites load from the service, Optimizely said.",
+    "Report URI, a firm that monitors website scripts, said visitors to sites run by at least 178 organizations, including CNN, the BBC and Zoom, received the code.",
+    "IT teams should review which vendor-hosted scripts their sites load, since a compromise at one vendor can reach visitors across many sites."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/hijacked-optimizely-scripts-served-card.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 11,
+   "story": null
+  },
+  {
+   "id": "d082d59b",
+   "key": "https://medianama.com/2026/11/223-cert-in-flags-new-emudhra-security-flaw",
+   "time": "2026-11-17T06:54:18.000Z",
+   "seen": "2026-11-17T10:30:16.234Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "CERT-In flags new security flaw in eMudhra’s emBridge weeks after certificate controversy",
+   "summary": "A vulnerability in eMudhra's emBridge software could allow attackers on the same local network to view file and folder names on affected computers. The company says it has fixed the issue. The post CERT-In flags new security flaw in eMudhra’s emBridge weeks after certificate controversy appeared first on MEDIANAMA .",
+   "lines": [
+    "Reported by MediaNama: A vulnerability in eMudhra's emBridge software could let attackers on the same local network view file and folder names on affected computers, and CERT-In flagged the flaw.",
+    "eMudhra says it has fixed the issue."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "MediaNama",
+    "url": "https://www.medianama.com/2026/11/223-cert-in-flags-new-emudhra-security-flaw/"
+   },
+   "sourceId": "medianama",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 10,
+   "story": null
+  },
+  {
+   "id": "5a2f7ac3",
+   "key": "https://bleepingcomputer.com/news/security/alleged-inc-lynx-ransomware-affiliate-extradited-to-us-faces-27-years-in-prison",
+   "time": "2026-11-17T07:25:44.000Z",
+   "seen": "2026-11-17T10:30:16.234Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Ransomware affiliate suspect extradited to US, faces 27 years in prison",
+   "summary": "A Kazakh national has been extradited from Italy to face charges alleging he targeted US schools, hospitals, and healthcare entities in ransomware attacks. [...]",
+   "lines": [
+    "Reported by BleepingComputer: A Kazakh national was extradited from Italy to the US to face charges alleging he targeted US schools, hospitals and healthcare entities in ransomware attacks.",
+    "The headline reports that he faces 27 years in prison.",
+    "For IT teams, the case highlights ransomware activity aimed at schools and healthcare organizations."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/alleged-inc-lynx-ransomware-affiliate-extradited-to-us-faces-27-years-in-prison/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
   }
  ],
- "description": "27 technology updates from official sources, updated hourly: Bank of America, Chase, Wells Fargo, and other US bank customers report online service issues; Chase blames a technical issue, not a cyber issue, for the delays; High volume phishing campaign uses Microsoft 365 outage lures to target multi"
+ "description": "32 technology updates from official sources, updated hourly: Bank of America, Chase, Wells Fargo, and other US bank customers report online service issues; Chase blames a technical issue, not a cyber issue, for the delays; Hijacked Optimizely Scripts Served Card Skimmer and iOS Exploit Kits to CNN, "
 }
