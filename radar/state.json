@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-17T10:30:16.234Z",
+ "lastScan": "2026-11-17T13:17:00.230Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -5428,6 +5428,130 @@
    ],
    "status": "below",
    "hash": "1ccd196d"
+  },
+  "https://apple.com/newsroom/2026/11/apple-podcasts-names-baby-this-is-keke-palmer-the-2026-show-of-the-year": {
+   "title": "Apple Podcasts names Baby, this is Keke Palmer the 2026 Show of the Year",
+   "link": "https://www.apple.com/newsroom/2026/11/apple-podcasts-names-baby-this-is-keke-palmer-the-2026-show-of-the-year/",
+   "source": "apple-newsroom",
+   "topic": "mobiles",
+   "category": "launch",
+   "date": "2026-11-17T10:59:28.025Z",
+   "updated": "2026-11-17T10:59:28.025Z",
+   "summary": "Apple Podcasts names Baby, this is Keke Palmer as its 2026 Show of the Year, honoring the podcast for its exceptional quality and cultural impact.",
+   "first": "2026-11-17T13:17:00.230Z",
+   "score": 1,
+   "reasons": [
+    "+1 source apple-newsroom"
+   ],
+   "status": "below",
+   "hash": "fb733b20"
+  },
+  "https://thehackernews.com/2026/11/researchers-detail-iphone-flaw-that-let.html": {
+   "title": "Researchers Detail iPhone Flaw That Let Apps Record Audio Despite Denied Microphone Permission",
+   "link": "https://thehackernews.com/2026/11/researchers-detail-iphone-flaw-that-let.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-17T12:14:36.000Z",
+   "updated": null,
+   "summary": "A now-patched flaw in Apple's audio service let apps on iPhones and iPads record audio even after the user tapped \"Don't Allow\" on the microphone prompt. The first security updates with the fix came out on August 17. Neither Apple nor the two researchers who found the flaw report that it was used in",
+   "first": "2026-11-17T13:17:00.230Z",
+   "score": 9,
+   "reasons": [
+    "+1 source thn",
+    "+2 vulnerability \"Flaw\"",
+    "+4 major platform (iphone, apple, meta)",
+    "+2 user action \"patched\""
+   ],
+   "status": "below",
+   "hash": "cc8db057"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63990": {
+   "title": "Premature redemption under Sovereign Gold Bond (SGB) Scheme - Redemption Price for premature redemption of SGB 2020-21 Series VIII due on November 18, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63990",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-17T18:00:00.000Z",
+   "updated": null,
+   "summary": "In terms of GOI notification F.No. 4(4)-B(W&M)/2020 dated October 09, 2020 (SGB 2020-21 Series VIII - Issue date November 18, 2020) on Sovereign Gold Bond Scheme, premature redemption of Gold Bond may be permitted after fifth year from the date of issue of such Gold Bond on the date on which interes",
+   "first": "2026-11-17T13:17:00.230Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"Price\""
+   ],
+   "status": "below",
+   "hash": "dc412c41"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63989": {
+   "title": "State Government Securities - Full Auction Result",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63989",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-17T16:40:00.000Z",
+   "updated": null,
+   "summary": "The result of the auction of State Government Securities held on November 17, 2026 is as under: (Amount in ₹ Crore) ANDHRA PRADESH SGS 2051 GOA SGS 2037* KARNATAKA SGS 2034 MADHYA PRADESH SGS 2030 Notified Amount 1000 100 2000 1000 Tenor Re-issue of 7.68% ANDHRA SGS 2051 issued on 29-JUL-2026 Re-iss",
+   "first": "2026-11-17T13:17:00.230Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"Price\""
+   ],
+   "status": "below",
+   "hash": "8560074a"
+  },
+  "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/talking-hybrid-revolution-redefining-the-intelligent-workplace-with-christian-bigsby.html": {
+   "title": "Talking hybrid revolution: redefining the intelligent workplace with Christian Bigsby",
+   "link": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/talking-hybrid-revolution-redefining-the-intelligent-workplace-with-christian-bigsby.html?source=rss",
+   "source": "cisco-newsroom",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-17T12:50:00.000Z",
+   "updated": null,
+   "summary": "Learn how Cisco acts as \"Customer Zero,\" leveraging its own networking and collaboration technology to transform physical offices into \"intelligent\" workplaces. More RSS Feeds: https://newsroom.cisco.com/c/r/newsroom/en/us/rss-feeds.html",
+   "first": "2026-11-17T13:17:00.230Z",
+   "score": -1,
+   "reasons": [
+    "-1 source cisco-newsroom"
+   ],
+   "status": "below",
+   "hash": "d53ad7b9"
+  },
+  "https://news.sap.com/2026/11/gxp-compliance-life-sciences-sap-raising-standard": {
+   "title": "GxP Compliance in Life Sciences Is Non-Negotiable: SAP Is Raising the Standard",
+   "link": "https://news.sap.com/2026/11/gxp-compliance-life-sciences-sap-raising-standard/",
+   "source": "sap-news",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-17T12:15:00.000Z",
+   "updated": null,
+   "summary": "Supporting good practice across enterprise systems is more critical than ever.",
+   "first": "2026-11-17T13:17:00.230Z",
+   "score": -1,
+   "reasons": [
+    "-1 source sap-news"
+   ],
+   "status": "below",
+   "hash": "6b9d13c4"
+  },
+  "https://dell.com/en-us/blog/agentic-ai-starts-at-the-workplace-but-it-doesn-t-stop-there": {
+   "title": "Agentic AI starts at the workplace but it doesn’t stop there",
+   "link": "https://www.dell.com/en-us/blog/agentic-ai-starts-at-the-workplace-but-it-doesn-t-stop-there",
+   "source": "dell-blog",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-17T13:00:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-17T13:17:00.230Z",
+   "score": -1,
+   "reasons": [
+    "-1 source dell-blog"
+   ],
+   "status": "below",
+   "hash": "a37ed149"
   }
  },
  "devices": {}

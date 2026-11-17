@@ -2,7 +2,7 @@
  "date": "2026-11-17",
  "title": "Tech news today, 17 November 2026",
  "published": "2026-11-17T01:53:48.910Z",
- "updated": "2026-11-17T10:30:16.234Z",
+ "updated": "2026-11-17T13:17:00.230Z",
  "items": [
   {
    "id": "61cc4914",
@@ -24,7 +24,9 @@
    },
    "sourceId": "ms-security-blog",
    "reported": false,
-   "also": [],
+   "also": [
+    "Engadget"
+   ],
    "post": "microsoft-365-outage-november-2026-root-cause-it-admin-lessons",
    "device": null,
    "ai": null,
@@ -932,7 +934,121 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "08582a1b",
+   "key": "https://thehackernews.com/2026/11/researchers-detail-iphone-flaw-that-let.html",
+   "time": "2026-11-17T12:14:36.000Z",
+   "seen": "2026-11-17T13:17:00.230Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Researchers Detail iPhone Flaw That Let Apps Record Audio Despite Denied Microphone Permission",
+   "summary": "A now-patched flaw in Apple's audio service let apps on iPhones and iPads record audio even after the user tapped \"Don't Allow\" on the microphone prompt. The first security updates with the fix came out on August 17. Neither Apple nor the two researchers who found the flaw report that it was used in attacks. Nik Tsytsarkin of Meta Red Team X published the technical details last week. Mustafa",
+   "lines": [
+    "Reported by The Hacker News: A now-patched flaw in Apple's audio service let apps on iPhones and iPads record audio after users tapped \"Don't Allow\" on the microphone prompt.",
+    "The first security updates with the fix came out on August 17.",
+    "Neither Apple nor the two researchers who found the flaw reported that it was used in attacks.",
+    "IT teams managing iPhone and iPad fleets may want to confirm devices have the security updates that include the fix."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/researchers-detail-iphone-flaw-that-let.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 9,
+   "story": null
+  },
+  {
+   "id": "adbdde03",
+   "key": "https://bleepingcomputer.com/news/microsoft/microsoft-testing-remote-lock-for-lost-or-stolen-windows-devices",
+   "time": "2026-11-17T11:19:51.000Z",
+   "seen": "2026-11-17T13:17:00.230Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Microsoft testing Remote Lock for lost or stolen Windows devices",
+   "summary": "Microsoft is testing a new feature that lets enterprise IT administrators remotely lock stolen or lost Windows devices without wiping them. [...]",
+   "lines": [
+    "Reported by BleepingComputer: Microsoft is testing a Remote Lock feature for lost or stolen Windows devices.",
+    "The feature lets enterprise IT administrators remotely lock a device without wiping it.",
+    "It could give IT teams a way to secure lost or stolen Windows devices without a full wipe."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-testing-remote-lock-for-lost-or-stolen-windows-devices/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "9f8fdb00",
+   "key": "https://thehackernews.com/2026/11/new-gitdoor-and-graphdoor-backdoors.html",
+   "time": "2026-11-17T11:20:18.000Z",
+   "seen": "2026-11-17T13:17:00.230Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "New GitDoor and GraphDoor Backdoors Turn GitHub and SharePoint Into Covert C2 Channels",
+   "summary": "Government sectors in Asia and Africa have been targeted by an active cyber intrusion campaign that delivers to previously undocumented backdoors that leverage legitimate services like Microsoft SharePoint and GitHub for command‑and‑control (C2). The activity has been codenamed Operation ShadowCloud by Kaspersky. The Russian cybersecurity company said it identified the campaign in early 2026.",
+   "lines": [
+    "Reported by The Hacker News: Previously undocumented backdoors, GitDoor and GraphDoor, are used in an intrusion campaign targeting government sectors in Asia and Africa.",
+    "The backdoors use legitimate services, Microsoft SharePoint and GitHub, for command-and-control communication.",
+    "Kaspersky, which named the activity Operation ShadowCloud, said it identified the campaign in early 2026.",
+    "IT teams may want to review how traffic to SharePoint and GitHub is monitored, since these legitimate services are used as C2 channels."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/new-gitdoor-and-graphdoor-backdoors.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "40cd6054",
+   "key": "https://theprint.in/india/governance/culture-ministry-launches-new-ai-search-engine-next-target-ai-led-tracking-of-stolen-antiquities/3100637",
+   "time": "2026-11-17T05:47:44.000Z",
+   "seen": "2026-11-17T13:17:00.230Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Culture ministry launches new AI search engine. Next target: AI-led tracking of stolen antiquities",
+   "summary": "The search tool & chatbot 'Sanskriti' sit on ministry's main website, drawing answers from only from the roughly 65 portals run by the ministry & its institutions.",
+   "lines": [
+    "Reported by ThePrint: Tech: The culture ministry launched Sanskriti, a new AI search tool and chatbot, on its main website.",
+    "It draws answers only from roughly 65 portals run by the ministry and its institutions.",
+    "The ministry's next target is AI-led tracking of stolen antiquities, according to the headline."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "ThePrint: Tech",
+    "url": "https://theprint.in/india/governance/culture-ministry-launches-new-ai-search-engine-next-target-ai-led-tracking-of-stolen-antiquities/3100637/"
+   },
+   "sourceId": "theprint-tech",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
   }
  ],
- "description": "32 technology updates from official sources, updated hourly: Bank of America, Chase, Wells Fargo, and other US bank customers report online service issues; Chase blames a technical issue, not a cyber issue, for the delays; Hijacked Optimizely Scripts Served Card Skimmer and iOS Exploit Kits to CNN, "
+ "description": "36 technology updates from official sources, updated hourly: Bank of America, Chase, Wells Fargo, and other US bank customers report online service issues; Chase blames a technical issue, not a cyber issue, for the delays; Hijacked Optimizely Scripts Served Card Skimmer and iOS Exploit Kits to CNN, "
 }
