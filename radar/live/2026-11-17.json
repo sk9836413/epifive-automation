@@ -2,7 +2,7 @@
  "date": "2026-11-17",
  "title": "Tech news today, 17 November 2026",
  "published": "2026-11-17T01:53:48.910Z",
- "updated": "2026-11-17T01:53:48.910Z",
+ "updated": "2026-11-17T03:43:43.662Z",
  "items": [
   {
    "id": "61cc4914",
@@ -500,7 +500,35 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "5189c5eb",
+   "key": "https://bleepingcomputer.com/news/security/optimizely-supply-chain-attack-infects-major-brands-sites-with-malware",
+   "time": "2026-11-17T02:12:17.000Z",
+   "seen": "2026-11-17T03:43:43.662Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Optimizely supply chain attack infects major brands' sites with malware",
+   "summary": "A suspected supply chain attack targeting Optimizely has led to malicious JavaScript being loaded on numerous popular websites, including Zoom, CNN, Fox News, BBC, Salesforce, and GitLab, exposing visitors to scripts designed to steal cryptocurrency and payment information and exploit vulnerabilities in iOS devices. [...]",
+   "lines": [
+    "Reported by BleepingComputer: A suspected supply chain attack targeting Optimizely led to malicious JavaScript being loaded on numerous popular websites, including Zoom, CNN, Fox News, BBC, Salesforce, and GitLab.",
+    "The reported scripts are designed to steal cryptocurrency and payment information and to exploit vulnerabilities in iOS devices, which puts website visitors at risk.",
+    "IT teams that rely on third-party scripts on their websites may want to review those dependencies and how they are loaded."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/optimizely-supply-chain-attack-infects-major-brands-sites-with-malware/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
   }
  ],
- "description": "17 technology updates from official sources, updated hourly: Bank of America, Chase, Wells Fargo, and other US bank customers report online service issues; Chase blames a technical issue, not a cyber issue, for the delays; High volume phishing campaign uses Microsoft 365 outage lures to target multi"
+ "description": "18 technology updates from official sources, updated hourly: Bank of America, Chase, Wells Fargo, and other US bank customers report online service issues; Chase blames a technical issue, not a cyber issue, for the delays; High volume phishing campaign uses Microsoft 365 outage lures to target multi"
 }

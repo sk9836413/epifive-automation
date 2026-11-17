@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-17T01:53:48.910Z",
+ "lastScan": "2026-11-17T03:43:43.662Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -4195,12 +4195,13 @@
     "+7 M365 retirement due in 0 days",
     "+1 autocomplete (10)"
    ],
-   "status": "writing",
+   "status": "skipped",
    "hash": "9abb1979",
    "kind": "new",
    "extra": false,
    "taskAt": "2026-11-17T01:53:48.910Z",
-   "attempts": 1
+   "attempts": 1,
+   "resultAt": "2026-11-17T01:56:47.076Z"
   },
   "https://github.blog/changelog/2026-11-16-control-where-github-copilot-customizations-come-from": {
    "title": "Control where GitHub Copilot customizations come from",
@@ -4239,8 +4240,12 @@
     "+1 retirement/migration",
     "+7 M365 retirement due in 103 days"
    ],
-   "status": "queued",
-   "hash": "54dd2bea"
+   "status": "writing",
+   "hash": "54dd2bea",
+   "kind": "new",
+   "extra": false,
+   "taskAt": "2026-11-17T03:43:43.662Z",
+   "attempts": 1
   },
   "https://salesforce.com/blog/salesforce-joins-personal-agent-protocol": {
    "title": "Salesforce joins the Personal Agent Protocol to help brands meet shoppers’ AI agents",
@@ -4857,6 +4862,43 @@
    ],
    "status": "below",
    "hash": "66dab2f6"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63985": {
+   "title": "Money Market Operations as on November 16, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63985",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-17T09:00:00.000Z",
+   "updated": null,
+   "summary": "(Amount in ₹ crore, Rate in Per cent) MONEY MARKETS @ --> Money Markets @ Volume (One Leg) Weighted Average Rate Range A. Overnight Segment (I+II+III+IV) 8,46,109.51 5.58 4.00-7.20 I. Call Money 14,925.52 5.65 4.30-5.85 II. Triparty Repo 6,16,978.75 5.57 5.05-5.71 III. Market Repo 2,06,428.89 5.60 4",
+   "first": "2026-11-17T03:43:43.662Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "b5dabcfa"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-kv-cache-routing": {
+   "title": "Amazon SageMaker AI now supports KV cache-aware routing for real-time inference endpoints",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-kv-cache-routing/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-16T08:00:00.000Z",
+   "updated": null,
+   "summary": "Amazon SageMaker AI now supports KV cache-aware routing for real-time inference endpoints, enabling you to reduce time to first token for LLM workloads with long or repeated prompts. Serving engines such as vLLM store the computed key-value (KV) cache for repeated prompt starts such as shared system",
+   "first": "2026-11-17T03:43:43.662Z",
+   "score": 2,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now supports\"",
+    "+1 plans/price/availability \"free\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "28c4d7c1"
   }
  },
  "devices": {}
