@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-17T03:43:43.662Z",
+ "lastScan": "2026-11-17T04:43:45.167Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -857,124 +857,6 @@
    "slug": "microsoft-365-outage-november-2026-what-to-do",
    "resultAt": "2026-11-14T04:51:52.311Z"
   },
-  "https://mc.merill.net/message/MC1461529": {
-   "title": "MC1461529: Release Planner Retirement: D365, Power Platform, and Dataverse Move to AI at Work",
-   "link": "https://mc.merill.net/message/MC1461529",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-14T01:05:15.000Z",
-   "updated": null,
-   "summary": "Release Planner is now retired. To stay informed about upcoming capabilities and prepare your organization for feature rollout and adoption, use the resources shared below. To view product availability for Dynamics 365, Power Platform and Copilot Studio, visit the new Learn page at https://aka.ms/d3",
-   "first": "2026-11-14T03:43:44.961Z",
-   "score": 2,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 niche (copilot)",
-    "+1 plans/price/availability \"rollout\"",
-    "+1 retirement/migration"
-   ],
-   "status": "below",
-   "hash": "62aa047b"
-  },
-  "https://mc.merill.net/message/MC1450128": {
-   "title": "MC1450128: Microsoft Purview: Adaptive scopes add lifecycle status evaluation controls for recipients and site owners",
-   "link": "https://mc.merill.net/message/MC1450128",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-14T00:35:18.000Z",
-   "updated": null,
-   "summary": "Microsoft Purview is updating adaptive scopes to evaluate only active recipients and site owners by default, with options to include inactive or soft-deleted ones. This includes ISO 8601 duration support in queries. Rollout starts December 2026 (preview) and April 2027 (general availability). No imm",
-   "first": "2026-11-14T03:43:44.961Z",
-   "score": -2,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 launch \"general availability\"",
-    "+1 plans/price/availability \"Rollout\"",
-    "-3 corporate/announcement \"evaluation\""
-   ],
-   "status": "below",
-   "hash": "c33ec84"
-  },
-  "https://mc.merill.net/message/MC1508238": {
-   "title": "MC1508238: Microsoft Purview | Information Protection: Sensitivity labels for Microsoft Entra security groups",
-   "link": "https://mc.merill.net/message/MC1508238",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-14T00:20:47.000Z",
-   "updated": null,
-   "summary": "Microsoft Purview will enable sensitivity labels for Microsoft Entra cloud security groups starting mid-January 2027. This allows applying label-based governance and access policies to these groups, enhancing protection and compliance. Admins must enable this feature separately and ensure proper lic",
-   "first": "2026-11-14T03:43:44.961Z",
-   "score": 1,
-   "reasons": [
-    "-2 source mc-merill",
-    "+1 niche (entra)",
-    "+2 user steps \"enable\""
-   ],
-   "status": "below",
-   "hash": "434d0996"
-  },
-  "https://mc.merill.net/message/MC1449182": {
-   "title": "MC1449182: Microsoft 365 Copilot: Copilot Pages and Notebooks Creation in OneDrive",
-   "link": "https://mc.merill.net/message/MC1449182",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-14T00:17:07.000Z",
-   "updated": null,
-   "summary": "Starting mid-October 2026, newly created Microsoft 365 Copilot Pages and Notebooks will be stored in OneDrive for Business, enabling existing governance, compliance, data protection, retention, and lifecycle management features to apply. Existing files remain unchanged; no user action is required.",
-   "first": "2026-11-14T03:43:44.961Z",
-   "score": 2,
-   "reasons": [
-    "-2 source mc-merill",
-    "+4 niche (copilot, microsoft 365, onedrive)"
-   ],
-   "status": "below",
-   "hash": "b9cb4b2c"
-  },
-  "https://mc.merill.net/message/MC1506734": {
-   "title": "MC1506734: Microsoft Teams: Video sharing from OneDrive in Teams events",
-   "link": "https://mc.merill.net/message/MC1506734",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-14T00:13:01.000Z",
-   "updated": null,
-   "summary": "Microsoft Teams will soon allow organizers and producers to share videos directly from OneDrive during large-scale Teams events using \"Manage what attendees see,\" enabling smoother, higher-quality playback without screen sharing or embedding in PowerPoint. Rollout starts mid-November 2026, requiring",
-   "first": "2026-11-14T03:43:44.961Z",
-   "score": -1,
-   "reasons": [
-    "-2 source mc-merill",
-    "+3 niche (microsoft teams, onedrive)",
-    "+1 plans/price/availability \"Rollout\"",
-    "-3 corporate/announcement \"events\""
-   ],
-   "status": "below",
-   "hash": "a4a5bc05"
-  },
-  "https://mc.merill.net/message/MC1552397": {
-   "title": "MC1552397: Microsoft SharePoint: Resources web part and Announcements capabilities expand to all sites",
-   "link": "https://mc.merill.net/message/MC1552397",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-13T23:49:22.000Z",
-   "updated": null,
-   "summary": "The Resources web part and Announcements capabilities are expanding to all SharePoint sites, allowing site owners to share links and updates more flexibly. Rollout starts mid-November 2026 worldwide and mid-December 2026 for GCC/DoD, with no admin action required.",
-   "first": "2026-11-14T03:43:44.961Z",
-   "score": 3,
-   "reasons": [
-    "-2 source mc-merill",
-    "+1 niche (sharepoint)",
-    "+2 launch \"expand to\"",
-    "+1 plans/price/availability \"Rollout\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "40bd0cf8"
-  },
   "https://mc.merill.net/message/MC1552394": {
    "title": "MC1552394: Microsoft Viva Engage: Retirement of Teams town hall event creation",
    "link": "https://mc.merill.net/message/MC1552394",
@@ -1001,65 +883,6 @@
    "attempts": 1,
    "slug": "viva-engage-teams-town-hall-creation-retirement",
    "resultAt": "2026-11-14T18:45:57.520Z"
-  },
-  "https://mc.merill.net/message/MC1552392": {
-   "title": "MC1552392: Microsoft Teams: Automatic recording indicator for call queue calls on Mobile",
-   "link": "https://mc.merill.net/message/MC1552392",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-13T23:47:30.000Z",
-   "updated": null,
-   "summary": "Microsoft Teams on Mobile will show a clear banner indicating automatic, uninterruptible recording and transcription of call queue calls by the organization. This update, rolling out worldwide in December 2026, aligns mobile with desktop and requires no admin action, though informing calling reps is",
-   "first": "2026-11-14T03:43:44.961Z",
-   "score": 2,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 niche (microsoft teams)",
-    "+2 launch \"rolling out\""
-   ],
-   "status": "below",
-   "hash": "428ad081"
-  },
-  "https://mc.merill.net/message/MC1552391": {
-   "title": "MC1552391: Microsoft Teams: Copilot in the Queues app on Mobile",
-   "link": "https://mc.merill.net/message/MC1552391",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-13T23:46:48.000Z",
-   "updated": null,
-   "summary": "Microsoft Teams is introducing Copilot in the Queues app on Mobile, allowing reps and supervisors to ask questions about recorded calls for quick insights. Rolling out worldwide from late November to mid-December 2026, it requires Teams Premium and Microsoft 365 Copilot licenses, with no admin actio",
-   "first": "2026-11-14T03:43:44.961Z",
-   "score": 5,
-   "reasons": [
-    "-2 source mc-merill",
-    "+4 niche (copilot, microsoft 365, microsoft teams)",
-    "+2 launch \"introducing\"",
-    "+1 plans/price/availability \"rollout\""
-   ],
-   "status": "below",
-   "hash": "5efd08f"
-  },
-  "https://mc.merill.net/message/MC1552390": {
-   "title": "MC1552390: Microsoft Teams: Manage call groups on Mobile",
-   "link": "https://mc.merill.net/message/MC1552390",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-13T23:45:43.000Z",
-   "updated": null,
-   "summary": "Microsoft Teams will allow users to create and manage call groups directly on Mobile, enabling call forwarding and ring settings without desktop access. This feature, rolling out worldwide in December 2026, requires a Teams Phone license and enabled calling policy, with no admin action needed before",
-   "first": "2026-11-14T03:43:44.961Z",
-   "score": 3,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 niche (microsoft teams)",
-    "+2 launch \"rolling out\"",
-    "+1 plans/price/availability \"rollout\""
-   ],
-   "status": "below",
-   "hash": "e7cecff1"
   },
   "https://mc.merill.net/message/MC1552389": {
    "title": "MC1552389: Microsoft 365 Copilot: Workforce Intelligence plugin available in Copilot Cowork",
@@ -1107,42 +930,6 @@
    "attempts": 1,
    "slug": "defender-for-identity-classic-alerts-retire-migrate",
    "resultAt": "2026-11-14T22:52:56.515Z"
-  },
-  "https://mc.merill.net/message/MC1552386": {
-   "title": "MC1552386: Microsoft 365 Copilot: Page context for open tabs in the Copilot desktop app built-in browser",
-   "link": "https://mc.merill.net/message/MC1552386",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-13T23:43:26.000Z",
-   "updated": null,
-   "summary": "Microsoft 365 Copilot desktop app will use content from open tabs in its built-in browser as page context for answering questions and summaries, scoped to the current conversation. Rolling out worldwide mid to late November 2026. No action required; verify browser enablement and governance settings.",
-   "first": "2026-11-14T03:43:44.961Z",
-   "score": 4,
-   "reasons": [
-    "-2 source mc-merill",
-    "+4 niche (copilot, microsoft 365)",
-    "+2 launch \"Rolling out\""
-   ],
-   "status": "below",
-   "hash": "13ab439c"
-  },
-  "https://mc.merill.net/message/MC1552365": {
-   "title": "MC1552365: Dynamics 365 Field Service: Preserve actual booking End Time when completion is recorded later",
-   "link": "https://mc.merill.net/message/MC1552365",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-13T23:01:39.000Z",
-   "updated": null,
-   "summary": "We are announcing the ability to Preserve actual booking End Time when completion is recorded later in Dynamics 365 Field Service. This feature will reach public preview on November 22, 2026. How does this affect me? This feature allows Field Service administrators to choose whether completion by th",
-   "first": "2026-11-14T03:43:44.961Z",
-   "score": -2,
-   "reasons": [
-    "-2 source mc-merill"
-   ],
-   "status": "below",
-   "hash": "ec5c6b35"
   },
   "https://techcommunity.microsoft.com/t5/intune-customer-success/support-tip-why-windows-driver-recommendations-may-vary-between/ba-p/4572700": {
    "title": "Support tip: Why Windows driver recommendations may vary between deployment rings",
@@ -4240,12 +4027,14 @@
     "+1 retirement/migration",
     "+7 M365 retirement due in 103 days"
    ],
-   "status": "writing",
+   "status": "published",
    "hash": "54dd2bea",
    "kind": "new",
    "extra": false,
    "taskAt": "2026-11-17T03:43:43.662Z",
-   "attempts": 1
+   "attempts": 1,
+   "slug": "vs-code-local-harness-retirement-migrate-copilot",
+   "resultAt": "2026-11-17T03:56:12.714Z"
   },
   "https://salesforce.com/blog/salesforce-joins-personal-agent-protocol": {
    "title": "Salesforce joins the Personal Agent Protocol to help brands meet shoppers’ AI agents",
@@ -4899,6 +4688,340 @@
    ],
    "status": "below",
    "hash": "28c4d7c1"
+  },
+  "https://about.fb.com/news/2026/11/an-update-on-the-content-we-recommend-on-instagram-in-india": {
+   "title": "An Update on the Content We Recommend on Instagram in India",
+   "link": "https://about.fb.com/news/2026/11/an-update-on-the-content-we-recommend-on-instagram-in-india/",
+   "source": "meta-newsroom",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-17T03:58:09.000Z",
+   "updated": null,
+   "summary": "We've strengthened the default protections behind what Instagram recommends in India to reduce unwanted content and improve people’s experience on Instagram. This work has been guided by what our users told us they want from their recommendations. The post An Update on the Content We Recommend on In",
+   "first": "2026-11-17T04:43:45.167Z",
+   "score": 2,
+   "reasons": [
+    "+1 niche (instagram)",
+    "+1 plans/price/availability \"India\""
+   ],
+   "status": "below",
+   "hash": "e5c8f754"
+  },
+  "https://mc.merill.net/message/MC1479513": {
+   "title": "MC1479513: Outlook: Insert Symbols",
+   "link": "https://mc.merill.net/message/MC1479513",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-16T23:54:20.000Z",
+   "updated": null,
+   "summary": "Starting mid-October 2026, Outlook will roll out the ability to insert symbols into emails via the Insert tab, completing by late January 2027. This feature affects users on new Outlook for Windows and web, requires no admin action, and enhances message composition with special characters.",
+   "first": "2026-11-17T04:43:45.167Z",
+   "score": 3,
+   "reasons": [
+    "-2 source mc-merill",
+    "+3 niche (outlook, windows)",
+    "+2 launch \"roll out\""
+   ],
+   "status": "below",
+   "hash": "2cd6bc54"
+  },
+  "https://mc.merill.net/message/MC1466754": {
+   "title": "MC1466754: Microsoft Viva Engage: Reducing reply notification volume in email",
+   "link": "https://mc.merill.net/message/MC1466754",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-16T23:50:14.000Z",
+   "updated": null,
+   "summary": "Microsoft Viva Engage will reduce email reply notifications by only sending alerts for direct replies, @mentions, and new posts, not for all conversation replies. The update rolls out globally from September to November 2026, requires no action, and keeps existing notification settings unchanged.",
+   "first": "2026-11-17T04:43:45.167Z",
+   "score": 0,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 launch \"rolls out\""
+   ],
+   "status": "below",
+   "hash": "10eb9224"
+  },
+  "https://mc.merill.net/message/MC1556107": {
+   "title": "MC1556107: Microsoft Defender: Similar cases comes to the unified security operations platform",
+   "link": "https://mc.merill.net/message/MC1556107",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-16T22:30:11.000Z",
+   "updated": null,
+   "summary": "A new Similar cases tab in the Microsoft Defender portal lists up to 20 related incidents by alert titles or entities, aiding analysts in identifying patterns. The Associated incidents card is renamed Recommended correlations. Public preview is available now; full rollout completes by early December",
+   "first": "2026-11-17T04:43:45.167Z",
+   "score": 2,
+   "reasons": [
+    "-2 source mc-merill",
+    "+1 niche (defender)",
+    "+2 launch \"available now\"",
+    "+1 plans/price/availability \"rollout\""
+   ],
+   "status": "below",
+   "hash": "6a710432"
+  },
+  "https://mc.merill.net/message/MC1556106": {
+   "title": "MC1556106: Microsoft SharePoint: Enhanced data access governance reports and site access reviews",
+   "link": "https://mc.merill.net/message/MC1556106",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-16T22:29:31.000Z",
+   "updated": null,
+   "summary": "Microsoft SharePoint will enhance data access governance reports and site access reviews starting late November 2026, giving admins better control to identify data risks, prioritize sites, direct review requests, and track email delivery. No action is required before rollout, but admins should prepa",
+   "first": "2026-11-17T04:43:45.167Z",
+   "score": 0,
+   "reasons": [
+    "-2 source mc-merill",
+    "+1 niche (sharepoint)",
+    "+1 plans/price/availability \"rollout\""
+   ],
+   "status": "below",
+   "hash": "4cf31b89"
+  },
+  "https://mc.merill.net/message/MC1556104": {
+   "title": "MC1556104: Microsoft PowerPoint: Introducing plugins for Microsoft 365 Copilot",
+   "link": "https://mc.merill.net/message/MC1556104",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-16T22:28:47.000Z",
+   "updated": null,
+   "summary": "Microsoft 365 Copilot in PowerPoint will gain plugins to enhance capabilities with specialized skills and connectors, improving presentation workflows. Rollout starts mid-November 2026 worldwide across Windows, Mac, and web. Admins should review and manage plugin access; no compliance issues identif",
+   "first": "2026-11-17T04:43:45.167Z",
+   "score": 6,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (copilot, microsoft 365, powerpoint, windows)",
+    "+2 launch \"Introducing\"",
+    "+1 plans/price/availability \"Rollout\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "2aa98e5a"
+  },
+  "https://mc.merill.net/message/MC1556098": {
+   "title": "MC1556098: Microsoft Teams Mobile: Introducing shared call history in the Queues app",
+   "link": "https://mc.merill.net/message/MC1556098",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-16T22:28:03.000Z",
+   "updated": null,
+   "summary": "Microsoft Teams mobile Queues app now offers shared call history for authorized representatives, showing missed, answered, outgoing, and voicemail calls. Rolling out worldwide in December 2026, it helps teams manage calls efficiently with status updates and filtering, extending desktop features to m",
+   "first": "2026-11-17T04:43:45.167Z",
+   "score": 3,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 niche (microsoft teams)",
+    "+2 launch \"Introducing\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "8a98dd38"
+  },
+  "https://mc.merill.net/message/MC1556096": {
+   "title": "MC1556096: Microsoft Teams: Audio announcement for Recording and Transcription",
+   "link": "https://mc.merill.net/message/MC1556096",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-16T22:27:20.000Z",
+   "updated": null,
+   "summary": "Microsoft Teams now supports an optional audio announcement when recording or transcription starts, configurable via Meeting and Calling Policies. Rolling out from May 2026 to January 2027 worldwide. No admin action required; default is off. Compliance recording is not supported with this feature.",
+   "first": "2026-11-17T04:43:45.167Z",
+   "score": 2,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 niche (microsoft teams)",
+    "+2 launch \"now supports\""
+   ],
+   "status": "below",
+   "hash": "1c0ea859"
+  },
+  "https://mc.merill.net/message/MC1556095": {
+   "title": "MC1556095: Plugins in PowerPoint for Microsoft 365 Copilot [Mac]",
+   "link": "https://mc.merill.net/message/MC1556095",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-16T22:26:41.000Z",
+   "updated": null,
+   "summary": "Plugins will be added to PowerPoint for Microsoft 365 Copilot on Mac, enhancing presentation capabilities. The rollout starts mid-November 2026 and completes by early December. Users can access plugins in Copilot, and admins can manage plugin access via the Microsoft 365 admin center. No compliance ",
+   "first": "2026-11-17T04:43:45.167Z",
+   "score": 5,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (copilot, microsoft 365, powerpoint, mac)",
+    "+2 user steps \"Users can\"",
+    "+1 plans/price/availability \"rollout\""
+   ],
+   "status": "below",
+   "hash": "facb7094"
+  },
+  "https://mc.merill.net/message/MC1556094": {
+   "title": "MC1556094: Microsoft 365 Copilot: Learning Agent introduces personalized learning experiences",
+   "link": "https://mc.merill.net/message/MC1556094",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-16T22:26:09.000Z",
+   "updated": null,
+   "summary": "Microsoft 365 Copilot Learning Agent will provide personalized learning experiences based on users' work context, roles, and activities. Rolling out from mid-November to late December 2026, it offers relevant prompts, faster upskilling, and continuous skill development, requiring specific admin and ",
+   "first": "2026-11-17T04:43:45.167Z",
+   "score": 5,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (copilot, microsoft 365, agent)",
+    "+2 launch \"introduces\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "24037e"
+  },
+  "https://mc.merill.net/message/MC1556093": {
+   "title": "MC1556093: Microsoft 365 Copilot: Learning Agent introduces personalized upskilling notifications in Teams",
+   "link": "https://mc.merill.net/message/MC1556093",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-16T22:25:29.000Z",
+   "updated": null,
+   "summary": "Microsoft 365 Copilot Learning Agent will deliver personalized upskilling notifications in Teams based on users' roles and usage. Rolling out from mid-November 2026, it helps users access relevant training within Teams, enhancing AI fluency and confidence. Admins can manage notifications via Viva Le",
+   "first": "2026-11-17T04:43:45.167Z",
+   "score": 7,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (copilot, microsoft 365, agent)",
+    "+2 launch \"introduces\"",
+    "+2 user steps \"Admins can\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "5f818502"
+  },
+  "https://mc.merill.net/message/MC1556092": {
+   "title": "MC1556092: Changes to site logo URL metadata in SharePoint search results",
+   "link": "https://mc.merill.net/message/MC1556092",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-16T22:24:43.000Z",
+   "updated": null,
+   "summary": "SharePoint will change how site logo URLs are updated in search metadata, stopping automatic updates of the SiteLogoUrl property on individual items. Rollout is from December 2026 to March 2027. Organizations using this property in search results should retrieve logos directly from the site instead.",
+   "first": "2026-11-17T04:43:45.167Z",
+   "score": 0,
+   "reasons": [
+    "-2 source mc-merill",
+    "+1 niche (sharepoint)",
+    "+1 plans/price/availability \"Rollout\""
+   ],
+   "status": "below",
+   "hash": "3f167d64"
+  },
+  "https://mc.merill.net/message/MC1556090": {
+   "title": "MC1556090: Plugins in PowerPoint for Microsoft 365 Copilot [Win32]",
+   "link": "https://mc.merill.net/message/MC1556090",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-16T22:21:35.000Z",
+   "updated": null,
+   "summary": "Plugins will be added to PowerPoint for Microsoft 365 Copilot on Windows, enhancing presentation capabilities with new skills and connectors. Rollout starts mid-November 2026, completing by early December. Admins can manage plugin access via the Microsoft 365 admin center. No compliance issues ident",
+   "first": "2026-11-17T04:43:45.167Z",
+   "score": 5,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (copilot, microsoft 365, powerpoint, windows)",
+    "+2 user steps \"Admins can\"",
+    "+1 plans/price/availability \"Rollout\""
+   ],
+   "status": "below",
+   "hash": "97110269"
+  },
+  "https://mc.merill.net/message/MC1556088": {
+   "title": "MC1556088: Microsoft Teams: End of support for iOS 17 and iPadOS 17",
+   "link": "https://mc.merill.net/message/MC1556088",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-16T22:20:58.000Z",
+   "updated": null,
+   "summary": "Microsoft Teams will end support for iOS 17 and iPadOS 17 starting mid-December 2026, requiring iOS/iPadOS 18 or later for new releases. Existing versions will keep working without support. Organizations should notify users, encourage OS upgrades, update policies, and revise support documentation ac",
+   "first": "2026-11-17T04:43:45.167Z",
+   "score": 11,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (microsoft teams, ios 17)",
+    "+1 retirement/migration",
+    "+8 M365 retirement due in 28 days"
+   ],
+   "status": "queued",
+   "hash": "2503fb4b"
+  },
+  "https://mc.merill.net/message/MC1556082": {
+   "title": "MC1556082: Microsoft 365 admin center: Unified release preferences for Standard, Deferred, and Frontier",
+   "link": "https://mc.merill.net/message/MC1556082",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-16T22:15:33.000Z",
+   "updated": null,
+   "summary": "Microsoft 365 admin center will unify Standard, Deferred, and Frontier release preferences into a single panel by late November 2026. Administrators can manage feature rollout timing and preview participation more easily. Existing settings carry forward, with no action required, but review and updat",
+   "first": "2026-11-17T04:43:45.167Z",
+   "score": 1,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 niche (microsoft 365)",
+    "+1 plans/price/availability \"rollout\""
+   ],
+   "status": "below",
+   "hash": "b1c89188"
+  },
+  "https://mc.merill.net/message/MC1551151": {
+   "title": "MC1551151: Microsoft Entra ID: Risk-based anti-bot verification (CAPTCHA) for SMS and voice multi-factor authentication",
+   "link": "https://mc.merill.net/message/MC1551151",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-16T21:45:49.000Z",
+   "updated": null,
+   "summary": "Starting mid-November 2026, Microsoft Entra ID will add risk-based CAPTCHA verification for SMS and voice MFA to prevent automated fraud. Some users may need to complete CAPTCHA before receiving codes or calls. Administrators should prepare users, ensure network readiness, and promote phishing-resis",
+   "first": "2026-11-17T04:43:45.167Z",
+   "score": -1,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 niche (entra, fraud)",
+    "-1 in /news 2026-11-14-server-2016-ltsc-2021-end-slmgr-fix"
+   ],
+   "status": "below",
+   "hash": "d979908c",
+   "news": "2026-11-14-server-2016-ltsc-2021-end-slmgr-fix"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/Connect-Custom-agent-interactive-responses": {
+   "title": "Amazon Connect Customer agent assist now supports interactive responses",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/Connect-Custom-agent-interactive-responses",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-16T19:02:00.000Z",
+   "updated": null,
+   "summary": "Amazon Connect Customer agent assist now supports interactive components, including cards, carousels, buttons, and input fields. The AI agent analyzes conversation context in real time, recommends actions, retrieves information, and executes tasks on behalf of contact center agents using MCP tools i",
+   "first": "2026-11-17T04:43:45.167Z",
+   "score": 4,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+1 niche (agent)",
+    "+2 launch \"now supports\"",
+    "+2 user steps \"step-by-step\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "4695e692"
   }
  },
  "devices": {}

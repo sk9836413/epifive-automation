@@ -2,7 +2,7 @@
  "date": "2026-11-17",
  "title": "Tech news today, 17 November 2026",
  "published": "2026-11-17T01:53:48.910Z",
- "updated": "2026-11-17T03:43:43.662Z",
+ "updated": "2026-11-17T04:43:45.167Z",
  "items": [
   {
    "id": "61cc4914",
@@ -528,7 +528,180 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "526360c6",
+   "key": "https://mc.merill.net/message/MC1556088",
+   "time": "2026-11-16T22:20:58.000Z",
+   "seen": "2026-11-17T04:43:45.167Z",
+   "kind": "retirement",
+   "tier": 2,
+   "headline": "MC1556088: Microsoft Teams: End of support for iOS 17 and iPadOS 17",
+   "summary": "Microsoft Teams will end support for iOS 17 and iPadOS 17 starting mid-December 2026, requiring iOS/iPadOS 18 or later for new releases. Existing versions will keep working without support. Organizations should notify users, encourage OS upgrades, update policies, and revise support documentation accordingly.",
+   "lines": [
+    "Microsoft Teams will end support for iOS 17 and iPadOS 17 starting mid-December 2026.",
+    "New Teams releases will require iOS or iPadOS 18 or later. Existing versions will keep working without support.",
+    "Admins should notify users, encourage OS upgrades, and update policies and support documentation."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1556088"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null
+  },
+  {
+   "id": "cce738ed",
+   "key": "https://mc.merill.net/message/MC1556104",
+   "time": "2026-11-16T22:28:47.000Z",
+   "seen": "2026-11-17T04:43:45.167Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1556104: Microsoft PowerPoint: Introducing plugins for Microsoft 365 Copilot",
+   "summary": "Microsoft 365 Copilot in PowerPoint will gain plugins to enhance capabilities with specialized skills and connectors, improving presentation workflows. Rollout starts mid-November 2026 worldwide across Windows, Mac, and web. Admins should review and manage plugin access; no compliance issues identified.",
+   "lines": [
+    "Microsoft 365 Copilot in PowerPoint will gain plugins that add specialized skills and connectors.",
+    "Rollout starts mid-November 2026 worldwide across Windows, Mac, and web.",
+    "Admins should review and manage plugin access. The announcement identifies no compliance issues."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1556104"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "5865a8cf",
+   "key": "https://mc.merill.net/message/MC1556098",
+   "time": "2026-11-16T22:28:03.000Z",
+   "seen": "2026-11-17T04:43:45.167Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1556098: Microsoft Teams Mobile: Introducing shared call history in the Queues app",
+   "summary": "Microsoft Teams mobile Queues app now offers shared call history for authorized representatives, showing missed, answered, outgoing, and voicemail calls. Rolling out worldwide in December 2026, it helps teams manage calls efficiently with status updates and filtering, extending desktop features to mobile without new admin actions.",
+   "lines": [
+    "The Microsoft Teams mobile Queues app now offers shared call history for authorized representatives.",
+    "The history shows missed, answered, outgoing, and voicemail calls, with status updates and filtering. Rollout is worldwide in December 2026.",
+    "This extends desktop features to mobile and requires no new admin actions."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1556098"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "5c65af1b",
+   "key": "https://mc.merill.net/message/MC1556094",
+   "time": "2026-11-16T22:26:09.000Z",
+   "seen": "2026-11-17T04:43:45.167Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1556094: Microsoft 365 Copilot: Learning Agent introduces personalized learning experiences",
+   "summary": "Microsoft 365 Copilot Learning Agent will provide personalized learning experiences based on users' work context, roles, and activities. Rolling out from mid-November to late December 2026, it offers relevant prompts, faster upskilling, and continuous skill development, requiring specific admin and user settings to be enabled.",
+   "lines": [
+    "Microsoft 365 Copilot Learning Agent will provide personalized learning experiences based on users' work context, roles, and activities.",
+    "Rollout runs from mid-November to late December 2026. It offers relevant prompts and continuous skill development.",
+    "Specific admin and user settings must be enabled for the feature."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1556094"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "58636a38",
+   "key": "https://mc.merill.net/message/MC1556082",
+   "time": "2026-11-16T22:15:33.000Z",
+   "seen": "2026-11-17T04:43:45.167Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1556082: Microsoft 365 admin center: Unified release preferences for Standard, Deferred, and Frontier",
+   "summary": "Microsoft 365 admin center will unify Standard, Deferred, and Frontier release preferences into a single panel by late November 2026. Administrators can manage feature rollout timing and preview participation more easily. Existing settings carry forward, with no action required, but review and update guidance accordingly.",
+   "lines": [
+    "The Microsoft 365 admin center will unify Standard, Deferred, and Frontier release preferences into a single panel by late November 2026.",
+    "Administrators can manage feature rollout timing and preview participation more easily.",
+    "Existing settings carry forward with no action required, but related guidance should be reviewed and updated."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1556082"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "5b39847f",
+   "key": "https://bleepingcomputer.com/news/security/optimizely-supply-chain-attack-delivers-malware-to-cnn-fox-news-bbc-salesforce-sites",
+   "time": "2026-11-17T02:12:17.000Z",
+   "seen": "2026-11-17T04:43:45.167Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Optimizely hack infected CNN, Fox News, BBC, Salesforce sites with malware",
+   "summary": "A suspected supply chain attack targeting Optimizely has led to malicious JavaScript being loaded on numerous popular websites, including Zoom, CNN, Fox News, BBC, Salesforce, and GitLab, exposing visitors to scripts designed to steal cryptocurrency and payment information and exploit vulnerabilities in iOS devices. [...]",
+   "lines": [
+    "Reported by BleepingComputer: A suspected supply chain attack targeting Optimizely led to malicious JavaScript loading on sites including Zoom, CNN, Fox News, BBC, Salesforce, and GitLab.",
+    "The injected scripts were designed to steal cryptocurrency and payment information and to exploit vulnerabilities in iOS devices.",
+    "Visitors to the affected sites were exposed to these scripts. Teams that use third-party JavaScript should review those sources and monitor for unexpected code."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/optimizely-supply-chain-attack-delivers-malware-to-cnn-fox-news-bbc-salesforce-sites/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
   }
  ],
- "description": "18 technology updates from official sources, updated hourly: Bank of America, Chase, Wells Fargo, and other US bank customers report online service issues; Chase blames a technical issue, not a cyber issue, for the delays; High volume phishing campaign uses Microsoft 365 outage lures to target multi"
+ "description": "24 technology updates from official sources, updated hourly: Bank of America, Chase, Wells Fargo, and other US bank customers report online service issues; Chase blames a technical issue, not a cyber issue, for the delays; High volume phishing campaign uses Microsoft 365 outage lures to target multi"
 }
