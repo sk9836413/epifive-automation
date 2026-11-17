@@ -2,7 +2,7 @@
  "date": "2026-11-17",
  "title": "Tech news today, 17 November 2026",
  "published": "2026-11-17T01:53:48.910Z",
- "updated": "2026-11-17T14:16:41.801Z",
+ "updated": "2026-11-17T19:18:54.800Z",
  "items": [
   {
    "id": "61cc4914",
@@ -25,7 +25,8 @@
    "sourceId": "ms-security-blog",
    "reported": false,
    "also": [
-    "Engadget"
+    "Engadget",
+    "The Verge"
    ],
    "post": "microsoft-365-outage-november-2026-root-cause-it-admin-lessons",
    "device": null,

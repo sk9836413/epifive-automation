@@ -1,0 +1,853 @@
+{
+ "date": "2026-11-18",
+ "title": "Tech news today, 18 November 2026",
+ "published": "2026-11-17T19:18:54.800Z",
+ "updated": "2026-11-17T19:18:54.800Z",
+ "items": [
+  {
+   "id": "289cf95a",
+   "key": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+   "time": "2026-11-17T17:45:00.000Z",
+   "seen": "2026-11-17T19:18:54.800Z",
+   "kind": "ai-model",
+   "tier": 1,
+   "headline": "Introducing GPT-6.2 Astra and Sol",
+   "summary": "Introducing GPT‑6.2 Astra and Sol, with better professional outputs, coding, computer use, and efficiency at lower cost across ChatGPT Work, Codex, and the API.",
+   "lines": [
+    "OpenAI introduced GPT-6.2 Astra and Sol, with better professional outputs, coding, computer use, and efficiency at lower cost.",
+    "The models are available across ChatGPT Work, Codex, and the API.",
+    "Relevant for IT teams and business users who rely on ChatGPT Work, Codex, or the API for professional tasks and coding."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "OpenAI News",
+    "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol"
+   },
+   "sourceId": "openai-news",
+   "reported": false,
+   "also": [
+    "techmeme",
+    "AWS What's New"
+   ],
+   "post": null,
+   "device": null,
+   "ai": {
+    "model": "GPT-6.2",
+    "kind": "release"
+   },
+   "score": 15,
+   "story": "ai:gpt-6.2:release"
+  },
+  {
+   "id": "f1f79144",
+   "key": "https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash",
+   "time": "2026-11-17T18:15:17.000Z",
+   "seen": "2026-11-17T19:18:54.800Z",
+   "kind": "ai-model",
+   "tier": 2,
+   "headline": "Introducing mai code 2 and mai code 2 flash",
+   "summary": "Share this article LinkedIn (opens in a new tab) X (opens in a new tab) Facebook (opens in a new tab) MAI Code 2 and MAI Code 2 Flash : t wo new coding models built for the everyday enterprise coding tasks , delivering leading performance at a fraction of the cost of competing models. Performance and speed for everyday coding MAI Code 2 is at the frontier of price-performance for common enterprise coding tasks and excels in taking code to production, deep debugging, multi-file implementation, repo wide reasoning, and UI. It does all of this while also delivering changes code maintainers would merge, at a fraction of frontier cost. Meanwhile, MAI Code 2 Flash is designed for high-volume work ",
+   "lines": [
+    "Microsoft AI introduced MAI Code 2 and MAI Code 2 Flash, two coding models for everyday enterprise coding tasks.",
+    "MAI Code 2 is built for taking code to production, deep debugging, multi-file implementation, repo-wide reasoning, and UI work. MAI Code 2 Flash is designed for high-volume work.",
+    "Microsoft says the models deliver strong performance at a fraction of the cost of competing models, which may matter to enterprise development teams managing coding costs."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft AI (MAI) news (sitemap)",
+    "url": "https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/"
+   },
+   "sourceId": "microsoft-ai",
+   "reported": false,
+   "also": [
+    "GitHub Changelog"
+   ],
+   "post": null,
+   "device": null,
+   "ai": {
+    "model": "mai code 2",
+    "kind": "release"
+   },
+   "score": 7,
+   "story": "ai:mai code 2:release"
+  },
+  {
+   "id": "cca32391",
+   "key": "https://microsoft.ai/news/introducing-mai-cyber-2-flash",
+   "time": "2026-11-17T18:15:34.000Z",
+   "seen": "2026-11-17T19:18:54.800Z",
+   "kind": "ai-model",
+   "tier": 2,
+   "headline": "Introducing mai cyber 2 flash",
+   "summary": "Share this article LinkedIn (opens in a new tab) X (opens in a new tab) Facebook (opens in a new tab) Security teams need AI to find vulnerabilities, recommend fixes, and investigate threats around the clock. Doing that at scale takes serious computing power, and the cost can quickly add up. Built on Microsoft’s decades of proprietary security data and expertise, MAI Cyber 2 Flash is our latest specialist security model. It delivers leading performance on real-world security tasks at a fraction of the cost of larger models. And we’re bringing that capability directly into Microsoft’s security products. On CyberGym ‑ E2E 1 , a benchmark measuring real-world vulnerability discovery, MAI Cyber ",
+   "lines": [
+    "Microsoft AI introduced MAI Cyber 2 Flash, a specialist security model for tasks such as finding vulnerabilities, recommending fixes, and investigating threats.",
+    "The model is built on Microsoft's security data and expertise and is being brought into Microsoft's security products.",
+    "Microsoft says it performs well on real-world security tasks at a fraction of the cost of larger models, relevant to security teams with AI tooling budgets."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft AI (MAI) news (sitemap)",
+    "url": "https://microsoft.ai/news/introducing-mai-cyber-2-flash/"
+   },
+   "sourceId": "microsoft-ai",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": {
+    "model": "mai cyber 2 flash",
+    "kind": "release"
+   },
+   "score": 7,
+   "story": "ai:mai cyber 2 flash:release"
+  },
+  {
+   "id": "3551cb01",
+   "key": "https://microsoft.ai/news/introducing-mai-licensed-weights",
+   "time": "2026-11-17T18:17:12.000Z",
+   "seen": "2026-11-17T19:18:54.800Z",
+   "kind": "ai-model",
+   "tier": 2,
+   "headline": "Introducing mai licensed weights",
+   "summary": "Share this article LinkedIn (opens in a new tab) X (opens in a new tab) Facebook (opens in a new tab) More of what makes a company distinctive will live inside the AI models it runs. Businesses increasingly want to control those models – who can access them, how they’re adapted, what they cost to operate, and when they’re upgraded. That’s why we’re introducing MAI Licensed Weights, giving organizations the ability to deploy and customize Microsoft AI models in their own Azure environments. Models you control MAI Licensed Weights brings Microsoft’s frontier AI models into your own Azure environment, where you can adapt them to your business and safely integrate your proprietary knowledge and ",
+   "lines": [
+    "Microsoft AI introduced MAI Licensed Weights, which lets organizations deploy and customize Microsoft AI models in their own Azure environments.",
+    "The offering brings Microsoft's frontier AI models into a customer's Azure environment, where they can be adapted to the business.",
+    "For IT teams, this gives control over who can access the models, how they are adapted, what they cost to operate, and when they are upgraded."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft AI (MAI) news (sitemap)",
+    "url": "https://microsoft.ai/news/introducing-mai-licensed-weights/"
+   },
+   "sourceId": "microsoft-ai",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": {
+    "model": "mai licensed",
+    "kind": "release"
+   },
+   "score": 7,
+   "story": "ai:mai licensed:release"
+  },
+  {
+   "id": "a2da2b62",
+   "key": "https://microsoft.ai/news/introducing-mai-image-2-7",
+   "time": "2026-11-17T18:41:14.000Z",
+   "seen": "2026-11-17T19:18:54.800Z",
+   "kind": "ai-model",
+   "tier": 2,
+   "headline": "Introducing mai image 2 7",
+   "summary": "Share this article LinkedIn (opens in a new tab) X (opens in a new tab) Facebook (opens in a new tab) Today we’re introducing MAI Image 2.7 and MAI Image 2.7 Flash , delivering frontier image generation and editing at a fraction of the cost of the leading competitors. We’re also launching Canvas , a new interactive workspace powered by our Flash model to create, edit, and refine images. MAI Image 2.7 takes the #1 spot on Artificial Analysis image editing, outperforming GPT Image 2.6 Sunburst (max) at just one-fifth of the cost. On Arena, MAI is a top-two lab in both image generation and editing, outperforming GPT Image 2.6 Flare 1 . Flash delivers the speed and efficiency needed for producti",
+   "lines": [
+    "Microsoft AI introduced MAI Image 2.7 and MAI Image 2.7 Flash for image generation and editing, plus Canvas, an interactive image workspace powered by the Flash model.",
+    "MAI Image 2.7 ranks first on Artificial Analysis image editing, outperforming GPT Image 2.6 Sunburst (max) at one-fifth of the cost.",
+    "Flash is positioned for speed and efficiency, which may matter to business users generating images at volume."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft AI (MAI) news (sitemap)",
+    "url": "https://microsoft.ai/news/introducing-mai-image-2-7/"
+   },
+   "sourceId": "microsoft-ai",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": {
+    "model": "mai image 2",
+    "kind": "release"
+   },
+   "score": 7,
+   "story": "ai:mai image 2:release"
+  },
+  {
+   "id": "4c814d63",
+   "key": "https://microsoft.ai/news/introducing-mai-realtime-1",
+   "time": "2026-11-17T18:47:32.000Z",
+   "seen": "2026-11-17T19:18:54.800Z",
+   "kind": "ai-model",
+   "tier": 2,
+   "headline": "Introducing mai realtime 1",
+   "summary": "Share this article LinkedIn (opens in a new tab) X (opens in a new tab) Facebook (opens in a new tab) MAI Realtime 1, our first speech-to-speech model, is built for naturally flowing conversations for real-world enterprise applications starting at $0.01 per audio minute . 1 Our model outperforms GPT Realtime 2.1 on quality, speed, and price across public benchmarks and Microsoft product evaluations. It sits on the performance-price Pareto frontier for both Big Bench Audio speech reasoning, and Tau -Voice agentic task completion benchmark. 2 Natural conversations that get things done Building a voice agent people actually want to talk to takes more than just a good voice. It takes the right m",
+   "lines": [
+    "Microsoft AI introduced MAI Realtime 1, its first speech-to-speech model, for natural conversations in enterprise applications.",
+    "Pricing starts at $0.01 per audio minute.",
+    "Microsoft says the model outperforms GPT Realtime 2.1 on quality, speed, and price across public benchmarks and Microsoft product evaluations."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft AI (MAI) news (sitemap)",
+    "url": "https://microsoft.ai/news/introducing-mai-realtime-1/"
+   },
+   "sourceId": "microsoft-ai",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": {
+    "model": "mai realtime 1",
+    "kind": "release"
+   },
+   "score": 7,
+   "story": "ai:mai realtime 1:release"
+  },
+  {
+   "id": "02b86f6c",
+   "key": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features",
+   "time": "2026-11-17T17:00:00.000Z",
+   "seen": "2026-11-17T19:18:54.800Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Put Gemini to work for you",
+   "summary": "Tasks in Gemini is now free of charge in six countries, with new features starting in the U.S. and deeper Google Workspace integration to get things done on your behalf.",
+   "lines": [
+    "Google made Tasks in Gemini free of charge in six countries.",
+    "New Tasks features are starting in the U.S., with deeper Google Workspace integration to get things done on a user's behalf."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google: Gemini app blog",
+    "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/"
+   },
+   "sourceId": "gemini-blog",
+   "reported": false,
+   "also": [
+    "google-keyword"
+   ],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null
+  },
+  {
+   "id": "9713944f",
+   "key": "https://blogs.windows.com/msedgedev/2026/11/17/edge-for-business-ignite-2026-innovations",
+   "time": "2026-11-17T18:40:43.000Z",
+   "seen": "2026-11-17T19:18:54.800Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Edge for Business becomes the most used enterprise browser and unveils Ignite 2026 innovations",
+   "summary": "https://www.youtube.com/watch?v=eK7msluMltY Summary: Edge for Business is the most used enterprise browser in the world. At Microsoft Ignite 2026, we're introducing new ways for users and agents to get more done. Deeper integrat The post Edge for Business becomes the most used enterprise browser and unveils Ignite 2026 innovations appeared first on Windows Blog .",
+   "lines": [
+    "Microsoft says Edge for Business is the most used enterprise browser in the world.",
+    "At Microsoft Ignite 2026, Microsoft introduced new ways for users and agents to get more done.",
+    "Relevant for IT teams that manage enterprise browser deployments and agent use."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Windows Blog",
+    "url": "https://blogs.windows.com/msedgedev/2026/11/17/edge-for-business-ignite-2026-innovations/"
+   },
+   "sourceId": "windows-blog",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "433f9f28",
+   "key": "https://about.fb.com/news/2026/11/muse-is-now-available-in-australia",
+   "time": "2026-11-17T18:00:31.000Z",
+   "seen": "2026-11-17T19:18:54.800Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Muse Is Now Available in Australia: The World’s First Personal AI Agent Built for Everyone",
+   "summary": "Muse is available in Australia from today, with local connector experiences across creativity, shopping, property, fitness and entertainment rolling out progressively. The post Muse Is Now Available in Australia: The World’s First Personal AI Agent Built for Everyone appeared first on Meta Newsroom .",
+   "lines": [
+    "Meta made Muse available in Australia from today.",
+    "Local connector experiences for creativity, shopping, property, fitness, and entertainment are rolling out progressively.",
+    "The announcement is consumer-focused, so its direct relevance to IT teams is limited."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Meta Newsroom",
+    "url": "https://about.fb.com/news/2026/11/muse-is-now-available-in-australia/"
+   },
+   "sourceId": "meta-newsroom",
+   "reported": false,
+   "also": [
+    "meta-ai-tag"
+   ],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "5353b038",
+   "key": "https://salesforce.com/news/stories/copilotforce-announcement",
+   "time": "2026-11-17T18:05:00.000Z",
+   "seen": "2026-11-17T19:18:54.800Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Salesforce and Microsoft Announce Copilotforce, Bringing Salesforce Customer Context and Sales Workflows to Microsoft Copilot",
+   "summary": "New integrations bring Salesforce customer context and sales workflows into Microsoft Copilot, enable real-time CRM collaboration in Microsoft Teams, and connect Salesforce Data 360 with Microsoft Fabric through bidirectional zero-copy data access. Accenture is serving as design and implementation partner along with being customer zero, deploying the integrations in its own global sales organization. SAN […]",
+   "lines": [
+    "Salesforce and Microsoft announced Copilotforce, integrations that bring Salesforce customer context and sales workflows into Microsoft Copilot.",
+    "The integrations enable real-time CRM collaboration in Microsoft Teams and connect Salesforce Data 360 with Microsoft Fabric through bidirectional zero-copy data access.",
+    "Accenture is the design and implementation partner and is deploying the integrations in its own global sales organization."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Salesforce Newsroom",
+    "url": "https://www.salesforce.com/news/stories/copilotforce-announcement/"
+   },
+   "sourceId": "salesforce-news",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "d6ddad20",
+   "key": "https://blogs.windows.com/windowsdeveloper/2026/11/17/enterprise-deployment-of-governed-agents-on-windows",
+   "time": "2026-11-17T18:15:01.000Z",
+   "seen": "2026-11-17T19:18:54.800Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Enterprise Deployment of Governed Agents on Windows",
+   "summary": "As AI agents become more capable, they promise substantial productivity gains across enterprise workflows. At the same time, they can collapse familiar execution boundaries and introduce new risk paths—from agent to human, agent to agent, agent to The post Enterprise Deployment of Governed Agents on Windows appeared first on Windows Blog .",
+   "lines": [
+    "Windows Blog published a post on enterprise deployment of governed AI agents on Windows.",
+    "The post says AI agents can bring productivity gains but can also collapse familiar execution boundaries and add new risk paths.",
+    "Relevant for IT teams planning how to govern AI agents across users, other agents, and systems."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Windows Blog",
+    "url": "https://blogs.windows.com/windowsdeveloper/2026/11/17/enterprise-deployment-of-governed-agents-on-windows/"
+   },
+   "sourceId": "windows-blog",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "c2ad633a",
+   "key": "https://workspaceupdates.googleblog.com/2026/11/schedule-more-easily-across-time-zones-with-time-zone-abbreviations-in-Google-Calendar-on-the-web.html",
+   "time": "2026-11-17T16:33:56.278Z",
+   "seen": "2026-11-17T19:18:54.800Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Schedule more easily across time zones with time zone abbreviations in Google Calendar on the web",
+   "summary": "Building on our recent launch allowing you to view up to three time zones in Google Calendar on the web , we’re making cross-time-zone scheduling even clearer by replacing raw GMT+/- offsets (such as GMT-5 or GMT-8) with familiar, locale-aware time zone abbreviations (such as ET, CT, MT, or PT for users in the United States or MEZ in Germany). Previously, unless you manually entered a custom label in Calendar Settings, time zone columns on your calendar grid and guest local times in “Find a time” only showed numeric GMT offsets. Whether you’re an executive assistant coordinating global leadership schedules or a team member booking meetings across regions, you’ll now see recognizable time zon",
+   "lines": [
+    "Google Calendar on the web now shows locale-aware time zone abbreviations, such as ET, CT, MT, or PT for U.S. users and MEZ for users in Germany, instead of GMT offsets.",
+    "Previously, time zone columns and guest local times in Find a time showed only numeric GMT offsets unless a custom label was entered in Calendar Settings.",
+    "This helps users scheduling meetings across regions read time zones more easily."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google Workspace Updates",
+    "url": "http://workspaceupdates.googleblog.com/2026/11/schedule-more-easily-across-time-zones-with-time-zone-abbreviations-in-Google-Calendar-on-the-web.html"
+   },
+   "sourceId": "workspace-updates",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "d20b4438",
+   "key": "https://blog.google/products-and-platforms/products/search/temporary-threads-ai-mode",
+   "time": "2026-11-17T17:00:00.000Z",
+   "seen": "2026-11-17T19:18:54.800Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Temporary threads are now available in AI Mode in Search",
+   "summary": "Google AI Mode now offers temporary threads for private searches. Keep your history clean and avoid personalization. Try this new feature today.",
+   "lines": [
+    "Google added temporary threads to AI Mode in Search for private searches.",
+    "The feature is designed to keep search history clean and avoid personalization."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google: The Keyword",
+    "url": "https://blog.google/products-and-platforms/products/search/temporary-threads-ai-mode/"
+   },
+   "sourceId": "google-keyword",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "82672e42",
+   "key": "https://blog.google/products-and-platforms/platforms/google-pay/wallet-available-ios-united-states",
+   "time": "2026-11-17T17:00:00.000Z",
+   "seen": "2026-11-17T19:18:54.800Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Google Wallet is now available on iOS in the U.S",
+   "summary": "Google Wallet is now available on iOS in the U.S. Manage your tickets, boarding passes, and receipts in one secure hub. Get the details.",
+   "lines": [
+    "Google Wallet is now available on iOS in the U.S.",
+    "Users can manage tickets, boarding passes, and receipts in one place."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google: The Keyword",
+    "url": "https://blog.google/products-and-platforms/platforms/google-pay/wallet-available-ios-united-states/"
+   },
+   "sourceId": "google-keyword",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "230c1b49",
+   "key": "https://blog.google/products-and-platforms/platforms/google-play/best-of-play-awards-2026",
+   "time": "2026-11-17T15:00:00.000Z",
+   "seen": "2026-11-17T19:18:54.800Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Google Play unveils the best apps, games, and books of 2026",
+   "summary": "We’re announcing Google Play’s Best of 2026 awards, celebrating the best apps, games, and books of the year.",
+   "lines": [
+    "Google announced its Best of 2026 awards for Google Play, honoring the best apps, games, and books of the year."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google: The Keyword",
+    "url": "https://blog.google/products-and-platforms/platforms/google-play/best-of-play-awards-2026/"
+   },
+   "sourceId": "google-keyword",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "3101ad96",
+   "key": "https://salesforce.com/news/stories/informatica-trusted-enterprise-data-microsoft-collaboration",
+   "time": "2026-11-17T18:05:00.000Z",
+   "seen": "2026-11-17T19:18:54.800Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Informatica from Salesforce brings Trusted Enterprise Data into Microsoft Copilot, Microsoft Foundry, and Microsoft Fabric to Accelerate AI & Analytics",
+   "summary": "Expanded Microsoft collaboration brings Informatica’s enterprise data intelligence directly into Microsoft Copilot for business users and Microsoft Foundry for AI developers, while strengthening trusted analytics across Microsoft Fabric. Announcement Highlights Informatica, a leader in AI-powered enterprise cloud data management, today announced an expanded collaboration with Microsoft at Microsoft Ignite 2026. The collaboration introduces a Microsoft […]",
+   "lines": [
+    "Informatica from Salesforce announced an expanded collaboration with Microsoft at Microsoft Ignite 2026.",
+    "The collaboration brings Informatica's enterprise data intelligence into Microsoft Copilot for business users and Microsoft Foundry for AI developers, and strengthens trusted analytics across Microsoft Fabric."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Salesforce Newsroom",
+    "url": "https://www.salesforce.com/news/stories/informatica-trusted-enterprise-data-microsoft-collaboration/"
+   },
+   "sourceId": "salesforce-news",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "2433764d",
+   "key": "https://github.blog/changelog/2026-11-17-github-copilot-app-microsoft-ignite-releases",
+   "time": "2026-11-17T18:03:42.000Z",
+   "seen": "2026-11-17T19:18:54.800Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "GitHub Copilot app, Microsoft Ignite releases",
+   "summary": "Copilot is most useful when it can work where you do. The GitHub Copilot app now supports your Azure DevOps repositories, your GitHub Enterprise Server instance, and the browser you’re… The post GitHub Copilot app, Microsoft Ignite releases appeared first on The GitHub Blog .",
+   "lines": [
+    "As part of Microsoft Ignite releases, the GitHub Copilot app now supports Azure DevOps repositories and GitHub Enterprise Server instances.",
+    "Relevant for developer teams that use Azure DevOps or GitHub Enterprise Server alongside Copilot."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "GitHub Changelog",
+    "url": "https://github.blog/changelog/2026-11-17-github-copilot-app-microsoft-ignite-releases"
+   },
+   "sourceId": "github-changelog",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "2e1a1b08",
+   "key": "https://github.blog/changelog/2026-11-17-github-copilot-cli-adds-microsoft-entra-sign-in-as-a-preview",
+   "time": "2026-11-17T18:00:35.000Z",
+   "seen": "2026-11-17T19:18:54.800Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "GitHub Copilot CLI adds Microsoft Entra sign-in as a preview",
+   "summary": "GitHub Copilot CLI now supports Microsoft Entra authentication in public preview. You can sign in with your Microsoft Entra account to silently authenticate to a linked GitHub Enterprise Managed User… The post GitHub Copilot CLI adds Microsoft Entra sign-in as a preview appeared first on The GitHub Blog .",
+   "lines": [
+    "GitHub Copilot CLI now supports Microsoft Entra authentication in public preview.",
+    "Users can sign in with a Microsoft Entra account to silently authenticate to a linked GitHub Enterprise Managed User account.",
+    "For IT teams, this adds a Microsoft Entra sign-in option for Copilot CLI while it is in preview."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "GitHub Changelog",
+    "url": "https://github.blog/changelog/2026-11-17-github-copilot-cli-adds-microsoft-entra-sign-in-as-a-preview"
+   },
+   "sourceId": "github-changelog",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "a27c2c3c",
+   "key": "https://blog.google/company-news/outreach-and-initiatives/grow-with-google/ai-training-state-partnerships",
+   "time": "2026-11-17T17:00:00.000Z",
+   "seen": "2026-11-17T19:18:54.800Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "10 states team up with Google on free AI training",
+   "summary": "Free Google AI training and career certificates are now available across 10 states through local libraries and colleges.",
+   "lines": [
+    "Google is offering free AI training and career certificates across 10 states.",
+    "The training is delivered through local libraries and colleges."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google: The Keyword",
+    "url": "https://blog.google/company-news/outreach-and-initiatives/grow-with-google/ai-training-state-partnerships/"
+   },
+   "sourceId": "google-keyword",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "d33c270e",
+   "key": "https://github.blog/changelog/2026-11-17-github-copilot-fusion-updates-more-availability-benchmarks-and-models",
+   "time": "2026-11-17T18:04:48.000Z",
+   "seen": "2026-11-17T19:18:54.800Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "GitHub Copilot Fusion updates: more availability, benchmarks, and models",
+   "summary": "Today, we’re expanding GitHub Copilot Fusion with new models, available on more Copilot surfaces, and results on two public Terminal-Bench leaderboards, giving you more ways to use Fusion and compare… The post GitHub Copilot Fusion updates: more availability, benchmarks, and models appeared first on The GitHub Blog .",
+   "lines": [
+    "GitHub expanded Copilot Fusion with new models and made it available on more Copilot surfaces.",
+    "GitHub also shared results on two public Terminal-Bench leaderboards."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "GitHub Changelog",
+    "url": "https://github.blog/changelog/2026-11-17-github-copilot-fusion-updates-more-availability-benchmarks-and-models"
+   },
+   "sourceId": "github-changelog",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "6a01448c",
+   "key": "https://github.blog/changelog/2026-11-17-track-copilot-code-review-outcomes-in-repository-insights",
+   "time": "2026-11-17T18:00:35.000Z",
+   "seen": "2026-11-17T19:18:54.800Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Track Copilot code review outcomes in Repository insights",
+   "summary": "You can now see how Copilot code review feedback lands in each repository. A new “Repository insights” page, the first item in a repository’s Insights tab, brings Copilot code review… The post Track Copilot code review outcomes in Repository insights appeared first on The GitHub Blog .",
+   "lines": [
+    "GitHub added a Repository insights page, the first item in a repository's Insights tab.",
+    "The page shows how Copilot code review feedback lands in each repository."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "GitHub Changelog",
+    "url": "https://github.blog/changelog/2026-11-17-track-copilot-code-review-outcomes-in-repository-insights"
+   },
+   "sourceId": "github-changelog",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "f9cc9ec5",
+   "key": "https://blogs.vmware.com/cloud-foundation/2026/11/17/the-gitops-advantage-how-vcf-automation-reduces-ephemeral-environment-toil-by-up-to-80",
+   "time": "2026-11-17T14:00:00.000Z",
+   "seen": "2026-11-17T19:18:54.800Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "The GitOps Advantage: How VCF Automation Reduces Ephemeral Environment Toil by Up to 80%",
+   "summary": "For modern enterprise development teams, release velocity relies heavily on instant access to realistic, production-mirrored environments. Every new feature, platform upgrade, or bug fix requires a secure, isolated space for testing. However, when platform engineers must manually provision, populate, and tear down these ephemeral environments using separate command-line tools, the result is an operational bottleneck. … Continued The post The GitOps Advantage: How VCF Automation Reduces Ephemeral Environment Toil by Up to 80% appeared first on VMware Blogs .",
+   "lines": [
+    "The post says VCF Automation reduces ephemeral environment toil by up to 80% using a GitOps approach.",
+    "The post describes manually provisioning, populating, and tearing down temporary environments with separate command-line tools as an operational bottleneck.",
+    "Relevant for platform engineering teams that provision temporary test environments."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "VMware by Broadcom Blogs",
+    "url": "https://blogs.vmware.com/cloud-foundation/2026/11/17/the-gitops-advantage-how-vcf-automation-reduces-ephemeral-environment-toil-by-up-to-80/"
+   },
+   "sourceId": "vmware-blog",
+   "sourceMax": 4,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "48f7cf5b",
+   "key": "https://cloud.google.com/blog/products/networking/cross-cloud-interconnect-for-microsoft-azure",
+   "time": "2026-11-17T18:35:00.000Z",
+   "seen": "2026-11-17T19:18:54.800Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Simplifying multicloud networking to Azure with partner Cross-Cloud Interconnect",
+   "summary": "As AI changes how businesses build and run applications, more enterprises are spreading their models, data and applications across multiple clouds. To make that work, they need fast, private connections between those environments. Historically, connecting multiple clouds has meant ordering physical connections from each provider, setting up networking on both sides, and coordinating across multiple teams. That process could take weeks or even months. We wanted to make that much simpler. Today, we're extending partner Cross-Cloud Interconnect to Microsoft Azure, now available in preview. The service is jointly supported by Google Cloud and Microsoft, and gives you a private, high-bandwidth co",
+   "lines": [
+    "Google Cloud extended partner Cross-Cloud Interconnect to Microsoft Azure, now available in preview.",
+    "The service is jointly supported by Google Cloud and Microsoft and provides a private, high-bandwidth connection between the clouds.",
+    "Historically, connecting multiple clouds required ordering physical connections from each provider, which could take weeks or months."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google Cloud Blog",
+    "url": "https://cloud.google.com/blog/products/networking/cross-cloud-interconnect-for-microsoft-azure/"
+   },
+   "sourceId": "gcloud-blog",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "e504b85a",
+   "key": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOeVM1bll1SG1zMDVKa0ZTMzhLY29XYmxwaWFnc0h0aVZ4QXNjREtBd0RDa1BXNENFb21PVkZvUllvalFPNmFHS3BQSm5ZU0JQVGxqamNPLTBuc1E5WWYzVksyOVNCS0hEblpzVVNPdllzU29UUmZZMlBpazNqMk5OLTNHdnF3SkEyaGZBX01DZFBxSHhuYm9ZOHliYVQ3MDRJLVBFZ2pBUUNVa3pRUjh2V2poSQ?oc=5",
+   "time": "2026-11-17T18:30:21.000Z",
+   "seen": "2026-11-17T19:18:54.800Z",
+   "kind": "trending",
+   "topic": "ipo",
+   "tier": 2,
+   "trending": true,
+   "trendKey": "ipo:anthropic",
+   "techmeme": false,
+   "headline": "Crypto Losses Pile Up as Retail Traders Prime for Anthropic IPO",
+   "summary": "",
+   "lines": [
+    "Reported by Bloomberg: The headline reports crypto losses piling up as retail traders prepare for an Anthropic IPO.",
+    "Also reported by CNBC, WSJ, and Financial Times."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Bloomberg",
+    "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOeVM1bll1SG1zMDVKa0ZTMzhLY29XYmxwaWFnc0h0aVZ4QXNjREtBd0RDa1BXNENFb21PVkZvUllvalFPNmFHS3BQSm5ZU0JQVGxqamNPLTBuc1E5WWYzVksyOVNCS0hEblpzVVNPdllzU29UUmZZMlBpazNqMk5OLTNHdnF3SkEyaGZBX01DZFBxSHhuYm9ZOHliYVQ3MDRJLVBFZ2pBUUNVa3pRUjh2V2poSQ?oc=5"
+   },
+   "sourceId": "gnews-ipo",
+   "sourceMax": 4,
+   "reported": true,
+   "also": [
+    "CNBC",
+    "WSJ",
+    "Financial Times",
+    "The Information"
+   ],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 13,
+   "story": "trend:ipo:anthropic"
+  },
+  {
+   "id": "0b4fe5e9",
+   "key": "https://bleepingcomputer.com/news/security/researchers-hijack-hugging-face-account-for-popular-kokoro-ai-model",
+   "time": "2026-11-17T18:21:24.000Z",
+   "seen": "2026-11-17T19:18:54.800Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Researchers hijack Hugging Face account for popular Kokoro AI model",
+   "summary": "A Lack of ownership verification on the Hugging Face platform allowed researchers to take control of Kokoro, a text-to-speech model used in projects from Google, NVIDIA, AMD, Intel, and Amazon Web Services. [...]",
+   "lines": [
+    "Reported by BleepingComputer: Researchers took control of the Hugging Face account for Kokoro, a text-to-speech AI model.",
+    "Kokoro is used in projects from Google, NVIDIA, AMD, Intel, and Amazon Web Services, and the takeover was enabled by a lack of ownership verification on the Hugging Face platform.",
+    "Relevant for IT teams that depend on models hosted on Hugging Face, since account ownership verification was the gap."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/researchers-hijack-hugging-face-account-for-popular-kokoro-ai-model/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 9,
+   "story": null
+  },
+  {
+   "id": "05ebd17d",
+   "key": "https://thehackernews.com/2026/11/oracle-to-patch-11-java-flaws-today-as.html",
+   "time": "2026-11-17T15:17:36.000Z",
+   "seen": "2026-11-17T19:18:54.800Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Oracle to Patch 11 Java Flaws Today as Critical OpenJDK RCE (CVE-2026-114938) Report Emerges",
+   "summary": "Oracle is preparing to release security patches for 11 vulnerabilities in Java SE on Tuesday, November 17, 2026, all of which may be exploited remotely without authentication, as separate reports warn of a potentially critical remote code execution (RCE) flaw affecting OpenJDK. The 11 vulnerabilities carry a maximum CVSS 3.1 severity score of 8.1, according to Oracle's advance security notice.",
+   "lines": [
+    "Oracle is preparing to release security patches for 11 vulnerabilities in Java SE on Tuesday, November 17, 2026, all of which may be exploited remotely without authentication, as separate reports warn of a potentially critical remote code execution (RCE) flaw affecting OpenJDK.",
+    "Reported by The Hacker News; not yet confirmed on an official page."
+   ],
+   "linesBy": "template",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/oracle-to-patch-11-java-flaws-today-as.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 8,
+   "story": null
+  },
+  {
+   "id": "1c965a07",
+   "key": "https://techcrunch.com/2026/11/17/apple-services-including-icloud-app-store-and-apple-music-hit-by-outage",
+   "time": "2026-11-17T18:55:40.000Z",
+   "seen": "2026-11-17T19:18:54.800Z",
+   "kind": "outage",
+   "tier": 2,
+   "headline": "Apple services, including iCloud, App Store, and Apple Music, hit by outage",
+   "summary": "Apple's status page confirms its services are facing outages, but has not confirmed the cause.",
+   "lines": [
+    "Apple's status page confirms its services are facing outages, but has not confirmed the cause.",
+    "Reported by TechCrunch; not yet confirmed on an official page."
+   ],
+   "linesBy": "template",
+   "source": {
+    "name": "TechCrunch",
+    "url": "https://techcrunch.com/2026/11/17/apple-services-including-icloud-app-store-and-apple-music-hit-by-outage/"
+   },
+   "sourceId": "techcrunch",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "families": [],
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "4811edc5",
+   "key": "https://engadget.com/2319504/icloud-and-other-apple-services-are-down-in-an-apparent-outage",
+   "time": "2026-11-17T18:15:04.000Z",
+   "seen": "2026-11-17T19:18:54.800Z",
+   "kind": "outage",
+   "tier": 2,
+   "headline": "iCloud and other Apple services are down in an apparent outage",
+   "summary": "The full extent of the disruption isn't known yet.",
+   "lines": [
+    "The full extent of the disruption isn't known yet.",
+    "Reported by Engadget; not yet confirmed on an official page."
+   ],
+   "linesBy": "template",
+   "source": {
+    "name": "Engadget",
+    "url": "https://www.engadget.com/2319504/icloud-and-other-apple-services-are-down-in-an-apparent-outage/"
+   },
+   "sourceId": "engadget",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "families": [],
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "cf62365e",
+   "key": "https://bleepingcomputer.com/news/security/inside-modern-phishing-kits-built-to-steal-microsoft-365-sessions",
+   "time": "2026-11-17T15:01:11.000Z",
+   "seen": "2026-11-17T19:18:54.800Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Inside Modern Phishing Kits Built to Steal Microsoft 365 Sessions",
+   "summary": "Huntress researchers break down how EvilTokens, Knight Office, and Kali365 capture and replay M365 tokens, plus how defenders can detect and contain them. [...]",
+   "lines": [
+    "Huntress researchers break down how EvilTokens, Knight Office, and Kali365 capture and replay M365 tokens, plus how defenders can detect and contain them.",
+    "Reported by BleepingComputer; not yet confirmed on an official page."
+   ],
+   "linesBy": "template",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/inside-modern-phishing-kits-built-to-steal-microsoft-365-sessions/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  }
+ ],
+ "description": "29 technology updates from official sources, updated hourly: Introducing GPT-6.2 Astra and Sol; Crypto Losses Pile Up as Retail Traders Prime for Anthropic IPO; Researchers hijack Hugging Face account for popular Kokoro AI model."
+}
