@@ -1,0 +1,506 @@
+{
+ "date": "2026-11-17",
+ "title": "Tech news today, 17 November 2026",
+ "published": "2026-11-17T01:53:48.910Z",
+ "updated": "2026-11-17T01:53:48.910Z",
+ "items": [
+  {
+   "id": "61cc4914",
+   "key": "https://microsoft.com/en-us/security/blog/2026/11/16/high-volume-phishing-campaign-uses-microsoft-365-outage-lures-target-multiple-industry-sectors-2",
+   "time": "2026-11-17T00:08:41.000Z",
+   "seen": "2026-11-17T01:53:48.910Z",
+   "kind": "outage",
+   "tier": 2,
+   "headline": "High volume phishing campaign uses Microsoft 365 outage lures to target multiple industry sectors",
+   "summary": "Microsoft Threat Intelligence observed a high-volume phishing campaign using Microsoft 365 outage-themed lures to target organizations across multiple sectors worldwide. The post High volume phishing campaign uses Microsoft 365 outage lures to target multiple industry sectors appeared first on Microsoft Security Blog .",
+   "lines": [
+    "Microsoft Threat Intelligence observed a high-volume phishing campaign that uses Microsoft 365 outage-themed lures to target organizations across multiple sectors worldwide.",
+    "IT teams may need to remind users that unexpected outage notices can be phishing lures and should be verified through official channels."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft Security Blog",
+    "url": "https://www.microsoft.com/en-us/security/blog/2026/11/16/high-volume-phishing-campaign-uses-microsoft-365-outage-lures-target-multiple-industry-sectors-2/"
+   },
+   "sourceId": "ms-security-blog",
+   "reported": false,
+   "also": [],
+   "post": "microsoft-365-outage-november-2026-root-cause-it-admin-lessons",
+   "device": null,
+   "ai": null,
+   "families": [
+    "microsoft"
+   ],
+   "score": 10,
+   "story": "outage:microsoft"
+  },
+  {
+   "id": "d9de018a",
+   "key": "https://blogs.windows.com/windows-insider/2026/11/16/announcing-new-builds-for-16-november-2026",
+   "time": "2026-11-16T22:05:37.000Z",
+   "seen": "2026-11-17T01:53:48.910Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Announcing new builds for 16 November 2026",
+   "summary": "Hello Windows Insiders, Today, we’re releasing new Windows 11 Insider Preview builds to the Beta and Experimental channels. New builds this week Select your channel below to view its release notes: Beta: The post Announcing new builds for 16 November 2026 appeared first on Windows Blog .",
+   "lines": [
+    "Microsoft released new Windows 11 Insider Preview builds to the Beta and Experimental channels.",
+    "Windows admins and testers can review the release notes for each channel to evaluate the new builds."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Windows Blog",
+    "url": "https://blogs.windows.com/windows-insider/2026/11/16/announcing-new-builds-for-16-november-2026/"
+   },
+   "sourceId": "windows-blog",
+   "reported": false,
+   "also": [
+    "windows-insider",
+    "GitHub Changelog"
+   ],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 7,
+   "story": null
+  },
+  {
+   "id": "020f7ecf",
+   "key": "https://blog.google/innovation-and-ai/products/gemini-app/regional-voices",
+   "time": "2026-11-16T18:45:00.000Z",
+   "seen": "2026-11-17T01:53:48.910Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Regional voices are rolling out in the Gemini app",
+   "summary": "Gemini now offers 66 regional voices on Android and iOS. Choose a natural, local dialect for your app interactions. Pick your favorite voice today.",
+   "lines": [
+    "Gemini now offers 66 regional voices on Android and iOS.",
+    "Users can choose a natural, local dialect for their app interactions."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google: Gemini app blog",
+    "url": "https://blog.google/innovation-and-ai/products/gemini-app/regional-voices/"
+   },
+   "sourceId": "gemini-blog",
+   "reported": false,
+   "also": [
+    "google-keyword"
+   ],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 7,
+   "story": null
+  },
+  {
+   "id": "31128e62",
+   "key": "https://workspaceupdates.googleblog.com/2026/11/share-skills-add-files-from-Drive-Notebook-Photos-to-skills-Gemini-app.html",
+   "time": "2026-11-16T21:25:28.725Z",
+   "seen": "2026-11-17T01:53:48.910Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Share skills and add files from Google Drive, Gemini Notebook and Google Photos to your skills in the Gemini app",
+   "summary": "We recently launched skills—reusable, custom instructions that guide Gemini—in the Gemini app, and we’re now introducing two additional capabilities: Shareable skills: You can now share any skill from the “Skills” page in the Gemini app with others and choose to grant them View or Edit permissions. Recipients are notified by email and can review the skill before installing it. Once added, Gemini can use the skill automatically when it's relevant, or recipients can @mention it in a chat. Add files from other Google apps: When you manually create or upload a skill, you can now include files from Google Drive, Gemini Notebook, and Google Photos alongside files from your device. Gemini can then",
+   "lines": [
+    "Google added shareable skills to the Gemini app, letting users share any skill with others and grant View or Edit permissions.",
+    "Recipients receive an email notice and can review a skill before installing it.",
+    "Users can now include files from Google Drive, Gemini Notebook and Google Photos when creating or uploading a skill."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google Workspace Updates",
+    "url": "http://workspaceupdates.googleblog.com/2026/11/share-skills-add-files-from-Drive-Notebook-Photos-to-skills-Gemini-app.html"
+   },
+   "sourceId": "workspace-updates",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null
+  },
+  {
+   "id": "94a60e29",
+   "key": "https://about.fb.com/news/2026/11/introducing-direct-an-app-just-for-messaging",
+   "time": "2026-11-17T01:00:48.000Z",
+   "seen": "2026-11-17T01:53:48.910Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Introducing Direct: An App Just for Messaging",
+   "summary": "Today, we're introducing Direct, a new messaging app brought to you by Instagram for chatting one-on-one or in groups with friends and family. The post Introducing Direct: An App Just for Messaging appeared first on Meta Newsroom .",
+   "lines": [
+    "Meta introduced Direct, a new messaging app from Instagram for one-on-one or group chats with friends and family.",
+    "The app is a standalone option for messaging separate from the Instagram app."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Meta Newsroom",
+    "url": "https://about.fb.com/news/2026/11/introducing-direct-an-app-just-for-messaging/"
+   },
+   "sourceId": "meta-newsroom",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "6bf10cbf",
+   "key": "https://github.blog/changelog/2026-11-16-budget-limit-increased-to-40000-budgets-per-account",
+   "time": "2026-11-16T21:30:49.000Z",
+   "seen": "2026-11-17T01:53:48.910Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Budget limit increased to 40,000 budgets per account",
+   "summary": "You can now create up to 40,000 budgets per GitHub Enterprise Cloud account, up from 10,000. If you set budgets for individual users, or manage budgets across many cost centers… The post Budget limit increased to 40,000 budgets per account appeared first on The GitHub Blog .",
+   "lines": [
+    "GitHub Enterprise Cloud accounts can now create up to 40,000 budgets per account, up from 10,000.",
+    "The higher limit gives teams that set per-user budgets or manage many cost centers more room."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "GitHub Changelog",
+    "url": "https://github.blog/changelog/2026-11-16-budget-limit-increased-to-40000-budgets-per-account"
+   },
+   "sourceId": "github-changelog",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "298ed6d2",
+   "key": "https://github.blog/changelog/2026-11-16-control-where-github-copilot-customizations-come-from",
+   "time": "2026-11-16T19:48:33.000Z",
+   "seen": "2026-11-17T01:53:48.910Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Control where GitHub Copilot customizations come from",
+   "summary": "As an enterprise administrator, you can now require selected GitHub Copilot customizations to come from plugins or managed settings, rather than standalone user or project configuration. Combined with marketplace restrictions,… The post Control where GitHub Copilot customizations come from appeared first on The GitHub Blog .",
+   "lines": [
+    "Enterprise administrators can now require selected GitHub Copilot customizations to come from plugins or managed settings.",
+    "The requirement applies instead of standalone user or project configuration and can be combined with marketplace restrictions.",
+    "Admins gain more control over where Copilot customizations originate."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "GitHub Changelog",
+    "url": "https://github.blog/changelog/2026-11-16-control-where-github-copilot-customizations-come-from"
+   },
+   "sourceId": "github-changelog",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "0e49bcf6",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/ebs-snapshots-associate-kms-keys",
+   "time": "2026-11-16T22:00:00.000Z",
+   "seen": "2026-11-17T01:53:48.910Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Amazon EBS now supports associating additional KMS keys with snapshots",
+   "summary": "Amazon Elastic Block Store (EBS) now supports associating additional AWS Key Management Service (KMS) keys with EBS snapshots. This new capability enables you to share and copy encrypted snapshots across accounts without first re-encrypting them, simplifying your disaster recovery and backup workflows. Customers use EBS snapshots as durable, point-in-time backups of EBS volumes. By associating an additional customer-managed KMS key (CMK) with a snapshot encrypted with an AWS managed key (AMK), for example, you enable cross-account sharing for that snapshot without re-encrypting its data. This feature accelerates your disaster recovery workflows and enhances operational efficiency for enterpr",
+   "lines": [
+    "Amazon EBS now supports associating additional AWS KMS keys with EBS snapshots.",
+    "The change lets customers share and copy encrypted snapshots across accounts without first re-encrypting them.",
+    "The capability can simplify disaster recovery and backup workflows."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/ebs-snapshots-associate-kms-keys/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "ad1562f3",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-devops-agent-govcloud-west",
+   "time": "2026-11-16T19:55:00.000Z",
+   "seen": "2026-11-17T01:53:48.910Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "AWS DevOps Agent is now available in AWS GovCloud (US-West)",
+   "summary": "Now available in AWS GovCloud (US-West), AWS DevOps Agent is your always-available operations teammate that resolves and proactively prevents incidents, optimizes application reliability and performance, and handles on-demand SRE tasks across AWS, multicloud, and on-prem environments. DevOps Agent investigates incidents and identifies operational improvements as an experienced teammate would: by learning your applications and their relationships, working with your observability tools, runbooks, code repositories, and CI/CD pipelines, and correlating telemetry, code, and deployment data. It autonomously triages incidents and guides teams to rapid resolution, reducing mean time to resolution (",
+   "lines": [
+    "AWS DevOps Agent is now available in AWS GovCloud (US-West).",
+    "Availability: AWS GovCloud (US-West).",
+    "The agent triages incidents across AWS, multicloud and on-prem environments, which may help GovCloud operations teams reduce resolution times."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-devops-agent-govcloud-west/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "888279f7",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-connect-health-medical-coding",
+   "time": "2026-11-16T19:18:00.000Z",
+   "seen": "2026-11-17T01:53:48.910Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Amazon Connect Health medical coding is now available in public preview",
+   "summary": "Today, AWS announces the public preview of medical coding in Amazon Connect Health , a HIPAA-eligible AI service that works alongside healthcare teams across patient engagement and point-of-care workflows. Medical coding uses existing clinical documentation to suggest ICD-10-CM and CPT codes, including E&M levels and modifiers, for a provider or coder to review and approve before submission. You can integrate medical coding into your EHR or billing application through the Amazon Connect Health SDK, or use it with Amazon Connect Health ambient documentation. Each code links to the evidence that supports it and carries a confidence score, so reviewers can confirm a code before a claim goes out",
+   "lines": [
+    "AWS announced the public preview of medical coding in Amazon Connect Health, a HIPAA-eligible AI service.",
+    "Medical coding suggests ICD-10-CM and CPT codes from clinical documentation for a provider or coder to review and approve before submission.",
+    "Health IT and billing teams can integrate it into an EHR or billing application through the Amazon Connect Health SDK."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-connect-health-medical-coding/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "9562f451",
+   "key": "https://apnews.com/article/bank-outage-chase-wells-fargo-truist-50fee2693c22f597fa6ca51a97ef2cda",
+   "time": "2026-11-16T20:20:02.000Z",
+   "seen": "2026-11-17T01:53:48.910Z",
+   "kind": "outage",
+   "topic": "infra-outage",
+   "tier": 2,
+   "trending": true,
+   "trendKey": "infra-outage:banking",
+   "techmeme": true,
+   "headline": "Bank of America, Chase, Wells Fargo, and other US bank customers report online service issues; Chase blames a technical issue, not a cyber issue, for the delays",
+   "summary": "Customers reported difficulty accessing the online accounts at some major banks Monday. Bank of America, Chase, U.S. Bank …",
+   "lines": [
+    "Reported by AP: Bank of America, Chase, Wells Fargo, and other US bank customers report online service issues; Chase blames a technical issue, not a cyber issue, for the delays.",
+    "Customers reported difficulty accessing the online accounts at some major banks Monday.",
+    "Also reported by Wired."
+   ],
+   "linesBy": "template",
+   "source": {
+    "name": "AP",
+    "url": "https://apnews.com/article/bank-outage-chase-wells-fargo-truist-50fee2693c22f597fa6ca51a97ef2cda"
+   },
+   "sourceId": "techmeme",
+   "sourceMax": 4,
+   "reported": true,
+   "also": [
+    "Wired"
+   ],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 13,
+   "story": "trend:infra-outage:banking",
+   "linesNote": "name not in the headline: U.S. Bank."
+  },
+  {
+   "id": "06fc487d",
+   "key": "https://bleepingcomputer.com/news/security/google-project-zero-cuts-bug-disclosure-deadline-to-30-days-amid-ai-threats",
+   "time": "2026-11-16T21:31:44.000Z",
+   "seen": "2026-11-17T01:53:48.910Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Google Project Zero cuts bug disclosures to 30 days amid AI threats",
+   "summary": "Google Project Zero will replace its \"90+30\" disclosure policy with shorter, fixed deadlines in response to AI-accelerated vulnerability discovery and exploitation. [...]",
+   "lines": [
+    "Reported by BleepingComputer: Google Project Zero will replace its \"90+30\" disclosure policy with shorter, fixed deadlines.",
+    "The change responds to AI-accelerated vulnerability discovery and exploitation.",
+    "Security teams may need to plan for faster patching of vulnerabilities disclosed under the new deadlines."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/google-project-zero-cuts-bug-disclosure-deadline-to-30-days-amid-ai-threats/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 9,
+   "story": null
+  },
+  {
+   "id": "00e62b3e",
+   "key": "https://theverge.com/transportation/1035025/united-airlines-outage-down-departures",
+   "time": "2026-11-16T22:54:59.000Z",
+   "seen": "2026-11-17T01:53:48.910Z",
+   "kind": "outage",
+   "tier": 2,
+   "headline": "United Airlines system outage disrupts departures just days after the big ground stop",
+   "summary": "Less than a week after an issue with air traffic control communications and radar caused the FAA to halt takeoffs nationwide, United Airlines departing flights are being disrupted by an outage. At 6:13PM ET, United said the problem has been fixed: Earlier today we experienced a technology-related issue that impacted some departing flights. The issue […]",
+   "lines": [
+    "Reported by The Verge: Less than a week after an air traffic control communications and radar issue led the FAA to halt takeoffs nationwide, United Airlines said a technology-related issue disrupted some departing flights.",
+    "At 6:13PM ET, United said the problem had been fixed.",
+    "Business travelers and teams planning trips may face schedule changes during such disruptions."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Verge",
+    "url": "https://www.theverge.com/transportation/1035025/united-airlines-outage-down-departures"
+   },
+   "sourceId": "the-verge",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "families": [],
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "0e3ffef3",
+   "key": "https://techcrunch.com/2026/11/16/cyber-giant-infoblox-confirms-security-incident-after-hackers-access-company-information",
+   "time": "2026-11-16T22:12:31.000Z",
+   "seen": "2026-11-17T01:53:48.910Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Cyber giant Infoblox confirms security incident after hackers access ‘company information’",
+   "summary": "The cybersecurity and automation giant said it's working with outside investigators to understand the scale of the breach.",
+   "lines": [
+    "Reported by TechCrunch: Infoblox confirmed a security incident after hackers accessed company information.",
+    "The cybersecurity and automation company said it is working with outside investigators to understand the scale of the breach.",
+    "Customers and IT teams that use Infoblox products may want to watch for vendor updates on the incident."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "TechCrunch",
+    "url": "https://techcrunch.com/2026/11/16/cyber-giant-infoblox-confirms-security-incident-after-hackers-access-company-information/"
+   },
+   "sourceId": "techcrunch",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "925f67eb",
+   "key": "https://techcrunch.com/2026/11/16/uber-confirms-hackers-stole-thousands-of-drivers-license-information-in-data-breach",
+   "time": "2026-11-16T19:53:00.000Z",
+   "seen": "2026-11-17T01:53:48.910Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Uber says hackers stole information on close to 150,000 driver’s licenses during data breach",
+   "summary": "The ride-sharing giant said driver's license information stored by AI cloud company Fireworks AI was stolen during a security incident.",
+   "lines": [
+    "Reported by TechCrunch: Uber said hackers stole information on close to 150,000 driver's licenses during a data breach.",
+    "The driver's license information was stored by AI cloud company Fireworks AI and was stolen during a security incident.",
+    "Business users who share driver records with third-party vendors may want to review how those vendors handle data."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "TechCrunch",
+    "url": "https://techcrunch.com/2026/11/16/uber-confirms-hackers-stole-thousands-of-drivers-license-information-in-data-breach/"
+   },
+   "sourceId": "techcrunch",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "01005dc9",
+   "key": "https://engadget.com/2318613/united-airlines-is-experiencing-a-widespread-system-outage",
+   "time": "2026-11-16T22:38:43.000Z",
+   "seen": "2026-11-17T01:53:48.910Z",
+   "kind": "outage",
+   "tier": 2,
+   "headline": "United Airlines has fixed issue that caused 'widespread system outage'",
+   "summary": "United is apparently experiencing a major outage just days after a nationwide ground stop halted thousands of flights.",
+   "lines": [
+    "Reported by Engadget: United Airlines said it fixed an issue that caused a widespread system outage.",
+    "The outage came just days after a nationwide ground stop halted thousands of flights."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Engadget",
+    "url": "https://www.engadget.com/2318613/united-airlines-is-experiencing-a-widespread-system-outage/"
+   },
+   "sourceId": "engadget",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "families": [],
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "915d5958",
+   "key": "https://bleepingcomputer.com/news/security/barracuda-links-cloud-breach-to-artex-ai-powered-cyberattack",
+   "time": "2026-11-16T19:57:13.000Z",
+   "seen": "2026-11-17T01:53:48.910Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Barracuda links cloud breach to ARTEX AI-powered cyberattack",
+   "summary": "Hackers who breached the cloud environment of network and email security company Barracuda earlier this month used a stolen cloud access key and the ARTEX AI penetration testing framework. [...]",
+   "lines": [
+    "Reported by BleepingComputer: Hackers who breached the cloud environment of network and email security company Barracuda earlier this month used a stolen cloud access key.",
+    "The attackers also used the ARTEX AI penetration testing framework, and the breach has been linked to an ARTEX AI-powered cyberattack.",
+    "Admins who use Barracuda cloud services may want to review access keys and related credentials."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/barracuda-links-cloud-breach-to-artex-ai-powered-cyberattack/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  }
+ ],
+ "description": "17 technology updates from official sources, updated hourly: Bank of America, Chase, Wells Fargo, and other US bank customers report online service issues; Chase blames a technical issue, not a cyber issue, for the delays; High volume phishing campaign uses Microsoft 365 outage lures to target multi"
+}
