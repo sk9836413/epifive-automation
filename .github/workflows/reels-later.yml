@@ -1,0 +1,126 @@
+# PROPOSED workflow for sk9836413/epifive-automation (.github/workflows/reels-later.yml). Not installed: adding it was
+# blocked by the permission check, so the owner installs it: copy it to E:\epifive-automation\.github\workflows\,
+# commit and push, then `gh variable set REELS_LATER --body on -R sk9836413/epifive-automation`.
+#
+# Posts the day's ENGLISH Instagram Reel hours after the Hinglish one (owner, 16 Nov 2026: "facebook me 2 no version
+# rakho, instagram me bhi"). social.yml publishes the Hinglish Reel at once (Indian evening), schedules the English
+# YouTube Short and Facebook Reel natively, and queues the English Instagram Reel in reels/queue.jsonl when the
+# repository variable REELS_LATER is "on" (Instagram's API has no scheduling). This workflow posts it once it is due
+# (default 00:30 UTC = 7:30 PM New York) from the share run's artifact through the Graph API
+# (scripts/social/meta-post.mjs --only ig). Log: reels/log.md (read by the comment-reply job). An item more than 20 hours
+# late expires; a failure is retried up to 3 times.
+#
+# When: no Cloudflare cron. It runs after each Launch radar run and on its own GitHub schedule around the English slot;
+# GitHub drops many scheduled runs, so there are several chances. A run with nothing due ends in seconds.
+name: Reels later
+
+on:
+  workflow_run:
+    workflows: [Launch radar]
+    types: [completed]
+  schedule:
+    - cron: '35,50 0 * * *'
+    - cron: '5,20,35,50 1,2,3 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Download and check the due Reel, post nothing and change nothing
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: reels-later
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Anything due?
+        id: due
+        run: |
+          mkdir -p reels
+          it=$(node reels/queue.mjs due --file reels/queue.jsonl)
+          echo "$it"
+          get() { node -e 'const v = JSON.parse(process.argv[1])[process.argv[2]]; process.stdout.write(v == null ? "" : String(v))' "$it" "$1"; }
+          { echo "slug=$(get slug)"; echo "run=$(get run)"; echo "artifact=$(get artifact)"; } >> "$GITHUB_OUTPUT"
+          git diff --quiet -- reels/queue.jsonl || echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Download the share's media
+        id: media
+        if: steps.due.outputs.slug != ''
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ steps.due.outputs.artifact }}
+          run-id: ${{ steps.due.outputs.run }}
+          github-token: ${{ github.token }}
+          path: reel
+
+      - uses: actions/checkout@v4
+        if: steps.due.outputs.slug != ''
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+          path: site
+          sparse-checkout: |
+            scripts/social
+            package.json
+            package-lock.json
+
+      - uses: actions/setup-node@v4
+        if: steps.due.outputs.slug != ''
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      # The Graph API token only reaches this step and is never printed (public logs).
+      - name: Post the English Instagram Reel
+        id: post
+        if: steps.due.outputs.slug != ''
+        env:
+          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+          META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          COMMENT_FUNNEL_IG: ${{ vars.COMMENT_FUNNEL_IG }}
+          SLUG: ${{ steps.due.outputs.slug }}
+          DRY: ${{ inputs.dry_run && 'true' || 'false' }}
+        run: |
+          result="$RUNNER_TEMP/ig-en.json"
+          if [ "${{ steps.media.outcome }}" != success ] || [ ! -s reel/reel.mp4 ] || [ ! -s reel/instagram.txt ]; then
+            echo '{"status":"error","error":"share artifact or its reel.mp4/instagram.txt is missing"}' > "$result"
+          else
+            (cd site && npm ci --no-audit --no-fund --ignore-scripts > /dev/null)
+            set -- --slug "$SLUG" --video ../reel/reel.mp4 --ig ../reel/instagram.txt --only ig
+            [ "$DRY" = true ] && set -- "$@" --dry-run
+            (cd site && node scripts/social/meta-post.mjs "$@") > "$result" || echo "::warning::The English Instagram Reel failed; see the result."
+          fi
+          cat "$result" | tee -a "$GITHUB_STEP_SUMMARY"
+          echo "result=$result" >> "$GITHUB_OUTPUT"
+
+      - name: Record and push
+        if: always() && !inputs.dry_run && (steps.due.outputs.changed == 'true' || steps.due.outputs.slug != '')
+        env:
+          SLUG: ${{ steps.due.outputs.slug }}
+          RESULT: ${{ steps.post.outputs.result }}
+        run: |
+          if [ -n "$SLUG" ]; then
+            if [ -z "$RESULT" ] || [ ! -s "$RESULT" ]; then RESULT="$RUNNER_TEMP/none.json"; echo '{"status":"error","error":"no result"}' > "$RESULT"; fi
+            node reels/queue.mjs done --file reels/queue.jsonl --slug "$SLUG" --result "$RESULT" --log reels/log.md | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reels
+          git diff --cached --quiet && exit 0
+          git commit -qm "Reels later: ${SLUG:-queue update} $(date -u '+%F %H:%M') UTC"
+          for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep 5; done
