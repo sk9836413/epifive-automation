@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-18T05:13:16.901Z",
+ "lastScan": "2026-11-18T09:14:28.189Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -12996,6 +12996,39 @@
    ],
    "status": "below",
    "hash": "40307e05"
+  },
+  "https://zoho.com/blog/marketplace/app-spotlight-springverify-for-zoho-recruit.html": {
+   "title": "App Spotlight: SpringVerify for Zoho Recruit",
+   "link": "https://www.zoho.com/blog/marketplace/app-spotlight-springverify-for-zoho-recruit.html",
+   "source": "zoho-blog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-17T16:30:49.000Z",
+   "updated": null,
+   "summary": "Streamline employee background verification within Zoho Recruit with AI-powered document categorization, automated data retrieval, and real-time status updates to reduce manual effort and accelerate hiring.Get the extensionBusiness needsHiring teams running background checks (BGV) outside Zoho Recru",
+   "first": "2026-11-18T09:14:28.189Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "f843795f"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63994": {
+   "title": "91-Day, 182-Day and 364-Day T-Bill Auction Result: Cut-off",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63994",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-18T13:25:00.000Z",
+   "updated": null,
+   "summary": "T-Bill 91-Day 182-Day 364-Day I. Total Face Value Notified ₹8,000 Crore ₹8,000 Crore ₹7,000 Crore II. Cut-off Price (₹) and Implicit Yield at Cut-Off Price 98.5600 (YTM: 5.8602%) 96.8466 (YTM: 6.5300%) 93.7982 (YTM: 6.6300%) III. Total Face Value Accepted ₹8,000 Crore ₹8,000 Crore ₹7,000 Crore Ajit ",
+   "first": "2026-11-18T09:14:28.189Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"₹8\""
+   ],
+   "status": "below",
+   "hash": "e139aa73"
   }
  },
  "devices": {}

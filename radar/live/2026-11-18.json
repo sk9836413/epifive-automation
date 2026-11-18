@@ -2,7 +2,7 @@
  "date": "2026-11-18",
  "title": "Tech news today, 18 November 2026",
  "published": "2026-11-17T19:18:54.800Z",
- "updated": "2026-11-18T04:43:52.127Z",
+ "updated": "2026-11-18T09:14:28.189Z",
  "items": [
   {
    "id": "289cf95a",
@@ -1617,7 +1617,154 @@
    "ai": null,
    "score": 5,
    "story": null
+  },
+  {
+   "id": "8b08e394",
+   "key": "https://gsmarena.com/motorola_starts_teasing_the_edge_70_neo_hints_at_when_it_will_be_announced-news-75516.php",
+   "time": "2026-11-18T07:50:02.000Z",
+   "seen": "2026-11-18T09:14:28.189Z",
+   "kind": "device",
+   "tier": 2,
+   "headline": "Motorola starts teasing the Edge 70 Neo, hints at when it will be announced",
+   "summary": "Motorola has put up a teaser page on Flipkart for the Motorola Edge 70 Neo in India. The company will officially launch the phone on November 24 - next Tuesday. The images on the page show the phone in a sage-like hue, with a raised rounded-square camera island on the back and a curved display with a centered punch-hole up front. The camera ring reads \"50MP\", \"Ultra HDR\", \"OIS\", and \"Lytia\". Motorola is also highlighting AI photo editing done just by asking, with \"add butterfly on shoulder\" as the example prompt. Motorola Edge 70 Neo teaser images That 50MP marking matches a...",
+   "lines": [
+    "Reported by GSMArena news: Motorola has put up a teaser page on Flipkart for the Motorola Edge 70 Neo in India.",
+    "The company will officially launch the phone on November 24.",
+    "Teaser images show a sage-like hue and a camera ring reading 50MP, Ultra HDR, OIS and Lytia, plus AI photo editing by text prompt.",
+    "The launch date and listed features may help teams planning device purchases or upgrades."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "GSMArena news",
+    "url": "https://www.gsmarena.com/motorola_starts_teasing_the_edge_70_neo_hints_at_when_it_will_be_announced-news-75516.php"
+   },
+   "sourceId": "gsmarena-news",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": {
+    "model": "Motorola Edge 70",
+    "brand": "Motorola",
+    "category": "phone",
+    "key": "motorola edge 70"
+   },
+   "ai": null,
+   "score": 7,
+   "story": "device:motorola edge 70"
+  },
+  {
+   "id": "ff7d0c3c",
+   "key": "https://bleepingcomputer.com/news/security/british-scattered-spider-hacker-sentenced-to-6-years-in-prison",
+   "time": "2026-11-18T08:24:18.000Z",
+   "seen": "2026-11-18T09:14:28.189Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "British Scattered Spider hacker sentenced to 6 years in prison",
+   "summary": "A leader of the Scattered Spider cybercrime collective has been sentenced to six years in prison in the United States for stealing millions in cryptocurrency and conspiring to hack a dozen companies. [...]",
+   "lines": [
+    "Reported by BleepingComputer: A leader of the Scattered Spider cybercrime collective was sentenced to six years in prison in the United States.",
+    "The sentence covers stealing millions in cryptocurrency and conspiring to hack a dozen companies.",
+    "The case highlights ongoing threats from organized cybercrime groups that target companies and their digital assets."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/british-scattered-spider-hacker-sentenced-to-6-years-in-prison/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "2c8379ce",
+   "key": "https://thehackernews.com/2026/11/attackers-compromise-microsofts-agent.html",
+   "time": "2026-11-18T06:45:26.000Z",
+   "seen": "2026-11-18T09:14:28.189Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Attackers Compromise Microsoft's Agent Framework PyPI Package to Steal Cloud Credentials",
+   "summary": "Threat actors have compromised Microsoft's agent-framework package to push a credential stealer, according to reports from Aikido, Chainguard, Endor Labs, OX Security, SafeDep, Socket, StepSecurity, and Google-owned Wiz. The malicious versions, 1.26.1 and 1.26.2, were published 33 minutes apart on November 17, 2026, and are designed to run a credential stealer on every Python start. As of",
+   "lines": [
+    "Reported by The Hacker News: Threat actors compromised Microsoft's agent-framework package on PyPI to push a credential stealer.",
+    "The malicious versions 1.26.1 and 1.26.2 were published 33 minutes apart on November 17, 2026.",
+    "The code is designed to run the credential stealer on every Python start, so teams using this package may want to check installed versions."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/attackers-compromise-microsofts-agent.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "fe7d0879",
+   "key": "https://thehackernews.com/2026/11/russian-cold-relic-hackers-use-stolen.html",
+   "time": "2026-11-18T05:58:04.000Z",
+   "seen": "2026-11-18T09:14:28.189Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Russian COLD RELIC Hackers Use Stolen Google Workspace Data to Breach Second U.S. Organization",
+   "summary": "The Russia-linked cyber espionage group known as Cold Relic (formerly COLDRIVER and UNC4057) has been observed weaponizing a single cloud compromise into a launchpad for a series of linked intrusions resulting in third-party compromise. Google's Mandiant and Threat Intelligence Group (GTIG) said it investigated a 2026 compromise at a U.S.-based organization in which the adversary leveraged",
+   "lines": [
+    "Reported by The Hacker News: The Russia-linked espionage group Cold Relic used stolen Google Workspace data to breach a second U.S. organization.",
+    "Google's Mandiant and GTIG investigated a 2026 compromise at a U.S.-based organization that was used as a launchpad for linked intrusions.",
+    "The campaign shows how a single cloud compromise can lead to third-party compromise, so teams should review cloud access and data exposure."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/russian-cold-relic-hackers-use-stolen.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "63fcfcb1",
+   "key": "https://thehackernews.com/2026/11/java4shell-cve-2026-114938-enables-pre.html",
+   "time": "2026-11-18T04:27:41.000Z",
+   "seen": "2026-11-18T09:14:28.189Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Java4Shell Flaw (CVE-2026-114938) Enables Pre-Auth RCE in Jira, Jenkins, Keycloak and More",
+   "summary": "A Java flaw called Java4Shell can let attackers without an account run their own code on Jira, Jenkins, Keycloak, and three other widely used applications, says Calif, the security research firm that disclosed it this week. The flaw is present in Java 17.0.6 and later, and the vulnerable code runs only on x86-64 Intel and AMD chips that support the AVX-512 VBMI feature. Tracked as",
+   "lines": [
+    "Reported by The Hacker News: Calif disclosed a Java flaw called Java4Shell that can let attackers without an account run code on Jira, Jenkins, Keycloak and three other widely used applications.",
+    "The flaw is present in Java 17.0.6 and later, and the vulnerable code runs only on x86-64 Intel and AMD chips that support the AVX-512 VBMI feature.",
+    "Admins running these applications on affected Java versions and hardware should review their exposure to this pre-authentication flaw."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/java4shell-cve-2026-114938-enables-pre.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
   }
  ],
- "description": "55 technology updates from official sources, updated hourly: Introducing GPT-6.2 Astra and Sol; Interim Nvidia CEO Says It’s No Longer Sending AI Chips to China; Crypto Losses Pile Up as Retail Traders Prime for Anthropic IPO."
+ "description": "60 technology updates from official sources, updated hourly: Introducing GPT-6.2 Astra and Sol; Interim Nvidia CEO Says It’s No Longer Sending AI Chips to China; Crypto Losses Pile Up as Retail Traders Prime for Anthropic IPO."
 }
