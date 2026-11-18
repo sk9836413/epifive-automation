@@ -2,7 +2,7 @@
  "date": "2026-11-18",
  "title": "Tech news today, 18 November 2026",
  "published": "2026-11-17T19:18:54.800Z",
- "updated": "2026-11-18T13:16:59.819Z",
+ "updated": "2026-11-18T14:16:39.425Z",
  "items": [
   {
    "id": "289cf95a",
@@ -1959,7 +1959,35 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "80cead10",
+   "key": "https://about.fb.com/news/2026/11/meta-welcomes-loblaw-as-first-canadian-retail-partner-to-muse",
+   "time": "2026-11-18T14:07:00.000Z",
+   "seen": "2026-11-18T14:16:39.425Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Meta Welcomes Loblaw as First Canadian Retail Partner to Muse",
+   "summary": "Starting today, Loblaw is bringing its catalogue to Muse as a partner connector, the first Canadian retailer to do so. Connectors are a big reason Muse can do so much. Canadians can connect their Muse to apps they already use, including Gmail, Google Calendar and Instagram, so it can help them manage email, coordinate schedules and draw on saved content to get everyday tasks done. With participating Loblaw banners, Canadian shoppers can now ask Muse to help with meal planning, build their basket and check-out, all in Muse. Muse can remember brand preferences and information like food allergies, making next week’s planning even easier. Making this technology work for everyone requires careful",
+   "lines": [
+    "Meta announced that Loblaw is the first Canadian retailer to join Muse as a partner connector, starting with its catalogue.",
+    "Canadian users can connect Muse to apps such as Gmail, Google Calendar and Instagram. With participating Loblaw banners, shoppers can ask Muse for meal planning, basket building and check-out.",
+    "For IT teams and business users, connectors let Muse work with email, calendars and saved content, and retail tasks can be handled inside the same app."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Meta Newsroom: AI (Llama, Meta AI)",
+    "url": "https://about.fb.com/news/2026/11/meta-welcomes-loblaw-as-first-canadian-retail-partner-to-muse/"
+   },
+   "sourceId": "meta-ai-tag",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
   }
  ],
- "description": "67 technology updates from official sources, updated hourly: Introducing GPT-6.2 Astra and Sol; Interim Nvidia CEO Says It’s No Longer Sending AI Chips to China; Crypto Losses Pile Up as Retail Traders Prime for Anthropic IPO."
+ "description": "68 technology updates from official sources, updated hourly: Introducing GPT-6.2 Astra and Sol; Interim Nvidia CEO Says It’s No Longer Sending AI Chips to China; Crypto Losses Pile Up as Retail Traders Prime for Anthropic IPO."
 }

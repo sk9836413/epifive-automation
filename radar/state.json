@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-18T13:16:59.819Z",
+ "lastScan": "2026-11-18T14:16:39.425Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -13235,6 +13235,211 @@
    ],
    "status": "below",
    "hash": "d97441d2"
+  },
+  "https://apple.com/newsroom/2026/11/meet-the-2026-app-store-award-finalists": {
+   "title": "Meet the 2026 App Store Award finalists",
+   "link": "https://www.apple.com/newsroom/2026/11/meet-the-2026-app-store-award-finalists/",
+   "source": "apple-newsroom",
+   "topic": "mobiles",
+   "category": "launch",
+   "date": "2026-11-18T13:59:20.769Z",
+   "updated": "2026-11-18T13:59:20.769Z",
+   "summary": "Apple announced the finalists for the 2026 App Store Awards, recognizing 45 developers from around the world for exceptional apps and games.",
+   "first": "2026-11-18T14:16:39.425Z",
+   "score": -2,
+   "reasons": [
+    "+1 source apple-newsroom",
+    "-3 corporate/announcement \"Award\""
+   ],
+   "status": "below",
+   "hash": "ba64d79a"
+  },
+  "https://blog.google/innovation-and-ai/technology/safety-security/cybersecurity-tips": {
+   "title": "Cybersecurity tips and tools to keep you safe online",
+   "link": "https://blog.google/innovation-and-ai/technology/safety-security/cybersecurity-tips/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-18T14:00:00.000Z",
+   "updated": null,
+   "summary": "Explore this collection to see how Google’s cybersecurity tips and tools can keep your accounts and information safe.",
+   "first": "2026-11-18T14:16:39.425Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "387335e2"
+  },
+  "https://blog.google/products/marketingplatform/360/google-marketing-platform-drop-november": {
+   "title": "Drive your best ROI reaching new holiday shoppers with November’s Google Marketing Platform Drop.",
+   "link": "https://blog.google/products/marketingplatform/360/google-marketing-platform-drop-november/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-18T14:00:00.000Z",
+   "updated": null,
+   "summary": "Boost holiday ROI with November 2026 Google Marketing Platform updates, including Spotify audiences, Pinterest inventory, and Loblaw integration. Get the details.",
+   "first": "2026-11-18T14:16:39.425Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "437ab7d4"
+  },
+  "https://about.fb.com/news/2026/11/meta-welcomes-loblaw-as-first-canadian-retail-partner-to-muse": {
+   "title": "Meta Welcomes Loblaw as First Canadian Retail Partner to Muse",
+   "link": "https://about.fb.com/news/2026/11/meta-welcomes-loblaw-as-first-canadian-retail-partner-to-muse/",
+   "source": "meta-ai-tag",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-18T14:07:00.000Z",
+   "updated": null,
+   "summary": "Starting today, Loblaw is bringing its catalogue to Muse as a partner connector, the first Canadian retailer to do so. Connectors are a big reason Muse can do so much. Canadians can connect their Muse to apps they already use, including Gmail, Google Calendar and Instagram, so it can help them manag",
+   "first": "2026-11-18T14:16:39.425Z",
+   "score": 5,
+   "reasons": [
+    "+3 niche (gmail, instagram)",
+    "+2 launch \"Starting today\""
+   ],
+   "status": "below",
+   "hash": "aedc8863"
+  },
+  "https://news.samsung.com/in/galaxy-a57-5g-and-a37-5g-give-young-users-ai-tools-for-photo-editing-productivity-and-social-media": {
+   "title": "Galaxy A57 5G and A37 5G Give Young Users AI Tools for Photo-Editing, Productivity and Social Media",
+   "link": "https://news.samsung.com/in/galaxy-a57-5g-and-a37-5g-give-young-users-ai-tools-for-photo-editing-productivity-and-social-media",
+   "source": "samsung-india",
+   "topic": "mobiles",
+   "category": "launch",
+   "date": "2026-11-18T16:45:44.000Z",
+   "updated": null,
+   "summary": "Samsung’s Galaxy A57 5G and Galaxy A37 5G are smartphones built for young users who prioritise photography, performance, AI-enabled everyday features and durability. Built for millennials and Gen Z consumers who rely on their phones for content creation, social media and entertainment, the devices b",
+   "first": "2026-11-18T14:16:39.425Z",
+   "score": 1,
+   "reasons": [
+    "+1 niche (galaxy)"
+   ],
+   "status": "below",
+   "hash": "b924e65e"
+  },
+  "https://news.lenovo.com/bring-sovereign-secure-ai-to-where-your-business-runs": {
+   "title": "Bring sovereign, secure AI to where your business runs",
+   "link": "https://news.lenovo.com/bring-sovereign-secure-ai-to-where-your-business-runs/",
+   "source": "lenovo-news",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-18T14:00:12.000Z",
+   "updated": null,
+   "summary": "New Lenovo Hybrid AI Factory solutions with Microsoft enable enterprises to design, deploy, and sustain sovereign AI environments",
+   "first": "2026-11-18T14:16:39.425Z",
+   "score": 2,
+   "reasons": [
+    "+2 user steps \"enable\""
+   ],
+   "status": "below",
+   "hash": "cb9124e7"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63997": {
+   "title": "RBI to conduct Overnight Variable Rate Reverse Repo (VRRR) auction under LAF on November 19, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63997",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-18T19:00:00.000Z",
+   "updated": null,
+   "summary": "On a review of current and evolving liquidity conditions, it has been decided to conduct a Variable Rate Reverse Repo (VRRR) auction on Thursday, November 19, 2026, as under: Sl. No. Notified Amount (₹ crore) Tenor (day) Window Timing Date of Reversal 1 50,000 1 10:30 AM to 11:00 AM November 20, 202",
+   "first": "2026-11-18T14:16:39.425Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "13ef30e7"
+  },
+  "https://blogs.nvidia.com/blog/rtx-spark-desktop-local-ai-available-now": {
+   "title": "NVIDIA RTX Spark Compact Desktops Out Now",
+   "link": "https://blogs.nvidia.com/blog/rtx-spark-desktop-local-ai-available-now/",
+   "source": "nvidia-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-18T14:00:31.000Z",
+   "updated": null,
+   "summary": "New NVIDIA RTX Spark compact desktops from ASUS, Dell and MSI are available today, bringing local AI agents, image and video generation, and model fine-tuning to a dedicated Windows PC. With up to 128GB of unified memory and NVIDIA’s AI software stack, these systems provide room for larger local mod",
+   "first": "2026-11-18T14:16:39.425Z",
+   "score": 3,
+   "reasons": [
+    "-1 source nvidia-news",
+    "+2 niche (windows, agents)",
+    "+2 launch \"available today\""
+   ],
+   "status": "below",
+   "hash": "6ae78c63"
+  },
+  "https://dell.com/en-us/blog/bringing-enterprise-ai-closer-to-your-data": {
+   "title": "Bringing Enterprise AI Closer to Your Data",
+   "link": "https://www.dell.com/en-us/blog/bringing-enterprise-ai-closer-to-your-data",
+   "source": "dell-blog",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-18T14:00:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-18T14:16:39.425Z",
+   "score": -1,
+   "reasons": [
+    "-1 source dell-blog"
+   ],
+   "status": "below",
+   "hash": "4aea8c0"
+  },
+  "https://dell.com/en-us/blog/enterprise-power-without-enterprise-sprawl": {
+   "title": "Enterprise Power Without Enterprise Sprawl",
+   "link": "https://www.dell.com/en-us/blog/enterprise-power-without-enterprise-sprawl",
+   "source": "dell-blog",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-18T14:00:00.000Z",
+   "updated": null,
+   "summary": "Run demanding AI workloads across distributed sites with Dell Distributed Private Cloud. Discover zero-touch provisioning and flexible hardware options.",
+   "first": "2026-11-18T14:16:39.425Z",
+   "score": -1,
+   "reasons": [
+    "-1 source dell-blog"
+   ],
+   "status": "below",
+   "hash": "8edaa039"
+  },
+  "https://docker.com/blog/agentic-ai-security-docker-governance": {
+   "title": "The Trust Layer: Securing Agentic AI with Docker AI Governance",
+   "link": "https://www.docker.com/blog/agentic-ai-security-docker-governance/",
+   "source": "docker-blog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-18T14:00:00.000Z",
+   "updated": null,
+   "summary": "Learn how Docker AI Governance secures agentic AI with sandbox policies, MCP tool governance, and audit visibility to support controlled AI agent workflows.",
+   "first": "2026-11-18T14:16:39.425Z",
+   "score": 0,
+   "reasons": [
+    "-1 source docker-blog",
+    "+1 niche (agent)"
+   ],
+   "status": "below",
+   "hash": "881d87a1"
+  },
+  "https://salesforce.com/blog/small-business/ai-governance-best-practices": {
+   "title": "AI Governance On Your List of Things to Learn? SMBs — Read This First",
+   "link": "https://www.salesforce.com/blog/small-business/ai-governance-best-practices/",
+   "source": "salesforce-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-18T14:00:00.000Z",
+   "updated": null,
+   "summary": "Let’s talk about governing our AI, shall we?",
+   "first": "2026-11-18T14:16:39.425Z",
+   "score": -1,
+   "reasons": [
+    "-1 source salesforce-blog"
+   ],
+   "status": "below",
+   "hash": "7a9c1890"
   }
  },
  "devices": {}
