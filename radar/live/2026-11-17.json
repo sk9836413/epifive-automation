@@ -2,7 +2,7 @@
  "date": "2026-11-17",
  "title": "Tech news today, 17 November 2026",
  "published": "2026-11-17T01:53:48.910Z",
- "updated": "2026-11-17T19:18:54.800Z",
+ "updated": "2026-11-18T01:40:12.745Z",
  "items": [
   {
    "id": "61cc4914",
@@ -542,7 +542,7 @@
    "time": "2026-11-16T22:20:58.000Z",
    "seen": "2026-11-17T04:43:45.167Z",
    "kind": "retirement",
-   "tier": 2,
+   "tier": 1,
    "headline": "MC1556088: Microsoft Teams: End of support for iOS 17 and iPadOS 17",
    "summary": "Microsoft Teams will end support for iOS 17 and iPadOS 17 starting mid-December 2026, requiring iOS/iPadOS 18 or later for new releases. Existing versions will keep working without support. Organizations should notify users, encourage OS upgrades, update policies, and revise support documentation accordingly.",
    "lines": [
@@ -1078,5 +1078,5 @@
    "story": null
   }
  ],
- "description": "37 technology updates from official sources, updated hourly: Bank of America, Chase, Wells Fargo, and other US bank customers report online service issues; Chase blames a technical issue, not a cyber issue, for the delays; Hijacked Optimizely Scripts Served Card Skimmer and iOS Exploit Kits to CNN, "
+ "description": "37 technology updates from official sources, updated hourly: MC1556088: Microsoft Teams: End of support for iOS 17 and iPadOS 17; Bank of America, Chase, Wells Fargo, and other US bank customers report online service issues; Chase blames a technical issue, not a cyber issue, for the delays; Hijacked"
 }

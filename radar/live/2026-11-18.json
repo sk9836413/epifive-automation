@@ -2,7 +2,7 @@
  "date": "2026-11-18",
  "title": "Tech news today, 18 November 2026",
  "published": "2026-11-17T19:18:54.800Z",
- "updated": "2026-11-17T19:18:54.800Z",
+ "updated": "2026-11-18T01:40:12.745Z",
  "items": [
   {
    "id": "289cf95a",
@@ -27,9 +27,10 @@
    "reported": false,
    "also": [
     "techmeme",
-    "AWS What's New"
+    "AWS What's New",
+    "GitHub Changelog"
    ],
-   "post": null,
+   "post": "gpt-6-2-astra-sol-api-pricing-limits",
    "device": null,
    "ai": {
     "model": "GPT-6.2",
@@ -847,7 +848,744 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "f8d20e2a",
+   "key": "https://workspaceupdates.googleblog.com/2026/11/gemini-powered-data-classification-in-Google-Drive-is-now-generally-available.html",
+   "time": "2026-11-17T22:00:35.941Z",
+   "seen": "2026-11-18T01:40:12.745Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Gemini-powered data classification in Google Drive is now generally available",
+   "summary": "Gemini-powered AI classification in Google Drive is now generally available. Following our open beta , administrators can now deploy natural-language classification instructions at scale with two new capabilities designed to provide admins a better understanding of automated data classification for their files: Test your instructions: Before deploying the new instructions, admins can test and refine Gemini instructions directly in the Admin console to preview which label Gemini will apply to files. Real-time reporting: Admins can monitor near real-time metrics on the files that AI classification has labeled. On the model details page, admins can view the number of labeled files, user accepta",
+   "lines": [
+    "Google launched general availability of Gemini-powered AI classification in Google Drive, following an open beta.",
+    "Admins can deploy natural-language classification instructions at scale and test them in the Admin console to preview which label Gemini will apply to files.",
+    "Real-time reporting on the model details page shows metrics on files that AI classification has labeled, giving admins more visibility into automated classification."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google Workspace Updates",
+    "url": "http://workspaceupdates.googleblog.com/2026/11/gemini-powered-data-classification-in-Google-Drive-is-now-generally-available.html"
+   },
+   "sourceId": "workspace-updates",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null
+  },
+  {
+   "id": "460dc176",
+   "key": "https://blog.google/products-and-platforms/products/gemini/gemini-4-carbon-builders",
+   "time": "2026-11-17T21:00:00.000Z",
+   "seen": "2026-11-18T01:40:12.745Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "See what 5 builders are making with Gemini 4 Carbon",
+   "summary": "See how five developers use Google Gemini 4 Carbon to build complex physics simulations, 3D designs, and data tools. Explore these projects now. Nov 17, 2026 x.com Facebook LinkedIn Mail Copy link These ambitious real-world projects simulate live physics, untangle messy data, turn a single reference image into a 3D design, and more. Kimberly Fusaro Contributor x.com Facebook LinkedIn Mail Copy link Your browser does not support the audio element. We are seeing developers use Gemini 4 Carbon to build complex simulations, interactive data tools, and detailed virtual environments. This model helps you reason deeply and perform extended verification tasks for your most demanding projects. You ca",
+   "lines": [
+    "Google published examples of five developers using Gemini 4 Carbon to build physics simulations, 3D designs, and data tools.",
+    "The projects simulate live physics, untangle messy data, and turn a single reference image into a 3D design.",
+    "The examples show practical uses of the model for demanding projects that require extended reasoning and verification."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google: Gemini app blog",
+    "url": "https://blog.google/products-and-platforms/products/gemini/gemini-4-carbon-builders/"
+   },
+   "sourceId": "gemini-blog",
+   "reported": false,
+   "also": [
+    "google-keyword"
+   ],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "2fc99add",
+   "key": "https://techcommunity.microsoft.com/t5/microsoft-365-blog/multi-tenant-management-tenants-agents-and-ai-spend-in-one-place/ba-p/4573372",
+   "time": "2026-11-17T18:40:48.000Z",
+   "seen": "2026-11-18T01:40:12.745Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Multi-tenant management: Tenants, agents, and AI spend in one place",
+   "summary": "As AI adoption accelerates, enterprises and managed service providers are managing more Microsoft 365 tenants across subsidiaries, regions, business units, and customers, each with its own configurations, policies, and agents. Every added tenant multiplies the work: repeated deployments and configuration changes slow service delivery, inconsistent policies make security and compliance harder to maintain, and Copilot and AI agents add new demands for governing availability, usage, and AI spend. For partners, this can limit efficient service scaling across customers; for enterprises, it complicates consistent governance while preserving each business unit’s operational independence. A unified",
+   "lines": [
+    "The Microsoft 365 Blog describes multi-tenant management that brings tenants, agents, and AI spend into one place.",
+    "Managing many tenants adds repeated deployments, inconsistent policies, and new demands from Copilot and AI agents for governing availability, usage, and AI spend.",
+    "The post notes this can limit service scaling for partners and complicate consistent governance for enterprises."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Tech Community: Microsoft 365 Blog",
+    "url": "https://techcommunity.microsoft.com/t5/microsoft-365-blog/multi-tenant-management-tenants-agents-and-ai-spend-in-one-place/ba-p/4573372"
+   },
+   "sourceId": "tc-m365",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "d0c345c5",
+   "key": "https://mc.merill.net/message/MC1519871",
+   "time": "2026-11-17T20:17:06.000Z",
+   "seen": "2026-11-18T01:40:12.745Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1519871: Copilot Code is rolling out in Frontier",
+   "summary": "Copilot Code is expanding in the Frontier program to mobile (iOS/Android) and Mac, with local Sandbox now available on Windows. It supports cloud and optional local coding sessions, usage-based billing, and GitHub Copilot CLI sign-in via Microsoft 365 accounts. Admins must configure licenses, spending policies, and deployment settings.",
+   "lines": [
+    "Copilot Code is expanding in the Frontier program to mobile (iOS and Android) and Mac, and local Sandbox is now available on Windows.",
+    "It supports cloud and optional local coding sessions, usage-based billing, and GitHub Copilot CLI sign-in with Microsoft 365 accounts.",
+    "Admins must configure licenses, spending policies, and deployment settings."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1519871"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "a59a8b60",
+   "key": "https://mc.merill.net/message/MC1557759",
+   "time": "2026-11-17T19:12:58.000Z",
+   "seen": "2026-11-18T01:40:12.745Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1557759: Microsoft 365 Copilot: Use case classification for agent sessions and Copilot Cowork (Frontier public preview)",
+   "summary": "Microsoft 365 Copilot introduces use case classification for agent sessions and Copilot Cowork activity in public preview starting mid-November 2026. Enabled by default for eligible Frontier tenants, it helps analyze AI usage and optimize investments. Admins can manage classification and AI value settings, with user opt-out options available.",
+   "lines": [
+    "Microsoft 365 Copilot introduces use case classification for agent sessions and Copilot Cowork activity in public preview starting mid-November 2026.",
+    "It is enabled by default for eligible Frontier tenants and helps analyze AI usage and optimize investments.",
+    "Admins can manage classification and AI value settings, and users have opt-out options."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1557759"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "71bb6cb1",
+   "key": "https://azure.microsoft.com/updates?id=579349",
+   "time": "2026-11-17T21:57:41.000Z",
+   "seen": "2026-11-18T01:40:12.745Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "[Launched] Generally Available: Near-instant provisioning for Azure DocumentDB clusters",
+   "summary": "Now the M10 to M30 computer tiers are available for near-instant provisioning. Historically, the free tier in Azure DocumentDB was made available for instant provisioning. The goal was to help you get started without having to wait for 10-15 minutes for",
+   "lines": [
+    "Azure Updates reports that near-instant provisioning for Azure DocumentDB clusters is generally available, now for the M10 to M30 compute tiers.",
+    "Historically, only the free tier in Azure DocumentDB was made available for instant provisioning.",
+    "The goal is to help users get started without waiting 10 to 15 minutes."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Azure Updates",
+    "url": "https://azure.microsoft.com/updates?id=579349"
+   },
+   "sourceId": "azure-updates",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "b30bccd8",
+   "key": "https://azure.microsoft.com/updates?id=579665",
+   "time": "2026-11-17T20:00:32.000Z",
+   "seen": "2026-11-18T01:40:12.745Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "[In preview] Public Preview: Azure SQL Database container provisioning in SQL Server Management Studio",
+   "summary": "Now in public preview, you can provision an Azure SQL Database development environment in seconds directly from SQL Server Management Studio (SSMS), with no Azure subscription, credit card, or existing database required.Azure SQL Database container brings",
+   "lines": [
+    "Azure SQL Database container provisioning is in public preview in SQL Server Management Studio (SSMS).",
+    "Users can provision an Azure SQL Database development environment in seconds directly from SSMS.",
+    "No Azure subscription, credit card, or existing database is required."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Azure Updates",
+    "url": "https://azure.microsoft.com/updates?id=579665"
+   },
+   "sourceId": "azure-updates",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "c144cb52",
+   "key": "https://azure.microsoft.com/updates?id=578611",
+   "time": "2026-11-17T20:00:32.000Z",
+   "seen": "2026-11-18T01:40:12.745Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "[In preview] Public Preview: Azure Network Watcher – Auto-create connection monitor",
+   "summary": "Auto-create connection monitor introduces a new, faster way to set up network monitoring across an entire Azure subscription. Until now, connection monitor tests were created one connection at a time, with each region, source, destination, test configurat",
+   "lines": [
+    "Azure Network Watcher now offers auto-create connection monitor in public preview.",
+    "It sets up network monitoring across an entire Azure subscription, replacing the earlier process of creating connection monitor tests one connection at a time.",
+    "IT teams can set up network monitoring across subscriptions with less manual configuration."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Azure Updates",
+    "url": "https://azure.microsoft.com/updates?id=578611"
+   },
+   "sourceId": "azure-updates",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "fe7c20bc",
+   "key": "https://azure.microsoft.com/updates?id=577515",
+   "time": "2026-11-17T20:00:32.000Z",
+   "seen": "2026-11-18T01:40:12.745Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "[In preview] Public Preview: Azure Database for MySQL on Premium SSD v2",
+   "summary": "Azure Database for MySQL now supports Premium SSD v2 (managed disks) in public preview. Premium SSD v2 provides higher performance and better price-performance compared to Premium File Share, with the flexibility to independently scale storage capacity, I",
+   "lines": [
+    "Azure Database for MySQL now supports Premium SSD v2 managed disks in public preview.",
+    "Premium SSD v2 offers higher performance and better price-performance than Premium File Share.",
+    "It allows storage capacity to be scaled independently."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Azure Updates",
+    "url": "https://azure.microsoft.com/updates?id=577515"
+   },
+   "sourceId": "azure-updates",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "70a290de",
+   "key": "https://mc.merill.net/message/MC1557973",
+   "time": "2026-11-17T22:10:07.000Z",
+   "seen": "2026-11-18T01:40:12.745Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1557973: New and upcoming Windows security and management capabilities",
+   "summary": "What and whyAt Microsoft Ignite 2026, Microsoft announced new and upcoming Windows capabilities across security, device and application management, recovery, and agent management. The announcements include developments in four key areas: Windows management: Updates to Windows Autopatch, application management, device health monitoring, and recovery. Additional developments include server management coming to Microsoft Intune with Windows Server 2028, the evolution of Windows declarative manageme...",
+   "lines": [
+    "At Microsoft Ignite 2026, Microsoft announced new and upcoming Windows capabilities for security, device and application management, recovery, and agent management.",
+    "Windows management updates include Windows Autopatch, application management, device health monitoring, and recovery.",
+    "Server management is coming to Microsoft Intune with Windows Server 2028."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1557973"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "22930162",
+   "key": "https://mc.merill.net/message/MC1557766",
+   "time": "2026-11-17T19:15:23.000Z",
+   "seen": "2026-11-18T01:40:12.745Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1557766: Microsoft Viva: Introducing Interactive Insights in the A365 Business Analytics app",
+   "summary": "Microsoft Viva introduces Interactive Insights in Agent 365 Business Analytics, enabling eligible users to explore AI adoption and usage via natural-language queries without manual reporting. Rolling out from November 2026 to April 2027, it respects existing data permissions and offers AI-powered summaries and visualizations within authorized scopes.",
+   "lines": [
+    "Microsoft Viva introduces Interactive Insights in Agent 365 Business Analytics.",
+    "Eligible users can explore AI adoption and usage with natural-language queries instead of manual reporting.",
+    "Rollout runs from November 2026 to April 2027, and the feature respects existing data permissions."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1557766"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "2092fe3c",
+   "key": "https://mc.merill.net/message/MC1557764",
+   "time": "2026-11-17T19:14:43.000Z",
+   "seen": "2026-11-18T01:40:12.745Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1557764: Microsoft Agent 365 Business Analytics: Introducing Access Management",
+   "summary": "Access Management for Agent 365 Business Analytics centralizes role and permission assignments for admins, combining permission sets and data partitions into access policies. It simplifies management, supports existing roles, and syncs delegation access. Rollout begins January 2027. Admins should review current settings and prepare for policy setup.",
+   "lines": [
+    "Access Management for Microsoft Agent 365 Business Analytics centralizes role and permission assignments for admins.",
+    "It combines permission sets and data partitions into access policies, supports existing roles, and syncs delegation access.",
+    "Rollout begins January 2027, and admins should review current settings and prepare for policy setup."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1557764"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "11db9078",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-emr-8.2",
+   "time": "2026-11-17T22:25:00.000Z",
+   "seen": "2026-11-18T01:40:12.745Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Amazon EMR 8.2 is now available",
+   "summary": "Amazon EMR 8.2 is now available with new features across Amazon EMR on EC2, Amazon EMR on EKS, and Amazon EMR Serverless. This release upgrades Apache Spark to 4.1.3, Apache Iceberg to 1.11.0, and Delta Lake to 4.2.0, and it is designated a Long Term Support (LTS) release. This release makes it easier to run secure, governed analytics at scale — you can now write to the same Delta Lake table on Amazon S3 from multiple clusters concurrently, refresh Iceberg materialized views incrementally, and propagate end-user identity from Spark jobs and interactive sessions all the way to AWS Lake Formation and Amazon S3 so access is authorized and audited as the original user. Amazon EMR 8.2 expands gov",
+   "lines": [
+    "Amazon EMR 8.2 is now available across Amazon EMR on EC2, Amazon EMR on EKS, and Amazon EMR Serverless.",
+    "The release upgrades Apache Spark to 4.1.3, Apache Iceberg to 1.11.0, and Delta Lake to 4.2.0, and is designated a Long Term Support (LTS) release.",
+    "New capabilities include concurrent writes to the same Delta Lake table on Amazon S3 from multiple clusters, incremental refresh of Iceberg materialized views, and end-user identity propagation to AWS Lake Formation and Amazon S3.",
+    "The release supports governed analytics at scale, with access authorized and audited as the original user."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-emr-8.2/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "9b745864",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ec2-c8gn",
+   "time": "2026-11-17T22:00:00.000Z",
+   "seen": "2026-11-18T01:40:12.745Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Amazon EC2 C8gn instances are now available in AWS Israel (Tel Aviv) region",
+   "summary": "Starting today, Amazon Elastic Compute Cloud (Amazon EC2) C8gn instances, powered by the latest-generation AWS Graviton4 processors, are available in the AWS Israel (Tel Aviv) region. The C8gn instances provide up to 30% better compute performance than Graviton3-based Amazon EC2 C7gn instances. Amazon EC2 C8gn instances feature the latest 6th generation AWS Nitro Cards, and offer up to 600 Gbps network bandwidth, the highest network bandwidth among network optimized EC2 instances. Take advantage of the enhanced networking capabilities of C8gn to scale performance and throughput, while optimizing the cost of running network-intensive workloads such as network virtual appliances, data analytic",
+   "lines": [
+    "Amazon EC2 C8gn instances, powered by AWS Graviton4 processors, are now available in the AWS Israel (Tel Aviv) region.",
+    "The instances provide up to 30% better compute performance than Graviton3-based Amazon EC2 C7gn instances and up to 600 Gbps network bandwidth.",
+    "They use 6th generation AWS Nitro Cards and target network-intensive workloads such as network virtual appliances."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ec2-c8gn/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "e495e202",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/global-authentication-amazon-ecr",
+   "time": "2026-11-17T21:37:00.000Z",
+   "seen": "2026-11-18T01:40:12.745Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Amazon ECR now supports global authentication tokens for private registries",
+   "summary": "Amazon Elastic Container Registry (Amazon ECR) now supports global authentication tokens for private registries. Previously, you needed to request a separate authentication token in each AWS Region where you push or pull container images. Now, you can request a single token from the AWS Sign-In CreateBearerToken API and use it across all ECR private registries in the same AWS partition. Teams that run proxy services to route container pulls across Regions, a common pattern for optimizing latency or availability, previously had to request, refresh, and coordinate a separate token for every Region behind the proxy. With global tokens, the proxy manages one token for all Regions in the AWS part",
+   "lines": [
+    "Amazon ECR now supports global authentication tokens for private registries.",
+    "A single token can be requested from the AWS Sign-In CreateBearerToken API and used across all ECR private registries in the same AWS partition.",
+    "Previously, a separate token was needed in each AWS Region where images were pushed or pulled, which complicated proxy services that route pulls across Regions."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/global-authentication-amazon-ecr"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "076792c3",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-bedrock-agentcore-memory-10-year-retention",
+   "time": "2026-11-17T19:22:00.000Z",
+   "seen": "2026-11-18T01:40:12.745Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Amazon Bedrock AgentCore Memory now supports short-term memory retention of up to 10 years",
+   "summary": "Amazon Bedrock AgentCore Memory now lets you keep short-term memory events for up to 10 years, up from one year. Developers can now use short-term memory as a long-lived record of agent conversations and interactions. This helps when that history needs to stay available for a long time, such as for compliance and audit, for users who come back after months away, or for agents that need to look back at past sessions. You set retention on the memory resource, and it's applied to each event when the event is created, so existing events keep their original retention. Standard short-term memory storage charges apply for as long as you keep the data. This feature is available in all AWS Regions wh",
+   "lines": [
+    "Amazon Bedrock AgentCore Memory now lets users keep short-term memory events for up to 10 years, up from one year.",
+    "Retention is set on the memory resource and applied to each event when it is created, so existing events keep their original retention.",
+    "Standard short-term memory storage charges apply for as long as the data is kept, which helps with compliance, audit, and agents that review past sessions."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-bedrock-agentcore-memory-10-year-retention"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "6d013a61",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-ai-data-prep-capabilities",
+   "time": "2026-11-17T19:00:00.000Z",
+   "seen": "2026-11-18T01:40:12.745Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Amazon SageMaker now supports AI data preparation capabilities to build high-quality datasets for model development",
+   "summary": "Building high-quality training datasets has traditionally required weeks of manual labeling and data cleaning. Amazon SageMaker now offers AI data preparation capabilities that help data scientists and ML engineers build high-quality training and evaluation datasets for both text-based model customization and traditional ML. Teams can generate synthetic examples grounded in their own documents, auto-label records at scale with confidence scores, incorporate expert feedback through human review, evaluate data quality, and transform data for their chosen training or evaluation technique. Synthetic data generation creates training, evaluation, and test data from a specification grounded in your",
+   "lines": [
+    "Amazon SageMaker now offers AI data preparation capabilities to build training and evaluation datasets for text-based model customization and traditional ML.",
+    "Capabilities include synthetic examples grounded in your own documents, auto-labeling with confidence scores, human review, and data quality evaluation.",
+    "The feature targets the manual labeling and data cleaning work that has traditionally taken weeks."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-ai-data-prep-capabilities/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "87bb549d",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/dynamodb-caching-elasticache",
+   "time": "2026-11-17T18:54:00.000Z",
+   "seen": "2026-11-18T01:40:12.745Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Amazon DynamoDB caching is now available with Amazon ElastiCache Serverless for Valkey",
+   "summary": "Today, AWS announces the general availability of DynamoDB caching with Amazon ElastiCache Serverless for Valkey, enabling sub-millisecond read latency for frequently accessed DynamoDB data. Previously, if you required faster reads than DynamoDB's single-digit millisecond latency, you had to manually manage cache infrastructure or keep a separate cache in sync. Now you can access DynamoDB table data from a write-through cache that updates as data changes and automatically scales to meet changing workload demands. DynamoDB caching requires no application logic changes and minimal configuration. You choose which DynamoDB tables and APIs to cache and how long to retain cached data. Your applicat",
+   "lines": [
+    "AWS announced general availability of DynamoDB caching with Amazon ElastiCache Serverless for Valkey.",
+    "It provides sub-millisecond read latency for frequently accessed DynamoDB data through a write-through cache that scales automatically.",
+    "No application logic changes are required, and users choose which tables and APIs to cache and how long to retain cached data."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/dynamodb-caching-elasticache/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "8454b9ec",
+   "key": "https://azure.microsoft.com/updates?id=581503",
+   "time": "2026-11-18T00:00:09.000Z",
+   "seen": "2026-11-18T01:40:12.745Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "[In preview] Public Preview: Immutable snapshots for Azure Disk Storage",
+   "summary": "Immutable snapshots for Azure Disk Storage are now available in public preview. Immutable snapshots complement Azure Backup immutable vaults. Use vaults for cost-efficient long-term retention, and immutable snapshots for short-term backups that need faste",
+   "lines": [
+    "Immutable snapshots for Azure Disk Storage are now available in public preview.",
+    "They complement Azure Backup immutable vaults, which are used for cost-efficient long-term retention.",
+    "Immutable snapshots are intended for short-term backups."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Azure Updates",
+    "url": "https://azure.microsoft.com/updates?id=581503"
+   },
+   "sourceId": "azure-updates",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "160ac48b",
+   "key": "https://azure.microsoft.com/updates?id=581227",
+   "time": "2026-11-18T00:00:09.000Z",
+   "seen": "2026-11-18T01:40:12.745Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Azure Boost observability for NVMe disks",
+   "summary": "Azure Boost observability for NVMe disks is an open-source command-line tool that you run inside compatible Azure VMs. Backed by Azure Boost, the tool provides remote disk I/O and latency metrics and maps each disk inside your VM to the corresponding disk",
+   "lines": [
+    "Azure Boost observability for NVMe disks is an open-source command-line tool that you run inside compatible Azure VMs."
+   ],
+   "linesBy": "template",
+   "source": {
+    "name": "Azure Updates",
+    "url": "https://azure.microsoft.com/updates?id=581227"
+   },
+   "sourceId": "azure-updates",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null,
+   "linesNote": "first person: Backed by Azure Boost, the tool provides remote disk I/O and"
+  },
+  {
+   "id": "71d8d44b",
+   "key": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQVk5ZV2dpR3EyVEtJcVdSZTBCVGl6UE1qZ1gzNWdiaHJ3WGR1S3NUd2VRcWVzUWhjanFicXVzNi1zRWZNel9EdlVOaC1uMUFCckRXMkRGWkRZeHdZUnE4VTdtUkZ2N0dITkRYa040X29HanoxODdGVXV3NzEyOGhnR1VOb2VwcFNIcHFJQlFrNXM3T1hqQlN5WnB0MHJTU0R2cTZOUnBNbV9Ubm81clFKM0x5cHRxdw?oc=5",
+   "time": "2026-11-18T00:09:00.000Z",
+   "seen": "2026-11-18T01:40:12.745Z",
+   "kind": "trending",
+   "topic": "leadership",
+   "tier": 2,
+   "trending": true,
+   "trendKey": "leadership:nvidia",
+   "techmeme": true,
+   "headline": "Interim Nvidia CEO Says It’s No Longer Sending AI Chips to China",
+   "summary": "",
+   "lines": [
+    "Reported by Bloomberg: The interim Nvidia CEO said the company is no longer sending AI chips to China."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Bloomberg",
+    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQVk5ZV2dpR3EyVEtJcVdSZTBCVGl6UE1qZ1gzNWdiaHJ3WGR1S3NUd2VRcWVzUWhjanFicXVzNi1zRWZNel9EdlVOaC1uMUFCckRXMkRGWkRZeHdZUnE4VTdtUkZ2N0dITkRYa040X29HanoxODdGVXV3NzEyOGhnR1VOb2VwcFNIcHFJQlFrNXM3T1hqQlN5WnB0MHJTU0R2cTZOUnBNbV9Ubm81clFKM0x5cHRxdw?oc=5"
+   },
+   "sourceId": "gnews-leadership",
+   "sourceMax": 4,
+   "reported": true,
+   "also": [
+    "CNBC",
+    "Financial Times",
+    "Axios"
+   ],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 14,
+   "story": "trend:leadership:nvidia"
+  },
+  {
+   "id": "706845ff",
+   "key": "https://nytimes.com/2026/11/17/us/politics/ai-security-bug-java.html?unlocked_article_code=1.RFE.J4uR.JL0Qv-280ALN",
+   "time": "2026-11-17T21:20:04.000Z",
+   "seen": "2026-11-18T01:40:12.745Z",
+   "kind": "ai-model",
+   "topic": "milestone",
+   "tier": 2,
+   "trending": true,
+   "trendKey": "milestone:oracle",
+   "techmeme": true,
+   "headline": "Cybersecurity startup Calif says it used GPT-6 Cyber to uncover an RCE flaw in Java dubbed \"Java4Shell\"; Oracle has released a patch",
+   "summary": "The discovery by security company Calif shows A.I.'s ability to find gaping security holes in popular software.",
+   "lines": [
+    "Reported by The New York Times: Cybersecurity startup Calif says it used GPT-6 Cyber to uncover an RCE flaw in Java, dubbed Java4Shell.",
+    "Oracle has released a patch for the flaw.",
+    "The discovery shows AI's ability to find security holes in popular software."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/17/us/politics/ai-security-bug-java.html?unlocked_article_code=1.RFE.J4uR.JL0Qv-280ALN"
+   },
+   "sourceId": "techmeme",
+   "sourceMax": 4,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": {
+    "model": "GPT-6",
+    "kind": "release"
+   },
+   "score": 10,
+   "story": "ai:gpt-6:release"
+  },
+  {
+   "id": "47c88ae7",
+   "key": "https://techcrunch.com/2026/11/17/google-joins-the-tech-outage-trend-by-announcing-its-not-having-one",
+   "time": "2026-11-17T21:34:50.000Z",
+   "seen": "2026-11-18T01:40:12.745Z",
+   "kind": "outage",
+   "tier": 2,
+   "headline": "Google joins the tech outage trend by announcing it’s not having one",
+   "summary": "With tech outages seemingly everywhere, Google took the unusual step of announcing that Gmail is working just fine, actually.",
+   "lines": [
+    "Reported by TechCrunch: Google announced that Gmail is working normally at a time when tech outages are being widely reported.",
+    "The announcement was an unusual step for Google during this period of outages."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "TechCrunch",
+    "url": "https://techcrunch.com/2026/11/17/google-joins-the-tech-outage-trend-by-announcing-its-not-having-one/"
+   },
+   "sourceId": "techcrunch",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "families": [
+    "google"
+   ],
+   "score": 7,
+   "story": "outage:google"
+  },
+  {
+   "id": "fed3c6e2",
+   "key": "https://thehackernews.com/2026/11/researchers-claim-two-rce-exploits-that.html",
+   "time": "2026-11-17T19:34:20.000Z",
+   "seen": "2026-11-18T01:40:12.745Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Researchers Claim Two RCE Exploits That Bypass Telegram’s New Android Defenses",
+   "summary": "A malicious widget can bypass the security filter that Telegram added to its Android app last week and run code outside it, according to NebuSec, a security company. Widgets are small interactive blocks that bots send inside chat messages, and their JavaScript runs on the user's phone. The researchers ran their demonstration on a Telegram test server, because only approved bots can send",
+   "lines": [
+    "Reported by The Hacker News: NebuSec, a security company, says a malicious widget can bypass the security filter Telegram added to its Android app and run code outside it.",
+    "Widgets are small interactive blocks that bots send inside chat messages, and their JavaScript runs on the user's phone.",
+    "The researchers ran their demonstration on a Telegram test server."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/researchers-claim-two-rce-exploits-that.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "79344a08",
+   "key": "https://bleepingcomputer.com/news/security/critical-java4shell-flaw-allows-rce-attacks-on-major-java-applications",
+   "time": "2026-11-17T23:04:21.000Z",
+   "seen": "2026-11-18T01:40:12.745Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Critical Java4Shell flaw allows RCE attacks on major Java applications",
+   "summary": "A critical vulnerability dubbed Java4Shell in OpenJDK, the open-source implementation of Java, can allow unauthenticated attackers to remotely execute code on popular enterprise applications, including Jenkins, Atlassian Jira, Confluence, and Keycloak. [...]",
+   "lines": [
+    "Reported by BleepingComputer: A critical vulnerability dubbed Java4Shell in OpenJDK can allow unauthenticated attackers to remotely execute code.",
+    "Affected popular enterprise applications named include Jenkins, Atlassian Jira, Confluence, and Keycloak.",
+    "Teams running these applications with OpenJDK face risk of remote code execution until the flaw is addressed."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/critical-java4shell-flaw-allows-rce-attacks-on-major-java-applications/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
   }
  ],
- "description": "29 technology updates from official sources, updated hourly: Introducing GPT-6.2 Astra and Sol; Crypto Losses Pile Up as Retail Traders Prime for Anthropic IPO; Researchers hijack Hugging Face account for popular Kokoro AI model."
+ "description": "54 technology updates from official sources, updated hourly: Introducing GPT-6.2 Astra and Sol; Interim Nvidia CEO Says It’s No Longer Sending AI Chips to China; Crypto Losses Pile Up as Retail Traders Prime for Anthropic IPO."
 }
