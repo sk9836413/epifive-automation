@@ -2,7 +2,7 @@
  "date": "2026-11-18",
  "title": "Tech news today, 18 November 2026",
  "published": "2026-11-17T19:18:54.800Z",
- "updated": "2026-11-18T09:14:28.189Z",
+ "updated": "2026-11-18T13:16:59.819Z",
  "items": [
   {
    "id": "289cf95a",
@@ -1764,7 +1764,202 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "a17fb126",
+   "key": "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership",
+   "time": "2026-11-18T00:00:00.000Z",
+   "seen": "2026-11-18T13:16:59.819Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT",
+   "summary": "Le Groupe Figaro and OpenAI partner to bring Le Figaro’s journalism to ChatGPT through summaries and excerpts, with links to original stories.",
+   "lines": [
+    "Le Groupe Figaro and OpenAI have partnered to bring Le Figaro journalism to ChatGPT through summaries and excerpts, with links to original stories.",
+    "Business users who rely on ChatGPT for research may see Le Figaro news content in responses, with links back to the source articles."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "OpenAI News",
+    "url": "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership"
+   },
+   "sourceId": "openai-news",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "3ba14926",
+   "key": "https://ai.google.dev/gemini-api/docs/changelog#2026-11-18-multimodal-file-processing-and-slicing",
+   "time": "2026-11-18T12:00:00.000Z",
+   "seen": "2026-11-18T13:16:59.819Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Multimodal file processing and slicing",
+   "summary": "You can now pass Microsoft Office and OpenDocument files (Word, PowerPoint, and Excel) directly to the Gemini API, and slice documents, spreadsheets, videos, and audio in user prompts and function responses. Select specific page ranges, worksheet tabs, cell ranges, time intervals, or content layers (such as page images, extracted text, formulas, or video transcripts) so you only process and pay for the content you need. To get started, see Document understanding, Video understanding, and Audio understanding.",
+   "lines": [
+    "The Gemini API now accepts Microsoft Office and OpenDocument files (Word, PowerPoint, and Excel) directly, and lets users slice documents, spreadsheets, videos, and audio in prompts and function responses.",
+    "Users can select page ranges, worksheet tabs, cell ranges, time intervals, or content layers such as page images, extracted text, formulas, or video transcripts, so they process and pay only for the content they need.",
+    "Developers building on the Gemini API can work with a wider range of office and media files while limiting processing to the content they need."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Gemini API release notes",
+    "url": "https://ai.google.dev/gemini-api/docs/changelog#2026-11-18-multimodal-file-processing-and-slicing"
+   },
+   "sourceId": "gemini-api-changelog",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "9bdffa00",
+   "key": "https://news.samsung.com/global/samsung-begins-one-ui-9-5-beta-program",
+   "time": "2026-11-18T13:16:59.819Z",
+   "seen": "2026-11-18T13:16:59.819Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Samsung Begins One UI 9.5 Beta Program",
+   "summary": "Samsung has launched the One UI 9.5 beta program, giving users an early look at One UI 9.5 ahead of its official debut. The One UI 9.5 beta introduces more precise camera controls, personalized health insights, improved accessibility features, and stronger privacy protections for everyday use. Enhanced Pro and Pro video modes put finer settings […]",
+   "lines": [
+    "Samsung has launched the One UI 9.5 beta program, giving users an early look at One UI 9.5 ahead of its official debut.",
+    "The beta introduces more precise camera controls, personalized health insights, improved accessibility features, and stronger privacy protections.",
+    "Users who join the beta can test the new camera, health, accessibility, and privacy features before the official release."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Samsung Newsroom (global)",
+    "url": "https://news.samsung.com/global/samsung-begins-one-ui-9-5-beta-program"
+   },
+   "sourceId": "samsung-global",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "7ce52a3a",
+   "key": "https://bleepingcomputer.com/news/security/apache-warns-of-roller-rce-vulnerability-exploited-in-attacks",
+   "time": "2026-11-18T10:35:05.000Z",
+   "seen": "2026-11-18T13:16:59.819Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Apache warns of Roller RCE vulnerability exploited in attacks",
+   "summary": "Apache has released security updates to address a critical Roller flaw that threat actors are exploiting to gain code execution on vulnerable servers. [...]",
+   "lines": [
+    "Reported by BleepingComputer: Apache has released security updates to address a critical Roller flaw that threat actors are exploiting to gain code execution on vulnerable servers.",
+    "IT teams running Apache Roller should apply the security updates to affected servers promptly."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/apache-warns-of-roller-rce-vulnerability-exploited-in-attacks/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 9,
+   "story": null
+  },
+  {
+   "id": "61728e91",
+   "key": "https://thehackernews.com/2026/11/cisa-urges-immediate-patching-of.html",
+   "time": "2026-11-18T08:24:23.000Z",
+   "seen": "2026-11-18T13:16:59.819Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "CISA Urges Immediate Patching of Java4Shell Flaw That Could Allow Remote Code Execution",
+   "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has urged organizations to immediately patch a newly disclosed critical security flaw impacting Oracle Java. The flaw, tracked as CVE-2026-114938 (CVSS score: 8.1), refers to a case of out-of-bounds write that can lead to denial-of-service (DoS) or remote code execution under certain conditions. \"This critical memory-corruption",
+   "lines": [
+    "Reported by The Hacker News: CISA has urged organizations to immediately patch a newly disclosed critical flaw affecting Oracle Java, tracked as CVE-2026-114938 (CVSS score: 8.1).",
+    "The flaw is an out-of-bounds write that can lead to denial-of-service or remote code execution under certain conditions.",
+    "IT teams running Oracle Java should prioritize patching systems that use it."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/cisa-urges-immediate-patching-of.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "8fe26ad3",
+   "key": "https://medianama.com/2026/11/223-ai-hackers-approved-loans-nbfc",
+   "time": "2026-11-18T09:31:41.000Z",
+   "seen": "2026-11-18T13:16:59.819Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "AI-assisted hackers breach NBFCs in Delhi-NCR; divert Rs 65 cr in approved loans",
+   "summary": "Delhi Police has revealed that they have \"detected traces of AI being used in these frauds\" and the incidents leading to Rs 65 cr loss in approved loans \"are largely attributable to weaknesses in the public-facing cyber systems of NBFCs\". The post AI-assisted hackers breach NBFCs in Delhi-NCR; divert Rs 65 cr in approved loans appeared first on MEDIANAMA .",
+   "lines": [
+    "Reported by MediaNama: Delhi Police said it detected traces of AI being used in fraud that breached NBFCs in Delhi-NCR and led to a Rs 65 cr loss in approved loans.",
+    "Police said the losses are largely attributable to weaknesses in the public-facing cyber systems of NBFCs.",
+    "Financial firms should review the security of their public-facing systems."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "MediaNama",
+    "url": "https://www.medianama.com/2026/11/223-ai-hackers-approved-loans-nbfc/"
+   },
+   "sourceId": "medianama",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "e0ac59a4",
+   "key": "https://thehackernews.com/2026/11/hackers-exploiting-critical-puppet-rce.html",
+   "time": "2026-11-18T08:24:31.000Z",
+   "seen": "2026-11-18T13:16:59.819Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Hackers Exploiting Critical Puppet RCE Flaw Affecting Enterprise Management Servers",
+   "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Tuesday added a critical security flaw impacting Perforce Puppet, an enterprise infrastructure-as-code (IaC) and configuration management platform, to its Known Exploited Vulnerabilities (KEV) catalog, citing reports of active exploitation. The vulnerability, tracked as CVE-2026-115731 (CVSS score: 9.4), is a case of",
+   "lines": [
+    "Reported by The Hacker News: CISA added a critical Perforce Puppet flaw, tracked as CVE-2026-115731 (CVSS score: 9.4), to its Known Exploited Vulnerabilities catalog, citing reports of active exploitation.",
+    "Puppet is an enterprise infrastructure-as-code and configuration management platform.",
+    "IT teams managing Puppet servers should check for and apply available fixes."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/hackers-exploiting-critical-puppet-rce.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
   }
  ],
- "description": "60 technology updates from official sources, updated hourly: Introducing GPT-6.2 Astra and Sol; Interim Nvidia CEO Says It’s No Longer Sending AI Chips to China; Crypto Losses Pile Up as Retail Traders Prime for Anthropic IPO."
+ "description": "67 technology updates from official sources, updated hourly: Introducing GPT-6.2 Astra and Sol; Interim Nvidia CEO Says It’s No Longer Sending AI Chips to China; Crypto Losses Pile Up as Retail Traders Prime for Anthropic IPO."
 }

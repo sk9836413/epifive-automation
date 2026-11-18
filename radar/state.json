@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-18T09:14:28.189Z",
+ "lastScan": "2026-11-18T13:16:59.819Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -13029,6 +13029,212 @@
    ],
    "status": "below",
    "hash": "e139aa73"
+  },
+  "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership": {
+   "title": "Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT",
+   "link": "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-18T00:00:00.000Z",
+   "updated": null,
+   "summary": "Le Groupe Figaro and OpenAI partner to bring Le Figaro’s journalism to ChatGPT through summaries and excerpts, with links to original stories.",
+   "first": "2026-11-18T13:16:59.819Z",
+   "score": 6,
+   "reasons": [
+    "+2 source openai-news",
+    "+4 niche (chatgpt, openai)"
+   ],
+   "status": "below",
+   "hash": "d8a1e2cf"
+  },
+  "https://bleepingcomputer.com/news/security/apache-warns-of-roller-rce-vulnerability-exploited-in-attacks": {
+   "title": "Apache warns of Roller RCE vulnerability exploited in attacks",
+   "link": "https://www.bleepingcomputer.com/news/security/apache-warns-of-roller-rce-vulnerability-exploited-in-attacks/",
+   "source": "bleepingcomputer",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-18T10:35:05.000Z",
+   "updated": null,
+   "summary": "Apache has released security updates to address a critical Roller flaw that threat actors are exploiting to gain code execution on vulnerable servers. [...]",
+   "first": "2026-11-18T13:16:59.819Z",
+   "score": 9,
+   "reasons": [
+    "+1 source bleepingcomputer",
+    "+3 incident \"vulnerability\"",
+    "+2 exploited \"exploited\"",
+    "+2 user action \"security updates\"",
+    "+1 category (Security)"
+   ],
+   "status": "below",
+   "hash": "876e6467"
+  },
+  "https://thehackernews.com/2026/11/ai-pentesting-checklist-for-web-apps-15.html": {
+   "title": "AI Pentesting Checklist for Web Apps: 15 Questions to Ask Before Choosing a Vendor",
+   "link": "https://thehackernews.com/2026/11/ai-pentesting-checklist-for-web-apps-15.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-18T12:15:00.000Z",
+   "updated": null,
+   "summary": "TL;DR Attackers move first. On average, exploitation now starts before a patch exists (Mandiant M-Trends 2026). In 1H 2026, 23% of vulnerabilities VulnCheck added to its exploited list were hit on or before disclosure day. AI pentesting vendors aren't interchangeable. Most look convincing in a demo.",
+   "first": "2026-11-18T13:16:59.819Z",
+   "score": 9,
+   "reasons": [
+    "+1 source thn",
+    "+3 incident \"vulnerabilities\"",
+    "+2 exploited \"exploited\"",
+    "+2 user action \"patch\"",
+    "+1 autocomplete (4)"
+   ],
+   "status": "below",
+   "hash": "c27f1b08"
+  },
+  "https://thehackernews.com/2026/11/cisa-urges-immediate-patching-of.html": {
+   "title": "CISA Urges Immediate Patching of Java4Shell Flaw That Could Allow Remote Code Execution",
+   "link": "https://thehackernews.com/2026/11/cisa-urges-immediate-patching-of.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-18T08:24:23.000Z",
+   "updated": null,
+   "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has urged organizations to immediately patch a newly disclosed critical security flaw impacting Oracle Java. The flaw, tracked as CVE-2026-114938 (CVSS score: 8.1), refers to a case of out-of-bounds write that can lead to denial-of-ser",
+   "first": "2026-11-18T13:16:59.819Z",
+   "score": 5,
+   "reasons": [
+    "+1 source thn",
+    "+2 vulnerability \"Flaw\"",
+    "+2 user action \"patch\""
+   ],
+   "status": "below",
+   "hash": "93aa1df7"
+  },
+  "https://news.samsung.com/global/samsung-begins-one-ui-9-5-beta-program": {
+   "title": "Samsung Begins One UI 9.5 Beta Program",
+   "link": "https://news.samsung.com/global/samsung-begins-one-ui-9-5-beta-program",
+   "source": "samsung-global",
+   "topic": "mobiles",
+   "category": "launch",
+   "date": "2026-11-18T18:00:00.000Z",
+   "updated": null,
+   "summary": "Samsung has launched the One UI 9.5 beta program, giving users an early look at One UI 9.5 ahead of its official debut. The One UI 9.5 beta introduces more precise camera controls, personalized health insights, improved accessibility features, and stronger privacy protections for everyday use. Enhan",
+   "first": "2026-11-18T13:16:59.819Z",
+   "score": 2,
+   "reasons": [
+    "+2 launch \"launched\""
+   ],
+   "status": "below",
+   "hash": "5aa47a65"
+  },
+  "https://ai.google.dev/gemini-api/docs/changelog#2026-11-18-multimodal-file-processing-and-slicing": {
+   "title": "Multimodal file processing and slicing",
+   "link": "https://ai.google.dev/gemini-api/docs/changelog#2026-11-18-multimodal-file-processing-and-slicing",
+   "source": "gemini-api-changelog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-18T12:00:00.000Z",
+   "updated": null,
+   "summary": "You can now pass Microsoft Office and OpenDocument files (Word, PowerPoint, and Excel) directly to the Gemini API, and slice documents, spreadsheets, videos, and audio in user prompts and function responses. Select specific page ranges, worksheet tabs, cell ranges, time intervals, or content layers ",
+   "first": "2026-11-18T13:16:59.819Z",
+   "score": 7,
+   "reasons": [
+    "+3 niche (gemini, powerpoint)",
+    "+2 launch \"You can now\"",
+    "+2 user steps \"You can\""
+   ],
+   "status": "below",
+   "hash": "594c658a"
+  },
+  "https://news.sap.com/2026/11/bestseller-turned-fragmented-workforce-data-into-trusted-people-intelligence": {
+   "title": "How Bestseller Turned Fragmented Workforce Data into Trusted People Intelligence",
+   "link": "https://news.sap.com/2026/11/bestseller-turned-fragmented-workforce-data-into-trusted-people-intelligence/",
+   "source": "sap-news",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-18T12:15:00.000Z",
+   "updated": null,
+   "summary": "Now, leaders across all brands and countries at the fashion group can work from the same numbers and focus on decisions.",
+   "first": "2026-11-18T13:16:59.819Z",
+   "score": 0,
+   "reasons": [
+    "-1 source sap-news",
+    "+1 plans/price/availability \"countries\""
+   ],
+   "status": "below",
+   "hash": "95b4e22b"
+  },
+  "https://news.sap.com/2026/11/sap-recognized-gartner-peer-insights-talent-acquisition": {
+   "title": "SAP Recognized as a Customers’ Choice in the 2026 Gartner Peer Insights™ Voice of the Customer for Talent Acquisition (Recruiting) Suites",
+   "link": "https://news.sap.com/2026/11/sap-recognized-gartner-peer-insights-talent-acquisition/",
+   "source": "sap-news",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-18T11:15:00.000Z",
+   "updated": null,
+   "summary": "The recognition captures the experiences of the teams using our solutions to hire, develop, and grow their workforce.",
+   "first": "2026-11-18T13:16:59.819Z",
+   "score": -1,
+   "reasons": [
+    "-1 source sap-news"
+   ],
+   "status": "below",
+   "hash": "970e5f66"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63996": {
+   "title": "Premature redemption under Sovereign Gold Bond (SGB) Scheme - Redemption Price for premature redemption of SGB 2020-21 Series II due on November 19, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63996",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-18T17:55:00.000Z",
+   "updated": null,
+   "summary": "In terms of GOI notification F.No. 4(4)-B(W&M)/2020 dated April 13, 2020 (SGB 2020-21 Series II - Issue date May 19, 2020) on Sovereign Gold Bond Scheme, premature redemption of Gold Bond may be permitted after fifth year from the date of issue of such Gold Bond on the date on which interest is paya",
+   "first": "2026-11-18T13:16:59.819Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"Price\""
+   ],
+   "status": "below",
+   "hash": "6ca3ddb6"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63995": {
+   "title": "Treasury Bills: Full Auction Result",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63995",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-18T14:40:00.000Z",
+   "updated": null,
+   "summary": "(Amount in ₹ crore) Auction Results 91-Day 182-Day 364-Day I. Notified Amount 8,000 8,000 7,000 II. Competitive Bids Received (i) Number 152 127 163 (ii) Amount 25,216.180 26,523.500 25,170.500 III. Cut-off price (₹) / Yield 98.5600 96.8466 93.7982 (YTM: 5.8602%) (YTM: 6.5300%) (YTM: 6.6300%) IV. Co",
+   "first": "2026-11-18T13:16:59.819Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"price\""
+   ],
+   "status": "below",
+   "hash": "8ed5ac9e"
+  },
+  "https://mc.merill.net/message/MC1558817": {
+   "title": "MC1558817: Dataverse - Dataverse Data Available in Agent Builder Declarative Agents",
+   "link": "https://mc.merill.net/message/MC1558817",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-18T08:47:11.000Z",
+   "updated": null,
+   "summary": "We are announcing the ability to select Power Platform and Dynamics 365 data as a knowledge data source when creating and editing Declarative Agents built in Agent Builder in Microsoft Dataverse. This feature reached general availability on November 17, 2026. How does this affect me? With this featu",
+   "first": "2026-11-18T13:16:59.819Z",
+   "score": 2,
+   "reasons": [
+    "-2 source mc-merill",
+    "+1 niche (agent)",
+    "+2 launch \"Available in\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "d97441d2"
   }
  },
  "devices": {}
