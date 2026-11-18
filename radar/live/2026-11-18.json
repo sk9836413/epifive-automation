@@ -2,7 +2,7 @@
  "date": "2026-11-18",
  "title": "Tech news today, 18 November 2026",
  "published": "2026-11-17T19:18:54.800Z",
- "updated": "2026-11-18T01:40:12.745Z",
+ "updated": "2026-11-18T04:43:52.127Z",
  "items": [
   {
    "id": "289cf95a",
@@ -1589,7 +1589,35 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "360f460b",
+   "key": "https://techcommunity.microsoft.com/t5/windows-it-pro-blog/rethinking-windows-management-for-modern-it/ba-p/4572664",
+   "time": "2026-11-17T18:43:35.000Z",
+   "seen": "2026-11-18T04:43:52.127Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Rethinking Windows management for modern IT",
+   "summary": "Windows management has always had a straightforward goal: keep people productive while keeping devices secure, current, and resilient. But the environment has changed. IT teams are managing more apps, more types of devices and workloads, and now AI agents. Adding another tool or process doesn't solve that challenge. It just gives IT one more thing to manage. Security updates add urgency to the equation. AI is changing the pace of vulnerability discovery for defenders and attackers alike. As that pace increases, reducing the time it takes to get available security updates onto devices becomes even more important. But moving faster can't mean giving up the testing, visibility, and control IT n",
+   "lines": [
+    "A Windows management post says IT teams now handle more apps, device types, workloads, and AI agents, and that adding another tool or process does not solve this.",
+    "The post says AI is changing the pace of vulnerability discovery for both defenders and attackers, which raises the importance of getting security updates onto devices faster.",
+    "For IT teams, the post argues that faster update deployment should not come at the expense of testing, visibility, and control."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Tech Community: Windows IT Pro Blog",
+    "url": "https://techcommunity.microsoft.com/t5/windows-it-pro-blog/rethinking-windows-management-for-modern-it/ba-p/4572664"
+   },
+   "sourceId": "tc-windows-itpro",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
   }
  ],
- "description": "54 technology updates from official sources, updated hourly: Introducing GPT-6.2 Astra and Sol; Interim Nvidia CEO Says It’s No Longer Sending AI Chips to China; Crypto Losses Pile Up as Retail Traders Prime for Anthropic IPO."
+ "description": "55 technology updates from official sources, updated hourly: Introducing GPT-6.2 Astra and Sol; Interim Nvidia CEO Says It’s No Longer Sending AI Chips to China; Crypto Losses Pile Up as Retail Traders Prime for Anthropic IPO."
 }

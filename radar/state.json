@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-18T03:43:41.994Z",
+ "lastScan": "2026-11-18T04:43:52.127Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -12593,6 +12593,356 @@
    ],
    "status": "below",
    "hash": "795179c9"
+  },
+  "https://techcommunity.microsoft.com/t5/windows-it-pro-blog/windows-365-at-ignite-2026-introducing-new-cloud-pc-capabilities/ba-p/4570006": {
+   "title": "Windows 365 at Ignite 2026: Introducing new Cloud PC capabilities for people, agents and IT",
+   "link": "https://techcommunity.microsoft.com/t5/windows-it-pro-blog/windows-365-at-ignite-2026-introducing-new-cloud-pc-capabilities/ba-p/4570006",
+   "source": "tc-windows-itpro",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-17T19:00:23.000Z",
+   "updated": null,
+   "summary": "The future of computing will require a familiar, flexible workspace that can meet people and their agents wherever work happens. At Microsoft Ignite 2026, we're highlighting how Windows 365 is helping shape that future, enabling you to deliver the right compute to your workforce with rapidly changin",
+   "first": "2026-11-18T04:43:52.127Z",
+   "score": 9,
+   "reasons": [
+    "+1 source tc-windows-itpro",
+    "+2 niche (windows, agents)",
+    "+2 launch \"Introducing\"",
+    "+2 user steps \"enable\"",
+    "+1 launch in the headline",
+    "+1 autocomplete (4)"
+   ],
+   "status": "below",
+   "hash": "70f7dfe9"
+  },
+  "https://techcommunity.microsoft.com/t5/windows-it-pro-blog/a-verifiable-security-state-with-windows-baseline-protection/ba-p/4572654": {
+   "title": "A verifiable security state with Windows baseline protection",
+   "link": "https://techcommunity.microsoft.com/t5/windows-it-pro-blog/a-verifiable-security-state-with-windows-baseline-protection/ba-p/4572654",
+   "source": "tc-windows-itpro",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-17T18:15:58.000Z",
+   "updated": null,
+   "summary": "Staying ahead of security threats and configuring your IT security can be complex. Verifying the security state of your devices shouldn't be. As Windows evolves to be more secure and AI-ready, we want to make it easier for end users and IT admins to understand their PCs' security state, and to know ",
+   "first": "2026-11-18T04:43:52.127Z",
+   "score": 2,
+   "reasons": [
+    "+1 source tc-windows-itpro",
+    "+1 niche (windows)"
+   ],
+   "status": "below",
+   "hash": "cede0966"
+  },
+  "https://techcommunity.microsoft.com/t5/windows-it-pro-blog/what-s-next-windows-endpoint-security-platform-and-driver/ba-p/4572663": {
+   "title": "What's next: Windows endpoint security platform and driver quality",
+   "link": "https://techcommunity.microsoft.com/t5/windows-it-pro-blog/what-s-next-windows-endpoint-security-platform-and-driver/ba-p/4572663",
+   "source": "tc-windows-itpro",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-17T18:15:44.000Z",
+   "updated": null,
+   "summary": "Strong endpoint protection and a reliable Windows experience need to go hand in hand. We are working closely with partners in the Windows ecosystem to advance both. Today, Windows endpoint security platform is reaching general availability on Windows 11, giving security partners new ways to deliver ",
+   "first": "2026-11-18T04:43:52.127Z",
+   "score": 6,
+   "reasons": [
+    "+1 source tc-windows-itpro",
+    "+3 niche (windows 11, windows)",
+    "+2 launch \"general availability\""
+   ],
+   "status": "below",
+   "hash": "2378f86b"
+  },
+  "https://techcommunity.microsoft.com/t5/windows-it-pro-blog/rethinking-windows-management-for-modern-it/ba-p/4572664": {
+   "title": "Rethinking Windows management for modern IT",
+   "link": "https://techcommunity.microsoft.com/t5/windows-it-pro-blog/rethinking-windows-management-for-modern-it/ba-p/4572664",
+   "source": "tc-windows-itpro",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-17T18:43:35.000Z",
+   "updated": null,
+   "summary": "Windows management has always had a straightforward goal: keep people productive while keeping devices secure, current, and resilient. But the environment has changed. IT teams are managing more apps, more types of devices and workloads, and now AI agents. Adding another tool or process doesn't solv",
+   "first": "2026-11-18T04:43:52.127Z",
+   "score": 3,
+   "reasons": [
+    "+1 source tc-windows-itpro",
+    "+2 niche (windows, agents)"
+   ],
+   "status": "below",
+   "hash": "d1670803"
+  },
+  "https://techcommunity.microsoft.com/t5/windows-it-pro-blog/expand-passwordless-access-with-confidence/ba-p/4572666": {
+   "title": "Expand passwordless access with confidence",
+   "link": "https://techcommunity.microsoft.com/t5/windows-it-pro-blog/expand-passwordless-access-with-confidence/ba-p/4572666",
+   "source": "tc-windows-itpro",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-17T18:31:19.000Z",
+   "updated": null,
+   "summary": "Passwordless sign-in is tested in ordinary moments: when an employee needs to start work immediately, when a frontline worker approaches a shared device, or when a security team needs to understand how devices across the organization are being unlocked. Moving beyond passwords requires more than a s",
+   "first": "2026-11-18T04:43:52.127Z",
+   "score": 1,
+   "reasons": [
+    "+1 source tc-windows-itpro"
+   ],
+   "status": "below",
+   "hash": "9148a39d"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-workspaces-applications-smart-card-redirection": {
+   "title": "Amazon WorkSpaces Applications adds support for smart card redirection",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-workspaces-applications-smart-card-redirection/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-17T23:46:00.000Z",
+   "updated": null,
+   "summary": "Amazon WorkSpaces Applications now supports smart card redirection on single-session and multi-session fleets, so users can access the smart card connected to their local device from applications inside their streaming session. It also extends smart card sign-in, previously limited to single-session",
+   "first": "2026-11-18T04:43:52.127Z",
+   "score": 2,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now supports\"",
+    "+2 user steps \"users can\""
+   ],
+   "status": "below",
+   "hash": "eb5cb42c"
+  },
+  "https://mc.merill.net/message/MC1558155": {
+   "title": "MC1558155: Updates available for Microsoft 365 Apps for Current Channel",
+   "link": "https://mc.merill.net/message/MC1558155",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-18T01:15:16.000Z",
+   "updated": null,
+   "summary": "We've released updates to the following update channel for Microsoft 365 Apps: Current Channel When this will happen: We'll be gradually rolling out this update of Microsoft 365 Apps to users on that update channel starting November 17th, 2026 (PST). How this will affect your organization: If your M",
+   "first": "2026-11-18T04:43:52.127Z",
+   "score": 4,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 niche (microsoft 365)",
+    "+2 launch \"rolling out\"",
+    "+2 user steps \"you can\""
+   ],
+   "status": "below",
+   "hash": "a24ff088"
+  },
+  "https://mc.merill.net/message/MC1558114": {
+   "title": "MC1558114: Microsoft Defender for Cloud Apps: Unified RBAC support for App Governance to manage NHIs",
+   "link": "https://mc.merill.net/message/MC1558114",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-18T00:21:11.000Z",
+   "updated": null,
+   "summary": "Microsoft Defender for Cloud Apps' App Governance will support unified Defender XDR RBAC in public preview starting late November 2026, enabling delegated, least-privilege access for managing Non-Human Identities. Administrators can assign custom roles for viewing, policy, and service management, wi",
+   "first": "2026-11-18T04:43:52.127Z",
+   "score": 0,
+   "reasons": [
+    "-2 source mc-merill",
+    "+1 niche (defender)",
+    "+1 plans/price/availability \"rollout\""
+   ],
+   "status": "below",
+   "hash": "76bb69a7"
+  },
+  "https://mc.merill.net/message/MC1483844": {
+   "title": "MC1483844: Microsoft Copilot: GPT 6.1 Sol and Claude Sonnet 5.5 beginning to roll out today",
+   "link": "https://mc.merill.net/message/MC1483844",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-17T23:30:04.000Z",
+   "updated": null,
+   "summary": "Microsoft Copilot is rolling out GPT-6.1 Sol and Claude Sonnet 5.5 models starting September 30, 2026, across Cowork, Copilot Studio, Word, Excel, PowerPoint, and Chat. No admin action is required, but enabling Anthropic and OpenAI subprocessors affects model availability. Usage limits and notificat",
+   "first": "2026-11-18T04:43:52.127Z",
+   "score": 5,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (copilot, claude, openai, excel)",
+    "+2 launch \"roll out\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "a1ffe9b6",
+   "story": "ai:claude sonnet 5.5:release"
+  },
+  "https://mc.merill.net/message/MC1558041": {
+   "title": "MC1558041: Microsoft OneDrive for iPad: Presentation mode for PDFs",
+   "link": "https://mc.merill.net/message/MC1558041",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-17T23:03:45.000Z",
+   "updated": null,
+   "summary": "Microsoft OneDrive for iPad will introduce a presentation mode for PDFs, enabling a focused, view-only experience that disables free scrolling to prevent accidental page changes. Rolling out worldwide in December 2026, it is enabled by default with no admin controls required and does not affect file",
+   "first": "2026-11-18T04:43:52.127Z",
+   "score": 2,
+   "reasons": [
+    "-2 source mc-merill",
+    "+1 niche (onedrive)",
+    "+2 launch \"Rolling out\"",
+    "+1 plans/price/availability \"free\""
+   ],
+   "status": "below",
+   "hash": "db2fce20"
+  },
+  "https://mc.merill.net/message/MC1558038": {
+   "title": "MC1558038: Microsoft Purview | Data Loss Prevention: Network data security integration with Azure Firewall",
+   "link": "https://mc.merill.net/message/MC1558038",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-17T23:02:46.000Z",
+   "updated": null,
+   "summary": "Microsoft Purview integrates Data Loss Prevention with Azure Firewall to protect sensitive network traffic, including text, files, and AI interactions. Rolling out from mid-November 2026 (preview) to late April 2027 (general availability), it enables automatic tenant activation, policy configuration",
+   "first": "2026-11-18T04:43:52.127Z",
+   "score": 0,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 launch \"Rolling out\""
+   ],
+   "status": "below",
+   "hash": "a8a83de7"
+  },
+  "https://mc.merill.net/message/MC1558037": {
+   "title": "MC1558037: Microsoft Purview | Data Loss Prevention: Protection for local AI agent interactions",
+   "link": "https://mc.merill.net/message/MC1558037",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-17T23:02:06.000Z",
+   "updated": null,
+   "summary": "Microsoft Purview Data Loss Prevention is expanding to protect sensitive data in supported local AI agent interactions, allowing administrators to apply DLP policies to agent prompts, responses, and tool interactions. Public preview starts late January 2027, with general availability by late April 2",
+   "first": "2026-11-18T04:43:52.127Z",
+   "score": 3,
+   "reasons": [
+    "-2 source mc-merill",
+    "+1 niche (agent)",
+    "+2 launch \"general availability\"",
+    "+2 user steps \"enable\""
+   ],
+   "status": "below",
+   "hash": "998f9192"
+  },
+  "https://mc.merill.net/message/MC1558033": {
+   "title": "MC1558033: Microsoft 365 Copilot: Copilot Managed Runtime expands app building at general availability",
+   "link": "https://mc.merill.net/message/MC1558033",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-17T23:01:18.000Z",
+   "updated": null,
+   "summary": "Microsoft 365 Copilot Managed Runtime, now generally available, enables IT-governed app building within tenant boundaries across Copilot Cowork, Studio, and Code. Admins manage apps, policies, and credits via the Microsoft 365 admin center. App building expands beyond the Frontier Program with envir",
+   "first": "2026-11-18T04:43:52.127Z",
+   "score": 5,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (copilot, microsoft 365)",
+    "+2 launch \"general availability\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "10553f38"
+  },
+  "https://mc.merill.net/message/MC1558030": {
+   "title": "MC1558030: Microsoft OneDrive for Windows and Mac: node_modules folders will be excluded from sync by default",
+   "link": "https://mc.merill.net/message/MC1558030",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-17T23:01:04.000Z",
+   "updated": null,
+   "summary": "Starting December 14, 2026, OneDrive for Windows and Mac will exclude new folders named \"node_modules\" from syncing by default to improve performance. Existing synced folders remain unaffected. Administrators can disable this exclusion via policy if needed. No user prompts will occur, and local fold",
+   "first": "2026-11-18T04:43:52.127Z",
+   "score": 3,
+   "reasons": [
+    "-2 source mc-merill",
+    "+3 niche (onedrive, windows, mac)",
+    "+2 user steps \"disable\""
+   ],
+   "status": "below",
+   "hash": "b71c7de9"
+  },
+  "https://mc.merill.net/message/MC1558032": {
+   "title": "MC1558032: Microsoft Teams: Intelligent call recap for call queues in the Queues app on mobile",
+   "link": "https://mc.merill.net/message/MC1558032",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-17T23:00:41.000Z",
+   "updated": null,
+   "summary": "Microsoft Teams mobile's Queues app will add intelligent call recap for recorded and transcribed call queue calls starting early December 2026. Users can view AI-generated notes, key points, and follow-up tasks without replaying calls. No admin action is needed, but recording, transcription, and lic",
+   "first": "2026-11-18T04:43:52.127Z",
+   "score": -1,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 niche (microsoft teams)",
+    "+2 user steps \"Users can\"",
+    "-3 corporate/announcement \"recap\""
+   ],
+   "status": "below",
+   "hash": "ba9a640e"
+  },
+  "https://mc.merill.net/message/MC1558024": {
+   "title": "MC1558024: Microsoft 365 admin center: New multi-tenant management experiences",
+   "link": "https://mc.merill.net/message/MC1558024",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-17T22:58:48.000Z",
+   "updated": null,
+   "summary": "Microsoft 365 admin center will introduce multi-tenant management for centralized control of Copilot, agents, costs, and services across tenants. Available from mid-November 2026, it enables unified tenant linking, insights, and configuration management. Organizations must link tenants via Microsoft",
+   "first": "2026-11-18T04:43:52.127Z",
+   "score": 2,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (copilot, microsoft 365, entra, agents)"
+   ],
+   "status": "below",
+   "hash": "f442c393"
+  },
+  "https://mc.merill.net/message/MC1558023": {
+   "title": "MC1558023: Microsoft Copilot in PowerPoint for Windows, Mac, and the web: Introducing new sales-focused skills",
+   "link": "https://mc.merill.net/message/MC1558023",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-17T22:58:02.000Z",
+   "updated": null,
+   "summary": "Microsoft Copilot in PowerPoint is introducing new sales-focused skills worldwide by late November 2026 to help sales teams prepare and refine presentations, work with sales data, and support sales conversations. No admin action is needed; users with licenses can enable these skills via the Sales pl",
+   "first": "2026-11-18T04:43:52.127Z",
+   "score": 7,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (copilot, powerpoint, windows, mac)",
+    "+2 launch \"Introducing\"",
+    "+2 user steps \"enable\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "f6479f0b"
+  },
+  "https://mc.merill.net/message/MC1558020": {
+   "title": "MC1558020: Power Platform admin center - Reporting API for Copilot Credits (preview)",
+   "link": "https://mc.merill.net/message/MC1558020",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-17T22:55:36.000Z",
+   "updated": null,
+   "summary": "We are announcing the Reporting API for Copilot Credits in Power Platform admin center. This feature is now available in public preview. How does this affect me? This feature enables you to access Copilot Credit usage from Copilot Studio through the Power Platform API. The new API methods provide in",
+   "first": "2026-11-18T04:43:52.127Z",
+   "score": 3,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 niche (copilot)",
+    "+2 launch \"now available\"",
+    "+2 user steps \"how to\"",
+    "-1 narrow audience \"API\""
+   ],
+   "status": "below",
+   "hash": "ef590695"
   }
  },
  "devices": {}
