@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-18T01:40:12.745Z",
+ "lastScan": "2026-11-18T02:31:39.081Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -971,21 +971,6 @@
    "status": "duplicate",
    "hash": "d12142cf",
    "post": "tally-prime-edit-log-audit-trail-setup"
-  },
-  "https://news.samsung.com/global/samsungs-latest-products-recognized-by-consumer-technology-association-ahead-of-ces-2027": {
-   "title": "Samsung’s Latest Products Recognized by Consumer Technology Association Ahead of CES 2027",
-   "link": "https://news.samsung.com/global/samsungs-latest-products-recognized-by-consumer-technology-association-ahead-of-ces-2027",
-   "source": "samsung-global",
-   "topic": "mobiles",
-   "category": "launch",
-   "date": "2026-11-15T08:00:00.000Z",
-   "updated": null,
-   "summary": "Samsung Electronics, a global leader in technology, today announced that a range of its products and services have been recognized by the Consumer Technology Association (CTA)® as part of the CES Innovation Awards® 2027 program, doubling the number of Best of Innovation winners from 2026. The CES In",
-   "first": "2026-11-15T02:10:59.818Z",
-   "score": 0,
-   "reasons": [],
-   "status": "below",
-   "hash": "426437f0"
   },
   "https://status.aws.amazon.com/#2026-11-15-multipleservices-us-east-1-service-impact-increased-conne": {
    "title": "Service impact: Increased Connectivity issues in US-EAST-1",
@@ -4130,12 +4115,14 @@
     "+1 retirement/migration",
     "+8 M365 retirement due in 28 days"
    ],
-   "status": "writing",
+   "status": "published",
    "hash": "2503fb4b",
    "kind": "new",
    "extra": false,
    "taskAt": "2026-11-18T01:40:12.745Z",
-   "attempts": 1
+   "attempts": 1,
+   "slug": "teams-ios-17-end-of-support-what-to-do",
+   "resultAt": "2026-11-18T01:50:32.211Z"
   },
   "https://mc.merill.net/message/MC1556082": {
    "title": "MC1556082: Microsoft 365 admin center: Unified release preferences for Standard, Deferred, and Frontier",
@@ -12400,6 +12387,160 @@
    ],
    "backlog": "microsoft-365-outlook-teams-down-what-to-do-business-continuity-plan",
    "post": "microsoft-365-outage-november-2026-root-cause-it-admin-lessons"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/elemental-inference-functions-decisions": {
+   "title": "Customize AWS Elemental Inference with custom models, prompts, and decisions",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/elemental-inference-functions-decisions/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-17T20:00:00.000Z",
+   "updated": null,
+   "summary": "AWS Elemental Inference now lets you customize how it analyzes your live video in two ways. You can create functions that ask custom questions of the video using multi-modal foundational models in Amazon Bedrock, or add contextual metadata decisions using labels and questions you define. Both run on",
+   "first": "2026-11-18T02:31:39.081Z",
+   "score": 2,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now lets you\"",
+    "+2 user steps \"You can\""
+   ],
+   "status": "below",
+   "hash": "4c1cd2a5"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-managed-instances-scale-to-zero": {
+   "title": "AWS Lambda now supports scale to and from zero for Lambda Managed Instances",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-managed-instances-scale-to-zero/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-17T19:00:00.000Z",
+   "updated": null,
+   "summary": "AWS Lambda now supports scale to and from zero for Event Functions running on Lambda Managed Instances (LMI). Lambda automatically scales execution environments for your function to zero during idle periods and scales them back up when requests arrive, without requiring you to provision minimum capa",
+   "first": "2026-11-18T02:31:39.081Z",
+   "score": 4,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now supports\"",
+    "+2 user steps \"you can\"",
+    "+1 plans/price/availability \"pricing\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "d5c689e3"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-corretto-nov-2026-updates": {
+   "title": "Amazon Corretto November 2026 Critical Security Patch Updates",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-corretto-nov-2026-updates/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-17T15:00:00.000Z",
+   "updated": null,
+   "summary": "On Nov 17, 2026, Amazon announced critical security patch update (CSPU) for Amazon Corretto Long-Term Support (LTS) and Feature Release (FR) versions of OpenJDK. Corretto 27.0.1.1.4, 25.0.5.1.2, 21.0.13.1.2, 17.0.21.1.2, 11.0.33.1.1, and 8u514 are now available for download . Amazon Corretto is a no",
+   "first": "2026-11-18T02:31:39.081Z",
+   "score": 2,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now available\"",
+    "+2 user steps \"download\""
+   ],
+   "status": "below",
+   "hash": "566e791e"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/kinesis-data-streams-queues": {
+   "title": "Amazon Kinesis Data Streams announces queues to simplify and reduce costs of real-time processing",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/kinesis-data-streams-queues/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-17T08:00:00.000Z",
+   "updated": null,
+   "summary": "Amazon Kinesis Data Streams now supports queues, a simpler and more cost-effective way to process a stream. Because queues track the delivery state of each record, your consumer instances receive records instead of leasing shards, acknowledge each record when processing is complete, and scale beyond",
+   "first": "2026-11-18T02:31:39.081Z",
+   "score": 0,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now supports\""
+   ],
+   "status": "below",
+   "hash": "615cf50e"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/connect-case-and-calculated-attributes": {
+   "title": "Amazon Connect Customer now supports case and calculated template variables",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/connect-case-and-calculated-attributes/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-17T08:00:00.000Z",
+   "updated": null,
+   "summary": "Amazon Connect Customer message templates, which personalize each message with details about its recipient, now support case fields from Cases and calculated attributes from Customer Profiles, such as a customer's most frequent contact channel. Companies that send updates about a claim, an order, or",
+   "first": "2026-11-18T02:31:39.081Z",
+   "score": 3,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now supports\"",
+    "+2 user steps \"claim\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "aedba433"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/cost-hub-stop-idle-ec2": {
+   "title": "Cost Optimization Hub now supports stopping idle Amazon EC2 instances",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/cost-hub-stop-idle-ec2/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-17T08:00:00.000Z",
+   "updated": null,
+   "summary": "AWS Cost Optimization Hub now lets you stop idle Amazon EC2 instances directly from your recommendations. Cost Optimization Hub consolidates and prioritizes cost optimization recommendations across your AWS accounts and Regions, including idle resources. Previously, stopping an idle instance require",
+   "first": "2026-11-18T02:31:39.081Z",
+   "score": 4,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now supports\"",
+    "+2 user steps \"you can\"",
+    "+1 plans/price/availability \"Regions\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "294fb770"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/transit-gateway-gwlb-integration": {
+   "title": "AWS Transit Gateway supports native integration with Gateway Load Balancer",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/transit-gateway-gwlb-integration/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-17T08:00:00.000Z",
+   "updated": null,
+   "summary": "AWS Transit Gateway now supports network function attachments of type Gateway Load Balancer, simplifying the deployment and management of network security across your AWS network. With a network function attachment, you can connect your transit gateway to a Gateway Load Balancer VPC endpoint service",
+   "first": "2026-11-18T02:31:39.081Z",
+   "score": 2,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now supports\"",
+    "+2 user steps \"you can\""
+   ],
+   "status": "below",
+   "hash": "97e839da"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-waf-bot-control-onboarding": {
+   "title": "AWS WAF announces simplified onboarding for Bot Control targeted protection",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-waf-bot-control-onboarding/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-17T08:00:00.000Z",
+   "updated": null,
+   "summary": "Today, AWS WAF announces a simplified console experience for Bot Control at the targeted inspection level. A single setting, Targeted bot control, turns on targeted protection for your Amazon CloudFront distributions with the configuration AWS recommends. It comes with two additions to the Bot Contr",
+   "first": "2026-11-18T02:31:39.081Z",
+   "score": -2,
+   "reasons": [
+    "-2 source aws-whats-new"
+   ],
+   "status": "below",
+   "hash": "70ca1e36"
   }
  },
  "devices": {}

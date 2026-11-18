@@ -747,10 +747,11 @@
    "headline": "Oracle to Patch 11 Java Flaws Today as Critical OpenJDK RCE (CVE-2026-114938) Report Emerges",
    "summary": "Oracle is preparing to release security patches for 11 vulnerabilities in Java SE on Tuesday, November 17, 2026, all of which may be exploited remotely without authentication, as separate reports warn of a potentially critical remote code execution (RCE) flaw affecting OpenJDK. The 11 vulnerabilities carry a maximum CVSS 3.1 severity score of 8.1, according to Oracle's advance security notice.",
    "lines": [
-    "Oracle is preparing to release security patches for 11 vulnerabilities in Java SE on Tuesday, November 17, 2026, all of which may be exploited remotely without authentication, as separate reports warn of a potentially critical remote code execution (RCE) flaw affecting OpenJDK.",
-    "Reported by The Hacker News; not yet confirmed on an official page."
+    "Reported by The Hacker News: Oracle is preparing to release security patches for 11 vulnerabilities in Java SE, which may be exploited remotely without authentication.",
+    "Oracle's advance security notice lists a release date of Tuesday, November 17, 2026, and a maximum CVSS 3.1 score of 8.1 for the 11 flaws.",
+    "Separate reports warn of a potentially critical remote code execution flaw in OpenJDK, tracked as CVE-2026-114938. IT teams running Java SE should track the Oracle patch release."
    ],
-   "linesBy": "template",
+   "linesBy": "claude",
    "source": {
     "name": "The Hacker News",
     "url": "https://thehackernews.com/2026/11/oracle-to-patch-11-java-flaws-today-as.html"
@@ -774,10 +775,11 @@
    "headline": "Apple services, including iCloud, App Store, and Apple Music, hit by outage",
    "summary": "Apple's status page confirms its services are facing outages, but has not confirmed the cause.",
    "lines": [
-    "Apple's status page confirms its services are facing outages, but has not confirmed the cause.",
-    "Reported by TechCrunch; not yet confirmed on an official page."
+    "Reported by TechCrunch: Apple's status page confirms that its services, including iCloud, App Store, and Apple Music, are facing outages.",
+    "Apple has not confirmed the cause of the outage.",
+    "IT teams that depend on these Apple services should check Apple's status page for updates."
    ],
-   "linesBy": "template",
+   "linesBy": "claude",
    "source": {
     "name": "TechCrunch",
     "url": "https://techcrunch.com/2026/11/17/apple-services-including-icloud-app-store-and-apple-music-hit-by-outage/"
@@ -803,10 +805,11 @@
    "headline": "iCloud and other Apple services are down in an apparent outage",
    "summary": "The full extent of the disruption isn't known yet.",
    "lines": [
-    "The full extent of the disruption isn't known yet.",
-    "Reported by Engadget; not yet confirmed on an official page."
+    "Reported by Engadget: iCloud and other Apple services are down in what appears to be an outage.",
+    "The full extent of the disruption is not yet known.",
+    "IT teams that rely on Apple services may want to monitor Apple's status page for updates."
    ],
-   "linesBy": "template",
+   "linesBy": "claude",
    "source": {
     "name": "Engadget",
     "url": "https://www.engadget.com/2319504/icloud-and-other-apple-services-are-down-in-an-apparent-outage/"
@@ -832,10 +835,11 @@
    "headline": "Inside Modern Phishing Kits Built to Steal Microsoft 365 Sessions",
    "summary": "Huntress researchers break down how EvilTokens, Knight Office, and Kali365 capture and replay M365 tokens, plus how defenders can detect and contain them. [...]",
    "lines": [
-    "Huntress researchers break down how EvilTokens, Knight Office, and Kali365 capture and replay M365 tokens, plus how defenders can detect and contain them.",
-    "Reported by BleepingComputer; not yet confirmed on an official page."
+    "Reported by BleepingComputer: Huntress researchers break down how the phishing kits EvilTokens, Knight Office, and Kali365 capture and replay Microsoft 365 tokens.",
+    "The article also covers how defenders can detect and contain these kits.",
+    "IT teams and business users who rely on Microsoft 365 may use this guidance to understand the risk of token theft."
    ],
-   "linesBy": "template",
+   "linesBy": "claude",
    "source": {
     "name": "BleepingComputer",
     "url": "https://www.bleepingcomputer.com/news/security/inside-modern-phishing-kits-built-to-steal-microsoft-365-sessions/"
