@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-18T02:31:39.081Z",
+ "lastScan": "2026-11-18T03:43:41.994Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -12541,6 +12541,58 @@
    ],
    "status": "below",
    "hash": "70ca1e36"
+  },
+  "https://ai.google.dev/gemini-api/docs/changelog#2026-11-17-voice-editing-in-gemini-3-5-transcribe": {
+   "title": "Voice editing in Gemini 3.5 Transcribe",
+   "link": "https://ai.google.dev/gemini-api/docs/changelog#2026-11-17-voice-editing-in-gemini-3-5-transcribe",
+   "source": "gemini-api-changelog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-17T12:00:00.000Z",
+   "updated": null,
+   "summary": "gemini-3.5-transcribe and gemini-3.5-transcribe-live now support voice-driven editing, rewriting, and formatting of dictated speech or pre-existing text (source_text). See the Audio transcription and Live transcription guides.",
+   "first": "2026-11-18T03:43:41.994Z",
+   "score": 4,
+   "reasons": [
+    "+2 niche (gemini)",
+    "+2 launch \"now support\""
+   ],
+   "status": "below",
+   "hash": "ccb47e6d"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63992": {
+   "title": "Money Market Operations as on November 17, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63992",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-18T09:00:00.000Z",
+   "updated": null,
+   "summary": "(Amount in ₹ crore, Rate in Per cent) MONEY MARKETS @ --> Money Markets @ Volume (One Leg) Weighted Average Rate Range A. Overnight Segment (I+II+III+IV) 8,30,954.13 5.54 4.00-5.90 I. Call Money 12,574.30 5.57 4.00-5.75 II. Triparty Repo 6,12,171.10 5.52 5.15-5.65 III. Market Repo 1,98,960.38 5.58 4",
+   "first": "2026-11-18T03:43:41.994Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "b50474a"
+  },
+  "https://blogs.vmware.com/vmware-japan/2026/11/customer-case-studies-qsol.html": {
+   "title": "導入事例：Qsol株式会社様",
+   "link": "https://blogs.vmware.com/vmware-japan/2026/11/customer-case-studies-qsol.html",
+   "source": "vmware-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-18T02:04:22.000Z",
+   "updated": null,
+   "summary": "九州電力株式会社の電力安定供給に不可欠な基幹系システムをはじめ、九電グループ全体の多様な業務システムの開発・運用を担うQsol株式会社様。本日は、VMware ソリューションを活用したプライベートクラウド基盤の高度化と、プロフェッショナルサービス（VMware Cloud Foundation Professional Service / TAM）による伴走支援の事例をご紹介いたします。 社会インフラを支える同社の業務基盤では、厳格なセキュリティと高可用性の維持、さらには拠点移設に伴う大規模なアプリ改修コストの抑制やグループ全体のITガバナンス強化が求められていました。この課題を解決し、変化に",
+   "first": "2026-11-18T03:43:41.994Z",
+   "score": -1,
+   "reasons": [
+    "-1 source vmware-blog"
+   ],
+   "status": "below",
+   "hash": "795179c9"
   }
  },
  "devices": {}
