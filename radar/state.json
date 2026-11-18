@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-18T04:43:52.127Z",
+ "lastScan": "2026-11-18T05:13:16.901Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -12943,6 +12943,59 @@
    ],
    "status": "below",
    "hash": "ef590695"
+  },
+  "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/ai-is-changing-access-see-how-microsoft-entra-helps-you-stay/ba-p/4556456": {
+   "title": "AI is changing access. See how Microsoft Entra helps you stay ahead.",
+   "link": "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/ai-is-changing-access-see-how-microsoft-entra-helps-you-stay/ba-p/4556456",
+   "source": "tc-entra",
+   "topic": "security-identity",
+   "category": "launch",
+   "date": "2026-11-18T00:39:46.000Z",
+   "updated": null,
+   "summary": "⭐ Don't miss Microsoft Ignite BRK343 to see demos of what's in this post.⭐ Wednesday, November 18, 2026, 10:15 to 11:00 AM Pacific Time Watch: AI is changing access. See how Microsoft Entra helps you stay ahead. AI and agents are changing the access landscape at a pace that challenges even mature id",
+   "first": "2026-11-18T05:13:16.901Z",
+   "score": 2,
+   "reasons": [
+    "+2 niche (entra, agents)"
+   ],
+   "status": "below",
+   "hash": "73fffa7c"
+  },
+  "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/ai-is-changing-access-catch-microsoft-entra-at-ignite-2026/ba-p/4513159": {
+   "title": "AI is changing access: Catch Microsoft Entra at Ignite 2026",
+   "link": "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/ai-is-changing-access-catch-microsoft-entra-at-ignite-2026/ba-p/4513159",
+   "source": "tc-entra",
+   "topic": "security-identity",
+   "category": "launch",
+   "date": "2026-11-18T00:08:11.000Z",
+   "updated": null,
+   "summary": "Join us at Microsoft Ignite 2026, November 17–20, 2026, at Moscone Center in San Francisco and online. Explore Microsoft Entra and learn how to secure access for users and AI agents. From stopping identity attacks to simplifying access policies and securing agents, our sessions bring practical guida",
+   "first": "2026-11-18T05:13:16.901Z",
+   "score": 5,
+   "reasons": [
+    "+2 niche (entra, agents)",
+    "+2 user steps \"how to\"",
+    "+1 plans/price/availability \"plan\""
+   ],
+   "status": "below",
+   "hash": "e8ae49b1"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63993": {
+   "title": "Result of the Overnight Variable Rate Reverse Repo (VRRR) auction held on November 18, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63993",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-18T10:35:00.000Z",
+   "updated": null,
+   "summary": "Tenor 1-day Notified Amount (in ₹ crore) 50,000 Total amount of offers received (in ₹ crore) 9,388 Amount accepted (in ₹ crore) 9,388 Cut off Rate (%) 5.49 Weighted Average Rate (%) 5.49 Partial Acceptance Percentage of offers received at cut off rate NA Ajit Prasad Deputy General Manager (Communica",
+   "first": "2026-11-18T05:13:16.901Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "40307e05"
   }
  },
  "devices": {}
