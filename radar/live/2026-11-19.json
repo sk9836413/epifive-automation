@@ -2,7 +2,7 @@
  "date": "2026-11-19",
  "title": "Tech news today, 19 November 2026",
  "published": "2026-11-19T00:28:31.694Z",
- "updated": "2026-11-19T05:13:16.704Z",
+ "updated": "2026-11-19T07:49:36.702Z",
  "items": [
   {
    "id": "a896af99",
@@ -594,7 +594,91 @@
    "ai": null,
    "score": 5,
    "story": null
+  },
+  {
+   "id": "41d7d4d1",
+   "key": "https://about.fb.com/news/2026/11/forum-a-dedicated-app-for-facebook-groups-is-now-available-in-indonesia",
+   "time": "2026-11-19T06:05:13.000Z",
+   "seen": "2026-11-19T07:49:36.702Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Forum, a Dedicated App for Facebook Groups, Is Now Available in Indonesia",
+   "summary": "Forum is now available in Indonesia, bringing Facebook Groups into one dedicated app to make joining conversations, finding answers and exploring interests easier. The post Forum, a Dedicated App for Facebook Groups, Is Now Available in Indonesia appeared first on Meta Newsroom .",
+   "lines": [
+    "Meta made Forum, a dedicated app for Facebook Groups, available in Indonesia.",
+    "Forum is now available in Indonesia.",
+    "The app puts Facebook Groups in one place to make joining conversations, finding answers and exploring interests easier."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Meta Newsroom",
+    "url": "https://about.fb.com/news/2026/11/forum-a-dedicated-app-for-facebook-groups-is-now-available-in-indonesia/"
+   },
+   "sourceId": "meta-newsroom",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "2c0f6686",
+   "key": "https://medianama.com/2026/11/223-payu-cloud-server-breach",
+   "time": "2026-11-19T05:24:48.000Z",
+   "seen": "2026-11-19T07:49:36.702Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "PayU loses Rs 25.67 crore in alleged cloud server breach; two arrested",
+   "summary": "Gurugram Cyber Police arrested two men after attackers breached PayU's cloud servers and siphoned off Rs 25.67 crore through 265 unauthorised transactions involving 156 bank accounts. The post PayU loses Rs 25.67 crore in alleged cloud server breach; two arrested appeared first on MEDIANAMA .",
+   "lines": [
+    "Reported by MediaNama: Attackers allegedly breached PayU's cloud servers and siphoned off Rs 25.67 crore through 265 unauthorised transactions involving 156 bank accounts.",
+    "Gurugram Cyber Police arrested two men after the breach.",
+    "Payment operators and IT teams may want to review cloud server access controls and transaction monitoring."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "MediaNama",
+    "url": "https://www.medianama.com/2026/11/223-payu-cloud-server-breach/"
+   },
+   "sourceId": "medianama",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 7,
+   "story": null
+  },
+  {
+   "id": "52e03418",
+   "key": "https://medianama.com/2026/11/223-cdac-e-sushrut-vulnerabilities",
+   "time": "2026-11-19T06:54:40.000Z",
+   "seen": "2026-11-19T07:49:36.702Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "CERT-In flags 4 high-severity flaws in C-DAC’s e-Sushrut hospital software, warns of patient data exposure risks",
+   "summary": "A hardcoded cryptographic key, improper authentication and an IDOR vulnerability are among the four security flaws CERT-In found in e-Sushrut. The post CERT-In flags 4 high-severity flaws in C-DAC’s e-Sushrut hospital software, warns of patient data exposure risks appeared first on MEDIANAMA .",
+   "lines": [
+    "Reported by MediaNama: CERT-In flagged four high-severity security flaws in C-DAC's e-Sushrut hospital software.",
+    "The flaws include a hardcoded cryptographic key, improper authentication and an IDOR vulnerability.",
+    "The report warns the flaws could expose patient data. Healthcare IT teams running e-Sushrut may want to review the flagged issues."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "MediaNama",
+    "url": "https://www.medianama.com/2026/11/223-cdac-e-sushrut-vulnerabilities/"
+   },
+   "sourceId": "medianama",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
   }
  ],
- "description": "20 technology updates from official sources, updated hourly: Introducing Gemini 4 Neon; 10-Year-Old NGINX HTTP/2 Flaw Lets Unauthenticated Attackers Execute Code on Servers; Add inline captions, cross-references, and tables of captions in Google Docs."
+ "description": "23 technology updates from official sources, updated hourly: Introducing Gemini 4 Neon; PayU loses Rs 25.67 crore in alleged cloud server breach; two arrested; 10-Year-Old NGINX HTTP/2 Flaw Lets Unauthenticated Attackers Execute Code on Servers."
 }
