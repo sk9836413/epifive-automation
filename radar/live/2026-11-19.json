@@ -2,7 +2,7 @@
  "date": "2026-11-19",
  "title": "Tech news today, 19 November 2026",
  "published": "2026-11-19T00:28:31.694Z",
- "updated": "2026-11-19T04:43:45.864Z",
+ "updated": "2026-11-19T05:13:16.704Z",
  "items": [
   {
    "id": "a896af99",
@@ -565,7 +565,36 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "ded7b808",
+   "key": "https://thehackernews.com/2026/11/php-warns-of-critical-security-flaws.html",
+   "time": "2026-11-19T04:33:46.000Z",
+   "seen": "2026-11-19T05:13:16.704Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "PHP Warns of Critical Security Flaws Affecting All Supported Versions, Fixes Coming November 19",
+   "summary": "The maintainers of the PHP programming language on Wednesday issued an advisory announcing an upcoming security release that addresses critical flaws. The release is scheduled for November 19, 2026, between 2 and 2:30 p.m. UTC. \"These releases are part of PHP's regular four-week release cycle and will address security vulnerabilities affecting all supported PHP versions,\" the maintainers said.",
+   "lines": [
+    "Reported by The Hacker News: The PHP maintainers issued an advisory announcing an upcoming security release that addresses critical flaws.",
+    "The release is scheduled for November 19, 2026, between 2 and 2:30 p.m. UTC.",
+    "The release will address security vulnerabilities affecting all supported PHP versions, as part of PHP's regular four-week release cycle.",
+    "IT teams running supported PHP versions should plan to apply the security release."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/php-warns-of-critical-security-flaws.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
   }
  ],
- "description": "19 technology updates from official sources, updated hourly: Introducing Gemini 4 Neon; 10-Year-Old NGINX HTTP/2 Flaw Lets Unauthenticated Attackers Execute Code on Servers; Add inline captions, cross-references, and tables of captions in Google Docs."
+ "description": "20 technology updates from official sources, updated hourly: Introducing Gemini 4 Neon; 10-Year-Old NGINX HTTP/2 Flaw Lets Unauthenticated Attackers Execute Code on Servers; Add inline captions, cross-references, and tables of captions in Google Docs."
 }

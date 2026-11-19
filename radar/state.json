@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-19T04:43:45.864Z",
+ "lastScan": "2026-11-19T05:13:16.704Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -15941,6 +15941,43 @@
    ],
    "status": "below",
    "hash": "224a04ad"
+  },
+  "https://thehackernews.com/2026/11/php-warns-of-critical-security-flaws.html": {
+   "title": "PHP Warns of Critical Security Flaws Affecting All Supported Versions, Fixes Coming November 19",
+   "link": "https://thehackernews.com/2026/11/php-warns-of-critical-security-flaws.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-19T04:33:46.000Z",
+   "updated": null,
+   "summary": "The maintainers of the PHP programming language on Wednesday issued an advisory announcing an upcoming security release that addresses critical flaws. The release is scheduled for November 19, 2026, between 2 and 2:30 p.m. UTC. \"These releases are part of PHP's regular four-week release cycle and wi",
+   "first": "2026-11-19T05:13:16.704Z",
+   "score": 5,
+   "reasons": [
+    "+1 source thn",
+    "+2 vulnerability \"Flaws\"",
+    "+2 user action \"Fixes\""
+   ],
+   "status": "below",
+   "hash": "65e27645"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/cloudwatch-network-path-monitoring": {
+   "title": "Amazon CloudWatch simplifies network performance monitoring for your Amazon Virtual Private Cloud (VPC)",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/cloudwatch-network-path-monitoring/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-18T08:00:00.000Z",
+   "updated": null,
+   "summary": "Amazon CloudWatch Network Monitoring now allows you to monitor the health of the AWS network paths that your workloads take by using performance monitors. Performance monitors provide near real-time visibility into whether the AWS network is healthy for your workloads, without installing any softwar",
+   "first": "2026-11-19T05:13:16.704Z",
+   "score": 0,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 user steps \"enable\""
+   ],
+   "status": "below",
+   "hash": "baf20db3"
   }
  },
  "devices": {}
