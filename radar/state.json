@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-19T03:43:43.666Z",
+ "lastScan": "2026-11-19T04:43:45.864Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -1052,60 +1052,6 @@
    ],
    "status": "below",
    "hash": "a088ec3d"
-  },
-  "https://apple.com/newsroom/2026/11/apple-launches-research-study-to-explore-the-use-of-ai-for-health": {
-   "title": "Apple launches research study to explore the use of AI for health",
-   "link": "https://www.apple.com/newsroom/2026/11/apple-launches-research-study-to-explore-the-use-of-ai-for-health/",
-   "source": "apple-newsroom",
-   "topic": "mobiles",
-   "category": "launch",
-   "date": "2026-11-16T01:18:33.934Z",
-   "updated": "2026-11-16T01:18:33.934Z",
-   "summary": "Apple today announced the launch of the Apple Health AI Usage Study in the United States, which includes a virtual research study and associated app.",
-   "first": "2026-11-16T04:43:45.673Z",
-   "score": 1,
-   "reasons": [
-    "+1 source apple-newsroom",
-    "+2 launch \"launches\"",
-    "+1 launch in the headline",
-    "-3 corporate/announcement \"research\""
-   ],
-   "status": "below",
-   "hash": "abcfe51d"
-  },
-  "https://news.samsung.com/global/inside-dakar-2026-how-galaxy-innovation-shaped-the-athlete-experience": {
-   "title": "Inside Dakar 2026: How Galaxy Innovation Shaped the Athlete Experience",
-   "link": "https://news.samsung.com/global/inside-dakar-2026-how-galaxy-innovation-shaped-the-athlete-experience",
-   "source": "samsung-global",
-   "topic": "mobiles",
-   "category": "launch",
-   "date": "2026-11-16T08:00:00.000Z",
-   "updated": null,
-   "summary": "The Youth Olympic Games Dakar 2026 opened in Senegal on October 31, giving young athletes a defining stage to test their limits and grow on and off the field. As a Worldwide Olympic and Paralympic Partner, Samsung Electronics has been a constant force behind that journey — bringing Galaxy technology",
-   "first": "2026-11-16T04:43:45.673Z",
-   "score": 1,
-   "reasons": [
-    "+1 niche (galaxy)"
-   ],
-   "status": "below",
-   "hash": "f3ab25fc"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63977": {
-   "title": "Money Market Operations as on November 13, 2026",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63977",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-16T09:00:00.000Z",
-   "updated": null,
-   "summary": "(Amount in ₹ crore, Rate in Per cent) MONEY MARKETS @ --> Money Markets @ Volume (One Leg) Weighted Average Rate Range A. Overnight Segment (I+II+III+IV) 7,75,521.41 5.62 1.00-7.40 I. Call Money 13,875.06 5.61 4.30-5.85 II. Triparty Repo 5,40,144.75 5.65 5.47-5.88 III. Market Repo 2,14,125.25 5.55 1",
-   "first": "2026-11-16T04:43:45.673Z",
-   "score": -1,
-   "reasons": [
-    "-1 source rbi-press"
-   ],
-   "status": "below",
-   "hash": "2d0d25b2"
   },
   "https://thehackernews.com/2026/11/amazon-uncovers-ai-agent-campaign.html": {
    "title": "Amazon Uncovers AI Agent Campaign Targeting LiteLLM, Dify, and Other Apps for API Keys",
@@ -14267,13 +14213,15 @@
     "+4 flagship AI model (Gemini 4 Neon)",
     "+1 autocomplete (9)"
    ],
-   "status": "writing",
+   "status": "published",
    "hash": "3527228e",
    "story": "ai:gemini 4 neon:release",
    "kind": "new",
    "extra": false,
    "taskAt": "2026-11-19T03:43:43.666Z",
-   "attempts": 1
+   "attempts": 1,
+   "slug": "gemini-4-neon-use-pricing-availability",
+   "resultAt": "2026-11-19T03:54:35.825Z"
   },
   "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie": {
    "title": "Genie 4 is now available",
@@ -15945,6 +15893,54 @@
    ],
    "status": "below",
    "hash": "23b1640"
+  },
+  "https://news.lenovo.com/q2-2026-27-key-achievements-and-milestones-infographic": {
+   "title": "Q2 2026/27 Key Achievements and Milestones (Infographic)",
+   "link": "https://news.lenovo.com/q2-2026-27-key-achievements-and-milestones-infographic/",
+   "source": "lenovo-news",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-19T04:02:35.000Z",
+   "updated": null,
+   "summary": "Lenovo reported second quarter results for fiscal year 2026/27, demonstrating strong growth, a leap forward in profitability, and structural enhancements to the Group’s business fundamentals.",
+   "first": "2026-11-19T04:43:45.864Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "c3ebc996"
+  },
+  "https://news.lenovo.com/pressroom/press-releases/q2-fy-2026-27": {
+   "title": "Lenovo Delivers Record Q2 Performance, Confident in Long-term Hybrid AI Opportunities",
+   "link": "https://news.lenovo.com/pressroom/press-releases/q2-fy-2026-27/",
+   "source": "lenovo-news",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-19T04:02:32.000Z",
+   "updated": null,
+   "summary": "Lenovo today reported second quarter results for fiscal year 2026/27, demonstrating strong growth, a leap forward in profitability, and structural enhancements to the Group’s business fundamentals.",
+   "first": "2026-11-19T04:43:45.864Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "fc7df3b8"
+  },
+  "https://paloaltonetworks.com/blog/2026/11/secure-si-by-design-consortium-officially-approved-by-u-s-government": {
+   "title": "Secure SI by Design Consortium Officially Approved by U.S. Government",
+   "link": "https://www.paloaltonetworks.com/blog/2026/11/secure-si-by-design-consortium-officially-approved-by-u-s-government/",
+   "source": "paloalto-blog",
+   "topic": "security-identity",
+   "category": "launch",
+   "date": "2026-11-17T16:59:52.000Z",
+   "updated": null,
+   "summary": "The United States government has officially approved the Secure SI by Design Consortium, an industry coalition led by Palo Alto Networks alongside NVIDIA, IBM, OpenAI, Snowflake, Cognizant, Reflection, Factory, and ServiceNow. Established … The post Secure SI by Design Consortium Officially Approved",
+   "first": "2026-11-19T04:43:45.864Z",
+   "score": 0,
+   "reasons": [
+    "-1 source paloalto-blog",
+    "+1 niche (openai)"
+   ],
+   "status": "below",
+   "hash": "224a04ad"
   }
  },
  "devices": {}
