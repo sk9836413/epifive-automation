@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-19T13:16:57.239Z",
+ "lastScan": "2026-11-19T14:15:21.082Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -1053,66 +1053,6 @@
    "status": "below",
    "hash": "a088ec3d"
   },
-  "https://openai.com/index/lvmh-media-division-partnership": {
-   "title": "LVMH’s Media Division announces strategic partnership with OpenAI",
-   "link": "https://openai.com/index/lvmh-media-division-partnership",
-   "source": "openai-news",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-16T09:00:00.000Z",
-   "updated": null,
-   "summary": "LVMH’s Media Division and OpenAI announce a partnership to support journalism with AI and make its publications more accessible through ChatGPT.",
-   "first": "2026-11-16T13:17:11.645Z",
-   "score": 2,
-   "reasons": [
-    "+2 source openai-news",
-    "+4 niche (chatgpt, openai)",
-    "-4 customer story"
-   ],
-   "status": "below",
-   "hash": "9bc413df"
-  },
-  "https://openai.com/index/the-kings-trust-and-openai": {
-   "title": "The King’s Trust and OpenAI launch £1m partnership",
-   "link": "https://openai.com/index/the-kings-trust-and-openai",
-   "source": "openai-news",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-16T00:00:00.000Z",
-   "updated": null,
-   "summary": "The King’s Trust and OpenAI launch a £1m partnership to help up to 25,000 young people across the UK build practical AI skills for work.",
-   "first": "2026-11-16T13:17:11.645Z",
-   "score": -1,
-   "reasons": [
-    "+2 source openai-news",
-    "+1 niche (openai)",
-    "+2 launch \"launch\"",
-    "+1 launch in the headline",
-    "-4 customer story",
-    "-3 category (Global Affairs)"
-   ],
-   "status": "below",
-   "hash": "3f0d2f47"
-  },
-  "https://thehackernews.com/2026/11/six-unpatched-danfoss-refrigeration.html": {
-   "title": "Six Unpatched Danfoss Refrigeration Controller Flaws Could Allow Remote Takeover Without Login",
-   "link": "https://thehackernews.com/2026/11/six-unpatched-danfoss-refrigeration.html",
-   "source": "thn",
-   "topic": "security-identity",
-   "category": "incident",
-   "date": "2026-11-16T12:34:21.000Z",
-   "updated": null,
-   "summary": "Six flaws in Danfoss AK-SM800A refrigeration controllers could let a remote attacker take over a controller without logging in, Dutch security consultancy Midnight Blue said earlier this week. No patch is available, and the researchers say the newest firmware, version 5.4.0, does not fix the flaws. ",
-   "first": "2026-11-16T13:17:11.645Z",
-   "score": 5,
-   "reasons": [
-    "+1 source thn",
-    "+2 vulnerability \"Flaws\"",
-    "+2 user action \"patch\""
-   ],
-   "status": "below",
-   "hash": "c7f62318"
-  },
   "https://thehackernews.com/2026/11/retadup-worm-resurfaces-7-years-after.html": {
    "title": "Retadup Worm Resurfaces 7 Years After Takedown to Spread CoffeeLoader Malware",
    "link": "https://thehackernews.com/2026/11/retadup-worm-resurfaces-7-years-after.html",
@@ -1131,207 +1071,6 @@
    ],
    "status": "below",
    "hash": "c3e0c16b"
-  },
-  "https://blog.google/company-news/inside-google/around-the-globe/google-europe/united-kingdom/what-teenagers-really-think-about-online-safety-and-ai": {
-   "title": "What teenagers really think about online safety and AI",
-   "link": "https://blog.google/company-news/inside-google/around-the-globe/google-europe/united-kingdom/what-teenagers-really-think-about-online-safety-and-ai/",
-   "source": "google-keyword",
-   "topic": "how-to-tips",
-   "category": "launch",
-   "date": "2026-11-16T08:00:00.000Z",
-   "updated": null,
-   "summary": "CEO of ParentZone, Vicki Shotbolt, explains how UK teens are digitally curious and alert to online risks, relying on parent support and using AI creatively to learn.",
-   "first": "2026-11-16T13:17:11.645Z",
-   "score": 0,
-   "reasons": [],
-   "status": "below",
-   "hash": "35bc16c1"
-  },
-  "https://blog.google/company-news/inside-google/around-the-globe/google-europe/united-kingdom/helping-teens-navigate-online-news-and-information": {
-   "title": "Helping teens navigate online news and information",
-   "link": "https://blog.google/company-news/inside-google/around-the-globe/google-europe/united-kingdom/helping-teens-navigate-online-news-and-information/",
-   "source": "google-keyword",
-   "topic": "how-to-tips",
-   "category": "launch",
-   "date": "2026-11-16T08:00:00.000Z",
-   "updated": null,
-   "summary": "Rachel Huggins, CEO of Internet Matters, explains how UK teens navigate AI and online news, highlighting the need for media literacy support from educators, platforms, a…",
-   "first": "2026-11-16T13:17:11.645Z",
-   "score": 0,
-   "reasons": [],
-   "status": "below",
-   "hash": "78970bc"
-  },
-  "https://blog.google/company-news/inside-google/around-the-globe/google-europe/united-kingdom/listening-to-teens-on-online-safety": {
-   "title": "Listening to teens on online safety",
-   "link": "https://blog.google/company-news/inside-google/around-the-globe/google-europe/united-kingdom/listening-to-teens-on-online-safety/",
-   "source": "google-keyword",
-   "topic": "how-to-tips",
-   "category": "launch",
-   "date": "2026-11-16T08:00:00.000Z",
-   "updated": null,
-   "summary": "Will Gardner, CEO of Childnet, explains how teenagers are embracing AI creatively and responsibly, emphasising the vital role of listening to young voices when navigatin…",
-   "first": "2026-11-16T13:17:11.645Z",
-   "score": 0,
-   "reasons": [],
-   "status": "below",
-   "hash": "11308963"
-  },
-  "https://news.samsung.com/in/samsungs-latest-products-recognized-by-consumer-technology-association-ahead-of-ces-2027": {
-   "title": "Samsung’s Latest Products Recognized by Consumer Technology Association Ahead of CES 2027",
-   "link": "https://news.samsung.com/in/samsungs-latest-products-recognized-by-consumer-technology-association-ahead-of-ces-2027",
-   "source": "samsung-india",
-   "topic": "mobiles",
-   "category": "launch",
-   "date": "2026-11-16T15:59:38.000Z",
-   "updated": null,
-   "summary": "Samsung Electronics, a global leader in technology, today announced that a range of its products and services have been recognized by the Consumer Technology Association (CTA)® as part of the CES Innovation Awards® 2027 program, doubling the number of Best of Innovation winners from 2026. The CES In",
-   "first": "2026-11-16T13:17:11.645Z",
-   "score": 1,
-   "reasons": [
-    "+1 also on samsung-global"
-   ],
-   "status": "below",
-   "hash": "426437f0"
-  },
-  "https://news.samsung.com/in/from-indian-roads-to-global-wrists-how-engineers-at-samsungs-noida-rd-centre-are-helping-shape-the-new-galaxy-watch-experience": {
-   "title": "From Indian Roads to Global Wrists: How Engineers at Samsung’s Noida R&D Centre Are Helping Shape the New Galaxy Watch Experience",
-   "link": "https://news.samsung.com/in/from-indian-roads-to-global-wrists-how-engineers-at-samsungs-noida-rd-centre-are-helping-shape-the-new-galaxy-watch-experience",
-   "source": "samsung-india",
-   "topic": "mobiles",
-   "category": "launch",
-   "date": "2026-11-16T15:42:15.000Z",
-   "updated": null,
-   "summary": "What does an auto-rickshaw on an Indian road have to do with a Galaxy Watch sold anywhere in the world? For engineers at Samsung Research Institute–Noida (SRI-N), the answer lies at the heart of how wearable technology is developed and tested. During the development of auto cycle detection, Indian e",
-   "first": "2026-11-16T13:17:11.645Z",
-   "score": 1,
-   "reasons": [
-    "+1 niche (galaxy)"
-   ],
-   "status": "below",
-   "hash": "9e3e2c3c"
-  },
-  "https://news.samsung.com/in/from-a-chamarajanagar-farm-in-karnataka-to-a-tech-job-ruchitha-breaks-new-ground": {
-   "title": "From a Chamarajanagar Farm in Karnataka to a Tech Job: Ruchitha Breaks New Ground",
-   "link": "https://news.samsung.com/in/from-a-chamarajanagar-farm-in-karnataka-to-a-tech-job-ruchitha-breaks-new-ground",
-   "source": "samsung-india",
-   "topic": "mobiles",
-   "category": "launch",
-   "date": "2026-11-16T14:30:28.000Z",
-   "updated": null,
-   "summary": "Ruchitha S. grew up in Yeragamballi, where her family’s two acres of farmland provide its main income. Now, the engineering student is preparing to begin a career in technology after securing a placement at Coupa as an Associate Cloud Software Engineer. She is the first in her family to pursue an en",
-   "first": "2026-11-16T13:17:11.645Z",
-   "score": 0,
-   "reasons": [],
-   "status": "below",
-   "hash": "ee05373c"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63983": {
-   "title": "Auction of Government of India Dated Securities",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63983",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-16T17:45:00.000Z",
-   "updated": null,
-   "summary": "Government of India (GoI) has announced the sale (re-issue) of two dated securities for a notified amount of ₹33,000 crore as per the following details: Sr No Security Date of Repayment Notified Amount (₹ Crore) GoI specific Notification Auction Date Settlement Date 1 6.53% GS 2031 Sep 07, 2031 19,0",
-   "first": "2026-11-16T13:17:11.645Z",
-   "score": 0,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 plans/price/availability \"India\""
-   ],
-   "status": "below",
-   "hash": "dffff6b3"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63982": {
-   "title": "Result: Conversion/Switch Auction of Government of India Securities",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63982",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-16T14:55:00.000Z",
-   "updated": null,
-   "summary": "A. Source Security 7.38% GS 2027 8.26% GS 2027 7.37% GS 2028 7.26% GS 2029 7.10% GS 2029 7.04% GS 2029 B. Notified Amount (in ₹ crore) 5,000 2,000 4,000 4,000 5,000 5,000 Destination Security 7.18% GS 2037 7.40% GS 2062 6.83% GS 2039 7.73% GS 2034 6.64% GS 2035 7.41% GS 2036 C. i. No. of offers rece",
-   "first": "2026-11-16T13:17:11.645Z",
-   "score": 0,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 plans/price/availability \"India\""
-   ],
-   "status": "below",
-   "hash": "98b0b46a"
-  },
-  "https://blogs.vmware.com/cloud-foundation/2026/11/16/know-the-moment-your-vcf-platform-changes-alerting-on-new-services-runtime-nodes": {
-   "title": "Know the Moment Your VCF Platform Changes: Alerting on New Services Runtime Nodes",
-   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/16/know-the-moment-your-vcf-platform-changes-alerting-on-new-services-runtime-nodes/",
-   "source": "vmware-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-16T13:12:02.000Z",
-   "updated": null,
-   "summary": "A VCF Operations alert that detects new Services Runtime node VMs by name and IP address. VMware Cloud Foundation (VCF) management services in VCF 9.1.x run on VCF services runtime, a Kubernetes-based layer whose worker nodes are ordinary virtual machines in your management domain. When you scale ou",
-   "first": "2026-11-16T13:17:11.645Z",
-   "score": 1,
-   "reasons": [
-    "-1 source vmware-blog",
-    "+2 user steps \"upgrade\""
-   ],
-   "status": "below",
-   "hash": "94d8457"
-  },
-  "https://blogs.vmware.com/cloud-foundation/2026/11/16/building-a-vcf-9-1-installer-depot-offline-without-a-download-token": {
-   "title": "Building a VCF 9.1 Installer Depot Offline, without a Download Token",
-   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/16/building-a-vcf-9-1-installer-depot-offline-without-a-download-token/",
-   "source": "vmware-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-16T08:33:04.000Z",
-   "updated": null,
-   "summary": "In 9.1, the VCF Download Tool (VCFDT) needs an activation code tied to an entitled site. A username and password don’t work in 9.x. If you’re a Broadcom partner or an employee, your portal login can usually download individual files from the Broadcom Support Portal, but it often can’t generate an ac",
-   "first": "2026-11-16T13:17:11.645Z",
-   "score": 2,
-   "reasons": [
-    "-1 source vmware-blog",
-    "+1 niche (password)",
-    "+2 user steps \"Download\""
-   ],
-   "status": "below",
-   "hash": "7a841d50"
-  },
-  "https://news.sap.com/2026/11/order-management-built-straight-into-sap-dataxstream": {
-   "title": "Order Management Built Straight into SAP",
-   "link": "https://news.sap.com/2026/11/order-management-built-straight-into-sap-dataxstream/",
-   "source": "sap-news",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-16T12:15:00.000Z",
-   "updated": null,
-   "summary": "The fewer systems you have to stitch together, the fewer things there are to break.",
-   "first": "2026-11-16T13:17:11.645Z",
-   "score": -1,
-   "reasons": [
-    "-1 source sap-news"
-   ],
-   "status": "below",
-   "hash": "fc7c88bc"
-  },
-  "https://elevenlabs.io/blog/postnord": {
-   "title": "How the Nordics' leading postal operator rebuilt its customer support on ElevenAgents",
-   "link": "https://elevenlabs.io/blog/postnord",
-   "source": "elevenlabs-blog",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-17T12:00:00.000Z",
-   "updated": null,
-   "summary": "Yahoo used the ElevenAgents platform to add conversational voice to its new Yahoo Scout AI answer tool, going from kickoff to production in 6 weeks.",
-   "first": "2026-11-16T13:17:11.645Z",
-   "score": -2,
-   "reasons": [
-    "-2 source elevenlabs-blog"
-   ],
-   "status": "below",
-   "hash": "683cb0c"
   },
   "https://blog.google/products-and-platforms/products/shopping/black-friday-cyber-monday-shopping-tips-2026": {
    "title": "How to find the best Black Friday deals and shop smarter",
@@ -16182,6 +15921,152 @@
    ],
    "status": "below",
    "hash": "7be09830"
+  },
+  "https://techcommunity.microsoft.com/t5/exchange-team-blog/sending-from-email-aliases-general-availability/ba-p/4562543": {
+   "title": "Sending From Email Aliases – General Availability",
+   "link": "https://techcommunity.microsoft.com/t5/exchange-team-blog/sending-from-email-aliases-general-availability/ba-p/4562543",
+   "source": "tc-exchange",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-18T21:11:05.000Z",
+   "updated": null,
+   "summary": "Today we are announcing the General Availability (GA) of Sending from Aliases for Exchange Online. This was a highly requested feature that now empowers users to send emails from any alias (proxy address) associated with their mailbox, not just their primary SMTP address. Read on to learn how it wor",
+   "first": "2026-11-19T14:15:21.082Z",
+   "score": 7,
+   "reasons": [
+    "+1 source tc-exchange",
+    "+1 niche (exchange)",
+    "+2 launch \"General Availability\"",
+    "+2 user steps \"how to\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "6a3fc5c4"
+  },
+  "https://about.fb.com/news/2026/11/meta-premieres-indias-first-government-led-microdrama-series-on-scams-awareness": {
+   "title": "Meta premieres India’s First Government-Led Microdrama Series on Scams Awareness",
+   "link": "https://about.fb.com/news/2026/11/meta-premieres-indias-first-government-led-microdrama-series-on-scams-awareness/",
+   "source": "meta-newsroom",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-19T13:05:53.000Z",
+   "updated": null,
+   "summary": "Meta has partnered with The Ministry of Information & Broadcasting (MIB), Prasar Bharati, Securities and Exchange Board of India (SEBI), and Indian Cyber Crime Coordination Centre (I4C) to launch India's first government-led public interest microdrama series on online scams. The post Meta premieres ",
+   "first": "2026-11-19T14:15:21.082Z",
+   "score": 4,
+   "reasons": [
+    "+1 niche (exchange)",
+    "+2 launch \"launch\"",
+    "+1 plans/price/availability \"India\""
+   ],
+   "status": "below",
+   "hash": "8a755bcf"
+  },
+  "https://salesforce.com/blog/small-business/contact-center-basics": {
+   "title": "Contact Center Basics: For Small Teams Who Want to Serve Big",
+   "link": "https://www.salesforce.com/blog/small-business/contact-center-basics/",
+   "source": "salesforce-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-19T14:00:00.000Z",
+   "updated": null,
+   "summary": "Starting your first contact center? Or leveling yours up? Consider these basics first.",
+   "first": "2026-11-19T14:15:21.082Z",
+   "score": -1,
+   "reasons": [
+    "-1 source salesforce-blog"
+   ],
+   "status": "below",
+   "hash": "b3ffb6d0"
+  },
+  "https://blog.cloudflare.com/internet-traffic-2026-us-election": {
+   "title": "Internet traffic and attacks during the 2026 U.S. midterm elections",
+   "link": "https://blog.cloudflare.com/internet-traffic-2026-us-election/",
+   "source": "cloudflare-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-19T14:00:00.000Z",
+   "updated": null,
+   "summary": "On November 3, 2026 U.S. voters headed to the polls. Here’s what Cloudflare data across more than 1,400 protected sites tells us about Election Day Internet traffic and cyberattacks.",
+   "first": "2026-11-19T14:15:21.082Z",
+   "score": -4,
+   "reasons": [
+    "-1 source cloudflare-blog",
+    "-3 corporate/announcement \"elections\""
+   ],
+   "status": "below",
+   "hash": "dfe54d85"
+  },
+  "https://blogs.nvidia.com/blog/geforce-now-thursday-black-friday-2026": {
+   "title": "Season’s Streamings and Savings: Black Friday Deals Come to GeForce NOW",
+   "link": "https://blogs.nvidia.com/blog/geforce-now-thursday-black-friday-2026/",
+   "source": "nvidia-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-19T14:00:12.000Z",
+   "updated": null,
+   "summary": "GeForce NOW is kicking off Black Friday with more reasons to make time for gaming. Six-month memberships are back for a limited time. Save 30% on the first six-month term of a Performance or Ultimate membership. Big gaming plans, smaller price tag. Keep the holiday savings going: Check out more NVID",
+   "first": "2026-11-19T14:15:21.082Z",
+   "score": 0,
+   "reasons": [
+    "-1 source nvidia-news",
+    "+1 plans/price/availability \"plans\""
+   ],
+   "status": "below",
+   "hash": "f79a63ba"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64004": {
+   "title": "Auction of State Government Securities",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64004",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-19T19:05:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-19T14:15:21.082Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "4edf8eb3"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64003": {
+   "title": "RBI to conduct 3-day Variable Rate Repo (VRR) auction under LAF on November 20, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64003",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-19T19:00:00.000Z",
+   "updated": null,
+   "summary": "On a review of current and evolving liquidity conditions in the near term, it has been decided to conduct a Variable Rate Repo (VRR) auction on Friday, November 20, 2026, as under: Sl. No. Notified Amount (₹ crore) Tenor (day) Window Timing Date of Reversal 1 50,000 3 09:30 AM to 10:00 AM November 2",
+   "first": "2026-11-19T14:15:21.082Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "3363b2f2"
+  },
+  "https://aws.amazon.com/aws.amazon.com/about-aws/whats-new/2026/11/parameter-store-raises-api-throughput-limits": {
+   "title": "AWS Systems Manager Parameter Store raises API throughput limits",
+   "link": "https://aws.amazon.com/aws.amazon.com/about-aws/whats-new/2026/11/parameter-store-raises-api-throughput-limits/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-19T05:00:00.000Z",
+   "updated": null,
+   "summary": "AWS Systems Manager Parameter Store has increased the default throughput limits for five API operations. For accounts that have turned on the higher throughput setting, the quotas have changed as follows, in transactions per second (TPS): GetParametersByPath (from 100 to 500 TPS) PutParameter (10 to",
+   "first": "2026-11-19T14:15:21.082Z",
+   "score": -6,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "-1 narrow audience \"API\"",
+    "-3 corporate/announcement \"raises\""
+   ],
+   "status": "below",
+   "hash": "26c8cc3b"
   }
  },
  "devices": {}

@@ -2,7 +2,7 @@
  "date": "2026-11-19",
  "title": "Tech news today, 19 November 2026",
  "published": "2026-11-19T00:28:31.694Z",
- "updated": "2026-11-19T13:16:57.239Z",
+ "updated": "2026-11-19T14:15:21.082Z",
  "items": [
   {
    "id": "a896af99",
@@ -1014,7 +1014,62 @@
    "ai": null,
    "score": 6,
    "story": null
+  },
+  {
+   "id": "b2ac7b17",
+   "key": "https://techcommunity.microsoft.com/t5/exchange-team-blog/sending-from-email-aliases-general-availability/ba-p/4562543",
+   "time": "2026-11-18T21:11:05.000Z",
+   "seen": "2026-11-19T14:15:21.082Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Sending From Email Aliases – General Availability",
+   "summary": "Today we are announcing the General Availability (GA) of Sending from Aliases for Exchange Online. This was a highly requested feature that now empowers users to send emails from any alias (proxy address) associated with their mailbox, not just their primary SMTP address. Read on to learn how it works, how to enable it, and what’s next. What Is Sending From Aliases? Sending from Aliases allows Exchange Online users to send emails using any of their configured aliases or proxy (or secondary) SMTP addresses. Previously, aliases could only receive mail, and all outgoing messages used the primary SMTP address of the mailbox. Workarounds like shared mailboxes or distribution groups were used in t",
+   "lines": [
+    "Exchange Online now has General Availability of Sending from Aliases, which lets users send email from any alias (proxy address) on their mailbox, not just the primary SMTP address.",
+    "Previously, aliases could only receive mail, and outgoing messages used the primary SMTP address.",
+    "For IT teams, this can reduce reliance on workarounds such as shared mailboxes or distribution groups when users need to send from an alias."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Tech Community: Exchange Team Blog",
+    "url": "https://techcommunity.microsoft.com/t5/exchange-team-blog/sending-from-email-aliases-general-availability/ba-p/4562543"
+   },
+   "sourceId": "tc-exchange",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null
+  },
+  {
+   "id": "107615bb",
+   "key": "https://about.fb.com/news/2026/11/meta-premieres-indias-first-government-led-microdrama-series-on-scams-awareness",
+   "time": "2026-11-19T13:05:53.000Z",
+   "seen": "2026-11-19T14:15:21.082Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Meta premieres India’s First Government-Led Microdrama Series on Scams Awareness",
+   "summary": "Meta has partnered with The Ministry of Information & Broadcasting (MIB), Prasar Bharati, Securities and Exchange Board of India (SEBI), and Indian Cyber Crime Coordination Centre (I4C) to launch India's first government-led public interest microdrama series on online scams. The post Meta premieres India’s First Government-Led Microdrama Series on Scams Awareness appeared first on Meta Newsroom .",
+   "lines": [
+    "Meta partnered with The Ministry of Information & Broadcasting (MIB), Prasar Bharati, the Securities and Exchange Board of India (SEBI), and the Indian Cyber Crime Coordination Centre (I4C) to launch India's first government-led public interest microdrama series on online scams.",
+    "The series is aimed at scams awareness, a topic relevant to business users and IT teams concerned with online fraud risk."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Meta Newsroom",
+    "url": "https://about.fb.com/news/2026/11/meta-premieres-indias-first-government-led-microdrama-series-on-scams-awareness/"
+   },
+   "sourceId": "meta-newsroom",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
   }
  ],
- "description": "35 technology updates from official sources, updated hourly: Introducing Gemini 4 Neon; PayU loses Rs 25.67 crore in alleged cloud server breach; two arrested; 10-Year-Old NGINX HTTP/2 Flaw Lets Unauthenticated Attackers Execute Code on Servers."
+ "description": "37 technology updates from official sources, updated hourly: Introducing Gemini 4 Neon; PayU loses Rs 25.67 crore in alleged cloud server breach; two arrested; 10-Year-Old NGINX HTTP/2 Flaw Lets Unauthenticated Attackers Execute Code on Servers."
 }
