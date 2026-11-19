@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-18T18:09:55.395Z",
+ "lastScan": "2026-11-19T00:28:31.694Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -2820,7 +2820,7 @@
     "+1 category (Security)",
     "+1 autocomplete (9)"
    ],
-   "status": "queued",
+   "status": "expired",
    "hash": "da384441"
   },
   "https://workspaceupdates.googleblog.com/2026/11/share-skills-add-files-from-Drive-Notebook-Photos-to-skills-Gemini-app.html": {
@@ -13480,8 +13480,12 @@
     "+1 also on gemini-blog, google-keyword",
     "+1 autocomplete (5)"
    ],
-   "status": "queued",
-   "hash": "982461a6"
+   "status": "writing",
+   "hash": "982461a6",
+   "kind": "new",
+   "extra": false,
+   "taskAt": "2026-11-19T00:28:31.694Z",
+   "attempts": 1
   },
   "https://thehackernews.com/2026/11/eggstreme-hackers-rebuild-malware-with.html": {
    "title": "New EggStreme Malware Variant Goes Silent to Evade Security Tools in Government Attacks",
@@ -14199,6 +14203,1428 @@
    ],
    "status": "below",
    "hash": "9cc0ee60"
+  },
+  "https://openai.com/index/the-silent-consensus": {
+   "title": "The Silent Consensus",
+   "link": "https://openai.com/index/the-silent-consensus",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-18T10:00:00.000Z",
+   "updated": null,
+   "summary": "Dean Ball, Head of Strategic Futures at OpenAI, examines how more capable AI could reshape society and how people can retain control of their institutions.",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 3,
+   "reasons": [
+    "+2 source openai-news",
+    "+1 niche (openai)"
+   ],
+   "status": "below",
+   "hash": "9bd6d96b"
+  },
+  "https://openai.com/index/research-acceleration-jagged-frontier": {
+   "title": "Research acceleration: The jagged frontier",
+   "link": "https://openai.com/index/research-acceleration-jagged-frontier",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-18T08:00:00.000Z",
+   "updated": null,
+   "summary": "OpenAI measures how coding agents are accelerating AI research, where their performance remains uneven, and what this signals about recursive self-improvement.",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": -1,
+   "reasons": [
+    "+2 source openai-news",
+    "+2 niche (openai, agents)",
+    "-3 corporate/announcement \"Research\"",
+    "-2 category (Research)"
+   ],
+   "status": "below",
+   "hash": "ee23c4bb"
+  },
+  "https://openai.com/business/customer-stories/sumitomo-life": {
+   "title": "How Sumitomo Life’s leaders helped teams adopt ChatGPT Enterprise",
+   "link": "https://openai.com/business/customer-stories/sumitomo-life",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-18T08:00:00.000Z",
+   "updated": null,
+   "summary": "Sumitomo Life uses ChatGPT Enterprise to research insurers, prepare proposals, and draft code for investment analysis. Early use by executives helped drive adoption.",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 3,
+   "reasons": [
+    "+2 source openai-news",
+    "+3 niche (chatgpt)",
+    "-2 category (none)"
+   ],
+   "status": "below",
+   "hash": "5c0161ff"
+  },
+  "https://openai.com/index/inside-the-codex-sandbox": {
+   "title": "Inside the Codex sandbox",
+   "link": "https://openai.com/index/inside-the-codex-sandbox",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-18T08:00:00.000Z",
+   "updated": null,
+   "summary": "See how Codex runs commands on your machine while enforcing the filesystem and network limits you control across macOS, Linux, and Windows.",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 4,
+   "reasons": [
+    "+2 source openai-news",
+    "+3 niche (windows, macos, codex)",
+    "-1 category (Engineering)"
+   ],
+   "status": "below",
+   "hash": "6748cd8"
+  },
+  "https://openai.com/index/managing-frontier-ai-risk": {
+   "title": "Managing frontier AI risk: From training to deployment",
+   "link": "https://openai.com/index/managing-frontier-ai-risk",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-18T06:00:00.000Z",
+   "updated": null,
+   "summary": "OpenAI explains how it manages frontier AI risk from training through deployment with model alignment, sandboxing, blocking safeguards, and monitoring.",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 1,
+   "reasons": [
+    "+2 source openai-news",
+    "+1 niche (openai)",
+    "-2 category (Safety)"
+   ],
+   "status": "below",
+   "hash": "3bde3b82"
+  },
+  "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon": {
+   "title": "Introducing Gemini 4 Neon",
+   "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+   "source": "gemini-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-18T21:00:00.000Z",
+   "updated": null,
+   "summary": "Today, we’re introducing Gemini 4 Neon",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 12,
+   "reasons": [
+    "+1 source gemini-blog",
+    "+2 niche (gemini)",
+    "+2 launch \"Introducing\"",
+    "+1 launch in the headline",
+    "+1 also on deepmind-blog, google-keyword",
+    "+4 flagship AI model (Gemini 4 Neon)",
+    "+1 autocomplete (9)"
+   ],
+   "status": "queued",
+   "hash": "3527228e",
+   "story": "ai:gemini 4 neon:release"
+  },
+  "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie": {
+   "title": "Genie 4 is now available",
+   "link": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/",
+   "source": "gemini-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-18T18:00:00.000Z",
+   "updated": null,
+   "summary": "We are rolling out a new Project Genie experience to eligible Google AI Ultra subscribers, opening access to our new Genie 4 world model.",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 6,
+   "reasons": [
+    "+1 source gemini-blog",
+    "+2 launch \"now available\"",
+    "+1 plans/price/availability \"eligible\"",
+    "+1 launch in the headline",
+    "+1 also on deepmind-blog, google-keyword"
+   ],
+   "status": "below",
+   "hash": "4c4bb3d7"
+  },
+  "https://anthropic.com/news/anthropic-prices-initial-public-offering": {
+   "title": "Anthropic prices initial public offering",
+   "link": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
+   "source": "anthropic-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-18T00:00:00.000Z",
+   "updated": null,
+   "summary": "Today Anthropic, PBC priced its initial public offering of its Class A common stock.",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 3,
+   "reasons": [
+    "+1 source anthropic-news",
+    "+1 niche (exchange)",
+    "+1 plans/price/availability \"$8\""
+   ],
+   "status": "below",
+   "hash": "efda7a79"
+  },
+  "https://thehackernews.com/2026/11/10-year-old-nginx-http2-flaw-lets.html": {
+   "title": "10-Year-Old NGINX HTTP/2 Flaw Lets Unauthenticated Attackers Execute Code on Servers",
+   "link": "https://thehackernews.com/2026/11/10-year-old-nginx-http2-flaw-lets.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-18T18:31:17.000Z",
+   "updated": null,
+   "summary": "A flaw in NGINX's HTTP/2 support can allow an attacker to run code on servers with HTTP/2 enabled, without needing to log in. The decade-old flaw, CVE-2026-123007, dubbed \"nginx2root,\" has been present in NGINX's open-source code since version 1.9.5, released on September 22, 2015. Fixed versions 1.",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 6,
+   "reasons": [
+    "+1 source thn",
+    "+2 vulnerability \"Flaw\"",
+    "+2 user action \"Fixed\"",
+    "+1 also on gnews-tech"
+   ],
+   "status": "below",
+   "hash": "dbb61f4"
+  },
+  "https://workspaceupdates.googleblog.com/2026/11/add-inline-captions-cross-references-and-tables-of-captions-in-Google-Docs.html": {
+   "title": "Add inline captions, cross-references, and tables of captions in Google Docs",
+   "link": "http://workspaceupdates.googleblog.com/2026/11/add-inline-captions-cross-references-and-tables-of-captions-in-Google-Docs.html",
+   "source": "workspace-updates",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-18T22:52:11.161Z",
+   "updated": "2026-11-18T22:52:11.161Z",
+   "summary": "Google Docs makes it easy to create, structure, and collaborate on complex documents across formats, including viewing and editing Microsoft Word (.docx) files directly in Docs. Today, we are introducing three new Google Docs features— inline captions , cross-references , and tables of captions —to ",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 5,
+   "reasons": [
+    "+1 source workspace-updates",
+    "+2 niche (microsoft word, google docs)",
+    "+2 launch \"introducing\""
+   ],
+   "status": "below",
+   "hash": "bf587630"
+  },
+  "https://workspaceupdates.googleblog.com/2026/11/transform-your-notes-and-research-into-dynamic-tools-with-Gemini-Notebook.html": {
+   "title": "Transform your notes and research into dynamic tools with Gemini Notebook",
+   "link": "http://workspaceupdates.googleblog.com/2026/11/transform-your-notes-and-research-into-dynamic-tools-with-Gemini-Notebook.html",
+   "source": "workspace-updates",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-18T18:47:43.551Z",
+   "updated": "2026-11-18T18:47:43.552Z",
+   "summary": "Gemini Notebook can now turn sources into interactive sites to help you quickly make sense of complex information. To get started, users can simply type “make me a site” in the Gemini Notebook chat along with a description of what they want to build for work or study, then select “Open in a new tab”",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 1,
+   "reasons": [
+    "+1 source workspace-updates",
+    "+2 niche (gemini)",
+    "+2 user steps \"get started\"",
+    "-4 customer story"
+   ],
+   "status": "below",
+   "hash": "5354089"
+  },
+  "https://workspaceupdates.googleblog.com/2026/11/starter-prompts-and-descriptions-for-Google-Chat-apps-and-agents.html": {
+   "title": "Starter prompts and descriptions for Google Chat apps and agents",
+   "link": "http://workspaceupdates.googleblog.com/2026/11/starter-prompts-and-descriptions-for-Google-Chat-apps-and-agents.html",
+   "source": "workspace-updates",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-18T16:33:57.238Z",
+   "updated": "2026-11-18T16:33:57.239Z",
+   "summary": "Developers can now add starter prompts and descriptions to their Google Chat apps, helping users understand what an app or AI agent can do from their very first conversation. When a user opens a direct message with a Chat app, they’ll see the app’s description and up to three suggested prompts to he",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 4,
+   "reasons": [
+    "+1 source workspace-updates",
+    "+1 niche (agents)",
+    "+2 user steps \"get started\""
+   ],
+   "status": "below",
+   "hash": "2a773477"
+  },
+  "https://about.fb.com/news/2026/11/our-approach-to-updating-our-commercial-terms-of-service": {
+   "title": "Our Approach to Updating Our Commercial Terms of Service",
+   "link": "https://about.fb.com/news/2026/11/our-approach-to-updating-our-commercial-terms-of-service/",
+   "source": "meta-newsroom",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-18T18:01:47.000Z",
+   "updated": null,
+   "summary": "We recently announced that the proposed updates to our commercial terms of service have been put on hold and that we will revise those proposed changes after a deeper consultation with stakeholders. We made this decision after hearing concerns from news publishers and other stakeholders about how th",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "2ea3ce22"
+  },
+  "https://news.samsung.com/global/samsung-tv-plus-brings-2026-mama-awards-to-k-pop-fans-around-the-world": {
+   "title": "Samsung TV Plus Brings 2026 MAMA AWARDS to K-pop Fans Around the World",
+   "link": "https://news.samsung.com/global/samsung-tv-plus-brings-2026-mama-awards-to-k-pop-fans-around-the-world",
+   "source": "samsung-global",
+   "topic": "mobiles",
+   "category": "launch",
+   "date": "2026-11-19T08:00:00.000Z",
+   "updated": null,
+   "summary": "Samsung Electronics is once again connecting K-pop fans worldwide by livestreaming 2026 MAMA AWARDS. Through a partnership with CJ ENM, a leading Korean entertainment company, Samsung TV Plus will broadcast the entire two-day event, with CHAPTER 1 taking place on November 20 and CHAPTER 2 on Novembe",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": -3,
+   "reasons": [
+    "-3 corporate/announcement \"AWARDS\""
+   ],
+   "status": "below",
+   "hash": "bcf7241b"
+  },
+  "https://ai.google.dev/gemini-api/docs/changelog#2026-11-18-gemini-4-neon-gemini-4-neon-generally-available-ga": {
+   "title": "Gemini 4 Neon (gemini-4-neon) generally available (GA)",
+   "link": "https://ai.google.dev/gemini-api/docs/changelog#2026-11-18-gemini-4-neon-gemini-4-neon-generally-available-ga",
+   "source": "gemini-api-changelog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-18T12:00:00.000Z",
+   "updated": null,
+   "summary": "Released Gemini 4 Neon (gemini-4-neon), bringing frontier-level intelligence with fast end-to-end task completion across complex software engineering, knowledge work, and science workflows. Available on the paid tier at pricing of $3.00 per 1M input tokens and $15.00 per 1M output tokens, gemini-4-n",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 11,
+   "reasons": [
+    "+2 niche (gemini)",
+    "+2 launch \"generally available\"",
+    "+2 user steps \"get started\"",
+    "+1 plans/price/availability \"paid\"",
+    "+1 launch in the headline",
+    "+3 flagship AI model (Gemini 4 Neon)",
+    "same story as \"Introducing Gemini 4 Neon\""
+   ],
+   "status": "duplicate",
+   "hash": "a1ca433b",
+   "story": "ai:gemini 4 neon:release"
+  },
+  "https://zoom.com/en/blog/async-meeting-best-practices": {
+   "title": "Async meeting best practices: how to run productive meetings without the scheduling chaos",
+   "link": "https://www.zoom.com/en/blog/async-meeting-best-practices/",
+   "source": "zoom-blog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-18T18:58:39.000Z",
+   "updated": null,
+   "summary": "Learn eight async meeting best practices that help remote teams collaborate without scheduling conflicts, using Zoom Clips and Canvas to stay aligned.",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 2,
+   "reasons": [
+    "+2 user steps \"how to\""
+   ],
+   "status": "below",
+   "hash": "4e35cc2c"
+  },
+  "https://github.blog/changelog/2026-11-18-connect-supabase-box-calendly-and-more-to-copilot": {
+   "title": "Connect Supabase, Box, Calendly, and more to Copilot",
+   "link": "https://github.blog/changelog/2026-11-18-connect-supabase-box-calendly-and-more-to-copilot",
+   "source": "github-changelog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-18T22:04:50.000Z",
+   "updated": null,
+   "summary": "You can now connect eight more services to Copilot using GitHub-verified MCP servers, or connectors, available in public preview. New services you can connect Box: Search and manage content, and… The post Connect Supabase, Box, Calendly, and more to Copilot appeared first on The GitHub Blog .",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 5,
+   "reasons": [
+    "-1 source github-changelog",
+    "+2 niche (copilot)",
+    "+2 launch \"You can now\"",
+    "+2 user steps \"You can\""
+   ],
+   "status": "below",
+   "hash": "c9f13237"
+  },
+  "https://github.blog/changelog/2026-11-18-gemini-4-neon-in-github-copilot": {
+   "title": "Gemini 4 Neon in GitHub Copilot",
+   "link": "https://github.blog/changelog/2026-11-18-gemini-4-neon-in-github-copilot",
+   "source": "github-changelog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-18T21:49:21.000Z",
+   "updated": null,
+   "summary": "Gemini 4 Neon is now generally available in GitHub Copilot. It is designed for agentic coding, multistep tool use, and knowledge work. According to Google, Gemini 4 Neon delivers quality… The post Gemini 4 Neon in GitHub Copilot appeared first on The GitHub Blog .",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 5,
+   "reasons": [
+    "-1 source github-changelog",
+    "+4 niche (copilot, gemini, github copilot)",
+    "+2 launch \"generally available\"",
+    "same story as \"Introducing Gemini 4 Neon\""
+   ],
+   "status": "duplicate",
+   "hash": "ce9308b4",
+   "story": "ai:gemini 4 neon:release"
+  },
+  "https://github.blog/changelog/2026-11-18-customize-github-copilot-for-your-team": {
+   "title": "Customize GitHub Copilot for your team",
+   "link": "https://github.blog/changelog/2026-11-18-customize-github-copilot-for-your-team",
+   "source": "github-changelog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-18T16:00:13.000Z",
+   "updated": null,
+   "summary": "You can now share the GitHub Copilot plugins your team relies on without asking every member to repeat the same setup. Team customizations are generally available for organization teams. Team… The post Customize GitHub Copilot for your team appeared first on The GitHub Blog .",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 6,
+   "reasons": [
+    "-1 source github-changelog",
+    "+3 niche (copilot, github copilot)",
+    "+2 launch \"You can now\"",
+    "+2 user steps \"You can\""
+   ],
+   "status": "below",
+   "hash": "f0c2945e"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=581629": {
+   "title": "Planner: Sprints and backlogs in unified plans",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581629",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-18T18:32:08.000Z",
+   "updated": "2026-11-18T18:32:08.000Z",
+   "summary": "Sprints and backlogs in unified plans let users organize and prioritize work in a product backlog, plan time-boxed sprints, and focus on the current sprint. Sprint planning stays separate from buckets, so teams can continue using buckets to organize work. GA date: January CY2027",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": -4,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+1 plans/price/availability \"plans\"",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "f0e1c159"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=579968": {
+   "title": "Microsoft Copilot Studio: PPAC Reporting API",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=579968",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-18T18:32:08.000Z",
+   "updated": "2026-11-18T18:32:08.000Z",
+   "summary": "The PPAC Reporting API gives customers scalable, programmatic access to Copilot Studio usage data from our lakehouse, replacing older unsupported methods for pulling consumption data. Daily JSON data by environment, user, agent and feature powers dashboards, FinOps reporting and automated cost contr",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": -4,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+3 niche (copilot, agent)",
+    "-1 narrow audience \"API\"",
+    "-5 category (In development, General Availability, Preview)"
+   ],
+   "status": "below",
+   "hash": "48ef756d"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=577853": {
+   "title": "Dynamics 365 Supply Chain Management: Track price changes in Unified pricing management",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=577853",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-18T18:32:08.000Z",
+   "updated": "2026-11-18T18:32:08.000Z",
+   "summary": "Multiple factors (including seasonal adjustments, promotions, and market dynamics) can influence a product's active sales price, causing it to fluctuate over time. Businesses need a reliable way to detect and act on these changes. For example: Retail stores must update shelf labels promptly to refle",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": -5,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+1 plans/price/availability \"price\"",
+    "-5 category (In development, General Availability, Preview)"
+   ],
+   "status": "below",
+   "hash": "15105b59"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=577852": {
+   "title": "Dynamics 365 Commerce: Enable price change tracking in Unified pricing management",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=577852",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-18T18:32:08.000Z",
+   "updated": "2026-11-18T18:32:08.000Z",
+   "summary": "Multiple factors, such as seasonal adjustments, promotions, and market dynamics, influence a product’s active sales price and cause it to fluctuate over time. Businesses need a reliable way to detect and act on these changes: Retail stores must update shelf labels promptly to reflect the latest pric",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": -3,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 user steps \"Enable\"",
+    "+1 plans/price/availability \"price\"",
+    "-5 category (In development, General Availability, Preview)"
+   ],
+   "status": "below",
+   "hash": "7bc098d8"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=577416": {
+   "title": "Dynamics 365 Commerce: Unified Pricing Management - Manage purchase prices and discounts with attribute-based pricing",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=577416",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-18T18:32:08.000Z",
+   "updated": "2026-11-18T18:32:08.000Z",
+   "summary": "Procurement teams can manage supplier pricing with the same flexible, attribute-based model already used for sales, instead of maintaining large numbers of separate trade agreement lines. With this feature, Unified Pricing Management attributes extend to vendors and purchase orders. Pricing managers",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": -5,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+1 plans/price/availability \"Pricing\"",
+    "-5 category (In development, General Availability, Preview)"
+   ],
+   "status": "below",
+   "hash": "964d0bd2"
+  },
+  "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/from-flashlight-to-floodlight-what-six-months-of-frontier-ai-has-changed-at-cisco.html": {
+   "title": "From Flashlight to Floodlight: What Six Months of Frontier AI Has Changed at Cisco",
+   "link": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/from-flashlight-to-floodlight-what-six-months-of-frontier-ai-has-changed-at-cisco.html?source=rss",
+   "source": "cisco-newsroom",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-18T13:00:00.000Z",
+   "updated": null,
+   "summary": "Cisco uses frontier AI to scan 6.7B lines of code, resulting in 4,000 security fixes. It's a fundamental shift in how we find, fix, and build. More RSS Feeds: https://newsroom.cisco.com/c/r/newsroom/en/us/rss-feeds.html",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": -1,
+   "reasons": [
+    "-1 source cisco-newsroom"
+   ],
+   "status": "below",
+   "hash": "f2ac608f"
+  },
+  "https://blogs.vmware.com/cloud-foundation/2026/11/18/vcf-9-1-and-6th-gen-amd-epyc-cpus-achieve-vmmark-leadership-scores": {
+   "title": "VCF 9.1 and 6th Gen AMD EPYC CPUs Achieve VMmark Leadership Scores",
+   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/18/vcf-9-1-and-6th-gen-amd-epyc-cpus-achieve-vmmark-leadership-scores/",
+   "source": "vmware-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-18T23:22:17.000Z",
+   "updated": null,
+   "summary": "We’re excited to announce the first VMmark benchmark results using new AMD EPYC 9006 Series Server CPUs. Submitted by Dell Technologies across 1-socket PowerEdge R9815 and 2-socket PowerEdge R9825 configurations, these two server platforms set a number of records in both performance and power-perfor",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": -1,
+   "reasons": [
+    "-1 source vmware-blog"
+   ],
+   "status": "below",
+   "hash": "15ae4033"
+  },
+  "https://blogs.vmware.com/cloud-foundation/2026/11/18/new-diagnostics-content-pack-in-vcf-operations-9-1": {
+   "title": "New Diagnostics Content Pack in VCF Operations 9.1",
+   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/18/new-diagnostics-content-pack-in-vcf-operations-9-1/",
+   "source": "vmware-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-18T17:57:01.000Z",
+   "updated": null,
+   "summary": "In VMware Cloud Foundation (VCF) Operations 9.1 the Broadcom team has re-engineered the Diagnostics Management Pack. We split the Diagnostics Management Pack into two parts, the Diagnostics Management Pack and the Diagnostics Content Pack, so we can deliver findings more quickly to our customers. Wh",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": -1,
+   "reasons": [
+    "-1 source vmware-blog"
+   ],
+   "status": "below",
+   "hash": "940efd93"
+  },
+  "https://crowdstrike.com/en-us/blog/crowdstrike-named-leader-2026-gartner-mq-siem": {
+   "title": "CrowdStrike Is Building the Engine of the Agentic SOC with Falcon Next-Gen SIEM",
+   "link": "https://www.crowdstrike.com/en-us/blog/crowdstrike-named-leader-2026-gartner-mq-siem/",
+   "source": "crowdstrike-blog",
+   "topic": "security-identity",
+   "category": "launch",
+   "date": "2026-11-18T06:00:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": -1,
+   "reasons": [
+    "-1 source crowdstrike-blog"
+   ],
+   "status": "below",
+   "hash": "663556d0"
+  },
+  "https://blog.webex.com/innovation-ai/build-on-your-ai-investments-with-webex-contact-center": {
+   "title": "Build on your AI investments with Webex Contact Center",
+   "link": "https://blog.webex.com/innovation-ai/build-on-your-ai-investments-with-webex-contact-center/",
+   "source": "webex-blog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-18T19:19:11.000Z",
+   "updated": null,
+   "summary": "Connect your preferred voice virtual agents and conversation intelligence services through BYOVA and Media Forking. The post Build on your AI investments with Webex Contact Center appeared first on Webex Blog .",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": -4,
+   "reasons": [
+    "-1 source webex-blog",
+    "+1 niche (agents)",
+    "-4 customer story"
+   ],
+   "status": "below",
+   "hash": "b73cf0a1"
+  },
+  "https://blog.cloudflare.com/open-clairic": {
+   "title": "An updated Clairic and Clairic-flash are now open-weight, from the new Workers AI Superintelligence team",
+   "link": "https://blog.cloudflare.com/open-clairic/",
+   "source": "cloudflare-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-18T22:00:00.000Z",
+   "updated": null,
+   "summary": "Add your teaser here. It should complement the headline, not repeat it. Teaser cannot be longer than 240 characters. The Blog Review Gem will suggest an excerpt. Clairic graduates from preview, while Clairic-flash joins the repertoire on Workers AI. We’re doing an open-weight release for both extrac",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": -1,
+   "reasons": [
+    "-1 source cloudflare-blog"
+   ],
+   "status": "below",
+   "hash": "ef879959"
+  },
+  "https://intel.com/content/www/us/en/newsroom/news/artificial-intelligence/ai-global-impact-festival-2026-winners.html": {
+   "title": "The 2026 Intel AI Global Impact festival Winners",
+   "link": "https://www.intel.com/content/www/us/en/newsroom/news/artificial-intelligence/ai-global-impact-festival-2026-winners.html",
+   "source": "intel-newsroom",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-18T12:00:00.000Z",
+   "updated": null,
+   "summary": "Artificial Intelligence (AI)",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": -1,
+   "reasons": [
+    "-1 source intel-newsroom"
+   ],
+   "status": "below",
+   "hash": "ed809b2b"
+  },
+  "https://salesforce.com/blog/our-response-to-the-optimizely-optimjack-supply-chain-compromise": {
+   "title": "Our response to the Optimizely “OPTIMJACK” supply chain compromise",
+   "link": "https://www.salesforce.com/blog/our-response-to-the-optimizely-optimjack-supply-chain-compromise/",
+   "source": "salesforce-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-18T23:54:54.000Z",
+   "updated": null,
+   "summary": "On November 16, 2026, an attacker exploited a vulnerability in Optimizely, a third-party experimentation platform, to add malicious JavaScript to customer projects. Salesforce is investigating unauthorized modifications to scripts provided by Optimizely and…",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": -1,
+   "reasons": [
+    "-1 source salesforce-blog"
+   ],
+   "status": "below",
+   "hash": "a37e7263"
+  },
+  "https://salesforce.com/blog/java4shell-critical-openjdk-vulnerability-cve-2026-114938": {
+   "title": "Java4Shell – Critical OpenJDK Vulnerability (CVE-2026-114938)",
+   "link": "https://www.salesforce.com/blog/java4shell-critical-openjdk-vulnerability-cve-2026-114938/",
+   "source": "salesforce-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-18T21:12:17.000Z",
+   "updated": null,
+   "summary": "Overview On November 17, 2026, Oracle released fixes for CVE-2026-114938 in its November Critical Security Patch Update. Researchers at Calif disclosed the flaw, nicknamed “Java4Shell,” as a memory-corruption vulnerability in OpenJDK’s Base64 decoder.…",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": -1,
+   "reasons": [
+    "-1 source salesforce-blog"
+   ],
+   "status": "below",
+   "hash": "46900a8d"
+  },
+  "https://salesforce.com/blog/future-of-work-golden-hoodie-recipients-dreamforce": {
+   "title": "What Four Dreamforce Golden Hoodie Recipients Say About the Future of Work",
+   "link": "https://www.salesforce.com/blog/future-of-work-golden-hoodie-recipients-dreamforce/",
+   "source": "salesforce-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-18T20:37:15.000Z",
+   "updated": null,
+   "summary": "What does the future of work actually look like? As AI takes on more of the tasks we do every day, what do we spend our time on instead? And what skills do…",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": -1,
+   "reasons": [
+    "-1 source salesforce-blog"
+   ],
+   "status": "below",
+   "hash": "1fd9fb99"
+  },
+  "https://mc.merill.net/message/MC1528011": {
+   "title": "MC1528011: Microsoft Teams: External presenter support for event group chat",
+   "link": "https://mc.merill.net/message/MC1528011",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-18T18:57:04.000Z",
+   "updated": null,
+   "summary": "Microsoft Teams will support external presenters in event group chat starting late March 2027. This allows external presenters to join and coordinate in event chats if \"Enable Green room\" and external collaboration are enabled. The change introduces cross-tenant chat without storing new customer dat",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 0,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 niche (microsoft teams)",
+    "+2 launch \"introduces\"",
+    "+2 user steps \"Enable\"",
+    "-3 corporate/announcement \"event\"",
+    "-1 in /news 2026-10-28-entra-sms-voice-sharepoint-mobile"
+   ],
+   "status": "below",
+   "hash": "ab97d49e",
+   "news": "2026-10-28-entra-sms-voice-sharepoint-mobile"
+  },
+  "https://mc.merill.net/message/MC1488488": {
+   "title": "MC1488488: Microsoft Dataverse - Bulk generate prompt column values for existing records (backfill)",
+   "link": "https://mc.merill.net/message/MC1488488",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-18T18:01:05.000Z",
+   "updated": null,
+   "summary": "We are introducing bulk generation of prompt column values for existing Dataverse records. Now, you can have AI-generated values across existing data without requiring record updates to trigger execution. This feature will reach general availability on November 16, 2026. How does this affect me? Whe",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 4,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 niche (copilot)",
+    "+2 launch \"introducing\"",
+    "+2 user steps \"you can\""
+   ],
+   "status": "below",
+   "hash": "65eba46d"
+  },
+  "https://mc.merill.net/message/MC1449180": {
+   "title": "MC1449180: Microsoft Purview: Data Loss Prevention and auto-labeling support for non-Microsoft applications",
+   "link": "https://mc.merill.net/message/MC1449180",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-18T17:31:36.000Z",
+   "updated": null,
+   "summary": "Microsoft Purview will support Data Loss Prevention and auto-labeling for non-Microsoft apps like Google Workspace, Box, and Salesforce via Microsoft Defender for Cloud Apps connectors. Administrators can manage policies directly in Purview starting mid-March 2027, expanding compliance and data prot",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 1,
+   "reasons": [
+    "-2 source mc-merill",
+    "+3 niche (google workspace, defender)"
+   ],
+   "status": "below",
+   "hash": "fe8df066"
+  },
+  "https://mc.merill.net/message/MC1486291": {
+   "title": "MC1486291: Microsoft 365 Copilot: new guided Copilot onboarding experience",
+   "link": "https://mc.merill.net/message/MC1486291",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-18T17:18:44.000Z",
+   "updated": null,
+   "summary": "Microsoft 365 Copilot introduces an optional, admin-led guided onboarding experience for Frontier participants, rolling out late October to November 2026. It personalizes training based on user roles and licenses, requires admin enablement, and supports reporting via Viva Learning to boost adoption ",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 4,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (copilot, microsoft 365)",
+    "+2 launch \"introduces\""
+   ],
+   "status": "below",
+   "hash": "41859121"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-opensearch-memory-generally-available": {
+   "title": "Amazon OpenSearch Memory is now generally available",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-opensearch-memory-generally-available/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-18T21:09:00.000Z",
+   "updated": null,
+   "summary": "Today, AWS announced the general availability of Amazon OpenSearch Memory, a new serverless capability in Amazon OpenSearch Service for adding persistent memory to AI agents. OpenSearch Memory stores agent interactions as searchable events, derives useful memories, and retrieves relevant context acr",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 2,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+1 niche (agents)",
+    "+2 launch \"generally available\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "c11e62ea"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/apache-spark-aws-glue-etl": {
+   "title": "Introducing the Apache Spark Optimization Agent for AWS Glue ETL",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/apache-spark-aws-glue-etl/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-18T20:00:00.000Z",
+   "updated": null,
+   "summary": "AWS Glue ETL now offers the Apache Spark Optimization Agent, which analyzes completed Spark job runs and delivers cost and performance optimization recommendations within minutes. You can select a cost or performance goal, and the agent returns specific configuration changes with the telemetry evide",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 4,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+1 niche (agent)",
+    "+2 launch \"Introducing\"",
+    "+2 user steps \"You can\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "95ab045c"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-cross-region-routing": {
+   "title": "Amazon SageMaker AI now supports cross-Region inference routing",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-cross-region-routing/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-18T20:00:00.000Z",
+   "updated": null,
+   "summary": "Today, Amazon SageMaker AI announces cross-Region inference routing, which helps keep inference applications available when a region runs short of capacity by sending requests to endpoints deployed in other AWS Regions and AWS accounts. Models served on accelerated instances can reach capacity limit",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 2,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now supports\"",
+    "+1 plans/price/availability \"Region\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "84873f8b"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-extenddb-1-0": {
+   "title": "AWS announces ExtendDB 1.0",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-extenddb-1-0/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-18T20:00:00.000Z",
+   "updated": null,
+   "summary": "Today, Amazon Web Services (AWS) announced version 1.0 of ExtendDB, the first release of the open source Amazon DynamoDB-compatible adapter for production use. ExtendDB is fully compatible with the DynamoDB API and runs on a database backend that you choose, so developers and infrastructure teams ca",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": -2,
+   "reasons": [
+    "-2 source aws-whats-new"
+   ],
+   "status": "below",
+   "hash": "e2ed292d"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-custom-cross-account-td": {
+   "title": "AWS Transform custom now supports cross-account sharing of transformation definitions",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-custom-cross-account-td/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-18T19:30:00.000Z",
+   "updated": null,
+   "summary": "AWS Transform custom now enables you to share transformation definitions (TDs) and their associated lessons across AWS accounts, organizational units (OUs), or your entire organization in AWS Organizations through AWS Resource Access Manager (AWS RAM). AWS Transform custom is a capability of AWS Tra",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": -1,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now supports\"",
+    "+2 user steps \"you can\"",
+    "+1 launch in the headline",
+    "-4 customer story"
+   ],
+   "status": "below",
+   "hash": "9b825c51"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/cloudfront-standard-logging-cmcd-fields": {
+   "title": "Amazon CloudFront standard logging now supports CMCD and additional log fields",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/cloudfront-standard-logging-cmcd-fields",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-18T19:28:00.000Z",
+   "updated": null,
+   "summary": "Amazon CloudFront standard logging now supports additional access log fields that were previously available only in CloudFront real-time logs. You can now include these fields in your standard logs and deliver them to Amazon S3, Amazon CloudWatch Logs, or Amazon Data Firehose, without setting up an ",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 3,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now supports\"",
+    "+2 user steps \"You can\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "ce55b194"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-cloudfront-origin-mtls-websockets-grpc": {
+   "title": "Amazon CloudFront Announces WebSocket and gRPC Support for Origin Mutual TLS",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-cloudfront-origin-mtls-websockets-grpc/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-18T18:00:00.000Z",
+   "updated": null,
+   "summary": "Amazon CloudFront (CF) now supports WebSocket and gRPC traffic to application origins in AWS regions, with mutual TLS authentication between CF and the application origin (origin mTLS). Customers can now use TLS certificates to authenticate requests from CloudFront while setting up WebSocket or gRPC",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 1,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now supports\"",
+    "+1 plans/price/availability \"regions\""
+   ],
+   "status": "below",
+   "hash": "2258ac31"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-gpu-managed-instances": {
+   "title": "AWS Lambda adds support for GPU instances on Lambda Managed Instances",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-gpu-managed-instances/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-18T18:00:00.000Z",
+   "updated": null,
+   "summary": "AWS Lambda now supports GPU-accelerated Event Functions on Lambda Managed Instances using EC2 G-series instances . You can now run GPU-accelerated workloads including AI inference, media processing, 3D rendering, scientific computing, and financial simulations on Lambda without managing GPU drivers,",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 2,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now supports\"",
+    "+2 user steps \"You can\""
+   ],
+   "status": "below",
+   "hash": "e9d06588"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-rds-mysql-974-available": {
+   "title": "Amazon RDS for MySQL now supports MySQL major version 9.7",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-rds-mysql-974-available/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-18T17:00:00.000Z",
+   "updated": null,
+   "summary": "Starting today, Amazon RDS for MySQL supports MySQL major version 9.7, the latest Long-Term Support release from MySQL community. Amazon RDS for MySQL 9.7 launches with community MySQL 9.7.4. This launch introduces support for the Replication Applier Metrics component, JSON Duality Views, and Hyperg",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 3,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now supports\"",
+    "+2 user steps \"opt-in\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "cab5da4c"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-eks-hybrid-nodes-pricing-change": {
+   "title": "Amazon EKS Hybrid Nodes reduces price for large hosts",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-eks-hybrid-nodes-pricing-change/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-18T17:00:00.000Z",
+   "updated": null,
+   "summary": "Amazon Elastic Kubernetes Service (Amazon EKS) Hybrid Nodes now has lower pricing for large nodes, capping the billed vCPU per node at 32 vCPU, so you are no longer charged for vCPUs above that per node threshold. Amazon EKS Hybrid Nodes lets you use your existing on-premises and edge infrastructure",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 3,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"You can now\"",
+    "+2 user steps \"You can\"",
+    "+1 plans/price/availability \"price\""
+   ],
+   "status": "below",
+   "hash": "4714bc08"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/cloudfront-functions-network-calls": {
+   "title": "Amazon CloudFront Functions now supports network calls",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/cloudfront-functions-network-calls/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-18T16:00:00.000Z",
+   "updated": null,
+   "summary": "Amazon CloudFront Functions can now make network calls and act on the response during a request. CloudFront Functions runs lightweight JavaScript at CloudFront edge locations to customize requests and responses. Previously, if your logic depended on data from another service, you had to use Lambda@E",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 4,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+1 niche (agent)",
+    "+2 launch \"now supports\"",
+    "+2 user steps \"how to\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "4b73d7ce"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-clean-rooms-pyspark-intermediate-table": {
+   "title": "AWS Clean Rooms supports writing PySpark job results to intermediate tables",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-clean-rooms-pyspark-intermediate-table",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-18T15:00:00.000Z",
+   "updated": null,
+   "summary": "AWS Clean Rooms now supports intermediate tables for PySpark jobs , offering increased flexibility for organizations running complex, multi-step analytical workflows with their partners. With this launch, customers can write the results of a PySpark job to an intermediate table for reuse in subseque",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 0,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now supports\""
+   ],
+   "status": "below",
+   "hash": "3eb2a661"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-customer-managed-runtimes": {
+   "title": "AWS Lambda now supports customer-managed runtimes, giving platform teams centralized control over runtime contents and updates",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-customer-managed-runtimes/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-18T15:00:00.000Z",
+   "updated": null,
+   "summary": "AWS Lambda now supports customer-managed runtimes for Lambda Event Functions (formerly Lambda functions). Customer-managed runtimes are a standalone resource type that fully decouples runtime management from function deployment. Platform teams gain centralized control over the runtime contents, upda",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 1,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now supports\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "ee0d36a3"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-aurora-dsql-audit-logging": {
+   "title": "Amazon Aurora DSQL now supports audit logging",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-aurora-dsql-audit-logging/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-18T08:00:00.000Z",
+   "updated": null,
+   "summary": "Amazon Aurora DSQL now supports database-internal audit logging, a fully managed capability that captures SQL statements executed on your cluster. Previously, AWS CloudTrail recorded who connected to a DSQL cluster, but not what they did once inside it. Now, financial institutions and regulated ente",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 3,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now supports\"",
+    "+2 user steps \"you can\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "8bcd737e"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/iam-account-access-manager-easier": {
+   "title": "AWS IAM account access manager is now even easier to deploy and use",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/iam-account-access-manager-easier/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-18T08:00:00.000Z",
+   "updated": null,
+   "summary": "Deploying and using AWS Identity and Access Management (IAM) account access manager is now even easier: you can use AWS managed policies to enable and administer it; you can include it in your infrastructure-as-code (IaC) configurations; and its role assignments are integrated in a growing number of",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 0,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 user steps \"you can\""
+   ],
+   "status": "below",
+   "hash": "437d105f"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-s3-replication-exclusions-multi-region-key-resolution": {
+   "title": "Amazon S3 Replication adds exclusions and Multi-Region key resolution",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-s3-replication-exclusions-multi-region-key-resolution/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-18T07:00:00.000Z",
+   "updated": null,
+   "summary": "You can now replicate data in Amazon S3 buckets with fewer replication rules using two new S3 Replication capabilities, exclusions and Multi-Region key resolution. Buckets that many tenants or applications share often need many rules to skip certain data or to match encryption keys in each AWS Regio",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 3,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"You can now\"",
+    "+2 user steps \"You can\"",
+    "+1 plans/price/availability \"Region\""
+   ],
+   "status": "below",
+   "hash": "9fb01180"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-hyperpod-higher-pod-density": {
+   "title": "Amazon SageMaker HyperPod now supports higher pod density on EKS-orchestrated clusters",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-hyperpod-higher-pod-density/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-18T01:45:00.000Z",
+   "updated": null,
+   "summary": "Amazon SageMaker HyperPod now supports higher pod density per node on EKS-orchestrated clusters, allowing you to get more out of every instance. This leaves more room for your applications alongside system DaemonSets for monitoring, logging, and security, and helps increase GPU, CPU and memory utili",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 1,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now supports\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "6e9fc469"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-cognito-acr-amr-token": {
+   "title": "Amazon Cognito now supports authentication level and method token claims",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-cognito-acr-amr-token/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-17T19:00:00.000Z",
+   "updated": null,
+   "summary": "Amazon Cognito now supports authentication context class reference (ACR) and authentication methods reference (AMR), by adding ACR and AMR claims to access, ID, and refresh tokens. Your application can use the authentication level (ACR) to make authorization decisions, such as requiring additional f",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 2,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+1 niche (password)",
+    "+2 launch \"now supports\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "be9c452e"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-opensearch-ingestion-service-nextgen-time-series-collections": {
+   "title": "Amazon OpenSearch Ingestion Service now supports next-generation time series collections",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-opensearch-ingestion-service-nextgen-time-series-collections",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-17T18:20:00.000Z",
+   "updated": null,
+   "summary": "Amazon OpenSearch Ingestion service now supports time series collections in the next generation of Amazon OpenSearch Serverless as a pipeline destination. You can stream logs, metrics, traces and event data into time series collections with fully managed pipelines. You don't have to run your own col",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 3,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now supports\"",
+    "+2 user steps \"You can\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "b5b39e4f"
+  },
+  "https://azure.microsoft.com/updates?id=581604": {
+   "title": "[In preview] Public Preview: AI bot ruleset for Azure Front Door Premium WAF",
+   "link": "https://azure.microsoft.com/updates?id=581604",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-18T18:27:29.000Z",
+   "updated": "2026-11-18T18:27:29.000Z",
+   "summary": "Announcing the public preview of the AI bot ruleset for Azure Web Application Firewall (WAF) on Azure Front Door Premium. AI crawlers and agents visit your site for different reasons, and you may want to allow some but not others. Robots.txt only works wh",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": -1,
+   "reasons": [
+    "-2 source azure-updates",
+    "+1 niche (agents)"
+   ],
+   "status": "below",
+   "hash": "c2d0ff48"
+  },
+  "https://azure.microsoft.com/updates?id=581645": {
+   "title": "Announcing: The new Azure Databricks on Azure Government is now in Beta",
+   "link": "https://azure.microsoft.com/updates?id=581645",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-18T18:01:03.000Z",
+   "updated": "2026-11-18T18:01:03.000Z",
+   "summary": "A new Azure Databricks environment is now available in Beta on Microsoft Azure Government. It brings the modern data and AI platform from global Azure to U.S. public sector agencies and their partners, delivered as a first-party Azure service. The Beta in",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 0,
+   "reasons": [
+    "-2 source azure-updates",
+    "+2 launch \"now available\""
+   ],
+   "status": "below",
+   "hash": "c173aa2"
+  },
+  "https://azure.microsoft.com/updates?id=581048": {
+   "title": "[Launched] Generally Available: Cross-subscription backup for Azure Virtual Machines in Azure Backup",
+   "link": "https://azure.microsoft.com/updates?id=581048",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-18T18:00:04.000Z",
+   "updated": "2026-11-18T18:00:04.000Z",
+   "summary": "Azure Backup now supports cross-subscription backup for Azure Virtual Machines, enabling customers to protect VMs using a Recovery Services vault located in a different Azure subscription within the same tenant.This capability allows organizations to cent",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 2,
+   "reasons": [
+    "-2 source azure-updates",
+    "+2 launch \"Launched\"",
+    "+1 plans/price/availability \"subscription\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "790934fd"
+  },
+  "https://azure.microsoft.com/updates?id=579943": {
+   "title": "[In preview] Public Preview: AI-powered application and database modernization with Modernize CLI",
+   "link": "https://azure.microsoft.com/updates?id=579943",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-18T17:58:45.000Z",
+   "updated": "2026-11-18T17:58:45.000Z",
+   "summary": "Modernize CLI brings application and database modernization together as one connected, agentic journey. It assesses application architecture, dependencies, and cloud readiness while discovering the databases the application relies on and invoking speciali",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": -2,
+   "reasons": [
+    "-2 source azure-updates"
+   ],
+   "status": "below",
+   "hash": "58ec2609"
+  },
+  "https://elevenlabs.io/blog/vector-database": {
+   "title": "What is a vector database? How AI search finds meaning",
+   "link": "https://elevenlabs.io/blog/vector-database",
+   "source": "elevenlabs-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-18T12:00:00.000Z",
+   "updated": null,
+   "summary": "Learn what a vector database is, how it works, and where it’s used. See examples, types, and how it compares to relational and graph databases.",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": -2,
+   "reasons": [
+    "-2 source elevenlabs-blog"
+   ],
+   "status": "below",
+   "hash": "a3b21944"
+  },
+  "https://elevenlabs.io/blog/elevenagents-for-healthcare": {
+   "title": "ElevenAgents for Healthcare: agents patients and medical teams trust in clinical settings",
+   "link": "https://elevenlabs.io/blog/elevenagents-for-healthcare",
+   "source": "elevenlabs-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-18T12:00:00.000Z",
+   "updated": null,
+   "summary": "Build healthcare voice agents that patients trust, with Scribe v3 Live Medical, EHR integrations, custom guardrails, and HIPAA-eligible deployments.",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 0,
+   "reasons": [
+    "-2 source elevenlabs-blog",
+    "+1 niche (agents)",
+    "+1 plans/price/availability \"eligible\""
+   ],
+   "status": "below",
+   "hash": "fb83b0d0"
+  },
+  "https://aws.amazon.com/blogs/machine-learning/full-fine-tuning-fft-on-sagemaker-ai-serverless-model-customization": {
+   "title": "Full Fine-Tuning (FFT) on SageMaker AI Serverless Model Customization",
+   "link": "https://aws.amazon.com/blogs/machine-learning/full-fine-tuning-fft-on-sagemaker-ai-serverless-model-customization/",
+   "source": "aws-ml-blog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-19T00:15:58.000Z",
+   "updated": null,
+   "summary": "Amazon SageMaker AI Serverless Model Customization now supports Full Fine-Tuning (FFT). This post explores when FFT outperforms LoRA across key benchmarks, examines the spectral properties of model weight matrices behind the quality gap, shares practical hyperparameter tuning guidelines, and shows h",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 1,
+   "reasons": [
+    "-3 source aws-ml-blog",
+    "+2 launch \"now supports\"",
+    "+2 user steps \"how to\""
+   ],
+   "status": "below",
+   "hash": "2ca77c61"
+  },
+  "https://aws.amazon.com/blogs/machine-learning/exa-boosts-embedding-throughput-by-50-to-index-billions-of-documents-on-aws-ai-chips": {
+   "title": "Exa boosts embedding throughput by 50% to index billions of documents on AWS AI chips",
+   "link": "https://aws.amazon.com/blogs/machine-learning/exa-boosts-embedding-throughput-by-50-to-index-billions-of-documents-on-aws-ai-chips/",
+   "source": "aws-ml-blog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-18T23:58:22.000Z",
+   "updated": null,
+   "summary": "Exa's neural search engine is backed by an in-house vector database, so the unit economics of embedding tens of billions of web documents drive the business. This post shares how Exa optimized embedding inference on AWS Neuron hardware (Inferentia2 and Trainium2) with custom NKI kernels, reaching a ",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": -3,
+   "reasons": [
+    "-3 source aws-ml-blog"
+   ],
+   "status": "below",
+   "hash": "f11b8fb3"
+  },
+  "https://aws.amazon.com/blogs/machine-learning/introducing-workload-recovery-and-expanded-infrastructure-checks-on-amazon-sagemaker-hyperpod": {
+   "title": "Introducing workload recovery and expanded infrastructure checks on Amazon SageMaker HyperPod",
+   "link": "https://aws.amazon.com/blogs/machine-learning/introducing-workload-recovery-and-expanded-infrastructure-checks-on-amazon-sagemaker-hyperpod/",
+   "source": "aws-ml-blog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-18T23:03:29.000Z",
+   "updated": null,
+   "summary": "Large training jobs can stall or compute wrong results even when every node looks healthy. Amazon SageMaker HyperPod now adds workload recovery and expanded infrastructure checks that catch these failures sooner and raise the goodput of your training workloads.",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 0,
+   "reasons": [
+    "-3 source aws-ml-blog",
+    "+2 launch \"Introducing\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "6fe0c33a"
+  },
+  "https://aws.amazon.com/blogs/machine-learning/introducing-the-amazon-sagemaker-jumpstart-model-leaderboard": {
+   "title": "Introducing the Amazon SageMaker JumpStart Model Leaderboard",
+   "link": "https://aws.amazon.com/blogs/machine-learning/introducing-the-amazon-sagemaker-jumpstart-model-leaderboard/",
+   "source": "aws-ml-blog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-18T22:31:04.000Z",
+   "updated": null,
+   "summary": "The Amazon SageMaker JumpStart Model Leaderboard compares 70+ foundation models side by side on quality, speed, and cost, directly in SageMaker Studio. Learn what the leaderboard shows, how AWS benchmarks models, and how to go from a shortlist to a deployed model.",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 2,
+   "reasons": [
+    "-3 source aws-ml-blog",
+    "+2 launch \"Introducing\"",
+    "+2 user steps \"how to\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "dba845d0"
+  },
+  "https://aws.amazon.com/blogs/machine-learning/how-airbnb-uses-cost-per-task-to-operate-coding-agents-on-amazon-bedrock": {
+   "title": "How Airbnb uses cost per task to operate coding agents on Amazon Bedrock",
+   "link": "https://aws.amazon.com/blogs/machine-learning/how-airbnb-uses-cost-per-task-to-operate-coding-agents-on-amazon-bedrock/",
+   "source": "aws-ml-blog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-18T21:48:19.000Z",
+   "updated": null,
+   "summary": "Airbnb runs evals on real engineering tasks and uses Amazon Bedrock observability to choose models for its coding agents and control production costs. This post shows how cost per task guides model selection, why production spending can differ from eval results, and how to monitor latency, manage qu",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": -4,
+   "reasons": [
+    "-3 source aws-ml-blog",
+    "+1 niche (agents)",
+    "+2 user steps \"how to\"",
+    "-4 customer story"
+   ],
+   "status": "below",
+   "hash": "250cc40a"
+  },
+  "https://aws.amazon.com/blogs/machine-learning/design-responsible-ai-controls-for-amazon-aurora-postgresql": {
+   "title": "Design responsible AI controls for Amazon Aurora PostgreSQL",
+   "link": "https://aws.amazon.com/blogs/machine-learning/design-responsible-ai-controls-for-amazon-aurora-postgresql/",
+   "source": "aws-ml-blog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-18T21:38:22.000Z",
+   "updated": null,
+   "summary": "Learn how to make RAG chatbot answers traceable with Amazon Aurora PostgreSQL, pgvector, and Amazon Bedrock Guardrails, logging sources, scores, and guardrail traces in SQL.",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": -1,
+   "reasons": [
+    "-3 source aws-ml-blog",
+    "+2 user steps \"how to\""
+   ],
+   "status": "below",
+   "hash": "1055000a"
+  },
+  "https://aws.amazon.com/blogs/machine-learning/private-certificate-authority-support-in-amazon-bedrock-agentcore-identity": {
+   "title": "Private certificate authority support in Amazon Bedrock AgentCore Identity",
+   "link": "https://aws.amazon.com/blogs/machine-learning/private-certificate-authority-support-in-amazon-bedrock-agentcore-identity/",
+   "source": "aws-ml-blog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-18T20:53:41.000Z",
+   "updated": null,
+   "summary": "Amazon Bedrock AgentCore Identity now supports private certificate authorities (CAs), so your agents can connect to self-hosted identity providers that use a private CA. This post shows how to issue an IdP certificate with AWS Private CA, configure a credential provider to trust it, rotate the CA, a",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": 2,
+   "reasons": [
+    "-3 source aws-ml-blog",
+    "+1 niche (agents)",
+    "+2 launch \"now supports\"",
+    "+2 user steps \"how to\""
+   ],
+   "status": "below",
+   "hash": "59889c49"
+  },
+  "https://aws.amazon.com/blogs/machine-learning/how-salesforce-is-advancing-global-scale-model-serving-with-cross-region-inference-routing-in-amazon-sagemaker-ai": {
+   "title": "How Salesforce is advancing global-scale model serving with cross-Region inference routing in Amazon SageMaker AI",
+   "link": "https://aws.amazon.com/blogs/machine-learning/how-salesforce-is-advancing-global-scale-model-serving-with-cross-region-inference-routing-in-amazon-sagemaker-ai/",
+   "source": "aws-ml-blog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-18T20:13:18.000Z",
+   "updated": null,
+   "summary": "Learn how Salesforce uses the cross-Region inference router in Amazon SageMaker AI to turn fragmented Regional capacity into reliable model serving. Salesforce adds capacity securely across Regions and accounts while keeping its data residency commitments, and sees per request where each call was se",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": -2,
+   "reasons": [
+    "-3 source aws-ml-blog",
+    "+1 plans/price/availability \"Region\""
+   ],
+   "status": "below",
+   "hash": "92a51dda"
+  },
+  "https://aws.amazon.com/blogs/machine-learning/how-social-department-built-culture-aware-video-discovery": {
+   "title": "How Social Department built culture-aware video discovery",
+   "link": "https://aws.amazon.com/blogs/machine-learning/how-social-department-built-culture-aware-video-discovery/",
+   "source": "aws-ml-blog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-18T19:27:56.000Z",
+   "updated": null,
+   "summary": "Social Department, an AI operating system for entertainment marketing, worked with TrackIt and AWS to build QuickSearch: single-action queries that surface shareable scenes, quotable lines, memeable frames, and trend-aligned moments across large video libraries, using TwelveLabs models on Amazon Bed",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": -3,
+   "reasons": [
+    "-3 source aws-ml-blog"
+   ],
+   "status": "below",
+   "hash": "55d11307"
+  },
+  "https://aws.amazon.com/blogs/machine-learning/connect-amazon-bedrock-agentcore-gateway-to-private-apis-in-a-hub-and-spoke-network-with-centralized-inspection": {
+   "title": "Connect Amazon Bedrock AgentCore Gateway to private APIs in a hub-and-spoke network with centralized inspection",
+   "link": "https://aws.amazon.com/blogs/machine-learning/connect-amazon-bedrock-agentcore-gateway-to-private-apis-in-a-hub-and-spoke-network-with-centralized-inspection/",
+   "source": "aws-ml-blog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-18T19:05:45.000Z",
+   "updated": null,
+   "summary": "Many enterprises run a centralized network model: one account owns every VPC and a central firewall inspects all traffic. This post shows a tested pattern for connecting Amazon Bedrock AgentCore Gateway to private APIs and MCP servers in that model, with the VPC Lattice resource gateway in the netwo",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": -3,
+   "reasons": [
+    "-3 source aws-ml-blog"
+   ],
+   "status": "below",
+   "hash": "7e2155e8"
+  },
+  "https://aws.amazon.com/blogs/machine-learning/how-stretto-built-an-ai-voice-agent-with-amazon-nova-2-sonic": {
+   "title": "How Stretto built an AI voice agent with Amazon Nova 2 Sonic",
+   "link": "https://aws.amazon.com/blogs/machine-learning/how-stretto-built-an-ai-voice-agent-with-amazon-nova-2-sonic/",
+   "source": "aws-ml-blog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-18T18:58:42.000Z",
+   "updated": null,
+   "summary": "Stretto replaced its web-form lead capture with Tara, an AI voice agent built on Amazon Nova 2 Sonic that conducts bankruptcy intake interviews by phone and qualifies leads. See how Stretto, the AWS Generative AI Innovation Center, and CI&T designed the voice architecture, validated it for sensitive",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": -2,
+   "reasons": [
+    "-3 source aws-ml-blog",
+    "+1 niche (agent)"
+   ],
+   "status": "below",
+   "hash": "9aa84285"
+  },
+  "https://aws.amazon.com/blogs/machine-learning/from-reporting-to-reasoning-getting-enterprise-data-ready-for-ai-agents": {
+   "title": "From reporting to reasoning: Getting enterprise data ready for AI agents",
+   "link": "https://aws.amazon.com/blogs/machine-learning/from-reporting-to-reasoning-getting-enterprise-data-ready-for-ai-agents/",
+   "source": "aws-ml-blog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-18T18:54:08.000Z",
+   "updated": null,
+   "summary": "A recap of the inaugural AWS Quick User Group DC meetup, where data leaders explored getting enterprise data ready for AI agents. It covers what's new in AWS Quick, Financial Independence Group's AI analytics journey, and hands-on app and no-code flow building.",
+   "first": "2026-11-19T00:28:31.694Z",
+   "score": -2,
+   "reasons": [
+    "-3 source aws-ml-blog",
+    "+1 niche (agents)"
+   ],
+   "status": "below",
+   "hash": "3a6f444f"
   }
  },
  "devices": {}

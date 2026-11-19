@@ -2,7 +2,7 @@
  "date": "2026-11-18",
  "title": "Tech news today, 18 November 2026",
  "published": "2026-11-17T19:18:54.800Z",
- "updated": "2026-11-18T18:09:55.395Z",
+ "updated": "2026-11-19T00:28:31.694Z",
  "items": [
   {
    "id": "289cf95a",
@@ -739,31 +739,34 @@
   },
   {
    "id": "05ebd17d",
-   "key": "https://thehackernews.com/2026/11/oracle-to-patch-11-java-flaws-today-as.html",
+   "key": "https://salesforce.com/blog/java4shell-critical-openjdk-vulnerability-cve-2026-114938",
    "time": "2026-11-17T15:17:36.000Z",
    "seen": "2026-11-17T19:18:54.800Z",
    "kind": "security",
    "tier": 2,
-   "headline": "Oracle to Patch 11 Java Flaws Today as Critical OpenJDK RCE (CVE-2026-114938) Report Emerges",
-   "summary": "Oracle is preparing to release security patches for 11 vulnerabilities in Java SE on Tuesday, November 17, 2026, all of which may be exploited remotely without authentication, as separate reports warn of a potentially critical remote code execution (RCE) flaw affecting OpenJDK. The 11 vulnerabilities carry a maximum CVSS 3.1 severity score of 8.1, according to Oracle's advance security notice.",
+   "headline": "Java4Shell – Critical OpenJDK Vulnerability (CVE-2026-114938)",
+   "summary": "Overview On November 17, 2026, Oracle released fixes for CVE-2026-114938 in its November Critical Security Patch Update. Researchers at Calif disclosed the flaw, nicknamed “Java4Shell,” as a memory-corruption vulnerability in OpenJDK’s Base64 decoder.…",
    "lines": [
-    "Reported by The Hacker News: Oracle is preparing to release security patches for 11 vulnerabilities in Java SE, which may be exploited remotely without authentication.",
-    "Oracle's advance security notice lists a release date of Tuesday, November 17, 2026, and a maximum CVSS 3.1 score of 8.1 for the 11 flaws.",
-    "Separate reports warn of a potentially critical remote code execution flaw in OpenJDK, tracked as CVE-2026-114938. IT teams running Java SE should track the Oracle patch release."
+    "Oracle released fixes for CVE-2026-114938, nicknamed Java4Shell, on November 17, 2026, in its November Critical Security Patch Update.",
+    "The flaw is a memory-corruption vulnerability in OpenJDK's Base64 decoder, disclosed by researchers at Calif.",
+    "IT teams running OpenJDK should review the Oracle patch update and apply the fixes."
    ],
    "linesBy": "claude",
    "source": {
-    "name": "The Hacker News",
-    "url": "https://thehackernews.com/2026/11/oracle-to-patch-11-java-flaws-today-as.html"
+    "name": "Salesforce Blog",
+    "url": "https://www.salesforce.com/blog/java4shell-critical-openjdk-vulnerability-cve-2026-114938/"
    },
-   "sourceId": "thn",
-   "reported": true,
-   "also": [],
+   "sourceId": "salesforce-blog",
+   "reported": false,
+   "also": [
+    "The Hacker News"
+   ],
    "post": null,
    "device": null,
    "ai": null,
    "score": 8,
-   "story": null
+   "story": null,
+   "upgradedAt": "2026-11-19T00:28:31.694Z"
   },
   {
    "id": "1c965a07",
@@ -1996,7 +1999,7 @@
    "time": "2026-11-18T17:00:00.000Z",
    "seen": "2026-11-18T18:09:55.395Z",
    "kind": "launch",
-   "tier": 2,
+   "tier": 1,
    "headline": "The Gemini app is now available on lower-memory Android devices",
    "summary": "The Google Gemini app now supports lower-memory Android devices. Access Gemini Live and custom image creation on your phone. Download the app today.",
    "lines": [
@@ -2278,5 +2281,5 @@
    "story": null
   }
  ],
- "description": "78 technology updates from official sources, updated hourly: Introducing GPT-6.2 Astra and Sol; Interim Nvidia CEO Says It’s No Longer Sending AI Chips to China; Crypto Losses Pile Up as Retail Traders Prime for Anthropic IPO."
+ "description": "78 technology updates from official sources, updated hourly: Introducing GPT-6.2 Astra and Sol; The Gemini app is now available on lower-memory Android devices; Interim Nvidia CEO Says It’s No Longer Sending AI Chips to China."
 }

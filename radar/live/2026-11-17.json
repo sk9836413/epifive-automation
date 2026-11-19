@@ -2,7 +2,7 @@
  "date": "2026-11-17",
  "title": "Tech news today, 17 November 2026",
  "published": "2026-11-17T01:53:48.910Z",
- "updated": "2026-11-18T02:31:39.081Z",
+ "updated": "2026-11-19T00:28:31.694Z",
  "items": [
   {
    "id": "61cc4914",
@@ -510,31 +510,34 @@
   },
   {
    "id": "5189c5eb",
-   "key": "https://bleepingcomputer.com/news/security/optimizely-supply-chain-attack-infects-major-brands-sites-with-malware",
+   "key": "https://salesforce.com/blog/our-response-to-the-optimizely-optimjack-supply-chain-compromise",
    "time": "2026-11-17T02:12:17.000Z",
    "seen": "2026-11-17T03:43:43.662Z",
    "kind": "security",
    "tier": 2,
-   "headline": "Optimizely supply chain attack infects major brands' sites with malware",
-   "summary": "A suspected supply chain attack targeting Optimizely has led to malicious JavaScript being loaded on numerous popular websites, including Zoom, CNN, Fox News, BBC, Salesforce, and GitLab, exposing visitors to scripts designed to steal cryptocurrency and payment information and exploit vulnerabilities in iOS devices. [...]",
+   "headline": "Our response to the Optimizely “OPTIMJACK” supply chain compromise",
+   "summary": "On November 16, 2026, an attacker exploited a vulnerability in Optimizely, a third-party experimentation platform, to add malicious JavaScript to customer projects. Salesforce is investigating unauthorized modifications to scripts provided by Optimizely and…",
    "lines": [
-    "Reported by BleepingComputer: A suspected supply chain attack targeting Optimizely led to malicious JavaScript being loaded on numerous popular websites, including Zoom, CNN, Fox News, BBC, Salesforce, and GitLab.",
-    "The reported scripts are designed to steal cryptocurrency and payment information and to exploit vulnerabilities in iOS devices, which puts website visitors at risk.",
-    "IT teams that rely on third-party scripts on their websites may want to review those dependencies and how they are loaded."
+    "On November 16, 2026, an attacker exploited a vulnerability in Optimizely, a third-party experimentation platform, to add malicious JavaScript to customer projects.",
+    "The incident is labeled OPTIMJACK, and Salesforce says it is investigating unauthorized modifications to scripts provided by Optimizely.",
+    "Teams using Optimizely scripts may want to review their projects for unauthorized JavaScript."
    ],
    "linesBy": "claude",
    "source": {
-    "name": "BleepingComputer",
-    "url": "https://www.bleepingcomputer.com/news/security/optimizely-supply-chain-attack-infects-major-brands-sites-with-malware/"
+    "name": "Salesforce Blog",
+    "url": "https://www.salesforce.com/blog/our-response-to-the-optimizely-optimjack-supply-chain-compromise/"
    },
-   "sourceId": "bleepingcomputer",
-   "reported": true,
-   "also": [],
+   "sourceId": "salesforce-blog",
+   "reported": false,
+   "also": [
+    "BleepingComputer"
+   ],
    "post": null,
    "device": null,
    "ai": null,
    "score": 3,
-   "story": null
+   "story": null,
+   "upgradedAt": "2026-11-19T00:28:31.694Z"
   },
   {
    "id": "526360c6",

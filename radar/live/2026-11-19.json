@@ -1,0 +1,426 @@
+{
+ "date": "2026-11-19",
+ "title": "Tech news today, 19 November 2026",
+ "published": "2026-11-19T00:28:31.694Z",
+ "updated": "2026-11-19T00:28:31.694Z",
+ "items": [
+  {
+   "id": "a896af99",
+   "key": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon",
+   "time": "2026-11-18T21:00:00.000Z",
+   "seen": "2026-11-19T00:28:31.694Z",
+   "kind": "ai-model",
+   "tier": 2,
+   "headline": "Introducing Gemini 4 Neon",
+   "summary": "Google introduces Gemini 4 Neon, delivering frontier-level intelligence for complex coding and analysis at a lower cost. See what's new. Nov 18, 2026 x.com Facebook LinkedIn Mail Copy link Bringing frontier-level intelligence with fast end-to-end task completion across complex software engineering, knowledge work, and science workflows. Koray Kavukcuoglu SVP, Google DeepMind and Chief AI Architect, Google x.com Facebook LinkedIn Mail Copy link Your browser does not support the audio element. Today, we’re introducing Gemini 4 Neon — bringing frontier-level intelligence with fast end-to-end task completion across complex software engineering, knowledge work, and science workflows. Neon ranks a",
+   "lines": [
+    "Google introduced Gemini 4 Neon, which it says delivers advanced intelligence for complex coding and analysis at a lower cost, with end-to-end task completion across software engineering, knowledge work, and science workflows.",
+    "The announcement is dated Nov 18, 2026.",
+    "For IT teams evaluating AI tools, the announcement points to a model aimed at coding and analysis tasks at a lower cost."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google: Gemini app blog",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/"
+   },
+   "sourceId": "gemini-blog",
+   "reported": false,
+   "also": [
+    "deepmind-blog",
+    "google-keyword",
+    "techmeme",
+    "GitHub Changelog"
+   ],
+   "post": null,
+   "device": null,
+   "ai": {
+    "model": "Gemini 4 Neon",
+    "kind": "release"
+   },
+   "score": 12,
+   "story": "ai:gemini 4 neon:release"
+  },
+  {
+   "id": "610ceab2",
+   "key": "https://workspaceupdates.googleblog.com/2026/11/add-inline-captions-cross-references-and-tables-of-captions-in-Google-Docs.html",
+   "time": "2026-11-18T22:52:11.161Z",
+   "seen": "2026-11-19T00:28:31.694Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Add inline captions, cross-references, and tables of captions in Google Docs",
+   "summary": "Google Docs makes it easy to create, structure, and collaborate on complex documents across formats, including viewing and editing Microsoft Word (.docx) files directly in Docs. Today, we are introducing three new Google Docs features— inline captions , cross-references , and tables of captions —to help you more easily organize, reference, and navigate figures, tables, equations, and other items in your documents. Inline captions: Insert numbered labels (such as “Figure 1” or “Table 1”, or define your own custom labels) that automatically order and renumber themselves in sequence as captions are added, reordered, or removed. Cross-references: Link directly to existing captions in your docume",
+   "lines": [
+    "Google Docs adds three features: inline captions, cross-references, and tables of captions.",
+    "Inline captions insert numbered labels, such as Figure 1 or Table 1, or custom labels, that renumber automatically as captions are added, reordered, or removed.",
+    "Cross-references link directly to existing captions, helping users organize and navigate figures, tables, equations, and other items.",
+    "For business users, these features help structure and reference complex documents, including .docx files viewed and edited in Docs."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google Workspace Updates",
+    "url": "http://workspaceupdates.googleblog.com/2026/11/add-inline-captions-cross-references-and-tables-of-captions-in-Google-Docs.html"
+   },
+   "sourceId": "workspace-updates",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "b9fbfcd7",
+   "key": "https://workspaceupdates.googleblog.com/2026/11/transform-your-notes-and-research-into-dynamic-tools-with-Gemini-Notebook.html",
+   "time": "2026-11-18T18:47:43.551Z",
+   "seen": "2026-11-19T00:28:31.694Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Transform your notes and research into dynamic tools with Gemini Notebook",
+   "summary": "Gemini Notebook can now turn sources into interactive sites to help you quickly make sense of complex information. To get started, users can simply type “make me a site” in the Gemini Notebook chat along with a description of what they want to build for work or study, then select “Open in a new tab” to interact with it, or share it with others. For example, students and professionals can build: Visual explainers to help prepare for exams, like an interactive periodic table or a historical timeline Interactive dashboards to explore data, such as quarterly sales performance Project management trackers to outline tasks and deadlines This feature is available globally on the web for users who ar",
+   "lines": [
+    "Gemini Notebook can now turn sources into interactive sites that help users make sense of complex information.",
+    "Users type 'make me a site' in the Gemini Notebook chat with a description, then open the result in a new tab or share it.",
+    "Examples include interactive periodic tables, historical timelines, quarterly sales dashboards, and project management trackers.",
+    "For business users, this offers a way to turn notes and research into dashboards and task trackers."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google Workspace Updates",
+    "url": "http://workspaceupdates.googleblog.com/2026/11/transform-your-notes-and-research-into-dynamic-tools-with-Gemini-Notebook.html"
+   },
+   "sourceId": "workspace-updates",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "6fe70266",
+   "key": "https://github.blog/changelog/2026-11-18-connect-supabase-box-calendly-and-more-to-copilot",
+   "time": "2026-11-18T22:04:50.000Z",
+   "seen": "2026-11-19T00:28:31.694Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Connect Supabase, Box, Calendly, and more to Copilot",
+   "summary": "You can now connect eight more services to Copilot using GitHub-verified MCP servers, or connectors, available in public preview. New services you can connect Box: Search and manage content, and… The post Connect Supabase, Box, Calendly, and more to Copilot appeared first on The GitHub Blog .",
+   "lines": [
+    "GitHub added eight more services to Copilot through GitHub-verified MCP servers, called connectors, now in public preview.",
+    "Named services include Supabase, Box, and Calendly; the Box connector can search and manage content.",
+    "For IT teams, the change expands the external services Copilot can connect to, though the connectors remain in public preview."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "GitHub Changelog",
+    "url": "https://github.blog/changelog/2026-11-18-connect-supabase-box-calendly-and-more-to-copilot"
+   },
+   "sourceId": "github-changelog",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "e5f4a9bc",
+   "key": "https://blogs.vmware.com/cloud-foundation/2026/11/18/vcf-9-1-and-6th-gen-amd-epyc-cpus-achieve-vmmark-leadership-scores",
+   "time": "2026-11-18T23:22:17.000Z",
+   "seen": "2026-11-19T00:28:31.694Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "VCF 9.1 and 6th Gen AMD EPYC CPUs Achieve VMmark Leadership Scores",
+   "summary": "We’re excited to announce the first VMmark benchmark results using new AMD EPYC 9006 Series Server CPUs. Submitted by Dell Technologies across 1-socket PowerEdge R9815 and 2-socket PowerEdge R9825 configurations, these two server platforms set a number of records in both performance and power-performance: see the VMmark Results page for more information. Here are some … Continued The post VCF 9.1 and 6th Gen AMD EPYC CPUs Achieve VMmark Leadership Scores appeared first on VMware Blogs .",
+   "lines": [
+    "VMware by Broadcom announced the first VMmark benchmark results using AMD EPYC 9006 Series server CPUs, with VCF 9.1.",
+    "Dell Technologies submitted the results for 1-socket PowerEdge R9815 and 2-socket PowerEdge R9825 configurations, which set several performance and power-performance records.",
+    "For IT teams, the results provide benchmark data for these server platforms; full details are on the VMmark Results page."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "VMware by Broadcom Blogs",
+    "url": "https://blogs.vmware.com/cloud-foundation/2026/11/18/vcf-9-1-and-6th-gen-amd-epyc-cpus-achieve-vmmark-leadership-scores/"
+   },
+   "sourceId": "vmware-blog",
+   "sourceMax": 4,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "d39996b7",
+   "key": "https://mc.merill.net/message/MC1528011",
+   "time": "2026-11-18T18:57:04.000Z",
+   "seen": "2026-11-19T00:28:31.694Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1528011: Microsoft Teams: External presenter support for event group chat",
+   "summary": "Microsoft Teams will support external presenters in event group chat starting late March 2027. This allows external presenters to join and coordinate in event chats if \"Enable Green room\" and external collaboration are enabled. The change introduces cross-tenant chat without storing new customer data.",
+   "lines": [
+    "Microsoft Teams will support external presenters in event group chat starting late March 2027.",
+    "External presenters can join and coordinate in event chats when 'Enable Green room' and external collaboration are enabled.",
+    "The change introduces cross-tenant chat without storing new customer data.",
+    "IT admins may need to check the Green room and external collaboration settings before the change takes effect."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1528011"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "dee39509",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-opensearch-memory-generally-available",
+   "time": "2026-11-18T21:09:00.000Z",
+   "seen": "2026-11-19T00:28:31.694Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Amazon OpenSearch Memory is now generally available",
+   "summary": "Today, AWS announced the general availability of Amazon OpenSearch Memory, a new serverless capability in Amazon OpenSearch Service for adding persistent memory to AI agents. OpenSearch Memory stores agent interactions as searchable events, derives useful memories, and retrieves relevant context across sessions, so agents can recall prior decisions, earlier interactions, and user preferences without replaying the full conversation history to the model. Customers can give agents long-term memory without provisioning infrastructure or building separate extraction, indexing, consolidation, and retrieval systems. OpenSearch Memory stores the original events verbatim, makes them searchable within",
+   "lines": [
+    "AWS announced general availability of Amazon OpenSearch Memory, a serverless capability in Amazon OpenSearch Service for adding persistent memory to AI agents.",
+    "It stores agent interactions as searchable events, derives memories, and retrieves relevant context across sessions.",
+    "Customers can add long-term agent memory without provisioning infrastructure or building separate extraction, indexing, consolidation, and retrieval systems."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-opensearch-memory-generally-available/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "2f3d0e3e",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/apache-spark-aws-glue-etl",
+   "time": "2026-11-18T20:00:00.000Z",
+   "seen": "2026-11-19T00:28:31.694Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Introducing the Apache Spark Optimization Agent for AWS Glue ETL",
+   "summary": "AWS Glue ETL now offers the Apache Spark Optimization Agent, which analyzes completed Spark job runs and delivers cost and performance optimization recommendations within minutes. You can select a cost or performance goal, and the agent returns specific configuration changes with the telemetry evidence and reasoning behind each suggestion. You can use the agent on any completed job run from the AWS Glue console, or from your own tools through the Amazon SageMaker Unified Studio MCP Server. The agent takes the job's configuration, logs, and Spark telemetry together with your chosen goal and returns recommendations computed by a deterministic recommendation engine. The engine reads all job art",
+   "lines": [
+    "AWS Glue ETL now offers the Apache Spark Optimization Agent, which analyzes completed Spark job runs and recommends cost or performance changes.",
+    "Users select a cost or performance goal, and the agent returns configuration changes with supporting telemetry and reasoning.",
+    "The agent can run from the AWS Glue console or through the Amazon SageMaker Unified Studio MCP Server.",
+    "For data teams, this offers a way to review Spark job tuning based on configuration, logs, and telemetry."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/apache-spark-aws-glue-etl/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "246f1233",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-cross-region-routing",
+   "time": "2026-11-18T20:00:00.000Z",
+   "seen": "2026-11-19T00:28:31.694Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Amazon SageMaker AI now supports cross-Region inference routing",
+   "summary": "Today, Amazon SageMaker AI announces cross-Region inference routing, which helps keep inference applications available when a region runs short of capacity by sending requests to endpoints deployed in other AWS Regions and AWS accounts. Models served on accelerated instances can reach capacity limits in a single Region, and an unhealthy endpoint can lead to throttling and errors for end users. Previously, teams had to build and maintain their own routing, health checks, and retry logic across Regions. With cross-Region inference routing in SageMaker AI, developers create an inference router, register the real-time endpoints, asynchronous endpoints, and inference components they already run,",
+   "lines": [
+    "Amazon SageMaker AI announced cross-Region inference routing, which sends requests to endpoints in other AWS Regions and accounts when a Region runs short of capacity.",
+    "Developers create an inference router and register the real-time endpoints, asynchronous endpoints, and inference components they already run.",
+    "The feature aims to keep inference applications available when capacity limits or unhealthy endpoints would otherwise cause throttling and errors for end users."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-cross-region-routing/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "fe31dd21",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-extenddb-1-0",
+   "time": "2026-11-18T20:00:00.000Z",
+   "seen": "2026-11-19T00:28:31.694Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "AWS announces ExtendDB 1.0",
+   "summary": "Today, Amazon Web Services (AWS) announced version 1.0 of ExtendDB, the first release of the open source Amazon DynamoDB-compatible adapter for production use. ExtendDB is fully compatible with the DynamoDB API and runs on a database backend that you choose, so developers and infrastructure teams can run DynamoDB workloads in on-premises data centers, in private or public clouds, and at the edge without rewriting application code. ExtendDB 1.0 supports four storage backends, PostgreSQL, SQLite, Cassandra, and MongoDB. For local development and continuous integration (CI), the extenddb-dev container image and the @extenddb/dev npm package run a DynamoDB-compatible endpoint over SQLite, so you",
+   "lines": [
+    "AWS announced version 1.0 of ExtendDB, an open source Amazon DynamoDB-compatible adapter, as its first release for production use.",
+    "ExtendDB is fully compatible with the DynamoDB API and runs on a database backend the user chooses.",
+    "Version 1.0 supports PostgreSQL, SQLite, Cassandra, and MongoDB as storage backends.",
+    "Teams can run DynamoDB workloads on-premises, in private or public clouds, and at the edge without rewriting application code."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-extenddb-1-0/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "43075983",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-custom-cross-account-td",
+   "time": "2026-11-18T19:30:00.000Z",
+   "seen": "2026-11-19T00:28:31.694Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "AWS Transform custom now supports cross-account sharing of transformation definitions",
+   "summary": "AWS Transform custom now enables you to share transformation definitions (TDs) and their associated lessons across AWS accounts, organizational units (OUs), or your entire organization in AWS Organizations through AWS Resource Access Manager (AWS RAM). AWS Transform custom is a capability of AWS Transform that performs transformations across your technology stack, including API and framework upgrades, migrations, and language translations. With this launch, you can share TDs as live resources rather than static copies, so consumers run the owner's latest published version by default while the owner maintains full control. As the TD owner, you select from four managed permissions ranging from",
+   "lines": [
+    "AWS Transform custom now supports sharing transformation definitions and their lessons across AWS accounts, organizational units, or an AWS Organization through AWS RAM.",
+    "Shared definitions are live resources, so consumers run the owner's latest published version by default.",
+    "Owners choose from four managed permissions and keep full control of their definitions.",
+    "For IT teams, this supports standardizing transformations across accounts while the owner retains control."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-custom-cross-account-td/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "be7522b6",
+   "key": "https://thehackernews.com/2026/11/10-year-old-nginx-http2-flaw-lets.html",
+   "time": "2026-11-18T18:31:17.000Z",
+   "seen": "2026-11-19T00:28:31.694Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "10-Year-Old NGINX HTTP/2 Flaw Lets Unauthenticated Attackers Execute Code on Servers",
+   "summary": "A flaw in NGINX's HTTP/2 support can allow an attacker to run code on servers with HTTP/2 enabled, without needing to log in. The decade-old flaw, CVE-2026-123007, dubbed \"nginx2root,\" has been present in NGINX's open-source code since version 1.9.5, released on September 22, 2015. Fixed versions 1.31.9 and 1.30.7 came out today. F5, the company behind NGINX, says attackers can run code where",
+   "lines": [
+    "Reported by The Hacker News: A flaw in NGINX's HTTP/2 support can let an attacker run code on servers with HTTP/2 enabled, without logging in.",
+    "The flaw, CVE-2026-123007 and dubbed 'nginx2root,' has been in NGINX open-source code since version 1.9.5, released September 22, 2015.",
+    "Fixed versions 1.31.9 and 1.30.7 have been released.",
+    "IT teams running NGINX with HTTP/2 enabled should check their versions against the fixed releases."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/10-year-old-nginx-http2-flaw-lets.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [
+    "gnews-tech"
+   ],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null
+  },
+  {
+   "id": "626a545e",
+   "key": "https://bleepingcomputer.com/news/security/ukraine-fbi-arrest-ransomware-gang-members-tied-to-40m-in-ransoms",
+   "time": "2026-11-18T23:08:33.000Z",
+   "seen": "2026-11-19T00:28:31.694Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Ukraine, FBI arrest ransomware gang members tied to $40M in ransoms",
+   "summary": "Ukrainian authorities, working with the FBI, have arrested four suspected members of an international ransomware organization linked to more than $40.5 million in ransom payments from at least 28 companies worldwide. [...]",
+   "lines": [
+    "Reported by BleepingComputer: Ukrainian authorities, working with the FBI, arrested four suspected members of an international ransomware organization.",
+    "The group is linked to more than $40.5 million in ransom payments from at least 28 companies worldwide.",
+    "For business users, the report highlights the scale of ransom payments tied to this group."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/ukraine-fbi-arrest-ransomware-gang-members-tied-to-40m-in-ransoms/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "af37ec32",
+   "key": "https://bleepingcomputer.com/news/security/data-breach-impacts-40-irish-credit-unions-in-reported-it-provider-hack",
+   "time": "2026-11-18T19:39:33.000Z",
+   "seen": "2026-11-19T00:28:31.694Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Data breach impacts 40 Irish credit unions in reported IT provider hack",
+   "summary": "A reported cyberattack on Wellington IT has exposed sensitive information belonging to members of 50 credit unions, the majority of which are located in Ireland. [...]",
+   "lines": [
+    "Reported by BleepingComputer: a reported cyberattack on Wellington IT exposed sensitive information belonging to credit union members.",
+    "The affected credit unions are described as mostly located in Ireland.",
+    "For IT teams, the report highlights risk from third-party IT providers that hold member data."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/data-breach-impacts-40-irish-credit-unions-in-reported-it-provider-hack/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  }
+ ],
+ "description": "14 technology updates from official sources, updated hourly: Introducing Gemini 4 Neon; 10-Year-Old NGINX HTTP/2 Flaw Lets Unauthenticated Attackers Execute Code on Servers; Add inline captions, cross-references, and tables of captions in Google Docs."
+}
