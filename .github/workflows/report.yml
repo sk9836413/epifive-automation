@@ -1,0 +1,102 @@
+# Owner's daily performance email ("aaj ka performance batao"): website (Cloudflare Web Analytics), today's articles,
+# YouTube (EpiFive + Shyam Premi SN), Facebook/Instagram (both, in separate sections), CRM leads and outreach, tomorrow's
+# plan and one "aaj ki seekh" line. Sent via Resend from hello@epifive.com to info@epifive.com (BCC the owner's inbox).
+# Started by the Cloudflare scheduler in its 14:16 UTC slot (19:46 IST), so it arrives around 19:50-20:00 IST.
+# No GitHub `schedule` (it fires hours late in this repo). A day already sent (report/snapshot.json "sent") is skipped
+# unless `force`; the Resend idempotency key also stops a double send.
+# THIS REPO IS PUBLIC: report/report.mjs logs section statuses and counts only. A dry run prints the email text with the
+# private lines (lead names, deals) masked; the snapshot holds public counts only (subscribers, views, followers).
+name: Daily performance report
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Print the email text (private lines masked) and send nothing
+        type: boolean
+        default: false
+      date:
+        description: IST date to report (YYYY-MM-DD). Empty = today.
+        type: string
+        default: ''
+      force:
+        description: Send again even if today's report was already sent
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-report
+  cancel-in-progress: false
+
+jobs:
+  report:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      # Shyam's day plan for tomorrow (public repo; only the files scripts/day-plan.mjs reads).
+      - name: Check out Shyam's day plan
+        continue-on-error: true
+        uses: actions/checkout@v4
+        with:
+          repository: sk9836413/shyam-premi-sn
+          path: .shyam
+          fetch-depth: 1
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /scripts/
+            /automation/
+            /story/movies/
+            /music/library/*.licence.json
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Tests
+        run: node --test report/report.test.mjs
+
+      - name: Build and send
+        env:
+          DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+          FORCE: ${{ inputs.force && '1' || '' }}
+          REPORT_DATE: ${{ inputs.date }}
+          REPORT_FROM: EpiFive Report <hello@epifive.com>
+          REPORT_TO: info@epifive.com
+          REPORT_BCC: epifive2@gmail.com
+          SHYAM_DIR: ${{ github.workspace }}/.shyam
+          CRM_URL: ${{ vars.CRM_URL || 'https://epifive-crm.pages.dev' }}
+          INGEST_TOKEN: ${{ secrets.INGEST_TOKEN }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          SITE_REPO_TOKEN: ${{ secrets.SITE_REPO_TOKEN }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          SHYAM_YT_CLIENT_ID: ${{ secrets.SHYAM_YT_CLIENT_ID }}
+          SHYAM_YT_CLIENT_SECRET: ${{ secrets.SHYAM_YT_CLIENT_SECRET }}
+          SHYAM_YT_REFRESH_TOKEN: ${{ secrets.SHYAM_YT_REFRESH_TOKEN }}
+          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+          META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          SHYAM_META_PAGE_ID: ${{ secrets.SHYAM_META_PAGE_ID }}
+          SHYAM_META_PAGE_TOKEN: ${{ secrets.SHYAM_META_PAGE_TOKEN }}
+          SHYAM_IG_USER_ID: ${{ secrets.SHYAM_IG_USER_ID }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+        run: |
+          case "$REPORT_DATE" in ''|[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]) ;; *) echo "Bad date"; exit 1 ;; esac
+          git pull -q --rebase origin "$GITHUB_REF_NAME" || true # latest snapshot ("sent" guard) if an earlier run pushed
+          node report/report.mjs ${DRY_RUN:+--dry-run} ${FORCE:+--force}
+
+      - name: Save the snapshot
+        if: ${{ !inputs.dry_run }}
+        run: |
+          git add report/snapshot.json 2>/dev/null || exit 0
+          git diff --cached --quiet && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Daily report snapshot $(TZ=Asia/Kolkata date +%F)"
+          for i in 1 2 3; do git pull -q --rebase origin "$GITHUB_REF_NAME" && git push -q origin HEAD && break; sleep 10; done
