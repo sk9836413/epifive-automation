@@ -2,7 +2,7 @@
  "date": "2026-11-19",
  "title": "Tech news today, 19 November 2026",
  "published": "2026-11-19T00:28:31.694Z",
- "updated": "2026-11-19T10:28:24.940Z",
+ "updated": "2026-11-19T13:16:57.239Z",
  "items": [
   {
    "id": "a896af99",
@@ -845,7 +845,176 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "9a976b43",
+   "key": "https://blog.google/innovation-and-ai/models-and-research/google-research/blue-origin-project-suncatcher-partnership",
+   "time": "2026-11-19T13:00:00.000Z",
+   "seen": "2026-11-19T13:16:57.239Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "We’re partnering with Blue Origin on our first heavy-lift Project Suncatcher launch",
+   "summary": "We’re partnering with Blue Origin on the first heavy-lift launch for Project Suncatcher, our long-term moonshot to scale AI infrastructure in space by tapping into the a…",
+   "lines": [
+    "Google said it is partnering with Blue Origin on the first heavy-lift launch for Project Suncatcher, a long-term effort to scale AI infrastructure in space.",
+    "The project is described as a long-term moonshot, so IT and business teams should treat it as a future-looking initiative."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google: The Keyword",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/blue-origin-project-suncatcher-partnership/"
+   },
+   "sourceId": "google-keyword",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "ab88a7ca",
+   "key": "https://salesforce.com/news/stories/cyber-week-ai-sales-2026",
+   "time": "2026-11-19T13:00:00.000Z",
+   "seen": "2026-11-19T13:16:57.239Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Salesforce Data: Record Cyber Week Expected to Deliver $75.8B in AI-Driven Sales",
+   "summary": "Retailers with shopper agents set to score big as consumers turn to AI and personal agents to find deals this holiday season",
+   "lines": [
+    "Salesforce data projects a record Cyber Week with $75.8B in AI-driven sales.",
+    "Consumers are turning to AI and personal shopping agents to find holiday deals, and retailers with shopper agents are expected to benefit.",
+    "Retail and e-commerce teams may want to track how AI shopping agents affect holiday demand."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Salesforce Newsroom",
+    "url": "https://www.salesforce.com/news/stories/cyber-week-ai-sales-2026/"
+   },
+   "sourceId": "salesforce-news",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "64437577",
+   "key": "https://github.blog/changelog/2026-11-19-s3-audit-log-streaming-with-openid-connect-expands-to-ghe-com",
+   "time": "2026-11-19T08:27:16.000Z",
+   "seen": "2026-11-19T13:16:57.239Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "S3 audit log streaming with OpenID Connect expands to GHE.com",
+   "summary": "You can now stream enterprise audit logs to Amazon S3 using OpenID Connect (OIDC) on GitHub Enterprise Cloud with data residency (GHE.com). This extends the existing github.com capability, letting you… The post S3 audit log streaming with OpenID Connect expands to GHE.com appeared first on The GitHub Blog .",
+   "lines": [
+    "GitHub now lets enterprises stream audit logs to Amazon S3 using OpenID Connect (OIDC) on GitHub Enterprise Cloud with data residency (GHE.com).",
+    "The capability extends an existing github.com feature to GHE.com.",
+    "Enterprise admins who need audit logs in Amazon S3 under data residency rules now have this option on GHE.com."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "GitHub Changelog",
+    "url": "https://github.blog/changelog/2026-11-19-s3-audit-log-streaming-with-openid-connect-expands-to-ghe-com"
+   },
+   "sourceId": "github-changelog",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "fdea73e5",
+   "key": "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64002",
+   "time": "2026-11-19T13:16:57.239Z",
+   "seen": "2026-11-19T13:16:57.239Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Finances of Panchayati Raj Institutions",
+   "summary": "Today, the Reserve Bank released the second edition of its biennial Report titled “ Finances of Panchayati Raj Institutions ”. The theme of this edition is ‘Local Finances and Capacity Building in Rural India’. Drawing upon a balanced panel of 2.25 lakh Gram Panchayats for the period 2022-23 to 2024-25, the Report presents an assessment of their finances and their role in achieving sustainable and inclusive rural socio-economic development. Highlights: Gram Panchayat finances strengthened during 2022-23 and 2023-24; they, however, remain dependent on intergovernmental transfers, accounting for about 90 per cent of total receipts, while own source revenues (OSR) accounted for a modest share o",
+   "lines": [
+    "The Reserve Bank of India released the second edition of its biennial report, 'Finances of Panchayati Raj Institutions,' themed 'Local Finances and Capacity Building in Rural India.'",
+    "The report uses a balanced panel of 2.25 lakh Gram Panchayats for 2022-23 to 2024-25.",
+    "Gram Panchayat finances strengthened in 2022-23 and 2023-24, but about 90 per cent of total receipts came from intergovernmental transfers, with own source revenues a modest share.",
+    "Finance and policy teams tracking rural local government budgets can use the report's assessment of revenue dependence."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Reserve Bank of India press releases",
+    "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64002"
+   },
+   "sourceId": "rbi-press",
+   "sourceMax": 3,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "faea6f2c",
+   "key": "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64001",
+   "time": "2026-11-19T13:16:57.239Z",
+   "seen": "2026-11-19T13:16:57.239Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Overseas Direct Investment for October 2026",
+   "summary": "The Reserve Bank of India has today released the data on Overseas Direct Investment , both under Automatic Route and the Approval Route, for the month of October 2026. Ajit Prasad Deputy General Manager (Communications) Press Release: 2026-2027/1523",
+   "lines": [
+    "The Reserve Bank of India released Overseas Direct Investment data for October 2026, covering both the Automatic Route and the Approval Route.",
+    "Finance and compliance teams tracking outbound investment can use the monthly release as a reference."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Reserve Bank of India press releases",
+    "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64001"
+   },
+   "sourceId": "rbi-press",
+   "sourceMax": 3,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "5fdd2b67",
+   "key": "https://bleepingcomputer.com/news/security/drupal-patches-critical-rce-flaw-warns-exploits-may-surface-quickly",
+   "time": "2026-11-19T13:08:08.000Z",
+   "seen": "2026-11-19T13:16:57.239Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Drupal patches critical RCE flaw, warns exploits may surface quickly",
+   "summary": "The Drupal Security Team has patched a critical remote code execution vulnerability that can let attackers take over vulnerable sites. [...]",
+   "lines": [
+    "Reported by BleepingComputer: The Drupal Security Team has patched a critical remote code execution flaw that can let attackers take over vulnerable sites.",
+    "The warning is that exploits may surface quickly, so admins running Drupal sites should confirm the patch is applied."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/drupal-patches-critical-rce-flaw-warns-exploits-may-surface-quickly/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null
   }
  ],
- "description": "29 technology updates from official sources, updated hourly: Introducing Gemini 4 Neon; PayU loses Rs 25.67 crore in alleged cloud server breach; two arrested; 10-Year-Old NGINX HTTP/2 Flaw Lets Unauthenticated Attackers Execute Code on Servers."
+ "description": "35 technology updates from official sources, updated hourly: Introducing Gemini 4 Neon; PayU loses Rs 25.67 crore in alleged cloud server breach; two arrested; 10-Year-Old NGINX HTTP/2 Flaw Lets Unauthenticated Attackers Execute Code on Servers."
 }
