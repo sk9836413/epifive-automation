@@ -652,6 +652,78 @@ function scoreSecurity(item, source, { now = Date.now(), freshHours = 36 } = {})
   return { score, reasons, reject: null, ageHours, ...base };
 }
 
+// ---------- corroboration (owner, 19 Nov 2026) ----------
+// NGINX HTTP/2 RCE (THN, 6) and PHP's critical release (THN, 5) were each one outlet's report when scored. When two or
+// more different sources (THN + BleepingComputer + a vendor advisory or blog) report the same security story, it is
+// real news: +CORROBORATION_BOOST. Modest on purpose: a routine patch (5-6) stays below the threshold (10) with it.
+export const CORROBORATION_BOOST = 2;
+export const CORROBORATION_HOURS = 48;
+const CVE = /\bCVE-\d{4}-\d{4,7}\b/gi;
+const SEC_STORY = /\b(flaws?|vulnerabilit(y|ies)|cve-\d{4}-\d+|bugs?|zero[- ]days?|0-days?|rce|remote code execution|exploit(s|ed)?|security (update|release|advisory|fix|patch)e?s?|advisory|patch(es|ed|ing)?)\b/i;
+// Products named in a headline (WIDE_SOFTWARE plus widely used apps and platforms); synonyms map to one name.
+const SEC_PRODUCT = new RegExp(`${WIDE_SOFTWARE.source}|\\b(chrome|chromium|firefox|safari|webkit|ios|ipados|macos|android|windows|sharepoint|drupal|joomla|ruby on rails|ruby|rails|postgres(ql)?|mysql|mariadb|redis|mongodb|gitlab|github|npm|pypi|okta|zoom|slack|whatsapp|telegram|winrar|7-zip|solarwinds|moveit|veeam|weblogic|n-able)\\b`, 'gi');
+const PRODUCT_ALIAS = { openjdk: 'java', jdk: 'java', jre: 'java', fortigate: 'fortinet', fortios: 'fortinet', netscaler: 'citrix', 'pan-os': 'palo alto', chromium: 'chrome', nodejs: 'node.js', postgres: 'postgresql', 'ruby on rails': 'rails' };
+const productsIn = (title) => new Set([...String(title).matchAll(SEC_PRODUCT)].map((m) => m[0].toLowerCase()).map((p) => PRODUCT_ALIAS[p] ?? p));
+const cvesIn = (text) => new Set((String(text).match(CVE) ?? []).map((c) => c.toUpperCase()));
+
+/**
+ * Other sources reporting the same security story as `item` within CORROBORATION_HOURS: the same CVE id, or the same
+ * product in both headlines with flaw/vulnerability wording in both (unless both name CVE ids and none is shared).
+ * others: [{ title, summary, source (id or source object), date, link }] from this run's feeds and from state (earlier
+ * runs). Aggregators (role signal/trending) never count; nor the item's own source, or feeds carrying the same article
+ * (alsoIn, already worth +1). Returns { boost, sources, why } or null.
+ */
+export function corroborate(item, others = [], { now = Date.now(), hours = CORROBORATION_HOURS } = {}) {
+  const own = item.source?.id ?? item.source;
+  const skip = new Set([own, ...(item.alsoIn ?? [])]);
+  const text = `${item.title ?? ''} ${item.summary ?? ''}`;
+  if (!SEC_STORY.test(text)) return null;
+  const t0 = Date.parse(item.date ?? '') || now;
+  const myCves = cvesIn(text);
+  const myProducts = productsIn(item.title);
+  const link = item.link ? normalizeUrl(item.link) : null;
+  const sources = new Map();
+  for (const o of others) {
+    const id = o.source?.id ?? o.source;
+    if (!id || skip.has(id) || id === 'manual' || ['signal', 'trending'].includes(o.source?.role ?? o.role) || sources.has(id)) continue;
+    if (link && o.link && normalizeUrl(o.link) === link) continue;
+    const t = Date.parse(o.date ?? '') || now;
+    if (Math.abs(t - t0) > hours * 3600e3) continue;
+    const otext = `${o.title ?? ''} ${o.summary ?? ''}`;
+    const theirCves = cvesIn(otext);
+    const cve = [...myCves].find((c) => theirCves.has(c));
+    if (cve) {
+      sources.set(id, cve);
+      continue;
+    }
+    if (myCves.size && theirCves.size) continue; // different CVE ids: another flaw in the same product
+    const product = [...productsIn(o.title)].find((p) => myProducts.has(p));
+    if (product && SEC_STORY.test(otext)) sources.set(id, product);
+  }
+  if (!sources.size) return null;
+  const ids = [...sources.keys()];
+  return { boost: CORROBORATION_BOOST, sources: ids, why: `corroborated by ${ids.slice(0, 3).join(', ')} (${[...new Set(sources.values())].slice(0, 2).join(', ')})` };
+}
+
+// ---------- re-scoring (owner, 19 Nov 2026) ----------
+// An item scored "below" stays in state.json with its old score, so a scoring fix (47467c1) or a second source reporting
+// it later never lifted it: NGINX and PHP stayed at 6 and 5 all day. Now every scan scores a "below" item again while it
+// is fresh. Only "below": queued, writing, published, duplicate, expired and failed items are never re-decided.
+export const RESCORE_STATUSES = ['below'];
+
+/** A seen item that this scan scores again: status "below" and still inside the freshness window. */
+export function rescoreable(seen, item = {}, { now = Date.now(), freshHours = 36 } = {}) {
+  if (!seen || !RESCORE_STATUSES.includes(seen.status)) return false;
+  const t = Date.parse(item.date ?? seen.date ?? '') || Date.parse(seen.first ?? '');
+  return !Number.isNaN(t) && now - t <= freshHours * 3600e3 && t - now <= 24 * 3600e3;
+}
+
+/**
+ * A re-score counts only when the score went up (a new rule, a new corroborating source); a lower one (e.g. a detail
+ * page that is only read for new items) changes nothing, so state and the log are not churned every run.
+ */
+export const rescoreLifted = (seen, score) => score > (seen?.score ?? -Infinity);
+
 // ---------- service outages ----------
 // A big outage on a platform EpiFive readers depend on becomes a "what happened / how to check status / what to
 // do now" guide (automation/RADAR.md, "Outages"). Found on security/tech news feeds (scoreIncident routes here)
@@ -859,6 +931,13 @@ export function sameIncident(a, b) {
   return (shared >= 4 && ratio >= 0.3) || (shared >= 3 && ratio >= 0.5);
 }
 
+/** Two reports of the same security story: similar headlines (sameIncident) or a shared CVE id in title or summary. */
+export function sameSecurityStory(a, b) {
+  if (sameIncident(a.title ?? '', b.title ?? '')) return true;
+  const A = cvesIn(`${a.title ?? ''} ${a.summary ?? ''}`);
+  return A.size > 0 && [...cvesIn(`${b.title ?? ''} ${b.summary ?? ''}`)].some((c) => A.has(c));
+}
+
 /**
  * Keep one item per incident: the highest-scored of several outlets' reports, and none for an incident that is
  * already queued, being written or published (recent = [{ title }]). Marks the others with dupOf.
@@ -866,8 +945,8 @@ export function sameIncident(a, b) {
 export function markIncidentDuplicates(scored, recent = []) {
   const kept = [];
   for (const x of [...scored].filter((s) => s.category === 'incident').sort((a, b) => b.score - a.score)) {
-    const hit = recent.filter((r) => (r.category ?? 'incident') === 'incident').find((r) => sameIncident(x.item.title, r.title)) ??
-      kept.find((k) => sameIncident(x.item.title, k.item.title))?.item;
+    const hit = recent.filter((r) => (r.category ?? 'incident') === 'incident').find((r) => sameSecurityStory(x.item, r)) ??
+      kept.find((k) => sameSecurityStory(x.item, k.item))?.item;
     if (hit) {
       x.dupOf = hit.title;
       x.reasons.push(`same incident as "${hit.title.slice(0, 60)}"`);
@@ -999,9 +1078,13 @@ export function findCoverage(item, { posts = [], news = [], backlog = [] }, { lo
   const candidates = loose ? posts.filter((p) => !p.topic || INCIDENT_TOPICS.includes(p.topic)) : posts;
   const recent = (p) => p.date && now - Date.parse(p.date) < 45 * 86400e3;
   const intro = (p) => (loose && recent(p) ? (p.body ?? '').replace(/^---[\s\S]*?\n---/, '').slice(0, 600) : '');
+  // Incidents: a recent security post that names the item's CVE id covers it too (e.g. a guide the owner had written by
+  // hand before a re-score lifted another outlet's report of it).
+  const cves = loose ? [...cvesIn(`${item.title} ${item.summary ?? ''}`)] : [];
   const post =
     posts.find((p) => inBody(p.body)) ??
-    candidates.find((p) => same(item.title, `${p.title} ${p.slug.replace(/-/g, ' ')} ${intro(p)}`));
+    candidates.find((p) => same(item.title, `${p.title} ${p.slug.replace(/-/g, ' ')} ${intro(p)}`)) ??
+    (cves.length ? candidates.find((p) => recent(p) && cves.some((c) => (p.body ?? '').toUpperCase().includes(c))) : undefined);
   const newsHit = news.find((n) => inBody(n.body));
   const backlogHit = backlog.find((b) => !b.done && same(item.title, `${b.title} ${b.slug.replace(/-/g, ' ')}`));
   return { post: post ?? null, news: newsHit ?? null, backlog: backlogHit ?? null };

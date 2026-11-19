@@ -6,7 +6,7 @@ import {
   parseBacklog, sameTopic, todayCounts, parkInBacklog, markPublished, logLine, checkFastTrack, trendBoost, istDate, RADAR_MARK,
   datesIn, daysToDeadline, scoreIncident, sameIncident, markIncidentDuplicates, backlogLine, updateSignal,
   scoreOutage, outageTerm, outageFamilies, pickNewTask, parseSource, autoVideoPlan, isRootCauseNews, statusClosed,
-  cardDate, pageDetail, M365_TIE_BOOST, AUTO_VIDEO,
+  cardDate, pageDetail, M365_TIE_BOOST, AUTO_VIDEO, corroborate, rescoreable, rescoreLifted, CORROBORATION_BOOST, sameSecurityStory,
 } from './lib.mjs';
 import { readFileSync } from 'node:fs';
 
@@ -881,4 +881,157 @@ test('a critical RCE in widely used software clears the threshold even before ex
   const c = scoreIncident(item({ title: 'CISA Urges Immediate Patching of Java4Shell Flaw That Could Allow Remote Code Execution' }), thn, { now: NOW });
   assert.ok(j.score >= 10, j.reasons.join('; '));
   assert.ok(c.score >= 10, c.reasons.join('; '));
+});
+
+// ---------- re-scoring and corroboration (owner, 19 Nov 2026: NGINX, PHP and Java4Shell stayed "below") ----------
+
+const R_NOW = Date.parse('2026-11-19T10:00:00Z'); // 15:30 IST
+const NGINX = {
+  title: '10-Year-Old NGINX HTTP/2 Flaw Lets Unauthenticated Attackers Execute Code on Servers',
+  link: 'https://thehackernews.com/2026/11/10-year-old-nginx-http2-flaw-lets.html', date: '2026-11-18T18:31:17.000Z', categories: [],
+  summary: 'A flaw in NGINX\'s HTTP/2 support can allow an attacker to run code on servers with HTTP/2 enabled, without needing to log in. The decade-old flaw, CVE-2026-123007, dubbed "nginx2root," has been present in NGINX\'s open-source code since version 1.9.5, released on September 22, 2015. Fixed versions 1.',
+};
+const PHP = {
+  title: 'PHP Warns of Critical Security Flaws Affecting All Supported Versions, Fixes Coming November 19',
+  link: 'https://thehackernews.com/2026/11/php-warns-of-critical-security-flaws.html', date: '2026-11-19T04:33:46.000Z', categories: [],
+  summary: 'The maintainers of the PHP programming language on Wednesday issued an advisory announcing an upcoming security release that addresses critical flaws. The release is scheduled for November 19, 2026, between 2 and 2:30 p.m. UTC.',
+};
+const RUBY = {
+  title: 'Ruby Releases Fixes for 7 Regex and String Flaws, Warns 5 Have Proof-of-Concept RCE',
+  link: 'https://thehackernews.com/2026/11/ruby-releases-fixes-for-7-regex-and.html', date: '2026-11-19T08:42:11.000Z', categories: [],
+  summary: 'Ruby contains seven memory-safety flaws in its regular expression engine and its string case-conversion code.',
+};
+
+test('rescoreable: only "below" items inside the freshness window are scored again', () => {
+  const seen = (over = {}) => ({ status: 'below', score: 6, date: NGINX.date, first: '2026-11-19T00:28:31.694Z', ...over });
+  assert.equal(rescoreable(seen(), NGINX, { now: R_NOW }), true);
+  for (const status of ['queued', 'writing', 'published', 'updated', 'duplicate', 'update-candidate', 'expired', 'failed', 'resolved', 'skipped']) {
+    assert.equal(rescoreable(seen({ status }), NGINX, { now: R_NOW }), false, status);
+  }
+  // Out of the 36-hour window (Java4Shell on 19 Nov): stale, never re-decided.
+  assert.equal(rescoreable(seen({ date: '2026-11-17T15:17:36.000Z' }), { ...NGINX, date: '2026-11-17T15:17:36.000Z' }, { now: R_NOW }), false);
+  // Undated items: the first sighting is the clock.
+  assert.equal(rescoreable(seen({ date: undefined }), { title: 'x' }, { now: R_NOW }), true);
+  assert.equal(rescoreable(seen({ date: undefined, first: '2026-11-17T00:00:00Z' }), { title: 'x' }, { now: R_NOW }), false);
+  assert.equal(rescoreable(undefined, NGINX, { now: R_NOW }), false);
+  // A re-score counts only when it went up.
+  assert.equal(rescoreLifted({ score: 6 }, 11), true);
+  assert.equal(rescoreLifted({ score: 6 }, 6), false);
+  assert.equal(rescoreLifted({ score: 6 }, 4), false);
+});
+
+test('today\'s misses: NGINX and PHP clear the threshold with the current rules, a routine patch does not', () => {
+  const n = scoreIncident(NGINX, thn, { now: R_NOW });
+  const p = scoreIncident(PHP, thn, { now: R_NOW });
+  const r = scoreIncident(RUBY, thn, { now: R_NOW });
+  assert.ok(n.score >= 10 && rescoreLifted({ score: 6 }, n.score), n.reasons.join('; '));
+  assert.ok(p.score >= 10 && rescoreLifted({ score: 5 }, p.score), p.reasons.join('; '));
+  assert.ok(r.score < 10, r.reasons.join('; '));
+});
+
+test('corroborate: the same security story from 2+ different sources (CVE id, or product + flaw wording, 48 hours)', () => {
+  const bcNginx = { title: 'Critical NGINX flaw lets hackers run code on HTTP/2 servers, patch now', summary: 'F5 fixed CVE-2026-123007 in NGINX.', source: 'bleepingcomputer', date: '2026-11-19T02:00:00Z', link: 'https://www.bleepingcomputer.com/news/security/nginx-x/' };
+  const c = corroborate({ ...NGINX, source: 'thn' }, [bcNginx], { now: R_NOW });
+  assert.deepEqual([c.boost, c.sources], [CORROBORATION_BOOST, ['bleepingcomputer']]);
+  assert.equal(CORROBORATION_BOOST, 2);
+  assert.match(c.why, /CVE-2026-123007/);
+  // Same product + flaw wording without a CVE in the other report.
+  assert.deepEqual(corroborate({ ...NGINX, source: 'thn' }, [{ ...bcNginx, summary: '' }], { now: R_NOW }).sources, ['bleepingcomputer']);
+  // A vendor blog naming the same CVE counts (Java4Shell: THN + Cloudflare + Salesforce).
+  const j = corroborate({ title: 'CISA Urges Immediate Patching of Java4Shell Flaw', summary: 'tracked as CVE-2026-114938 (CVSS score: 8.1)', source: 'thn', date: '2026-11-18T08:24:23Z' },
+    [{ title: 'How Cloudflare WAF helps protect against Java4Shell (CVE-2026-114938)', source: 'cloudflare-blog', date: '2026-11-18T14:52:10Z' },
+      { title: 'Java4Shell – Critical OpenJDK Vulnerability (CVE-2026-114938)', source: 'salesforce-blog', date: '2026-11-18T21:12:17Z' }], { now: R_NOW });
+  assert.deepEqual(j.sources, ['cloudflare-blog', 'salesforce-blog']);
+  // Not corroboration: the same source, an aggregator, the same article on another feed (alsoIn), another CVE in the
+  // same product, another product, or a report more than 48 hours apart.
+  const none = (others, over = {}) => assert.equal(corroborate({ ...NGINX, source: 'thn', ...over }, others, { now: R_NOW }), null);
+  none([{ ...bcNginx, source: 'thn' }]);
+  none([{ ...bcNginx, source: { id: 'gnews-tech', role: 'trending' } }]);
+  none([bcNginx], { alsoIn: ['bleepingcomputer'] });
+  none([{ ...bcNginx, summary: 'F5 fixed CVE-2026-999999 in NGINX.' }]);
+  none([{ ...bcNginx, title: 'Critical Apache Tomcat flaw lets hackers run code', summary: '' }]);
+  none([{ ...bcNginx, date: '2026-11-21T02:00:00Z' }]);
+  // Modest: a routine patch reported twice stays below the threshold.
+  const ruby = scoreIncident(RUBY, thn, { now: R_NOW });
+  const rc = corroborate({ ...RUBY, source: 'thn' }, [{ title: 'Ruby fixes regex flaws in new security releases', source: 'bleepingcomputer', date: RUBY.date }], { now: R_NOW });
+  assert.ok(rc && ruby.score + rc.boost < 10, `${ruby.score} + ${rc?.boost}`);
+});
+
+test('radar.mjs scan re-scores "below" items, corroborates, and never re-decides queued, duplicate or published items', async () => {
+  const { spawnSync } = await import('node:child_process');
+  const fs = await import('node:fs');
+  const os = await import('node:os');
+  const path = await import('node:path');
+  const { fileURLToPath, pathToFileURL } = await import('node:url');
+  const here = path.dirname(fileURLToPath(import.meta.url));
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'radar-rescore-'));
+  const rd = path.join(dir, 'radar');
+  fs.mkdirSync(rd);
+  for (const f of fs.readdirSync(here).filter((f) => f.endsWith('.mjs') && !f.endsWith('.test.mjs'))) fs.copyFileSync(path.join(here, f), path.join(rd, f));
+  const cfg = JSON.parse(fs.readFileSync(path.join(here, 'sources.json'), 'utf8'));
+  cfg.sources = [
+    { id: 'thn', name: 'The Hacker News', url: 'https://feeds.test/thn', type: 'rss', category: 'incident', weight: 1, newsOutlet: true, topic: 'security-identity' },
+    { id: 'bleepingcomputer', name: 'BleepingComputer', outlet: 'BleepingComputer', url: 'https://feeds.test/bc', type: 'rss', category: 'incident', weight: 1, newsOutlet: true, topic: 'security-identity' },
+  ];
+  fs.writeFileSync(path.join(rd, 'sources.json'), JSON.stringify(cfg));
+  const rss = (items) => `<rss><channel>${items.map((i) => `<item><title>${i.title}</title><link>${i.link}</link><pubDate>${new Date(i.date).toUTCString()}</pubDate><description>${i.summary ?? ''}</description></item>`).join('')}</channel></rss>`;
+  const DRUPAL = { title: 'Drupal patches critical RCE flaw, warns exploits may surface quickly', link: 'https://www.bleepingcomputer.com/news/security/drupal-patches-critical-rce-flaw/', date: '2026-11-19T08:08:08Z', summary: 'The Drupal Security Team has patched a critical remote code execution vulnerability.' };
+  const OLD = { title: 'Chrome zero-day exploited in attacks, update now', link: 'https://www.bleepingcomputer.com/news/security/chrome-zero-day/', date: '2026-11-19T01:00:00Z', summary: 'Google fixed an actively exploited Chrome zero-day.' };
+  const BC_NGINX = { title: 'Critical NGINX flaw lets hackers run code on HTTP/2 servers, patch now', link: 'https://www.bleepingcomputer.com/news/security/critical-nginx-flaw/', date: '2026-11-19T07:00:00Z', summary: 'F5 fixed CVE-2026-123007 in NGINX open source and NGINX Plus.' };
+  const CISA = { title: 'CISA Urges Immediate Patching of Java4Shell Flaw That Could Allow Remote Code Execution', link: 'https://thehackernews.com/2026/11/cisa-urges-immediate-patching-of.html', date: '2026-11-18T08:24:23Z', summary: 'CISA has urged organizations to immediately patch a newly disclosed critical security flaw impacting Oracle Java, tracked as CVE-2026-114938.' };
+  const feeds = { 'https://feeds.test/thn': rss([NGINX, PHP, RUBY, CISA]), 'https://feeds.test/bc': rss([BC_NGINX, DRUPAL, OLD]) };
+  fs.writeFileSync(path.join(dir, 'stub.mjs'), `const feeds = ${JSON.stringify(feeds)};
+globalThis.fetch = async (url) => feeds[url] ? { ok: true, status: 200, text: async () => feeds[url] } : { ok: false, status: 404, text: async () => '' };\n`);
+  const entry = (it, source, status, score, over = {}) => [normalizeUrl(it.link), { title: it.title, link: it.link, source, topic: 'security-identity', category: 'incident',
+    date: new Date(it.date).toISOString(), summary: it.summary, first: '2026-11-19T05:13:16.704Z', score, reasons: ['old rules'], status, hash: 'old', ...over }];
+  fs.writeFileSync(path.join(rd, 'state.json'), JSON.stringify({ version: 1, lastScan: null, seen: Object.fromEntries([
+    entry(NGINX, 'thn', 'below', 6, { first: '2026-11-19T00:28:31.694Z' }), entry(PHP, 'thn', 'below', 5), entry(RUBY, 'thn', 'below', 5), entry(CISA, 'thn', 'below', 5),
+    entry(DRUPAL, 'bleepingcomputer', 'duplicate', 6), entry(OLD, 'bleepingcomputer', 'published', 12, { slug: 'chrome-zero-day' }),
+  ]) }));
+  const site = path.join(dir, 'site');
+  fs.mkdirSync(path.join(site, 'content', 'posts'), { recursive: true });
+  // A guide written by hand today that names the Java4Shell CVE.
+  fs.writeFileSync(path.join(site, 'content', 'posts', 'java4shell-check-patch.md'),
+    '---\ntitle: "Java4Shell: check and patch"\ndate: 2026-11-19\ntopic: security-identity\n---\nCVE-2026-114938 affects OpenJDK.\n');
+  const out = path.join(dir, 'task.json');
+  const r = spawnSync(process.execPath, ['--import', pathToFileURL(path.join(dir, 'stub.mjs')).href, path.join(rd, 'radar.mjs'), 'scan', '--site', site,
+    '--now', new Date(R_NOW).toISOString(), '--out', out], { encoding: 'utf8' });
+  assert.equal(r.status, 0, r.stderr);
+  const seen = JSON.parse(fs.readFileSync(path.join(rd, 'state.json'), 'utf8')).seen;
+  const s = (it) => seen[normalizeUrl(it.link)];
+  // NGINX: old score 6, now the widely-used-software rule and BleepingComputer's report lift it; it is the task.
+  assert.ok(s(NGINX).score >= 12, s(NGINX).reasons.join('; '));
+  assert.match(s(NGINX).reasons.join('; '), /corroborated by bleepingcomputer/);
+  assert.match(s(NGINX).reasons.join('; '), /re-scored \(was 6\)/);
+  assert.equal(s(NGINX).first, '2026-11-19T00:28:31.694Z'); // the first sighting is kept
+  // One guide per incident: the higher-scored of THN's and BleepingComputer's NGINX reports is the task, the other a duplicate.
+  const task = JSON.parse(fs.readFileSync(out, 'utf8'));
+  assert.equal(task.kind, 'new');
+  assert.ok([normalizeUrl(NGINX.link), normalizeUrl(BC_NGINX.link)].includes(task.key), task.key);
+  assert.deepEqual([s(NGINX).status, s(BC_NGINX).status].sort(), ['duplicate', 'writing']);
+  // PHP: 5 -> queued for the next slot.
+  assert.ok(s(PHP).score >= 10, s(PHP).reasons.join('; '));
+  assert.equal(s(PHP).status, 'queued');
+  // Ruby: a routine patch, re-scored to the same score: untouched.
+  assert.deepEqual([s(RUBY).status, s(RUBY).score, s(RUBY).reasons], ['below', 5, ['old rules']]);
+  // Java4Shell: lifted by the rules and by corroboration, but a post already names its CVE: covered, and never an update
+  // of the hand-written post (the item is older news than the post).
+  assert.equal(s(CISA).status, 'duplicate');
+  assert.match(s(CISA).reasons.join('; '), /covered by \/blog\/java4shell-check-patch/);
+  // Duplicate and published items are never re-decided, even if they would score higher now.
+  assert.deepEqual([s(DRUPAL).status, s(DRUPAL).score], ['duplicate', 6]);
+  assert.deepEqual([s(OLD).status, s(OLD).score], ['published', 12]);
+  const log = fs.readdirSync(path.join(rd, 'log')).map((f) => fs.readFileSync(path.join(rd, 'log', f), 'utf8')).join('');
+  assert.match(log, /1 new and fresh, 3 re-scored higher/); // NGINX, PHP, Java4Shell (Ruby: same score)
+  fs.rmSync(dir, { recursive: true, force: true });
+});
+
+test('one guide per CVE: reports sharing a CVE id are one incident, and a recent post naming the CVE covers them', () => {
+  const bc = { title: 'Critical NGINX flaw lets hackers run code on HTTP/2 servers, patch now', summary: 'F5 fixed CVE-2026-123007.' };
+  assert.equal(sameSecurityStory(NGINX, bc), true);
+  assert.equal(sameSecurityStory({ title: 'Acme patches router flaw', summary: 'CVE-2026-1111' }, { title: 'Other vendor bug', summary: 'CVE-2026-2222' }), false);
+  const post = { slug: 'nginx2root-check-patch', title: 'nginx2root: check and patch your servers', date: '2026-11-19', topic: 'security-identity', body: '---\ntitle: x\n---\nThe flaw is CVE-2026-123007.' };
+  assert.equal(findCoverage(NGINX, { posts: [post] }, { loose: true, now: R_NOW }).post?.slug, 'nginx2root-check-patch');
+  assert.equal(findCoverage(NGINX, { posts: [{ ...post, date: '2026-09-01' }] }, { loose: true, now: R_NOW }).post, null); // older than 45 days
+  assert.equal(findCoverage(NGINX, { posts: [{ ...post, topic: 'microsoft-365' }] }, { loose: true, now: R_NOW }).post, null); // not a security post
 });

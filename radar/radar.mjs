@@ -30,7 +30,7 @@ import {
   parseSource, normalizeUrl, scoreItem, trendBoost, searchPhrase, findCoverage, parseBacklog, hashText,
   istDate, todayCounts, mergeDuplicates, daysToDeadline, parkInBacklog, markPublished, logLine, checkFastTrack, updateSignal,
   markIncidentDuplicates, backlogLine, pickNewTask, autoVideoPlan, isRootCauseNews, statusClosed, pageDetail, sameTopic, sameIncident,
-  scoreOutage, outageFamilies, outageTerm,
+  scoreOutage, outageFamilies, outageTerm, corroborate, rescoreable, rescoreLifted,
 } from './lib.mjs';
 import { selectTrending } from './trending.mjs';
 import {
@@ -160,6 +160,15 @@ async function scan() {
   const scored = [];
   const updates = [];
   const merged = mergeDuplicates(fetched);
+  // Security stories other sources reported in the last 48 hours, this run or earlier ones (lib.mjs corroborate).
+  const aggregators = new Set(CONFIG.sources.filter((x) => ['signal', 'trending'].includes(x.role)).map((x) => x.id));
+  const reports = [
+    ...fetched.filter((x) => !aggregators.has(x.source.id))
+      .map((x) => ({ title: x.title, summary: x.summary, source: x.source.id, date: x.date, link: x.link })),
+    ...Object.entries(state.seen).filter(([, s]) => s.source && s.source !== 'manual' && !aggregators.has(s.source))
+      .map(([k, s]) => ({ title: s.title, summary: s.summary, source: s.source, date: s.date ?? s.first, link: s.link ?? k })),
+  ];
+  let rescored = 0;
   for (const item of merged) {
     // Aggregators and trending lists (role "signal") feed only the hourly news page, never a fast-track article.
     if (item.source.role === 'signal') continue;
@@ -180,8 +189,11 @@ async function scan() {
         // cause: update the guide that covers it. A picked update stores the new hash, so each change counts once.
         const cov = findCoverage(item, site, { category: 'outage', now, families: seen.families });
         if (cov.post) updates.push({ key, item, slug: cov.post.slug, score: Math.max(seen.score ?? 0, S.threshold), why: `outage closed or root cause: update to /blog/${cov.post.slug}` });
+        continue;
       }
-      continue;
+      // A "below" item is scored again while fresh: a rule change or a new corroborating source can lift it (owner,
+      // 19 Nov 2026). Queued, written, duplicate and expired items are never re-decided.
+      if (!rescoreable(seen, item, { now, freshHours: S.freshHours })) continue;
     }
     const s = trendingSource
       ? scoreOutage(item, { ...item.source, weight: item.source.outageWeight ?? 0 }, { now, freshHours: S.freshHours })
@@ -190,11 +202,19 @@ async function scan() {
     // Tier-1 floors (brief.mjs): flagship device or AI model, big AI price drop, AI model retirement due soon.
     const floor = tier1Floor(item, item.source, { score: s.score, threshold: S.threshold, daysToDeadline: daysToDeadline(`${item.title} ${item.summary}`, now) });
     if (floor) s.score += floor.points, s.reasons.push(`+${floor.points} ${floor.why}`);
+    // The same security story from 2+ different sources (same CVE, or same product + flaw wording, within 48 hours).
+    const corro = s.category === 'incident' ? corroborate({ ...item, source: item.source.id }, reports, { now }) : null;
+    if (corro) s.score += corro.boost, s.reasons.push(`+${corro.boost} ${corro.why}`);
     s.story = storyKey({ device: detectDevice(item, item.source), ai: detectAiModel(item, item.source) }) ?? undefined;
     const cov = findCoverage(item, site, { loose: s.category === 'incident', now, category: s.category, families: s.families });
     if (cov.news) s.score -= 1, s.reasons.push(`-1 in /news ${cov.news.slug}`);
     if (cov.backlog) s.reasons.push(`backlog ${cov.backlog.slug}`);
-    scored.push({ key, item, hash, ...s, cov });
+    if (seen) {
+      if (!rescoreLifted(seen, s.score) && key !== forceUrl) continue; // same or lower: nothing changes
+      s.reasons.push(`re-scored (was ${seen.score})`);
+      rescored++;
+    }
+    scored.push({ key, item, hash, ...s, cov, ...(seen ? { first: seen.first, rescored: true } : {}) });
   }
 
   // One guide per incident (and per outage, by platform family): drop other outlets' reports of the same incident,
@@ -246,7 +266,9 @@ async function scan() {
     if (x.resolved && status === 'queued') status = 'resolved';
     if (x.dupOf && !(x.category === 'outage' && x.cov.post)) status = 'duplicate';
     else if (x.cov.post) {
-      const canUpdate = updateSignal(`${x.item.title} ${x.item.summary}`, x.category) && x.score >= S.threshold - 2;
+      // A re-scored item was already seen, often before the post was written (e.g. a guide written by hand): it is
+      // covered, never a reason to update the post.
+      const canUpdate = !x.rescored && updateSignal(`${x.item.title} ${x.item.summary}`, x.category) && x.score >= S.threshold - 2;
       if (canUpdate) updates.push({ key: x.key, item: x.item, slug: x.cov.post.slug, score: x.score, why: `update to /blog/${x.cov.post.slug}` });
       status = canUpdate ? 'update-candidate' : 'duplicate';
       x.reasons.push(`covered by /blog/${x.cov.post.slug}`);
@@ -256,7 +278,7 @@ async function scan() {
     state.seen[x.key] = {
       title: x.item.title, link: x.item.link, source: x.item.source.id, topic: x.topic ?? x.item.source.topic, category: x.category ?? 'launch',
       date: x.item.date, updated: x.item.updated,
-      summary: x.item.summary.slice(0, 300), first: new Date(now).toISOString(), score: x.score, reasons: x.reasons, status, hash: x.hash,
+      summary: x.item.summary.slice(0, 300), first: x.first ?? new Date(now).toISOString(), score: x.score, reasons: x.reasons, status, hash: x.hash,
       ...(x.families ? { families: x.families } : {}),
       ...(x.story ? { story: x.story } : {}),
       backlog: x.cov.backlog?.slug, news: x.cov.news?.slug, post: x.cov.post?.slug,
@@ -347,7 +369,7 @@ async function scan() {
   const block = [
     `## ${ist} IST (${trigger}${dryRun ? ', dry run' : ''})`,
     '',
-    `Fetched ${fetched.length} items from ${CONFIG.sources.filter((s) => s._ok).length}/${CONFIG.sources.length} sources; ${scored.length} new and fresh; today: ${counts.newPublished}/${S.maxNewPerDay} fast-track, ${counts.outageExtra}/${maxExtra} outage extra, ${counts.updates}/${S.maxUpdatesPerDay} updates.`,
+    `Fetched ${fetched.length} items from ${CONFIG.sources.filter((s) => s._ok).length}/${CONFIG.sources.length} sources; ${scored.length - rescored} new and fresh${rescored ? `, ${rescored} re-scored higher` : ''}; today: ${counts.newPublished}/${S.maxNewPerDay} fast-track, ${counts.outageExtra}/${maxExtra} outage extra, ${counts.updates}/${S.maxUpdatesPerDay} updates.`,
     ...(errors.length ? [`Errors: ${errors.join('; ')}`] : []),
     '',
     '| Score | Source | Decision | Item |',

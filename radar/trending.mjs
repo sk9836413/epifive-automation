@@ -12,6 +12,7 @@
 // and it is about an allowed topic (trendTopic):
 //   - leadership changes and IPOs / valuations at major tech companies (COMPANIES),
 //   - big product, AI model, space and EV milestones at those companies,
+//   - AI/tech business news at major Indian tech companies (INDIA_COMPANIES, topic "india"; owner, 19 Nov 2026),
 //   - critical-infrastructure outages (FAA / aviation, airlines, banks, payments, telecom, 911).
 // Never: routine earnings, stock moves on their own, small-startup funding, deals and promos, opinion and analysis.
 // Safety (brief.mjs TREND_BLOCKED): no personal allegations, scandals, relationships, crime or investigations. A hit
@@ -46,6 +47,21 @@ export const REPUTABLE = [
   ['ZDNet', /^zdnet$/i, /(^|\.)zdnet\.com$/],
   ['The Register', /^the register$/i, /(^|\.)theregister\.com$/],
   ['BleepingComputer', /^bleepingcomputer$/i, /(^|\.)bleepingcomputer\.com$/],
+  // Indian outlets (owner, 19 Nov 2026: the Sarvam AI Token Factory story was covered by Bloomberg, Business Standard,
+  // MediaNama and Analytics India Magazine but could never reach "3 reputable outlets"). One canonical name per newsroom
+  // (ET and ETtech; The Hindu and BusinessLine; NDTV and NDTV Profit). Deccan Chronicle is left out (owner: optional).
+  ['The Economic Times', /^((the )?economic times|et ?tech|economictimes(\.com)?)$/i, /(^|\.)economictimes\.(indiatimes\.)?com$/],
+  ['Mint', /^(mint|livemint(\.com)?)$/i, /(^|\.)livemint\.com$/],
+  ['Business Standard', /^business standard$/i, /(^|\.)business-standard\.com$/],
+  ['The Hindu', /^((the )?hindu|(the )?hindu ?businessline|businessline)$/i, /(^|\.)(thehindu|thehindubusinessline)\.com$/],
+  ['Hindustan Times', /^(hindustan times|ht tech)$/i, /(^|\.)hindustantimes\.com$/],
+  ['The Indian Express', /^(the )?indian express$/i, /(^|\.)indianexpress\.com$/],
+  ['Moneycontrol', /^moneycontrol(\.com)?$/i, /(^|\.)moneycontrol\.com$/],
+  ['NDTV', /^(ndtv|ndtv profit|ndtv\.com|ndtvprofit\.com)$/i, /(^|\.)(ndtv|ndtvprofit)\.com$/],
+  ['MediaNama', /^medianama$/i, /(^|\.)medianama\.com$/],
+  ['Inc42', /^inc42( media)?$/i, /(^|\.)inc42\.com$/],
+  ['Analytics India Magazine', /^(analytics india (magazine|mag)|aim media house)$/i, /(^|\.)analyticsindiamag\.com$/],
+  ['YourStory', /^yourstory( media)?$/i, /(^|\.)yourstory\.com$/],
 ];
 const hostOf = (link) => {
   try {
@@ -66,6 +82,20 @@ const rank = (outlet) => {
   return i === -1 ? 99 : i;
 };
 
+// Major Indian tech and AI companies (owner, 19 Nov 2026: India AI/tech business stories, e.g. Sarvam's Token Factory).
+// A story about one of them uses the "india" topic (one story per company at a time, like leadership and IPOs).
+export const INDIA_COMPANIES = [
+  ['sarvam', /\bSarvam\b/i], ['krutrim', /\b(Krutrim|Ola Electric)\b/i], ['jio', /\b(Reliance Jio|Jio Platforms|Reliance Intelligence|Jio)\b/],
+  ['airtel', /\b(Bharti )?Airtel\b/i], ['tcs', /\b(TCS|Tata Consultancy Services)\b/], ['infosys', /\bInfosys\b/i], ['wipro', /\bWipro\b/i],
+  ['hcltech', /\bHCL ?Tech(nologies)?\b/i], ['tech-mahindra', /\bTech Mahindra\b/i], ['tata-electronics', /\bTata Electronics\b/i],
+  ['flipkart', /\bFlipkart\b/i], ['paytm', /\bPaytm\b/i], ['phonepe', /\bPhonePe\b/i], ['razorpay', /\bRazorpay\b/i], ['zoho', /\bZoho\b/i],
+  ['freshworks', /\bFreshworks\b/i], ['zomato', /\b(Zomato|Blinkit)\b/i], ['swiggy', /\bSwiggy\b/i], ['zepto', /\bZepto\b/i],
+  ['meesho', /\bMeesho\b/i], ['yotta', /\bYotta\b/], ['indiaai', /\bIndiaAI\b/i],
+];
+const INDIA_IDS = new Set(INDIA_COMPANIES.map(([id]) => id));
+// What makes an Indian company's story tech/AI business news (not a festive sale or a cricket sponsorship).
+const INDIA_TECH = /\b(AI|artificial intelligence|gen ?AI|LLMs?|models?|GPUs?|chips?|semiconductors?|data ?cent(er|re)s?|cloud|inference|tokens?|sovereign|compute|platforms?|API|apps?|software|launch(es|ed)?|unveil(s|ed)?|rolls? out|introduc(es|ed)|backlash|criticism|critici[sz]ed|under fire|draws fire|row|controversy|debate|deal|partnership|partners|contract|acquires?|acquisition|merger|UPI|5G|satellite|outage)\b/i;
+
 // Major tech companies (and space agencies / robotaxi makers for milestones). Entity = the first one named.
 export const COMPANIES = [
   ['microsoft', /\bMicrosoft\b/], ['apple', /\bApple\b/], ['google', /\b(Google|Alphabet|DeepMind)\b/], ['amazon', /\b(Amazon|AWS)\b/],
@@ -74,6 +104,7 @@ export const COMPANIES = [
   ['salesforce', /\bSalesforce\b/i], ['oracle', /\bOracle\b/], ['ibm', /\bIBM\b/], ['samsung', /\bSamsung\b/i], ['qualcomm', /\bQualcomm\b/i],
   ['broadcom', /\bBroadcom\b/i], ['tsmc', /\b(TSMC|Taiwan Semiconductor)\b/i], ['cisco', /\bCisco\b/], ['xai', /\b(xAI|X Corp)\b/],
   ['nasa', /\bNASA\b/], ['blue-origin', /\bBlue Origin\b/i], ['waymo', /\bWaymo\b/i],
+  ...INDIA_COMPANIES,
 ];
 /** The company named first in a text, or the one named nearest to position `near` (e.g. the "CEO" or "IPO" word). */
 export function firstCompany(text = '', near = null, only = null) {
@@ -141,6 +172,9 @@ export function trendTopic(title = '') {
   if (FUNDING.test(t)) return { reject: 'funding round' };
   if (STOCK.test(t)) return { reject: 'stock move' };
   if (NOT_MILESTONE.test(t)) return { reject: 'policy, legal or jobs news' };
+  // An Indian tech/AI company's business story: one "india" story per company (a launch and the backlash over it are
+  // one story), listed only when 3+ reputable outlets (Indian outlets count) or Techmeme carry it.
+  if (INDIA_IDS.has(entity)) return INDIA_TECH.test(t) ? ok('india', entity) : { reject: 'not an allowed topic' };
   // Milestones also carry the vehicle or model they are about ("starship", "gpt-6"), so differently worded headlines
   // about it join one story (clusterTrending).
   const thing = (s) => (s ? s.toLowerCase().replace(/\s+/g, ' ') : null);
@@ -219,7 +253,7 @@ export function clusterTrending(entries) {
 // Side angles of a big story (who was stuck, which team was late): never the headline when a direct one exists.
 const SIDE_ANGLE = /\b(sports?|teams?|games?|fans?|travell?ers?|stranded|students?|college|nfl|nba|mlb|nhl|nwsl|football|basketball|baseball|concerts?|weddings?|the athletic)\b/i;
 
-const TOPIC_POINTS = { 'infra-outage': 3, leadership: 2, ipo: 2, milestone: 1 };
+const TOPIC_POINTS = { 'infra-outage': 3, leadership: 2, ipo: 2, milestone: 1, india: 1 };
 
 /**
  * Pick the trending stories for the day page. pool: raw items from the trending sources and the reputable news feeds

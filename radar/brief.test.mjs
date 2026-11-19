@@ -536,3 +536,46 @@ test('trending: an official source for a trending story replaces it and is writt
   assert.ok(it.also.includes('Reuters'));
   assert.notEqual(templateLines(it)[0].slice(0, 12), 'Reported by ');
 });
+
+test('India trending (owner, 19 Nov 2026): an Indian AI/tech business story in 3+ Indian reputable outlets is a trending candidate (Sarvam Token Factory)', () => {
+  const NOW = Date.parse('2026-11-19T09:00:00Z'); // 14:30 IST
+  const TODAY = '2026-11-19';
+  const at = (h) => new Date(NOW - h * 3600e3).toISOString();
+  const india = (title, outlet, link, h, o = {}) => ({ title, outlet, link, date: at(h), summary: '', related: [], source: tsrc(o.sourceId ?? 'india-feed'), ...o });
+  const bs = india('Sarvam AI faces backlash for hosting Chinese AI models on its Token Factory platform', 'Business Standard', 'https://www.business-standard.com/technology/tech-news/sarvam-ai-token-factory-chinese-models-backlash-126111900123_1.html', 3);
+  const mn = india("Sarvam's Token Factory offers DeepSeek, Kimi and GLM models, sparking sovereign AI debate", '', 'https://www.medianama.com/2026/11/223-sarvam-token-factory-chinese-models/', 9);
+  const aim = india('Sarvam Launches Token Factory, an Inference Platform Built on Indian Compute', '', 'https://analyticsindiamag.com/ai-news/sarvam-launches-token-factory/', 20);
+  const dc = india('Sarvam AI under fire over Chinese models on its platform', 'Deccan Chronicle', 'https://www.deccanchronicle.com/technology/sarvam-ai-under-fire-1912345', 2);
+  // The launch and the backlash over it are one "india" story about Sarvam.
+  for (const x of [bs, mn, aim, dc]) assert.equal(trendTopic(x.title).key, 'india:sarvam', x.title);
+  for (const [o, want] of [['Business Standard', 'Business Standard'], ['ETtech', 'The Economic Times'], ['Mint', 'Mint'], ['BusinessLine', 'The Hindu'],
+    ['Hindustan Times', 'Hindustan Times'], ['The Indian Express', 'The Indian Express'], ['Moneycontrol', 'Moneycontrol'], ['NDTV Profit', 'NDTV'],
+    ['MediaNama', 'MediaNama'], ['Inc42', 'Inc42'], ['Analytics India Magazine', 'Analytics India Magazine'], ['YourStory', 'YourStory']]) {
+    assert.equal(reputableOutlet(o), want, o);
+  }
+  assert.equal(reputableOutlet('', 'https://economictimes.indiatimes.com/tech/artificial-intelligence/x/articleshow/1.cms'), 'The Economic Times');
+  assert.equal(reputableOutlet('', 'https://timesofindia.indiatimes.com/x'), null); // indiatimes.com is not all ET
+  assert.equal(reputableOutlet('Deccan Chronicle'), null);
+  // Two reputable outlets: not trending yet.
+  let r = selectTrending([bs, dc], { now: NOW, today: TODAY });
+  assert.equal(r.items.length, 0);
+  assert.match(r.skipped[0].why, /not trending \(1 reputable outlet/);
+  // Three Indian reputable outlets within 24 hours: a trending candidate, reported by one of them, the others noted.
+  r = selectTrending([bs, mn, aim, dc], { now: NOW, today: TODAY });
+  assert.equal(r.items.length, 1);
+  const it = r.items[0];
+  assert.deepEqual([it.trending, it.trendKey, it.kind, it.reported, it.tier, it.story], [true, 'india:sarvam', 'trending', true, 2, 'trend:india:sarvam']);
+  assert.ok(['Business Standard', 'MediaNama', 'Analytics India Magazine'].includes(it.source.name), it.source.name);
+  assert.deepEqual([it.source.name, ...it.also].sort(), ['Analytics India Magazine', 'Business Standard', 'MediaNama']);
+  assert.match(templateLines(it)[0], /^Reported by (Business Standard|MediaNama|Analytics India Magazine): .*Sarvam/);
+  // Google News' grouping of Indian outlets counts the same way.
+  const grouped = india('Sarvam AI draws fire for offering Chinese AI models', 'The Economic Times', 'https://news.google.com/rss/articles/S1', 4,
+    { related: [{ title: 'Sarvam AI criticised for hosting Chinese models on Token Factory', outlet: 'Mint', link: 'https://news.google.com/rss/articles/S2' },
+      { title: 'Sarvam defends Token Factory as Chinese AI models row grows', outlet: 'Moneycontrol', link: 'https://news.google.com/rss/articles/S3' }] });
+  assert.equal(selectTrending([grouped], { now: NOW, today: TODAY }).items[0]?.trendKey, 'india:sarvam');
+  // Older than the freshness window: nothing.
+  assert.equal(selectTrending([bs, mn, aim].map((x) => ({ ...x, date: at(40) })), { now: NOW, today: TODAY }).items.length, 0);
+  // Indian company news that is not tech/AI business news stays out.
+  for (const t of ['Flipkart Big Billion Days sale: best deals on iPhones', 'Infosys Q2 results beat estimates', 'Zepto raises $450 million in fresh funding',
+    'Jio announces IPL streaming plans for cricket fans']) assert.ok(!trendTopic(t).key, t);
+});
