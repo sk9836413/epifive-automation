@@ -263,6 +263,7 @@ async function metaSection(name, prefix, igVar, key, prev) {
       const ig = await g(`${env[igVar]}?fields=followers_count,media_count`);
       snap.ig = ig.followers_count ?? 0;
       items.push({ heading: `Instagram: ${fmt(snap.ig)} followers${before.ig !== undefined ? ` (${delta(snap.ig, before.ig)})` : ''}, ${fmt(ig.media_count)} posts` });
+      let insightsErr = '';
       const media = await g(`${env[igVar]}/media?fields=id,timestamp,caption,like_count,comments_count,media_product_type,permalink&limit=5`);
       for (const m of media.data || []) {
         let views = '';
@@ -270,7 +271,10 @@ async function metaSection(name, prefix, igVar, key, prev) {
           const ins = await g(`${m.id}/insights?metric=views`);
           const v = ins.data?.[0]?.values?.[0]?.value ?? ins.data?.[0]?.total_value?.value;
           if (v !== undefined) views = `, ${fmt(v)} ${m.media_product_type === 'REELS' ? 'plays' : 'views'}`;
-        } catch { /* insights not available for this media */ }
+        } catch (e) {
+          // Insights not available for this media; log the reason once (cleaned, no ids or tokens).
+          if (!insightsErr) { insightsErr = clean(e.message); log.push(`meta ${key} ig insights: ${insightsErr}`); }
+        }
         items.push({ text: `${dayLabel(istDate(new Date(m.timestamp)))} ${m.media_product_type === 'REELS' ? 'Reel' : 'Post'}: ${fmt(m.like_count)} likes, ${fmt(m.comments_count)} comments${views} - ${short(m.caption, 60)}`, href: m.permalink });
       }
     } catch (e) {
