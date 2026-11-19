@@ -2,7 +2,7 @@
  "date": "2026-11-19",
  "title": "Tech news today, 19 November 2026",
  "published": "2026-11-19T00:28:31.694Z",
- "updated": "2026-11-19T00:28:31.694Z",
+ "updated": "2026-11-19T03:43:43.666Z",
  "items": [
   {
    "id": "a896af99",
@@ -10,7 +10,7 @@
    "time": "2026-11-18T21:00:00.000Z",
    "seen": "2026-11-19T00:28:31.694Z",
    "kind": "ai-model",
-   "tier": 2,
+   "tier": 1,
    "headline": "Introducing Gemini 4 Neon",
    "summary": "Google introduces Gemini 4 Neon, delivering frontier-level intelligence for complex coding and analysis at a lower cost. See what's new. Nov 18, 2026 x.com Facebook LinkedIn Mail Copy link Bringing frontier-level intelligence with fast end-to-end task completion across complex software engineering, knowledge work, and science workflows. Koray Kavukcuoglu SVP, Google DeepMind and Chief AI Architect, Google x.com Facebook LinkedIn Mail Copy link Your browser does not support the audio element. Today, we’re introducing Gemini 4 Neon — bringing frontier-level intelligence with fast end-to-end task completion across complex software engineering, knowledge work, and science workflows. Neon ranks a",
    "lines": [
@@ -420,7 +420,152 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "79274dd0",
+   "key": "https://mc.merill.net/message/MC1532259",
+   "time": "2026-11-19T00:56:54.000Z",
+   "seen": "2026-11-19T03:43:43.666Z",
+   "kind": "retirement",
+   "tier": 2,
+   "headline": "MC1532259: Microsoft Teams: Retirement of Translate slides in PowerPoint Live",
+   "summary": "Starting November 30, 2026, the Translate slides feature in PowerPoint Live during Microsoft Teams meetings will be retired worldwide. Attendees will no longer translate slides; slides will display in their original language. No admin action is needed, but organizations should notify users and update related training materials.",
+   "lines": [
+    "Microsoft is retiring the Translate slides feature in PowerPoint Live during Microsoft Teams meetings worldwide.",
+    "Starting November 30, 2026, attendees will no longer translate slides, and slides will display in their original language.",
+    "No admin action is needed, but organizations should notify users and update related training materials."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1532259"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "18cff690",
+   "key": "https://mc.merill.net/message/MC1540351",
+   "time": "2026-11-19T00:30:26.000Z",
+   "seen": "2026-11-19T03:43:43.666Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1540351: Microsoft Teams: Automatically add tag members to channels with Workflows",
+   "summary": "Microsoft Teams will introduce a Workflows app template to automatically add users to standard or shared channels when added to a team tag. Rollout starts November 2026 (Targeted Release) and completes by March 2027 (General Availability). The feature is optional and requires team owner configuration.",
+   "lines": [
+    "Microsoft Teams will add a Workflows app template that automatically adds users to standard or shared channels when they are added to a team tag.",
+    "Rollout starts November 2026 in Targeted Release and completes by March 2027 for General Availability.",
+    "The feature is optional and requires team owner configuration."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1540351"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "193eb43e",
+   "key": "https://github.blog/changelog/2026-11-18-wait-for-pull-request-events-with-github-cli",
+   "time": "2026-11-19T00:00:13.000Z",
+   "seen": "2026-11-19T03:43:43.666Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Wait for pull request events with GitHub CLI",
+   "summary": "GitHub CLI now supports GitHub Event Streams. With gh v2.105.0, you and your agents can wait for a pull request to change with a single command instead of polling it… The post Wait for pull request events with GitHub CLI appeared first on The GitHub Blog .",
+   "lines": [
+    "GitHub CLI now supports GitHub Event Streams, starting with gh v2.105.0.",
+    "Users can wait for a pull request to change with a single command instead of polling it.",
+    "Teams that script pull request workflows can avoid repeated polling."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "GitHub Changelog",
+    "url": "https://github.blog/changelog/2026-11-18-wait-for-pull-request-events-with-github-cli"
+   },
+   "sourceId": "github-changelog",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "d17b84d1",
+   "key": "https://mc.merill.net/message/MC796790",
+   "time": "2026-11-19T00:24:35.000Z",
+   "seen": "2026-11-19T03:43:43.666Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC796790: Unified management of app and agent availability and installation in Teams, Outlook, and the Microsoft 365 app",
+   "summary": "Microsoft has unified app and agent availability and installation management across Teams, Outlook, and Microsoft 365 admin centers. Starting September 2025, availability unification occurs in phases, with installation unification generally available since November 2026, synchronizing settings within 24–48 hours after availability unification.",
+   "lines": [
+    "Microsoft has unified management of app and agent availability and installation across Teams, Outlook, and Microsoft 365 admin centers.",
+    "Availability unification starts in September 2025 in phases, and installation unification has been generally available since November 2026.",
+    "Settings synchronize within 24–48 hours after availability unification."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC796790"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "016e7647",
+   "key": "https://mc.merill.net/message/MC1559644",
+   "time": "2026-11-18T23:42:17.000Z",
+   "seen": "2026-11-19T03:43:43.666Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1559644: [Education] AI-powered teaching tools in OneNote Class Notebook",
+   "summary": "OneNote Class Notebook will integrate AI-powered Copilot teaching tools for educators to create personalized resources and interactive activities. Rolling out globally in November 2026, these tools require no extra license and allow educators to prepare and share materials within Class Notebook, with separate controls for Copilot and Learning Activities.",
+   "lines": [
+    "OneNote Class Notebook will integrate Copilot AI-powered teaching tools that help educators create personalized resources and interactive activities.",
+    "Rollout is global, starting November 2026, and the tools require no extra license.",
+    "Educators can prepare and share materials within Class Notebook, with separate controls for Copilot and Learning Activities."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1559644"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
   }
  ],
- "description": "14 technology updates from official sources, updated hourly: Introducing Gemini 4 Neon; 10-Year-Old NGINX HTTP/2 Flaw Lets Unauthenticated Attackers Execute Code on Servers; Add inline captions, cross-references, and tables of captions in Google Docs."
+ "description": "19 technology updates from official sources, updated hourly: Introducing Gemini 4 Neon; 10-Year-Old NGINX HTTP/2 Flaw Lets Unauthenticated Attackers Execute Code on Servers; Add inline captions, cross-references, and tables of captions in Google Docs."
 }

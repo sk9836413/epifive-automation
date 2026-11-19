@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-19T00:28:31.694Z",
+ "lastScan": "2026-11-19T03:43:43.666Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -1052,60 +1052,6 @@
    ],
    "status": "below",
    "hash": "a088ec3d"
-  },
-  "https://openai.com/index/step-toward-defining-the-standard-model": {
-   "title": "A step toward defining the Standard Model on a lattice",
-   "link": "https://openai.com/index/step-toward-defining-the-standard-model",
-   "source": "openai-news",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-15T22:00:01.000Z",
-   "updated": null,
-   "summary": "Explore a candidate nonperturbative lattice definition of the Standard Model and how GPT-6 Astra helped turn the idea into a detailed proof.",
-   "first": "2026-11-16T01:06:41.912Z",
-   "score": 2,
-   "reasons": [
-    "+2 source openai-news"
-   ],
-   "status": "below",
-   "hash": "61503d92"
-  },
-  "https://openai.com/index/our-new-blog-for-science": {
-   "title": "Our new blog for science",
-   "link": "https://openai.com/index/our-new-blog-for-science",
-   "source": "openai-news",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-15T22:00:00.000Z",
-   "updated": null,
-   "summary": "The OpenAI science blog shares new findings, practical methods, and firsthand accounts from researchers using AI to advance scientific discovery.",
-   "first": "2026-11-16T01:06:41.912Z",
-   "score": 3,
-   "reasons": [
-    "+2 source openai-news",
-    "+1 niche (openai)"
-   ],
-   "status": "below",
-   "hash": "f59acf77"
-  },
-  "https://blogs.nvidia.com/blog/ai-day-seoul-wrapup": {
-   "title": "AI Day Seoul Brings Together Korea’s Industry Leaders, Startups and Developer Communities",
-   "link": "https://blogs.nvidia.com/blog/ai-day-seoul-wrapup/",
-   "source": "nvidia-news",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-16T00:00:28.000Z",
-   "updated": null,
-   "summary": "Over two days at COEX, more than 2,000 attendees converged for AI Day Seoul, bringing together Korea’s industry leaders, startups and developer communities advancing physical AI and AI agents. At the plenary sessions, Deepu Talla, vice president of robotics and edge AI at NVIDIA, said Korea is “punc",
-   "first": "2026-11-16T01:06:41.912Z",
-   "score": -1,
-   "reasons": [
-    "-1 source nvidia-news",
-    "+1 niche (agents)",
-    "-1 narrow audience \"Developer\""
-   ],
-   "status": "below",
-   "hash": "5530dab3"
   },
   "https://apple.com/newsroom/2026/11/apple-launches-research-study-to-explore-the-use-of-ai-for-health": {
    "title": "Apple launches research study to explore the use of AI for health",
@@ -13480,12 +13426,14 @@
     "+1 also on gemini-blog, google-keyword",
     "+1 autocomplete (5)"
    ],
-   "status": "writing",
+   "status": "published",
    "hash": "982461a6",
    "kind": "new",
    "extra": false,
    "taskAt": "2026-11-19T00:28:31.694Z",
-   "attempts": 1
+   "attempts": 1,
+   "slug": "gemini-app-lower-memory-android-go-set-up",
+   "resultAt": "2026-11-19T00:37:33.106Z"
   },
   "https://thehackernews.com/2026/11/eggstreme-hackers-rebuild-malware-with.html": {
    "title": "New EggStreme Malware Variant Goes Silent to Evade Security Tools in Government Attacks",
@@ -14319,9 +14267,13 @@
     "+4 flagship AI model (Gemini 4 Neon)",
     "+1 autocomplete (9)"
    ],
-   "status": "queued",
+   "status": "writing",
    "hash": "3527228e",
-   "story": "ai:gemini 4 neon:release"
+   "story": "ai:gemini 4 neon:release",
+   "kind": "new",
+   "extra": false,
+   "taskAt": "2026-11-19T03:43:43.666Z",
+   "attempts": 1
   },
   "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie": {
    "title": "Genie 4 is now available",
@@ -15625,6 +15577,374 @@
    ],
    "status": "below",
    "hash": "3a6f444f"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=581739": {
+   "title": "Microsoft Purview: Information Protection-Sensitivity label inheritance for Teams meeting artifacts",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581739",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-19T00:35:27.000Z",
+   "updated": "2026-11-19T00:35:27.000Z",
+   "summary": "Teams meeting artifacts, including recordings, transcripts, and Loop notes, can now be configured to automatically inherit the sensitivity label from the meeting. This ensures content generated during meetings is consistently protected without requiring manual labeling, reducing risk and simplifying",
+   "first": "2026-11-19T03:43:43.666Z",
+   "score": -3,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 niche (teams meeting)",
+    "-4 category (In development, General Availability, GCC)"
+   ],
+   "status": "below",
+   "hash": "9676b205"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=579864": {
+   "title": "Microsoft Teams: Focus on the conversation while Facilitator in Teams mobile takes the notes, now with speaker attribution",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=579864",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-19T00:35:27.000Z",
+   "updated": "2026-11-19T00:35:27.000Z",
+   "summary": "Use Facilitator in Teams mobile to turn in-person conversations into useful notes and follow-ups with speaker attribution. Start note-taking from your phone and let Facilitator capture and transcribe the ad hoc discussion, with speaker attribution helping distinguish who said what. Facilitator uses ",
+   "first": "2026-11-19T03:43:43.666Z",
+   "score": -3,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 niche (microsoft teams)",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "6d623d03"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=577885": {
+   "title": "Dynamics 365 Contact Center: Bullseye routing with dynamic user groups and skill relaxation",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=577885",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-19T00:35:27.000Z",
+   "updated": "2026-11-19T00:35:27.000Z",
+   "summary": "Bullseye routing now supports dynamic user groups and skill relaxation. Administrators can define dynamic groups using representatives’ skills and proficiency levels, and use them at different expansion levels. If work remains unassigned, required skills can be progressively relaxed to broaden the e",
+   "first": "2026-11-19T03:43:43.666Z",
+   "score": -2,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 launch \"now supports\"",
+    "+1 plans/price/availability \"eligible\"",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "25c20de7"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=575277": {
+   "title": "Microsoft Contact Center Intelligence: D365 Contact Center Admin Center users can create CCI agents",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=575277",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-19T00:35:27.000Z",
+   "updated": "2026-11-19T00:35:27.000Z",
+   "summary": "Use the customer conversation harness agent builder to create, test, and refine AI-powered customer service agents. Accelerate agent development with built-in tools for conversation design, orchestration, evaluation, and deployment across customer engagement channels. GA date: November CY2026 Previe",
+   "first": "2026-11-19T03:43:43.666Z",
+   "score": -3,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+1 niche (agents)",
+    "+2 user steps \"users can\"",
+    "-5 category (In development, General Availability, Preview)"
+   ],
+   "status": "below",
+   "hash": "197882b8"
+  },
+  "https://github.blog/changelog/2026-11-18-wait-for-pull-request-events-with-github-cli": {
+   "title": "Wait for pull request events with GitHub CLI",
+   "link": "https://github.blog/changelog/2026-11-18-wait-for-pull-request-events-with-github-cli",
+   "source": "github-changelog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-19T00:00:13.000Z",
+   "updated": null,
+   "summary": "GitHub CLI now supports GitHub Event Streams. With gh v2.105.0, you and your agents can wait for a pull request to change with a single command instead of polling it… The post Wait for pull request events with GitHub CLI appeared first on The GitHub Blog .",
+   "first": "2026-11-19T03:43:43.666Z",
+   "score": -1,
+   "reasons": [
+    "-1 source github-changelog",
+    "+1 niche (agents)",
+    "+2 launch \"now supports\"",
+    "-3 corporate/announcement \"events\""
+   ],
+   "status": "below",
+   "hash": "ec154113"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63998": {
+   "title": "Money Market Operations as on November 18, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63998",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-19T09:00:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-19T03:43:43.666Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "5f440b3b"
+  },
+  "https://mc.merill.net/message/MC1532259": {
+   "title": "MC1532259: Microsoft Teams: Retirement of Translate slides in PowerPoint Live",
+   "link": "https://mc.merill.net/message/MC1532259",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-19T00:56:54.000Z",
+   "updated": null,
+   "summary": "Starting November 30, 2026, the Translate slides feature in PowerPoint Live during Microsoft Teams meetings will be retired worldwide. Attendees will no longer translate slides; slides will display in their original language. No admin action is needed, but organizations should notify users and updat",
+   "first": "2026-11-19T03:43:43.666Z",
+   "score": 11,
+   "reasons": [
+    "-2 source mc-merill",
+    "+3 niche (microsoft teams, powerpoint)",
+    "+1 retirement/migration",
+    "+9 M365 retirement due in 11 days"
+   ],
+   "status": "queued",
+   "hash": "994499c9"
+  },
+  "https://mc.merill.net/message/MC1540351": {
+   "title": "MC1540351: Microsoft Teams: Automatically add tag members to channels with Workflows",
+   "link": "https://mc.merill.net/message/MC1540351",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-19T00:30:26.000Z",
+   "updated": null,
+   "summary": "Microsoft Teams will introduce a Workflows app template to automatically add users to standard or shared channels when added to a team tag. Rollout starts November 2026 (Targeted Release) and completes by March 2027 (General Availability). The feature is optional and requires team owner configuratio",
+   "first": "2026-11-19T03:43:43.666Z",
+   "score": 3,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 niche (microsoft teams)",
+    "+2 launch \"General Availability\"",
+    "+1 plans/price/availability \"Rollout\""
+   ],
+   "status": "below",
+   "hash": "e88365a1"
+  },
+  "https://mc.merill.net/message/MC796790": {
+   "title": "MC796790: Unified management of app and agent availability and installation in Teams, Outlook, and the Microsoft 365 app",
+   "link": "https://mc.merill.net/message/MC796790",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-19T00:24:35.000Z",
+   "updated": null,
+   "summary": "Microsoft has unified app and agent availability and installation management across Teams, Outlook, and Microsoft 365 admin centers. Starting September 2025, availability unification occurs in phases, with installation unification generally available since November 2026, synchronizing settings withi",
+   "first": "2026-11-19T03:43:43.666Z",
+   "score": 4,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (microsoft 365, outlook, agent)",
+    "+2 launch \"generally available\""
+   ],
+   "status": "below",
+   "hash": "9468a6f5"
+  },
+  "https://mc.merill.net/message/MC1559644": {
+   "title": "MC1559644: [Education] AI-powered teaching tools in OneNote Class Notebook",
+   "link": "https://mc.merill.net/message/MC1559644",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-18T23:42:17.000Z",
+   "updated": null,
+   "summary": "OneNote Class Notebook will integrate AI-powered Copilot teaching tools for educators to create personalized resources and interactive activities. Rolling out globally in November 2026, these tools require no extra license and allow educators to prepare and share materials within Class Notebook, wit",
+   "first": "2026-11-19T03:43:43.666Z",
+   "score": 2,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 niche (copilot)",
+    "+2 launch \"Rolling out\""
+   ],
+   "status": "below",
+   "hash": "dbe9a849"
+  },
+  "https://mc.merill.net/message/MC1559642": {
+   "title": "MC1559642: Continuous interpreter visibility with pop out video in Teams",
+   "link": "https://mc.merill.net/message/MC1559642",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-18T23:41:27.000Z",
+   "updated": null,
+   "summary": "Microsoft Teams will allow users to pop out sign language interpreters' videos into a resizable, movable window to keep interpreters visible while multitasking. Rolling out December 2026–January 2027 on Windows and Mac. Users enable this via Accessibility settings; no admin action needed.",
+   "first": "2026-11-19T03:43:43.666Z",
+   "score": 6,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (microsoft teams, windows, mac)",
+    "+2 launch \"Rolling out\"",
+    "+2 user steps \"enable\""
+   ],
+   "status": "below",
+   "hash": "f282ef7d"
+  },
+  "https://mc.merill.net/message/MC1559641": {
+   "title": "MC1559641: New Copilot experience in OneNote",
+   "link": "https://mc.merill.net/message/MC1559641",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-18T23:41:03.000Z",
+   "updated": null,
+   "summary": "The new Copilot experience in OneNote enhances editing and reasoning across notes, ink, annotations, and files, enabling better information synthesis and content creation. Rollout starts November 2026 for Frontier Public and January 2027 worldwide on Windows and iPad; other platforms will follow lat",
+   "first": "2026-11-19T03:43:43.666Z",
+   "score": 2,
+   "reasons": [
+    "-2 source mc-merill",
+    "+3 niche (copilot, windows)",
+    "+1 plans/price/availability \"Rollout\""
+   ],
+   "status": "below",
+   "hash": "6242fd0e"
+  },
+  "https://mc.merill.net/message/MC1559638": {
+   "title": "MC1559638: New capabilities in Copilot Workspaces",
+   "link": "https://mc.merill.net/message/MC1559638",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-18T23:36:20.000Z",
+   "updated": null,
+   "summary": "Copilot Notebooks is evolving into Copilot Workspaces with new collaboration features like activity feed, team presence, and group ownership. Rollout began November 2026 (Frontier Public) and worldwide availability starts December 2026. No immediate admin action is needed; update user guidance accor",
+   "first": "2026-11-19T03:43:43.666Z",
+   "score": 1,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 niche (copilot)",
+    "+1 plans/price/availability \"Rollout\""
+   ],
+   "status": "below",
+   "hash": "234cd5c2"
+  },
+  "https://mc.merill.net/message/MC1559637": {
+   "title": "MC1559637: Microsoft Teams: Real-time queue metrics in the Queues app on Mobile",
+   "link": "https://mc.merill.net/message/MC1559637",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-18T23:35:21.000Z",
+   "updated": null,
+   "summary": "Microsoft Teams is introducing real-time call queue metrics in the Queues app on Mobile, allowing calling representatives and supervisors to monitor queue activity and performance on the go. This rollout begins in December 2026, requires no admin action, and enhances visibility without changing queu",
+   "first": "2026-11-19T03:43:43.666Z",
+   "score": 3,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 niche (microsoft teams)",
+    "+2 launch \"introducing\"",
+    "+1 plans/price/availability \"rollout\""
+   ],
+   "status": "below",
+   "hash": "ec582924"
+  },
+  "https://mc.merill.net/message/MC1559633": {
+   "title": "MC1559633: Microsoft SharePoint: Agent Chat web part to bring Copilot agents into SharePoint pages",
+   "link": "https://mc.merill.net/message/MC1559633",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-18T23:34:27.000Z",
+   "updated": null,
+   "summary": "The Agent Chat web part lets SharePoint authors embed Microsoft 365 Copilot agents into pages for easier discovery and interaction. Rolling out from November 2026 to March 2027 worldwide, it requires no admin action. Permissions remain separate, and no compliance impact is expected.",
+   "first": "2026-11-19T03:43:43.666Z",
+   "score": 4,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (copilot, microsoft 365, sharepoint, agent)",
+    "+2 launch \"Rolling out\""
+   ],
+   "status": "below",
+   "hash": "cd709072"
+  },
+  "https://mc.merill.net/message/MC1559632": {
+   "title": "MC1559632: Copilot Workspaces: Updated workspace memory",
+   "link": "https://mc.merill.net/message/MC1559632",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-18T23:33:40.000Z",
+   "updated": null,
+   "summary": "Copilot in Workspaces now retains workspace memory to provide more relevant, consistent responses across sessions, improving productivity. Public Preview began November 2026; General Availability starts December 2026. No admin action is needed, but users should be informed of the update. No complian",
+   "first": "2026-11-19T03:43:43.666Z",
+   "score": 2,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 niche (copilot)",
+    "+2 launch \"General Availability\""
+   ],
+   "status": "below",
+   "hash": "d613130d"
+  },
+  "https://mc.merill.net/message/MC1559628": {
+   "title": "MC1559628: Choose how your presenter view is laid out in PowerPoint Live in Microsoft Teams",
+   "link": "https://mc.merill.net/message/MC1559628",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-18T23:29:49.000Z",
+   "updated": null,
+   "summary": "PowerPoint Live in Microsoft Teams now lets presenters choose from four presenter view layouts to suit their style, without affecting attendees' view. This feature, available on Windows, Mac, and web, rolls out worldwide from mid to late November 2026 and requires no admin action.",
+   "first": "2026-11-19T03:43:43.666Z",
+   "score": 4,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (microsoft teams, powerpoint, windows, mac)",
+    "+2 launch \"rolls out\""
+   ],
+   "status": "below",
+   "hash": "2c697de2"
+  },
+  "https://mc.merill.net/message/MC1387526": {
+   "title": "MC1387526: Microsoft 365 Backup: Full workload backup for SharePoint, OneDrive, and Exchange",
+   "link": "https://mc.merill.net/message/MC1387526",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-18T22:42:48.000Z",
+   "updated": null,
+   "summary": "Microsoft 365 Backup introduces Full Workload Backup for SharePoint, OneDrive, and Exchange, enabling admins to protect entire workloads with a single policy. Rolling out from July 2026 (preview) to February 2027 (general availability), it automates backup of all artifacts while preserving existing ",
+   "first": "2026-11-19T03:43:43.666Z",
+   "score": 4,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (microsoft 365, sharepoint, exchange)",
+    "+2 launch \"introduces\""
+   ],
+   "status": "below",
+   "hash": "f8309fe5"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/announcing-distributed-kv-caching-for-self-hosted-llms-with-amazon-elasticache": {
+   "title": "Amazon ElastiCache now supports distributed KV caching for self-hosted LLM inference",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/announcing-distributed-kv-caching-for-self-hosted-llms-with-amazon-elasticache/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-18T08:00:00.000Z",
+   "updated": null,
+   "summary": "Amazon ElastiCache for Valkey now offers fully managed distributed KV caching, a new capability that reduces self-hosted large language model (LLM) inference costs by up to 40% and time to first token (TTFT) by up to 80%. Customers who self-host LLMs pay for redundant GPU work because small, isolate",
+   "first": "2026-11-19T03:43:43.666Z",
+   "score": 3,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+1 niche (agents)",
+    "+2 launch \"now supports\"",
+    "+1 plans/price/availability \"tier\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "23b1640"
   }
  },
  "devices": {}
