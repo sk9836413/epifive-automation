@@ -220,3 +220,27 @@ export function parseDayPlanLine(line) {
   const m = String(line || '').match(/^\d{4}-\d{2}-\d{2} \S+ (\S+)\s+\d+: (.*?)(?:\s+\|.*?)?(?:\s+\[(.+)\])?\s*$/);
   return m ? { kind: m[1], plan: m[2].trim(), festival: m[3] || '' } : null;
 }
+
+/**
+ * Owner warnings for the LinkedIn API tokens (they live 60 days, no automatic refresh): from 7 days before the expiry
+ * date in the repo variables LINKEDIN_PAGE_TOKEN_EXPIRES / LINKEDIN_MEMBER_TOKEN_EXPIRES (YYYY-MM-DD, set by the
+ * site repo's scripts/social/linkedin-auth.mjs), and after it. Unset variables give nothing.
+ */
+export function linkedinTokenNotes(env, now = new Date(), days = 7) {
+  const notes = [];
+  for (const [key, what, mode] of [
+    ['LINKEDIN_PAGE_TOKEN_EXPIRES', 'EpiFive LinkedIn Page ka token', 'page'],
+    ['LINKEDIN_MEMBER_TOKEN_EXPIRES', 'LinkedIn profile ka token (scheduler Worker)', 'personal'],
+  ]) {
+    const t = Date.parse(env[key] || '');
+    if (Number.isNaN(t)) continue;
+    const left = Math.floor((t - now.getTime()) / 86400e3);
+    if (left > days) continue;
+    const date = new Date(t).toISOString().slice(0, 10);
+    const cmd = `PC par chalao: node E:\\epifive\\scripts\\social\\linkedin-auth.mjs ${mode}`;
+    notes.push(left < 0
+      ? `${what} ${date} ko expire ho gaya: LinkedIn API se post band (Make fallback hi bacha). ${cmd}`
+      : `${what} ${date} ko expire hoga (${left} din baaki). ${cmd}`);
+  }
+  return notes;
+}

@@ -409,6 +409,44 @@ jobs:
             echo "::warning::The Graph API path did not run ($status); Make posts Facebook and Instagram instead."
           fi
 
+      # The EpiFive LinkedIn Page through LinkedIn's own API (linkedin-post.mjs; owner, 20 Nov 2026: Make kept failing)
+      # when the LINKEDIN_PAGE_TOKEN secret exists (Community Management API token from scripts/social/linkedin-auth.mjs
+      # page, valid 60 days; the variable LINKEDIN_PAGE_TOKEN_EXPIRES gives a warning 7 days ahead). Same text and card as
+      # the Make payload, same LINKEDIN_FORMATS rotation (image|text; video becomes image). Make then skips LinkedIn.
+      # When the API refused the post (expired token, missing permission: nothing was published), Make posts the Page
+      # as before. A failure that may have published (5xx/network on the post call) is logged, not sent to Make too.
+      # Never fails the run. The token only reaches this step and is never printed (public logs).
+      - name: Publish to the LinkedIn Page (LinkedIn API)
+        id: linkedin
+        if: steps.pick.outputs.slug != ''
+        env:
+          LINKEDIN_PAGE_TOKEN: ${{ secrets.LINKEDIN_PAGE_TOKEN }}
+          LINKEDIN_PAGE_TOKEN_EXPIRES: ${{ vars.LINKEDIN_PAGE_TOKEN_EXPIRES }}
+          LINKEDIN_FORMATS: ${{ vars.LINKEDIN_FORMATS }}
+          SLUG: ${{ steps.pick.outputs.slug }}
+          DIR: ${{ steps.pick.outputs.dir }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          echo "direct=false" >> "$GITHUB_OUTPUT"
+          if [ -z "$LINKEDIN_PAGE_TOKEN" ]; then
+            echo "::notice::LINKEDIN_PAGE_TOKEN secret not set; the LinkedIn Page goes through Make."
+            exit 0
+          fi
+          if [ "$DRY_RUN" = "true" ]; then
+            node scripts/social/linkedin-post.mjs page "$SLUG" "$DIR" --dry-run || true
+            exit 0
+          fi
+          result="$RUNNER_TEMP/linkedin-result.json"
+          node scripts/social/linkedin-post.mjs page "$SLUG" "$DIR" > "$result" || echo "::warning::The LinkedIn Page post failed; see the result line."
+          cat "$result"
+          take=$(node -p "try { const r = JSON.parse(require('fs').readFileSync('$result', 'utf8').trim().split('\n').pop()); r.status === 'ok' || (r.status === 'error' && r.safeToRetry === false) ? 'api' : 'make' } catch { 'make' }")
+          if [ "$take" = api ]; then
+            echo "direct=true" >> "$GITHUB_OUTPUT"
+            echo "result=$result" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::The LinkedIn API did not post (expired token or refused; owner: re-run linkedin-auth.mjs page); Make posts the LinkedIn Page instead."
+          fi
+
       - name: Publish via Make (LinkedIn; Facebook and Instagram only as the fallback)
         id: make
         if: steps.pick.outputs.slug != '' && !inputs.dry_run
@@ -418,11 +456,18 @@ jobs:
           LINKEDIN_FORMATS: ${{ vars.LINKEDIN_FORMATS }}
           SLUG: ${{ steps.pick.outputs.slug }}
           DIR: ${{ steps.pick.outputs.dir }}
-          ONLY: ${{ steps.meta.outputs.direct == 'true' && '--linkedin-only' || '' }}
+          META_DIRECT: ${{ steps.meta.outputs.direct }}
+          LI_DIRECT: ${{ steps.linkedin.outputs.direct }}
+          ONLY: ${{ steps.meta.outputs.direct == 'true' && '--linkedin-only' || (steps.linkedin.outputs.direct == 'true' && '--no-linkedin' || '') }}
         run: |
+          if [ "$META_DIRECT" = true ] && [ "$LI_DIRECT" = true ]; then
+            echo "result=drafts-only" >> "$GITHUB_OUTPUT"
+            echo "::notice::Facebook, Instagram and LinkedIn all went out through their own APIs; Make is not needed."
+            exit 0
+          fi
           if [ -z "$MAKE_WEBHOOK_URL" ]; then
             echo "result=drafts-only" >> "$GITHUB_OUTPUT"
-            echo "::notice::MAKE_WEBHOOK_URL not set; LinkedIn is draft only."
+            echo "::notice::MAKE_WEBHOOK_URL not set; $([ "$LI_DIRECT" = true ] && echo 'Facebook/Instagram fallback skipped' || echo 'LinkedIn is draft only')."
             exit 0
           fi
           # Make fetches the media by URL, so host them on the site. Keep the last 14 days only.
@@ -440,7 +485,8 @@ jobs:
           git add -A public/social
           git commit -q -m "Host social media for $SLUG"
           for i in 1 2 3; do git pull -q --rebase "$SITE_REMOTE" main && git push -q "$SITE_REMOTE" HEAD:main && break; sleep 10; done
-          # $ONLY = --linkedin-only when Facebook and Instagram already went out through the Graph API.
+          # $ONLY = --linkedin-only when Facebook and Instagram already went out through the Graph API, --no-linkedin when
+          # only the LinkedIn Page did (LinkedIn API step above).
           node scripts/social/make-send.mjs "$SLUG" "$DIR" $ONLY > "$RUNNER_TEMP/make-result.json" \
             || echo "::warning::Sending to Make failed; see the log line."
           cat "$RUNNER_TEMP/make-result.json"
@@ -486,8 +532,10 @@ jobs:
           HI_YT: ${{ steps.youtube.outputs.hi_result }}
           EN_META: ${{ steps.meta.outputs.en_result }}
           IG_EN: ${{ steps.hi.outputs.ok == 'true' && steps.meta.outputs.direct == 'true' && (vars.REELS_LATER == 'on' && format('queued {0}', steps.hi.outputs.en_at) || 'off (REELS_LATER not on)') || '' }}
+          LI_API: ${{ steps.linkedin.outputs.result }}
         run: |
           set --
+          [ -n "$LI_API" ] && set -- "$@" --linkedin "$LI_API"
           [ -n "$HI_YT" ] && set -- "$@" --hi-yt "$HI_YT"
           [ -n "$EN_META" ] && set -- "$@" --en-meta "$EN_META"
           [ -n "$IG_EN" ] && set -- "$@" --en-ig "$IG_EN"

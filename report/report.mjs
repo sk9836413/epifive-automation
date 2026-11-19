@@ -17,6 +17,7 @@
 //   META_PAGE_ID, META_PAGE_TOKEN, IG_USER_ID; SHYAM_META_PAGE_ID, SHYAM_META_PAGE_TOKEN, SHYAM_IG_USER_ID -> Meta
 //   CRM_URL, INGEST_TOKEN                                                  -> leads and outreach
 //   SHYAM_DIR (sparse checkout of sk9836413/shyam-premi-sn)                -> Shyam's plan for tomorrow
+//   LINKEDIN_PAGE_TOKEN_EXPIRES, LINKEDIN_MEMBER_TOKEN_EXPIRES (repo variables) -> section 0 warning 7 days before
 //   RESEND_API_KEY, REPORT_FROM, REPORT_TO, REPORT_BCC                     -> sending
 import fs from 'node:fs';
 import path from 'node:path';
@@ -24,7 +25,7 @@ import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import {
   BOT_COUNTRIES, SOURCES, addDays, articlesOn, bucketSources, clean, dayLabel, delta, failedSection, fmt, istDate,
-  istDayBounds, istTime, nextDatedBacklog, parseDayPlanLine, pct, previousSnapshot, pruneSnapshot, renderHtml, renderText, seekh, short,
+  istDayBounds, istTime, linkedinTokenNotes, nextDatedBacklog, parseDayPlanLine, pct, previousSnapshot, pruneSnapshot, renderHtml, renderText, seekh, short,
 } from './lib.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -398,6 +399,12 @@ async function main() {
     if (best) line = `${best.k === 'yt_shyam' ? 'Shyam' : 'EpiFive'} YouTube views ${delta(best.now, best.before)} kal se. Jo video upar hai uska format kal repeat karo.`;
   }
   sections.push({ title: '7. Aaj ki 1 seekh', items: [{ text: line || 'Compare karne layak data nahi mila (website token / kal ka snapshot chahiye).' }] });
+  // 0. LinkedIn API tokens (60 days): re-login reminder on top, 7 days before the expiry.
+  const tokenNotes = linkedinTokenNotes(env, NOW);
+  if (tokenNotes.length) {
+    sections.unshift({ title: '0. Zaroori: LinkedIn token renew karo', items: tokenNotes.map((text) => ({ text })) });
+    log.push(`linkedin tokens: ${tokenNotes.length} warning(s)`);
+  }
 
   const owner = [];
   if (!env.CF_API_TOKEN) owner.push('CF_API_TOKEN secret (website numbers)');

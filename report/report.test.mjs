@@ -137,3 +137,14 @@ test('rendering: text, HTML escaping and private lines masked for logs', () => {
   assert.match(h, /<a href="https:\/\/www\.epifive\.com\/blog\/x"/);
   assert.match(h, /<h3[^>]*>5\. Leads<\/h3>/);
 });
+
+test('LinkedIn token warnings: 7 days before the expiry, and after it', async () => {
+  const { linkedinTokenNotes } = await import('./lib.mjs');
+  const now = new Date('2026-11-20T12:00:00Z');
+  assert.deepEqual(linkedinTokenNotes({}, now), []);
+  assert.deepEqual(linkedinTokenNotes({ LINKEDIN_PAGE_TOKEN_EXPIRES: '2027-01-19' }, now), []);
+  const soon = linkedinTokenNotes({ LINKEDIN_PAGE_TOKEN_EXPIRES: '2026-11-25', LINKEDIN_MEMBER_TOKEN_EXPIRES: '2026-11-10' }, now);
+  assert.equal(soon.length, 2);
+  assert.match(soon[0], /Page ka token 2026-11-25 ko expire hoga \(4 din baaki\).*linkedin-auth\.mjs page/);
+  assert.match(soon[1], /profile ka token .*2026-11-10 ko expire ho gaya.*linkedin-auth\.mjs personal/);
+});
