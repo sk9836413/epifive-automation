@@ -318,7 +318,7 @@ async function scan() {
     const age = (now - Date.parse(s.category === 'outage' ? s.first : s.date ?? s.first)) / 3600e3;
     if (s.status === 'queued' && age > S.freshHours + 12) {
       s.status = 'expired';
-      if (s.category !== 'outage') parks.push({ key, line: backlogLine({ ...s, reason: 'daily cap' }) });
+      if (s.category !== 'outage') parks.push({ key, top: s.category === 'incident', line: backlogLine({ ...s, reason: 'daily cap' }) });
     }
   }
 
@@ -654,7 +654,7 @@ function siteApply() {
   const logFile = path.join(site, 'automation', 'log.md');
   let backlog = fs.readFileSync(backlogFile, 'utf8');
   let log = fs.readFileSync(logFile, 'utf8');
-  for (const p of task.parks ?? []) backlog = parkInBacklog(backlog, p.line);
+  for (const p of task.parks ?? []) backlog = parkInBacklog(backlog, p.line, { top: Boolean(p.top) });
   const file = opt('file');
   const result = opt('result');
   if (result === 'published' && typeof file === 'string') {

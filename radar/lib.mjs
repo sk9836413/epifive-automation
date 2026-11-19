@@ -569,7 +569,7 @@ export const MAJOR_PLATFORM = /\b(github|npm|pypi|microsoft 365|office 365|m365|
 export const INDIA_INCIDENT = /\b(sbi|state bank of india|hdfc bank|icici bank|axis bank|kotak|au small finance|small finance bank|punjab national bank|pnb|bank of baroda|canara bank|union bank of india|yes bank|indusind|idfc first|indian banks?|paytm|phonepe|bhim|upi|npci|aadhaar|uidai|digilocker|pan card|cert-in|reserve bank of india|rbi|airtel|jio|bsnl|irctc)\b/i;
 // Widely deployed software/runtimes: a critical, remotely exploitable flaw here hits many readers even if
 // nothing is exploited yet (Java4Shell, 17 Nov 2026, scored 8 and was missed). Only boosted together with SEVERE.
-export const WIDE_SOFTWARE = /\b(java|openjdk|jdk|jre|\w*4shell|log4j|openssl|openssh|linux kernel|glibc|sudo|php|python|node\.?js|apache|tomcat|nginx|spring( boot| framework)?|jenkins|jira|confluence|kubernetes|docker|vmware|esxi|vcenter|fortinet|fortigate|fortios|cisco|palo alto|pan-os|citrix|netscaler|ivanti|sonicwall|exchange server|sharepoint server|manageengine|zoho|wordpress)\b/i;
+export const WIDE_SOFTWARE = /\b(java|openjdk|jdk|jre|\w*4shell|log4j|openssl|openssh|linux kernel|glibc|sudo|php|python|node\.?js|apache|tomcat|nginx|spring( boot| framework)?|jenkins|jira|confluence|kubernetes|docker|vmware|esxi|vcenter|fortinet|fortigate|fortios|cisco|palo alto|pan-os|citrix|netscaler|ivanti|sonicwall|exchange server|sharepoint server|manageengine|zoho|wordpress|drupal|joomla|magento|gitlab|veeam|sap)\b/i;
 const SEVERE = /\b(critical|cvss (score )?(9|10)(\.\d)?|remote code execution|rce|pre-auth\w*|unauthenticated|wormable)\b|\b\w+(4shell|bleed)\b/i;
 const GOV_ALERT = /\b(cisa (urges|warns|orders|adds|issues)|emergency directive|known exploited vulnerabilities|kev catalog|cert-in (warns|advisory|issues)|ncsc (warns|alert))\b/i;
 const SCALE = /\b\d+(\.\d+)?\+?\s*(million|billion|lakh|crore)\b|\b\d{1,3}(,\d{3})+\+?\s*(\w+\s)?(users|accounts|customers|repositor(y|ies)|repos|records|people|devices|sites|servers|packages|organi[sz]ations)\b/i;
@@ -906,7 +906,8 @@ export function pickNewTask(queued, counts, { maxNewPerDay = 2, maxAttemptsPerDa
   if (!queued.length) return null;
   if (counts.newPublished < maxNewPerDay && counts.attempts < maxAttemptsPerDay) return { key: queued[0][0], extra: false };
   if ((counts.outageExtra ?? 0) < maxOutageExtraPerDay) {
-    const o = queued.find(([, s]) => s.category === 'outage');
+    // Owner 19 Nov 2026: critical security alerts (NGINX, PHP, Java4Shell) must not wait behind launches either.
+    const o = queued.find(([, s]) => s.category === 'outage') || queued.find(([, s]) => s.category === 'incident');
     if (o) return { key: o[0], extra: true };
   }
   return null;
@@ -1179,11 +1180,24 @@ export function autoVideoPlan({ task = {}, status, slug, topic = '', title = '',
 // ---------- site file edits (applied on a fresh checkout, so they never conflict) ----------
 
 export const RADAR_MARK = '<!-- radar fast-track -->';
+export const RADAR_TOP_MARK = '<!-- radar security alerts that missed the daily cap: write first -->';
 
 /** Insert a backlog line at the top of "## Queue" under the radar marker (once). */
-export function parkInBacklog(md, line) {
+export function parkInBacklog(md, line, { top = false } = {}) {
   if (md.includes(line.split(' | ')[0])) return md; // same slug already there
   const lines = md.split('\n');
+  if (top) {
+    // Security incidents go above every other section, so the daily writer takes them next (owner 19 Nov 2026).
+    let t = lines.findIndex((l) => l.trim() === RADAR_TOP_MARK);
+    if (t === -1) {
+      const h = lines.findIndex((l) => /^## /.test(l));
+      if (h === -1) return `${md.trimEnd()}\n${line}\n`;
+      lines.splice(h, 0, '## Radar alerts (security items that missed the fast-track cap)', '', RADAR_TOP_MARK, '');
+      t = h + 2;
+    }
+    lines.splice(t + 1, 0, line);
+    return lines.join('\n');
+  }
   let i = lines.findIndex((l) => l.trim() === RADAR_MARK);
   if (i === -1) {
     const q = lines.findIndex((l) => /^## Queue\s*$/.test(l));

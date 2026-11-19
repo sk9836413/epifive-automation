@@ -1035,3 +1035,17 @@ test('one guide per CVE: reports sharing a CVE id are one incident, and a recent
   assert.equal(findCoverage(NGINX, { posts: [{ ...post, date: '2026-09-01' }] }, { loose: true, now: R_NOW }).post, null); // older than 45 days
   assert.equal(findCoverage(NGINX, { posts: [{ ...post, topic: 'microsoft-365' }] }, { loose: true, now: R_NOW }).post, null); // not a security post
 });
+
+test('security incidents take the extra slot after outages, and park at the top of the backlog (owner 19 Nov 2026)', async () => {
+  const { pickNewTask: pick, parkInBacklog: park, RADAR_TOP_MARK } = await import('./lib.mjs');
+  const queued = [['a', { category: 'launch' }], ['b', { category: 'incident' }]];
+  assert.deepEqual(pick(queued, { newPublished: 2, attempts: 2, outageExtra: 0 }), { key: 'b', extra: true });
+  assert.deepEqual(pick([['o', { category: 'outage' }], ...queued], { newPublished: 2, attempts: 2, outageExtra: 0 }), { key: 'o', extra: true });
+  assert.equal(pick(queued, { newPublished: 2, attempts: 2, outageExtra: 1 }), null);
+  const md = '# Backlog\n\nintro\n\n## Priority NOW\n- [ ] x | X | t | g\n\n## Queue\n- [ ] y | Y | t | g\n';
+  const out = park(md, '- [ ] nginx-flaw | N | security-identity | g', { top: true });
+  const lines = out.split('\n');
+  assert.ok(lines.indexOf(RADAR_TOP_MARK) < lines.indexOf('## Priority NOW'));
+  assert.equal(lines[lines.indexOf(RADAR_TOP_MARK) + 1], '- [ ] nginx-flaw | N | security-identity | g');
+  assert.equal(park(out, '- [ ] nginx-flaw | N | security-identity | g', { top: true }), out);
+});
