@@ -2,7 +2,7 @@
  "date": "2026-11-18",
  "title": "Tech news today, 18 November 2026",
  "published": "2026-11-17T19:18:54.800Z",
- "updated": "2026-11-19T10:28:24.940Z",
+ "updated": "2026-11-19T16:50:20.454Z",
  "items": [
   {
    "id": "289cf95a",
@@ -1862,7 +1862,7 @@
    "time": "2026-11-18T10:35:05.000Z",
    "seen": "2026-11-18T13:16:59.819Z",
    "kind": "security",
-   "tier": 2,
+   "tier": 1,
    "headline": "Apache warns of Roller RCE vulnerability exploited in attacks",
    "summary": "Apache has released security updates to address a critical Roller flaw that threat actors are exploiting to gain code execution on vulnerable servers. [...]",
    "lines": [
@@ -2283,5 +2283,5 @@
    "story": null
   }
  ],
- "description": "78 technology updates from official sources, updated hourly: Introducing GPT-6.2 Astra and Sol; The Gemini app is now available on lower-memory Android devices; Interim Nvidia CEO Says It’s No Longer Sending AI Chips to China."
+ "description": "78 technology updates from official sources, updated hourly: Introducing GPT-6.2 Astra and Sol; Apache warns of Roller RCE vulnerability exploited in attacks; The Gemini app is now available on lower-memory Android devices."
 }

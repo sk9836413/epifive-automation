@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-19T14:15:21.082Z",
+ "lastScan": "2026-11-19T16:50:20.454Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -1071,331 +1071,6 @@
    ],
    "status": "below",
    "hash": "c3e0c16b"
-  },
-  "https://blog.google/products-and-platforms/products/shopping/black-friday-cyber-monday-shopping-tips-2026": {
-   "title": "How to find the best Black Friday deals and shop smarter",
-   "link": "https://blog.google/products-and-platforms/products/shopping/black-friday-cyber-monday-shopping-tips-2026/",
-   "source": "google-keyword",
-   "topic": "how-to-tips",
-   "category": "launch",
-   "date": "2026-11-16T14:00:00.000Z",
-   "updated": null,
-   "summary": "Track price drops, organize your cart, and find thoughtful gifts faster this Black Friday and Cyber Monday with these Google tools.",
-   "first": "2026-11-16T14:16:37.759Z",
-   "score": 3,
-   "reasons": [
-    "+2 user steps \"How to\"",
-    "+1 plans/price/availability \"price\""
-   ],
-   "status": "below",
-   "hash": "6f4dece3"
-  },
-  "https://blog.google/products-and-platforms/products/maps/ask-maps-holiday-travel-features-2026": {
-   "title": "New Ask Maps features to help with holiday travel and prep",
-   "link": "https://blog.google/products-and-platforms/products/maps/ask-maps-holiday-travel-features-2026/",
-   "source": "google-keyword",
-   "topic": "how-to-tips",
-   "category": "launch",
-   "date": "2026-11-16T14:00:00.000Z",
-   "updated": null,
-   "summary": "Plan holiday road trips, get route tips, find local appointments, and search your saved lists with new Ask Maps features.",
-   "first": "2026-11-16T14:16:37.759Z",
-   "score": 1,
-   "reasons": [
-    "+1 plans/price/availability \"Plan\""
-   ],
-   "status": "below",
-   "hash": "264fbb5b"
-  },
-  "https://blog.google/products-and-platforms/products/maps/holiday-thanksgiving-travel-trends-2026": {
-   "title": "Navigate holiday traffic and crowds with Google Maps trends",
-   "link": "https://blog.google/products-and-platforms/products/maps/holiday-thanksgiving-travel-trends-2026/",
-   "source": "google-keyword",
-   "topic": "how-to-tips",
-   "category": "launch",
-   "date": "2026-11-16T14:00:00.000Z",
-   "updated": null,
-   "summary": "See the best and worst times to drive, run errands, and visit trending holiday spots with 2026 Google Maps data",
-   "first": "2026-11-16T14:16:37.759Z",
-   "score": 1,
-   "reasons": [
-    "+1 niche (google maps)"
-   ],
-   "status": "below",
-   "hash": "9115d733"
-  },
-  "https://blog.google/products-and-platforms/products/search/holiday-prep-search-2026": {
-   "title": "4 ways Search can help with your holiday plans",
-   "link": "https://blog.google/products-and-platforms/products/search/holiday-prep-search-2026/",
-   "source": "google-keyword",
-   "topic": "how-to-tips",
-   "category": "launch",
-   "date": "2026-11-16T14:00:00.000Z",
-   "updated": null,
-   "summary": "Here are four ways Search can help tackle your seasonal to-do list.",
-   "first": "2026-11-16T14:16:37.759Z",
-   "score": 1,
-   "reasons": [
-    "+1 plans/price/availability \"plans\""
-   ],
-   "status": "below",
-   "hash": "f51afbfc"
-  },
-  "https://blog.google/products-and-platforms/products/maps/ask-maps-is-coming-to-europe": {
-   "title": "Ask Maps is coming to Europe.",
-   "link": "https://blog.google/products-and-platforms/products/maps/ask-maps-is-coming-to-europe/",
-   "source": "google-keyword",
-   "topic": "how-to-tips",
-   "category": "launch",
-   "date": "2026-11-16T14:00:00.000Z",
-   "updated": null,
-   "summary": "Ask Maps is the biggest update to Google Maps in over a decade. Powered by the world’s freshest map and Gemini models, it answers complex, real-world questions a map cou…",
-   "first": "2026-11-16T14:16:37.759Z",
-   "score": 3,
-   "reasons": [
-    "+3 niche (gemini, google maps)"
-   ],
-   "status": "below",
-   "hash": "27fff437"
-  },
-  "https://news.lenovo.com/harnessing-ai-and-hpc-to-push-the-frontiers-of-human-knowledge": {
-   "title": "Harnessing AI and HPC to Push the Frontiers of Human Knowledge",
-   "link": "https://news.lenovo.com/harnessing-ai-and-hpc-to-push-the-frontiers-of-human-knowledge/",
-   "source": "lenovo-news",
-   "topic": "laptops-hardware",
-   "category": "launch",
-   "date": "2026-11-16T14:00:50.000Z",
-   "updated": null,
-   "summary": "AI is reshaping high-performance computing, opening new possibilities for researchers while creating unprecedented demands for compute performance, scalability, and efficiency. Lenovo and AMD are helping research organizations build the infrastructure to meet these demands.",
-   "first": "2026-11-16T14:16:37.759Z",
-   "score": 0,
-   "reasons": [],
-   "status": "below",
-   "hash": "d5280e78"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63984": {
-   "title": "RBI to conduct 2-day Variable Rate Reverse Repo (VRRR) auction under LAF on November 17, 2026",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63984",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-16T19:25:00.000Z",
-   "updated": null,
-   "summary": "On a review of current and evolving liquidity conditions, it has been decided to conduct a Variable Rate Reverse Repo (VRRR) auction on Tuesday, November 17, 2026, as under: Sl. No. Notified Amount (₹ crore) Tenor (day) Window Timing Date of Reversal 1 50,000 2 09:30 AM to 10:00 AM November 19, 2026",
-   "first": "2026-11-16T14:16:37.759Z",
-   "score": -1,
-   "reasons": [
-    "-1 source rbi-press"
-   ],
-   "status": "below",
-   "hash": "6bc80cce"
-  },
-  "https://salesforce.com/blog/small-business/account-based-marketing": {
-   "title": "Account-Based Marketing for Small Business: A Practical Starter Guide",
-   "link": "https://www.salesforce.com/blog/small-business/account-based-marketing/",
-   "source": "salesforce-blog",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-16T14:00:00.000Z",
-   "updated": null,
-   "summary": "What is ABM all about? Let’s talk accounts, marketing, and niche promotional tactics.",
-   "first": "2026-11-16T14:16:37.759Z",
-   "score": -1,
-   "reasons": [
-    "-1 source salesforce-blog"
-   ],
-   "status": "below",
-   "hash": "dadfcf50"
-  },
-  "https://ir.amd.com/news-events/press-releases/detail/1306/amd-completes-acquisition-of-world-labs": {
-   "title": "AMD Completes Acquisition of World Labs",
-   "link": "https://ir.amd.com/news-events/press-releases/detail/1306/amd-completes-acquisition-of-world-labs",
-   "source": "amd-press",
-   "topic": "laptops-hardware",
-   "category": "launch",
-   "date": "2026-11-16T14:05:00.000Z",
-   "updated": null,
-   "summary": "",
-   "first": "2026-11-16T14:16:37.759Z",
-   "score": -1,
-   "reasons": [
-    "-1 source amd-press"
-   ],
-   "status": "below",
-   "hash": "247060cb"
-  },
-  "https://dell.com/en-us/blog/dell-technologies-and-amd-offer-more-ways-to-deploy-ai-from-first-node-to-full-rack": {
-   "title": "Dell Technologies and AMD Offer More Ways to Deploy AI, From First Node to Full Rack",
-   "link": "https://www.dell.com/en-us/blog/dell-technologies-and-amd-offer-more-ways-to-deploy-ai-from-first-node-to-full-rack",
-   "source": "dell-blog",
-   "topic": "laptops-hardware",
-   "category": "launch",
-   "date": "2026-11-16T14:00:00.000Z",
-   "updated": null,
-   "summary": "",
-   "first": "2026-11-16T14:16:37.759Z",
-   "score": -1,
-   "reasons": [
-    "-1 source dell-blog"
-   ],
-   "status": "below",
-   "hash": "edabb38d"
-  },
-  "https://dell.com/en-us/blog/dell-ai-data-platform-makes-data-agent-ready-at-sc26": {
-   "title": "Dell AI Data Platform Makes Data Agent-Ready at SC26",
-   "link": "https://www.dell.com/en-us/blog/dell-ai-data-platform-makes-data-agent-ready-at-sc26",
-   "source": "dell-blog",
-   "topic": "laptops-hardware",
-   "category": "launch",
-   "date": "2026-11-16T14:00:00.000Z",
-   "updated": null,
-   "summary": "",
-   "first": "2026-11-16T14:16:37.759Z",
-   "score": 0,
-   "reasons": [
-    "-1 source dell-blog",
-    "+1 niche (agent)"
-   ],
-   "status": "below",
-   "hash": "d4a9c1a"
-  },
-  "https://dell.com/en-us/blog/why-ai-fabrics-need-one-source-of-truth": {
-   "title": "Why AI Fabrics Need One Source of Truth",
-   "link": "https://www.dell.com/en-us/blog/why-ai-fabrics-need-one-source-of-truth",
-   "source": "dell-blog",
-   "topic": "laptops-hardware",
-   "category": "launch",
-   "date": "2026-11-16T14:00:00.000Z",
-   "updated": null,
-   "summary": "",
-   "first": "2026-11-16T14:16:37.759Z",
-   "score": -1,
-   "reasons": [
-    "-1 source dell-blog"
-   ],
-   "status": "below",
-   "hash": "b3fbccaa"
-  },
-  "https://dell.com/en-us/blog/advancing-enterprise-ai-through-dell-s-growing-ecosystem": {
-   "title": "Advancing Enterprise AI Through Dell’s Growing Ecosystem",
-   "link": "https://www.dell.com/en-us/blog/advancing-enterprise-ai-through-dell-s-growing-ecosystem",
-   "source": "dell-blog",
-   "topic": "laptops-hardware",
-   "category": "launch",
-   "date": "2026-11-16T14:00:00.000Z",
-   "updated": null,
-   "summary": "",
-   "first": "2026-11-16T14:16:37.759Z",
-   "score": -1,
-   "reasons": [
-    "-1 source dell-blog"
-   ],
-   "status": "below",
-   "hash": "fd9f3816"
-  },
-  "https://dell.com/en-us/blog/dell-brings-codex-to-dell-ai-factory-with-openai": {
-   "title": "Dell Brings Codex to Dell AI Factory with OpenAI",
-   "link": "https://www.dell.com/en-us/blog/dell-brings-codex-to-dell-ai-factory-with-openai",
-   "source": "dell-blog",
-   "topic": "laptops-hardware",
-   "category": "launch",
-   "date": "2026-11-16T14:00:00.000Z",
-   "updated": null,
-   "summary": "",
-   "first": "2026-11-16T14:16:37.759Z",
-   "score": 1,
-   "reasons": [
-    "-1 source dell-blog",
-    "+2 niche (openai, codex)"
-   ],
-   "status": "below",
-   "hash": "83f31712"
-  },
-  "https://dell.com/en-us/blog/one-view-of-your-infrastructure-from-server-to-rack": {
-   "title": "One View of Your Infrastructure, from Server to Rack",
-   "link": "https://www.dell.com/en-us/blog/one-view-of-your-infrastructure-from-server-to-rack",
-   "source": "dell-blog",
-   "topic": "laptops-hardware",
-   "category": "launch",
-   "date": "2026-11-16T13:45:00.000Z",
-   "updated": null,
-   "summary": "",
-   "first": "2026-11-16T14:16:37.759Z",
-   "score": -1,
-   "reasons": [
-    "-1 source dell-blog"
-   ],
-   "status": "below",
-   "hash": "bfa3d7b2"
-  },
-  "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold": {
-   "title": "GTIG AI Threat Tracker: Agentic Threat Activity Crosses a Significant Threshold",
-   "link": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold/",
-   "source": "gcloud-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-16T14:00:00.000Z",
-   "updated": null,
-   "summary": "Written by: Aurora Blum, Kelli Vanderlee, Jess Xia, David Mainor Executive Summary As threat actors increasingly move beyond basic prompting to deploying autonomous multi-agent frameworks , automated vulnerability exploitation pipelines, and alternative monetization schemes like LLMJacking , the adv",
-   "first": "2026-11-16T14:16:37.759Z",
-   "score": 0,
-   "reasons": [
-    "-1 source gcloud-blog",
-    "+1 niche (agent)"
-   ],
-   "status": "below",
-   "hash": "5ad6571a"
-  },
-  "https://cloud.google.com/blog/products/identity-security/how-isvs-are-unlocking-european-workloads-on-google-cloud-dedicated": {
-   "title": "How ISVs are unlocking European workloads using Google Cloud Dedicated technology",
-   "link": "https://cloud.google.com/blog/products/identity-security/how-isvs-are-unlocking-european-workloads-on-google-cloud-dedicated/",
-   "source": "gcloud-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-16T08:05:00.000Z",
-   "updated": null,
-   "summary": "Across Europe, organizations handling sensitive workloads in regulated sectors — such as financial services, healthcare, critical infrastructure, and the public sector — are trying to modernize their infrastructure while adhering to strict local data governance standards, including SecNumCloud in Fr",
-   "first": "2026-11-16T14:16:37.759Z",
-   "score": -1,
-   "reasons": [
-    "-1 source gcloud-blog"
-   ],
-   "status": "below",
-   "hash": "d0874a21"
-  },
-  "https://cloud.google.com/blog/products/identity-security/inside-the-new-data-boundary-experience": {
-   "title": "Inside the new Google Cloud Data Boundary experience",
-   "link": "https://cloud.google.com/blog/products/identity-security/inside-the-new-data-boundary-experience/",
-   "source": "gcloud-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-16T08:05:00.000Z",
-   "updated": null,
-   "summary": "Digital sovereignty is evolving from a standard compliance requirement into a powerful strategic advantage for regulated industries worldwide. From European frameworks designed to meet sovereign standards (DORA, EHDS, GDPR) to FedRAMP/ILs/ITARs in the U.S., or expanding mandates across Asia-Pacific ",
-   "first": "2026-11-16T14:16:37.759Z",
-   "score": -1,
-   "reasons": [
-    "-1 source gcloud-blog"
-   ],
-   "status": "below",
-   "hash": "1d124f53"
-  },
-  "https://changelog.shopify.com/posts/improved-bot-detection-for-cart-and-checkout-activity": {
-   "title": "Improved bot detection for cart and checkout activity",
-   "link": "https://changelog.shopify.com/posts/improved-bot-detection-for-cart-and-checkout-activity",
-   "source": "shopify-changelog",
-   "topic": "small-business-it",
-   "category": "launch",
-   "date": "2026-11-16T14:00:00.000Z",
-   "updated": null,
-   "summary": "We’ve improved how Shopify Analytics detects bot traffic in cart and checkout activity. As a result, reports that include a human based filter might show a small dip in sessions. Orders, sales and customer data is not a part of this change. Learn more about bot traffic in Analytics",
-   "first": "2026-11-16T14:16:37.759Z",
-   "score": -2,
-   "reasons": [
-    "-2 source shopify-changelog"
-   ],
-   "status": "below",
-   "hash": "4ec57b0c"
   },
   "https://openai.com/index/expanding-chatgpt-for-academic-researchers": {
    "title": "Broadening access to AI for scientists",
@@ -12495,16 +12170,25 @@
    "updated": null,
    "summary": "Apache has released security updates to address a critical Roller flaw that threat actors are exploiting to gain code execution on vulnerable servers. [...]",
    "first": "2026-11-18T13:16:59.819Z",
-   "score": 9,
+   "score": 15,
    "reasons": [
     "+1 source bleepingcomputer",
     "+3 incident \"vulnerability\"",
     "+2 exploited \"exploited\"",
+    "+5 critical flaw in widely used software \"Apache\" / \"RCE\"",
     "+2 user action \"security updates\"",
-    "+1 category (Security)"
+    "+1 category (Security)",
+    "+2 corroborated by thn (apache)",
+    "-1 in /news 2026-11-19-nginx-http2-puppet-roller-neon",
+    "re-scored (was 9)"
    ],
-   "status": "below",
-   "hash": "876e6467"
+   "status": "writing",
+   "hash": "876e6467",
+   "news": "2026-11-19-nginx-http2-puppet-roller-neon",
+   "kind": "new",
+   "extra": true,
+   "taskAt": "2026-11-19T16:50:20.454Z",
+   "attempts": 1
   },
   "https://thehackernews.com/2026/11/ai-pentesting-checklist-for-web-apps-15.html": {
    "title": "AI Pentesting Checklist for Web Apps: 15 Questions to Ask Before Choosing a Vendor",
@@ -12537,14 +12221,20 @@
    "updated": null,
    "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has urged organizations to immediately patch a newly disclosed critical security flaw impacting Oracle Java. The flaw, tracked as CVE-2026-114938 (CVSS score: 8.1), refers to a case of out-of-bounds write that can lead to denial-of-ser",
    "first": "2026-11-18T13:16:59.819Z",
-   "score": 5,
+   "score": 14,
    "reasons": [
     "+1 source thn",
     "+2 vulnerability \"Flaw\"",
-    "+2 user action \"patch\""
+    "+5 critical flaw in widely used software \"Java4Shell\" / \"Java4Shell\"",
+    "+2 government alert \"CISA Urges\"",
+    "+2 user action \"Patching\"",
+    "+2 corroborated by cloudflare-blog, salesforce-blog (CVE-2026-114938)",
+    "re-scored (was 5)",
+    "covered by /blog/java4shell-cve-2026-114938-openjdk-check-patch-workaround"
    ],
-   "status": "below",
-   "hash": "93aa1df7"
+   "status": "duplicate",
+   "hash": "93aa1df7",
+   "post": "java4shell-cve-2026-114938-openjdk-check-patch-workaround"
   },
   "https://news.samsung.com/global/samsung-begins-one-ui-9-5-beta-program": {
    "title": "Samsung Begins One UI 9.5 Beta Program",
@@ -12556,9 +12246,11 @@
    "updated": null,
    "summary": "Samsung has launched the One UI 9.5 beta program, giving users an early look at One UI 9.5 ahead of its official debut. The One UI 9.5 beta introduces more precise camera controls, personalized health insights, improved accessibility features, and stronger privacy protections for everyday use. Enhan",
    "first": "2026-11-18T13:16:59.819Z",
-   "score": 2,
+   "score": 3,
    "reasons": [
-    "+2 launch \"launched\""
+    "+2 launch \"launched\"",
+    "+1 also on samsung-india",
+    "re-scored (was 2)"
    ],
    "status": "below",
    "hash": "5aa47a65"
@@ -12724,17 +12416,19 @@
   "https://about.fb.com/news/2026/11/meta-welcomes-loblaw-as-first-canadian-retail-partner-to-muse": {
    "title": "Meta Welcomes Loblaw as First Canadian Retail Partner to Muse",
    "link": "https://about.fb.com/news/2026/11/meta-welcomes-loblaw-as-first-canadian-retail-partner-to-muse/",
-   "source": "meta-ai-tag",
-   "topic": "ai-automation",
+   "source": "meta-newsroom",
+   "topic": "online-safety",
    "category": "launch",
    "date": "2026-11-18T14:07:00.000Z",
    "updated": null,
    "summary": "Starting today, Loblaw is bringing its catalogue to Muse as a partner connector, the first Canadian retailer to do so. Connectors are a big reason Muse can do so much. Canadians can connect their Muse to apps they already use, including Gmail, Google Calendar and Instagram, so it can help them manag",
    "first": "2026-11-18T14:16:39.425Z",
-   "score": 5,
+   "score": 6,
    "reasons": [
     "+3 niche (gmail, instagram)",
-    "+2 launch \"Starting today\""
+    "+2 launch \"Starting today\"",
+    "+1 also on meta-ai-tag",
+    "re-scored (was 5)"
    ],
    "status": "below",
    "hash": "aedc8863"
@@ -13818,15 +13512,21 @@
    "updated": null,
    "summary": "A flaw in NGINX's HTTP/2 support can allow an attacker to run code on servers with HTTP/2 enabled, without needing to log in. The decade-old flaw, CVE-2026-123007, dubbed \"nginx2root,\" has been present in NGINX's open-source code since version 1.9.5, released on September 22, 2015. Fixed versions 1.",
    "first": "2026-11-19T00:28:31.694Z",
-   "score": 6,
+   "score": 11,
    "reasons": [
     "+1 source thn",
     "+2 vulnerability \"Flaw\"",
+    "+5 critical flaw in widely used software \"NGINX\" / \"Unauthenticated\"",
     "+2 user action \"Fixed\"",
-    "+1 also on gnews-tech"
+    "+2 corroborated by bleepingcomputer (nginx)",
+    "-1 in /news 2026-11-19-nginx-http2-puppet-roller-neon",
+    "re-scored (was 6)",
+    "covered by /blog/nginx-http2-cve-2026-123007-patch-guide"
    ],
-   "status": "below",
-   "hash": "dbb61f4"
+   "status": "duplicate",
+   "hash": "dbb61f4",
+   "news": "2026-11-19-nginx-http2-puppet-roller-neon",
+   "post": "nginx-http2-cve-2026-123007-patch-guide"
   },
   "https://workspaceupdates.googleblog.com/2026/11/add-inline-captions-cross-references-and-tables-of-captions-in-Google-Docs.html": {
    "title": "Add inline captions, cross-references, and tables of captions in Google Docs",
@@ -15497,14 +15197,19 @@
    "updated": null,
    "summary": "The maintainers of the PHP programming language on Wednesday issued an advisory announcing an upcoming security release that addresses critical flaws. The release is scheduled for November 19, 2026, between 2 and 2:30 p.m. UTC. \"These releases are part of PHP's regular four-week release cycle and wi",
    "first": "2026-11-19T05:13:16.704Z",
-   "score": 5,
+   "score": 12,
    "reasons": [
     "+1 source thn",
     "+2 vulnerability \"Flaws\"",
-    "+2 user action \"Fixes\""
+    "+5 critical flaw in widely used software \"PHP\" / \"Critical\"",
+    "+2 user action \"Fixes\"",
+    "+2 corroborated by bleepingcomputer (php)",
+    "re-scored (was 5)",
+    "covered by /blog/php-security-release-november-2026-update"
    ],
-   "status": "below",
-   "hash": "65e27645"
+   "status": "duplicate",
+   "hash": "65e27645",
+   "post": "php-security-release-november-2026-update"
   },
   "https://aws.amazon.com/about-aws/whats-new/2026/11/cloudwatch-network-path-monitoring": {
    "title": "Amazon CloudWatch simplifies network performance monitoring for your Amazon Virtual Private Cloud (VPC)",
@@ -15659,11 +15364,13 @@
    "updated": null,
    "summary": "Ruby contains seven memory-safety flaws in its regular expression engine and its string case-conversion code. For five of them, its maintainers say, proof-of-concept exploits, or PoCs, have shown that crafted input can run code on the machine. \"We are aware of PoCs that prove some of them can be use",
    "first": "2026-11-19T10:28:24.940Z",
-   "score": 5,
+   "score": 6,
    "reasons": [
     "+1 source thn",
     "+2 vulnerability \"Flaws\"",
-    "+2 user action \"Fixes\""
+    "+2 user action \"Fixes\"",
+    "+1 also on gnews-tech",
+    "re-scored (was 5)"
    ],
    "status": "below",
    "hash": "1c07ebd1"
@@ -15729,14 +15436,17 @@
    "updated": null,
    "summary": "The Drupal Security Team has patched a critical remote code execution vulnerability that can let attackers take over vulnerable sites. [...]",
    "first": "2026-11-19T13:16:57.239Z",
-   "score": 6,
+   "score": 13,
    "reasons": [
     "+1 source bleepingcomputer",
     "+2 vulnerability \"flaw\"",
+    "+5 critical flaw in widely used software \"Drupal\" / \"critical\"",
     "+2 user action \"patches\"",
-    "+1 category (Security)"
+    "+1 category (Security)",
+    "+2 corroborated by thn (drupal)",
+    "re-scored (was 6)"
    ],
-   "status": "below",
+   "status": "queued",
    "hash": "903bb598"
   },
   "https://blog.google/innovation-and-ai/models-and-research/google-research/blue-origin-project-suncatcher-partnership": {
@@ -16023,14 +15733,16 @@
    "category": "launch",
    "date": "2026-11-19T19:05:00.000Z",
    "updated": null,
-   "summary": "",
+   "summary": "The following State Governments have offered to sell stock by way of auction, for an aggregate amount of ₹31,950 Crore (Face Value). Sr. No. State/UT Amount to be raised (₹ Crore) Tenor (Year) Type of Auction 1. Assam 1000 Re-issue of 7.66% Assam SGS 2036, issued on June 17, 2026 Price 2. Bihar 1000",
    "first": "2026-11-19T14:15:21.082Z",
-   "score": -1,
+   "score": 0,
    "reasons": [
-    "-1 source rbi-press"
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"₹3\"",
+    "re-scored (was -1)"
    ],
    "status": "below",
-   "hash": "4edf8eb3"
+   "hash": "632d44f2"
   },
   "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64003": {
    "title": "RBI to conduct 3-day Variable Rate Repo (VRR) auction under LAF on November 20, 2026",
@@ -16067,6 +15779,437 @@
    ],
    "status": "below",
    "hash": "26c8cc3b"
+  },
+  "https://apple.com/newsroom/2026/11/apple-tv-becomes-the-new-us-home-of-f1-academy-the-all-female-racing-series": {
+   "title": "Apple TV becomes the new U.S. home of F1 ACADEMY™, the all-female racing series",
+   "link": "https://www.apple.com/newsroom/2026/11/apple-tv-becomes-the-new-us-home-of-f1-academy-the-all-female-racing-series/",
+   "source": "apple-newsroom",
+   "topic": "mobiles",
+   "category": "launch",
+   "date": "2026-11-19T15:59:07.903Z",
+   "updated": "2026-11-19T15:59:07.903Z",
+   "summary": "Apple and F1 ACADEMY™ today announced that the all-female racing series will stream on Apple TV in the United States beginning in 2027.",
+   "first": "2026-11-19T16:50:20.454Z",
+   "score": 1,
+   "reasons": [
+    "+1 source apple-newsroom"
+   ],
+   "status": "below",
+   "hash": "8e6bc1b"
+  },
+  "https://thehackernews.com/2026/11/php-fixes-7-critical-flaws-including.html": {
+   "title": "PHP Fixes 7 Critical Flaws, Including Bugs That Could Allow Remote Code Execution",
+   "link": "https://thehackernews.com/2026/11/php-fixes-7-critical-flaws-including.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-19T15:18:07.000Z",
+   "updated": null,
+   "summary": "The PHP Foundation has released security updates to address multiple critical security flaws that could be exploited to achieve remote code execution on affected deployments, including CVE-2026-115560. The release of the patch follows an advance notice in which the project maintainers alerted users ",
+   "first": "2026-11-19T16:50:20.454Z",
+   "score": 15,
+   "reasons": [
+    "+1 source thn",
+    "+3 incident \"Flaws\"",
+    "+2 exploited \"exploited\"",
+    "+5 critical flaw in widely used software \"PHP\" / \"Critical\"",
+    "+2 user action \"Fixes\"",
+    "+2 corroborated by bleepingcomputer (php)",
+    "covered by /blog/php-security-release-november-2026-update"
+   ],
+   "status": "duplicate",
+   "hash": "fd972061",
+   "post": "php-security-release-november-2026-update"
+  },
+  "https://thehackernews.com/2026/11/critical-vmware-vcenter-flaw-cvss-98.html": {
+   "title": "Critical VMware vCenter Flaw (CVSS 9.8) Lets Network Attackers Bypass Authentication",
+   "link": "https://thehackernews.com/2026/11/critical-vmware-vcenter-flaw-cvss-98.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-19T15:11:06.000Z",
+   "updated": null,
+   "summary": "A critical flaw in VMware vCenter lets an attacker with network access bypass authentication and gain unauthorized access to the system, Broadcom, which owns VMware, said in an advisory published today. Fixed versions are out for all supported branches, and the company lists no workaround. vCenter i",
+   "first": "2026-11-19T16:50:20.454Z",
+   "score": 11,
+   "reasons": [
+    "+1 source thn",
+    "+2 vulnerability \"Flaw\"",
+    "+5 critical flaw in widely used software \"VMware\" / \"Critical\"",
+    "+2 user action \"advisory\"",
+    "+1 autocomplete (3)"
+   ],
+   "status": "queued",
+   "hash": "60892634"
+  },
+  "https://thehackernews.com/2026/11/drupal-patches-critical-installer-flaw.html": {
+   "title": "Drupal Patches Critical Installer Flaw That Could Give Unauthenticated Attackers Control of Sites",
+   "link": "https://thehackernews.com/2026/11/drupal-patches-critical-installer-flaw.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-19T14:33:06.000Z",
+   "updated": null,
+   "summary": "Under specific conditions, a critical vulnerability in Drupal core can allow an attacker without login credentials to use the built-in installer to attempt to reinstall a site. That can lead to a site takeover or remote code execution, and the project rates the vulnerable configurations as uncommon.",
+   "first": "2026-11-19T16:50:20.454Z",
+   "score": 12,
+   "reasons": [
+    "+1 source thn",
+    "+2 vulnerability \"Flaw\"",
+    "+5 critical flaw in widely used software \"Drupal\" / \"Critical\"",
+    "+2 user action \"Patches\"",
+    "+2 corroborated by bleepingcomputer (drupal)"
+   ],
+   "status": "queued",
+   "hash": "291d7a03"
+  },
+  "https://bleepingcomputer.com/news/security/php-security-updates-fix-18-flaws-including-critical-rce-bugs": {
+   "title": "PHP security updates fix 18 flaws, including critical RCE bugs",
+   "link": "https://www.bleepingcomputer.com/news/security/php-security-updates-fix-18-flaws-including-critical-rce-bugs/",
+   "source": "bleepingcomputer",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-19T16:28:23.000Z",
+   "updated": null,
+   "summary": "The PHP development team released security updates addressing 18 vulnerabilities, including critical flaws that could allow unauthenticated attackers to remotely execute code on vulnerable servers. [...]",
+   "first": "2026-11-19T16:50:20.454Z",
+   "score": 14,
+   "reasons": [
+    "+1 source bleepingcomputer",
+    "+2 vulnerability \"flaws\"",
+    "+5 critical flaw in widely used software \"PHP\" / \"critical\"",
+    "+2 user action \"security updates\"",
+    "+1 category (Security)",
+    "+2 corroborated by thn (php)",
+    "+1 autocomplete (2)"
+   ],
+   "status": "queued",
+   "hash": "65671d29"
+  },
+  "https://workspaceupdates.googleblog.com/2026/11/improved-syncing-of-guest-additions-across-calendar-services.html": {
+   "title": "Improved syncing of guest additions across calendar services",
+   "link": "http://workspaceupdates.googleblog.com/2026/11/improved-syncing-of-guest-additions-across-calendar-services.html",
+   "source": "workspace-updates",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-19T16:09:41.751Z",
+   "updated": "2026-11-19T16:09:41.752Z",
+   "summary": "We are introducing key interoperability enhancements in Google Calendar to improve how guest additions are handled across calendar platforms. When a Google Calendar guest adds new guests to an event organized on a third-party calendar service, such as Microsoft Outlook, Google Calendar now automatic",
+   "first": "2026-11-19T16:50:20.454Z",
+   "score": 5,
+   "reasons": [
+    "+1 source workspace-updates",
+    "+2 niche (outlook)",
+    "+2 launch \"introducing\""
+   ],
+   "status": "below",
+   "hash": "3486714c"
+  },
+  "https://workspaceupdates.googleblog.com/2026/11/seamlessly-share-presented-file-links-with-viewers-in-Google-Meet.html": {
+   "title": "Seamlessly share presented file links with viewers in Google Meet",
+   "link": "http://workspaceupdates.googleblog.com/2026/11/seamlessly-share-presented-file-links-with-viewers-in-Google-Meet.html",
+   "source": "workspace-updates",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-19T15:02:01.166Z",
+   "updated": "2026-11-19T15:02:01.167Z",
+   "summary": "We are introducing new controls in Google Meet to streamline collaboration by letting presenters seamlessly share Docs, Sheets, and Slides links and grant file access directly within meetings. If selected, meeting participants will see a link to the file you are presenting displayed on the screen. T",
+   "first": "2026-11-19T16:50:20.454Z",
+   "score": 4,
+   "reasons": [
+    "+1 source workspace-updates",
+    "+1 niche (google meet)",
+    "+2 launch \"introducing\""
+   ],
+   "status": "below",
+   "hash": "ff19769f"
+  },
+  "https://blog.google/innovation-and-ai/models-and-research/google-labs/flow-and-flow-music-session-artists": {
+   "title": "See some of the work from Google Flow and Flow Music Sessions artists",
+   "link": "https://blog.google/innovation-and-ai/models-and-research/google-labs/flow-and-flow-music-session-artists/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-19T16:00:00.000Z",
+   "updated": null,
+   "summary": "Explore the work of Flow and Flow Music Sessions artists from our latest residency programs.",
+   "first": "2026-11-19T16:50:20.454Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "97bb6dac"
+  },
+  "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/the-dalles-data-center-20-years": {
+   "title": "Building the right way: Lessons from 20 years in The Dalles",
+   "link": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/the-dalles-data-center-20-years/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-19T15:00:00.000Z",
+   "updated": null,
+   "summary": "As our first data center in The Dalles, Oregon, turns 20, we’re looking back and announcing new investments in the local community.",
+   "first": "2026-11-19T16:50:20.454Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "8be53ec4"
+  },
+  "https://microsoft.ai/news/mai-code-1-1-flash-br-better-faster-at-a-quarter-of-the-cost": {
+   "title": "Mai code 1 1 flash br better faster at a quarter of the cost",
+   "link": "https://microsoft.ai/news/mai-code-1-1-flash-br-better-faster-at-a-quarter-of-the-cost/",
+   "source": "microsoft-ai",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-19T16:19:52.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-19T16:50:20.454Z",
+   "score": -3,
+   "reasons": [
+    "-3 corporate/announcement \"quarter\""
+   ],
+   "status": "below",
+   "hash": "c9d628e7"
+  },
+  "https://microsoft.ai/news/mai-image-2-6-launches-at-no-2-on-arena-ahead-of-google-meta-and-xai": {
+   "title": "Mai image 2 6 launches at no 2 on arena ahead of google meta and xai",
+   "link": "https://microsoft.ai/news/mai-image-2-6-launches-at-no-2-on-arena-ahead-of-google-meta-and-xai/",
+   "source": "microsoft-ai",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-19T16:20:20.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-19T16:50:20.454Z",
+   "score": 3,
+   "reasons": [
+    "+2 launch \"launches\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "25d6fb15",
+   "story": "ai:mai image 2:release"
+  },
+  "https://zoom.com/en/blog/content-studio-repurposing": {
+   "title": "Content Studio: Get more from your videos",
+   "link": "https://www.zoom.com/en/blog/content-studio-repurposing/",
+   "source": "zoom-blog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-19T16:50:00.000Z",
+   "updated": null,
+   "summary": "Turn webinars, interviews, product demos, training sessions, and other videos into clips, text, and images for continued use across channels.",
+   "first": "2026-11-19T16:50:20.454Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "63f5b0c2"
+  },
+  "https://zoom.com/en/blog/what-is-a-satisfaction-survey": {
+   "title": "What is a satisfaction survey?",
+   "link": "https://www.zoom.com/en/blog/what-is-a-satisfaction-survey/",
+   "source": "zoom-blog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-19T14:43:37.000Z",
+   "updated": null,
+   "summary": "Learn what a satisfaction survey is, how it works, and which types to use. See how contact center managers turn customer feedback into better service.",
+   "first": "2026-11-19T16:50:20.454Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "a3fbf7f9"
+  },
+  "https://zoom.com/en/blog/first-contact-resolution": {
+   "title": "What is first contact resolution?",
+   "link": "https://www.zoom.com/en/blog/first-contact-resolution/",
+   "source": "zoom-blog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-19T14:32:37.000Z",
+   "updated": null,
+   "summary": "Discover how first contact resolution (FCR) impacts customer satisfaction, the formula to calculate it, and strategies to boost resolution rates.",
+   "first": "2026-11-19T16:50:20.454Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "fdd5dab2"
+  },
+  "https://zoom.com/en/blog/agentic-orchestration": {
+   "title": "What is agentic orchestration?",
+   "link": "https://www.zoom.com/en/blog/agentic-orchestration/",
+   "source": "zoom-blog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-19T14:01:56.000Z",
+   "updated": null,
+   "summary": "Agentic orchestration coordinates work across AI agents, systems, and contact center teams. Learn how it works and what to evaluate.",
+   "first": "2026-11-19T16:50:20.454Z",
+   "score": 1,
+   "reasons": [
+    "+1 niche (agents)"
+   ],
+   "status": "below",
+   "hash": "becb1577"
+  },
+  "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/building-a-global-tech-career-at-home-in-costa-rica.html": {
+   "title": "Building a Global Tech Career at Home in Costa Rica",
+   "link": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/building-a-global-tech-career-at-home-in-costa-rica.html?source=rss",
+   "source": "cisco-newsroom",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-19T13:00:00.000Z",
+   "updated": null,
+   "summary": "Learn how Ange Chaves Solis became the first product manager in Costa Rica, driving innovation and mentoring local talent. More RSS Feeds: https://newsroom.cisco.com/c/r/newsroom/en/us/rss-feeds.html",
+   "first": "2026-11-19T16:50:20.454Z",
+   "score": -4,
+   "reasons": [
+    "-1 source cisco-newsroom",
+    "-3 corporate/announcement \"Career\""
+   ],
+   "status": "below",
+   "hash": "738f5ccf"
+  },
+  "https://salesforce.com/blog/blip-live": {
+   "title": "BLIP-Live: AI Guidance That Knows When to Step In",
+   "link": "https://www.salesforce.com/blog/blip-live/",
+   "source": "salesforce-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-19T16:11:36.000Z",
+   "updated": null,
+   "summary": "Imagine a field service technician repairing a dishwasher. Their hands are full, the next appointment is approaching, and a missed step could mean another visit. An AI assistant watching the repair could flag…",
+   "first": "2026-11-19T16:50:20.454Z",
+   "score": 0,
+   "reasons": [
+    "-1 source salesforce-blog",
+    "+1 niche (ai assistant)"
+   ],
+   "status": "below",
+   "hash": "a1484942"
+  },
+  "https://intel.com/content/www/us/en/newsroom/news/artificial-intelligence/quantum-computing-explained.html": {
+   "title": "Quantum Computing Explained",
+   "link": "https://www.intel.com/content/www/us/en/newsroom/news/artificial-intelligence/quantum-computing-explained.html",
+   "source": "intel-newsroom",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-19T12:00:00.000Z",
+   "updated": null,
+   "summary": "Artificial Intelligence (AI)",
+   "first": "2026-11-19T16:50:20.454Z",
+   "score": -1,
+   "reasons": [
+    "-1 source intel-newsroom"
+   ],
+   "status": "below",
+   "hash": "f1a8d07e"
+  },
+  "https://intel.com/content/www/us/en/newsroom/news/client-computing/the-best-employee-experiences-start-with-technology-that-works-together.html": {
+   "title": "Best Experiences Start with Technology That Works",
+   "link": "https://www.intel.com/content/www/us/en/newsroom/news/client-computing/the-best-employee-experiences-start-with-technology-that-works-together.html",
+   "source": "intel-newsroom",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": null,
+   "updated": null,
+   "summary": "Client Computing",
+   "first": "2026-11-19T16:50:20.454Z",
+   "score": -1,
+   "reasons": [
+    "-1 source intel-newsroom"
+   ],
+   "status": "below",
+   "hash": "81a9c14c"
+  },
+  "https://dell.com/en-us/blog/the-public-university-mission-amplified-what-ai-makes-possible-for-students-and-communities": {
+   "title": "The Public University Mission, Amplified: What AI Makes Possible for Students and Communities",
+   "link": "https://www.dell.com/en-us/blog/the-public-university-mission-amplified-what-ai-makes-possible-for-students-and-communities",
+   "source": "dell-blog",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-19T16:00:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-19T16:50:20.454Z",
+   "score": -4,
+   "reasons": [
+    "-1 source dell-blog",
+    "-3 corporate/announcement \"Mission\""
+   ],
+   "status": "below",
+   "hash": "936d0ff5"
+  },
+  "https://dell.com/en-us/blog/the-data-foundation-powering-physical-ai-and-digital-twins": {
+   "title": "The Data Foundation Powering Physical AI and Digital Twins",
+   "link": "https://www.dell.com/en-us/blog/the-data-foundation-powering-physical-ai-and-digital-twins",
+   "source": "dell-blog",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-19T15:00:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-19T16:50:20.454Z",
+   "score": -1,
+   "reasons": [
+    "-1 source dell-blog"
+   ],
+   "status": "below",
+   "hash": "d96d38bd"
+  },
+  "https://cloud.google.com/blog/topics/threat-intelligence/armory-castle-exploits-vsphere": {
+   "title": "ARMORY CASTLE Exploits vSphere",
+   "link": "https://cloud.google.com/blog/topics/threat-intelligence/armory-castle-exploits-vsphere/",
+   "source": "gcloud-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-19T14:00:00.000Z",
+   "updated": null,
+   "summary": "Written by: Jayson Frost, Bryce Greathouse, Dhanesh Kizhakkinan, John Palmisano, Steve Rasch, Daniel Sislo, John Wolfram Introduction On Oct. 15, 2026, Mandiant and Google Threat Intelligence Group (GTIG) published a blog post detailing recent activity in which the suspected PRC-nexus threat actor A",
+   "first": "2026-11-19T16:50:20.454Z",
+   "score": -1,
+   "reasons": [
+    "-1 source gcloud-blog"
+   ],
+   "status": "below",
+   "hash": "d915c32c"
+  },
+  "https://aws.amazon.com/blogs/machine-learning/introducing-enhanced-observability-in-amazon-sagemaker-hyperpod-to-diagnose-gpu-training-issues": {
+   "title": "Introducing enhanced infrastructure observability in Amazon SageMaker HyperPod",
+   "link": "https://aws.amazon.com/blogs/machine-learning/introducing-enhanced-observability-in-amazon-sagemaker-hyperpod-to-diagnose-gpu-training-issues/",
+   "source": "aws-ml-blog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-19T16:41:35.000Z",
+   "updated": null,
+   "summary": "Amazon SageMaker HyperPod now offers enhanced observability to help you diagnose GPU training issues faster. It brings together diagnostic and profiling capabilities for training workloads on both Amazon EKS and Slurm orchestrators, pinpointing issues across GPU, network, and host layers.",
+   "first": "2026-11-19T16:50:20.454Z",
+   "score": 0,
+   "reasons": [
+    "-3 source aws-ml-blog",
+    "+2 launch \"Introducing\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "933a0ec"
+  },
+  "https://aws.amazon.com/blogs/machine-learning/using-nvidia-runai-gpu-fractioning-on-amazon-eks": {
+   "title": "Using NVIDIA Run:ai GPU Fractioning on Amazon EKS",
+   "link": "https://aws.amazon.com/blogs/machine-learning/using-nvidia-runai-gpu-fractioning-on-amazon-eks/",
+   "source": "aws-ml-blog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-19T16:13:51.000Z",
+   "updated": null,
+   "summary": "Learn how to run two memory-bounded Kubernetes Pods on a single NVIDIA A10G GPU using open-source NVIDIA Run:ai GPU Fractioning on Amazon EKS. This walkthrough builds a custom Amazon Linux 2023 image, installs KAI Scheduler and the GPU Fractioning Operator, and validates per-Pod GPU-memory contracts",
+   "first": "2026-11-19T16:50:20.454Z",
+   "score": -1,
+   "reasons": [
+    "-3 source aws-ml-blog",
+    "+2 user steps \"how to\""
+   ],
+   "status": "below",
+   "hash": "ef67a1f"
   }
  },
  "devices": {}

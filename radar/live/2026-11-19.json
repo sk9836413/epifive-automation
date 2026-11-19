@@ -2,7 +2,7 @@
  "date": "2026-11-19",
  "title": "Tech news today, 19 November 2026",
  "published": "2026-11-19T00:28:31.694Z",
- "updated": "2026-11-19T14:15:21.082Z",
+ "updated": "2026-11-19T16:50:20.454Z",
  "items": [
   {
    "id": "a896af99",
@@ -1069,7 +1069,323 @@
    "ai": null,
    "score": 5,
    "story": null
+  },
+  {
+   "id": "ce981fc4",
+   "key": "https://workspaceupdates.googleblog.com/2026/11/improved-syncing-of-guest-additions-across-calendar-services.html",
+   "time": "2026-11-19T16:09:41.751Z",
+   "seen": "2026-11-19T16:50:20.454Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Improved syncing of guest additions across calendar services",
+   "summary": "We are introducing key interoperability enhancements in Google Calendar to improve how guest additions are handled across calendar platforms. When a Google Calendar guest adds new guests to an event organized on a third-party calendar service, such as Microsoft Outlook, Google Calendar now automatically notifies the organizer via email. Conversely, when Google Calendar receives a similar notification from a third-party calendar service, it now automatically updates the event with the newly added guests. This improves the synchronization of guest lists across platforms and ensures that newly added guests seamlessly receive any subsequent event updates made by the organizer. Getting started Ad",
+   "lines": [
+    "Google Calendar now automatically emails the organizer when a Google Calendar guest adds guests to an event organized on a third-party calendar service, such as Microsoft Outlook.",
+    "When a third-party calendar service sends a similar notification, Google Calendar now updates the event with the newly added guests.",
+    "The change keeps guest lists in sync across calendar platforms, so new guests receive later event updates from the organizer."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google Workspace Updates",
+    "url": "http://workspaceupdates.googleblog.com/2026/11/improved-syncing-of-guest-additions-across-calendar-services.html"
+   },
+   "sourceId": "workspace-updates",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "74ddbd2a",
+   "key": "https://apple.com/newsroom/2026/11/apple-tv-becomes-the-new-us-home-of-f1-academy-the-all-female-racing-series",
+   "time": "2026-11-19T15:59:07.903Z",
+   "seen": "2026-11-19T16:50:20.454Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Apple TV becomes the new U.S. home of F1 ACADEMY™, the all-female racing series",
+   "summary": "Apple and F1 ACADEMY™ today announced that the all-female racing series will stream on Apple TV in the United States beginning in 2027.",
+   "lines": [
+    "Apple TV becomes the U.S. home of F1 ACADEMY, the all-female racing series.",
+    "The series will stream on Apple TV in the United States beginning in 2027."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Apple Newsroom",
+    "url": "https://www.apple.com/newsroom/2026/11/apple-tv-becomes-the-new-us-home-of-f1-academy-the-all-female-racing-series/"
+   },
+   "sourceId": "apple-newsroom",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "c5f94136",
+   "key": "https://workspaceupdates.googleblog.com/2026/11/seamlessly-share-presented-file-links-with-viewers-in-Google-Meet.html",
+   "time": "2026-11-19T15:02:01.166Z",
+   "seen": "2026-11-19T16:50:20.454Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Seamlessly share presented file links with viewers in Google Meet",
+   "summary": "We are introducing new controls in Google Meet to streamline collaboration by letting presenters seamlessly share Docs, Sheets, and Slides links and grant file access directly within meetings. If selected, meeting participants will see a link to the file you are presenting displayed on the screen. They’ll be able to click this file and open it to review independently during or after the meeting. This will help keep meetings focused and interactive, with less disruptions caused by sending links in chat and managing permissions from other apps while trying to present. Presenters now have three options while presenting a file: Share File Link (Once): Shares the active file links to the in-meeti",
+   "lines": [
+    "Google Meet now lets presenters share Docs, Sheets, and Slides links and grant file access directly within meetings.",
+    "Presenters get three options when presenting a file, including Share File Link (Once), which shares the active file link with in-meeting participants.",
+    "Participants see a link to the presented file on screen and can open it to review during or after the meeting, reducing chat links and permission changes from other apps."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google Workspace Updates",
+    "url": "http://workspaceupdates.googleblog.com/2026/11/seamlessly-share-presented-file-links-with-viewers-in-Google-Meet.html"
+   },
+   "sourceId": "workspace-updates",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "e6b5a2f5",
+   "key": "https://thehackernews.com/2026/11/php-fixes-7-critical-flaws-including.html",
+   "time": "2026-11-19T15:18:07.000Z",
+   "seen": "2026-11-19T16:50:20.454Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "PHP Fixes 7 Critical Flaws, Including Bugs That Could Allow Remote Code Execution",
+   "summary": "The PHP Foundation has released security updates to address multiple critical security flaws that could be exploited to achieve remote code execution on affected deployments, including CVE-2026-115560. The release of the patch follows an advance notice in which the project maintainers alerted users to multiple critical vulnerabilities affecting all supported PHP versions under specific",
+   "lines": [
+    "Reported by The Hacker News: The PHP Foundation released security updates for multiple critical flaws that could be exploited for remote code execution on affected deployments.",
+    "The release includes CVE-2026-115560 and follows an advance notice from project maintainers about the vulnerabilities.",
+    "IT teams running PHP deployments should check their versions and apply the security updates."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/php-fixes-7-critical-flaws-including.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 13,
+   "story": null
+  },
+  {
+   "id": "c55e7583",
+   "key": "https://bleepingcomputer.com/news/security/php-security-updates-fix-18-flaws-including-critical-rce-bugs",
+   "time": "2026-11-19T16:28:23.000Z",
+   "seen": "2026-11-19T16:50:20.454Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "PHP security updates fix 18 flaws, including critical RCE bugs",
+   "summary": "The PHP development team released security updates addressing 18 vulnerabilities, including critical flaws that could allow unauthenticated attackers to remotely execute code on vulnerable servers. [...]",
+   "lines": [
+    "Reported by BleepingComputer: The PHP development team released security updates fixing 18 vulnerabilities, including critical flaws that could let unauthenticated attackers execute code remotely on vulnerable servers.",
+    "Administrators running PHP on servers should confirm whether their versions include the fixes."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/php-security-updates-fix-18-flaws-including-critical-rce-bugs/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 11,
+   "story": null
+  },
+  {
+   "id": "dd4d74ee",
+   "key": "https://thehackernews.com/2026/11/critical-vmware-vcenter-flaw-cvss-98.html",
+   "time": "2026-11-19T15:11:06.000Z",
+   "seen": "2026-11-19T16:50:20.454Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Critical VMware vCenter Flaw (CVSS 9.8) Lets Network Attackers Bypass Authentication",
+   "summary": "A critical flaw in VMware vCenter lets an attacker with network access bypass authentication and gain unauthorized access to the system, Broadcom, which owns VMware, said in an advisory published today. Fixed versions are out for all supported branches, and the company lists no workaround. vCenter is the central console for managing an organization's ESX hosts and virtual machines. The",
+   "lines": [
+    "Reported by The Hacker News: A critical VMware vCenter flaw, rated CVSS 9.8, lets network attackers bypass authentication and gain unauthorized access, according to a Broadcom advisory.",
+    "Fixed versions are available for all supported branches, and the company lists no workaround.",
+    "vCenter is the central console for managing an organization's ESX hosts and virtual machines, so admins should apply the fixed versions."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/critical-vmware-vcenter-flaw-cvss-98.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 10,
+   "story": null
+  },
+  {
+   "id": "09a512d8",
+   "key": "https://theverge.com/tech/1037695/jpmorgan-chase-cyberattack",
+   "time": "2026-11-19T16:14:23.000Z",
+   "seen": "2026-11-19T16:50:20.454Z",
+   "kind": "outage",
+   "tier": 2,
+   "headline": "JPMorgan Chase reveals data breach, but says it’s unrelated to this week’s banking outage",
+   "summary": "JPMorgan Chase says its third-party vendors suffered a cyberattack, exposing marketing data like customer names and email addresses. The confirmation follows a report from Cybernews, which says a ransomware group leaked email addresses belonging to around 16,000 JPMorgan Chase customers. In a post about the attack, JPMorgan Chase says \"there is no connection\" to the […]",
+   "lines": [
+    "Reported by The Verge: JPMorgan Chase says its third-party vendors suffered a cyberattack that exposed marketing data, such as customer names and email addresses.",
+    "Cybernews reported that a ransomware group leaked email addresses belonging to around 16,000 JPMorgan Chase customers.",
+    "JPMorgan Chase states there is no connection between the data breach and this week's banking outage.",
+    "The incident highlights the need for IT teams to review third-party access to customer contact data."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Verge",
+    "url": "https://www.theverge.com/tech/1037695/jpmorgan-chase-cyberattack"
+   },
+   "sourceId": "the-verge",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "families": [],
+   "score": 8,
+   "story": null
+  },
+  {
+   "id": "0df2dbb9",
+   "key": "https://gsmarena.com/amazon_uk_drops_the_prices_of_the_new_xiaomi_18_pro_and_xiaomi_18_pro_max_for_prime_subscribers-news-75546.php",
+   "time": "2026-11-19T16:14:02.000Z",
+   "seen": "2026-11-19T16:50:20.454Z",
+   "kind": "device",
+   "tier": 2,
+   "headline": "Amazon UK drops the prices of the new Xiaomi 18 Pro and Xiaomi 18 Pro Max for Prime subscribers",
+   "summary": "No, it’s not Prime Day – but Amazon UK still has an interesting Prime-only deal. The Xiaomi 18 Pro and Xiaomi 18 Pro Max started their global rollout just a couple of days ago and the retailer is already offering discounts of £100 and £150, respectively. Xiaomi 18 Pro Max and Xiaomi 18 Pro The catch is that you need an active Prime subscription to get this deal. You can use the free 30-day trial for that. If you already used it for Prime Day, you can just subscribe – Prime costs £8.99 a month or £95 for a full year, so it will pay for itself with these discounts. ...",
+   "lines": [
+    "Reported by GSMArena news: Amazon UK is offering discounts of £100 on the Xiaomi 18 Pro and £150 on the Xiaomi 18 Pro Max for Prime subscribers.",
+    "An active Prime subscription is required, and the free 30-day trial can be used; Prime costs £8.99 a month or £95 for a full year.",
+    "The offer applies to individual buyers who hold a Prime membership."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "GSMArena news",
+    "url": "https://www.gsmarena.com/amazon_uk_drops_the_prices_of_the_new_xiaomi_18_pro_and_xiaomi_18_pro_max_for_prime_subscribers-news-75546.php"
+   },
+   "sourceId": "gsmarena-news",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": {
+    "model": "Xiaomi 18 Pro",
+    "brand": "Xiaomi",
+    "category": "phone",
+    "key": "xiaomi 18 pro"
+   },
+   "ai": null,
+   "score": 5,
+   "story": "device:xiaomi 18 pro"
+  },
+  {
+   "id": "b3a796b5",
+   "key": "https://techcrunch.com/2026/11/19/u-k-government-forced-to-disclose-secret-apple-backdoor-order",
+   "time": "2026-11-19T15:32:20.000Z",
+   "seen": "2026-11-19T16:50:20.454Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "UK government forced to disclose secret Apple backdoor order",
+   "summary": "The U.K. tribunal's ruling rejected London's claim that disclosing the order would be damaging to national security.",
+   "lines": [
+    "Reported by TechCrunch: A U.K. tribunal ruled that the government must disclose a secret order related to an Apple backdoor.",
+    "The tribunal rejected London's claim that disclosing the order would be damaging to national security.",
+    "The ruling gives public visibility into a government demand affecting Apple products, which may interest IT teams tracking such requests."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "TechCrunch",
+    "url": "https://techcrunch.com/2026/11/19/u-k-government-forced-to-disclose-secret-apple-backdoor-order/"
+   },
+   "sourceId": "techcrunch",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "2393a6e3",
+   "key": "https://bleepingcomputer.com/news/security/five-warning-signs-of-ransomware-breach-before-encryption-or-data-theft",
+   "time": "2026-11-19T15:00:10.000Z",
+   "seen": "2026-11-19T16:50:20.454Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Five warning signs of ransomware breach before encryption or data theft",
+   "summary": "Ransomware attacks often involve credential theft, lateral movement, and attempts to disable security controls long before encryption begins. Acronis examines five warning signs that can help defenders detect intrusions earlier, contain malicious activity, and protect critical systems and backups. [...]",
+   "lines": [
+    "Reported by BleepingComputer: Acronis outlines five warning signs that can help defenders detect ransomware intrusions before encryption or data theft.",
+    "Ransomware attacks often involve credential theft, lateral movement, and attempts to disable security controls before encryption begins.",
+    "Monitoring for these early signs can help IT teams contain malicious activity and protect critical systems and backups."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/five-warning-signs-of-ransomware-breach-before-encryption-or-data-theft/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "93867f12",
+   "key": "https://bleepingcomputer.com/news/security/critical-nginx-nginx2root-bugs-let-attackers-hijack-servers",
+   "time": "2026-11-19T14:57:24.000Z",
+   "seen": "2026-11-19T16:50:20.454Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Critical NGINX ‘NGINX2Root’ bugs let attackers hijack servers",
+   "summary": "Two critical NGINX vulnerabilities dubbed \"nginx2root\" allow unauthenticated attackers to execute code remotely on vulnerable web servers, with researchers demonstrating how the flaws can be chained with a Linux kernel bug to gain root access. [...]",
+   "lines": [
+    "Reported by BleepingComputer: Two critical NGINX vulnerabilities, dubbed nginx2root, allow unauthenticated attackers to execute code remotely on vulnerable web servers.",
+    "Researchers demonstrated chaining the flaws with a Linux kernel bug to gain root access.",
+    "Administrators running NGINX web servers should review their deployments for exposure to these flaws."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/critical-nginx-nginx2root-bugs-let-attackers-hijack-servers/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
   }
  ],
- "description": "37 technology updates from official sources, updated hourly: Introducing Gemini 4 Neon; PayU loses Rs 25.67 crore in alleged cloud server breach; two arrested; 10-Year-Old NGINX HTTP/2 Flaw Lets Unauthenticated Attackers Execute Code on Servers."
+ "description": "48 technology updates from official sources, updated hourly: Introducing Gemini 4 Neon; PHP Fixes 7 Critical Flaws, Including Bugs That Could Allow Remote Code Execution; PHP security updates fix 18 flaws, including critical RCE bugs."
 }
