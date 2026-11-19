@@ -2,7 +2,7 @@
  "date": "2026-11-19",
  "title": "Tech news today, 19 November 2026",
  "published": "2026-11-19T00:28:31.694Z",
- "updated": "2026-11-19T07:49:36.702Z",
+ "updated": "2026-11-19T10:28:24.940Z",
  "items": [
   {
    "id": "a896af99",
@@ -678,7 +678,174 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "94c4fe86",
+   "key": "https://thehackernews.com/2026/11/n-able-confirms-hackers-accessed-cloud.html",
+   "time": "2026-11-19T09:31:26.000Z",
+   "seen": "2026-11-19T10:28:24.940Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Hackers Breach N-able Cloud Server, Disrupting Email Security Management Across 3 Regions",
+   "summary": "N-able on Wednesday disclosed that unknown threat actors gained unauthorized access to one of the servers in the Mail Assure and Spam Experts Hosted Cloud, causing it to disable management interfaces and APIs. \"We have taken steps to mitigate the threat and are continuing to harden our services to reduce the risk of recurrence,\" N-able said. \"The investigation is ongoing, but at this time we",
+   "lines": [
+    "Reported by The Hacker News: N-able disclosed that unknown threat actors gained unauthorized access to one server in the Mail Assure and Spam Experts Hosted Cloud, disabling its management interfaces and APIs. The disruption affected email security management across 3 regions.",
+    "N-able says it has taken steps to mitigate the threat and is hardening its services, and the investigation is ongoing.",
+    "IT teams that rely on these hosted email security services may lose management access while the incident is being resolved."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/n-able-confirms-hackers-accessed-cloud.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null
+  },
+  {
+   "id": "7b4fa548",
+   "key": "https://thehackernews.com/2026/11/ruby-releases-fixes-for-7-regex-and.html",
+   "time": "2026-11-19T08:42:11.000Z",
+   "seen": "2026-11-19T10:28:24.940Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Ruby Releases Fixes for 7 Regex and String Flaws, Warns 5 Have Proof-of-Concept RCE",
+   "summary": "Ruby contains seven memory-safety flaws in its regular expression engine and its string case-conversion code. For five of them, its maintainers say, proof-of-concept exploits, or PoCs, have shown that crafted input can run code on the machine. \"We are aware of PoCs that prove some of them can be used to trigger remote code execution,\" the maintainers said. The project released fixed versions",
+   "lines": [
+    "Reported by The Hacker News: Ruby released fixes for seven flaws in its regular expression engine and string case-conversion code, which contain memory-safety issues.",
+    "For five of the flaws, proof-of-concept exploits have shown that crafted input can run code on the machine, according to the maintainers.",
+    "Teams running Ruby should apply the fixed versions released by the project, since some of the flaws may be used for remote code execution."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/ruby-releases-fixes-for-7-regex-and.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "d326dfe0",
+   "key": "https://thehackernews.com/2026/11/researcher-demonstrates-database-rce.html",
+   "time": "2026-11-19T08:14:00.000Z",
+   "seen": "2026-11-19T10:28:24.940Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Researcher Demonstrates Database RCE Exploits Affecting PostgreSQL, MySQL and Oracle",
+   "summary": "Low-privilege database accounts that cannot read a single application table can still be used to run code on the database server itself, a researcher has shown, by reaching memory-corruption bugs in the engine code behind ordinary SQL. The exploits, published yesterday, are the researcher's proofs of concept against PostgreSQL, MySQL and ClickHouse, plus a separate Oracle chain that needs no",
+   "lines": [
+    "Reported by The Hacker News: A researcher demonstrated that low-privilege database accounts that cannot read any application table can still run code on the database server by reaching memory-corruption bugs in the engine code behind ordinary SQL.",
+    "The published proofs of concept target PostgreSQL, MySQL and ClickHouse, and a separate Oracle chain that needs no further details in the text.",
+    "Database accounts with limited privileges may not be enough to contain risk, so administrators may want to review database security controls."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/researcher-demonstrates-database-rce.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "3abc7371",
+   "key": "https://thehackernews.com/2026/11/cisa-warns-of-4-exploited-flaws-linked.html",
+   "time": "2026-11-19T08:00:00.000Z",
+   "seen": "2026-11-19T10:28:24.940Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "CISA Warns of 4 Exploited Flaws Linked to Ransomware, Cryptomining, and LLMjacking Attacks",
+   "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Wednesday added four vulnerabilities impacting Synology DiskStation Manager (DSM), BerriAI LiteLLM, Apache Axis, and Vanderbilt University Research Electronic Data Capture (REDCap) to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation. The vulnerabilities are listed below -",
+   "lines": [
+    "Reported by The Hacker News: The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Wednesday added four vulnerabilities to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation.",
+    "The flaws affect Synology DiskStation Manager (DSM), BerriAI LiteLLM, Apache Axis, and Vanderbilt University Research Electronic Data Capture (REDCap).",
+    "IT teams running any of these products should check their environments for the listed flaws and prioritize patching."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/cisa-warns-of-4-exploited-flaws-linked.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "0fbdde83",
+   "key": "https://medianama.com/2026/11/223-instagram-copyright-tool-deepfakes-stolen-content",
+   "time": "2026-11-19T08:55:33.000Z",
+   "seen": "2026-11-19T10:28:24.940Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Instagram launches copyright detection tool for AI deepfakes and stolen content",
+   "summary": "Instagram is rolling out a copyright detection tool that identifies copied videos and AI deepfakes across Instagram and Facebook, allowing creators to track matches and take action against stolen content. The post Instagram launches copyright detection tool for AI deepfakes and stolen content appeared first on MEDIANAMA .",
+   "lines": [
+    "Reported by MediaNama: Instagram is rolling out a copyright detection tool that identifies copied videos and AI deepfakes across Instagram and Facebook.",
+    "The tool lets creators track matches and take action against stolen content.",
+    "Creators and businesses that publish video on these platforms may use the tool to monitor for copied or manipulated content."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "MediaNama",
+    "url": "https://www.medianama.com/2026/11/223-instagram-copyright-tool-deepfakes-stolen-content/"
+   },
+   "sourceId": "medianama",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "9a9fa62a",
+   "key": "https://bleepingcomputer.com/news/security/nvidia-investigating-gentlemen-ransomware-breach-claims",
+   "time": "2026-11-19T09:23:21.000Z",
+   "seen": "2026-11-19T10:28:24.940Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "NVIDIA investigating Gentlemen ransomware breach claims",
+   "summary": "NVIDIA is investigating claims of a security breach after the Gentlemen ransomware group has added the company to its dark web data leak site. [...]",
+   "lines": [
+    "Reported by BleepingComputer: NVIDIA is investigating claims of a security breach after the Gentlemen ransomware group added the company to its dark web data leak site.",
+    "Business users should treat the breach claims as unconfirmed while the investigation is ongoing."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/nvidia-investigating-gentlemen-ransomware-breach-claims/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
   }
  ],
- "description": "23 technology updates from official sources, updated hourly: Introducing Gemini 4 Neon; PayU loses Rs 25.67 crore in alleged cloud server breach; two arrested; 10-Year-Old NGINX HTTP/2 Flaw Lets Unauthenticated Attackers Execute Code on Servers."
+ "description": "29 technology updates from official sources, updated hourly: Introducing Gemini 4 Neon; PayU loses Rs 25.67 crore in alleged cloud server breach; two arrested; 10-Year-Old NGINX HTTP/2 Flaw Lets Unauthenticated Attackers Execute Code on Servers."
 }

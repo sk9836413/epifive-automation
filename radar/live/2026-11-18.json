@@ -2,7 +2,7 @@
  "date": "2026-11-18",
  "title": "Tech news today, 18 November 2026",
  "published": "2026-11-17T19:18:54.800Z",
- "updated": "2026-11-19T03:43:43.666Z",
+ "updated": "2026-11-19T10:28:24.940Z",
  "items": [
   {
    "id": "289cf95a",
@@ -1847,7 +1847,9 @@
    "sourceId": "samsung-global",
    "sourceMax": 6,
    "reported": false,
-   "also": [],
+   "also": [
+    "Samsung Newsroom India"
+   ],
    "post": null,
    "device": null,
    "ai": null,

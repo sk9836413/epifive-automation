@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-19T07:49:36.702Z",
+ "lastScan": "2026-11-19T10:28:24.940Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -1052,200 +1052,6 @@
    ],
    "status": "below",
    "hash": "a088ec3d"
-  },
-  "https://thehackernews.com/2026/11/amazon-uncovers-ai-agent-campaign.html": {
-   "title": "Amazon Uncovers AI Agent Campaign Targeting LiteLLM, Dify, and Other Apps for API Keys",
-   "link": "https://thehackernews.com/2026/11/amazon-uncovers-ai-agent-campaign.html",
-   "source": "thn",
-   "topic": "security-identity",
-   "category": "incident",
-   "date": "2026-11-16T07:34:21.000Z",
-   "updated": null,
-   "summary": "Attackers' AI agents have been hunting for weak spots in internet-exposed AI apps such as LiteLLM, One API, and Dify to steal the AI provider keys stored inside, according to the agents' own records. The records, which Amazon's threat intelligence team captured with decoy servers, describe stolen ke",
-   "first": "2026-11-16T07:53:52.335Z",
-   "score": 5,
-   "reasons": [
-    "+1 source thn",
-    "+3 incident \"steal\"",
-    "+1 user data or credentials exposed"
-   ],
-   "status": "below",
-   "hash": "f509abbf"
-  },
-  "https://thehackernews.com/2026/11/bo-team-exploits-log4shell-in-vmware.html": {
-   "title": "BO Team Exploits Log4Shell in VMware vCenter, Compromises Russian Firm's Code-Signing Server",
-   "link": "https://thehackernews.com/2026/11/bo-team-exploits-log4shell-in-vmware.html",
-   "source": "thn",
-   "topic": "security-identity",
-   "category": "incident",
-   "date": "2026-11-16T06:53:34.000Z",
-   "updated": null,
-   "summary": "An investigation into suspicious activity within a Russian software developer's network has uncovered a months-long compromise of its development infrastructure and a software code-signing server. The activity, documented by Kaspersky's ICS CERT team after it was contacted by the affected developer ",
-   "first": "2026-11-16T07:53:52.335Z",
-   "score": 5,
-   "reasons": [
-    "+1 source thn",
-    "+3 incident \"Compromises\"",
-    "+1 user data or credentials exposed"
-   ],
-   "status": "below",
-   "hash": "40957dff"
-  },
-  "https://about.fb.com/news/2026/11/94-of-singapore-small-business-owners-surveyed-say-more-ai-guidance-is-needed": {
-   "title": "94% of Singapore Small Business Owners Surveyed Say More AI Guidance Is Needed",
-   "link": "https://about.fb.com/news/2026/11/94-of-singapore-small-business-owners-surveyed-say-more-ai-guidance-is-needed/",
-   "source": "meta-newsroom",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-16T06:25:27.000Z",
-   "updated": null,
-   "summary": "More than 180 small businesses, heartland merchants and creator-entrepreneurs joined Meta Upskill Day 2026 in Singapore, part of Meta's Small Business Growth Academy, with Senior Minister of State Low Yen Ling attending as Guest of Honour. The post 94% of Singapore Small Business Owners Surveyed Say",
-   "first": "2026-11-16T07:53:52.335Z",
-   "score": 0,
-   "reasons": [],
-   "status": "below",
-   "hash": "c69d4619"
-  },
-  "https://zoho.com/blog/partners/win-email-collaboration-projects-without-full-migration.html": {
-   "title": "Win more email and collaboration projects without full migration",
-   "link": "https://www.zoho.com/blog/partners/win-email-collaboration-projects-without-full-migration.html",
-   "source": "zoho-blog",
-   "topic": "small-business-it",
-   "category": "launch",
-   "date": "2026-11-16T11:00:36.000Z",
-   "updated": null,
-   "summary": "If you run or work in a technology consulting company that provides workplace collaboration solutions for mid-market or large-scale organizations, you might have noticed this: Collaboration toolkit requirements or usage levels are not the same for every user within an organization. Employees, contra",
-   "first": "2026-11-16T07:53:52.335Z",
-   "score": -2,
-   "reasons": [
-    "+2 user steps \"migration\"",
-    "-4 customer story"
-   ],
-   "status": "below",
-   "hash": "473d6259"
-  },
-  "https://zoho.com/blog/desk/a-decade-of-zoho-desk.html": {
-   "title": "A decade of Zoho Desk",
-   "link": "https://www.zoho.com/blog/desk/a-decade-of-zoho-desk.html",
-   "source": "zoho-blog",
-   "topic": "small-business-it",
-   "category": "launch",
-   "date": "2026-11-16T09:20:23.000Z",
-   "updated": null,
-   "summary": "Remember 2016? When we were untangling earphones and grown adults were walking into lampposts playing Pokémon Go? Ten years later, we've come a long way. Now we're hunting for missing earbuds, and grown adults are asking AI how to reply to a text.Customer service has had quite the decade too.Custome",
-   "first": "2026-11-16T07:53:52.335Z",
-   "score": 3,
-   "reasons": [
-    "+1 niche (agents)",
-    "+2 user steps \"how to\""
-   ],
-   "status": "below",
-   "hash": "371aa995"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63981": {
-   "title": "Money Market Operations as on November 15, 2026",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63981",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-16T12:05:00.000Z",
-   "updated": null,
-   "summary": "(Amount in ₹ crore, Rate in Per cent) MONEY MARKETS @ --> Money Markets @ Volume (One Leg) Weighted Average Rate Range A. Overnight Segment (I+II+III+IV) 0.00 - - I. Call Money 0.00 - - II. Triparty Repo 0.00 - - III. Market Repo 0.00 - - IV. Repo in Corporate Bond 0.00 - - B. Term Segment I. Notice",
-   "first": "2026-11-16T07:53:52.335Z",
-   "score": -1,
-   "reasons": [
-    "-1 source rbi-press"
-   ],
-   "status": "below",
-   "hash": "4e55c566"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63980": {
-   "title": "Money Market Operations as on November 14, 2026",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63980",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-16T12:00:00.000Z",
-   "updated": null,
-   "summary": "(Amount in ₹ crore, Rate in Per cent) MONEY MARKETS @ --> Money Markets @ Volume (One Leg) Weighted Average Rate Range A. Overnight Segment (I+II+III+IV) 0.00 - - I. Call Money 0.00 - - II. Triparty Repo 0.00 - - III. Market Repo 0.00 - - IV. Repo in Corporate Bond 0.00 - - B. Term Segment I. Notice",
-   "first": "2026-11-16T07:53:52.335Z",
-   "score": -1,
-   "reasons": [
-    "-1 source rbi-press"
-   ],
-   "status": "below",
-   "hash": "7bf12dbf"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63979": {
-   "title": "RBI cancels Certificate of Registration of 49 NBFCs",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63979",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-16T11:05:00.000Z",
-   "updated": null,
-   "summary": "The Reserve Bank of India, in exercise of powers conferred on it under Section 45-IA (6) of the Reserve Bank of India Act, 1934, has cancelled the Certificate of Registration of the following companies. Sr. No. Name of the Company Registered Office Address CoR No. CoR Issued on Cancellation Order Da",
-   "first": "2026-11-16T07:53:52.335Z",
-   "score": 0,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 plans/price/availability \"India\""
-   ],
-   "status": "below",
-   "hash": "caca49e"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63978": {
-   "title": "13 NBFCs and 1 HFC surrender their Certificates of Registration to the RBI",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63978",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-16T11:00:00.000Z",
-   "updated": null,
-   "summary": "The following thirteen Non-Banking Financial Companies (NBFCs) and one Housing Finance Company (HFC) have surrendered their Certificates of Registration (CoRs) granted to them by the Reserve Bank of India (RBI). The RBI, in exercise of powers conferred on it under Section 45-IA (6) of the Reserve Ba",
-   "first": "2026-11-16T07:53:52.335Z",
-   "score": 0,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 plans/price/availability \"India\""
-   ],
-   "status": "below",
-   "hash": "d1c2f343"
-  },
-  "https://news.sap.com/2026/11/india-promise-to-platform-global-growth": {
-   "title": "India’s Rise: From Promise to Platform for Global Growth",
-   "link": "https://news.sap.com/2026/11/india-promise-to-platform-global-growth/",
-   "source": "sap-news",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-16T05:15:00.000Z",
-   "updated": null,
-   "summary": "For much of the past three decades, India's global economic story was defined by potential. That narrative has changed dramatically.",
-   "first": "2026-11-16T07:53:52.335Z",
-   "score": 0,
-   "reasons": [
-    "-1 source sap-news",
-    "+1 plans/price/availability \"India\""
-   ],
-   "status": "below",
-   "hash": "1afaf137"
-  },
-  "https://dell.com/en-us/blog/move-enterprise-ai-from-pilots-to-production-with-confidence": {
-   "title": "Move Enterprise AI From Pilots to Production With Confidence",
-   "link": "https://www.dell.com/en-us/blog/move-enterprise-ai-from-pilots-to-production-with-confidence",
-   "source": "dell-blog",
-   "topic": "laptops-hardware",
-   "category": "launch",
-   "date": "2026-11-16T06:00:00.000Z",
-   "updated": null,
-   "summary": "",
-   "first": "2026-11-16T07:53:52.335Z",
-   "score": -1,
-   "reasons": [
-    "-1 source dell-blog"
-   ],
-   "status": "below",
-   "hash": "274f41f8"
   },
   "https://openai.com/index/lvmh-media-division-partnership": {
    "title": "LVMH’s Media Division announces strategic partnership with OpenAI",
@@ -6248,7 +6054,7 @@
     "+2 category (Product)",
     "+1 autocomplete (9)"
    ],
-   "status": "queued",
+   "status": "expired",
    "hash": "6b73d95d"
   },
   "https://blog.google/products-and-platforms/products/gemini/gemini-4-carbon-builders": {
@@ -16084,6 +15890,95 @@
    ],
    "status": "below",
    "hash": "f644506b"
+  },
+  "https://thehackernews.com/2026/11/n-able-confirms-hackers-accessed-cloud.html": {
+   "title": "Hackers Breach N-able Cloud Server, Disrupting Email Security Management Across 3 Regions",
+   "link": "https://thehackernews.com/2026/11/n-able-confirms-hackers-accessed-cloud.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-19T09:31:26.000Z",
+   "updated": null,
+   "summary": "N-able on Wednesday disclosed that unknown threat actors gained unauthorized access to one of the servers in the Mail Assure and Spam Experts Hosted Cloud, causing it to disable management interfaces and APIs. \"We have taken steps to mitigate the threat and are continuing to harden our services to r",
+   "first": "2026-11-19T10:28:24.940Z",
+   "score": 6,
+   "reasons": [
+    "+1 source thn",
+    "+3 incident \"Hackers\"",
+    "+2 user action \"mitigate\""
+   ],
+   "status": "below",
+   "hash": "c1bb6038"
+  },
+  "https://thehackernews.com/2026/11/ruby-releases-fixes-for-7-regex-and.html": {
+   "title": "Ruby Releases Fixes for 7 Regex and String Flaws, Warns 5 Have Proof-of-Concept RCE",
+   "link": "https://thehackernews.com/2026/11/ruby-releases-fixes-for-7-regex-and.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-19T08:42:11.000Z",
+   "updated": null,
+   "summary": "Ruby contains seven memory-safety flaws in its regular expression engine and its string case-conversion code. For five of them, its maintainers say, proof-of-concept exploits, or PoCs, have shown that crafted input can run code on the machine. \"We are aware of PoCs that prove some of them can be use",
+   "first": "2026-11-19T10:28:24.940Z",
+   "score": 5,
+   "reasons": [
+    "+1 source thn",
+    "+2 vulnerability \"Flaws\"",
+    "+2 user action \"Fixes\""
+   ],
+   "status": "below",
+   "hash": "1c07ebd1"
+  },
+  "https://blog.google/company-news/outreach-and-initiatives/sustainability/new-water-stewardship-commitments": {
+   "title": "Google’s water stewardship commitments for local communities",
+   "link": "https://blog.google/company-news/outreach-and-initiatives/sustainability/new-water-stewardship-commitments/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-19T10:00:00.000Z",
+   "updated": null,
+   "summary": "Learn about our new water stewardship commitments, initiatives and recent Water Replenishment Projects Request for Information.",
+   "first": "2026-11-19T10:28:24.940Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "9524ebe8"
+  },
+  "https://news.samsung.com/in/samsung-begins-one-ui-9-5-beta-program": {
+   "title": "Samsung Begins One UI 9.5 Beta Program",
+   "link": "https://news.samsung.com/in/samsung-begins-one-ui-9-5-beta-program",
+   "source": "samsung-india",
+   "topic": "mobiles",
+   "category": "launch",
+   "date": "2026-11-19T11:52:47.000Z",
+   "updated": null,
+   "summary": "Samsung has launched the One UI 9.5 beta program, giving users an early look at One UI 9.5 ahead of its official debut. The One UI 9.5 beta introduces more precise camera controls, personalized health insights, improved accessibility features, and stronger privacy protections for everyday use. Enhan",
+   "first": "2026-11-19T10:28:24.940Z",
+   "score": 3,
+   "reasons": [
+    "+2 launch \"launched\"",
+    "+1 also on samsung-global"
+   ],
+   "status": "below",
+   "hash": "5aa47a65"
+  },
+  "https://news.samsung.com/in/get-more-out-of-your-galaxy-buds4-pro-10-hidden-features-and-smart-tricks-to-try": {
+   "title": "Get More Out of Your Galaxy Buds4 Pro: 10 Hidden Features and Smart Tricks to Try",
+   "link": "https://news.samsung.com/in/get-more-out-of-your-galaxy-buds4-pro-10-hidden-features-and-smart-tricks-to-try",
+   "source": "samsung-india",
+   "topic": "mobiles",
+   "category": "launch",
+   "date": "2026-11-19T11:24:26.000Z",
+   "updated": null,
+   "summary": "Galaxy Buds4 Pro bring together premium sound, intuitive controls and intelligent features designed to make everyday listening more convenient. But beyond playing music and taking calls, the earbuds offer several smart capabilities that users may not have explored yet. From intuitive pinch controls ",
+   "first": "2026-11-19T10:28:24.940Z",
+   "score": 2,
+   "reasons": [
+    "+1 niche (galaxy)",
+    "+1 plans/price/availability \"free\""
+   ],
+   "status": "below",
+   "hash": "f3355b28"
   }
  },
  "devices": {}
