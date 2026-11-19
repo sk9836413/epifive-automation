@@ -38,6 +38,7 @@ import {
   touchDay, updateIndex, linesPrompt, parseLinesAnswer, applyLines, templateLines, deviceFocus,
 } from './brief.mjs';
 import { ALERT, alertGate, buildAlertEmail, completeAddress, ensureAlertField, readArticle } from './alert.mjs';
+import { msrcReleased, patchTuesdayDue, patchTuesdayItem } from './patch-tuesday.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const STATE = path.join(HERE, 'state.json');
@@ -262,6 +263,30 @@ async function scan() {
     };
   }
 
+  // 5b. Patch Tuesday (owner, 19 Nov 2026): from 18:00 UTC on the second Tuesday of the month, once MSRC lists the
+  // month's release, queue "patch-tuesday-<yyyy-mm>" as a Tier 1 fast-track at the top score (same daily caps; the IST
+  // day rolls over at 18:30 UTC, so it is written the same evening). Skipped when the site already has the summary.
+  const ptDue = patchTuesdayDue(now);
+  if (ptDue && !state.seen[ptDue.key]) {
+    if (site.posts.some((p) => p.slug === ptDue.slug)) {
+      note(`Patch Tuesday ${ptDue.month}: /blog/${ptDue.slug} already exists.`);
+      state.seen[ptDue.key] = { ...patchTuesdayItem(ptDue, now), status: 'published', slug: ptDue.slug };
+    } else {
+      let released = false;
+      try {
+        released = await msrcReleased(ptDue.month, (u) => get(u, { timeout: 20000 }));
+      } catch (e) {
+        if (!/HTTP 404/.test(e.message)) errors.push(`patch-tuesday: ${e.message}`); // 404 = not released yet
+      }
+      if (released) {
+        state.seen[ptDue.key] = patchTuesdayItem(ptDue, now);
+        note(`Patch Tuesday ${ptDue.month}: MSRC release is out; queued /blog/${ptDue.slug} (score ${state.seen[ptDue.key].score}).`);
+      } else {
+        note(`Patch Tuesday ${ptDue.month}: MSRC has not listed the release yet; will check again next scan.`);
+      }
+    }
+  }
+
   // 6. Expire queued items that waited too long (daily cap) into the normal backlog.
   const parks = [];
   for (const [key, s] of Object.entries(state.seen)) {
@@ -307,6 +332,7 @@ async function scan() {
       today, title: s.title, link: s.link, published: s.date, summary: s.summary, score: s.score, reasons: s.reasons,
       source: { id: s.source, name: src?.name ?? 'manual', feed: src?.url ?? null }, topic: s.topic, category: s.category ?? 'launch',
       backlog: s.backlog ?? null, news: s.news ?? null, slug: task.slug ?? null, dryRun,
+      ...(s.patchTuesday ? { patchTuesday: s.patchTuesday } : {}),
       ...(s.families?.length ? { families: s.families } : {}),
     });
     if (!dryRun) Object.assign(s, { status: 'writing', kind: task.kind, extra: Boolean(task.extra), taskAt: new Date(now).toISOString(), attempts: (s.attempts ?? 0) + 1 });
@@ -635,7 +661,7 @@ function check() {
   const file = opt('file');
   const errors = checkFastTrack(fs.readFileSync(file, 'utf8'), {
     kind: opt('kind', 'new'), today: typeof opt('today') === 'string' ? opt('today') : undefined,
-    category: ['incident', 'outage'].includes(opt('category')) ? opt('category') : 'launch',
+    category: ['incident', 'outage', 'patch-tuesday'].includes(opt('category')) ? opt('category') : 'launch',
   });
   if (errors.length) {
     console.error(`Fast-track check failed for ${file}:\n${errors.map((e) => `  - ${e}`).join('\n')}`);

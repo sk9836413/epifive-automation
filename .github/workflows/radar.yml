@@ -33,6 +33,10 @@
 #            AI, space and EV milestones, critical-infrastructure outages), safety-filtered, "Reported by <outlet>", 4 a day.
 #   Tier 3 = official device launches start devices.yml in launch mode (spec page from the maker's official page only),
 #            at most 2 runs a day, 3 devices a run.
+# Patch Tuesday (owner approved 19 Nov 2026): from 18:00 UTC on the second Tuesday, once MSRC lists the month's release,
+# the scan queues "patch-tuesday-<yyyy-mm>" as a Tier 1 fast-track (category patch-tuesday, top score, same daily caps). The
+# write job gives the writer Microsoft's official counts (radar/patch-tuesday.mjs: MSRC CVRF + CISA KEV); the post joins
+# https://www.epifive.com/patch-tuesday and its email goes to the Security alerts list. No cron change.
 # Off switch: repository variable RADAR (automatic scans run only while it is "on").
 # Logs (public, no secrets): radar/log/<YYYY-MM>.md per scan, radar/results.jsonl per write, radar/live/ day pages.
 name: Launch radar
@@ -113,7 +117,7 @@ jobs:
           node-version: 24
 
       - name: Unit tests
-        run: node --test radar/radar.test.mjs radar/alert.test.mjs radar/brief.test.mjs radar/status.test.mjs radar/retirements.test.mjs
+        run: node --test radar/radar.test.mjs radar/alert.test.mjs radar/brief.test.mjs radar/status.test.mjs radar/retirements.test.mjs radar/patch-tuesday.test.mjs
 
       - name: Scan
         id: scan
@@ -262,11 +266,22 @@ jobs:
             const t = JSON.parse(require("fs").readFileSync(".radar-task.json", "utf8"));
             if (!["new", "update"].includes(t.kind) || !t.key || !t.link) { console.error("Bad task"); process.exit(1); }
             if (t.kind === "update" && !/^[a-z0-9-]+$/.test(t.slug ?? "")) { console.error("Update without a valid slug"); process.exit(1); }
-            const category = ["incident", "outage"].includes(t.category) ? t.category : "launch";
-            require("fs").appendFileSync(process.env.GITHUB_OUTPUT, `kind=${t.kind}\nkey=ok\nslug=${t.slug ?? ""}\ncategory=${category}\n`);
+            const category = ["incident", "outage", "patch-tuesday"].includes(t.category) ? t.category : "launch";
+            const pt = /^[0-9]{4}-[0-9]{2}$/.test(t.patchTuesday ?? "") ? t.patchTuesday : "";
+            require("fs").appendFileSync(process.env.GITHUB_OUTPUT, `kind=${t.kind}\nkey=ok\nslug=${t.slug ?? ""}\ncategory=${category}\npatch_tuesday=${pt}\n`);
             console.log(`${t.kind} (${category}): ${t.title}\n${t.link}\nscore ${t.score}: ${(t.reasons ?? []).join("; ")}`);
           '
           echo "today=$(TZ=Asia/Kolkata date +%F)" >> "$GITHUB_OUTPUT"
+
+      # Patch Tuesday (category patch-tuesday): Microsoft's official counts for the month from the MSRC CVRF release and
+      # CISA's KEV feed (radar/patch-tuesday.mjs), so the writer never has to read the 19 MB CVRF file itself. .radar-* is
+      # git-excluded above. A failure here leaves the writer to open the official pages itself.
+      - name: Patch Tuesday data (MSRC CVRF + CISA KEV)
+        if: steps.task.outputs.patch_tuesday != ''
+        continue-on-error: true
+        env:
+          MONTH: ${{ steps.task.outputs.patch_tuesday }}
+        run: node _radar/radar/patch-tuesday.mjs summary --month "$MONTH" --out .radar-patch-tuesday.json
 
       - name: Write (Claude, attempt 1)
         uses: anthropics/claude-code-action@v1
@@ -285,6 +300,8 @@ jobs:
             published indicators of compromise). For category "outage", follow the "Outages" section of RADAR.md (status
             "as of <time> IST" with a timestamp, vendor status updates quoted exactly with times, IST and ET timeline, no
             speculation on the cause beyond what the vendor said, SLA credits only from the vendor's SLA document).
+            For category "patch-tuesday", follow the "Patch Tuesday" section of RADAR.md: Microsoft's official counts are in
+            .radar-patch-tuesday.json (MSRC CVRF data and CISA's KEV feed) and the slug is the "backlog" value in .radar-task.json.
             The item is described in .radar-task.json. Read automation/RADAR.md and follow it exactly (it builds on
             automation/WRITER.md, which you should also read). The repository is already checked out at the latest main.
             Do not run npm, git or a build, and do not edit automation/backlog.md or automation/log.md: later workflow
@@ -451,7 +468,7 @@ jobs:
       # _radar/radar/results.jsonl, which "Record the outcome" commits. Dry run: prints the email, sends and logs nothing.
       # Never fails the run.
       - name: Email alert
-        if: steps.verdict.outputs.result == 'published' && (inputs.dry_run || steps.publish.outcome == 'success') && (steps.task.outputs.category == 'outage' || steps.task.outputs.category == 'incident')
+        if: steps.verdict.outputs.result == 'published' && (inputs.dry_run || steps.publish.outcome == 'success') && (steps.task.outputs.category == 'outage' || steps.task.outputs.category == 'incident' || steps.task.outputs.category == 'patch-tuesday')
         continue-on-error: true
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}

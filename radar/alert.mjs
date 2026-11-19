@@ -29,9 +29,10 @@ export const ALERT = {
   defaultAddress: 'Gurugram, Haryana 122001, India',
 };
 
-/** outage -> outage list, incident -> security list, anything else (launch how-tos) -> no alert. */
+/** outage -> outage list, incident and patch-tuesday -> security list, anything else (launch how-tos) -> no alert. */
 export function alertKindForCategory(category) {
-  return category === 'outage' ? 'outage' : category === 'incident' ? 'security' : null;
+  // A Patch Tuesday summary goes to the Security alerts list (owner, 19 Nov 2026: "a security alert").
+  return category === 'outage' ? 'outage' : category === 'incident' || category === 'patch-tuesday' ? 'security' : null;
 }
 
 /** "alert: outage|security" in the frontmatter of a new radar article (the site's alert box); added once if missing. */
@@ -149,7 +150,7 @@ export function readArticle(text) {
     alert: frontValue(front, 'alert'),
     takeaways: takeaways.map((t) => plain(t)),
     status: cap(status, 320),
-    action: firstAction(section(body, /^## What (users can do|to do)\b.*$/im)),
+    action: firstAction(section(body, /^## What (users can do|to do|to patch first)\b.*$/im)),
   };
 }
 

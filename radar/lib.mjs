@@ -1154,6 +1154,19 @@ const OUTAGE_SECTIONS = [
   ['what we checked', /^## What we checked\s*$/m],
   ['sources', /^## (Sources|References)\s*$/m],
 ];
+// Patch Tuesday monthly summaries (automation/RADAR.md, "Patch Tuesday"; radar/patch-tuesday.mjs).
+const PATCH_TUESDAY_SECTIONS = [
+  ['at a glance (totals by severity)', /^## .*(at a glance|by the numbers|totals)\b/im],
+  ['zero-days', /^## .*zero-day/im],
+  ['critical remote code execution', /^## .*(critical|remote code execution)/im],
+  ['products affected', /^## Products affected\b/im],
+  ['KB numbers', /^## KB numbers\b/im],
+  ['known issues', /^## Known issues\b/im],
+  ['what to patch first', /^## What to patch first\b/im],
+  ['how to deploy', /^## How to deploy\b/im],
+  ['what we checked', /^## What we checked\s*$/m],
+  ['sources', /^## (Sources|References)\s*$/m],
+];
 // "Status as of 10:30 IST, 13 November 2026" (any wording around it, but a time and IST).
 const STATUS_AS_OF = /\bas of\b[^\n]{0,40}?\b\d{1,2}:\d{2}\s*(am|pm|a\.m\.|p\.m\.)?\s*IST\b/i;
 const sectionText = (body, re) => {
@@ -1175,12 +1188,18 @@ export function checkFastTrack(text, { kind = 'new', today, category = 'launch' 
   const front = fm?.[1] ?? '';
   const body = fm ? markdown.slice(fm[0].length) : markdown;
   if (kind === 'new') {
-    const required = category === 'incident' ? INCIDENT_SECTIONS : category === 'outage' ? OUTAGE_SECTIONS : REQUIRED_SECTIONS;
+    const required = category === 'incident' ? INCIDENT_SECTIONS : category === 'outage' ? OUTAGE_SECTIONS
+      : category === 'patch-tuesday' ? PATCH_TUESDAY_SECTIONS : REQUIRED_SECTIONS;
     for (const [name, re] of required) if (!re.test(body)) errors.push(`missing a "## ..." section for: ${name}`);
     if (!/^faqs:/m.test(front)) errors.push('missing faqs in frontmatter (the FAQ)');
     if (category === 'incident') {
       const ip = body.match(BARE_IPV4);
       if (ip) errors.push(`incident: IP address ${ip[0]} is not defanged; write indicators exactly as the source publishes them, e.g. 192.0.2[.]1`);
+    }
+    if (category === 'patch-tuesday') {
+      if (!/\bKB\d{7}\b/.test(sectionText(body, /^## KB numbers\b.*$/im))) errors.push('patch-tuesday: the "KB numbers" section lists no KB number (KB plus 7 digits)');
+      if (!/msrc\.microsoft\.com\/update-guide/.test(body)) errors.push('patch-tuesday: cite the Security Update Guide (msrc.microsoft.com/update-guide) in the sources');
+      if (!/^Last tested:/m.test(sectionText(body, /^## What we checked\s*$/m))) errors.push('patch-tuesday: end "## What we checked" with a "Last tested:" line');
     }
     if (category === 'outage') {
       const timeline = sectionText(body, /^## What happened\b.*$/im);
