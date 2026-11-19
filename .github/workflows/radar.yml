@@ -113,7 +113,7 @@ jobs:
           node-version: 24
 
       - name: Unit tests
-        run: node --test radar/radar.test.mjs radar/alert.test.mjs radar/brief.test.mjs
+        run: node --test radar/radar.test.mjs radar/alert.test.mjs radar/brief.test.mjs radar/status.test.mjs radar/retirements.test.mjs
 
       - name: Scan
         id: scan
@@ -165,10 +165,23 @@ jobs:
         if: steps.scan.outputs.brief_pending == 'true' && !inputs.dry_run
         run: node radar/radar.mjs brief-apply --pending "$RUNNER_TEMP/brief.json" --answer "$RUNNER_TEMP/brief-answer.txt" | tee -a "$GITHUB_STEP_SUMMARY"
 
+      # Site pages that render from this repo without a rebuild (owner approved 19 Nov 2026):
+      # radar/status/recent.json = recent outage items per service for https://www.epifive.com/status/<service>
+      # (the pages read the vendors' official status feeds themselves); radar/retirements.json = the Microsoft 365
+      # retirement calendar (https://www.epifive.com/microsoft-365-retirements, its ICS and RSS), rebuilt from the
+      # official notices at most every 6 hours. Both are plain Node, no Claude; a failure here changes nothing else.
+      - name: Status snapshot and retirement calendar
+        if: ${{ !inputs.dry_run }}
+        continue-on-error: true
+        run: |
+          node radar/status.mjs | tee -a "$GITHUB_STEP_SUMMARY"
+          node radar/retirements.mjs --site site | tee -a "$GITHUB_STEP_SUMMARY"
+
       - name: Save radar state and log
         if: ${{ !inputs.dry_run }}
         run: |
           git add radar/state.json radar/log
+          git add radar/status radar/retirements.json 2>/dev/null || true
           if [ -d radar/live ]; then git add radar/live; fi
           git diff --cached --quiet && exit 0
           git config user.name "github-actions[bot]"

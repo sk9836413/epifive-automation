@@ -1,0 +1,84 @@
+{
+ "generated": "2026-11-19T04:59:51.747Z",
+ "services": {
+  "microsoft-365": [
+   {
+    "time": "2026-11-17T00:08:41.000Z",
+    "headline": "High volume phishing campaign uses Microsoft 365 outage lures to target multiple industry sectors",
+    "source": "Microsoft Security Blog",
+    "url": "https://www.microsoft.com/en-us/security/blog/2026/11/16/high-volume-phishing-campaign-uses-microsoft-365-outage-lures-target-multiple-industry-sectors-2/",
+    "reported": false,
+    "live": "/news/live/2026-11-17#u-61cc4914",
+    "post": "microsoft-365-outage-november-2026-root-cause-it-admin-lessons"
+   },
+   {
+    "time": "2026-11-14T03:51:29.300Z",
+    "headline": "Users may be unable to access or perform several actions in Microsoft 365 services",
+    "source": "Microsoft 365 consumer status (status.cloud.microsoft)",
+    "url": "https://status.cloud.microsoft/#2026-11-14-users-may-be-unable-to-access-or-perform-several-actions-in-",
+    "reported": false,
+    "live": "/news/live/2026-11-14#u-8f56716a",
+    "post": "microsoft-365-outage-november-2026-what-to-do"
+   }
+  ],
+  "outlook": [
+   {
+    "time": "2026-11-17T00:08:41.000Z",
+    "headline": "High volume phishing campaign uses Microsoft 365 outage lures to target multiple industry sectors",
+    "source": "Microsoft Security Blog",
+    "url": "https://www.microsoft.com/en-us/security/blog/2026/11/16/high-volume-phishing-campaign-uses-microsoft-365-outage-lures-target-multiple-industry-sectors-2/",
+    "reported": false,
+    "live": "/news/live/2026-11-17#u-61cc4914",
+    "post": "microsoft-365-outage-november-2026-root-cause-it-admin-lessons"
+   },
+   {
+    "time": "2026-11-14T03:51:29.300Z",
+    "headline": "Users may be unable to access or perform several actions in Microsoft 365 services",
+    "source": "Microsoft 365 consumer status (status.cloud.microsoft)",
+    "url": "https://status.cloud.microsoft/#2026-11-14-users-may-be-unable-to-access-or-perform-several-actions-in-",
+    "reported": false,
+    "live": "/news/live/2026-11-14#u-8f56716a",
+    "post": "microsoft-365-outage-november-2026-what-to-do"
+   }
+  ],
+  "teams": [
+   {
+    "time": "2026-11-17T00:08:41.000Z",
+    "headline": "High volume phishing campaign uses Microsoft 365 outage lures to target multiple industry sectors",
+    "source": "Microsoft Security Blog",
+    "url": "https://www.microsoft.com/en-us/security/blog/2026/11/16/high-volume-phishing-campaign-uses-microsoft-365-outage-lures-target-multiple-industry-sectors-2/",
+    "reported": false,
+    "live": "/news/live/2026-11-17#u-61cc4914",
+    "post": "microsoft-365-outage-november-2026-root-cause-it-admin-lessons"
+   },
+   {
+    "time": "2026-11-14T03:51:29.300Z",
+    "headline": "Users may be unable to access or perform several actions in Microsoft 365 services",
+    "source": "Microsoft 365 consumer status (status.cloud.microsoft)",
+    "url": "https://status.cloud.microsoft/#2026-11-14-users-may-be-unable-to-access-or-perform-several-actions-in-",
+    "reported": false,
+    "live": "/news/live/2026-11-14#u-8f56716a",
+    "post": "microsoft-365-outage-november-2026-what-to-do"
+   }
+  ],
+  "azure": [],
+  "aws": [
+   {
+    "time": "2026-11-15T13:15:45.000Z",
+    "headline": "Service impact: Increased Connectivity issues in US-EAST-1",
+    "source": "AWS Health Dashboard RSS (all services)",
+    "url": "https://status.aws.amazon.com/#2026-11-15-multipleservices-us-east-1-service-impact-increased-conne",
+    "reported": false,
+    "live": "/news/live/2026-11-15#u-0407fff6",
+    "post": "aws-us-east-1-outage-november-2026-what-to-do"
+   }
+  ],
+  "google-workspace": [],
+  "gmail": [],
+  "google-cloud": [],
+  "cloudflare": [],
+  "github": [],
+  "chatgpt": [],
+  "slack": []
+ }
+}
