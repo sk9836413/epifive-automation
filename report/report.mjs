@@ -277,6 +277,7 @@ async function metaSection(name, prefix, igVar, key, prev) {
         }
         items.push({ text: `${dayLabel(istDate(new Date(m.timestamp)))} ${m.media_product_type === 'REELS' ? 'Reel' : 'Post'}: ${fmt(m.like_count)} likes, ${fmt(m.comments_count)} comments${views} - ${short(m.caption, 60)}`, href: m.permalink });
       }
+      if (insightsErr) items.push({ text: `IG plays/views nahi mile: ${/permission/i.test(insightsErr) ? 'token me instagram_manage_insights permission nahi hai' : insightsErr}` });
     } catch (e) {
       items.push({ heading: 'Instagram' }, { text: `data nahi mila (${clean(e.message)})` });
     }
