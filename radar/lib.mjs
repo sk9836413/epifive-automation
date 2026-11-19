@@ -567,9 +567,14 @@ export const INCIDENT = /\b(breach(ed|es)?|leak(s|ed)?|hack(s|ed|ers?)?|compromi
 export const MAJOR_PLATFORM = /\b(github|npm|pypi|microsoft 365|office 365|m365|outlook|exchange online|sharepoint|onedrive|microsoft teams|azure|entra|windows|google|gmail|chrome|android|apple|iphone|ios|macos|whatsapp|chatgpt|openai|claude|instagram|facebook|meta|aws|cloudflare|okta|salesforce|zoom|slack|telegram)\b/i;
 // Indian banks, payments and identity (+5): the consumer incidents Indian readers search for.
 export const INDIA_INCIDENT = /\b(sbi|state bank of india|hdfc bank|icici bank|axis bank|kotak|au small finance|small finance bank|punjab national bank|pnb|bank of baroda|canara bank|union bank of india|yes bank|indusind|idfc first|indian banks?|paytm|phonepe|bhim|upi|npci|aadhaar|uidai|digilocker|pan card|cert-in|reserve bank of india|rbi|airtel|jio|bsnl|irctc)\b/i;
+// Widely deployed software/runtimes: a critical, remotely exploitable flaw here hits many readers even if
+// nothing is exploited yet (Java4Shell, 17 Nov 2026, scored 8 and was missed). Only boosted together with SEVERE.
+export const WIDE_SOFTWARE = /\b(java|openjdk|jdk|jre|\w*4shell|log4j|openssl|openssh|linux kernel|glibc|sudo|php|python|node\.?js|apache|tomcat|nginx|spring( boot| framework)?|jenkins|jira|confluence|kubernetes|docker|vmware|esxi|vcenter|fortinet|fortigate|fortios|cisco|palo alto|pan-os|citrix|netscaler|ivanti|sonicwall|exchange server|sharepoint server|manageengine|zoho|wordpress)\b/i;
+const SEVERE = /\b(critical|cvss (score )?(9|10)(\.\d)?|remote code execution|rce|pre-auth\w*|unauthenticated|wormable)\b|\b\w+(4shell|bleed)\b/i;
+const GOV_ALERT = /\b(cisa (urges|warns|orders|adds|issues)|emergency directive|known exploited vulnerabilities|kev catalog|cert-in (warns|advisory|issues)|ncsc (warns|alert))\b/i;
 const SCALE = /\b\d+(\.\d+)?\+?\s*(million|billion|lakh|crore)\b|\b\d{1,3}(,\d{3})+\+?\s*(\w+\s)?(users|accounts|customers|repositor(y|ies)|repos|records|people|devices|sites|servers|packages|organi[sz]ations)\b/i;
 // What a reader has to do: patch, rotate, reset, check... (explicit), or user data/credentials were exposed (implied).
-export const USER_ACTION = /\b(patch(es|ed)?|update (now|immediately|to)|emergency (update|patch)|security updates?|fix(es|ed)?|rotate|revok(e|ed)|reset (your |their )?passwords?|change (your |their )?passwords?|enable (2fa|mfa|two[- ]factor)|check (if|whether|your)|are you affected|urg(es|ed) (users|customers)|warns? (users|customers)|advis(es|ory)|mitigat\w*|workaround|indicators of compromise|iocs?|uninstall|remove)\b/i;
+export const USER_ACTION = /\b(patch(es|ed|ing)?|update (now|immediately|to)|emergency (update|patch)|security updates?|fix(es|ed)?|rotate|revok(e|ed)|reset (your |their )?passwords?|change (your |their )?passwords?|enable (2fa|mfa|two[- ]factor)|check (if|whether|your)|are you affected|urg(es|ed) (users|customers)|warns? (users|customers)|advis(es|ory)|mitigat\w*|workaround|indicators of compromise|iocs?|uninstall|remove)\b/i;
 const AFFECTED = /\b(customers?|users?|accounts?|account holders|subscribers|developers?|repositor(y|ies)|repos|maintainers|patients|records)\b/i;
 const EXPOSURE = /\b(breach|leak|stolen|steal|hijack|compromis|exposed|exposure|dark web|ransomware|phishing)/i;
 const EXPLOITED = /\b(zero[- ]days?|0-days?|exploited|under (active )?attack|mass exploitation)\b/i;
@@ -625,6 +630,8 @@ function scoreSecurity(item, source, { now = Date.now(), freshHours = 36 } = {})
   if (india) add(5, `India banking/payments/identity "${text.match(INDIA_INCIDENT)[0]}"`);
   if (SCALE.test(text)) add(2, `large scale "${text.match(SCALE)[0]}"`);
   if (exploited) add(2, `exploited "${text.match(EXPLOITED)[0]}"`);
+  if (WIDE_SOFTWARE.test(text) && SEVERE.test(text)) add(5, `critical flaw in widely used software "${text.match(WIDE_SOFTWARE)[0]}" / "${text.match(SEVERE)[0]}"`);
+  if (GOV_ALERT.test(text)) add(2, `government alert "${text.match(GOV_ALERT)[0]}"`);
   if (action) add(2, `user action "${text.match(USER_ACTION)[0]}"`);
   else add(1, 'user data or credentials exposed');
   if (INCIDENT_NOISE.test(title)) add(-5, `not an incident report "${title.match(INCIDENT_NOISE)[0]}"`);

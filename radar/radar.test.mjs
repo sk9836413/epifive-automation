@@ -875,3 +875,10 @@ test('radar.mjs video-plan reads the article and the long video log from the sit
   assert.match(run('2030-01-02T04:00:00Z').reason, /not a fix\/how-to/);
   fs.rmSync(site, { recursive: true, force: true });
 });
+
+test('a critical RCE in widely used software clears the threshold even before exploitation (Java4Shell miss, 17 Nov 2026)', () => {
+  const j = scoreIncident(item({ title: 'Oracle to Patch 11 Java Flaws Today as Critical OpenJDK RCE (CVE-2026-114938) Report Emerges' }), thn, { now: NOW });
+  const c = scoreIncident(item({ title: 'CISA Urges Immediate Patching of Java4Shell Flaw That Could Allow Remote Code Execution' }), thn, { now: NOW });
+  assert.ok(j.score >= 10, j.reasons.join('; '));
+  assert.ok(c.score >= 10, c.reasons.join('; '));
+});
