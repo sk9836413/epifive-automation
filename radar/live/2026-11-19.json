@@ -2,7 +2,7 @@
  "date": "2026-11-19",
  "title": "Tech news today, 19 November 2026",
  "published": "2026-11-19T00:28:31.694Z",
- "updated": "2026-11-19T16:50:20.454Z",
+ "updated": "2026-11-19T23:16:35.731Z",
  "items": [
   {
    "id": "a896af99",
@@ -29,7 +29,8 @@
     "deepmind-blog",
     "google-keyword",
     "techmeme",
-    "GitHub Changelog"
+    "GitHub Changelog",
+    "GSMArena news"
    ],
    "post": "gemini-4-neon-use-pricing-availability",
    "device": null,
@@ -1187,7 +1188,7 @@
    "time": "2026-11-19T16:28:23.000Z",
    "seen": "2026-11-19T16:50:20.454Z",
    "kind": "security",
-   "tier": 2,
+   "tier": 1,
    "headline": "PHP security updates fix 18 flaws, including critical RCE bugs",
    "summary": "The PHP development team released security updates addressing 18 vulnerabilities, including critical flaws that could allow unauthenticated attackers to remotely execute code on vulnerable servers. [...]",
    "lines": [
@@ -1387,5 +1388,5 @@
    "story": null
   }
  ],
- "description": "48 technology updates from official sources, updated hourly: Introducing Gemini 4 Neon; PHP Fixes 7 Critical Flaws, Including Bugs That Could Allow Remote Code Execution; PHP security updates fix 18 flaws, including critical RCE bugs."
+ "description": "48 technology updates from official sources, updated hourly: Introducing Gemini 4 Neon; PHP security updates fix 18 flaws, including critical RCE bugs; PHP Fixes 7 Critical Flaws, Including Bugs That Could Allow Remote Code Execution."
 }

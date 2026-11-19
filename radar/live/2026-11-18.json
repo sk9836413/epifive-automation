@@ -2,7 +2,7 @@
  "date": "2026-11-18",
  "title": "Tech news today, 18 November 2026",
  "published": "2026-11-17T19:18:54.800Z",
- "updated": "2026-11-19T16:50:20.454Z",
+ "updated": "2026-11-19T23:16:35.731Z",
  "items": [
   {
    "id": "289cf95a",
@@ -1877,7 +1877,7 @@
    "sourceId": "bleepingcomputer",
    "reported": true,
    "also": [],
-   "post": null,
+   "post": "apache-roller-cve-2026-129448-exploited-what-to-do",
    "device": null,
    "ai": null,
    "score": 9,

@@ -1,0 +1,708 @@
+{
+ "date": "2026-11-20",
+ "title": "Tech news today, 20 November 2026",
+ "published": "2026-11-19T23:16:35.731Z",
+ "updated": "2026-11-19T23:16:35.731Z",
+ "items": [
+  {
+   "id": "9d95f41a",
+   "key": "https://blogs.windows.com/msedgedev/2026/11/19/hybrid-intelligence-on-the-web-introducing-aion-instruct-and-prompt-api-in-microsoft-edge",
+   "time": "2026-11-19T23:08:46.000Z",
+   "seen": "2026-11-19T23:16:35.731Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Hybrid intelligence on the Web: Introducing Aion Instruct and Prompt API in Microsoft Edge",
+   "summary": "Rapidly evolving AI capabilities are redefining what sites can do for users on the web. With on-device AI in Microsoft The post Hybrid intelligence on the Web: Introducing Aion Instruct and Prompt API in Microsoft Edge appeared first on Windows Blog .",
+   "lines": [
+    "Microsoft introduced Aion Instruct and the Prompt API in Microsoft Edge.",
+    "The announcement says rapidly evolving AI capabilities are changing what websites can do for users, with on-device AI as a factor.",
+    "Relevant for IT teams that manage Edge and for developers building AI-enabled websites."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Windows Blog",
+    "url": "https://blogs.windows.com/msedgedev/2026/11/19/hybrid-intelligence-on-the-web-introducing-aion-instruct-and-prompt-api-in-microsoft-edge/"
+   },
+   "sourceId": "windows-blog",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "6af9e2be",
+   "key": "https://blog.google/innovation-and-ai/products/gemini-app/switch-ai-assistants-transfer-history",
+   "time": "2026-11-19T20:30:00.000Z",
+   "seen": "2026-11-19T23:16:35.731Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "ICYMI: Transfer your history from other AI apps into Gemini",
+   "summary": "Transfer your chat history into Gemini. Import your ZIP files and AI summaries to continue conversations seamlessly. Get the details.",
+   "lines": [
+    "Google's Gemini app lets users transfer chat history from other AI apps into Gemini.",
+    "Users can import ZIP files and AI summaries to continue existing conversations in Gemini.",
+    "Business users who work across several AI tools may be able to keep conversation context in one place."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google: Gemini app blog",
+    "url": "https://blog.google/innovation-and-ai/products/gemini-app/switch-ai-assistants-transfer-history/"
+   },
+   "sourceId": "gemini-blog",
+   "reported": false,
+   "also": [
+    "google-keyword"
+   ],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "5bd3c7c4",
+   "key": "https://workspaceupdates.googleblog.com/2026/11/email-meeting-guests-from-google-Calendar-with-the-full-capabilities-of-Gmail.html",
+   "time": "2026-11-19T18:00:50.651Z",
+   "seen": "2026-11-19T23:16:35.731Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Email meeting guests from Google Calendar with the full capabilities of Gmail",
+   "summary": "To make it easier to send well-formatted meeting updates, share agendas, and verify Google Drive file access before sending, we’re updating the Email guests flow in Google Calendar on the web to open a native Gmail compose window directly from Calendar. This provides the feature set of Gmail, including the ability to: Customize recipients by RSVP status and swap in calendar delegates: In the updated “Email guests” dialog in Calendar, you can choose which attendee groups to include (Yes, No, Maybe, Awaiting response, and Send copy to me) and preview or copy the recipient list. Building on our recent launch that surfaces supporting calendar delegates in the meeting guest list , if invited lead",
+   "lines": [
+    "Google Calendar on the web now opens a native Gmail compose window from the Email guests flow.",
+    "The updated dialog lets users choose attendee groups by RSVP status: Yes, No, Maybe, Awaiting response, and Send copy to me.",
+    "Users can preview or copy the recipient list, and can include calendar delegates in the guest list.",
+    "Meeting organizers can send formatted updates, share agendas, and verify Google Drive file access before sending."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google Workspace Updates",
+    "url": "http://workspaceupdates.googleblog.com/2026/11/email-meeting-guests-from-google-Calendar-with-the-full-capabilities-of-Gmail.html"
+   },
+   "sourceId": "workspace-updates",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "66d24f54",
+   "key": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval",
+   "time": "2026-11-19T18:00:00.000Z",
+   "seen": "2026-11-19T23:16:35.731Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Introducing Tool Retrieval in the Gemini API",
+   "summary": "Give your agents access to hundreds of tools while using fewer tokens with Tool Retrieval, now in preview in the Gemini API.",
+   "lines": [
+    "Google introduced Tool Retrieval in the Gemini API, now in preview.",
+    "Tool Retrieval gives agents access to hundreds of tools while using fewer tokens."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google: The Keyword",
+    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/"
+   },
+   "sourceId": "google-keyword",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "d4590d03",
+   "key": "https://github.blog/changelog/2026-11-19-enterprise-live-migrations-from-azure-devops-generally-available",
+   "time": "2026-11-19T18:50:57.000Z",
+   "seen": "2026-11-19T23:16:35.731Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Enterprise Live Migrations from Azure DevOps generally available",
+   "summary": "Enterprise Live Migrations (ELM) from Azure DevOps Services to GitHub Enterprise Cloud with data residency is now generally available. You can move your repositories while your teams keep working, then… The post Enterprise Live Migrations from Azure DevOps generally available appeared first on The GitHub Blog .",
+   "lines": [
+    "Enterprise Live Migrations (ELM) from Azure DevOps Services to GitHub Enterprise Cloud with data residency is now generally available.",
+    "Teams can move their repositories while their teams keep working.",
+    "IT teams planning a move from Azure DevOps to GitHub Enterprise Cloud can use this migration option."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "GitHub Changelog",
+    "url": "https://github.blog/changelog/2026-11-19-enterprise-live-migrations-from-azure-devops-generally-available"
+   },
+   "sourceId": "github-changelog",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "11dc8a65",
+   "key": "https://github.blog/changelog/2026-11-19-red-hat-enterprise-linux-runner-images-now-generally-available",
+   "time": "2026-11-19T18:48:46.000Z",
+   "seen": "2026-11-19T23:16:35.731Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Red Hat Enterprise Linux runner images now generally available",
+   "summary": "Red Hat Enterprise Linux (RHEL) 9 and RHEL 10 images for GitHub-hosted larger runners are now generally available. Originally introduced in public preview in June 2026 in partnership with Red… The post Red Hat Enterprise Linux runner images now generally available appeared first on The GitHub Blog .",
+   "lines": [
+    "Red Hat Enterprise Linux 9 and RHEL 10 images for GitHub-hosted larger runners are now generally available.",
+    "The images were first introduced in public preview in June 2026, in partnership with Red Hat.",
+    "DevOps teams that need RHEL-based build environments on GitHub-hosted runners can use these images."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "GitHub Changelog",
+    "url": "https://github.blog/changelog/2026-11-19-red-hat-enterprise-linux-runner-images-now-generally-available"
+   },
+   "sourceId": "github-changelog",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "e45eb5eb",
+   "key": "https://mc.merill.net/message/MC1560705",
+   "time": "2026-11-19T18:05:43.000Z",
+   "seen": "2026-11-19T23:16:35.731Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1560705: The November 2026 Windows non-security preview update is now available",
+   "summary": "The November 2026 non-security preview update is now available for Windows 11, versions 26H2, 26H1, and 25H2. Information about the contents of this update is available in the release notes, which are accessible from the Windows 11 update history page. To learn more about the different types of monthly quality updates, see Understanding Windows monthly updates. Highlights for the Windows 11, version 26H2 update:Windows Search has a streamlined design with a single results list, file previews, an...",
+   "lines": [
+    "The November 2026 non-security preview update is now available for Windows 11 versions 26H2, 26H1, and 25H2.",
+    "Release notes are available from the Windows 11 update history page.",
+    "For version 26H2, highlights include a streamlined Windows Search design with a single results list and file previews.",
+    "IT admins can review the release notes before planning deployment of this preview update."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1560705"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "217067ab",
+   "key": "https://nvidianews.nvidia.com/news/nvidia-announces-upcoming-event-for-financial-community-6929322",
+   "time": "2026-11-19T22:00:00.000Z",
+   "seen": "2026-11-19T23:16:35.731Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "NVIDIA Announces Upcoming Event for Financial Community",
+   "summary": "NVIDIA will present at the following event for the financial community NVIDIA Expands Commitments With Supply Chain Partners to Support AI Infrastructure Buildout NVIDIA Announces Financial Results for Third Quarter Fiscal 2027 NVIDIA Board of Directors Establishes National Security and Export Control Oversight Committee NVIDIA Introduces Nemotron for Science to Accelerate Discoveries With Agents NVIDIA Expands Vera CPU Platform to Accelerate Scientific Discovery",
+   "lines": [
+    "NVIDIA will present at an upcoming event for the financial community.",
+    "The same page lists other recent NVIDIA items, including financial results for third quarter fiscal 2027 and the Nemotron for Science introduction."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "NVIDIA Newsroom",
+    "url": "https://nvidianews.nvidia.com/news/nvidia-announces-upcoming-event-for-financial-community-6929322"
+   },
+   "sourceId": "nvidia-news",
+   "sourceMax": 4,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "8d389b48",
+   "key": "https://mc.merill.net/message/MC1551151",
+   "time": "2026-11-19T21:12:52.000Z",
+   "seen": "2026-11-19T23:16:35.731Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1551151: Microsoft Entra ID: Risk-based anti-bot verification (CAPTCHA) for SMS and voice multi-factor authentication",
+   "summary": "Starting mid-November 2026, Microsoft Entra ID will add risk-based CAPTCHA verification for SMS and voice MFA to prevent automated fraud. Some users may need to complete CAPTCHA before receiving codes or calls. Organizations should prepare help desks, notify users, and ensure network readiness, while continuing to adopt phishing-resistant methods.",
+   "lines": [
+    "Microsoft Entra ID will add risk-based CAPTCHA verification for SMS and voice multi-factor authentication, starting mid-November 2026.",
+    "Some users may need to complete a CAPTCHA before receiving codes or calls, to prevent automated fraud.",
+    "Organizations should prepare help desks, notify users, ensure network readiness, and keep adopting phishing-resistant methods."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1551151"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "da8416a0",
+   "key": "https://mc.merill.net/message/MC1535647",
+   "time": "2026-11-19T19:35:11.000Z",
+   "seen": "2026-11-19T23:16:35.731Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1535647: Microsoft Copilot app: Updates to Home and navigation",
+   "summary": "Microsoft Copilot app updates include a new Home with integrated Chat, Cowork, Projects, and Workspaces. Projects organize related tasks and files without storing content, available on major platforms. Workspaces replace Notebooks for team collaboration. Rollout starts late October 2026; licensing and billing configurations affect access.",
+   "lines": [
+    "The Microsoft Copilot app adds a new Home with integrated Chat, Cowork, Projects, and Workspaces.",
+    "Workspaces replace Notebooks for team collaboration, and Projects organize related tasks and files without storing content.",
+    "Rollout starts in late October 2026, and licensing and billing configurations affect access.",
+    "IT admins should check licensing and billing settings, since they determine who can access these features."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1535647"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "08c458f4",
+   "key": "https://mc.merill.net/message/MC1479503",
+   "time": "2026-11-19T17:17:03.000Z",
+   "seen": "2026-11-19T23:16:35.731Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1479503: Microsoft Defender for Cloud Apps: Permission changes for select App Governance Entra roles",
+   "summary": "Microsoft Defender for Cloud Apps is updating App Governance permissions for select Microsoft Entra roles with Unified RBAC support, rolling out December 2026. Cloud App Security Administrators gain policy management rights; Compliance Administrators and Compliance Data Administrators lose some permissions. Admins should review and update role assignments accordingly.",
+   "lines": [
+    "Microsoft Defender for Cloud Apps is updating App Governance permissions for select Microsoft Entra roles, with Unified RBAC support.",
+    "The change rolls out in December 2026.",
+    "Cloud App Security Administrators gain policy management rights, while Compliance Administrators and Compliance Data Administrators lose some permissions.",
+    "Admins should review and update role assignments accordingly."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1479503"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "661d024e",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/marketplace-agentic-payments-agentcore",
+   "time": "2026-11-19T21:30:00.000Z",
+   "seen": "2026-11-19T23:16:35.731Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "AWS Marketplace now supports agentic payments with AgentCore",
+   "summary": "AWS Marketplace now supports agentic payments over the x402 protocol, so AI agents can discover and buy select products and pay per request in US dollars through AgentCore payments, part of Amazon Bedrock AgentCore. Agents often need paid APIs, data, or content mid-task, but access usually requires a person to sign up, add a payment method, and create an API key. With agentic payments, customers skip that per-seller setup, and charges settle on their existing AWS bill with no crypto wallet required. Customers enable the AWS Marketplace payment connector in AgentCore payments, then they or their agents find listings through the AWS Marketplace connector in AgentCore Gateway. For example, a re",
+   "lines": [
+    "AWS Marketplace now supports agentic payments over the x402 protocol, so AI agents can discover and buy select products.",
+    "Agents pay per request in US dollars through AgentCore payments, part of Amazon Bedrock AgentCore.",
+    "Charges settle on the existing AWS bill, and no crypto wallet is required.",
+    "Customers enable the AWS Marketplace payment connector in AgentCore payments, then find listings through the connector in AgentCore Gateway."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/marketplace-agentic-payments-agentcore/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "030c7e92",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/lambda-durable-otel",
+   "time": "2026-11-19T20:00:00.000Z",
+   "seen": "2026-11-19T23:16:35.731Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "AWS Lambda durable functions now supports OpenTelemetry tracing",
+   "summary": "AWS Lambda announces OpenTelemetry (OTel) support for Lambda durable functions. You can now trace your durable executions and emit traces to Amazon CloudWatch and other industry-standard observability tools. This helps you find bottlenecks in your system, root cause failures faster, and understand how your workflows behave in production. With Lambda durable functions, you can build resilient, multi-step applications and AI workflows that run for up to one year, with built-in checkpointing and automatic retries. Durable functions can run for hours, or days, suspending and resuming across many Lambda invocations. The new OpenTelemetry plugin emits a unified trace that spans a full durable exec",
+   "lines": [
+    "AWS Lambda now supports OpenTelemetry (OTel) tracing for Lambda durable functions.",
+    "Traces can be sent to Amazon CloudWatch and other industry-standard observability tools.",
+    "Durable functions can run for up to one year, with built-in checkpointing and automatic retries.",
+    "Teams can use the traces to find bottlenecks and root-cause failures in multi-step workflows in production."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/lambda-durable-otel/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "0b801b8d",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/route-53-private-endpoint-health-checks",
+   "time": "2026-11-19T19:50:00.000Z",
+   "seen": "2026-11-19T23:16:35.731Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Amazon Route 53 now supports health checks for private endpoints",
+   "summary": "Amazon Route 53 now offers Private Endpoint Health Checks, enabling business-critical workloads that never touch the public internet, such as internal APIs, databases, and self-hosted nodes behind internal load balancers or in private subnets, to use native health monitoring and automatic DNS failover. Customers can health-check any reachable private target by IP address, domain, or port over HTTP, HTTPS, or TCP. Customers can associate these health checks with Route 53 DNS records across routing policies in private hosted zones, so Route 53 routes traffic only to healthy endpoints and manages failover automatically. Previously, teams built custom control loops using Amazon CloudWatch alarms",
+   "lines": [
+    "Amazon Route 53 now offers Private Endpoint Health Checks for workloads that do not use the public internet.",
+    "Health checks can target a private IP address, domain, or port over HTTP, HTTPS, or TCP.",
+    "Route 53 can associate these health checks with DNS records in private hosted zones, routing traffic only to healthy endpoints.",
+    "Teams can use native health monitoring and automatic DNS failover instead of building custom control loops with CloudWatch alarms."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/route-53-private-endpoint-health-checks/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "347cb724",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-30-minute-ondemand-event-functions",
+   "time": "2026-11-19T19:00:00.000Z",
+   "seen": "2026-11-19T23:16:35.731Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "AWS Lambda now supports a 30-minute timeout for on-demand Event Functions",
+   "summary": "AWS Lambda now supports a 30-minute function timeout for Event Functions that run on demand, doubling the 15-minute limit for synchronous , asynchronous , and event source mapping (ESM) invocations. On Lambda Managed Instances , synchronous invocations also support up to 30 minutes, while asynchronous and ESM invocations keep the 90-minute timeout launched in September 2026. You can now run long-running workloads such as AI inference, media transcoding, and financial calculations for spiky or steady-state traffic without re-architecting your applications. Customers use Event Functions to build event-driven processors, API backends, and data pipelines. By default, Event Functions run on deman",
+   "lines": [
+    "AWS Lambda now supports a 30-minute function timeout for on-demand Event Functions, up from the 15-minute limit.",
+    "On Lambda Managed Instances, synchronous invocations also support up to 30 minutes, while asynchronous and ESM invocations keep the 90-minute timeout launched in September 2026.",
+    "Teams can run long workloads such as AI inference, media transcoding, and financial calculations without re-architecting their applications."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-30-minute-ondemand-event-functions/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "0cd8ce1b",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-elemental-mediatailor-dynamic-avail-sizing-live-hls",
+   "time": "2026-11-19T18:00:00.000Z",
+   "seen": "2026-11-19T23:16:35.731Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "AWS Elemental MediaTailor adds Dynamic Avail Sizing for live HLS",
+   "summary": "AWS Elemental MediaTailor now supports Dynamic Avail Sizing, which reduces the slate viewers see when ad breaks, also called avails, in live HLS streams go unfilled. MediaTailor is a server-side ad insertion and channel assembly service that personalizes ads in live and on-demand video streams. When the ad decision server returns fewer ads than a break allows, dynamic avail sizing omits the unfilled time and resumes programming early instead of showing slate. To keep playback continuous, MediaTailor holds back a configurable reserve of content behind the live edge and draws on it when a break ends early. When the reserve runs low, MediaTailor requests extra ad time in later breaks to refill",
+   "lines": [
+    "AWS Elemental MediaTailor now supports Dynamic Avail Sizing for live HLS streams.",
+    "When fewer ads are returned than a break allows, the unfilled time is omitted and programming resumes early instead of showing slate.",
+    "A configurable reserve of content behind the live edge keeps playback continuous, and extra ad time is requested in later breaks when the reserve runs low."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-elemental-mediatailor-dynamic-avail-sizing-live-hls"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "9a7e8916",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/cognito-secrets-manager-integration",
+   "time": "2026-11-19T18:00:00.000Z",
+   "seen": "2026-11-19T23:16:35.731Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Amazon Cognito now supports AWS Secrets Manager for app client secrets",
+   "summary": "Amazon Cognito now integrates with AWS Secrets Manager , so you can store and manage your user pool app client secrets in Secrets Manager. Amazon Cognito helps you implement secure sign-in and access control for users, AI agents, and microservices in minutes. An app client secret authenticates your application to Cognito. Previously, you had to manage and rotate these secrets in Cognito directly. With this integration, you can leverage Secrets Manager for capabilities including rotation, access control with AWS Identity and Access Management (IAM) policies, and encryption with an AWS managed key or your own AWS Key Management Service (AWS KMS) customer managed key. This can help with periodi",
+   "lines": [
+    "Amazon Cognito now integrates with AWS Secrets Manager, so user pool app client secrets can be stored and managed there.",
+    "Previously, these secrets were managed and rotated directly in Cognito.",
+    "Secrets Manager adds rotation, access control with IAM policies, and encryption with an AWS managed key or a customer managed AWS KMS key."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/cognito-secrets-manager-integration/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "89123559",
+   "key": "https://azure.microsoft.com/updates?id=581254",
+   "time": "2026-11-19T20:34:19.000Z",
+   "seen": "2026-11-19T23:16:35.731Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "[In preview] Public Preview: Zone resilience for Azure VMs",
+   "summary": "Zone resilience for Azure VMs, now in public preview, lets you recover an eligible zonal VM in another availability zone in the same region, retaining the existing VM resource and configuration.ZRS managed disks replicate data synchronously across zones b",
+   "lines": [
+    "Zone resilience for Azure VMs is now in public preview.",
+    "It lets customers recover an eligible zonal VM in another availability zone in the same region.",
+    "The existing VM resource and configuration are retained."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Azure Updates",
+    "url": "https://azure.microsoft.com/updates?id=581254"
+   },
+   "sourceId": "azure-updates",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "74aa58e2",
+   "key": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQZU5sX0RGV3RBdlRyREJNbmhKOTlNU240c0N2QUpZQlkxLTJvTTR5LXJVOS1hcmNwN3MzYmNBcjhIalc3NnFLZWtyQ1cxdnJUVG1pWFpsQndVMzJsQTVhWXpyRVFnVElmSW1xSVdPeVdoLUF4VmNad01pVTcwUmtzdlJ6NUx1QnQ1bVFjaUppRUllazF5R284dmxmZmxVcVdLVEJ6OTg4ZzIyczBIaVBkYzI0THdhR3hPb0dSNW44X2JTRVY0SUgwZVFILXBDNVk?oc=5",
+   "time": "2026-11-19T15:29:43.000Z",
+   "seen": "2026-11-19T23:16:35.731Z",
+   "kind": "outage",
+   "topic": "infra-outage",
+   "tier": 2,
+   "trending": true,
+   "trendKey": "infra-outage:aviation",
+   "techmeme": false,
+   "headline": "US plans to announce cause of outage that led to nationwide ground stop, FAA says",
+   "summary": "",
+   "lines": [
+    "Reported by Reuters: The US plans to announce the cause of an outage that led to a nationwide ground stop, the FAA says.",
+    "Bloomberg and CNN also reported on the story."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQZU5sX0RGV3RBdlRyREJNbmhKOTlNU240c0N2QUpZQlkxLTJvTTR5LXJVOS1hcmNwN3MzYmNBcjhIalc3NnFLZWtyQ1cxdnJUVG1pWFpsQndVMzJsQTVhWXpyRVFnVElmSW1xSVdPeVdoLUF4VmNad01pVTcwUmtzdlJ6NUx1QnQ1bVFjaUppRUllazF5R284dmxmZmxVcVdLVEJ6OTg4ZzIyczBIaVBkYzI0THdhR3hPb0dSNW44X2JTRVY0SUgwZVFILXBDNVk?oc=5"
+   },
+   "sourceId": "gnews-infra",
+   "sourceMax": 4,
+   "reported": true,
+   "also": [
+    "Bloomberg",
+    "CNN"
+   ],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 12,
+   "story": "trend:infra-outage:aviation"
+  },
+  {
+   "id": "36f7e5da",
+   "key": "https://bleepingcomputer.com/news/security/hackers-steal-data-of-16-million-sbc-medical-group-customers",
+   "time": "2026-11-19T22:25:42.000Z",
+   "seen": "2026-11-19T23:16:35.731Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Hackers steal data of 1.6 million SBC Medical Group customers",
+   "summary": "SBC Medical Group has warned in a filing with the U.S. Securities and Exchange Commission (SEC) that two cybersecurity incidents exposed sensitive customer and employee information, including personal data belonging to 1.6 million people. [...]",
+   "lines": [
+    "Reported by BleepingComputer: SBC Medical Group warned in an SEC filing that two cybersecurity incidents exposed sensitive customer and employee information.",
+    "The exposed information includes personal data belonging to 1.6 million people.",
+    "The disclosure is a reminder for IT teams to review access controls and incident response for customer and employee data."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/hackers-steal-data-of-16-million-sbc-medical-group-customers/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 8,
+   "story": null
+  },
+  {
+   "id": "c852ac46",
+   "key": "https://bleepingcomputer.com/news/security/asus-warns-of-critical-hard-coded-key-flaw-in-control-center-express",
+   "time": "2026-11-19T21:15:59.000Z",
+   "seen": "2026-11-19T23:16:35.731Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "ASUS warns of critical hard-coded key flaw in Control Center Express",
+   "summary": "ASUS released Control Center Express v1.7.29 to fix three critical vulnerabilities that could let remote attackers gain administrative control of the management console and the devices it manages. [...]",
+   "lines": [
+    "Reported by BleepingComputer: ASUS released Control Center Express v1.7.29 to fix three critical vulnerabilities.",
+    "The flaws could let remote attackers gain administrative control of the management console and the devices it manages.",
+    "IT teams that use Control Center Express should check whether v1.7.29 is installed."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/asus-warns-of-critical-hard-coded-key-flaw-in-control-center-express/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null
+  },
+  {
+   "id": "6836fa71",
+   "key": "https://bleepingcomputer.com/news/security/transport-for-london-breach-exposes-265-000-oyster-card-users-data",
+   "time": "2026-11-19T18:20:01.000Z",
+   "seen": "2026-11-19T23:16:35.731Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Transport for London breach exposes 265,000 Oyster card users' data",
+   "summary": "Transport for London (TfL) has announced that around 265,000 Oyster photocard customers may have had their account details exposed in a data breach. [...]",
+   "lines": [
+    "Reported by BleepingComputer: Transport for London (TfL) announced that around 265,000 Oyster photocard customers may have had their account details exposed in a data breach.",
+    "Organizations that hold customer account data may use this incident to review their own breach response plans."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/transport-for-london-breach-exposes-265-000-oyster-card-users-data/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null
+  },
+  {
+   "id": "efc95857",
+   "key": "https://techcrunch.com/2026/11/19/these-tech-outages-are-giving-y2k-ai-agent-style",
+   "time": "2026-11-19T21:42:31.000Z",
+   "seen": "2026-11-19T23:16:35.731Z",
+   "kind": "outage",
+   "tier": 2,
+   "headline": "These tech outages are giving Y2K, AI agent style",
+   "summary": "Are the recent outages in the airline booking systems, banking platforms, and productivity platforms really a coincidence? There's actually likely something deeper going on, cybersecurity experts say.",
+   "lines": [
+    "Reported by TechCrunch: Recent outages affected airline booking systems, banking platforms, and productivity platforms.",
+    "The article quotes cybersecurity experts who say there may be a deeper cause behind the outages, and the text does not identify one."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "TechCrunch",
+    "url": "https://techcrunch.com/2026/11/19/these-tech-outages-are-giving-y2k-ai-agent-style/"
+   },
+   "sourceId": "techcrunch",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "families": [],
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "d22c7e71",
+   "key": "https://thehackernews.com/2026/11/threatsday-gpt-62-jailbreak-flaws.html",
+   "time": "2026-11-19T18:47:58.000Z",
+   "seen": "2026-11-19T23:16:35.731Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "ThreatsDay: GPT-6.2 Jailbreak Flaws, BubbleLoader PNG Malware, $500M Ransom Demands + 17 More Stories",
+   "summary": "The easiest way to fool someone is to give them something they already expect. A job offer. A message about a service outage. A familiar app. Nothing looks strange at first. And that's the problem. This week's stories show how ordinary things are being used to steal data, spread malware, and get people to hand over access. There's another shift worth watching. AI is making some attacks easier",
+   "lines": [
+    "Reported by The Hacker News: This weekly roundup covers GPT-6.2 jailbreak flaws, BubbleLoader PNG malware, and $500M ransom demands, plus 17 more stories.",
+    "The roundup says attackers are using ordinary things, such as job offers and service outage messages, to steal data, spread malware, and gain access."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/threatsday-gpt-62-jailbreak-flaws.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  }
+ ],
+ "description": "24 technology updates from official sources, updated hourly: US plans to announce cause of outage that led to nationwide ground stop, FAA says; Hackers steal data of 1.6 million SBC Medical Group customers; ASUS warns of critical hard-coded key flaw in Control Center Express."
+}
