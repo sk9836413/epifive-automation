@@ -412,6 +412,8 @@ const BUSINESS = /\b(earnings|revenue|profits?|shares?|stocks?|valuation|ipo|fun
 const NOT_YET = /\b(plans? to|planning to|sources( say|:)|considering|in talks|exploring|expected to|is said to|working on|could (launch|release)|may (launch|release))\b/i;
 const SPACE_EV = new Set(['spacex', 'nasa', 'blue-origin', 'waymo', 'tesla']);
 const OUTAGE_READERS = new Set(['payments', 'banking', 'telecom']);
+const IPO_ARTICLE_LABS = new Set(['anthropic', 'openai', 'xai']);
+const IPO_DAY = /\b(prices?d? (its )?(IPO|shares|offering)|IPO pric(e|es|ed|ing)|debut(s|ed)?|begins? trading|starts? trading|first day of trading|shares (jump|soar|surge|open|close|rise|fall)|raises? \$[\d.]+ ?(billion|bn|b)|cashed out|record(-breaking)? IPO)\b/i;
 const AI_WORDS = /\b(AI|artificial intelligence|gen ?AI|LLMs?|models?|agents?|agentic|chatbots?|assistants?|copilot|gemini|chatgpt|claude|llama|grok|inference|tokens?)\b/i;
 const CLOUD_WORDS = /\b(cloud|AWS|Azure|Google Cloud|data ?cent(er|re)s?|servers?|GPUs?|chips?|APIs?|developers?|platforms?|kubernetes|database)\b/i;
 const DEVICE_WORDS = /\b(iphone|ipad|mac|pixel|galaxy|android|ios|watch|phones?|laptops?|tablets?|devices?|headsets?|glasses)\b/i;
@@ -426,6 +428,9 @@ export function articleKind(c) {
   const titles = c.members.map((m) => m.title);
   const majority = (re) => titles.filter((t) => re.test(t)).length * 2 > titles.length;
   if (c.topic === 'security') return { category: 'incident', topic: 'security-identity' };
+  // Owner 20 Nov 2026: the IPO day of an AI lab whose products our readers use (Anthropic, OpenAI, xAI) is article
+  // material ("what it means for Claude/ChatGPT users"). Filings, plans and other companies' IPOs stay news-only.
+  if (c.topic === 'ipo' && IPO_ARTICLE_LABS.has(c.entity) && titles.some((t) => IPO_DAY.test(t))) return { category: 'launch', topic: 'ai-engineering' };
   if (c.topic === 'leadership' || c.topic === 'ipo') return { reject: `business news (${c.topic})` };
   if (titles.some((t) => /\boutages?\b|\b(is|are|went) down\b/i.test(t) && outageFamilies(t).length)) return { reject: 'IT outage (handled by the outage logic)' };
   if (majority(BUSINESS)) return { reject: 'business, finance, policy or legal news' };

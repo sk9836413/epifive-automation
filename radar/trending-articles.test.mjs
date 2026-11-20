@@ -348,3 +348,12 @@ test('sources.json: the official vendor launch feeds added on 20 Nov 2026 are ve
   assert.equal(new Set(cfg.sources.map((s) => s.id)).size, cfg.sources.length);
   assert.ok(cfg.notUsed.some((n) => /azure\.microsoft\.com\/en-us\/blog\/feed/.test(n.url) && /robots/.test(n.reason)));
 });
+
+test('IPO day of an AI lab readers use becomes an article; filings and other IPOs stay news-only (owner 20 Nov 2026)', async () => {
+  const { articleKind } = await import('./trending.mjs');
+  const c = (topic, entity, titles) => ({ topic, entity, members: titles.map((title) => ({ title })) });
+  assert.equal(articleKind(c('ipo', 'anthropic', ["Anthropic's 7 founders cashed out nearly $2B in record-breaking IPO"])).category, 'launch');
+  assert.equal(articleKind(c('ipo', 'openai', ['OpenAI prices IPO at $90 a share'])).category, 'launch');
+  assert.match(articleKind(c('ipo', 'anthropic', ['Anthropic files for IPO on Nasdaq'])).reject, /business news/);
+  assert.match(articleKind(c('ipo', 'spacex', ['SpaceX shares debut on Nasdaq'])).reject, /business news/);
+});
