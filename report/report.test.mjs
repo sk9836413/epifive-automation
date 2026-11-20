@@ -148,3 +148,13 @@ test('LinkedIn token warnings: 7 days before the expiry, and after it', async ()
   assert.match(soon[0], /Page ka token 2026-11-25 ko expire hoga \(4 din baaki\).*linkedin-auth\.mjs page/);
   assert.match(soon[1], /profile ka token .*2026-11-10 ko expire ho gaya.*linkedin-auth\.mjs personal/);
 });
+
+test('missedTrendsLines: the radar\'s missed-trends check for today, or a note that it has not run yet', async () => {
+  const { missedTrendsLines } = await import('./lib.mjs');
+  assert.match(missedTrendsLines({}, '2026-11-20')[0].text, /abhi nahi chala/);
+  assert.match(missedTrendsLines({ missedCheck: { day: '2026-11-19', items: [] } }, '2026-11-20')[0].text, /abhi nahi chala/);
+  const state = { missedCheck: { day: '2026-11-20', checked: 5, covered: 3, items: [{ title: 'Sarvam launches Token Factory', link: 'https://x.test/s', parked: true }, { title: 'Other', link: 'https://x.test/o', parked: false }] } };
+  const lines = missedTrendsLines(state, '2026-11-20');
+  assert.match(lines[0].text, /5 bade items check, 3 already covered, 1 backlog ke top par park, 1 daily cap ke upar/);
+  assert.deepEqual(lines.slice(1).map((l) => [l.text, l.href]), [['Parked: Sarvam launches Token Factory', 'https://x.test/s'], ['Cap ke upar: Other', 'https://x.test/o']]);
+});

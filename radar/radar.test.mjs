@@ -104,7 +104,10 @@ test('Claude for Manufacturing (12 Nov 2026) clears the threshold from claude.co
   const cardOnly = scoreItem(card, source, { now });
   const withDetail = scoreItem({ ...card, detail: pageDetail(MANUFACTURING_PAGE) }, source, { now });
   assert.equal(withDetail.reject, null);
-  assert.ok(cardOnly.score < 10, `card only ${cardOnly.score}`);
+  // Since 20 Nov 2026 the card alone clears the threshold too: "Claude for Manufacturing" is a vertical AI launch.
+  const noFloor = cardOnly.reasons.filter((r) => /vertical AI launch floor/.test(r)).reduce((n, r) => n - Number(r.match(/^\+(\d+)/)[1]), cardOnly.score);
+  assert.ok(noFloor < 10, `card only, without the vertical floor ${noFloor}`);
+  assert.ok(cardOnly.score >= 10 && cardOnly.reasons.some((r) => /vertical AI launch floor "Claude for Manufacturing"/.test(r)), cardOnly.reasons.join('; '));
   assert.ok(withDetail.score >= 10, `with detail ${withDetail.score}: ${withDetail.reasons.join('; ')}`);
   assert.ok(withDetail.reasons.some((r) => r.startsWith(`+${M365_TIE_BOOST} launch works with Microsoft 365`)));
 });

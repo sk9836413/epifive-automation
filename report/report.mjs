@@ -25,7 +25,7 @@ import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import {
   BOT_COUNTRIES, SOURCES, addDays, articlesOn, bucketSources, clean, dayLabel, delta, failedSection, fmt, istDate,
-  istDayBounds, istTime, linkedinTokenNotes, nextDatedBacklog, parseDayPlanLine, pct, previousSnapshot, pruneSnapshot, renderHtml, renderText, seekh, short,
+  istDayBounds, istTime, linkedinTokenNotes, missedTrendsLines, nextDatedBacklog, parseDayPlanLine, pct, previousSnapshot, pruneSnapshot, renderHtml, renderText, seekh, short,
 } from './lib.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -157,7 +157,7 @@ async function articlesSection() {
   const rows = articlesOn(text, DATE);
   site.articles = rows.length;
   log.push(`articles: ok (${rows.length})`);
-  if (!rows.length) return { title, items: [{ text: 'Aaj abhi tak koi article publish nahi hua (log.md me aaj ki line nahi).' }] };
+  if (!rows.length) return { title, items: [{ text: 'Aaj abhi tak koi article publish nahi hua (log.md me aaj ki line nahi).' }, ...radarMissedTrends()] };
   const items = [{ text: `${rows.length} article(s) aaj: ${rows.filter((r) => r.status === 'published').length} daily, ${rows.filter((r) => r.status.startsWith('fast-track')).length} fast-track` }];
   await Promise.all(rows.map(async (r) => {
     try {
@@ -167,7 +167,18 @@ async function articlesSection() {
     } catch { r.title = r.slug; }
   }));
   for (const r of rows) items.push({ text: `${r.title}${r.status === 'published' ? '' : ` [${r.status}]`}`, href: `${SITE}/blog/${r.slug}` });
+  items.push(...radarMissedTrends());
   return { title, items };
+}
+
+// The radar's once-a-day missed-trends check (this repo's radar/state.json; public data, headlines and links only).
+function radarMissedTrends() {
+  try {
+    const state = JSON.parse(fs.readFileSync(path.join(HERE, '..', 'radar', 'state.json'), 'utf8'));
+    return [{ heading: 'Trending topics jo chhoot sakte the' }, ...missedTrendsLines(state, DATE)];
+  } catch (e) {
+    return [{ heading: 'Trending topics jo chhoot sakte the' }, { text: `radar state: data nahi mila (${clean(e.message)})` }];
+  }
 }
 
 // ---------------------------------------------------------------- 3. YouTube

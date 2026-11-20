@@ -21,7 +21,7 @@
 // Own cap (BRIEF.trendingMaxPerDay, 4 a day, enforced in mergeIntoDays); deduplicated against the day pages of the last
 // 3 days and recent articles. Clearly-IT outages (lib.mjs outageFamilies: Microsoft, AWS, Google, ...) do not use this
 // tier: they go through the existing outage logic (scoreOutage).
-import { tokens, normalizeUrl, hashText, stripTags, outageFamilies, sameTopic } from './lib.mjs';
+import { tokens, normalizeUrl, hashText, stripTags, outageFamilies, sameTopic, sameIncident, securityProduct, findCoverage } from './lib.mjs';
 import { BRIEF, TREND_BLOCKED, INVEST_ADVICE, briefHeadline, detectAiModel } from './brief.mjs';
 
 // [canonical name, outlet-name pattern, host pattern]. Order = attribution preference (wire services first).
@@ -47,6 +47,14 @@ export const REPUTABLE = [
   ['ZDNet', /^zdnet$/i, /(^|\.)zdnet\.com$/],
   ['The Register', /^the register$/i, /(^|\.)theregister\.com$/],
   ['BleepingComputer', /^bleepingcomputer$/i, /(^|\.)bleepingcomputer\.com$/],
+  // Security and healthcare trade press (owner, 20 Nov 2026: Gemini for Healthcare was covered by Healthcare Dive and
+  // Fierce Healthcare; security stories by The Hacker News, SecurityWeek and Dark Reading). Counted only when Google News
+  // groups them with a story; none of their feeds is read.
+  ['The Hacker News', /^the hacker news$/i, /(^|\.)thehackernews\.com$/],
+  ['SecurityWeek', /^securityweek(\.com)?$/i, /(^|\.)securityweek\.com$/],
+  ['Dark Reading', /^dark ?reading$/i, /(^|\.)darkreading\.com$/],
+  ['Healthcare Dive', /^healthcare ?dive$/i, /(^|\.)healthcaredive\.com$/],
+  ['Fierce Healthcare', /^fierce ?healthcare$/i, /(^|\.)fiercehealthcare\.com$/],
   // Indian outlets (owner, 19 Nov 2026: the Sarvam AI Token Factory story was covered by Bloomberg, Business Standard,
   // MediaNama and Analytics India Magazine but could never reach "3 reputable outlets"). One canonical name per newsroom
   // (ET and ETtech; The Hindu and BusinessLine; NDTV and NDTV Profit). Deccan Chronicle is left out (owner: optional).
@@ -194,7 +202,8 @@ export function neutralHeadline(title, key) {
   const t = stripTags(title);
   if (!TREND_BLOCKED.test(t) && !INVEST_ADVICE.test(t)) return t;
   const first = t.split(/\s+(?:amid|after|over|following|as|because|due to|while|despite|with|in wake of)\s+|\s*[;:,—–]\s+|\s+-\s+/i)[0].trim();
-  if (first && first.length >= 15 && !TREND_BLOCKED.test(first) && !INVEST_ADVICE.test(first) && trendTopic(first).key === key) return first;
+  const keyOf = (s) => (String(key).startsWith('security:') ? securityTopic(s)?.key : trendTopic(s).key);
+  if (first && first.length >= 15 && !TREND_BLOCKED.test(first) && !INVEST_ADVICE.test(first) && keyOf(first) === key) return first;
   return null;
 }
 
@@ -376,4 +385,226 @@ export function selectTrending(pool, { now = Date.now(), today, freshHours = 36,
   }
   items.sort((a, b) => b.score - a.score);
   return { items, skipped, clusters: clusters.length };
+}
+
+// ---------- trending stories become articles (owner, 20 Nov 2026: "ye sab trending topics hote h, chhootne nahi chahiye") ----------
+// The trending tier above only lists a story on the news page. Java4Shell, nginx2root, the PHP security release, Sarvam's
+// Token Factory and Gemini for Healthcare were all trending and none became an article in time. trendingArticles()
+// picks the trending clusters (Techmeme top headline or 3+ reputable outlets) that are article material: a product or AI
+// launch, AI/cloud/security/major-platform news, or a payments/banking/telecom outage readers can check. Business,
+// finance, politics and legal stories (earnings, funding, stock moves, IPOs, leadership, lawsuits) stay news-page only.
+// radar.mjs gives each one a fast-track slot or parks it at the top of the site backlog, at most
+// settings.maxTrendingArticlesPerDay a day, and missedTrends() is the once-a-day self-check for anything still uncovered.
+
+// Security headlines: a flaw, breach or attack in a named product or platform (articles only; the news page lists
+// these from the security feeds, so selectTrending above does not use this topic).
+const SEC_HEADLINE = /\b(vulnerabilit(y|ies)|flaws?|bugs?|zero[- ]days?|0-days?|cve-\d{4}-\d+|exploit(s|ed|ing)?|rce|remote code execution|breach(es|ed)?|hack(s|ed)?|hackers|ransomware|malware|backdoor(s|ed)?|supply[- ]chain attacks?|security (updates?|releases?|patch(es)?|fix(es)?|advisor(y|ies))|data leaks?|\w+(4shell|2root|bleed))\b/i;
+const NOT_REPORT = /^['‘“"]|\b(opinion|podcast|webinar|interview|newsletter|week in review|recap|explainer)\b/i;
+/** { topic: 'security', entity: product, key } for a security headline about a named product, else null. */
+export function securityTopic(title = '') {
+  const t = stripTags(title);
+  if (!SEC_HEADLINE.test(t) || TREND_RUMOUR.test(t) || DEALS.test(t) || NOT_REPORT.test(t)) return null;
+  const product = securityProduct(t) ?? firstCompany(t);
+  return product ? { topic: 'security', entity: product, key: `security:${product}` } : null;
+}
+
+const BUSINESS = /\b(earnings|revenue|profits?|shares?|stocks?|valuation|ipo|funding|raises?|raised|investors?|investment|acquir\w*|acquisition|merger|deal|contract|lawsuits?|sues|sued|suing|court|judge|antitrust|fines?|fined|settle(s|d|ment)?|layoffs?|job cuts|tariffs?|regulators?|lobby\w*|senators?|congress|white house|lawmakers|elections?|ban(s|ned)?|export (controls?|curbs?))\b/i;
+const NOT_YET = /\b(plans? to|planning to|sources( say|:)|considering|in talks|exploring|expected to|is said to|working on|could (launch|release)|may (launch|release))\b/i;
+const SPACE_EV = new Set(['spacex', 'nasa', 'blue-origin', 'waymo', 'tesla']);
+const OUTAGE_READERS = new Set(['payments', 'banking', 'telecom']);
+const AI_WORDS = /\b(AI|artificial intelligence|gen ?AI|LLMs?|models?|agents?|agentic|chatbots?|assistants?|copilot|gemini|chatgpt|claude|llama|grok|inference|tokens?)\b/i;
+const CLOUD_WORDS = /\b(cloud|AWS|Azure|Google Cloud|data ?cent(er|re)s?|servers?|GPUs?|chips?|APIs?|developers?|platforms?|kubernetes|database)\b/i;
+const DEVICE_WORDS = /\b(iphone|ipad|mac|pixel|galaxy|android|ios|watch|phones?|laptops?|tablets?|devices?|headsets?|glasses)\b/i;
+const PLATFORM_WORDS = /\b(apps?|software|features?|tools?|subscriptions?|plans?|browsers?|chrome|windows|macos|workspace|microsoft 365|office|teams|outlook|gmail|whatsapp|instagram|facebook|youtube|search|accounts?|passkeys?|privacy|security|encryption|update)\b/i;
+
+/**
+ * Is a trending cluster article material? { category: launch|incident|outage, topic, parkOnly } or { reject: why }.
+ * parkOnly: a payments/banking/telecom outage goes to the backlog for the daily writer, never a fast-track (the
+ * fast-track outage guide is for the IT platforms the outage logic covers).
+ */
+export function articleKind(c) {
+  const titles = c.members.map((m) => m.title);
+  const majority = (re) => titles.filter((t) => re.test(t)).length * 2 > titles.length;
+  if (c.topic === 'security') return { category: 'incident', topic: 'security-identity' };
+  if (c.topic === 'leadership' || c.topic === 'ipo') return { reject: `business news (${c.topic})` };
+  if (titles.some((t) => /\boutages?\b|\b(is|are|went) down\b/i.test(t) && outageFamilies(t).length)) return { reject: 'IT outage (handled by the outage logic)' };
+  if (majority(BUSINESS)) return { reject: 'business, finance, policy or legal news' };
+  if (majority(NOT_YET)) return { reject: 'not launched yet (plans or sources)' };
+  if (c.topic === 'infra-outage') {
+    return OUTAGE_READERS.has(c.entity) ? { category: 'outage', topic: 'online-safety', parkOnly: true } : { reject: `${c.entity} outage (news page only)` };
+  }
+  if (SPACE_EV.has(c.entity)) return { reject: 'space or EV milestone (news page only)' };
+  const all = titles.join(' ');
+  const launched = titles.some((t) => PRODUCT.test(t) || detectAiModel({ title: t, link: '' }, {})?.kind === 'release');
+  if (c.topic === 'india') {
+    if (!launched && !AI_WORDS.test(all)) return { reject: 'Indian company news without a product or AI story' };
+    return { category: 'launch', topic: 'ai-automation' };
+  }
+  if (!launched) return { reject: 'no launch in the headlines' };
+  const topic = AI_WORDS.test(all) ? 'ai-automation' : CLOUD_WORDS.test(all) ? 'cloud' : DEVICE_WORDS.test(all) ? 'mobiles' : PLATFORM_WORDS.test(all) ? 'how-to-tips' : null;
+  if (!topic) return { reject: 'not an AI, cloud, security or major-platform product' };
+  return { category: 'launch', topic };
+}
+
+/**
+ * Trending clusters that are article material, best first. pool: as for selectTrending (aggregator items and the
+ * reputable outlets' feeds). Returns { articles: [{ key, title, titles, links, outlets, techmeme, category, topic,
+ * parkOnly, date, first, last, link, sourceId, summary, score }], rejected: [{ title, why }] }.
+ * Scores sit above the threshold (10): 10 + 1 for Techmeme + 1 per reputable outlet beyond 2 (outlets capped at 6).
+ */
+export function trendingArticles(pool, { now = Date.now(), freshHours = 36, threshold = 10 } = {}) {
+  const entries = [];
+  for (const it of pool) {
+    const t = Date.parse(it.date ?? '');
+    if (Number.isNaN(t) || now - t > freshHours * 3600e3 || t - now > 24 * 3600e3) continue;
+    const title = stripTags(it.title);
+    const topic = securityTopic(title) ?? trendTopic(title);
+    if (!topic.key) continue;
+    entries.push({
+      title, outlet: it.outlet ?? it.source?.outlet ?? '', link: it.link, date: it.date, t, summary: it.summary ?? '',
+      techmeme: Boolean(it.techmeme), related: it.related ?? [], sourceId: it.source?.id ?? 'news', topic,
+    });
+  }
+  const articles = [];
+  const rejected = [];
+  const direct = (x) => (/news\.google\.com/.test(hostOf(x.link)) ? 1 : 0);
+  for (const c of clusterTrending(entries)) {
+    if (!c.trending) continue;
+    const label = c.members[0].title.slice(0, 90);
+    const kind = articleKind(c);
+    if (kind.reject) {
+      rejected.push({ title: label, why: kind.reject });
+      continue;
+    }
+    // Headline: a reputable outlet's own clean headline, wire services first, direct links before Google News redirects.
+    const reps = c.members.map((m) => ({ ...m, rep: reputableOutlet(m.outlet, m.link) }))
+      .sort((a, b) => (!a.rep - !b.rep) || rank(a.rep) - rank(b.rep) || direct(a) - direct(b) || b.t - a.t);
+    let pick = null;
+    let headline = null;
+    for (const r of reps) {
+      const h = neutralHeadline(r.title, r.topic.key);
+      if (h) {
+        pick = r;
+        headline = h;
+        break;
+      }
+    }
+    if (!pick) {
+      rejected.push({ title: label, why: 'safety filter: no neutral headline fact' });
+      continue;
+    }
+    const links = [...new Set([
+      ...reps.filter((r) => !direct(r)).map((r) => r.link),
+      ...c.members.flatMap((m) => (m.related ?? []).filter((r) => reputableOutlet(r.outlet, r.link) && !/news\.google\.com/.test(hostOf(r.link))).map((r) => r.link)),
+      ...reps.filter((r) => direct(r)).map((r) => r.link),
+    ])].slice(0, 8);
+    const ts = c.members.map((m) => m.t);
+    articles.push({
+      key: c.key, title: headline, titles: [...new Set(c.members.map((m) => m.title))].slice(0, 8), links, link: pick.link, sourceId: pick.sourceId,
+      outlets: [...c.outlets].sort((a, b) => rank(a) - rank(b)), techmeme: c.techmeme, ...kind,
+      date: new Date(Math.min(Math.max(...ts), now)).toISOString(), first: new Date(Math.min(...ts)).toISOString(), last: new Date(Math.max(...ts)).toISOString(),
+      summary: stripTags(pick.summary ?? '').slice(0, 300),
+      score: threshold + (c.techmeme ? 1 : 0) + Math.max(0, Math.min(c.outlets.size, 6) - 2),
+    });
+  }
+  articles.sort((a, b) => b.score - a.score);
+  return { articles, rejected };
+}
+
+/** Two trending records about the same story: same cluster key and similar headlines (or a shared link). */
+export function sameTrend(a, b) {
+  if (a.key !== b.key) return false;
+  if (a.key.startsWith('security:') || (a.links ?? []).some((l) => (b.links ?? []).includes(l))) return true;
+  const A = a.titles ?? [a.title];
+  const B = b.titles ?? [b.title];
+  return A.some((x) => B.some((y) => similarTitles(x, y)));
+}
+
+const about = (p) => `${p.title ?? ''} ${String(p.slug ?? '').replace(/-/g, ' ')}`;
+/** A post or backlog title about the story: 2+ significant words shared, half of the shorter title's (stricter than similarTitles). */
+export function closeTitles(a, b) {
+  const A = sig(a);
+  const B = new Set(sig(b));
+  const shared = A.filter((w) => B.has(w)).length;
+  return shared >= 2 && shared / Math.max(1, Math.min(A.length, B.size)) >= 0.5;
+}
+const SECURITY_TOPICS = new Set(['security-identity', 'online-safety']);
+
+/**
+ * What already covers a story: { post } (a site article: its link, the same topic, or a similar headline in the last 14
+ * days), { backlog } (an open backlog item), { seen: [key, s] } (a non-aggregator radar item about it from the last 48
+ * hours), or {}. site: { posts, news, backlog }; seen: state.seen; aggregators: ids of the signal/trending sources.
+ */
+export function trendCoverage(story, site = {}, seen = {}, { now = Date.now(), aggregators = new Set() } = {}) {
+  const loose = story.category === 'incident';
+  const titles = (story.titles?.length ? story.titles : [story.title]).filter(Boolean);
+  const near = (a, b) => (loose ? sameIncident(a, b) : closeTitles(a, b) || sameTopic(a, b));
+  const recent = (site.posts ?? []).filter((p) => p.date && now - Date.parse(p.date) < 14 * 86400e3);
+  const links = [story.link, ...(story.links ?? [])].filter(Boolean).slice(0, 4);
+  for (const title of titles) {
+    for (const link of links.length ? links : ['https://example.invalid/']) {
+      const cov = findCoverage({ title, link, summary: story.summary ?? '' }, site, { loose, now });
+      if (cov.post) return { post: cov.post };
+    }
+    const post = recent.find((p) => near(title, about(p)));
+    if (post) return { post };
+  }
+  // A security story: a security post of the last 7 days about the same product (the PHP release, nginx2root, Java4Shell).
+  if (loose) {
+    const products = new Set(titles.map((t) => securityProduct(t)).filter(Boolean));
+    const post = recent.find((p) => now - Date.parse(p.date) < 7 * 86400e3 && (!p.topic || SECURITY_TOPICS.has(p.topic)) && products.has(securityProduct(p.title ?? '')));
+    if (post) return { post };
+  }
+  for (const title of titles) {
+    const b = (site.backlog ?? []).find((x) => !x.done && near(title, about(x)));
+    if (b) return { backlog: b };
+  }
+  const official = Object.entries(seen).filter(([, s]) => s.source && !aggregators.has(s.source) && !s.trending &&
+    now - Date.parse(s.first ?? s.date ?? 0) < 48 * 3600e3);
+  for (const title of titles) {
+    const hit = official.find(([, s]) => near(title, s.title ?? ''));
+    if (hit) return { seen: hit };
+  }
+  return {};
+}
+
+// What missedTrends() re-checks: decisions that left a big story without a post or a backlog line.
+export const MISSED_STATUSES = ['below', 'skipped', 'failed'];
+
+/**
+ * Once-a-day missed-trends self-check (owner, 20 Nov 2026). Candidates from the last `hours`: trending stories the radar
+ * recorded but could not take (state.trends decision "cap"), and radar items with a score >= threshold - 2 that ended
+ * "below" (vendor feeds and trending stories only, not newsFeeds), "skipped" (unless the writer's skip was final:
+ * skipFinal) or "failed".
+ * Each is checked against the site's posts and backlog (trendCoverage, covered = where); best first, trending first.
+ * Returns [{ ref: ['seen', key] | ['trend', id], title, titles, link, links, outlets, techmeme, category, topic, date,
+ * score, trending, why, covered }].
+ */
+export function missedTrends({ seen = {}, trends = {}, site = {}, now = Date.now(), threshold = 10, hours = 48, aggregators = new Set(), newsFeeds = new Set(), skipFinal = /covered by|news only/i } = {}) {
+  const since = now - hours * 3600e3;
+  const out = [];
+  for (const [key, s] of Object.entries(seen)) {
+    const t = Date.parse(s.first ?? s.date ?? '');
+    if (Number.isNaN(t) || t < since || !MISSED_STATUSES.includes(s.status) || (s.score ?? 0) < threshold - 2) continue;
+    if (s.category === 'outage' || s.resolved || s.source === 'manual' || (aggregators.has(s.source) && !s.trending)) continue;
+    // News feeds (security news, outlets): their "below" stories are not vendor launches; trending clusters and the
+    // security scoring cover those. Their skipped or failed fast-tracks still count.
+    if (s.status === 'below' && newsFeeds.has(s.source) && !s.trending) continue;
+    if (s.status === 'skipped' && skipFinal.test(s.skipReason ?? '')) continue;
+    out.push({
+      ref: ['seen', key], title: s.title, titles: s.trending?.titles ?? [s.title], link: s.link ?? key, summary: s.summary ?? '',
+      links: [...new Set([s.link ?? key, ...(s.trending?.links ?? [])])], outlets: s.trending?.outlets ?? [], techmeme: Boolean(s.trending?.techmeme),
+      category: s.category ?? 'launch', topic: s.topic, date: s.date ?? s.first, score: s.score ?? 0, trending: Boolean(s.trending),
+      why: `${s.status}${s.skipReason ? ` (${String(s.skipReason).slice(0, 80)})` : ''}, score ${s.score}, ${s.source}`,
+    });
+  }
+  for (const [id, c] of Object.entries(trends)) {
+    if (Date.parse(c.last ?? c.first ?? '') < since || c.decision !== 'cap') continue;
+    out.push({ ...c, ref: ['trend', id], trending: true, why: `trending (${c.techmeme ? 'Techmeme, ' : ''}${(c.outlets ?? []).length} reputable outlets), over the daily cap` });
+  }
+  for (const x of out) {
+    const cov = trendCoverage(x, site, {}, { now });
+    x.covered = cov.post ? `/blog/${cov.post.slug}` : cov.backlog ? `backlog ${cov.backlog.slug}` : null;
+  }
+  return out.sort((a, b) => (b.trending - a.trending) || b.score - a.score);
 }

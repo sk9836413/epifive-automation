@@ -2,9 +2,10 @@
 // Launch radar: spots big product launches on official feeds and queues a same-day "fast-track" how-to.
 // See README section "Launch radar" and the site's automation/RADAR.md (the writer's instructions).
 //
-//   node radar/radar.mjs scan --site <site checkout> [--dry-run] [--force-url <url> [--force-category incident|outage]] [--out task.json]
-//        fetch every source, score and de-duplicate new items, log the run, pick at most one task
-//   node radar/radar.mjs record --task task.json --status published|failed|skipped [--slug s] [--title t] [--auto-video YYYY-MM-DD]
+//   node radar/radar.mjs scan --site <site checkout> [--dry-run] [--force-url <url> [--force-category incident|outage]] [--out task.json] [--missed-check]
+//        fetch every source, score and de-duplicate new items, log the run, pick at most one task; trending stories get a
+//        slot or a top-of-backlog park (trending.mjs); --missed-check runs the once-a-day missed-trends check now
+//   node radar/radar.mjs record --task task.json --status published|failed|skipped [--slug s] [--title t] [--auto-video YYYY-MM-DD] [--reason 'RADAR-SKIP: ...']
 //        append the write job's outcome to radar/results.jsonl (the next scan folds it into state.json);
 //        --auto-video = the UTC day the trending Short + long video were started for it (the daily cap counts these)
 //   node radar/radar.mjs video-plan --task task.json --status published --file content/posts/x.md [--site .] [--now ISO]
@@ -30,9 +31,9 @@ import {
   parseSource, normalizeUrl, scoreItem, trendBoost, searchPhrase, findCoverage, parseBacklog, hashText,
   istDate, todayCounts, mergeDuplicates, daysToDeadline, parkInBacklog, markPublished, logLine, checkFastTrack, updateSignal,
   markIncidentDuplicates, backlogLine, pickNewTask, autoVideoPlan, isRootCauseNews, statusClosed, pageDetail, sameTopic, sameIncident,
-  scoreOutage, outageFamilies, outageTerm, corroborate, rescoreable, rescoreLifted,
+  scoreOutage, outageFamilies, outageTerm, corroborate, rescoreable, rescoreLifted, trendParkBlock, skipParkable, SKIP_FINAL, verticalAiKey,
 } from './lib.mjs';
-import { selectTrending } from './trending.mjs';
+import { selectTrending, trendingArticles, trendCoverage, sameTrend, missedTrends } from './trending.mjs';
 import {
   BRIEF, classifyBrief, briefItem, mergeIntoDays, tier1Floor, storyKey, detectDevice, detectAiModel, findDeviceSlug, emptyDay,
   touchDay, updateIndex, linesPrompt, parseLinesAnswer, applyLines, templateLines, deviceFocus,
@@ -111,13 +112,20 @@ async function scan() {
   }
 
   // 1. Fold write outcomes into state; a task that never reported back within 3 hours is retried once.
+  // Backlog parks (site-apply): expired queued items, trending stories, and writer skips that were not final.
+  const parks = [];
+  const skipParks = [];
   for (const r of results) {
     const s = state.seen[r.key];
     if (r.type === 'alert' || !s || r.dryRun || (s.resultAt && s.resultAt >= r.at)) continue;
     // "error" = the write job broke before a verdict (e.g. Claude usage limit): retry once, then give up.
     const status = r.status === 'published' ? (r.kind === 'update' ? 'updated' : 'published')
       : r.status === 'error' ? ((s.attempts ?? 1) >= 2 ? 'failed' : 'queued') : r.status;
-    Object.assign(s, { status, slug: r.slug ?? s.slug, resultAt: r.at });
+    Object.assign(s, { status, slug: r.slug ?? s.slug, resultAt: r.at, ...(r.reason ? { skipReason: String(r.reason).slice(0, 200) } : {}) });
+    // A new fast-track the writer skipped for any reason but "covered by" / "news only" (e.g. the official page blocked
+    // the fetch: ChatGPT for Healthcare, 16 Nov 2026, was skipped in 22 seconds and lost) goes to the top of the
+    // backlog for the daily writer instead of disappearing.
+    if (r.status === 'skipped' && r.kind === 'new' && s.category !== 'outage' && skipParkable(r.reason)) skipParks.push(r.key);
   }
   for (const s of Object.values(state.seen)) {
     if (s.status === 'writing' && now - Date.parse(s.taskAt) > 3 * 3600e3) s.status = (s.attempts ?? 1) >= 2 ? 'failed' : 'queued';
@@ -205,7 +213,8 @@ async function scan() {
     // The same security story from 2+ different sources (same CVE, or same product + flaw wording, within 48 hours).
     const corro = s.category === 'incident' ? corroborate({ ...item, source: item.source.id }, reports, { now }) : null;
     if (corro) s.score += corro.boost, s.reasons.push(`+${corro.boost} ${corro.why}`);
-    s.story = storyKey({ device: detectDevice(item, item.source), ai: detectAiModel(item, item.source) }) ?? undefined;
+    s.story = storyKey({ device: detectDevice(item, item.source), ai: detectAiModel(item, item.source) }) ??
+      (s.category === 'launch' || !s.category ? verticalAiKey(item.title) : null) ?? undefined;
     const cov = findCoverage(item, site, { loose: s.category === 'incident', now, category: s.category, families: s.families });
     if (cov.news) s.score -= 1, s.reasons.push(`-1 in /news ${cov.news.slug}`);
     if (cov.backlog) s.reasons.push(`backlog ${cov.backlog.slug}`);
@@ -309,8 +318,89 @@ async function scan() {
     }
   }
 
-  // 6. Expire queued items that waited too long (daily cap) into the normal backlog.
-  const parks = [];
+  // 5c. Trending stories become articles (owner, 20 Nov 2026): a trending cluster (Techmeme top headline or 3+ reputable
+  // outlets) that is article material (trending.mjs articleKind) and that no post, backlog item or radar item covers gets
+  // a fast-track slot while today's slots last, else it is parked at the top of the site backlog. An official radar item
+  // about the same story that scored "below" is lifted instead (so the writer gets the vendor's own link). At most
+  // S.maxTrendingArticlesPerDay a day (fast-track + parked), so the ordinary backlog keeps moving.
+  const trendLog = [];
+  const trendBudget = (state.trendBudget ??= {});
+  for (const d of Object.keys(trendBudget)) if (d < shiftDate(today, -7)) delete trendBudget[d];
+  const budget = (trendBudget[today] ??= []);
+  const maxTrend = S.maxTrendingArticlesPerDay ?? 4;
+  state.trends ??= {};
+  for (const [id, c] of Object.entries(state.trends)) if (now - Date.parse(c.last ?? c.first) > 4 * 86400e3) delete state.trends[id];
+  const slotCounts = todayCounts(results, state, today);
+  const slotFree = () => slotCounts.newPublished < S.maxNewPerDay && slotCounts.attempts < S.maxAttemptsPerDay;
+  const parkTrend = (key, s, why) => {
+    s.status = 'parked';
+    s.parkedAt = new Date(now).toISOString();
+    parks.push({ key, top: 'trend', line: trendParkBlock({ ...s, ...(s.trending ?? {}), title: s.title, links: [s.link ?? key, ...(s.trending?.links ?? [])], why }) });
+  };
+  const trend = trendingArticles(trendPool(fetched), { now, freshHours: S.freshHours, threshold: S.threshold });
+  for (const a of trend.articles) {
+    const known = Object.entries(state.trends).find(([, c]) => sameTrend(c, a));
+    const id = known?.[0] ?? `${a.key}|${hashText(a.title)}`;
+    const rec = Object.assign(state.trends[id] ??= { first: a.first, decision: null }, {
+      key: a.key, title: a.title, titles: [...new Set([...(state.trends[id]?.titles ?? []), ...a.titles])].slice(0, 10),
+      links: [...new Set([...(state.trends[id]?.links ?? []), ...a.links])].slice(0, 10), link: a.link, outlets: a.outlets, techmeme: a.techmeme,
+      category: a.category, topic: a.topic, parkOnly: Boolean(a.parkOnly), last: a.last, date: a.date, score: a.score,
+    });
+    if (rec.decision && rec.decision !== 'cap') continue; // handled in an earlier run
+    const label = `${a.title.slice(0, 90)} (${a.techmeme ? 'Techmeme, ' : ''}${a.outlets.length} reputable outlet(s))`;
+    const cov = trendCoverage(rec, site, state.seen, { now, aggregators });
+    if (cov.post) {
+      Object.assign(rec, { decision: 'covered', post: cov.post.slug });
+      trendLog.push(`- trending covered: ${label} -> /blog/${cov.post.slug}`);
+      continue;
+    }
+    if (cov.backlog) {
+      Object.assign(rec, { decision: 'backlog', backlog: cov.backlog.slug });
+      trendLog.push(`- trending already in backlog.md: ${label} -> ${cov.backlog.slug}`);
+      continue;
+    }
+    const [okey, os] = cov.seen ?? [];
+    if (os && !['below', 'skipped', 'failed'].includes(os.status)) {
+      // Queued, being written, published, a duplicate of a post, or already parked: the radar has it.
+      Object.assign(rec, { decision: `radar ${os.status}`, ref: okey });
+      trendLog.push(`- trending already on the radar (${os.status}): ${label}`);
+      continue;
+    }
+    if (budget.length >= maxTrend) {
+      if (rec.decision !== 'cap') trendLog.push(`- trending over the daily cap (${maxTrend}/day): ${label}`);
+      rec.decision = 'cap';
+      continue;
+    }
+    budget.push(a.title.slice(0, 80));
+    const trending = { key: a.key, titles: rec.titles, links: rec.links, outlets: a.outlets, techmeme: a.techmeme };
+    const why = `+${a.score - S.threshold} trending: ${a.techmeme ? 'Techmeme top headline, ' : ''}${a.outlets.slice(0, 4).join(', ') || 'no reputable outlet named'}`;
+    let key = okey;
+    let s = os;
+    if (s) {
+      // The official item scored "below" (or the writer skipped it): the trend lifts it.
+      Object.assign(s, { score: Math.max(s.score ?? 0, a.score), trending, trendDay: today });
+      s.reasons = [...(s.reasons ?? []), why];
+    } else {
+      key = normalizeUrl(a.link);
+      s = state.seen[key] ??= {
+        title: a.title, link: a.link, source: a.sourceId, topic: a.topic, category: a.category, date: a.date, summary: a.summary,
+        first: new Date(now).toISOString(), score: a.score, reasons: [why], trending, trendDay: today, hash: hashText(a.title),
+      };
+    }
+    rec.ref = key;
+    if (a.parkOnly || !slotFree()) {
+      parkTrend(key, s, a.parkOnly ? 'non-IT outage: daily writer' : 'no fast-track slot left today');
+      rec.decision = 'parked';
+      trendLog.push(`- trending parked at the top of backlog.md: ${label}`);
+    } else {
+      s.status = 'queued';
+      rec.decision = 'queued';
+      trendLog.push(`- trending queued for a fast-track (score ${s.score}): ${label}`);
+    }
+  }
+
+  // 6. Expire queued items that waited too long (daily cap) into the normal backlog (security incidents and trending
+  // stories at the top).
   for (const [key, s] of Object.entries(state.seen)) {
     if (key === forceUrl) continue; // a forced item is written now, never parked
     // An outage counts from when the radar first saw it (a long incident can start days before it is found), and an
@@ -318,8 +408,13 @@ async function scan() {
     const age = (now - Date.parse(s.category === 'outage' ? s.first : s.date ?? s.first)) / 3600e3;
     if (s.status === 'queued' && age > S.freshHours + 12) {
       s.status = 'expired';
-      if (s.category !== 'outage') parks.push({ key, top: s.category === 'incident', line: backlogLine({ ...s, reason: 'daily cap' }) });
+      if (s.trending) parkTrend(key, s, 'waited too long for a fast-track slot');
+      else if (s.category !== 'outage') parks.push({ key, top: s.category === 'incident', line: backlogLine({ ...s, reason: 'daily cap' }) });
     }
+  }
+  for (const key of skipParks) {
+    const s = state.seen[key];
+    if (s && s.status === 'skipped') parkTrend(key, s, `the fast-track writer skipped it${s.skipReason ? ` (${s.skipReason.slice(0, 100)})` : ''}: write it from the official pages found by search`);
   }
 
   // 7. Pick at most one task: a new launch first (within the daily caps; a major outage may use one extra slot
@@ -356,8 +451,56 @@ async function scan() {
       backlog: s.backlog ?? null, news: s.news ?? null, slug: task.slug ?? null, dryRun,
       ...(s.patchTuesday ? { patchTuesday: s.patchTuesday } : {}),
       ...(s.families?.length ? { families: s.families } : {}),
+      // A trending story: where it was reported, so the writer can find the vendor's own pages and cross-check.
+      ...(s.trending ? { trending: { reportedBy: s.trending.outlets ?? [], techmeme: Boolean(s.trending.techmeme), links: (s.trending.links ?? []).slice(0, 8) } } : {}),
     });
+    // Other outlets' reports of the same story in this run (the official page may block automated fetches: openai.com).
+    const coverage = trendPool(fetched).filter((x) => normalizeUrl(x.link) !== task.key &&
+      (task.category === 'incident' ? sameIncident(x.title, s.title) : sameTopic(s.title, x.title) || sameTopic(x.title, s.title)))
+      .slice(0, 6).map((x) => ({ outlet: x.outlet || x.source.name, title: x.title, link: x.link }));
+    if (coverage.length) task.coverage = coverage;
     if (!dryRun) Object.assign(s, { status: 'writing', kind: task.kind, extra: Boolean(task.extra), taskAt: new Date(now).toISOString(), attempts: (s.attempts ?? 0) + 1 });
+  }
+  // Trending stories still queued once today's fast-track slots are gone wait for nobody: the daily writer gets them now.
+  const used = task?.kind === 'new' && !task.extra ? 1 : 0;
+  if (!(counts.newPublished + used < S.maxNewPerDay && counts.attempts + used < S.maxAttemptsPerDay)) {
+    for (const [key, s] of Object.entries(state.seen)) {
+      if (s.status !== 'queued' || !s.trendDay || key === task?.key) continue;
+      parkTrend(key, s, 'no fast-track slot left today');
+      const rec = Object.values(state.trends).find((c) => c.ref === key);
+      if (rec) rec.decision = 'parked';
+      trendLog.push(`- trending parked at the top of backlog.md (no slot left today): ${s.title.slice(0, 90)}`);
+    }
+  }
+
+  // 7a. Missed-trends self-check, once a day from 18:30 IST (before the 20:00 IST report), or with --missed-check:
+  // big stories of the last 48 hours (trending clusters over the cap, radar items scoring >= threshold - 2 that ended
+  // below / skipped / failed) with no post and no backlog line are parked at the top of backlog.md (same daily budget).
+  const istHours = ((now / 3600e3) + 5.5) % 24;
+  const missedLog = [];
+  if (opt('missed-check') || (state.missedCheck?.day !== today && istHours >= 18.5)) {
+    const newsFeeds = new Set(CONFIG.sources.filter((x) => ['incident', 'outage'].includes(x.category) || x.newsOutlet || x.outlet).map((x) => x.id));
+    const missed = missedTrends({ seen: state.seen, trends: state.trends, site, now, threshold: S.threshold, aggregators, newsFeeds, skipFinal: SKIP_FINAL });
+    const open = missed.filter((x) => !x.covered);
+    const items = [];
+    for (const x of open) {
+      const over = budget.length >= maxTrend;
+      if (!over) {
+        budget.push(x.title.slice(0, 80));
+        const [kind, ref] = x.ref;
+        if (kind === 'seen') parkTrend(ref, state.seen[ref], `missed-trends check: ${x.why}`);
+        else {
+          parks.push({ key: x.link, top: 'trend', line: trendParkBlock({ ...x, why: `missed-trends check: ${x.why}` }) });
+          state.trends[ref].decision = 'parked';
+        }
+      }
+      items.push({ title: x.title, link: x.link, why: x.why, parked: !over });
+    }
+    state.missedCheck = { day: today, at: new Date(now).toISOString(), checked: missed.length, covered: missed.length - open.length, items };
+    missedLog.push(`Missed-trends check (last 48 h): ${missed.length} big item(s) checked, ${missed.length - open.length} covered by a post or the backlog, ` +
+      `${items.filter((i) => i.parked).length} parked at the top of backlog.md${items.some((i) => !i.parked) ? `, ${items.filter((i) => !i.parked).length} over the daily cap (${maxTrend})` : ''}.`);
+    for (const i of items.slice(0, 12)) missedLog.push(`- ${i.parked ? 'parked' : 'over cap'}: [${i.title.replace(/[[\]|]/g, ' ').slice(0, 90)}](${i.link}) — ${i.why}`);
+    for (const x of missed.filter((m) => m.covered).slice(0, 6)) missedLog.push(`- covered: ${x.title.slice(0, 90)} -> ${x.covered}`);
   }
   if (parks.length) task = { ...(task ?? { kind: 'none' }), parks };
 
@@ -379,8 +522,12 @@ async function scan() {
     ...updates.map((u) => `| ${u.score} | ${u.item.source.id} | update | [${u.item.title.slice(0, 90)}](${u.item.link}) — ${u.why} |`),
     '',
     ...brief.log,
+    `Trending articles: ${trend.articles.length} trending stor${trend.articles.length === 1 ? 'y is' : 'ies are'} article material; today ${budget.length}/${maxTrend} taken (fast-track or parked).`,
+    ...trendLog,
+    ...trend.rejected.slice(0, 6).map((x) => `- trending, news page only: ${String(x.title).slice(0, 90)} (${x.why})`),
+    ...(missedLog.length ? ['', ...missedLog] : []),
     '',
-    `Task: ${task?.kind && task.kind !== 'none' ? `${task.kind}${task.extra ? ' (outage extra slot)' : ''} "${task.title}"${task.slug ? ` -> /blog/${task.slug}` : ''}` : 'none'}${parks.length ? `; parked ${parks.length} expired item(s) in backlog.md` : ''}`,
+    `Task: ${task?.kind && task.kind !== 'none' ? `${task.kind}${task.extra ? ' (outage extra slot)' : ''} "${task.title}"${task.slug ? ` -> /blog/${task.slug}` : ''}` : 'none'}${parks.length ? `; parked ${parks.length} item(s) in backlog.md (${parks.filter((p) => p.top === 'trend').length} trending/missed at the top)` : ''}`,
     '',
   ];
   console.log(block.join('\n'));
@@ -413,6 +560,11 @@ async function scan() {
 
 /** A clearly-IT outage in a news aggregator item: outage wording in the headline and a platform the outage guides cover. */
 const itOutage = (item) => Boolean(outageTerm(item.title ?? '') && outageFamilies(`${item.title ?? ''} ${item.summary ?? ''}`).length);
+
+/** Trending-tier pool: news aggregator items and the reputable outlets' feeds, minus clearly-IT outages. */
+const trendPool = (fetched) => fetched.filter((x) => x.source.role === 'trending' || x.source.outlet)
+  .map((x) => ({ ...x, outlet: x.outlet || x.source.outlet }))
+  .filter((x) => !(x.source.role === 'trending' && itOutage(x)));
 
 const dayFile = (date) => path.join(LIVE, `${date}.json`);
 const shiftDate = (date, days) => new Date(Date.parse(`${date}T12:00:00Z`) + days * 864e5).toISOString().slice(0, 10);
@@ -473,9 +625,7 @@ async function buildBrief({ merged, fetched = [], state, site, siteDir, now, tod
   // Trending tier (radar/trending.mjs): big stories that Techmeme lists or 3+ reputable outlets cover (leadership and
   // IPOs at major tech companies, big product/AI/space/EV milestones, critical-infrastructure outages), safety-filtered,
   // own cap (BRIEF.trendingMaxPerDay, in mergeIntoDays).
-  const pool = fetched.filter((x) => x.source.role === 'trending' || x.source.outlet)
-    .map((x) => ({ ...x, outlet: x.outlet || x.source.outlet }))
-    .filter((x) => !(x.source.role === 'trending' && itOutage(x)));
+  const pool = trendPool(fetched);
   const trend = selectTrending(pool, {
     now, today, freshHours: S.freshHours, posts: site.posts,
     listed: [...Object.values(days).flatMap((d) => d.items.map((it) => ({ headline: it.headline, key: it.key, trendKey: it.trendKey, day: d.date }))),
@@ -641,6 +791,8 @@ function record() {
     ...(task.extra ? { extra: true } : {}),
     ...(/^\d{4}-\d{2}-\d{2}$/.test(opt('auto-video') ?? '') ? { autoVideo: opt('auto-video') } : {}),
     slug: typeof opt('slug') === 'string' ? opt('slug') : task.slug ?? null, title: typeof opt('title') === 'string' ? opt('title') : task.title, dryRun: Boolean(task.dryRun),
+    // The writer's RADAR-SKIP line (public log: a short reason, no secrets).
+    ...(typeof opt('reason') === 'string' && opt('reason').trim() ? { reason: opt('reason').replace(/\s+/g, ' ').trim().slice(0, 200) } : {}),
   };
   fs.appendFileSync(RESULTS, `${JSON.stringify(entry)}\n`);
   console.log(`Recorded ${entry.kind} ${entry.status}: ${entry.slug ?? entry.title}`);
@@ -654,7 +806,7 @@ function siteApply() {
   const logFile = path.join(site, 'automation', 'log.md');
   let backlog = fs.readFileSync(backlogFile, 'utf8');
   let log = fs.readFileSync(logFile, 'utf8');
-  for (const p of task.parks ?? []) backlog = parkInBacklog(backlog, p.line, { top: Boolean(p.top) });
+  for (const p of task.parks ?? []) backlog = parkInBacklog(backlog, p.line, { top: p.top === 'trend' ? 'trend' : Boolean(p.top) });
   const file = opt('file');
   const result = opt('result');
   if (result === 'published' && typeof file === 'string') {

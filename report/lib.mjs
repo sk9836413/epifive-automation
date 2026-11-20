@@ -244,3 +244,16 @@ export function linkedinTokenNotes(env, now = new Date(), days = 7) {
   }
   return notes;
 }
+
+/**
+ * Lines for the radar's once-a-day "Missed-trends check" (radar/state.json missedCheck, written by radar/radar.mjs scan
+ * from 18:30 IST): big stories of the last 48 hours that had no EpiFive post and were parked at the top of the backlog.
+ */
+export function missedTrendsLines(state, date) {
+  const m = state?.missedCheck;
+  if (!m || m.day !== date) return [{ text: 'Radar missed-trends check aaj abhi nahi chala (pehla scan 18:30 IST ke baad).' }];
+  const items = m.items ?? [];
+  const lines = [{ text: `Radar missed-trends check (last 48 h): ${m.checked ?? 0} bade items check, ${m.covered ?? 0} already covered, ${items.filter((i) => i.parked).length} backlog ke top par park${items.some((i) => !i.parked) ? `, ${items.filter((i) => !i.parked).length} daily cap ke upar` : ''}.` }];
+  for (const i of items.slice(0, 6)) lines.push({ text: `${i.parked ? 'Parked' : 'Cap ke upar'}: ${short(i.title, 80)}`, href: i.link });
+  return lines;
+}

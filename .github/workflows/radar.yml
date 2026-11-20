@@ -31,6 +31,11 @@
 #            Trending tier (radar/trending.mjs, owner asked 15 Nov 2026): big general tech stories from Techmeme and Google
 #            News that Techmeme lists or 3+ reputable outlets cover (leadership/IPOs at major tech companies, big product,
 #            AI, space and EV milestones, critical-infrastructure outages), safety-filtered, "Reported by <outlet>", 4 a day.
+#            Trending articles (owner, 20 Nov 2026): a trending story that is a launch, AI/cloud/security/major-platform
+#            news or a payments/banking/telecom outage, with no post yet, takes a fast-track slot or is parked at the top of
+#            the site backlog (max 4 a day, settings.maxTrendingArticlesPerDay); a writer skip that is not "covered by" /
+#            "news only" is parked there too, and a once-a-day missed-trends check (first scan from 18:30 IST) parks
+#            whatever big story of the last 48 hours is still uncovered (radar/trending.mjs, logged as "Missed-trends check").
 #   Tier 3 = official device launches start devices.yml in launch mode (spec page from the maker's official page only),
 #            at most 2 runs a day, 3 devices a run.
 # Patch Tuesday (owner approved 19 Nov 2026): from 18:00 UTC on the second Tuesday, once MSRC lists the month's release,
@@ -117,7 +122,7 @@ jobs:
           node-version: 24
 
       - name: Unit tests
-        run: node --test radar/radar.test.mjs radar/alert.test.mjs radar/brief.test.mjs radar/status.test.mjs radar/retirements.test.mjs radar/patch-tuesday.test.mjs
+        run: node --test radar/radar.test.mjs radar/alert.test.mjs radar/brief.test.mjs radar/status.test.mjs radar/retirements.test.mjs radar/patch-tuesday.test.mjs radar/trending-articles.test.mjs
 
       - name: Scan
         id: scan
@@ -306,6 +311,10 @@ jobs:
             automation/WRITER.md, which you should also read). The repository is already checked out at the latest main.
             Do not run npm, git or a build, and do not edit automation/backlog.md or automation/log.md: later workflow
             steps check, build, publish and record. Never mention any person's name; publish under the EpiFive brand only.
+            If the task has "trending" (a story many outlets carry) or "coverage", follow "Trending stories and blocked
+            official pages" in RADAR.md: an official page that blocks automated fetches (HTTP 403, e.g. openai.com) is never
+            a reason to skip. If you do finish with RADAR-SKIP, also write that same one-line RADAR-SKIP reason to the file
+            .radar-skip.txt in the repository root (the radar logs it and parks the story for the daily writer).
 
       - name: Find the article
         id: post
@@ -537,6 +546,9 @@ jobs:
           [ -n "$AUTO_VIDEO" ] && args+=(--auto-video "$AUTO_VIDEO")
           [ -n "$SLUG" ] && args+=(--slug "$SLUG")
           [ -n "$TITLE" ] && args+=(--title "$TITLE")
+          # The writer's RADAR-SKIP line (one short line; a skip that is not "covered by" / "news only" is parked at the
+          # top of the site backlog by the next scan).
+          if [ "$status" = "skipped" ] && [ -f ../.radar-skip.txt ]; then args+=(--reason "$(head -c 300 ../.radar-skip.txt | tr '\r\n' '  ')"); fi
           node radar/radar.mjs "${args[@]}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

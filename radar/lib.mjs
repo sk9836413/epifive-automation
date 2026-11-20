@@ -448,6 +448,20 @@ export const NICHE = [
 ];
 const NICHE_CAP = 4;
 
+// "<major AI product> for <industry>" (owner, 20 Nov 2026: Gemini for Healthcare on the Google Cloud blog and
+// "More ways to move care forward with ChatGPT for Healthcare" were missed or lost). A vendor's vertical AI launch is
+// trending news that IT and practice managers search for: +2 niche, and from an official feed it always clears the
+// threshold (verticalFloor in scoreItem). Group 1 = the product, the last group = the industry.
+export const VERTICAL_AI = /\b(chatgpt|openai|claude|anthropic|gemini|google cloud|vertex ai|microsoft 365 copilot|copilot|azure ai|azure openai|amazon q|amazon bedrock|agentforce|watsonx|llama|meta ai|grok)(?: (?:enterprise|business|edu|gov|agents?|ai))? for (health ?care|health|life sciences|pharma(?:ceuticals)?|financial services|finance|banking|insurance|government|public sector|education|higher education|schools|retail|manufacturing|legal|law firms|nonprofits?|small business(?:es)?|telecom(?:munications)?|energy|media|automotive|travel|hospitality|real estate|accounting|security|cybersecurity)\b/i;
+/** Story key of a vertical AI launch ("vertical:gemini:healthcare"), so two feeds announcing it make one task. */
+export function verticalAiKey(text = '') {
+  const m = String(text).match(VERTICAL_AI);
+  if (!m) return null;
+  const product = m[1].toLowerCase().replace(/^(openai)$/, 'chatgpt').replace(/^anthropic$/, 'claude').replace(/\s+/g, ' ');
+  const industry = m[2].toLowerCase().replace(/^health ?care$|^health$/, 'healthcare').replace(/\s+/g, ' ');
+  return `vertical:${product}:${industry}`;
+}
+
 const LAUNCH = /\b(introduc(ing|es|ed)|launch(es|ed|ing)?|now available|available (now|today)|generally available|general availability|rolling out|roll(s|ing)? out|starting today|is here|arrives?|now you can|you can now|now lets you|now supports?|expands? to|available in|new features?)\b/i;
 const ACTION = /\b(set ?up|turn (it )?(on|off)|enable|disable|opt[- ](in|out)|how to|migrat(e|ion)|claim|sign up|upgrade|switch to|install|download|configure|get started|try it|admins? can|users? can|you can|businesses can|step[- ]by[- ]step|redeem|verify your|apply (for|now))\b/i;
 const MONEY = /\b(price|pricing|plans?|subscriptions?|subscribers|free|paid|tier|per user|regions?|countries|india|available to|eligible|eligibility|rollout)\b|[$₹]\d/i;
@@ -525,6 +539,8 @@ export function scoreItem(item, source, { now = Date.now(), freshHours = 36, thr
     }
   }
   add(Math.min(niche, NICHE_CAP), `niche (${hits.slice(0, 4).join(', ')})`);
+  const vertical = full.match(VERTICAL_AI);
+  if (vertical) add(2, `vertical AI "${vertical[0]}"`);
   if (LAUNCH.test(text)) add(2, `launch "${text.match(LAUNCH)[0]}"`);
   if (ACTION.test(full)) add(2, `user steps "${full.match(ACTION)[0]}"`);
   if (MONEY.test(full)) add(1, `plans/price/availability "${full.match(MONEY)[0]}"`);
@@ -549,6 +565,13 @@ export function scoreItem(item, source, { now = Date.now(), freshHours = 36, thr
   if (RETIRE.test(text) && M365_CHANGE.test(`${text} ${(item.categories ?? []).join(' ')}`)) {
     const days = daysToDeadline(text, now);
     if (days !== null) add(Math.max(3, threshold + 1 - score), `M365 retirement due in ${Math.max(days, 0)} days`);
+  }
+  // A vertical AI launch in the headline ("Introducing Gemini for healthcare") from an official feed always clears the
+  // threshold; customer stories and corporate news ("How X uses ChatGPT for healthcare") never get the floor.
+  const vTitle = title.match(VERTICAL_AI);
+  if (vTitle && !STORY.test(title) && !CORPORATE.test(title) && !['signal', 'trending'].includes(source.role) &&
+      (LAUNCH.test(text) || /^(introducing|announcing|meet)\b/i.test(title) || /\b(launch|unveil|introduc|announc|expand|now available|brings?|adds?)\w*\b/i.test(text))) {
+    if (score < threshold + 1) add(threshold + 1 - score, `vertical AI launch floor "${vTitle[0]}"`);
   }
 
   const date = Date.parse(item.date ?? '');
@@ -665,6 +688,15 @@ const SEC_PRODUCT = new RegExp(`${WIDE_SOFTWARE.source}|\\b(chrome|chromium|fire
 const PRODUCT_ALIAS = { openjdk: 'java', jdk: 'java', jre: 'java', fortigate: 'fortinet', fortios: 'fortinet', netscaler: 'citrix', 'pan-os': 'palo alto', chromium: 'chrome', nodejs: 'node.js', postgres: 'postgresql', 'ruby on rails': 'rails' };
 const productsIn = (title) => new Set([...String(title).matchAll(SEC_PRODUCT)].map((m) => m[0].toLowerCase()).map((p) => PRODUCT_ALIAS[p] ?? p));
 const cvesIn = (text) => new Set((String(text).match(CVE) ?? []).map((c) => c.toUpperCase()));
+/** The product a security headline is about (NGINX, PHP, Java, Chrome, ...), or a major platform it names, else null. */
+export function securityProduct(title = '') {
+  // Nicknames name the product they hit: Java4Shell -> java, nginx2root -> nginx, PHP2Shell -> php.
+  const ps = [...productsIn(title)].map((x) => x.replace(/^(\w+?)(4shell|2shell|2root)$/, (m, base) => PRODUCT_ALIAS[base] ?? base));
+  const p = ps[0];
+  if (p) return p;
+  const m = String(title).match(MAJOR_PLATFORM);
+  return m ? m[0].toLowerCase() : null;
+}
 
 /**
  * Other sources reporting the same security story as `item` within CORROBORATION_HOURS: the same CVE id, or the same
@@ -1181,33 +1213,70 @@ export function autoVideoPlan({ task = {}, status, slug, topic = '', title = '',
 
 export const RADAR_MARK = '<!-- radar fast-track -->';
 export const RADAR_TOP_MARK = '<!-- radar security alerts that missed the daily cap: write first -->';
+// Trending stories with no EpiFive post yet (owner, 20 Nov 2026: "ye sab trending topics hote h, chhootne nahi chahiye").
+export const RADAR_TREND_MARK = '<!-- radar trending stories with no post yet: write first -->';
+const TOP_SECTIONS = {
+  security: ['## Radar alerts (security items that missed the fast-track cap)', RADAR_TOP_MARK],
+  trend: ['## Radar trending (big stories with no EpiFive post yet; write first)', RADAR_TREND_MARK],
+};
 
-/** Insert a backlog line at the top of "## Queue" under the radar marker (once). */
+/**
+ * Insert a backlog entry (one "- [ ] slug | ..." line, optionally with an HTML comment line above it) once per slug:
+ * at the top of "## Queue" under the radar marker, or with top = true (security) / 'trend' above every other section,
+ * so the daily writer takes it next (owner 19 and 20 Nov 2026).
+ */
 export function parkInBacklog(md, line, { top = false } = {}) {
-  if (md.includes(line.split(' | ')[0])) return md; // same slug already there
+  const block = String(line).split('\n');
+  const item = block.find((l) => /^- \[ \] /.test(l)) ?? block[0];
+  if (md.includes(`${item.split(' | ')[0]} |`)) return md; // same slug already there
   const lines = md.split('\n');
   if (top) {
-    // Security incidents go above every other section, so the daily writer takes them next (owner 19 Nov 2026).
-    let t = lines.findIndex((l) => l.trim() === RADAR_TOP_MARK);
+    const [heading, mark] = TOP_SECTIONS[top === 'trend' ? 'trend' : 'security'];
+    let t = lines.findIndex((l) => l.trim() === mark);
     if (t === -1) {
       const h = lines.findIndex((l) => /^## /.test(l));
-      if (h === -1) return `${md.trimEnd()}\n${line}\n`;
-      lines.splice(h, 0, '## Radar alerts (security items that missed the fast-track cap)', '', RADAR_TOP_MARK, '');
+      if (h === -1) return `${md.trimEnd()}\n${block.join('\n')}\n`;
+      lines.splice(h, 0, heading, '', mark, '');
       t = h + 2;
     }
-    lines.splice(t + 1, 0, line);
+    lines.splice(t + 1, 0, ...block);
     return lines.join('\n');
   }
   let i = lines.findIndex((l) => l.trim() === RADAR_MARK);
   if (i === -1) {
     const q = lines.findIndex((l) => /^## Queue\s*$/.test(l));
-    if (q === -1) return `${md.trimEnd()}\n${line}\n`;
+    if (q === -1) return `${md.trimEnd()}\n${block.join('\n')}\n`;
     lines.splice(q + 1, 0, '', RADAR_MARK);
     i = q + 2;
   }
-  lines.splice(i + 1, 0, line);
+  lines.splice(i + 1, 0, ...block);
   return lines.join('\n');
 }
+
+/**
+ * Backlog entry for a trending story with no post (radar/trending.mjs): an HTML comment with where it was reported and
+ * the source links, then "- [ ] slug | working title | topic | reader goal" the daily writer can use as is.
+ */
+export function trendParkBlock({ title, date, topic = 'how-to-tips', category = 'launch', links = [], outlets = [], techmeme = false, why = '', slug } = {}) {
+  const t = cleanTitle(stripTags(title)).replace(/\s*\|\s*/g, ' / ').replace(/-->/g, '').slice(0, 140);
+  const day = String(date ?? '').slice(0, 10);
+  const by = [techmeme ? 'Techmeme top headline' : '', outlets.length ? `reported by ${outlets.slice(0, 6).join(', ')}` : ''].filter(Boolean).join('; ');
+  const urls = [...new Set(links.filter((l) => /^https?:\/\//.test(l)))].slice(0, 6).map((l) => l.replace(/-->/g, ''));
+  const comment = `<!-- radar trending ${day}: "${t.replace(/"/g, "'")}"${by ? ` (${by})` : ''}${why ? `; ${why}` : ''}. Sources: ${urls.join(' ')}. ` +
+    'Open and cite the vendor\'s own announcement, docs or advisory first; label anything only the news outlets report as reported. -->';
+  const [heading, goal] = category === 'incident'
+    ? [`${t}: Am I Affected and What to Do Now`, 'check whether they are affected and patch or mitigate now (defensive steps only)']
+    : category === 'outage'
+      ? [`${t}: What Happened and What to Do`, 'check the service status and know what to do while it is down']
+      : [`${t}: What It Is, Who Can Get It and How to Start`, 'understand the launch, check availability and set it up or evaluate it safely'];
+  return `${comment}\n- [ ] ${slug ?? slugify(t)} | ${heading} | ${topic} | ${goal}`;
+}
+
+// The fast-track writer's RADAR-SKIP reasons that are final (the subject is covered, or is not article material).
+// Any other skip (an official page that blocked the fetch, "too little official detail", or no reason recorded) parks
+// the item at the top of the backlog for the daily writer instead of dropping it (ChatGPT for Healthcare, 16 Nov 2026).
+export const SKIP_FINAL = /\b(covered by|news only|no material change|different incident|duplicate)\b/i;
+export const skipParkable = (reason = '') => !SKIP_FINAL.test(String(reason ?? ''));
 
 /** Mark a fast-track post published: remove an open item with the same slug, add "- [x]" at the top of "## Published". */
 export function markPublished(md, { slug, title, date }) {
