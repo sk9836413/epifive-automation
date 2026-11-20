@@ -2,7 +2,7 @@
  "date": "2026-11-19",
  "title": "Tech news today, 19 November 2026",
  "published": "2026-11-19T00:28:31.694Z",
- "updated": "2026-11-20T04:43:45.945Z",
+ "updated": "2026-11-20T05:13:24.965Z",
  "items": [
   {
    "id": "a896af99",
@@ -1010,7 +1010,7 @@
    "sourceId": "bleepingcomputer",
    "reported": true,
    "also": [],
-   "post": null,
+   "post": "drupal-sa-core-2026-017-rce-update-check",
    "device": null,
    "ai": null,
    "score": 6,
