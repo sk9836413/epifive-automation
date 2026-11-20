@@ -63,10 +63,11 @@ env:
   COMMENT_FUNNEL_IG: ${{ vars.COMMENT_FUNNEL_IG }}
   # Reel renderer (owner, 20 Nov 2026): unset = the native reel (scripts/social/reel.mjs: 4 rotating formats, 15-30 s);
   # "motion" = the old animated-text renderer (reel.json is converted). REEL_BED=off drops the background music.
-  # Sound (owner feedback 20 Nov 2026, "the sound sounds even MORE AI"): unset REEL_AUDIO = silent-text reels, no
-  # synthetic voice (the writer's cards.txt timed for reading over our own synthesised music; no Meta AI label, see
-  # meta-post.mjs videoAiLabel); REEL_AUDIO=voice = the neural narrator (narration.txt) with the Meta AI label.
-  # REEL_VOICE_EN / REEL_VOICE_HI override the voices. IG_TRIAL_REELS=manual|auto posts Instagram Reels as Trial Reels.
+  # Sound (owner, 20 Nov 2026: the plain neural voice "sounds even MORE AI", the story-narration voice chain "sounds
+  # human, use it"): unset REEL_AUDIO = the cards (cards.txt) plus a human-sounding narrator who explains each card
+  # (narration.txt, scripts/social/humanize.py; Andrew / Madhur) over a quiet bed, WITH the Meta AI label (realistic
+  # synthetic speech, meta-post.mjs videoAiLabel); REEL_AUDIO=text = silent-text reels, no voice, no label;
+  # REEL_AUDIO=voice = the old plain narrator (narration.txt only), labelled. REEL_VOICE_EN / REEL_VOICE_HI override. IG_TRIAL_REELS=manual|auto posts Instagram Reels as Trial Reels.
   REEL_STYLE: ${{ vars.REEL_STYLE }}
   REEL_AUDIO: ${{ vars.REEL_AUDIO }}
   REEL_BED: ${{ vars.REEL_BED }}
@@ -283,9 +284,10 @@ jobs:
           path: ~/.cache/huggingface
           key: faster-whisper-small-v1
 
-      # The Hinglish version goes out only when its drafts pass (validate --part hi) and, for a voiced reel, a Whisper check
-      # hears the English tech terms and every error code in its voice-over (scripts/social/hinglish-check.py); a
-      # silent-text reel (hi/reel-meta.json "audio": "text") has no voice to check. Otherwise English only.
+      # The Hinglish version goes out only when its drafts pass (validate --part hi) and, for a narrated reel (the default
+      # human narrator, or REEL_AUDIO=voice), a Whisper check hears the English tech terms and every error code in its
+      # voice-over (scripts/social/hinglish-check.py); a silent-text reel (hi/reel-meta.json "audio": "text") has no
+      # voice to check. Otherwise English only.
       # Then the English slot: the next EN_SLOT_UTC (default 00:30) at least 5 hours away (scripts/social/slots.mjs).
       - name: Hinglish version check
         id: hi
