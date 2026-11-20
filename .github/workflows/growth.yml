@@ -88,7 +88,10 @@ jobs:
               them, change the LinkedIn rules only with evidence.
             - Keep the section "Hook, title and cover formulas" (validate.mjs enforces it): update its numbers
               and sharpen a formula only when the data supports it; never drop it or loosen the banned openers.
-            - Keep the file under 95 lines.
+            - Keep the section "Native reel style" (owner, 20 Nov 2026) word for word, except to add evidence
+              per format (fix, mistake, myth, checklist: the social log's "style:" entries say which reel used
+              which); never bring back the 30-45 s length or a like/subscribe outro.
+            - Keep the file under 120 lines.
 
             Edit only automation/STRATEGY.md. Do not commit or push.
 

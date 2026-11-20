@@ -61,6 +61,14 @@ env:
   # Caption wording of the "Comment GUIDE" ask on Instagram (scripts/social/post.mjs): "manychat" or "dm" promises the guide
   # in a DM (ManyChat or META_DM answers Instagram comments by DM); unset = "we'll reply with the guide" (public reply).
   COMMENT_FUNNEL_IG: ${{ vars.COMMENT_FUNNEL_IG }}
+  # Reel renderer (owner, 20 Nov 2026): unset = the native reel (scripts/social/reel.mjs: 4 rotating formats, natural voice,
+  # 15-30 s); "motion" = the old animated-text renderer (reel.json is converted). REEL_BED=off drops the background bed.
+  # REEL_VOICE_EN / REEL_VOICE_HI override the voices. IG_TRIAL_REELS=manual|auto posts Instagram Reels as Trial Reels.
+  REEL_STYLE: ${{ vars.REEL_STYLE }}
+  REEL_BED: ${{ vars.REEL_BED }}
+  REEL_VOICE_EN: ${{ vars.REEL_VOICE_EN }}
+  REEL_VOICE_HI: ${{ vars.REEL_VOICE_HI }}
+  IG_TRIAL_REELS: ${{ vars.IG_TRIAL_REELS }}
 
 permissions:
   contents: write
