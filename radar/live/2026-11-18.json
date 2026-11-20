@@ -2,7 +2,7 @@
  "date": "2026-11-18",
  "title": "Tech news today, 18 November 2026",
  "published": "2026-11-17T19:18:54.800Z",
- "updated": "2026-11-19T23:16:35.731Z",
+ "updated": "2026-11-20T03:43:42.909Z",
  "items": [
   {
    "id": "289cf95a",
@@ -28,7 +28,8 @@
    "also": [
     "techmeme",
     "AWS What's New",
-    "GitHub Changelog"
+    "GitHub Changelog",
+    "Microsoft 365 Message Center (community mirror mc.merill.net)"
    ],
    "post": "gpt-6-2-astra-sol-api-pricing-limits",
    "device": null,
