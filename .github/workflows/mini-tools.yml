@@ -1,0 +1,333 @@
+# EpiFive daily mini tools (cloud port, 21 Nov 2026, of the PC's Claude scheduled task "epifive-daily-mini-tools";
+# the PC shuts down on 30 Nov 2026). Each run ships up to 2 tools, each FREE (public MIT repo epifive/<slug>, demo on
+# Cloudflare Pages) + PRO (private epifive/<slug>-pro, release zip in private epifive/pro-releases).
+#   plan    Claude picks the next tools from the pipeline (site repo automation/minitools/MINI-TOOLS-PIPELINE.md, not
+#           in the Release log or the org) and does the name check -> plan.json, validated by minitools/plan-check.mjs
+#   build   one job per tool (max 2 in parallel): Claude builds work/<slug> + work/<slug>-pro under FACTORY-RULES.md;
+#           minitools/verify.sh (identity, authorship, licences, build) -> demo deploy -> zip -> release
+#   finish  org profile card (epifive/.github), Release log row + HANDOFF.md into the site repo, email to the owner
+#           with the ready-to-paste CRM AI task for the store page / blog / Short (the old "website session" handoff).
+# Switch: the schedule runs only when the repo variable MINI_TOOLS is "on" (the PC task must be paused first, so tools
+# are never built twice). Manual runs always work; dry_run builds and verifies but deploys/publishes/commits nothing.
+# THIS REPO IS PUBLIC and so is this log: Claude's output is hidden; scripts print slugs, URLs and statuses only.
+# Secrets: CLAUDE_CODE_OAUTH_TOKEN, SITE_REPO_TOKEN (site repo, contents read/write), EPIFIVE_ORG_TOKEN (fine-grained,
+# owner epifive, all repos: Administration + Contents read/write), CLOUDFLARE_API_TOKEN (Pages edit), IDENTITY_PATTERN
+# (regex of personal strings that must never appear), RESEND_API_KEY.
+name: Mini tools
+
+on:
+  schedule:
+    - cron: '37 3 * * *' # 09:07 IST, like the PC task (GitHub may start it late)
+  workflow_dispatch:
+    inputs:
+      count:
+        description: How many tools (1 or 2)
+        type: choice
+        options: ['2', '1']
+        default: '2'
+      dry_run:
+        description: Build and verify only (no demo deploy, no repos, no release, no commits)
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: mini-tools
+  cancel-in-progress: false
+
+env:
+  CLOUDFLARE_ACCOUNT_ID: cc7da560c73a0539ed32313476555d4a
+  DRY_RUN: ${{ inputs.dry_run && 'true' || 'false' }}
+
+jobs:
+  plan:
+    if: github.event_name == 'workflow_dispatch' || vars.MINI_TOOLS == 'on'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    outputs:
+      matrix: ${{ steps.check.outputs.matrix }}
+      count: ${{ steps.check.outputs.count }}
+    steps:
+      - name: Check secrets
+        id: gate
+        env:
+          OK: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN != '' && secrets.SITE_REPO_TOKEN != '' && secrets.EPIFIVE_ORG_TOKEN != '' && secrets.CLOUDFLARE_API_TOKEN != '' && secrets.IDENTITY_PATTERN != '' }}
+        run: |
+          if [ "$OK" != true ]; then echo "::notice::A mini-tools secret is missing (see the header); skipping."; echo "ready=false" >> "$GITHUB_OUTPUT"; else echo "ready=true" >> "$GITHUB_OUTPUT"; fi
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.ready == 'true'
+        with:
+          persist-credentials: false
+          sparse-checkout: minitools
+      - name: Site repo rules and pipeline (private)
+        if: steps.gate.outputs.ready == 'true'
+        uses: actions/checkout@v4
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+          path: .site
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /automation/minitools/
+            /automation/STORE.md
+            /automation/OWNER-RULES.md
+      - uses: actions/setup-node@v4
+        if: steps.gate.outputs.ready == 'true'
+        with:
+          node-version: 24
+      - name: Existing org repos
+        if: steps.gate.outputs.ready == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.EPIFIVE_ORG_TOKEN }}
+        run: |
+          mkdir -p .run
+          printf '.site/\n.run/\n' >> .git/info/exclude
+          gh repo list epifive -L 500 --json name -q '.[].name' > .run/existing.txt
+          echo "org repos: $(wc -l < .run/existing.txt)"
+      - name: Plan (Claude)
+        if: steps.gate.outputs.ready == 'true'
+        continue-on-error: true
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          show_full_output: "false"
+          display_report: "false"
+          claude_args: |
+            --max-turns 60
+            --allowedTools "Read,Write,Glob,Grep,WebSearch,WebFetch,Bash(curl:*)"
+          prompt: |
+            You plan today's EpiFive mini tools. Read .site/automation/minitools/MINI-TOOLS-PIPELINE.md (ranked candidates,
+            week schedule, "Release log" at the bottom), .site/automation/minitools/FACTORY-RULES.md (NAMING RULE and NAME
+            CHECK) and .run/existing.txt (repos that already exist in the epifive GitHub org).
+            Pick the next ${{ inputs.count || '2' }} tools in the schedule that are NOT in the Release log and not in
+            existing.txt (match by purpose, not by the old "*zen" names; Termzen is dropped). If the schedule is exhausted,
+            pick the next highest-ranked unreleased candidates. Every tool is "EpiFive <plain descriptive name>"; slug =
+            descriptive part in kebab-case. Do the NAME CHECK for each (web search, domains with curl -sI, GitHub); if a
+            name clashes, pick another and re-check.
+            Write .run/plan.json: a JSON array, one object per tool:
+            {"slug","name","old_name","tag" (<= 48 chars, for the org profile card),"description" (<= 120 chars),
+             "topics" (6-8 lowercase GitHub topics),"free_features" [..],"pro_features" [..],"price_inr","price_usd",
+             "disclaimers" [legal lines from the pipeline, may be empty],"name_check" (short summary of queries + results)}
+            Take features, prices and disclaimers from the pipeline entry. Never write personal names or local paths.
+            Write only .run/plan.json. Never print secrets.
+      - name: Check the plan
+        id: check
+        if: steps.gate.outputs.ready == 'true'
+        run: |
+          [ -f .run/plan.json ] || echo '[]' > .run/plan.json
+          m=$(node minitools/plan-check.mjs .run/plan.json .run/existing.txt "${{ inputs.count || '2' }}")
+          echo "matrix=$m" >> "$GITHUB_OUTPUT"
+          echo "count=$(node -e 'console.log(JSON.parse(process.argv[1]).slug.length)' "$m")" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        if: steps.check.outputs.count > 0
+        with:
+          name: plan
+          path: .run/plan.json
+          retention-days: 7
+
+  build:
+    needs: plan
+    if: needs.plan.outputs.count > 0
+    runs-on: ubuntu-24.04
+    timeout-minutes: 110
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    env:
+      SLUG: ${{ matrix.slug }}
+      AUTO_DIR: ${{ github.workspace }}/../auto
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: minitools
+      - name: Keep the helper scripts outside the workspace
+        run: |
+          mkdir -p "$AUTO_DIR" && cp -r minitools "$AUTO_DIR/" && find . -mindepth 1 -delete
+          mkdir -p work .run
+      - name: Site repo rules (private)
+        uses: actions/checkout@v4
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+          path: .site
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /automation/minitools/
+            /automation/STORE.md
+      - uses: actions/download-artifact@v4
+        with:
+          name: plan
+          path: .run
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Tool brief
+        run: node -e 'const t=require("./.run/plan.json").find(x=>x.slug===process.env.SLUG); require("fs").writeFileSync(".run/tool.json", JSON.stringify(t,null,2)); console.log("building", t.slug)'
+      - name: Build (Claude)
+        id: agent
+        continue-on-error: true
+        timeout-minutes: 85
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          show_full_output: "false"
+          display_report: "false"
+          claude_args: |
+            --max-turns 300
+            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(npm:*),Bash(npx:*),Bash(node:*),Bash(git:*),Bash(ls:*),Bash(mkdir:*),Bash(cp:*),Bash(mv:*),Bash(rm:*),Bash(cat:*),Bash(find:*),Bash(curl:*),Bash(grep:*),Bash(sed:*)"
+          prompt: |
+            Read .site/automation/minitools/FACTORY-RULES.md completely and follow it exactly (it overrides everything
+            else). Build the tool described in .run/tool.json (name, slug, FREE vs PRO features, prices, disclaimers,
+            name check already done: copy its result into HANDOFF.md under "## Name check"). Its pipeline entry (old name
+            in "old_name") is in .site/automation/minitools/MINI-TOOLS-PIPELINE.md.
+            Work only in work/<slug> (FREE) and work/<slug>-pro (PRO), both their own git repos on branch main, every
+            commit with git -c user.name=EpiFive -c user.email=newsletter@epifive.com (author AND committer: also set
+            GIT_COMMITTER_NAME/GIT_COMMITTER_EMAIL the same way). The screenshot helper is at $AUTO_DIR/minitools/screenshots.mjs
+            (AUTO_DIR=${{ github.workspace }}/../auto). Product page for "Get Pro" links:
+            https://www.epifive.com/products/<slug>-pro. Buying is "request to buy" by email (info@epifive.com) - never
+            another email. You never deploy, push or create repos: the workflow does that after its checks.
+            Finish with work/<slug>/HANDOFF.md and work/<slug>/RESULT.md. Never print secrets.
+      - name: Verify
+        id: verify
+        env:
+          IDENTITY_PATTERN: ${{ secrets.IDENTITY_PATTERN }}
+        run: bash "$AUTO_DIR/minitools/verify.sh" "$SLUG"
+      - name: Demo on Cloudflare Pages
+        id: demo
+        if: steps.verify.outcome == 'success' && env.DRY_RUN != 'true'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          p="$SLUG-demo"
+          npx -y wrangler@4 pages project create "$p" --production-branch main > /dev/null 2>&1 || true
+          npx -y wrangler@4 pages deploy "work/$SLUG/out" --project-name "$p" --branch main --commit-dirty=true > "$RUNNER_TEMP/deploy.log" 2>&1 || { tail -3 "$RUNNER_TEMP/deploy.log"; exit 1; }
+          sub=$(curl -fsS -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/$p" | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>console.log(JSON.parse(s).result.subdomain))')
+          url="https://$sub"
+          for i in $(seq 1 12); do code=$(curl -s -o /dev/null -w '%{http_code}' -m 15 "$url/"); [ "$code" = 200 ] && break; sleep 10; done
+          echo "demo $url: HTTP $code"
+          [ "$code" = 200 ] || exit 1
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+      - name: Pro zip
+        id: zip
+        if: steps.verify.outcome == 'success'
+        env:
+          IDENTITY_PATTERN: ${{ secrets.IDENTITY_PATTERN }}
+        run: |
+          mkdir -p dist
+          z="dist/$SLUG-pro-v1.0.0.zip"
+          git -C "work/$SLUG-pro" archive --format=zip --prefix="$SLUG-pro/" -o "$PWD/$z" HEAD
+          unzip -l "$z" | grep -q "$SLUG-pro/LICENSE-PRO.md" && unzip -l "$z" | grep -q "$SLUG-pro/README.md" || { echo "zip without LICENSE-PRO.md/README.md"; exit 1; }
+          if unzip -p "$z" | grep -a -q -i -E "envato|codecanyon|$IDENTITY_PATTERN"; then echo "forbidden string in the zip"; exit 1; fi
+          echo "zip=$z" >> "$GITHUB_OUTPUT"
+          echo "zip ok ($(du -k "$z" | cut -f1) KB)"
+      - name: Release
+        id: release
+        if: steps.demo.outcome == 'success' && steps.zip.outcome == 'success' && env.DRY_RUN != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.EPIFIVE_ORG_TOKEN }}
+          DEMO: ${{ steps.demo.outputs.url }}
+          ZIP: ${{ steps.zip.outputs.zip }}
+        run: |
+          desc=$(node -e 'console.log(require("./.run/tool.json").description)')
+          topics=$(node -e 'console.log(require("./.run/tool.json").topics.join(","))')
+          bash "$AUTO_DIR/minitools/release-tool.sh" "$SLUG" "$desc" "$topics" "$DEMO" "$ZIP"
+      - name: Result
+        if: always()
+        env:
+          AGENT: ${{ steps.agent.outcome }}
+          VERIFY: ${{ steps.verify.outcome }}
+          DEMO_OUT: ${{ steps.demo.outcome }}
+          RELEASE: ${{ steps.release.outcome }}
+          DEMO: ${{ steps.demo.outputs.url }}
+        run: |
+          mkdir -p result
+          status=failed
+          [ "$VERIFY" = success ] && status=verified
+          [ "$RELEASE" = success ] && status=released
+          notes="agent $AGENT, verify $VERIFY, demo ${DEMO_OUT:-skipped}, release ${RELEASE:-skipped}${DRY_RUN:+, dry run $DRY_RUN}"
+          node -e 'const [slug,status,demo,notes]=process.argv.slice(1); require("fs").writeFileSync(`result/${slug}.json`, JSON.stringify({slug,status,demo,release:`${slug}-pro-v1.0.0`,notes}))' "$SLUG" "$status" "${DEMO:-}" "$notes"
+          [ -f "work/$SLUG/HANDOFF.md" ] && cp "work/$SLUG/HANDOFF.md" "result/$SLUG.HANDOFF.md" || true
+          [ -f "work/$SLUG/RESULT.md" ] && cp "work/$SLUG/RESULT.md" "result/$SLUG.RESULT.md" || true
+          echo "$SLUG: $status"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: result-${{ matrix.slug }}
+          path: result/
+          retention-days: 14
+
+  finish:
+    needs: [plan, build]
+    if: always() && needs.plan.outputs.count > 0
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: minitools
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - uses: actions/download-artifact@v4
+        with:
+          path: .run
+      - name: Released tools
+        id: rel
+        run: |
+          printf '.run/\n.site/\n.profile/\n' >> .git/info/exclude
+          released=$(node -e 'const fs=require("fs");const d=".run";const out=[];for(const f of fs.readdirSync(d,{recursive:true})){if(String(f).endsWith(".json")&&!String(f).includes("plan")){const r=JSON.parse(fs.readFileSync(d+"/"+f));if(r.status==="released")out.push(r.slug)}}console.log(out.join(" "))')
+          echo "released=$released" >> "$GITHUB_OUTPUT"
+          echo "released: ${released:-none}"
+      - name: Org profile card
+        if: steps.rel.outputs.released != '' && env.DRY_RUN != 'true'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.EPIFIVE_ORG_TOKEN }}
+          RELEASED: ${{ steps.rel.outputs.released }}
+        run: |
+          git clone -q "https://x-access-token:${GH_TOKEN}@github.com/epifive/.github.git" .profile
+          node minitools/finish.mjs profile .profile .run/plan/plan.json $RELEASED
+          ( cd .profile && GITHUB_TOKEN="$GH_TOKEN" node scripts/build.mjs > /dev/null )
+          git -C .profile add -A
+          if ! git -C .profile diff --cached --quiet; then
+            git -C .profile -c user.name=EpiFive -c user.email=newsletter@epifive.com commit -q -m "Add $RELEASED to the mini tools"
+            git -C .profile push -q origin HEAD:main
+            echo "profile updated"
+          fi
+      - name: Release log and handoffs (site repo)
+        if: steps.rel.outputs.released != '' && env.DRY_RUN != 'true'
+        continue-on-error: true
+        env:
+          TOKEN: ${{ secrets.SITE_REPO_TOKEN }}
+          RELEASED: ${{ steps.rel.outputs.released }}
+        run: |
+          git clone -q --depth 1 --filter=blob:none --sparse "https://x-access-token:${TOKEN}@github.com/sk9836413/EPIVIFE.git" .site
+          git -C .site sparse-checkout set automation/minitools
+          for s in $RELEASED; do f=$(find .run -name "$s.HANDOFF.md" | head -1); [ -n "$f" ] && cp "$f" ".site/automation/minitools/handoffs/$s.md"; done
+          node minitools/finish.mjs log .site/automation/minitools/MINI-TOOLS-PIPELINE.md .run/plan/plan.json .run
+          git -C .site add automation/minitools
+          if ! git -C .site diff --cached --quiet; then
+            git -C .site -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -q -m "Mini tools released: $RELEASED (release log + handoffs)" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+            for i in 1 2 3; do git -C .site pull -q --rebase && git -C .site push -q && break; sleep 10; done
+            echo "site repo updated"
+          fi
+      - name: Email the owner
+        if: always()
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          REPORT_FROM: EpiFive Agent <hello@epifive.com>
+          REPORT_TO: info@epifive.com
+          REPORT_BCC: epifive2@gmail.com
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: node minitools/finish.mjs email .run/plan/plan.json .run
