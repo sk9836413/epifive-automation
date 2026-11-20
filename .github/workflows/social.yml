@@ -61,10 +61,14 @@ env:
   # Caption wording of the "Comment GUIDE" ask on Instagram (scripts/social/post.mjs): "manychat" or "dm" promises the guide
   # in a DM (ManyChat or META_DM answers Instagram comments by DM); unset = "we'll reply with the guide" (public reply).
   COMMENT_FUNNEL_IG: ${{ vars.COMMENT_FUNNEL_IG }}
-  # Reel renderer (owner, 20 Nov 2026): unset = the native reel (scripts/social/reel.mjs: 4 rotating formats, natural voice,
-  # 15-30 s); "motion" = the old animated-text renderer (reel.json is converted). REEL_BED=off drops the background bed.
+  # Reel renderer (owner, 20 Nov 2026): unset = the native reel (scripts/social/reel.mjs: 4 rotating formats, 15-30 s);
+  # "motion" = the old animated-text renderer (reel.json is converted). REEL_BED=off drops the background music.
+  # Sound (owner feedback 20 Nov 2026, "the sound sounds even MORE AI"): unset REEL_AUDIO = silent-text reels, no
+  # synthetic voice (the writer's cards.txt timed for reading over our own synthesised music; no Meta AI label, see
+  # meta-post.mjs videoAiLabel); REEL_AUDIO=voice = the neural narrator (narration.txt) with the Meta AI label.
   # REEL_VOICE_EN / REEL_VOICE_HI override the voices. IG_TRIAL_REELS=manual|auto posts Instagram Reels as Trial Reels.
   REEL_STYLE: ${{ vars.REEL_STYLE }}
+  REEL_AUDIO: ${{ vars.REEL_AUDIO }}
   REEL_BED: ${{ vars.REEL_BED }}
   REEL_VOICE_EN: ${{ vars.REEL_VOICE_EN }}
   REEL_VOICE_HI: ${{ vars.REEL_VOICE_HI }}
@@ -279,8 +283,9 @@ jobs:
           path: ~/.cache/huggingface
           key: faster-whisper-small-v1
 
-      # The Hinglish version goes out only when its drafts pass (validate --part hi) and a Whisper check hears the English
-      # tech terms and every error code in its voice-over (scripts/social/hinglish-check.py); otherwise English only.
+      # The Hinglish version goes out only when its drafts pass (validate --part hi) and, for a voiced reel, a Whisper check
+      # hears the English tech terms and every error code in its voice-over (scripts/social/hinglish-check.py); a
+      # silent-text reel (hi/reel-meta.json "audio": "text") has no voice to check. Otherwise English only.
       # Then the English slot: the next EN_SLOT_UTC (default 00:30) at least 5 hours away (scripts/social/slots.mjs).
       - name: Hinglish version check
         id: hi
@@ -291,9 +296,15 @@ jobs:
         run: |
           ok=false
           if node scripts/social/validate.mjs "${{ steps.pick.outputs.slug }}" "$DIR" --part hi; then
-            "$PYTHON" -m pip install -q faster-whisper > /dev/null 2>&1 || echo "::warning::faster-whisper install failed"
-            if "$PYTHON" scripts/social/hinglish-check.py --audio "$DIR/hi/reel.mp4" --narration "$DIR/hi/narration.txt" > "$DIR/hi/voice-check.json"; then ok=true; fi
-            cat "$DIR/hi/voice-check.json"
+            audio=$(node -p "try { JSON.parse(require('fs').readFileSync('$DIR/hi/reel-meta.json', 'utf8')).audio || 'voice' } catch { 'voice' }")
+            if [ "$audio" = text ]; then
+              echo "Silent-text Hinglish reel: no voice to check."
+              ok=true
+            else
+              "$PYTHON" -m pip install -q faster-whisper > /dev/null 2>&1 || echo "::warning::faster-whisper install failed"
+              if "$PYTHON" scripts/social/hinglish-check.py --audio "$DIR/hi/reel.mp4" --narration "$DIR/hi/narration.txt" > "$DIR/hi/voice-check.json"; then ok=true; fi
+              cat "$DIR/hi/voice-check.json"
+            fi
           fi
           if [ "$ok" = true ]; then
             en_at=$(node scripts/social/slots.mjs english)
