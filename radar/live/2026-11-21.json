@@ -1,0 +1,656 @@
+{
+ "date": "2026-11-21",
+ "title": "Tech news today, 21 November 2026",
+ "published": "2026-11-20T20:46:38.014Z",
+ "updated": "2026-11-20T20:46:38.014Z",
+ "items": [
+  {
+   "id": "3b5198cc",
+   "key": "https://blogs.windows.com/windows-insider/2026/11/20/announcing-new-builds-for-20-november-2026",
+   "time": "2026-11-20T18:05:27.000Z",
+   "seen": "2026-11-20T20:46:38.014Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Announcing new builds for 20 November 2026",
+   "summary": "Hello Windows Insiders, Today, we’re releasing new Windows 11 Insider Preview builds to the Beta and Experimental channels. New builds this week Select your channel below to view its release notes: Beta: The post Announcing new builds for 20 November 2026 appeared first on Windows Blog .",
+   "lines": [
+    "New Windows 11 Insider Preview builds were released to the Beta and Experimental channels.",
+    "Release notes are listed by channel in the post, and the text does not describe specific changes.",
+    "IT teams testing Windows 11 can track these builds through the Insider channels."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Windows Blog",
+    "url": "https://blogs.windows.com/windows-insider/2026/11/20/announcing-new-builds-for-20-november-2026/"
+   },
+   "sourceId": "windows-blog",
+   "reported": false,
+   "also": [
+    "windows-insider"
+   ],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 7,
+   "story": null
+  },
+  {
+   "id": "d664451c",
+   "key": "https://workspaceupdates.googleblog.com/2026/11/google-vids-now-lets-you-reuse-your-media-in-video-generation.html",
+   "time": "2026-11-20T17:59:59.965Z",
+   "seen": "2026-11-20T20:46:38.014Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Google Vids now lets you reuse your media in video generation",
+   "summary": "When generating videos with Gemini Omni in Google Vids , your media is now stored in a new “Assets” section, letting you easily reuse media for future video generations within the same project. The Assets section supports a variety of multimedia formats across images, videos, and audio, and is integrated directly into the AI video generation experience for quick access. Pick from recent assets to use as ingredients for video generation Getting started Admins: There is no admin control for this feature. End users: This feature will be available by default. There is no end user setting for this feature. Visit the Help Center to learn more about how to store & reuse media files in Google Vids .",
+   "lines": [
+    "Google Vids now stores media used in Gemini Omni video generation in a new Assets section.",
+    "The Assets section supports images, videos, and audio, and lets users pick recent assets for future video generation within the same project.",
+    "This feature is available by default. Admins have no control over it, and end users have no setting for it.",
+    "Teams creating videos in Google Vids can reuse existing media within a project."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google Workspace Updates",
+    "url": "http://workspaceupdates.googleblog.com/2026/11/google-vids-now-lets-you-reuse-your-media-in-video-generation.html"
+   },
+   "sourceId": "workspace-updates",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null
+  },
+  {
+   "id": "2d5fd67c",
+   "key": "https://workspaceupdates.googleblog.com/2026/11/google-workspace-studio-support-for-Data-Regions-is-now-generally-available.html",
+   "time": "2026-11-20T15:57:23.791Z",
+   "seen": "2026-11-20T20:46:38.014Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Google Workspace Studio support for Data Regions is now generally available",
+   "summary": "Google Workspace Studio now supports Data Regions , giving organizations greater governance over where their workflow data is stored at rest and processed in use. With this launch, core Workspace Studio execution and storage backends, including integrations with Gmail, Google Drive, Google Docs, Google Sheets, Google Calendar, Google Meet, and Google Chat, natively adhere to assigned United States or European Union data region policies. In addition, a dedicated Workspace Studio control has been introduced within Data Regions advanced settings in the Google Admin console. This control enables administrators to determine whether users assigned to a data region can access non-regionalized steps",
+   "lines": [
+    "Google Workspace Studio now supports Data Regions , giving organizations greater governance over where their workflow data is stored at rest and processed in use.",
+    "With this launch, core Workspace Studio execution and storage backends, including integrations with Gmail, Google Drive, Google Docs, Google Sheets, Google Calendar, Google Meet, and Google Chat, natively adhere to assigned United States or European Union data region policies."
+   ],
+   "linesBy": "template",
+   "source": {
+    "name": "Google Workspace Updates",
+    "url": "http://workspaceupdates.googleblog.com/2026/11/google-workspace-studio-support-for-Data-Regions-is-now-generally-available.html"
+   },
+   "sourceId": "workspace-updates",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null,
+   "linesNote": "need 1-4 lines"
+  },
+  {
+   "id": "8e14c39b",
+   "key": "https://workspaceupdates.googleblog.com/2026/11/expanded-google-vault-support-for-external-spaces-and-group-conversations-in-Google-Chat.html",
+   "time": "2026-11-20T19:17:44.967Z",
+   "seen": "2026-11-20T20:46:38.014Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Expanded Google Vault support for external spaces and group conversations in Google Chat",
+   "summary": "To give organizations more consistent visibility and help support their compliance requirements, we’re expanding Google Vault support in Google Chat. Starting mid-February 2027, Vault admins can retain, hold, search, and export messages from external spaces and group direct messages that include Workspace users from their organization. This brings these conversations to parity with how external 1:1 direct messages work today. There is no change to conversations with history off, as they are not available in Vault. Previously, only the organization that created an external space or group direct message could retain a copy of its messages using Vault. Now, every organization with a member in t",
+   "lines": [
+    "Google Vault will support retaining, holding, searching, and exporting messages from external spaces and group direct messages that include Workspace users from the organization.",
+    "Starting mid-February 2027, Vault admins can use these capabilities.",
+    "Conversations with history off are not available in Vault and are unchanged.",
+    "Compliance teams get more consistent visibility into external Chat conversations, matching how external 1:1 direct messages work today."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google Workspace Updates",
+    "url": "http://workspaceupdates.googleblog.com/2026/11/expanded-google-vault-support-for-external-spaces-and-group-conversations-in-Google-Chat.html"
+   },
+   "sourceId": "workspace-updates",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "89e8c156",
+   "key": "https://blog.cloudflare.com/ruby2shell-waf-protection",
+   "time": "2026-11-20T20:24:38.000Z",
+   "seen": "2026-11-20T20:46:38.014Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "How Cloudflare WAF protects against ruby2shell (CVE-2026-132825)",
+   "summary": "ruby2shell lets attackers corrupt memory in default Rails and Sinatra apps without logging in. Cloudflare WAF blocks it for every customer, including Free plans. Upgrade Ruby now, and use the WAF to cover the gap.",
+   "lines": [
+    "ruby2shell lets attackers corrupt memory in default Rails and Sinatra apps without logging in, tracked as CVE-2026-132825.",
+    "Cloudflare WAF blocks it for every customer, including Free plans.",
+    "The post advises upgrading Ruby now and using the WAF to cover the gap.",
+    "Teams running Rails or Sinatra apps should review their Ruby versions and WAF coverage."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Cloudflare Blog",
+    "url": "https://blog.cloudflare.com/ruby2shell-waf-protection/"
+   },
+   "sourceId": "cloudflare-blog",
+   "sourceMax": 4,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "f88fae87",
+   "key": "https://cloud.google.com/blog/products/networking/ambient-networking-for-gke-sidecarless-service-mesh",
+   "time": "2026-11-20T17:00:00.000Z",
+   "seen": "2026-11-20T20:46:38.014Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Introducing ambient networking for GKE",
+   "summary": "Network sidecars have a deserved reputation for excessive resource consumption and increased management overhead, especially in a service mesh environment. Today, we are announcing the general availability of ambient networking for Google Kubernetes Engine (GKE). This milestone marks an important evolution in how your run service mesh on GKE, bringing a sidecar-less architecture into production. Introduced earlier this year, ambient networking decouples functionality traditionally provided as a service mesh from application workloads, allowing platform operators and developers to help secure, observe, and route traffic without the resource overhead and operational complexity of managing side",
+   "lines": [
+    "Google Cloud announced general availability of ambient networking for Google Kubernetes Engine (GKE).",
+    "Ambient networking brings a sidecar-less service mesh architecture into production by decoupling service mesh functions from application workloads.",
+    "Platform teams can secure, observe, and route traffic without the resource overhead of network sidecars."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google Cloud Blog",
+    "url": "https://cloud.google.com/blog/products/networking/ambient-networking-for-gke-sidecarless-service-mesh/"
+   },
+   "sourceId": "gcloud-blog",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "1ed23e99",
+   "key": "https://mc.merill.net/message/MC1540327",
+   "time": "2026-11-20T17:56:15.000Z",
+   "seen": "2026-11-20T20:46:38.014Z",
+   "kind": "retirement",
+   "tier": 2,
+   "headline": "MC1540327: Action required: Prepare users who can’t use passkeys for SMS and voice retirement",
+   "summary": "Users relying solely on Microsoft-provided SMS/voice for MFA in sessions that don’t support passkeys must register alternative methods or configure customer-managed telephony before SMS/voice retirement begins February 1, 2027 (July 1 for admins/external users). Prepare early to avoid sign-in blocks.",
+   "lines": [
+    "Microsoft-provided SMS and voice MFA is being retired for users who rely solely on it in sessions that do not support passkeys.",
+    "Affected users must register alternative methods or configure customer-managed telephony before retirement begins on February 1, 2027, or July 1 for admins and external users.",
+    "Admins should prepare affected users early to avoid sign-in blocks."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1540327"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "c6982f25",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/ec2-t9g-instances-ga",
+   "time": "2026-11-20T16:00:00.000Z",
+   "seen": "2026-11-20T20:46:38.014Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Introducing Amazon EC2 T9g instances based on Graviton5",
+   "summary": "AWS is announcing the general availability of new low-cost burstable Amazon EC2 T9g instances, which offer the best price performance among general-purpose EC2 instances. These instances are powered by AWS Graviton5 processors and built on the latest sixth generation AWS Nitro cards. T9g instances deliver up to 45% better price performance compared to previous generation T4g instances, and offer four sizes: nano, micro, small, and medium. These instances are designed for workloads requiring low to moderate CPU utilization, including data processing, login gateways, small databases, microservices, low-traffic websites, freemium services, staging and development, and short-duration compute tas",
+   "lines": [
+    "AWS announced general availability of Amazon EC2 T9g burstable instances powered by AWS Graviton5 processors.",
+    "T9g instances offer up to 45% better price performance than previous generation T4g instances and come in nano, micro, small, and medium sizes.",
+    "Teams running low-utilization workloads, such as staging, development, small databases, or microservices, may evaluate them for cost."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/ec2-t9g-instances-ga/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "db7188ae",
+   "key": "https://cloud.google.com/blog/products/data-analytics/vodafone-cuts-data-pipeline-costs-30-via-data-engineeringagent",
+   "time": "2026-11-20T17:00:00.000Z",
+   "seen": "2026-11-20T20:46:38.014Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "How Vodafone is using the Data Engineering Agent to improve their data pipelines",
+   "summary": "For large organizations, building and maintaining data pipelines is one of the most complex tasks that data engineering teams are tasked with. In BigQuery environments, the Data Engineering Agent can help, leveraging Gemini to to automate these workflows. In this blog post, Vodafone Czech Republic describes how it has used the Data Engineering Agent to modernize and optimize BigQuery stored procedures, transforming them into modern data pipelines and reducing pipeline execution times by half. - Pedro Esteves, Google Cloud The Data Engineering Agent makes it easy to build and maintain modern data pipelines. The agent is available in BigQuery pipelines and Dataform . At Vodafone, we used the a",
+   "lines": [
+    "Vodafone Czech Republic used the Data Engineering Agent to modernize BigQuery stored procedures into modern data pipelines.",
+    "The post reports that this reduced pipeline execution times by half.",
+    "The agent, which uses Gemini, is available in BigQuery pipelines and Dataform.",
+    "Data engineering teams managing BigQuery pipelines can automate pipeline building and maintenance."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google Cloud Blog",
+    "url": "https://cloud.google.com/blog/products/data-analytics/vodafone-cuts-data-pipeline-costs-30-via-data-engineeringagent/"
+   },
+   "sourceId": "gcloud-blog",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "5fac2580",
+   "key": "https://mc.merill.net/message/MC1561862",
+   "time": "2026-11-20T15:26:54.000Z",
+   "seen": "2026-11-20T20:46:38.014Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1561862: Run Python code as a workflow step",
+   "summary": "We are announcing the ability to use the Code node to run Python as a step in a workflow for logic that expressions and connectors cannot handle in Copilot Studio. This feature will reach general availability on December 1, 2026. How does this affect me? Makers can add Python steps to workflows for data transforms, file parsing and conversion (e.g. PDF to text, CSV, or XML), and calls to APIs that don't have a connector. The code can be generated using natural language using AI, or Makers can wr...",
+   "lines": [
+    "Copilot Studio now lets the Code node run Python as a workflow step for logic that expressions and connectors cannot handle.",
+    "This feature reaches general availability on December 1, 2026.",
+    "Makers can use Python steps for data transforms, file parsing and conversion, and API calls without a connector; code can be generated from natural language using AI.",
+    "Makers can handle data transforms and file conversions in workflows that connectors alone do not cover."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1561862"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "72aa04d2",
+   "key": "https://mc.merill.net/message/MC1561859",
+   "time": "2026-11-20T15:22:06.000Z",
+   "seen": "2026-11-20T20:46:38.014Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1561859: Generate documents from the Agent node in workflows",
+   "summary": "We are announcing the ability to generate documents from the Agent node in workflows within Copilot Studio. This feature will reach general availability on December 3, 2026. How does this affect me? With this feature, the Agent node can now return files that the agent generates, such as PDF, Word, Excel, PowerPoint, and CSV, as workflow outputs. Key functionality of this feature includes: Ability to work with both inline agents and existing (published) agents. Generated files appear as an ordere...",
+   "lines": [
+    "Copilot Studio's Agent node in workflows can now generate documents and return the files as workflow outputs, including PDF, Word, Excel, PowerPoint, and CSV.",
+    "This feature reaches general availability on December 3, 2026.",
+    "It works with both inline agents and existing published agents.",
+    "Makers can produce document outputs from agent-driven workflows."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1561859"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "9be0e4a7",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/glue-catalog-data-quality-monitoring",
+   "time": "2026-11-20T19:00:00.000Z",
+   "seen": "2026-11-20T20:46:38.014Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "AWS Glue Data Catalog introduces data quality monitoring for catalogs and databases",
+   "summary": "AWS Glue Data Catalog introduces data quality monitoring for catalogs and databases, powered by AWS Glue Data Quality, which profiles and evaluates your tables at catalog scale from a single configuration. You define data quality checks once for a catalog, a database, or a single table, and AWS Glue Data Quality evaluates every table in scope, including tables added later, on the cadence you choose. Quality issues surface as data changes, without per-table setup or manual runs, which helps keep bad data from reaching downstream consumers. You can use built-in profiling options that AWS Glue provides for common baseline statistics or provide your own Data Quality Definition Language (DQDL) ru",
+   "lines": [
+    "AWS Glue Data Catalog now offers data quality monitoring for catalogs and databases, powered by AWS Glue Data Quality.",
+    "Users define checks once at the catalog, database, or table level, and the checks evaluate every table in scope, including tables added later, on a chosen cadence.",
+    "Teams can catch quality issues before bad data reaches downstream consumers, without per-table setup."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/glue-catalog-data-quality-monitoring/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "4cb5cfe9",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/eventbridge-scheduler-new-api-actions",
+   "time": "2026-11-20T18:00:00.000Z",
+   "seen": "2026-11-20T20:46:38.014Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Amazon EventBridge Scheduler adds 589 new API actions and event bus targets",
+   "summary": "Amazon EventBridge Scheduler expands its AWS SDK integrations with 589 new API actions across 81 AWS services, and adds templated targets for the enhanced EventBridge Custom event bus. You can now schedule direct invocations of a broader set of AWS services without writing custom integration code. EventBridge Scheduler is a serverless scheduler that allows you to create, run, and manage billions of scheduled events and tasks across more than 270 AWS services, without provisioning or managing the underlying infrastructure. With a new templated target, you can schedule event delivery directly to the Custom event bus using its PutEvents or PutRawEvents API. The templated target also makes it ea",
+   "lines": [
+    "Amazon EventBridge Scheduler adds 589 new API actions across 81 AWS services through its AWS SDK integrations.",
+    "A new templated target lets users schedule event delivery to the Custom event bus using PutEvents or PutRawEvents.",
+    "Teams can schedule direct invocations of more AWS services without writing custom integration code."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/eventbridge-scheduler-new-api-actions/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "ffae8224",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/stacksets-custom-execution-roles",
+   "time": "2026-11-20T17:45:00.000Z",
+   "seen": "2026-11-20T20:46:38.014Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "AWS CloudFormation Service-Managed StackSets adds custom execution roles with nested stacks support",
+   "summary": "AWS CloudFormation StackSets now supports custom execution roles for service-managed stack sets, which enables you to scope the permissions StackSets uses in each target AWS account. StackSets deploys the same infrastructure, such as networking and security settings, across thousands of accounts and Regions in one operation. With a custom execution role, you can also use nested stacks, macros, and transforms in service-managed stack sets, which allows you to deploy the reusable templates you use for individual stacks across your organization. With a custom execution role, you define what StackSets can do in each account. By default, service-managed stack sets use a role in each account that",
+   "lines": [
+    "AWS CloudFormation StackSets now supports custom execution roles for service-managed stack sets, which scope the permissions StackSets uses in each target account.",
+    "With a custom execution role, service-managed stack sets can use nested stacks, macros, and transforms.",
+    "Platform teams deploying across many accounts can limit permissions per account while reusing templates across the organization."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/stacksets-custom-execution-roles/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "7fd5719e",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-eventbridge-webhook-events",
+   "time": "2026-11-20T17:30:00.000Z",
+   "seen": "2026-11-20T20:46:38.014Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Amazon EventBridge Custom event bus now supports Webhook Events",
+   "summary": "Amazon EventBridge now supports Webhook Events for the enhanced Custom event bus, so SaaS applications, AI agents, and custom integrations can send events to a bus over HTTPS. You no longer need to deploy and operate your own API endpoint and compute to receive webhooks and publish them to your bus. The EventBridge Custom event bus is a serverless event broker that enables you to create scalable event-driven applications by routing events between your applications, SaaS integrations, and AWS services. When you create a webhook event source on your bus, EventBridge provides a managed HTTPS URL and verifies each request using an HMAC signature, a static token, or basic authentication. EventBri",
+   "lines": [
+    "Amazon EventBridge now supports Webhook Events for the enhanced Custom event bus, so SaaS applications, AI agents, and custom integrations can send events over HTTPS.",
+    "EventBridge provides a managed HTTPS URL and verifies each request using an HMAC signature, a static token, or basic authentication.",
+    "Teams no longer need their own API endpoint and compute to receive webhooks and publish them to an event bus."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-eventbridge-webhook-events"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "6836f522",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-aurora-mysql-8412-available",
+   "time": "2026-11-20T17:00:00.000Z",
+   "seen": "2026-11-20T20:46:38.014Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Amazon Aurora MySQL 8.4.12 is now generally available",
+   "summary": "Starting today, Amazon Aurora MySQL-Compatible Edition 8.4 supports MySQL 8.4.12. This release includes several security enhancements and bug fixes. We recommend upgrading to the newer minor versions to accept fixes for Common Vulnerabilities and Exposures (CVEs) in prior versions of MySQL and to benefit from bug fixes, performance improvements, and new functionality added by community MySQL. For more details, refer to the Aurora MySQL 8.4 and MySQL 8.4.12 release notes. You can upgrade your databases during scheduled maintenance windows using automatic minor version upgrades. To simplify operations at scale, enable automatic minor version upgrades and use the AWS Organizations Upgrade Rollo",
+   "lines": [
+    "Amazon Aurora MySQL-Compatible Edition 8.4 now supports MySQL 8.4.12, which includes security enhancements and bug fixes.",
+    "Upgrades can run during scheduled maintenance windows using automatic minor version upgrades.",
+    "AWS recommends upgrading to accept fixes for CVEs in prior MySQL versions, and enabling automatic minor version upgrades simplifies operations at scale."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-aurora-mysql-8412-available/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "2f73eb55",
+   "key": "https://news.google.com/rss/articles/CBMingFBVV95cUxPancyR3hqXzc1cWJHZDlBeDc5Wk50dkNqX0R4VlFEUFV2V2FLNlkzVTlRd0lxQ3h1S1FrWHQ1UG9UM3NwT1RuZUdUVWszek1FR2xzRDhZM0RWNGcyWm9SZVR2NDV4Mm1UTXlLUm5XMUlFMUY0bmhtS0QyM3N1bzRVNE1YSVREbms2UTYtQVVPaXpXcVZRTG5haVVWYXRKZw?oc=5",
+   "time": "2026-11-19T22:58:42.000Z",
+   "seen": "2026-11-20T20:46:38.014Z",
+   "kind": "trending",
+   "topic": "ipo",
+   "tier": 2,
+   "trending": true,
+   "trendKey": "ipo:anthropic",
+   "techmeme": false,
+   "headline": "Who is getting rich from Anthropic's record IPO",
+   "summary": "",
+   "lines": [
+    "Reported by Reuters: Coverage examines who benefits financially from Anthropic's record IPO.",
+    "Also reported by AP, Bloomberg, and CNBC."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPancyR3hqXzc1cWJHZDlBeDc5Wk50dkNqX0R4VlFEUFV2V2FLNlkzVTlRd0lxQ3h1S1FrWHQ1UG9UM3NwT1RuZUdUVWszek1FR2xzRDhZM0RWNGcyWm9SZVR2NDV4Mm1UTXlLUm5XMUlFMUY0bmhtS0QyM3N1bzRVNE1YSVREbms2UTYtQVVPaXpXcVZRTG5haVVWYXRKZw?oc=5"
+   },
+   "sourceId": "gnews-ipo",
+   "sourceMax": 4,
+   "reported": true,
+   "also": [
+    "AP",
+    "Bloomberg",
+    "CNBC",
+    "BBC",
+    "CNN",
+    "TechCrunch"
+   ],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 14,
+   "story": "trend:ipo:anthropic"
+  },
+  {
+   "id": "772b1201",
+   "key": "https://thehackernews.com/2026/11/whatsapp-patches-3-security-flaws.html",
+   "time": "2026-11-20T17:57:20.000Z",
+   "seen": "2026-11-20T20:46:38.014Z",
+   "kind": "security",
+   "tier": 1,
+   "headline": "WhatsApp Patches 3 Security Flaws, Including Android Bug Suspected of Use in Scams",
+   "summary": "Meta-owned WhatsApp has addressed security vulnerabilities, including one impacting its Android app that it suspects may have been exploited in connection with scam messages. The vulnerability, tracked as CVE-2026-23871, has been described as a case of incomplete validation of external ad-reply URLs in WhatsApp for Android and WhatsApp Business for Android before 2.26.17.4. The issue could",
+   "lines": [
+    "Reported by The Hacker News: Meta-owned WhatsApp has patched three security flaws, including an Android bug it suspects was exploited in connection with scam messages.",
+    "The vulnerability, tracked as CVE-2026-23871, involves incomplete validation of external ad-reply URLs in WhatsApp for Android and WhatsApp Business for Android before 2.26.17.4.",
+    "Organizations with WhatsApp on Android devices should confirm they run patched versions."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/whatsapp-patches-3-security-flaws.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 12,
+   "story": null
+  },
+  {
+   "id": "02a88fcc",
+   "key": "https://bleepingcomputer.com/news/security/bell-canada-says-agentic-hacker-stole-enterprise-customer-data",
+   "time": "2026-11-20T18:51:43.000Z",
+   "seen": "2026-11-20T20:46:38.014Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Bell Canada says 'agentic' hacker stole enterprise customer data",
+   "summary": "Bell Canada has confirmed that an \"agentic\" threat actor breached its systems on November 17, 2026, and stole enterprise customer data, including information from a system used to order and provision telecommunications circuits. [...]",
+   "lines": [
+    "Reported by BleepingComputer: Bell Canada confirmed that an 'agentic' threat actor breached its systems on November 17, 2026, and stole enterprise customer data.",
+    "The stolen data included information from a system used to order and provision telecommunications circuits.",
+    "Enterprise IT and telecom teams should assess exposure of circuit ordering and provisioning data."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/bell-canada-says-agentic-hacker-stole-enterprise-customer-data/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null
+  },
+  {
+   "id": "a2cf8027",
+   "key": "https://bleepingcomputer.com/news/security/vendor-data-breach-exposes-chase-visa-mastercard-customer-info",
+   "time": "2026-11-20T15:58:06.000Z",
+   "seen": "2026-11-20T20:46:38.014Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Vendor data breach exposes Chase, Visa, Mastercard customer info",
+   "summary": "J.P. Morgan Chase warned it suffered a data breach after a cyberattack at a third-party service provider exposed customers' personal information and marketing data. [...]",
+   "lines": [
+    "Reported by BleepingComputer: J.P. Morgan Chase warned of a data breach after a cyberattack at a third-party service provider.",
+    "The breach exposed customers' personal information and marketing data. The headline also names Visa and Mastercard customer information.",
+    "Organizations relying on third-party vendors should review vendor access to customer data."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/vendor-data-breach-exposes-chase-visa-mastercard-customer-info/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null
+  },
+  {
+   "id": "8ee2cb51",
+   "key": "https://bleepingcomputer.com/news/security/hackers-use-autonomous-ai-tool-cairn-to-find-zero-day-take-over-server",
+   "time": "2026-11-20T17:30:00.000Z",
+   "seen": "2026-11-20T20:46:38.014Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Hackers use autonomous AI tool Cairn to find zero-day, take over server",
+   "summary": "Threat actors used the open-source AI penetration-testing framework Cairn to find a previously unknown vulnerability in a medical imaging application. [...]",
+   "lines": [
+    "Reported by BleepingComputer: Threat actors used the open-source AI penetration-testing framework Cairn to find a previously unknown vulnerability in a medical imaging application.",
+    "The headline reports that the attackers used a zero-day flaw to take over a server.",
+    "Security teams should account for attackers using autonomous AI tools to find unknown flaws in medical imaging software."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/hackers-use-autonomous-ai-tool-cairn-to-find-zero-day-take-over-server/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "4e92ea5b",
+   "key": "https://thehackernews.com/2026/11/bazuka-android-malware-uses-fake-screen.html",
+   "time": "2026-11-20T16:58:16.000Z",
+   "seen": "2026-11-20T20:46:38.014Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Bazuka Android Malware Uses Fake Screen Overlays to Hide Credential Theft and Device Control",
+   "summary": "Cybersecurity researchers have disclosed details of a previously unknown Android malware framework called Bazuka that offers large language model (LLM) integration for victim management and control at scale. Dutch mobile security company ThreatFabric said it discovered the threat in late October 2026 during an investigation into an NFC-relay banking Trojan. \"Bazuka is a full malware framework,",
+   "lines": [
+    "Reported by The Hacker News: Cybersecurity researchers disclosed Bazuka, a previously unknown Android malware framework with large language model integration for victim management and control at scale.",
+    "Dutch mobile security company ThreatFabric said it discovered the threat in late October 2026 during an investigation into an NFC-relay banking Trojan.",
+    "Mobile security teams should watch for Android malware that uses screen overlays to hide credential theft."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/bazuka-android-malware-uses-fake-screen.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  }
+ ],
+ "description": "22 technology updates from official sources, updated hourly: WhatsApp Patches 3 Security Flaws, Including Android Bug Suspected of Use in Scams; Who is getting rich from Anthropic's record IPO; Announcing new builds for 20 November 2026."
+}
