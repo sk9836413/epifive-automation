@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-20T03:43:42.909Z",
+ "lastScan": "2026-11-20T04:43:45.945Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -1413,137 +1413,6 @@
    "hash": "1d69126b",
    "post": "aws-iam-identity-center-entra-id-sso"
   },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63985": {
-   "title": "Money Market Operations as on November 16, 2026",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63985",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-17T09:00:00.000Z",
-   "updated": null,
-   "summary": "(Amount in ₹ crore, Rate in Per cent) MONEY MARKETS @ --> Money Markets @ Volume (One Leg) Weighted Average Rate Range A. Overnight Segment (I+II+III+IV) 8,46,109.51 5.58 4.00-7.20 I. Call Money 14,925.52 5.65 4.30-5.85 II. Triparty Repo 6,16,978.75 5.57 5.05-5.71 III. Market Repo 2,06,428.89 5.60 4",
-   "first": "2026-11-17T03:43:43.662Z",
-   "score": -1,
-   "reasons": [
-    "-1 source rbi-press"
-   ],
-   "status": "below",
-   "hash": "b5dabcfa"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-kv-cache-routing": {
-   "title": "Amazon SageMaker AI now supports KV cache-aware routing for real-time inference endpoints",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-kv-cache-routing/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-16T08:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon SageMaker AI now supports KV cache-aware routing for real-time inference endpoints, enabling you to reduce time to first token for LLM workloads with long or repeated prompts. Serving engines such as vLLM store the computed key-value (KV) cache for repeated prompt starts such as shared system",
-   "first": "2026-11-17T03:43:43.662Z",
-   "score": 2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+1 plans/price/availability \"free\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "28c4d7c1"
-  },
-  "https://about.fb.com/news/2026/11/an-update-on-the-content-we-recommend-on-instagram-in-india": {
-   "title": "An Update on the Content We Recommend on Instagram in India",
-   "link": "https://about.fb.com/news/2026/11/an-update-on-the-content-we-recommend-on-instagram-in-india/",
-   "source": "meta-newsroom",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-17T03:58:09.000Z",
-   "updated": null,
-   "summary": "We've strengthened the default protections behind what Instagram recommends in India to reduce unwanted content and improve people’s experience on Instagram. This work has been guided by what our users told us they want from their recommendations. The post An Update on the Content We Recommend on In",
-   "first": "2026-11-17T04:43:45.167Z",
-   "score": 2,
-   "reasons": [
-    "+1 niche (instagram)",
-    "+1 plans/price/availability \"India\""
-   ],
-   "status": "below",
-   "hash": "e5c8f754"
-  },
-  "https://mc.merill.net/message/MC1479513": {
-   "title": "MC1479513: Outlook: Insert Symbols",
-   "link": "https://mc.merill.net/message/MC1479513",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-16T23:54:20.000Z",
-   "updated": null,
-   "summary": "Starting mid-October 2026, Outlook will roll out the ability to insert symbols into emails via the Insert tab, completing by late January 2027. This feature affects users on new Outlook for Windows and web, requires no admin action, and enhances message composition with special characters.",
-   "first": "2026-11-17T04:43:45.167Z",
-   "score": 3,
-   "reasons": [
-    "-2 source mc-merill",
-    "+3 niche (outlook, windows)",
-    "+2 launch \"roll out\""
-   ],
-   "status": "below",
-   "hash": "2cd6bc54"
-  },
-  "https://mc.merill.net/message/MC1466754": {
-   "title": "MC1466754: Microsoft Viva Engage: Reducing reply notification volume in email",
-   "link": "https://mc.merill.net/message/MC1466754",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-16T23:50:14.000Z",
-   "updated": null,
-   "summary": "Microsoft Viva Engage will reduce email reply notifications by only sending alerts for direct replies, @mentions, and new posts, not for all conversation replies. The update rolls out globally from September to November 2026, requires no action, and keeps existing notification settings unchanged.",
-   "first": "2026-11-17T04:43:45.167Z",
-   "score": 0,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 launch \"rolls out\""
-   ],
-   "status": "below",
-   "hash": "10eb9224"
-  },
-  "https://mc.merill.net/message/MC1556107": {
-   "title": "MC1556107: Microsoft Defender: Similar cases comes to the unified security operations platform",
-   "link": "https://mc.merill.net/message/MC1556107",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-16T22:30:11.000Z",
-   "updated": null,
-   "summary": "A new Similar cases tab in the Microsoft Defender portal lists up to 20 related incidents by alert titles or entities, aiding analysts in identifying patterns. The Associated incidents card is renamed Recommended correlations. Public preview is available now; full rollout completes by early December",
-   "first": "2026-11-17T04:43:45.167Z",
-   "score": 2,
-   "reasons": [
-    "-2 source mc-merill",
-    "+1 niche (defender)",
-    "+2 launch \"available now\"",
-    "+1 plans/price/availability \"rollout\""
-   ],
-   "status": "below",
-   "hash": "6a710432"
-  },
-  "https://mc.merill.net/message/MC1556106": {
-   "title": "MC1556106: Microsoft SharePoint: Enhanced data access governance reports and site access reviews",
-   "link": "https://mc.merill.net/message/MC1556106",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-16T22:29:31.000Z",
-   "updated": null,
-   "summary": "Microsoft SharePoint will enhance data access governance reports and site access reviews starting late November 2026, giving admins better control to identify data risks, prioritize sites, direct review requests, and track email delivery. No action is required before rollout, but admins should prepa",
-   "first": "2026-11-17T04:43:45.167Z",
-   "score": 0,
-   "reasons": [
-    "-2 source mc-merill",
-    "+1 niche (sharepoint)",
-    "+1 plans/price/availability \"rollout\""
-   ],
-   "status": "below",
-   "hash": "4cf31b89"
-  },
   "https://mc.merill.net/message/MC1556104": {
    "title": "MC1556104: Microsoft PowerPoint: Introducing plugins for Microsoft 365 Copilot",
    "link": "https://mc.merill.net/message/MC1556104",
@@ -1565,85 +1434,6 @@
    "status": "below",
    "hash": "2aa98e5a"
   },
-  "https://mc.merill.net/message/MC1556098": {
-   "title": "MC1556098: Microsoft Teams Mobile: Introducing shared call history in the Queues app",
-   "link": "https://mc.merill.net/message/MC1556098",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-16T22:28:03.000Z",
-   "updated": null,
-   "summary": "Microsoft Teams mobile Queues app now offers shared call history for authorized representatives, showing missed, answered, outgoing, and voicemail calls. Rolling out worldwide in December 2026, it helps teams manage calls efficiently with status updates and filtering, extending desktop features to m",
-   "first": "2026-11-17T04:43:45.167Z",
-   "score": 3,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 niche (microsoft teams)",
-    "+2 launch \"Introducing\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "8a98dd38"
-  },
-  "https://mc.merill.net/message/MC1556096": {
-   "title": "MC1556096: Microsoft Teams: Audio announcement for Recording and Transcription",
-   "link": "https://mc.merill.net/message/MC1556096",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-16T22:27:20.000Z",
-   "updated": null,
-   "summary": "Microsoft Teams now supports an optional audio announcement when recording or transcription starts, configurable via Meeting and Calling Policies. Rolling out from May 2026 to January 2027 worldwide. No admin action required; default is off. Compliance recording is not supported with this feature.",
-   "first": "2026-11-17T04:43:45.167Z",
-   "score": 2,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 niche (microsoft teams)",
-    "+2 launch \"now supports\""
-   ],
-   "status": "below",
-   "hash": "1c0ea859"
-  },
-  "https://mc.merill.net/message/MC1556095": {
-   "title": "MC1556095: Plugins in PowerPoint for Microsoft 365 Copilot [Mac]",
-   "link": "https://mc.merill.net/message/MC1556095",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-16T22:26:41.000Z",
-   "updated": null,
-   "summary": "Plugins will be added to PowerPoint for Microsoft 365 Copilot on Mac, enhancing presentation capabilities. The rollout starts mid-November 2026 and completes by early December. Users can access plugins in Copilot, and admins can manage plugin access via the Microsoft 365 admin center. No compliance ",
-   "first": "2026-11-17T04:43:45.167Z",
-   "score": 5,
-   "reasons": [
-    "-2 source mc-merill",
-    "+4 niche (copilot, microsoft 365, powerpoint, mac)",
-    "+2 user steps \"Users can\"",
-    "+1 plans/price/availability \"rollout\""
-   ],
-   "status": "below",
-   "hash": "facb7094"
-  },
-  "https://mc.merill.net/message/MC1556094": {
-   "title": "MC1556094: Microsoft 365 Copilot: Learning Agent introduces personalized learning experiences",
-   "link": "https://mc.merill.net/message/MC1556094",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-16T22:26:09.000Z",
-   "updated": null,
-   "summary": "Microsoft 365 Copilot Learning Agent will provide personalized learning experiences based on users' work context, roles, and activities. Rolling out from mid-November to late December 2026, it offers relevant prompts, faster upskilling, and continuous skill development, requiring specific admin and ",
-   "first": "2026-11-17T04:43:45.167Z",
-   "score": 5,
-   "reasons": [
-    "-2 source mc-merill",
-    "+4 niche (copilot, microsoft 365, agent)",
-    "+2 launch \"introduces\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "24037e"
-  },
   "https://mc.merill.net/message/MC1556093": {
    "title": "MC1556093: Microsoft 365 Copilot: Learning Agent introduces personalized upskilling notifications in Teams",
    "link": "https://mc.merill.net/message/MC1556093",
@@ -1664,45 +1454,6 @@
    ],
    "status": "below",
    "hash": "5f818502"
-  },
-  "https://mc.merill.net/message/MC1556092": {
-   "title": "MC1556092: Changes to site logo URL metadata in SharePoint search results",
-   "link": "https://mc.merill.net/message/MC1556092",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-16T22:24:43.000Z",
-   "updated": null,
-   "summary": "SharePoint will change how site logo URLs are updated in search metadata, stopping automatic updates of the SiteLogoUrl property on individual items. Rollout is from December 2026 to March 2027. Organizations using this property in search results should retrieve logos directly from the site instead.",
-   "first": "2026-11-17T04:43:45.167Z",
-   "score": 0,
-   "reasons": [
-    "-2 source mc-merill",
-    "+1 niche (sharepoint)",
-    "+1 plans/price/availability \"Rollout\""
-   ],
-   "status": "below",
-   "hash": "3f167d64"
-  },
-  "https://mc.merill.net/message/MC1556090": {
-   "title": "MC1556090: Plugins in PowerPoint for Microsoft 365 Copilot [Win32]",
-   "link": "https://mc.merill.net/message/MC1556090",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-16T22:21:35.000Z",
-   "updated": null,
-   "summary": "Plugins will be added to PowerPoint for Microsoft 365 Copilot on Windows, enhancing presentation capabilities with new skills and connectors. Rollout starts mid-November 2026, completing by early December. Admins can manage plugin access via the Microsoft 365 admin center. No compliance issues ident",
-   "first": "2026-11-17T04:43:45.167Z",
-   "score": 5,
-   "reasons": [
-    "-2 source mc-merill",
-    "+4 niche (copilot, microsoft 365, powerpoint, windows)",
-    "+2 user steps \"Admins can\"",
-    "+1 plans/price/availability \"Rollout\""
-   ],
-   "status": "below",
-   "hash": "97110269"
   },
   "https://mc.merill.net/message/MC1556088": {
    "title": "MC1556088: Microsoft Teams: End of support for iOS 17 and iPadOS 17",
@@ -1729,66 +1480,6 @@
    "attempts": 1,
    "slug": "teams-ios-17-end-of-support-what-to-do",
    "resultAt": "2026-11-18T01:50:32.211Z"
-  },
-  "https://mc.merill.net/message/MC1556082": {
-   "title": "MC1556082: Microsoft 365 admin center: Unified release preferences for Standard, Deferred, and Frontier",
-   "link": "https://mc.merill.net/message/MC1556082",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-16T22:15:33.000Z",
-   "updated": null,
-   "summary": "Microsoft 365 admin center will unify Standard, Deferred, and Frontier release preferences into a single panel by late November 2026. Administrators can manage feature rollout timing and preview participation more easily. Existing settings carry forward, with no action required, but review and updat",
-   "first": "2026-11-17T04:43:45.167Z",
-   "score": 1,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 niche (microsoft 365)",
-    "+1 plans/price/availability \"rollout\""
-   ],
-   "status": "below",
-   "hash": "b1c89188"
-  },
-  "https://mc.merill.net/message/MC1551151": {
-   "title": "MC1551151: Microsoft Entra ID: Risk-based anti-bot verification (CAPTCHA) for SMS and voice multi-factor authentication",
-   "link": "https://mc.merill.net/message/MC1551151",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-16T21:45:49.000Z",
-   "updated": null,
-   "summary": "Starting mid-November 2026, Microsoft Entra ID will add risk-based CAPTCHA verification for SMS and voice MFA to prevent automated fraud. Some users may need to complete CAPTCHA before receiving codes or calls. Administrators should prepare users, ensure network readiness, and promote phishing-resis",
-   "first": "2026-11-17T04:43:45.167Z",
-   "score": -1,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 niche (entra, fraud)",
-    "-1 in /news 2026-11-14-server-2016-ltsc-2021-end-slmgr-fix"
-   ],
-   "status": "below",
-   "hash": "d979908c",
-   "news": "2026-11-14-server-2016-ltsc-2021-end-slmgr-fix"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/Connect-Custom-agent-interactive-responses": {
-   "title": "Amazon Connect Customer agent assist now supports interactive responses",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/Connect-Custom-agent-interactive-responses",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-16T19:02:00.000Z",
-   "updated": null,
-   "summary": "Amazon Connect Customer agent assist now supports interactive components, including cards, carousels, buttons, and input fields. The AI agent analyzes conversation context in real time, recommends actions, retrieves information, and executes tasks on behalf of contact center agents using MCP tools i",
-   "first": "2026-11-17T04:43:45.167Z",
-   "score": 4,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (agent)",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"step-by-step\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "4695e692"
   },
   "https://techcommunity.microsoft.com/t5/exchange-team-blog/reject-direct-send-now-generally-available-in-exchange-online/ba-p/4573787": {
    "title": "Reject Direct Send now Generally Available in Exchange Online",
@@ -13944,8 +13635,12 @@
     "+2 corroborated by thn (drupal)",
     "re-scored (was 6)"
    ],
-   "status": "queued",
-   "hash": "903bb598"
+   "status": "writing",
+   "hash": "903bb598",
+   "kind": "new",
+   "extra": false,
+   "taskAt": "2026-11-20T04:43:45.945Z",
+   "attempts": 1
   },
   "https://blog.google/innovation-and-ai/models-and-research/google-research/blue-origin-project-suncatcher-partnership": {
    "title": "We’re partnering with Blue Origin on our first heavy-lift Project Suncatcher launch.",
@@ -16958,12 +16653,14 @@
     "+2 corroborated by thn (vmware)",
     "+1 autocomplete (8)"
    ],
-   "status": "writing",
+   "status": "published",
    "hash": "d2a75a71",
    "kind": "new",
    "extra": false,
    "taskAt": "2026-11-20T03:43:42.909Z",
-   "attempts": 1
+   "attempts": 1,
+   "slug": "vmware-vcenter-cve-2026-123890-patch-check",
+   "resultAt": "2026-11-20T03:53:45.672Z"
   },
   "https://news.samsung.com/global/samsung-electronics-announces-new-leadership-5": {
    "title": "Samsung Electronics Announces New Leadership",
@@ -17677,6 +17374,41 @@
    ],
    "status": "below",
    "hash": "62d988e0"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64006": {
+   "title": "Result of Underwriting Auction conducted on November 20, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64006",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-20T09:50:00.000Z",
+   "updated": null,
+   "summary": "In the underwriting auction conducted on November 20, 2026, for Additional Competitive Underwriting (ACU) of the undernoted Government securities, the Reserve Bank of India has set the cut-off rate for underwriting commission payable to Primary Dealers as given below: Nomenclature of the Security No",
+   "first": "2026-11-20T04:43:45.945Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"India\""
+   ],
+   "status": "below",
+   "hash": "46f09fdd"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64005": {
+   "title": "Money Market Operations as on November 19, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64005",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-20T09:15:00.000Z",
+   "updated": null,
+   "summary": "(Amount in ₹ crore, Rate in Per cent) MONEY MARKETS @ --> Money Markets @ Volume (One Leg) Weighted Average Rate Range A. Overnight Segment (I+II+III+IV) 8,20,100.54 5.56 4.30-6.55 I. Call Money 16,602.25 5.59 4.30-5.75 II. Triparty Repo 5,87,112.80 5.55 5.42-5.99 III. Market Repo 2,08,541.14 5.58 5",
+   "first": "2026-11-20T04:43:45.945Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "fba9ce85"
   }
  },
  "devices": {}

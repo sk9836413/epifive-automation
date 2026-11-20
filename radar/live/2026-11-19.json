@@ -2,7 +2,7 @@
  "date": "2026-11-19",
  "title": "Tech news today, 19 November 2026",
  "published": "2026-11-19T00:28:31.694Z",
- "updated": "2026-11-19T23:16:35.731Z",
+ "updated": "2026-11-20T04:43:45.945Z",
  "items": [
   {
    "id": "a896af99",
@@ -995,7 +995,7 @@
    "time": "2026-11-19T13:08:08.000Z",
    "seen": "2026-11-19T13:16:57.239Z",
    "kind": "security",
-   "tier": 2,
+   "tier": 1,
    "headline": "Drupal patches critical RCE flaw, warns exploits may surface quickly",
    "summary": "The Drupal Security Team has patched a critical remote code execution vulnerability that can let attackers take over vulnerable sites. [...]",
    "lines": [
@@ -1388,5 +1388,5 @@
    "story": null
   }
  ],
- "description": "48 technology updates from official sources, updated hourly: Introducing Gemini 4 Neon; PHP security updates fix 18 flaws, including critical RCE bugs; PHP Fixes 7 Critical Flaws, Including Bugs That Could Allow Remote Code Execution."
+ "description": "48 technology updates from official sources, updated hourly: Introducing Gemini 4 Neon; PHP security updates fix 18 flaws, including critical RCE bugs; Drupal patches critical RCE flaw, warns exploits may surface quickly."
 }
