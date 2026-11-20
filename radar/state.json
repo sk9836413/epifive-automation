@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-20T05:13:24.965Z",
+ "lastScan": "2026-11-20T05:42:29.332Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -11744,9 +11744,11 @@
    "updated": null,
    "summary": "Samsung Electronics is once again connecting K-pop fans worldwide by livestreaming 2026 MAMA AWARDS. Through a partnership with CJ ENM, a leading Korean entertainment company, Samsung TV Plus will broadcast the entire two-day event, with CHAPTER 1 taking place on November 20 and CHAPTER 2 on Novembe",
    "first": "2026-11-19T00:28:31.694Z",
-   "score": -3,
+   "score": -2,
    "reasons": [
-    "-3 corporate/announcement \"AWARDS\""
+    "+1 also on samsung-india",
+    "-3 corporate/announcement \"AWARDS\"",
+    "re-scored (was -3)"
    ],
    "status": "below",
    "hash": "bcf7241b"
@@ -14001,12 +14003,13 @@
     "+2 user action \"Patches\"",
     "+2 corroborated by bleepingcomputer (drupal)"
    ],
-   "status": "writing",
+   "status": "skipped",
    "hash": "291d7a03",
    "kind": "new",
    "extra": true,
    "taskAt": "2026-11-20T05:13:24.965Z",
-   "attempts": 1
+   "attempts": 1,
+   "resultAt": "2026-11-20T05:14:32.774Z"
   },
   "https://bleepingcomputer.com/news/security/php-security-updates-fix-18-flaws-including-critical-rce-bugs": {
    "title": "PHP security updates fix 18 flaws, including critical RCE bugs",
@@ -17398,6 +17401,23 @@
    "status": "below",
    "hash": "a7e3e83a",
    "news": "2026-11-14-server-2016-ltsc-2021-end-slmgr-fix"
+  },
+  "https://news.samsung.com/in/at-home-on-the-move-or-connected-three-ways-to-use-extend-unlock-on-your-galaxy-smartphone": {
+   "title": "At Home, On the Move or Connected: Three Ways to Use Extend Unlock on Your Galaxy Smartphone",
+   "link": "https://news.samsung.com/in/at-home-on-the-move-or-connected-three-ways-to-use-extend-unlock-on-your-galaxy-smartphone",
+   "source": "samsung-india",
+   "topic": "mobiles",
+   "category": "launch",
+   "date": "2026-11-20T10:30:00.000Z",
+   "updated": null,
+   "summary": "Unlocking your smartphone multiple times throughout the day can become repetitive, especially when you are at home, travelling or using connected devices. Galaxy smartphones offer a convenient solution with the Extend Unlock feature, which allows users to keep their devices unlocked in certain trust",
+   "first": "2026-11-20T05:42:29.332Z",
+   "score": 1,
+   "reasons": [
+    "+1 niche (galaxy)"
+   ],
+   "status": "below",
+   "hash": "e190ebe8"
   }
  },
  "devices": {}
