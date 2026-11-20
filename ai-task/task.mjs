@@ -62,7 +62,14 @@ async function houseRules(target) {
 
 async function claim() {
   fs.mkdirSync(DIR, { recursive: true });
-  const r = await crm('POST', '/api/ingest/ai-tasks/claim', { run_id: RUN_ID, run_url: RUN_URL });
+  let r;
+  try {
+    r = await crm('POST', '/api/ingest/ai-tasks/claim', { run_id: RUN_ID, run_url: RUN_URL });
+  } catch (e) {
+    if (!/HTTP 404/.test(e.message)) throw e;
+    console.log('::notice::The CRM has no AI Tasks yet (HTTP 404: migration/deploy pending). Nothing to do.');
+    r = { task: null };
+  }
   if (!r.task) {
     console.log('No queued task.');
     output('id', '');
