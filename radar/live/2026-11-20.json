@@ -2,7 +2,7 @@
  "date": "2026-11-20",
  "title": "Tech news today, 20 November 2026",
  "published": "2026-11-19T23:16:35.731Z",
- "updated": "2026-11-20T12:22:01.168Z",
+ "updated": "2026-11-20T13:16:59.271Z",
  "items": [
   {
    "id": "9d95f41a",
@@ -987,7 +987,35 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "209d701a",
+   "key": "https://thehackernews.com/2026/11/new-linux-kvm-flaw-cve-2026-99312-lets.html",
+   "time": "2026-11-20T12:20:00.000Z",
+   "seen": "2026-11-20T13:16:59.271Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Linux KVM Flaw CVE-2026-99312 Lets Guest VMs Access Host Memory on AMD Hosts",
+   "summary": "A flaw in KVM, the hypervisor built into the Linux kernel, let researchers read about 127 GB of a cloud server's memory from inside a virtual machine of their own on DigitalOcean. On a shared server, that memory can include other customers' virtual machines. The flaw, tracked as CVE-2026-99312, affects only hosts with AMD processors and nested virtualization enabled. Fixed kernels shipped",
+   "lines": [
+    "Reported by The Hacker News: Researchers used a flaw in KVM, the hypervisor built into the Linux kernel, to read about 127 GB of a cloud server's memory from a virtual machine of their own on DigitalOcean.",
+    "The flaw, tracked as CVE-2026-99312, affects only hosts with AMD processors and nested virtualization enabled.",
+    "On shared servers, that memory can include other customers' virtual machines, so IT teams running affected AMD hosts have a reason to check their exposure."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/new-linux-kvm-flaw-cve-2026-99312-lets.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
   }
  ],
- "description": "34 technology updates from official sources, updated hourly: VMware patches vCenter zero-day exploited in attacks since September; US plans to announce cause of outage that led to nationwide ground stop, FAA says; SonicWall Warns Gen 6 Firewalls Won't Get Security Patches, Even for Critical Flaws."
+ "description": "35 technology updates from official sources, updated hourly: VMware patches vCenter zero-day exploited in attacks since September; US plans to announce cause of outage that led to nationwide ground stop, FAA says; SonicWall Warns Gen 6 Firewalls Won't Get Security Patches, Even for Critical Flaws."
 }

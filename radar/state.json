@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-20T12:22:01.168Z",
+ "lastScan": "2026-11-20T13:16:59.271Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -14315,8 +14315,9 @@
     "+2 launch \"launch\"",
     "+2 user steps \"you can\""
    ],
-   "status": "below",
-   "hash": "3404c9b3"
+   "status": "parked",
+   "hash": "3404c9b3",
+   "parkedAt": "2026-11-20T13:16:59.271Z"
   },
   "https://blog.google/innovation-and-ai/models-and-research/quantum-computing/putting-one-of-quantum-mechanics-deepest-features-to-test-at-scale": {
    "title": "How we’re putting one of quantum mechanics’ deepest features to the test at scale.",
@@ -17673,11 +17674,82 @@
    ],
    "status": "below",
    "hash": "f91ae5c8"
+  },
+  "https://anthropic.com/news/ipo-close": {
+   "title": "Anthropic announces closing of initial public offering, including full exercise of underwriters’ option to purchase additional shares, and closing of concurrent private placement",
+   "link": "https://www.anthropic.com/news/ipo-close",
+   "source": "anthropic-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-20T00:00:00.000Z",
+   "updated": null,
+   "summary": "Today Anthropic, PBC announced the closing of its initial public offering of an aggregate of 1,127,000,000 shares of its Class A common stock at a public offering price of $83.00 per share, including the full exercise by the underwriters of their option to purchase an additional 147,000,000 shares o",
+   "first": "2026-11-20T13:16:59.271Z",
+   "score": 3,
+   "reasons": [
+    "+1 source anthropic-news",
+    "+1 niche (exchange)",
+    "+1 plans/price/availability \"price\""
+   ],
+   "status": "below",
+   "hash": "2c82b1d1"
+  },
+  "https://thehackernews.com/2026/11/new-linux-kvm-flaw-cve-2026-99312-lets.html": {
+   "title": "Linux KVM Flaw CVE-2026-99312 Lets Guest VMs Access Host Memory on AMD Hosts",
+   "link": "https://thehackernews.com/2026/11/new-linux-kvm-flaw-cve-2026-99312-lets.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-20T12:20:00.000Z",
+   "updated": null,
+   "summary": "A flaw in KVM, the hypervisor built into the Linux kernel, let researchers read about 127 GB of a cloud server's memory from inside a virtual machine of their own on DigitalOcean. On a shared server, that memory can include other customers' virtual machines. The flaw, tracked as CVE-2026-99312, affe",
+   "first": "2026-11-20T13:16:59.271Z",
+   "score": 5,
+   "reasons": [
+    "+1 source thn",
+    "+2 vulnerability \"Flaw\"",
+    "+2 user action \"Fixed\""
+   ],
+   "status": "below",
+   "hash": "13833613"
+  },
+  "https://news.sap.com/2026/11/how-sap-concur-helps-san-francisco-49ers-take-game-global": {
+   "title": "From Melbourne to Mexico: How SAP Concur and AI Help the San Francisco 49ers Take Their Game Global",
+   "link": "https://news.sap.com/2026/11/how-sap-concur-helps-san-francisco-49ers-take-game-global/",
+   "source": "sap-news",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-20T13:15:00.000Z",
+   "updated": null,
+   "summary": "Traveling across continents during the 2026 NFL International Series, SAP software keeps the team moving seamlessly.",
+   "first": "2026-11-20T13:16:59.271Z",
+   "score": -1,
+   "reasons": [
+    "-1 source sap-news"
+   ],
+   "status": "below",
+   "hash": "173c279c"
   }
  },
  "devices": {},
  "trendBudget": {
-  "2026-11-20": []
+  "2026-11-20": [
+   "Email meeting guests from Google Calendar with the full capabilities of Gmail"
+  ]
  },
- "trends": {}
+ "trends": {},
+ "missedCheck": {
+  "day": "2026-11-20",
+  "at": "2026-11-20T13:16:59.271Z",
+  "checked": 3,
+  "covered": 2,
+  "items": [
+   {
+    "title": "Email meeting guests from Google Calendar with the full capabilities of Gmail",
+    "link": "http://workspaceupdates.googleblog.com/2026/11/email-meeting-guests-from-google-Calendar-with-the-full-capabilities-of-Gmail.html",
+    "why": "below, score 8, workspace-updates",
+    "parked": true
+   }
+  ]
+ }
 }
