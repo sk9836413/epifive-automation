@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-20T05:43:02.677Z",
+ "generated": "2026-11-20T12:22:22.311Z",
  "about": "Microsoft 365 / Azure / GitHub retirements for https://www.epifive.com/microsoft-365-retirements. Built by radar/retirements.mjs from official notices; see that file for sources and date rules.",
  "sources": {
   "message-center": 122,
@@ -2381,7 +2381,7 @@
    "title": "Power Platform - Information regarding the end of support for SharePoint temporary authentication URLs",
    "date": "2027-04-01",
    "precision": "day",
-   "dateText": "Starting April 1, 2027, SharePoint temporary authentication URLs will be retired.",
+   "dateText": "Starting April 1, 2027, SharePoint temporary authentication URLs will no longer be available.",
    "dateBasis": "stated",
    "affected": "Any Power Apps app or Power Automate cloud flow that relies upon the temporary authentication URLs will stop working.",
    "url": "https://admin.microsoft.com/#/MessageCenter/:/messages/MC1551122",

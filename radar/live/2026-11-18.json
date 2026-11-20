@@ -2,7 +2,7 @@
  "date": "2026-11-18",
  "title": "Tech news today, 18 November 2026",
  "published": "2026-11-17T19:18:54.800Z",
- "updated": "2026-11-20T03:43:42.909Z",
+ "updated": "2026-11-20T12:22:01.168Z",
  "items": [
   {
    "id": "289cf95a",
@@ -760,7 +760,8 @@
    "sourceId": "salesforce-blog",
    "reported": false,
    "also": [
-    "The Hacker News"
+    "The Hacker News",
+    "Zoho Blog"
    ],
    "post": null,
    "device": null,
