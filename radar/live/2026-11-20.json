@@ -2,7 +2,7 @@
  "date": "2026-11-20",
  "title": "Tech news today, 20 November 2026",
  "published": "2026-11-19T23:16:35.731Z",
- "updated": "2026-11-20T13:45:59.225Z",
+ "updated": "2026-11-20T14:16:36.844Z",
  "items": [
   {
    "id": "9d95f41a",
@@ -1042,7 +1042,35 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "d93daa90",
+   "key": "https://salesforce.com/blog/salesforce-to-salesforce-replacement-architecture",
+   "time": "2026-11-20T14:00:18.000Z",
+   "seen": "2026-11-20T14:16:36.844Z",
+   "kind": "retirement",
+   "tier": 2,
+   "headline": "Replace Salesforce to Salesforce Before Its Spring ’27 Retirement",
+   "summary": "Select a cross-org sharing architecture that fits your use case ahead of the Spring ’27 Salesforce to Salesforce retirement.",
+   "lines": [
+    "Salesforce is retiring Salesforce to Salesforce in Spring '27, and the Salesforce Blog advises selecting a cross-org sharing architecture that fits your use case before then.",
+    "IT teams that rely on Salesforce to Salesforce for sharing data between orgs will need to plan a replacement before the retirement takes effect."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Salesforce Blog",
+    "url": "https://www.salesforce.com/blog/salesforce-to-salesforce-replacement-architecture/"
+   },
+   "sourceId": "salesforce-blog",
+   "sourceMax": 3,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
   }
  ],
- "description": "36 technology updates from official sources, updated hourly: VMware patches vCenter zero-day exploited in attacks since September; US plans to announce cause of outage that led to nationwide ground stop, FAA says; SonicWall Warns Gen 6 Firewalls Won't Get Security Patches, Even for Critical Flaws."
+ "description": "37 technology updates from official sources, updated hourly: VMware patches vCenter zero-day exploited in attacks since September; US plans to announce cause of outage that led to nationwide ground stop, FAA says; SonicWall Warns Gen 6 Firewalls Won't Get Security Patches, Even for Critical Flaws."
 }

@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-20T13:45:59.225Z",
+ "lastScan": "2026-11-20T14:16:36.844Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -17625,6 +17625,99 @@
    ],
    "status": "below",
    "hash": "173c279c"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64016": {
+   "title": "RBI to conduct 4-day Variable Rate Repo (VRR) auction under LAF on November 23, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64016",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-20T19:25:00.000Z",
+   "updated": null,
+   "summary": "On a review of current and evolving liquidity conditions in the near term, it has been decided to conduct a Variable Rate Repo (VRR) auction on Monday, November 23, 2026, as under: Sl. No. Notified Amount (₹ crore) Tenor (day) Window Timing Date of Reversal 1 50,000 4 9:30 AM to 10:00 AM November 27",
+   "first": "2026-11-20T14:16:36.844Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "7fae733e"
+  },
+  "https://salesforce.com/blog/salesforce-to-salesforce-replacement-architecture": {
+   "title": "Replace Salesforce to Salesforce Before Its Spring ’27 Retirement",
+   "link": "https://www.salesforce.com/blog/salesforce-to-salesforce-replacement-architecture/",
+   "source": "salesforce-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-20T14:00:18.000Z",
+   "updated": null,
+   "summary": "Select a cross-org sharing architecture that fits your use case ahead of the Spring ’27 Salesforce to Salesforce retirement.",
+   "first": "2026-11-20T14:16:36.844Z",
+   "score": 0,
+   "reasons": [
+    "-1 source salesforce-blog",
+    "+1 retirement/migration"
+   ],
+   "status": "below",
+   "hash": "75581f13"
+  },
+  "https://salesforce.com/blog/small-business/ai-orchestrator-basics": {
+   "title": "AI Orchestrators: What the New Generation Needs to Know for Business-led AI Agents",
+   "link": "https://www.salesforce.com/blog/small-business/ai-orchestrator-basics/",
+   "source": "salesforce-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-20T14:00:00.000Z",
+   "updated": null,
+   "summary": "Your next hire might be the person who knows how to conduct a team of AI agents.",
+   "first": "2026-11-20T14:16:36.844Z",
+   "score": 2,
+   "reasons": [
+    "-1 source salesforce-blog",
+    "+1 niche (agents)",
+    "+2 user steps \"how to\""
+   ],
+   "status": "below",
+   "hash": "893ee541"
+  },
+  "https://news.sap.com/2026/11/how-sap-microsoft-innovate-deliver-ai-value-enterprise": {
+   "title": "How SAP and Microsoft Innovate Together to Deliver AI Value for the Enterprise",
+   "link": "https://news.sap.com/2026/11/how-sap-microsoft-innovate-deliver-ai-value-enterprise/",
+   "source": "sap-news",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-20T14:15:00.000Z",
+   "updated": null,
+   "summary": "Together, SAP and Microsoft solve challenges and unlock exponential AI value.",
+   "first": "2026-11-20T14:16:36.844Z",
+   "score": -1,
+   "reasons": [
+    "-1 source sap-news"
+   ],
+   "status": "below",
+   "hash": "eecaaa43"
+  },
+  "https://dell.com/en-us/blog/how-to-check-computer-specs-on-windows": {
+   "title": "How to Check Computer Specs on Windows",
+   "link": "https://www.dell.com/en-us/blog/how-to-check-computer-specs-on-windows",
+   "source": "dell-blog",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-20T13:55:00.000Z",
+   "updated": null,
+   "summary": "Check your computer specs on a Windows PC with four built-in tools to troubleshoot slowdowns, confirm compatibility and plan upgrades.",
+   "first": "2026-11-20T14:16:36.844Z",
+   "score": 3,
+   "reasons": [
+    "-1 source dell-blog",
+    "+1 niche (windows)",
+    "+2 user steps \"How to\"",
+    "+1 plans/price/availability \"plan\"",
+    "covered by /blog/how-to-check-laptop-specs-windows-11-mac"
+   ],
+   "status": "duplicate",
+   "hash": "e2b2f106",
+   "post": "how-to-check-laptop-specs-windows-11-mac"
   }
  },
  "devices": {},
@@ -17647,7 +17740,9 @@
     "Asian tech stocks plunge as Anthropic's record IPO fails to stem an AI sell-off; SoftBank falls ~15%, TSMC falls 5%+, and Samsung and SK Hynix fall 6%+",
     "Anthropic fell ~5% in after-hours trading on its debut day, following a record $107.3B IPO",
     "Anthropic defies the odds, holding record IPO despite ‘massively disruptive’ market",
-    "Anthropic’s record IPO, and what Kevin got wrong about the company in 2023 : Machine Gods"
+    "Anthropic’s record IPO, and what Kevin got wrong about the company in 2023 : Machine Gods",
+    "Anthropic raises an additional $12.2B as underwriters exercise their \"greenshoe\" overallotment of shares, bringing the total raised in its IPO to $93.5B",
+    "Anthropic's IPO buyers made $14 billion on day one, second only to SpaceX: Chart of the Day"
    ],
    "links": [
     "https://www.bloomberg.com/news/articles/2026-11-20/anthropic-shares-drop-post-market-on-apple-s-ai-agent-plans",
@@ -17657,7 +17752,8 @@
     "https://techcrunch.com/2026/11/19/anthropic-hits-nasdaq-exchanges-at-110-27-above-ipo-price/",
     "https://techcrunch.com/2026/11/19/anthropics-ipo-puts-ais-circular-financing-boom-to-the-test/",
     "https://news.google.com/rss/articles/CBMixgFBVV95cUxNUFRZLXRpZ3l4cURJRTFHakoybEV5aVV6MmZMZWt5aGNxazc3MlRrZklsWGlyOE9HcFBVWXdIWGEzRmNXVjZjcDlPTjdPRnN6d2JnNWtPem45bGZxM3I3N3VhWkZZMXp1Y3VDMzFMUTVncGJYOEFKRTY1Y19ZNHpZeWhxUjMxczEtZE82cVRWaERoZmwwUkdXNWFqNjlpVUZ4azg5V191T3E2Nm9VanZwYU1uOS1sakNSUFVwaXBUaTFJclI5bXc?oc=5",
-    "https://news.google.com/rss/articles/CBMingFBVV95cUxPancyR3hqXzc1cWJHZDlBeDc5Wk50dkNqX0R4VlFEUFV2V2FLNlkzVTlRd0lxQ3h1S1FrWHQ1UG9UM3NwT1RuZUdUVWszek1FR2xzRDhZM0RWNGcyWm9SZVR2NDV4Mm1UTXlLUm5XMUlFMUY0bmhtS0QyM3N1bzRVNE1YSVREbms2UTYtQVVPaXpXcVZRTG5haVVWYXRKZw?oc=5"
+    "https://news.google.com/rss/articles/CBMingFBVV95cUxPancyR3hqXzc1cWJHZDlBeDc5Wk50dkNqX0R4VlFEUFV2V2FLNlkzVTlRd0lxQ3h1S1FrWHQ1UG9UM3NwT1RuZUdUVWszek1FR2xzRDhZM0RWNGcyWm9SZVR2NDV4Mm1UTXlLUm5XMUlFMUY0bmhtS0QyM3N1bzRVNE1YSVREbms2UTYtQVVPaXpXcVZRTG5haVVWYXRKZw?oc=5",
+    "https://www.cnbc.com/2026/11/20/anthropic-ipo-greenshoe.html"
    ],
    "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNUFRZLXRpZ3l4cURJRTFHakoybEV5aVV6MmZMZWt5aGNxazc3MlRrZklsWGlyOE9HcFBVWXdIWGEzRmNXVjZjcDlPTjdPRnN6d2JnNWtPem45bGZxM3I3N3VhWkZZMXp1Y3VDMzFMUTVncGJYOEFKRTY1Y19ZNHpZeWhxUjMxczEtZE82cVRWaERoZmwwUkdXNWFqNjlpVUZ4azg5V191T3E2Nm9VanZwYU1uOS1sakNSUFVwaXBUaTFJclI5bXc?oc=5",
    "outlets": [
@@ -17669,15 +17765,14 @@
     "The New York Times",
     "BBC",
     "CNN",
-    "Axios",
     "TechCrunch"
    ],
    "techmeme": true,
    "category": "launch",
    "topic": "ai-engineering",
    "parkOnly": false,
-   "last": "2026-11-20T13:44:10.000Z",
-   "date": "2026-11-20T13:44:10.000Z",
+   "last": "2026-11-20T14:00:00.000Z",
+   "date": "2026-11-20T14:00:00.000Z",
    "score": 15,
    "post": "anthropic-ipo-explained-claude-users"
   }
