@@ -2,7 +2,7 @@
  "date": "2026-11-20",
  "title": "Tech news today, 20 November 2026",
  "published": "2026-11-19T23:16:35.731Z",
- "updated": "2026-11-20T13:16:59.271Z",
+ "updated": "2026-11-20T13:45:59.225Z",
  "items": [
   {
    "id": "9d95f41a",
@@ -1015,7 +1015,34 @@
    "ai": null,
    "score": 5,
    "story": null
+  },
+  {
+   "id": "33822d6f",
+   "key": "https://bleepingcomputer.com/news/microsoft/n-able-says-recent-security-breach-led-to-major-service-outage",
+   "time": "2026-11-20T13:18:36.000Z",
+   "seen": "2026-11-20T13:45:59.225Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "N-able says recent security breach led to major service outage",
+   "summary": "N-able says attackers who breached one of its servers have caused a major outage affecting Mail Assure and SpamExperts Hosted Cloud services worldwide. [...]",
+   "lines": [
+    "Reported by BleepingComputer: N-able says attackers who breached one of its servers caused a major outage affecting Mail Assure and SpamExperts Hosted Cloud services worldwide.",
+    "Why it matters: IT teams that use these N-able hosted email services may have lost mail access and should check for status updates from the vendor."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/microsoft/n-able-says-recent-security-breach-led-to-major-service-outage/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
   }
  ],
- "description": "35 technology updates from official sources, updated hourly: VMware patches vCenter zero-day exploited in attacks since September; US plans to announce cause of outage that led to nationwide ground stop, FAA says; SonicWall Warns Gen 6 Firewalls Won't Get Security Patches, Even for Critical Flaws."
+ "description": "36 technology updates from official sources, updated hourly: VMware patches vCenter zero-day exploited in attacks since September; US plans to announce cause of outage that led to nationwide ground stop, FAA says; SonicWall Warns Gen 6 Firewalls Won't Get Security Patches, Even for Critical Flaws."
 }

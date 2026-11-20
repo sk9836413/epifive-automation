@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-20T13:16:59.271Z",
+ "lastScan": "2026-11-20T13:45:59.225Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -1565,23 +1565,6 @@
    "status": "expired",
    "hash": "51ee46da"
   },
-  "https://apple.com/newsroom/2026/11/apple-podcasts-names-baby-this-is-keke-palmer-the-2026-show-of-the-year": {
-   "title": "Apple Podcasts names Baby, this is Keke Palmer the 2026 Show of the Year",
-   "link": "https://www.apple.com/newsroom/2026/11/apple-podcasts-names-baby-this-is-keke-palmer-the-2026-show-of-the-year/",
-   "source": "apple-newsroom",
-   "topic": "mobiles",
-   "category": "launch",
-   "date": "2026-11-17T10:59:28.025Z",
-   "updated": "2026-11-17T10:59:28.025Z",
-   "summary": "Apple Podcasts names Baby, this is Keke Palmer as its 2026 Show of the Year, honoring the podcast for its exceptional quality and cultural impact.",
-   "first": "2026-11-17T13:17:00.230Z",
-   "score": 1,
-   "reasons": [
-    "+1 source apple-newsroom"
-   ],
-   "status": "below",
-   "hash": "fb733b20"
-  },
   "https://thehackernews.com/2026/11/researchers-detail-iphone-flaw-that-let.html": {
    "title": "Researchers Detail iPhone Flaw That Let Apps Record Audio Despite Denied Microphone Permission",
    "link": "https://thehackernews.com/2026/11/researchers-detail-iphone-flaw-that-let.html",
@@ -1601,93 +1584,6 @@
    ],
    "status": "below",
    "hash": "cc8db057"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63990": {
-   "title": "Premature redemption under Sovereign Gold Bond (SGB) Scheme - Redemption Price for premature redemption of SGB 2020-21 Series VIII due on November 18, 2026",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63990",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-17T18:00:00.000Z",
-   "updated": null,
-   "summary": "In terms of GOI notification F.No. 4(4)-B(W&M)/2020 dated October 09, 2020 (SGB 2020-21 Series VIII - Issue date November 18, 2020) on Sovereign Gold Bond Scheme, premature redemption of Gold Bond may be permitted after fifth year from the date of issue of such Gold Bond on the date on which interes",
-   "first": "2026-11-17T13:17:00.230Z",
-   "score": 0,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 plans/price/availability \"Price\""
-   ],
-   "status": "below",
-   "hash": "dc412c41"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63989": {
-   "title": "State Government Securities - Full Auction Result",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63989",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-17T16:40:00.000Z",
-   "updated": null,
-   "summary": "The result of the auction of State Government Securities held on November 17, 2026 is as under: (Amount in ₹ Crore) ANDHRA PRADESH SGS 2051 GOA SGS 2037* KARNATAKA SGS 2034 MADHYA PRADESH SGS 2030 Notified Amount 1000 100 2000 1000 Tenor Re-issue of 7.68% ANDHRA SGS 2051 issued on 29-JUL-2026 Re-iss",
-   "first": "2026-11-17T13:17:00.230Z",
-   "score": 0,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 plans/price/availability \"Price\""
-   ],
-   "status": "below",
-   "hash": "8560074a"
-  },
-  "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/talking-hybrid-revolution-redefining-the-intelligent-workplace-with-christian-bigsby.html": {
-   "title": "Talking hybrid revolution: redefining the intelligent workplace with Christian Bigsby",
-   "link": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/talking-hybrid-revolution-redefining-the-intelligent-workplace-with-christian-bigsby.html?source=rss",
-   "source": "cisco-newsroom",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-17T12:50:00.000Z",
-   "updated": null,
-   "summary": "Learn how Cisco acts as \"Customer Zero,\" leveraging its own networking and collaboration technology to transform physical offices into \"intelligent\" workplaces. More RSS Feeds: https://newsroom.cisco.com/c/r/newsroom/en/us/rss-feeds.html",
-   "first": "2026-11-17T13:17:00.230Z",
-   "score": -1,
-   "reasons": [
-    "-1 source cisco-newsroom"
-   ],
-   "status": "below",
-   "hash": "d53ad7b9"
-  },
-  "https://news.sap.com/2026/11/gxp-compliance-life-sciences-sap-raising-standard": {
-   "title": "GxP Compliance in Life Sciences Is Non-Negotiable: SAP Is Raising the Standard",
-   "link": "https://news.sap.com/2026/11/gxp-compliance-life-sciences-sap-raising-standard/",
-   "source": "sap-news",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-17T12:15:00.000Z",
-   "updated": null,
-   "summary": "Supporting good practice across enterprise systems is more critical than ever.",
-   "first": "2026-11-17T13:17:00.230Z",
-   "score": -1,
-   "reasons": [
-    "-1 source sap-news"
-   ],
-   "status": "below",
-   "hash": "6b9d13c4"
-  },
-  "https://dell.com/en-us/blog/agentic-ai-starts-at-the-workplace-but-it-doesn-t-stop-there": {
-   "title": "Agentic AI starts at the workplace but it doesn’t stop there",
-   "link": "https://www.dell.com/en-us/blog/agentic-ai-starts-at-the-workplace-but-it-doesn-t-stop-there",
-   "source": "dell-blog",
-   "topic": "laptops-hardware",
-   "category": "launch",
-   "date": "2026-11-17T13:00:00.000Z",
-   "updated": null,
-   "summary": "",
-   "first": "2026-11-17T13:17:00.230Z",
-   "score": -1,
-   "reasons": [
-    "-1 source dell-blog"
-   ],
-   "status": "below",
-   "hash": "a37ed149"
   },
   "https://openai.com/index/introducing-openai-for-chile": {
    "title": "Introducing OpenAI for Chile",
@@ -17737,7 +17633,55 @@
    "Email meeting guests from Google Calendar with the full capabilities of Gmail"
   ]
  },
- "trends": {},
+ "trends": {
+  "ipo:anthropic|63c1035a": {
+   "first": "2026-11-19T14:45:12.000Z",
+   "decision": "covered",
+   "key": "ipo:anthropic",
+   "title": "Anthropic IPO haul rises to $93.5 billion after underwriters exercise greenshoe",
+   "titles": [
+    "Anthropic’s 7 founders cashed out nearly $2B in record-breaking IPO",
+    "Anthropic’s IPO could deliver $156B to charity",
+    "Anthropic hits Nasdaq exchanges at $111, 33% above IPO price",
+    "Anthropic’s IPO puts AI’s circular financing boom to the test",
+    "Asian tech stocks plunge as Anthropic's record IPO fails to stem an AI sell-off; SoftBank falls ~15%, TSMC falls 5%+, and Samsung and SK Hynix fall 6%+",
+    "Anthropic fell ~5% in after-hours trading on its debut day, following a record $107.3B IPO",
+    "Anthropic defies the odds, holding record IPO despite ‘massively disruptive’ market",
+    "Anthropic’s record IPO, and what Kevin got wrong about the company in 2023 : Machine Gods"
+   ],
+   "links": [
+    "https://www.bloomberg.com/news/articles/2026-11-20/anthropic-shares-drop-post-market-on-apple-s-ai-agent-plans",
+    "https://www.ft.com/content/c7ad2e0c-efd1-40c2-a5a8-819ced8acf5b",
+    "https://techcrunch.com/2026/11/19/anthropics-7-founders-cashed-out-nearly-2b-in-record-breaking-ipo/",
+    "https://techcrunch.com/2026/11/19/anthropics-ipo-could-deliver-156-billion-to-charity/",
+    "https://techcrunch.com/2026/11/19/anthropic-hits-nasdaq-exchanges-at-110-27-above-ipo-price/",
+    "https://techcrunch.com/2026/11/19/anthropics-ipo-puts-ais-circular-financing-boom-to-the-test/",
+    "https://news.google.com/rss/articles/CBMixgFBVV95cUxNUFRZLXRpZ3l4cURJRTFHakoybEV5aVV6MmZMZWt5aGNxazc3MlRrZklsWGlyOE9HcFBVWXdIWGEzRmNXVjZjcDlPTjdPRnN6d2JnNWtPem45bGZxM3I3N3VhWkZZMXp1Y3VDMzFMUTVncGJYOEFKRTY1Y19ZNHpZeWhxUjMxczEtZE82cVRWaERoZmwwUkdXNWFqNjlpVUZ4azg5V191T3E2Nm9VanZwYU1uOS1sakNSUFVwaXBUaTFJclI5bXc?oc=5",
+    "https://news.google.com/rss/articles/CBMingFBVV95cUxPancyR3hqXzc1cWJHZDlBeDc5Wk50dkNqX0R4VlFEUFV2V2FLNlkzVTlRd0lxQ3h1S1FrWHQ1UG9UM3NwT1RuZUdUVWszek1FR2xzRDhZM0RWNGcyWm9SZVR2NDV4Mm1UTXlLUm5XMUlFMUY0bmhtS0QyM3N1bzRVNE1YSVREbms2UTYtQVVPaXpXcVZRTG5haVVWYXRKZw?oc=5"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNUFRZLXRpZ3l4cURJRTFHakoybEV5aVV6MmZMZWt5aGNxazc3MlRrZklsWGlyOE9HcFBVWXdIWGEzRmNXVjZjcDlPTjdPRnN6d2JnNWtPem45bGZxM3I3N3VhWkZZMXp1Y3VDMzFMUTVncGJYOEFKRTY1Y19ZNHpZeWhxUjMxczEtZE82cVRWaERoZmwwUkdXNWFqNjlpVUZ4azg5V191T3E2Nm9VanZwYU1uOS1sakNSUFVwaXBUaTFJclI5bXc?oc=5",
+   "outlets": [
+    "Reuters",
+    "AP",
+    "Bloomberg",
+    "CNBC",
+    "Financial Times",
+    "The New York Times",
+    "BBC",
+    "CNN",
+    "Axios",
+    "TechCrunch"
+   ],
+   "techmeme": true,
+   "category": "launch",
+   "topic": "ai-engineering",
+   "parkOnly": false,
+   "last": "2026-11-20T13:44:10.000Z",
+   "date": "2026-11-20T13:44:10.000Z",
+   "score": 15,
+   "post": "anthropic-ipo-explained-claude-users"
+  }
+ },
  "missedCheck": {
   "day": "2026-11-20",
   "at": "2026-11-20T13:16:59.271Z",
