@@ -1,0 +1,100 @@
+# CRM Control Center snapshots (owner-only screen in the CRM): performance (website today vs yesterday at the same time,
+# China bots apart, sources, top pages, 7-day trend; YouTube x2; newsletter), health (last run of the important
+# workflows in all 3 repos + token checks), content queue, social, Shyam. control/snapshot.mjs posts the JSON to the CRM
+# (POST /api/ingest/control, INGEST_TOKEN). The secrets stay here; the CRM gets numbers and statuses only.
+# Started by the CRM's "Refresh" button (workflow_dispatch with GH_DISPATCH_TOKEN) and after the daily report and social
+# runs (workflow_run). No cron and no scheduler change.
+# THIS REPO IS PUBLIC: the log shows "<snapshot>: ok|failed" only, never numbers, names or secrets.
+name: Control Center snapshot
+
+on:
+  workflow_dispatch:
+    inputs:
+      only:
+        description: 'Only these snapshots, comma separated (performance,health,content,social,shyam). Empty = all.'
+        type: string
+        default: ''
+  workflow_run:
+    workflows: [Daily performance report, Social media]
+    types: [completed]
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: control-snapshot
+  cancel-in-progress: true
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Check out the site's automation logs (private)
+        continue-on-error: true
+        uses: actions/checkout@v4
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+          path: .site
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /automation/backlog.md
+            /automation/log.md
+            /automation/social-log.md
+
+      - name: Check out Shyam's plan files (public)
+        continue-on-error: true
+        uses: actions/checkout@v4
+        with:
+          repository: sk9836413/shyam-premi-sn
+          path: .shyam
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /automation/calendar.md
+            /automation/log.md
+            /automation/owner-footage.json
+            /automation/owner-footage-skip.txt
+            /automation/inbox.json
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Tests
+        run: node --test control/control.test.mjs
+
+      - name: Build and send to the CRM
+        env:
+          ONLY: ${{ inputs.only }}
+          CRM_URL: ${{ vars.CRM_URL || 'https://epifive-crm.pages.dev' }}
+          INGEST_TOKEN: ${{ secrets.INGEST_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
+          SITE_REPO_TOKEN: ${{ secrets.SITE_REPO_TOKEN }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          SHYAM_YT_CLIENT_ID: ${{ secrets.SHYAM_YT_CLIENT_ID }}
+          SHYAM_YT_CLIENT_SECRET: ${{ secrets.SHYAM_YT_CLIENT_SECRET }}
+          SHYAM_YT_REFRESH_TOKEN: ${{ secrets.SHYAM_YT_REFRESH_TOKEN }}
+          GSC_CLIENT_ID: ${{ secrets.GSC_CLIENT_ID }}
+          GSC_CLIENT_SECRET: ${{ secrets.GSC_CLIENT_SECRET }}
+          GSC_REFRESH_TOKEN: ${{ secrets.GSC_REFRESH_TOKEN }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+          SHYAM_META_PAGE_TOKEN: ${{ secrets.SHYAM_META_PAGE_TOKEN }}
+          LINKEDIN_PAGE_TOKEN_EXPIRES: ${{ vars.LINKEDIN_PAGE_TOKEN_EXPIRES }}
+          LINKEDIN_MEMBER_TOKEN_EXPIRES: ${{ vars.LINKEDIN_MEMBER_TOKEN_EXPIRES }}
+        run: |
+          if [ -n "$ONLY" ] && ! printf '%s' "$ONLY" | grep -Eq '^[a-z,]+$'; then echo "Bad input"; exit 1; fi
+          node control/snapshot.mjs --site .site --shyam .shyam ${ONLY:+--only "$ONLY"}

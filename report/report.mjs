@@ -5,7 +5,8 @@
 // fails shows "data nahi mila" and the email still goes. EpiFive and Shyam Premi stay in separate sections; this email
 // is private to the owner and never published anywhere.
 //
-//   node report/report.mjs [--dry-run] [--date YYYY-MM-DD] [--force]
+//   node report/report.mjs [--dry-run] [--date YYYY-MM-DD] [--force] [--out <file>]
+//   --out: write the full email text to a file and send nothing (the AI Tasks agent reads it; the file is never logged)
 //
 // THIS REPO IS PUBLIC: the log shows only "<section>: <status>" lines and counts. A dry run prints the email text; in
 // GitHub Actions the private lines (lead names, deals) are masked. Never print secrets, emails or raw API responses.
@@ -34,6 +35,7 @@ const args = process.argv.slice(2);
 const arg = (name, def) => (args.includes(`--${name}`) ? args[args.indexOf(`--${name}`) + 1] : def);
 const DRY = args.includes('--dry-run');
 const FORCE = args.includes('--force');
+const OUT = arg('out', '');
 const env = process.env;
 const NOW = new Date();
 const DATE = arg('date', env.REPORT_DATE || '') || istDate(NOW);
@@ -387,7 +389,7 @@ async function safe(title, fn) {
 async function main() {
   let snap = { days: {} };
   try { snap = JSON.parse(fs.readFileSync(SNAP_FILE, 'utf8')); } catch { /* first run */ }
-  if (!DRY && !FORCE && snap.sent === DATE) {
+  if (!DRY && !FORCE && !OUT && snap.sent === DATE) {
     console.log(`Report for ${DATE} already sent: nothing to do (use force to send again).`);
     return;
   }
@@ -431,6 +433,11 @@ async function main() {
   const html = renderHtml(report);
   for (const l of log) console.log(l);
 
+  if (OUT) {
+    fs.writeFileSync(OUT, `Subject: ${subject}\n\n${text}`);
+    console.log('Report text written to the --out file (not sent).');
+    return;
+  }
   if (DRY) {
     console.log('\n----- DRY RUN: email not sent -----');
     console.log(`Subject: ${subject}\n`);

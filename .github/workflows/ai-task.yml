@@ -1,0 +1,271 @@
+# AI Tasks: the owner writes a task in the CRM (AI Tasks screen, owner only); the CRM starts this workflow
+# (workflow_dispatch with its GH_DISPATCH_TOKEN). One run = one task:
+#   claim the next queued task (CRM, INGEST_TOKEN) -> check out the target repo -> Claude Code does the work under the
+#   house rules (site repo automation/OWNER-RULES.md) -> quality gates -> push (main only when publishing is allowed,
+#   else branch ai-task/<id> for the owner's Approve) -> allowed follow-up workflows -> result to the CRM + a short
+#   Hinglish email to the owner -> start the next run while tasks are queued.
+# THIS REPO IS PUBLIC and so is this log: the prompt, thread, summary and links live in the runner temp dir / .ai-task/
+# (git-excluded) and in the CRM, never in the log. Claude's output is not printed (show_full_output and display_report
+# off). Claude gets no secrets and no git credentials: checkouts use persist-credentials: false; only the push step
+# below holds a token.
+# Caps: one task at a time (concurrency), Claude 35 minutes and 120 turns, the whole job 50 minutes.
+name: AI task
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Treat the task as a dry run (no push, no publish, no email)
+        type: boolean
+        default: false
+
+permissions:
+  contents: write # push to this repo's main / task branches (automation target)
+  actions: write # start the next run and the allowed follow-up workflows
+  id-token: write
+
+concurrency:
+  group: ai-task
+  cancel-in-progress: false
+
+env:
+  AI_TASK_DIR: ${{ github.workspace }}/../ai-task-tmp
+  AUTO_DIR: ${{ github.workspace }}/../ai-task-auto
+  CRM_URL: ${{ vars.CRM_URL || 'https://epifive-crm.pages.dev' }}
+  DRY_RUN_ALL: ${{ inputs.dry_run && 'true' || 'false' }}
+
+jobs:
+  task:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 50
+    steps:
+      - name: Check tokens
+        id: gate
+        env:
+          HAS_CLAUDE: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN != '' }}
+          HAS_INGEST: ${{ secrets.INGEST_TOKEN != '' }}
+        run: |
+          if [ "$HAS_CLAUDE" != true ] || [ "$HAS_INGEST" != true ]; then
+            echo "::notice::CLAUDE_CODE_OAUTH_TOKEN or INGEST_TOKEN is not set; skipping."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # The helper scripts are copied out of the workspace: the target repo is checked out into the workspace root.
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.ready == 'true'
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            ai-task
+            report
+      - name: Copy helper scripts
+        if: steps.gate.outputs.ready == 'true'
+        run: |
+          mkdir -p "$AUTO_DIR" "$AI_TASK_DIR"
+          cp -r ai-task report "$AUTO_DIR/"
+          # Empty the workspace (incl. the sparse .git) so the target checkout starts clean.
+          find . -mindepth 1 -delete
+
+      - uses: actions/setup-node@v4
+        if: steps.gate.outputs.ready == 'true'
+        with:
+          node-version: 24
+
+      - name: Tests (helper)
+        if: steps.gate.outputs.ready == 'true'
+        run: node --test "$AUTO_DIR/ai-task/ai-task.test.mjs"
+
+      - name: Claim the next task
+        id: claim
+        if: steps.gate.outputs.ready == 'true'
+        env:
+          INGEST_TOKEN: ${{ secrets.INGEST_TOKEN }}
+          SITE_REPO_TOKEN: ${{ secrets.SITE_REPO_TOKEN }}
+        run: node "$AUTO_DIR/ai-task/task.mjs" claim --dir "$AI_TASK_DIR"
+
+      # Target repo at the workspace root (Claude works there). Continue on the task's branch when it has one.
+      - name: Check out the task branch
+        id: checkout_branch
+        if: steps.claim.outputs.id != '' && steps.claim.outputs.ref != ''
+        continue-on-error: true
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ steps.claim.outputs.repo }}
+          ref: ${{ steps.claim.outputs.ref }}
+          token: ${{ steps.claim.outputs.target == 'site' && secrets.SITE_REPO_TOKEN || steps.claim.outputs.target == 'shyam' && (secrets.SHYAM_REPO_TOKEN || secrets.SITE_REPO_TOKEN) || steps.claim.outputs.target == 'crm' && secrets.CRM_REPO_TOKEN || github.token }}
+          persist-credentials: false
+          clean: true
+      - name: Check out the target repo
+        id: checkout
+        if: steps.claim.outputs.id != '' && steps.checkout_branch.outcome != 'success'
+        continue-on-error: true
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ steps.claim.outputs.repo }}
+          token: ${{ steps.claim.outputs.target == 'site' && secrets.SITE_REPO_TOKEN || steps.claim.outputs.target == 'shyam' && (secrets.SHYAM_REPO_TOKEN || secrets.SITE_REPO_TOKEN) || steps.claim.outputs.target == 'crm' && secrets.CRM_REPO_TOKEN || github.token }}
+          persist-credentials: false
+          clean: true
+
+      - name: Install dependencies
+        if: steps.claim.outputs.id != '' && hashFiles('package-lock.json') != '' && (steps.claim.outputs.target == 'site' || steps.claim.outputs.target == 'crm')
+        continue-on-error: true
+        run: npm ci --no-audit --no-fund > /dev/null 2>&1 || echo "::warning::npm ci failed"
+
+      # "Aaj ka performance": the daily report's numbers, written to a git-excluded file for the agent (never logged).
+      - name: Performance numbers
+        if: steps.claim.outputs.id != '' && steps.claim.outputs.with_report == 'true'
+        continue-on-error: true
+        env:
+          CRM_URL: ${{ vars.CRM_URL || 'https://epifive-crm.pages.dev' }}
+          INGEST_TOKEN: ${{ secrets.INGEST_TOKEN }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          SITE_REPO_TOKEN: ${{ secrets.SITE_REPO_TOKEN }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          SHYAM_YT_CLIENT_ID: ${{ secrets.SHYAM_YT_CLIENT_ID }}
+          SHYAM_YT_CLIENT_SECRET: ${{ secrets.SHYAM_YT_CLIENT_SECRET }}
+          SHYAM_YT_REFRESH_TOKEN: ${{ secrets.SHYAM_YT_REFRESH_TOKEN }}
+          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+          META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          SHYAM_META_PAGE_ID: ${{ secrets.SHYAM_META_PAGE_ID }}
+          SHYAM_META_PAGE_TOKEN: ${{ secrets.SHYAM_META_PAGE_TOKEN }}
+          SHYAM_IG_USER_ID: ${{ secrets.SHYAM_IG_USER_ID }}
+          LINKEDIN_PAGE_TOKEN_EXPIRES: ${{ vars.LINKEDIN_PAGE_TOKEN_EXPIRES }}
+          LINKEDIN_MEMBER_TOKEN_EXPIRES: ${{ vars.LINKEDIN_MEMBER_TOKEN_EXPIRES }}
+        run: |
+          mkdir -p .ai-task
+          node "$AUTO_DIR/report/report.mjs" --out .ai-task/performance.txt
+
+      - name: Prepare the task file
+        id: prepare
+        if: steps.claim.outputs.id != '' && (steps.checkout.outcome == 'success' || steps.checkout_branch.outcome == 'success')
+        run: node "$AUTO_DIR/ai-task/task.mjs" prepare --dir "$AI_TASK_DIR"
+
+      - name: Agent (Claude)
+        id: agent
+        if: steps.prepare.outcome == 'success'
+        continue-on-error: true
+        timeout-minutes: 35
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          allowed_bots: "*"
+          show_full_output: "false"
+          display_report: "false"
+          claude_args: |
+            --max-turns 120
+            --allowedTools "${{ steps.claim.outputs.tools }}"
+          prompt: |
+            You are the EpiFive owner's cloud agent. Your task, the house rules and how to finish are in
+            .ai-task/TASK.md: read it first and follow it exactly. The house rules file it names overrides
+            everything else. Work only in the current directory. Never print secrets. Finish by writing
+            .ai-task/result.json as TASK.md describes, even if you stop early or need the owner's answer.
+
+      - name: Collect the result
+        id: collect
+        if: steps.prepare.outcome == 'success'
+        env:
+          ON_BRANCH: ${{ steps.checkout_branch.outcome == 'success' }}
+        run: node "$AUTO_DIR/ai-task/task.mjs" collect --dir "$AI_TASK_DIR"
+
+      # Quality gates: the site build runs every content check (prebuild: check-posts, errors, devices, news, ...);
+      # automation/Shyam run the node tests next to every changed file; the CRM runs typecheck + tests.
+      - name: Quality gates
+        id: gates
+        if: steps.collect.outputs.pending == 'true'
+        continue-on-error: true
+        env:
+          GATE: ${{ steps.claim.outputs.gate }}
+        run: |
+          set +e
+          log="$AI_TASK_DIR/gate.log"
+          : > "$log"
+          case "$GATE" in
+            site) npm run build >> "$log" 2>&1 ;;
+            crm) { npm run typecheck && npm test; } >> "$log" 2>&1 ;;
+            node-tests)
+              dirs=$( { git diff --name-only HEAD; git ls-files --others --exclude-standard; } | grep -v '^\.ai-task/' | xargs -r -n1 dirname | sort -u )
+              tests=$(for d in $dirs; do ls "$d"/*.test.mjs 2>/dev/null; done | sort -u)
+              if [ -n "$tests" ]; then node --test $tests >> "$log" 2>&1; else echo "no tests next to the changed files" >> "$log"; fi ;;
+            *) echo "no gate" >> "$log" ;;
+          esac
+          rc=$?
+          tail -n 25 "$log" > "$AI_TASK_DIR/gate-tail.txt"
+          if [ $rc -ne 0 ]; then echo "Quality gate failed (details go to the CRM)."; exit 1; fi
+          echo "Quality gate passed."
+
+      - name: Push
+        id: push
+        if: steps.collect.outputs.pending == 'true' && steps.gates.outcome == 'success' && steps.claim.outputs.dry_run != 'true'
+        continue-on-error: true
+        env:
+          PUSH_TOKEN: ${{ steps.claim.outputs.target == 'site' && secrets.SITE_REPO_TOKEN || steps.claim.outputs.target == 'shyam' && (secrets.SHYAM_REPO_TOKEN || secrets.SITE_REPO_TOKEN) || steps.claim.outputs.target == 'crm' && secrets.CRM_REPO_TOKEN || github.token }}
+          REPO: ${{ steps.claim.outputs.repo }}
+          ID: ${{ steps.claim.outputs.id }}
+          PUBLISH: ${{ steps.claim.outputs.publish }}
+          BRANCH: ${{ steps.claim.outputs.ref }}
+          MSG: ${{ steps.collect.outputs.commit_message }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          remote="https://x-access-token:${PUSH_TOKEN}@github.com/${REPO}.git"
+          # Only the files the agent changed (collected before the gates: a build may touch other files).
+          if [ -s "$AI_TASK_DIR/changes.txt" ]; then xargs -d '\n' -a "$AI_TASK_DIR/changes.txt" git add -A --; fi
+          if ! git diff --cached --quiet; then
+            git commit -q -m "$MSG" -m "AI task #$ID from the owner's CRM (ai-task.yml)." -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+          fi
+          git reset -q --hard HEAD && git clean -fdq
+          if [ "$PUBLISH" = "true" ]; then
+            ok=""
+            for i in 1 2 3; do git pull -q --rebase "$remote" main && git push -q "$remote" HEAD:main && ok=1 && break; sleep 10; done
+            [ -n "$ok" ] || exit 1
+            echo "ref=main" >> "$GITHUB_OUTPUT"
+            if [ -n "$BRANCH" ]; then git push -q "$remote" --delete "$BRANCH" || true; fi
+          else
+            git push -q -f "$remote" "HEAD:refs/heads/ai-task/$ID"
+            echo "ref=ai-task/$ID" >> "$GITHUB_OUTPUT"
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          echo "Pushed."
+
+      - name: Start follow-up workflows
+        if: steps.claim.outputs.publish == 'true' && steps.collect.outputs.status == 'done' && (steps.push.outcome == 'success' || steps.collect.outputs.pending != 'true')
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node "$AUTO_DIR/ai-task/task.mjs" dispatch --dir "$AI_TASK_DIR"
+
+      - name: Report to the CRM and email the owner
+        id: report
+        if: always() && steps.claim.outputs.id != ''
+        env:
+          INGEST_TOKEN: ${{ secrets.INGEST_TOKEN }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          REPORT_FROM: EpiFive Agent <hello@epifive.com>
+          REPORT_TO: info@epifive.com
+          REPORT_BCC: epifive2@gmail.com
+          CRM_PUBLIC_URL: ${{ vars.CRM_URL || 'https://epifive-crm.pages.dev' }}
+          AGENT_OUTCOME: ${{ steps.agent.outcome }}
+          CHECKOUT_OUTCOME: ${{ (steps.checkout.outcome == 'success' || steps.checkout_branch.outcome == 'success') && 'success' || 'failure' }}
+          PREPARE_OUTCOME: ${{ steps.prepare.outcome }}
+          GATE_OUTCOME: ${{ steps.gates.outcome }}
+          GATE_NAME: ${{ steps.claim.outputs.gate }}
+          PUSH_OUTCOME: ${{ steps.push.outcome }}
+          PUSH_REF: ${{ steps.push.outputs.ref }}
+          PUSH_SHA: ${{ steps.push.outputs.sha }}
+        run: node "$AUTO_DIR/ai-task/task.mjs" report --dir "$AI_TASK_DIR"
+
+      - name: Next task
+        if: always() && steps.report.outputs.queued_left > 0
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run ai-task.yml --repo "$GITHUB_REPOSITORY" --ref main && echo "Started the next run."
+
+      - name: Clean up
+        if: always()
+        run: rm -rf "$AI_TASK_DIR" .ai-task
