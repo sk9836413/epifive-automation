@@ -3,12 +3,17 @@
 #
 # One run does ONE job, picked in this order (owner growth plan, 21 Nov 2026, item 3: "update old guides and internal links"):
 #   1. article   - a new article, until ARTICLES_PER_DAY (repo variable, default 1) are published today (IST);
-#   2. refresh   - an existing post updated in place from "## Refresh" in automation/backlog.md (WRITER.md section 6), until
+#   2. errors    - once a day (owner, 21 Nov 2026: error codes are the long tail a small site can win): up to ERRORS_PER_DAY
+#                  (repo variable, default 5; 0 turns the lane off) new error code pages written from the top of
+#                  content/errors/QUEUE.md (scripts/error-queue.mjs). Every page must pass
+#                  `check-errors <id> --online --strict` (official source fetched, verbatim quote on the page); a page
+#                  that fails is deleted and its line marked skipped, never published. Logged as "<day> | errors | ...";
+#   3. refresh   - an existing post updated in place from "## Refresh" in automation/backlog.md (WRITER.md section 6), until
 #                  REFRESH_PER_DAY (repo variable, default 2) refreshes were tried today. Refreshes never count as articles;
-#   3. interlink - once a day: scripts/seo/interlink.mjs adds "See also" links (orphans first; at most 40 posts a day),
+#   4. interlink - once a day: scripts/seo/interlink.mjs adds "See also" links (orphans first; at most 40 posts a day),
 #                  and every Monday (IST) the full-site pass plus the Search Console striking-distance block at the top of
 #                  "## Refresh" (scripts/seo/refresh-queue.mjs gsc, GSC_* secrets).
-# Each job writes a line to automation/log.md (published / refreshed / refresh-failed / interlink), which is how later runs
+# Each job writes a line to automation/log.md (published / errors / refreshed / refresh-failed / interlink), which is how later runs
 # know what is left, and a finished run starts the next one until the day's work is done (the scheduler only starts this
 # workflow at 09:13 and 10:13 IST). The `mode` input forces one job for a manual run.
 name: Daily article
@@ -23,7 +28,7 @@ on:
       mode:
         description: Job to run (auto = next one due today)
         type: choice
-        options: [auto, article, refresh, interlink, interlink-full]
+        options: [auto, article, errors, refresh, interlink, interlink-full]
         default: auto
 
 env:
@@ -75,6 +80,7 @@ jobs:
           DRY_RUN: ${{ inputs.dry_run || false }}
           MAX: ${{ vars.ARTICLES_PER_DAY || '1' }}
           RMAX: ${{ vars.REFRESH_PER_DAY || '2' }}
+          EMAX: ${{ vars.ERRORS_PER_DAY || '5' }}
         run: |
           today=$(TZ=Asia/Kolkata date +%F)
           echo "today=$today" >> "$GITHUB_OUTPUT"
@@ -84,13 +90,18 @@ jobs:
           r=$(grep -cE "^$today \| [a-z0-9-]+ \| refresh(ed|-failed) \|" automation/log.md || true)
           il=$(grep -c "^$today | interlink |" automation/log.md || true)
           open=$(node scripts/seo/refresh-queue.mjs next | grep -c . || true)
+          # Error code lane: one run a day writes up to ERRORS_PER_DAY codes from content/errors/QUEUE.md.
+          er=$(grep -c "^$today | errors |" automation/log.md || true)
+          eq=0
+          [ -f scripts/error-queue.mjs ] && eq=$(node scripts/error-queue.mjs next 1 | grep -c . || true)
           full=false
           [ "$(TZ=Asia/Kolkata date +%u)" = "1" ] && full=true
           case "$WANT" in
-            article|refresh|interlink) mode="$WANT" ;;
+            article|errors|refresh|interlink) mode="$WANT" ;;
             interlink-full) mode=interlink; full=true ;;
             *)
               if [ "$DRY_RUN" = "true" ] || [ "${n:-0}" -lt "$MAX" ]; then mode=article
+              elif [ "${EMAX:-0}" -gt 0 ] && [ "${er:-0}" -eq 0 ] && [ "${eq:-0}" -gt 0 ]; then mode=errors
               elif [ "${r:-0}" -lt "$RMAX" ] && [ "${open:-0}" -gt 0 ]; then mode=refresh
               elif [ "${il:-0}" -eq 0 ]; then mode=interlink
               else mode=none
@@ -98,7 +109,7 @@ jobs:
           esac
           echo "mode=$mode" >> "$GITHUB_OUTPUT"
           echo "full=$full" >> "$GITHUB_OUTPUT"
-          echo "::notice::$today: $n/$MAX articles, ${r:-0}/$RMAX refreshes ($open in the queue), interlink ${il:-0}/1 -> $mode"
+          echo "::notice::$today: $n/$MAX articles, error lane ${er:-0}/1 ($EMAX codes a run, ${eq:-0} open), ${r:-0}/$RMAX refreshes ($open in the queue), interlink ${il:-0}/1 -> $mode"
 
       - name: Research and write (Claude)
         if: steps.gate.outputs.ready == 'true' && steps.date.outputs.mode == 'article'
@@ -240,6 +251,195 @@ jobs:
             automation/backlog.md
             automation/log.md
           retention-days: 30
+
+      # ---------- errors: new error code pages from content/errors/QUEUE.md (header item 2) ----------
+      - name: Pick the error codes
+        id: epick
+        if: steps.gate.outputs.ready == 'true' && steps.date.outputs.mode == 'errors'
+        env:
+          EMAX: ${{ vars.ERRORS_PER_DAY || '5' }}
+        run: |
+          # Twice the day's quota as candidates: codes that cannot be verified are skipped, the next ones are tried.
+          node scripts/error-queue.mjs next $(( EMAX * 2 )) > "$RUNNER_TEMP/errors-pick.tsv"
+          n=$(grep -c . "$RUNNER_TEMP/errors-pick.tsv" || true)
+          echo "count=$n" >> "$GITHUB_OUTPUT"
+          echo "max=$EMAX" >> "$GITHUB_OUTPUT"
+          { echo 'list<<EOF_ERROR_PICK'; awk -F'\t' '{printf "%d. %s | %s | %s | %s\n", NR, $1, $2, $3, $4}' "$RUNNER_TEMP/errors-pick.tsv"; echo 'EOF_ERROR_PICK'; } >> "$GITHUB_OUTPUT"
+          cat "$RUNNER_TEMP/errors-pick.tsv"
+
+      - name: Write the error pages (Claude)
+        id: ewrite
+        if: steps.epick.outputs.count != '' && steps.epick.outputs.count != '0'
+        continue-on-error: true # whatever passes the gate below is still published
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          allowed_bots: "*"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          claude_args: |
+            --max-turns 220
+            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node scripts/error-source.mjs:*),Bash(node scripts/check-errors.mjs:*),Bash(ls:*),Bash(wc:*)"
+          prompt: |
+            Add new pages to the EpiFive error code library. Today's date is ${{ steps.date.outputs.today }}.
+
+            Read content/errors/README.md and follow it exactly; src/lib/error-rules.ts is the validator, and
+            content/errors/microsoft-365-sign-in/aadsts50126.md is a good example. Owner rule: quality over quantity.
+            Every code must appear on an official vendor page that you opened and read today; no invented codes,
+            meanings, causes or fixes; a code that cannot reach the minimum is not published.
+
+            Candidates, in priority order (product | code | official page to read first | note):
+            ${{ steps.epick.outputs.list }}
+
+            Work down the list until ${{ steps.epick.outputs.max }} new pages pass, then stop. For each candidate:
+            1. Read the official page with `node scripts/error-source.mjs <url> <CODE>` (and `--full` for the whole
+               text). Find Microsoft's dedicated article for the code if the page links one (WebSearch limited to
+               learn.microsoft.com or support.microsoft.com may help); read it the same way. Quotes in `sources` must be
+               copied from error-source output (drop table "|" characters), max 300 characters, and contain the code.
+            2. Skip the code if no official page documents it, if the vendor gives only a one-line meaning with no
+               causes or fixes (too thin for 400 words of vendor-backed prose and 3 real steps), or if an existing
+               entry already covers it (the same article and fix). To skip, append one line to `.errors-skipped.tsv`
+               in the repository root: product<TAB>code<TAB>short reason.
+            3. Otherwise write content/errors/<product>/<code-slug>.md with `date`, `updated` and `checked` set to
+               ${{ steps.date.outputs.today }} and "Last checked: ${{ steps.date.outputs.today }}." Use the code
+               spelling of the candidate line (or of the vendor page) and the product folder given. Label any step that
+               goes beyond the vendor pages "This is a general step." Say the error was not reproduced for the page.
+               Link related EpiFive posts (grep content/posts) as /blog/<slug> only where they really help; if a post's
+               slug, title or `query` contains the code, set `guide` to it (the check enforces this). `related` may only
+               list entries whose files exist. No first-person claims, no personal names, no emoji, no raw HTML.
+            4. Run `node scripts/check-errors.mjs <product>/<code-slug> --online --strict` and fix the page until it
+               passes. If it cannot pass (for example the quote is not on the page), delete the file and skip the code
+               as in step 2.
+
+            Do not edit or delete any other file: not content/errors/QUEUE.md, README.md, existing entries, posts,
+            src, scripts or automation (the workflow marks the queue and logs the run). Do NOT run `npm run build`,
+            `git commit` or `git push`.
+
+            Finish with a short report: pages added (with their source URLs) and codes skipped with the reason.
+
+      - name: Gate the error pages
+        id: egate
+        if: steps.epick.outputs.count != '' && steps.epick.outputs.count != '0'
+        env:
+          TODAY: ${{ steps.date.outputs.today }}
+        run: |
+          set -u
+          skipped="$RUNNER_TEMP/errors-skipped.tsv"
+          touch .errors-skipped.tsv
+          tr -d '\r' < .errors-skipped.tsv > "$skipped"
+          rm -f .errors-skipped.tsv
+          # Only new files under content/errors/<product>/ may change: put everything else back.
+          git diff --name-only | while read -r f; do echo "::warning::Reverting an edit outside the lane: $f"; git checkout -- "$f"; done
+          { git ls-files --others --exclude-standard | grep -Ev '^content/errors/[a-z0-9-]+/[a-z0-9-]+\.md$' || true; } | while read -r f; do
+            echo "::warning::Removing a file outside the lane: $f"; rm -f -- "$f"
+          done
+          new() { git ls-files --others --exclude-standard -- content/errors | grep -E '^content/errors/[a-z0-9-]+/[a-z0-9-]+\.md$' || true; }
+          drop() { # file reason
+            local id; id=$(printf '%s' "$1" | sed -E 's#^content/errors/##; s#\.md$##')
+            code=$(node -e "console.log(require('gray-matter').read(process.argv[1]).data.code ?? '')" "$1" 2>/dev/null || true)
+            printf '%s\t%s\t%s\n' "${id%%/*}" "${code:-${id#*/}}" "$2" >> "$skipped"
+            echo "::warning::Not published: $id ($2)"
+            rm -f -- "$1"
+          }
+          # Per page: the schema plus the official source fetched again and the verbatim quote found on it.
+          for f in $(new); do
+            id=$(printf '%s' "$f" | sed -E 's#^content/errors/##; s#\.md$##')
+            node scripts/check-errors.mjs "$id" --online --strict || drop "$f" "failed check-errors --online --strict"
+          done
+          # Whole library (cross-checks such as `related` and duplicate codes): drop new pages the failures name.
+          for pass in 1 2 3; do
+            out=$(node scripts/check-errors.mjs 2>&1) && break
+            echo "$out"
+            for f in $(new); do
+              if printf '%s' "$out" | grep -qF "$f"; then drop "$f" "failed the library check"; fi
+            done
+          done
+          node scripts/check-errors.mjs
+          added=$(new | tr '\n' ' ')
+          echo "added=$added" >> "$GITHUB_OUTPUT"
+          echo "count=$(new | grep -c . || true)" >> "$GITHUB_OUTPUT"
+          # Tick the queue: added lines, and the codes skipped by the writer or the gate. Untried candidates stay open.
+          for f in $(new); do
+            code=$(node -e "console.log(require('gray-matter').read(process.argv[1]).data.code)" "$f")
+            product=$(printf '%s' "$f" | cut -d/ -f3)
+            node scripts/error-queue.mjs mark "$product" "$code" added "$TODAY"
+          done
+          sk=0
+          while IFS=$'\t' read -r product code reason; do
+            [ -n "${product:-}" ] && [ -n "${code:-}" ] || continue
+            node scripts/error-queue.mjs mark "$product" "$code" skipped "$TODAY" "${reason:-skipped by the writer}"
+            sk=$((sk + 1))
+          done < "$skipped"
+          echo "skipped=$sk" >> "$GITHUB_OUTPUT"
+          git status --short
+
+      - name: Build (error pages)
+        id: ebuild
+        if: steps.egate.outputs.count != '' && steps.egate.outputs.count != '0'
+        run: npm run build
+
+      - name: Publish the error pages
+        id: epublish
+        if: steps.egate.outcome == 'success' && !inputs.dry_run
+        env:
+          TODAY: ${{ steps.date.outputs.today }}
+          ADDED: ${{ steps.egate.outputs.added }}
+          COUNT: ${{ steps.egate.outputs.count }}
+          SKIPPED: ${{ steps.egate.outputs.skipped }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          ids=$(for f in $ADDED; do printf '%s ' "$(printf '%s' "$f" | sed -E 's#^content/errors/##; s#\.md$##')"; done)
+          [ -z "$(tail -c1 automation/log.md)" ] || echo >> automation/log.md
+          # One line a day, even when nothing passed: it is how later runs know the lane ran today.
+          echo "$TODAY | errors | added | ${COUNT:-0} codes: ${ids:-none}; skipped ${SKIPPED:-0}" >> automation/log.md
+          git add content/errors automation/log.md
+          git commit -q -m "Error library: ${COUNT:-0} new codes (daily lane)" -m "${ids:-No page passed today; queue lines marked.}" -m "Each page passed check-errors --online --strict (official source fetched, verbatim quote found). Skipped: ${SKIPPED:-0}." -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+          ok=""
+          for i in 1 2 3; do if git pull -q --rebase "$SITE_REMOTE" main && git push -q "$SITE_REMOTE" HEAD:main; then ok=1; break; fi; sleep 10; done
+          [ -n "$ok" ] || { echo "::error::Push failed"; exit 1; }
+          echo "chain=true" >> "$GITHUB_OUTPUT"
+          echo "ids=$ids" >> "$GITHUB_OUTPUT"
+          {
+            echo "## Error library: ${COUNT:-0} new codes, ${SKIPPED:-0} skipped"
+            for id in $ids; do echo "- https://www.epifive.com/errors/$id"; done
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      # A lane run that fails (gate, build, push) is logged so it is not retried today; its pages are dropped and the
+      # queue is left as it was, so tomorrow's run picks the same candidates again.
+      - name: Log a failed error run
+        id: edefer
+        if: failure() && steps.epick.outputs.count != '' && steps.epick.outputs.count != '0' && steps.epublish.outputs.chain != 'true' && !inputs.dry_run
+        env:
+          TODAY: ${{ steps.date.outputs.today }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch -q "$SITE_REMOTE" main && git reset -q --hard FETCH_HEAD
+          git clean -fdq -- content automation
+          rm -f .errors-skipped.tsv
+          [ -z "$(tail -c1 automation/log.md)" ] || echo >> automation/log.md
+          echo "$TODAY | errors | failed | run failed (see the workflow log); nothing published" >> automation/log.md
+          git add automation/log.md
+          git commit -q -m "Error lane: run failed on $TODAY, nothing published" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+          ok=""
+          for i in 1 2 3; do if git pull -q --rebase "$SITE_REMOTE" main && git push -q "$SITE_REMOTE" HEAD:main; then ok=1; break; fi; sleep 10; done
+          [ -n "$ok" ] && echo "chain=true" >> "$GITHUB_OUTPUT"
+
+      # Pushes made with GITHUB_TOKEN don't trigger indexnow.yml: ping the new error pages (and the hub) once live.
+      - name: Ping IndexNow (error pages)
+        if: steps.epublish.outputs.ids != '' && !inputs.dry_run
+        continue-on-error: true
+        env:
+          IDS: ${{ steps.epublish.outputs.ids }}
+        run: |
+          first=$(printf '%s' "$IDS" | awk '{print $1}')
+          for i in $(seq 1 30); do
+            [ "$(curl -s -o /dev/null -w '%{http_code}' "https://www.epifive.com/errors/$first")" = "200" ] && break
+            sleep 20
+          done
+          urls=(https://www.epifive.com/errors)
+          for id in $IDS; do urls+=("https://www.epifive.com/errors/$id"); done
+          node scripts/seo/indexnow.mjs "${urls[@]}"
 
       # ---------- refresh: update one existing post in place (automation/WRITER.md section 6) ----------
       - name: Pick the refresh
@@ -436,23 +636,29 @@ jobs:
           if-no-files-found: ignore
 
       # Owner, 16 Nov 2026: 5-10 articles a day, but the scheduler starts this workflow only at 09:13 and 10:13 IST. So a
-      # finished job starts the next run until the day's articles, refreshes and the interlink pass are done
+      # finished job starts the next run until the day's articles, error codes, refreshes and the interlink pass are done
       # (workflow_dispatch with GITHUB_TOKEN is allowed). Every job logs a line first, so this always ends.
       - name: Next job of the day
-        if: always() && !inputs.dry_run && (steps.publish.outputs.chain == 'true' || steps.rpublish.outputs.chain == 'true' || steps.rdefer.outputs.chain == 'true' || steps.lpublish.outputs.chain == 'true')
+        if: always() && !inputs.dry_run && (steps.publish.outputs.chain == 'true' || steps.epublish.outputs.chain == 'true' || steps.edefer.outputs.chain == 'true' || steps.rpublish.outputs.chain == 'true' || steps.rdefer.outputs.chain == 'true' || steps.lpublish.outputs.chain == 'true')
         env:
           GH_TOKEN: ${{ github.token }}
           MAX: ${{ vars.ARTICLES_PER_DAY || '1' }}
           RMAX: ${{ vars.REFRESH_PER_DAY || '2' }}
+          EMAX: ${{ vars.ERRORS_PER_DAY || '5' }}
         run: |
           today=$(TZ=Asia/Kolkata date +%F)
           n=$(grep -c "^$today | .* | published |" automation/log.md || true)
+          er=$(grep -c "^$today | errors |" automation/log.md || true)
+          eq=0
+          [ -f scripts/error-queue.mjs ] && eq=$(node scripts/error-queue.mjs next 1 | grep -c . || true)
+          edue=false
+          [ "${EMAX:-0}" -gt 0 ] && [ "${er:-0}" -eq 0 ] && [ "${eq:-0}" -gt 0 ] && edue=true
           r=$(grep -cE "^$today \| [a-z0-9-]+ \| refresh(ed|-failed) \|" automation/log.md || true)
           il=$(grep -c "^$today | interlink |" automation/log.md || true)
           open=$(node scripts/seo/refresh-queue.mjs next | grep -c . || true)
-          if [ "${n:-0}" -lt "$MAX" ] || { [ "${r:-0}" -lt "$RMAX" ] && [ "${open:-0}" -gt 0 ]; } || [ "${il:-0}" -eq 0 ]; then
+          if [ "${n:-0}" -lt "$MAX" ] || [ "$edue" = "true" ] || { [ "${r:-0}" -lt "$RMAX" ] && [ "${open:-0}" -gt 0 ]; } || [ "${il:-0}" -eq 0 ]; then
             gh workflow run article.yml --repo "$GITHUB_REPOSITORY" --ref main
-            echo "::notice::Today: $n/$MAX articles, ${r:-0}/$RMAX refreshes, interlink ${il:-0}/1: started the next run."
+            echo "::notice::Today: $n/$MAX articles, error lane ${er:-0}/1, ${r:-0}/$RMAX refreshes, interlink ${il:-0}/1: started the next run."
           else
             echo "::notice::Today: $n/$MAX articles, ${r:-0}/$RMAX refreshes, interlink done: finished for the day."
           fi
