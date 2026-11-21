@@ -2,7 +2,7 @@
  "date": "2026-11-21",
  "title": "Tech news today, 21 November 2026",
  "published": "2026-11-20T20:46:38.014Z",
- "updated": "2026-11-21T16:25:57.531Z",
+ "updated": "2026-11-21T21:50:10.554Z",
  "items": [
   {
    "id": "3b5198cc",
@@ -69,7 +69,7 @@
    "time": "2026-11-20T15:57:23.791Z",
    "seen": "2026-11-20T20:46:38.014Z",
    "kind": "launch",
-   "tier": 2,
+   "tier": 1,
    "headline": "Google Workspace Studio support for Data Regions is now generally available",
    "summary": "Google Workspace Studio now supports Data Regions , giving organizations greater governance over where their workflow data is stored at rest and processed in use. With this launch, core Workspace Studio execution and storage backends, including integrations with Gmail, Google Drive, Google Docs, Google Sheets, Google Calendar, Google Meet, and Google Chat, natively adhere to assigned United States or European Union data region policies. In addition, a dedicated Workspace Studio control has been introduced within Data Regions advanced settings in the Google Admin console. This control enables administrators to determine whether users assigned to a data region can access non-regionalized steps",
    "lines": [
@@ -1032,5 +1032,5 @@
    "story": null
   }
  ],
- "description": "35 technology updates from official sources, updated hourly: WhatsApp Patches 3 Security Flaws, Including Android Bug Suspected of Use in Scams; Who is getting rich from Anthropic's record IPO; Google rolls out new search homepage with AI chat history and no search button."
+ "description": "35 technology updates from official sources, updated hourly: WhatsApp Patches 3 Security Flaws, Including Android Bug Suspected of Use in Scams; Google Workspace Studio support for Data Regions is now generally available; Who is getting rich from Anthropic's record IPO."
 }

@@ -1,0 +1,37 @@
+{
+ "date": "2026-11-22",
+ "title": "Tech news today, 22 November 2026",
+ "published": "2026-11-21T21:50:10.554Z",
+ "updated": "2026-11-21T21:50:10.554Z",
+ "items": [
+  {
+   "id": "11953c1d",
+   "key": "https://bleepingcomputer.com/news/security/microsoft-entra-connect-health-flaw-exploited-to-steal-tenant-data",
+   "time": "2026-11-21T18:01:58.000Z",
+   "seen": "2026-11-21T21:50:10.554Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Microsoft Entra Connect Health flaw exploited to steal tenant data",
+   "summary": "Microsoft is warning organizations that it suffered a data breach after attackers exploited a vulnerability in its Entra Connect Health service to gain unauthorized access to administrator email addresses and tenant configuration information. [...]",
+   "lines": [
+    "Reported by BleepingComputer: Microsoft warns it suffered a data breach after attackers exploited a vulnerability in its Entra Connect Health service.",
+    "The attackers gained unauthorized access to administrator email addresses and tenant configuration information.",
+    "For IT teams, exposure of administrator contact details and tenant configuration data is relevant to how they assess their Entra environments."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/microsoft-entra-connect-health-flaw-exploited-to-steal-tenant-data/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  }
+ ],
+ "description": "1 technology update from official sources, updated hourly: Microsoft Entra Connect Health flaw exploited to steal tenant data."
+}
