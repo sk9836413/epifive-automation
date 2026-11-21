@@ -1,25 +1,44 @@
-# Daily EpiFive photo posts on Facebook and Instagram (owner, 6 Nov 2026: 1-2 a day), made by
-# scripts/social/photo-carousel.mjs in the site repo from the day's article, with no AI writing and no AI pictures:
-#   1. a 3-5 slide carousel (the problem, up to 3 steps, the full-guide slide): Facebook multi-photo post with the
-#      article link, Instagram carousel ("link in bio"), both published at once;
-#   2. a key-takeaway card, Facebook only, scheduled for 17:30 UTC (12:30 New York).
-# Started by the Cloudflare scheduler (scheduler/) at 13:16 UTC (18:46 IST, 08:16 New York) with a retry at 14:16 UTC;
-# no `schedule` here. A day already in photos/log.md is skipped. The cards are uploaded to Facebook from the files and
-# Instagram gets Facebook's CDN copy (it needs a public URL); with the optional secret MEDIA_TOKEN the Shyam media
-# Worker hosts them instead. Separate from social.yml: a failure here never affects the reels.
+# Daily EpiFive carousel (owner growth plan, 21 Nov 2026: "Instagram carousels, new lane"). Tech carousels (step-by-step
+# fixes, cheat sheets, "X vs Y") earn saves and sends, which Instagram ranks on (ALGO-RESEARCH-2026-11). Made by
+# scripts/social/photo-carousel.mjs + carousel-lib.mjs in the site repo from one article, with no AI writing and no AI
+# pictures: 6-8 slides of 1080x1350 in the site's brand style (hook, steps, optional "remember", "Full guide: link in
+# bio / epifive.com"), a keyword-rich Instagram caption (the article's main query first) with 3-5 hashtags.
+#   Instagram: Graph API CAROUSEL flow (child image containers, each polled to FINISHED, then the parent container,
+#   polled, then media_publish). Facebook Page: the same slides as one multi-photo post with the article link.
+# Article: the newest step-by-step article of the last 3 days that fills 6 slides, else the site's most-visited
+# article (stats/top-articles.json, refreshed from Cloudflare Web Analytics when the CF_API_TOKEN secret exists), else
+# the newest unused one; every article is used once (photos/log.md).
+#
+# Switches (repository variables): CAROUSEL = "on" for the daily post (off/unset = no automatic post; manual runs
+# always work); CAROUSEL_AT_IST = the time, "HH:MM" in IST (default 11:30: Indian late morning, 7 hours before the
+# 18:46 IST Reel so the two never crowd each other; the research notes' only time signal is "10:00-13:00 IST slightly
+# higher"); CAROUSEL_WINDOW_HOURS = how long after that time a late run may still post (default 8).
+# When: no Cloudflare cron of its own. It checks after every Launch radar run (about hourly) and on a few GitHub
+# schedule tries around 11:30 IST; the scheduler's existing 18:46/19:46 IST dispatches of this workflow are late
+# retries inside the window. A run that is not due ends in seconds. PHOTO_POSTS (the old 3-5 slide post) is retired.
 name: Photo posts
 
 on:
+  workflow_run:
+    workflows: [Launch radar]
+    types: [completed]
+  schedule:
+    - cron: '5,25,45 6 * * *'   # 11:35-12:15 IST tries (GitHub drops many scheduled runs)
+    - cron: '15 7,8 * * *'
   workflow_dispatch:
     inputs:
       dry_run:
-        description: Render and print the texts only (the cards become the run's artifact); post and log nothing
+        description: Render the slides and texts only (the run's artifact); post and log nothing
         type: boolean
         default: false
       slug:
-        description: Use this article instead of today's (optional)
+        description: Use this article instead of the automatic choice (optional)
         type: string
         default: ''
+      force:
+        description: Post now even outside the time window (still once a day unless a slug is given)
+        type: boolean
+        default: false
 
 env:
   # Instagram caption wording of the "Comment GUIDE" ask (see social.yml).
@@ -34,22 +53,37 @@ concurrency:
 
 jobs:
   photos:
-    # Owner plan, 16 Nov 2026: Facebook and Instagram get two Reels a day (English + Hinglish) and no other posts that
-    # crowd them (reach ~0 at 5-11 followers; the Reels are the only format shown to non-followers). The scheduled
-    # carousel runs only when the repository variable PHOTO_POSTS is "on"; a manual run with a slug or dry_run still works.
-    if: vars.PHOTO_POSTS == 'on' || inputs.dry_run || inputs.slug != ''
+    if: >-
+      vars.CAROUSEL == 'on' ||
+      (github.event_name == 'workflow_dispatch' && (inputs.dry_run || inputs.slug != '' || inputs.force))
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 
-      - name: Already posted today?
+      - name: Due?
         id: gate
+        env:
+          AT: ${{ vars.CAROUSEL_AT_IST || '11:30' }}
+          WINDOW: ${{ vars.CAROUSEL_WINDOW_HOURS || '8' }}
+          MANUAL: ${{ github.event_name == 'workflow_dispatch' && (inputs.dry_run || inputs.slug != '' || inputs.force) }}
         run: |
           mkdir -p photos && touch photos/log.md
-          if [ "${{ inputs.dry_run }}" != "true" ] && [ -z "${{ inputs.slug }}" ] && grep -q "^- $(date -u +%F) |" photos/log.md; then
-            echo "skip=true" >> "$GITHUB_OUTPUT"; echo "::notice::Today's carousel is already posted."
+          date=$(TZ=Asia/Kolkata date +%F)
+          echo "date=$date" >> "$GITHUB_OUTPUT"
+          if [ "$MANUAL" = true ]; then
+            if [ "${{ inputs.dry_run }}" != true ] && [ -z "${{ inputs.slug }}" ] && grep -q "^- $date |" photos/log.md; then
+              echo "skip=true" >> "$GITHUB_OUTPUT"; echo "::notice::Today's carousel is already posted."
+            fi
+            exit 0
           fi
+          now=$(( 10#$(TZ=Asia/Kolkata date +%H) * 60 + 10#$(TZ=Asia/Kolkata date +%M) ))
+          start=$(( 10#${AT%%:*} * 60 + 10#${AT##*:} ))
+          if grep -q "^- $date |" photos/log.md; then reason="today's carousel is already posted"
+          elif [ "$now" -lt "$start" ]; then reason="before $AT IST"
+          elif [ "$now" -gt $(( start + WINDOW * 60 )) ]; then reason="more than $WINDOW h after $AT IST"
+          else reason=""; fi
+          if [ -n "$reason" ]; then echo "skip=true" >> "$GITHUB_OUTPUT"; echo "Not due: $reason."; fi
 
       - uses: actions/checkout@v4
         if: steps.gate.outputs.skip != 'true'
@@ -72,7 +106,24 @@ jobs:
           sudo apt-get -o Acquire::Retries=3 install -y -qq --no-install-recommends fonts-inter > /dev/null
           cd site && npm ci --no-audit --no-fund
 
+      # The most-visited articles (fallback for the article choice). Live from Cloudflare Web Analytics when the
+      # CF_API_TOKEN secret (Account Analytics: Read) exists, else the committed stats/top-articles.json (slugs only).
+      - name: Top articles
+        if: steps.gate.outputs.skip != 'true'
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+        run: |
+          cp stats/top-articles.json "$RUNNER_TEMP/top.json" 2>/dev/null || echo '[]' > "$RUNNER_TEMP/top.json"
+          if [ -n "$CF_API_TOKEN" ]; then
+            (cd site && node scripts/stats/top-articles.mjs --days 28 --limit 20 --out "$RUNNER_TEMP/live.json" > /dev/null) \
+              && [ "$(node -p "require('$RUNNER_TEMP/live.json').length")" -gt 0 ] && cp "$RUNNER_TEMP/live.json" "$RUNNER_TEMP/top.json" \
+              || echo "::warning::Cloudflare top articles failed; the committed list is used."
+          fi
+          echo "Top articles: $(node -p "require('$RUNNER_TEMP/top.json').length")"
+
+      # The Meta token only reaches this step and is never printed (public logs).
       - name: Render and post
+        id: post
         if: steps.gate.outputs.skip != 'true'
         env:
           META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
@@ -80,27 +131,30 @@ jobs:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           MEDIA_TOKEN: ${{ secrets.MEDIA_TOKEN }}
           SLUG: ${{ inputs.slug }}
+          DATE: ${{ steps.gate.outputs.date }}
         run: |
-          set -- --log ../photos/log.md --out ../out
+          set -- --log ../photos/log.md --out ../out --date "$DATE" --top "$RUNNER_TEMP/top.json"
           [ -n "$SLUG" ] && set -- "$@" --slug "$SLUG"
           [ "${{ inputs.dry_run }}" = "true" ] && set -- "$@" --dry-run
-          cd site && node scripts/social/photo-carousel.mjs "$@" | tee -a "$GITHUB_STEP_SUMMARY"
+          cd site && node scripts/social/photo-carousel.mjs "$@" | tee "$RUNNER_TEMP/result.json"
+          { echo '```json'; cat "$RUNNER_TEMP/result.json"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
 
       - uses: actions/upload-artifact@v4
         if: always() && steps.gate.outputs.skip != 'true'
         with:
-          name: photo-cards
-          path: out/*.jpg
-          retention-days: 5
+          name: carousel-${{ steps.gate.outputs.date }}
+          path: |
+            out/*.jpg
+            out/texts.json
+          retention-days: 14
           if-no-files-found: ignore
 
       - name: Log
         if: always() && steps.gate.outputs.skip != 'true' && !inputs.dry_run
         run: |
-          git diff --quiet -- photos/log.md && git ls-files --error-unmatch photos/log.md > /dev/null 2>&1 && exit 0
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add photos/log.md
           git diff --cached --quiet && exit 0
-          git commit -qm "Photo posts $(date -u +%F)"
+          git commit -qm "Carousel ${{ steps.gate.outputs.date }}"
           for i in 1 2 3; do git pull -q --rebase && git push -q && break; sleep 10; done
