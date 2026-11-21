@@ -1,0 +1,102 @@
+# YouTube search growth upkeep (owner growth plan, 21 Nov 2026; 92% of EpiFive's YouTube views come from search).
+# scripts/social/yt-grow.mjs in the site repo:
+#   - six topic playlists (Microsoft 365, Azure, Power Automate, Security alerts, Windows fixes, AI tools; created when
+#     missing) and every upload, old and new, added to its topic's playlist (a video that fits none stays out);
+#   - descriptions: the article link stays first, each Short links its article's public long video ("Full video
+#     tutorial: ..."), at least 3 hashtags. Titles are not changed here (new titles are checked against the article's
+#     main query when they are written: validate.mjs, longvideo.mjs);
+#   - reports whether the channel may set custom thumbnails (phone-verified) and that pinning a comment is not in the API.
+# When: no cron of its own and no scheduler change. It runs after every Long video and Social media run (the new uploads
+# of the day), or by hand. Quota: ~10 units to read; at most 40 playlist adds and 30 description updates a run (50 units
+# each), so the backlog of old videos is spread over 2-3 days; a quota error ends the run cleanly.
+# Switch: repository variable YT_GROW = "off" stops the automatic runs (manual runs always work).
+# Log (public, counts and video ids only): yt/log/<YYYY-MM>.md.
+name: YouTube growth
+
+on:
+  workflow_run:
+    workflows: [Long video, Social media]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Read and decide, change nothing
+        type: boolean
+        default: false
+      max_adds:
+        description: Most playlist adds in this run
+        type: string
+        default: '40'
+      max_updates:
+        description: Most description updates in this run
+        type: string
+        default: '30'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: yt-grow
+  cancel-in-progress: false
+
+jobs:
+  grow:
+    if: github.event_name == 'workflow_dispatch' || vars.YT_GROW != 'off'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/checkout@v4
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+          path: site
+          sparse-checkout: |
+            content/posts
+            scripts/social
+            package.json
+            package-lock.json
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      # The YouTube token only reaches this step and is never printed (public logs).
+      - name: Playlists, descriptions, capabilities
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          DRY: ${{ inputs.dry_run }}
+        run: |
+          (cd site && npm ci --no-audit --no-fund --ignore-scripts > /dev/null)
+          set -- run --max-adds "${{ inputs.max_adds || '40' }}" --max-updates "${{ inputs.max_updates || '30' }}"
+          [ "$DRY" = true ] && set -- "$@" --dry-run
+          (cd site && node scripts/social/yt-grow.mjs "$@") | tee "$RUNNER_TEMP/result.json" || true
+          { echo '```json'; cat "$RUNNER_TEMP/result.json"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Log
+        if: ${{ !inputs.dry_run }}
+        run: |
+          [ -s "$RUNNER_TEMP/result.json" ] || exit 0
+          mkdir -p yt/log
+          node -e '
+            const r = JSON.parse(require("fs").readFileSync(process.env.RUNNER_TEMP + "/result.json", "utf8"));
+            if (r.status === "ok" && !r.added && !r.updated && !r.created) process.exit(0);
+            const p = Object.entries(r.playlists || {}).map(([k, v]) => `${k} ${v}`).join(", ");
+            const line = `- ${new Date().toISOString().slice(0, 16).replace("T", " ")} UTC | ${r.status} | videos ${r.videos ?? "?"} | added ${r.added ?? 0}${r.addsLeft ? ` (${r.addsLeft} left)` : ""} | descriptions ${r.updated ?? 0}${r.updatesLeft ? ` (${r.updatesLeft} left)` : ""} | playlists: ${p || "-"} | unclustered ${r.unclustered ?? "?"} | thumbnails: ${r.thumbnails || "?"} | units ~${r.units ?? "?"}${r.error ? ` | error: ${String(r.error).slice(0, 160)}` : ""}${(r.changes || []).length ? ` | changed: ${r.changes.join("; ")}` : ""}\n`;
+            const f = `yt/log/${new Date().toISOString().slice(0, 7)}.md`;
+            if (!require("fs").existsSync(f)) require("fs").writeFileSync(f, "# YouTube growth log (yt-grow.yml)\n\n");
+            require("fs").appendFileSync(f, line);
+          '
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add yt
+          git diff --cached --quiet && exit 0
+          git commit -qm "YouTube growth $(date -u '+%F %H:%M') UTC"
+          for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep 5; done
