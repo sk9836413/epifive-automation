@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-21T13:16:55.541Z",
+ "lastScan": "2026-11-21T14:16:47.085Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -2433,25 +2433,6 @@
    "hash": "93aa1df7",
    "post": "java4shell-cve-2026-114938-openjdk-check-patch-workaround"
   },
-  "https://news.samsung.com/global/samsung-begins-one-ui-9-5-beta-program": {
-   "title": "Samsung Begins One UI 9.5 Beta Program",
-   "link": "https://news.samsung.com/global/samsung-begins-one-ui-9-5-beta-program",
-   "source": "samsung-global",
-   "topic": "mobiles",
-   "category": "launch",
-   "date": "2026-11-18T18:00:00.000Z",
-   "updated": null,
-   "summary": "Samsung has launched the One UI 9.5 beta program, giving users an early look at One UI 9.5 ahead of its official debut. The One UI 9.5 beta introduces more precise camera controls, personalized health insights, improved accessibility features, and stronger privacy protections for everyday use. Enhan",
-   "first": "2026-11-18T13:16:59.819Z",
-   "score": 3,
-   "reasons": [
-    "+2 launch \"launched\"",
-    "+1 also on samsung-india",
-    "re-scored (was 2)"
-   ],
-   "status": "below",
-   "hash": "5aa47a65"
-  },
   "https://ai.google.dev/gemini-api/docs/changelog#2026-11-18-multimodal-file-processing-and-slicing": {
    "title": "Multimodal file processing and slicing",
    "link": "https://ai.google.dev/gemini-api/docs/changelog#2026-11-18-multimodal-file-processing-and-slicing",
@@ -2470,145 +2451,6 @@
    ],
    "status": "below",
    "hash": "594c658a"
-  },
-  "https://news.sap.com/2026/11/bestseller-turned-fragmented-workforce-data-into-trusted-people-intelligence": {
-   "title": "How Bestseller Turned Fragmented Workforce Data into Trusted People Intelligence",
-   "link": "https://news.sap.com/2026/11/bestseller-turned-fragmented-workforce-data-into-trusted-people-intelligence/",
-   "source": "sap-news",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-18T12:15:00.000Z",
-   "updated": null,
-   "summary": "Now, leaders across all brands and countries at the fashion group can work from the same numbers and focus on decisions.",
-   "first": "2026-11-18T13:16:59.819Z",
-   "score": 0,
-   "reasons": [
-    "-1 source sap-news",
-    "+1 plans/price/availability \"countries\""
-   ],
-   "status": "below",
-   "hash": "95b4e22b"
-  },
-  "https://news.sap.com/2026/11/sap-recognized-gartner-peer-insights-talent-acquisition": {
-   "title": "SAP Recognized as a Customers’ Choice in the 2026 Gartner Peer Insights™ Voice of the Customer for Talent Acquisition (Recruiting) Suites",
-   "link": "https://news.sap.com/2026/11/sap-recognized-gartner-peer-insights-talent-acquisition/",
-   "source": "sap-news",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-18T11:15:00.000Z",
-   "updated": null,
-   "summary": "The recognition captures the experiences of the teams using our solutions to hire, develop, and grow their workforce.",
-   "first": "2026-11-18T13:16:59.819Z",
-   "score": -1,
-   "reasons": [
-    "-1 source sap-news"
-   ],
-   "status": "below",
-   "hash": "970e5f66"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63996": {
-   "title": "Premature redemption under Sovereign Gold Bond (SGB) Scheme - Redemption Price for premature redemption of SGB 2020-21 Series II due on November 19, 2026",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63996",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-18T17:55:00.000Z",
-   "updated": null,
-   "summary": "In terms of GOI notification F.No. 4(4)-B(W&M)/2020 dated April 13, 2020 (SGB 2020-21 Series II - Issue date May 19, 2020) on Sovereign Gold Bond Scheme, premature redemption of Gold Bond may be permitted after fifth year from the date of issue of such Gold Bond on the date on which interest is paya",
-   "first": "2026-11-18T13:16:59.819Z",
-   "score": 0,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 plans/price/availability \"Price\""
-   ],
-   "status": "below",
-   "hash": "6ca3ddb6"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63995": {
-   "title": "Treasury Bills: Full Auction Result",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63995",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-18T14:40:00.000Z",
-   "updated": null,
-   "summary": "(Amount in ₹ crore) Auction Results 91-Day 182-Day 364-Day I. Notified Amount 8,000 8,000 7,000 II. Competitive Bids Received (i) Number 152 127 163 (ii) Amount 25,216.180 26,523.500 25,170.500 III. Cut-off price (₹) / Yield 98.5600 96.8466 93.7982 (YTM: 5.8602%) (YTM: 6.5300%) (YTM: 6.6300%) IV. Co",
-   "first": "2026-11-18T13:16:59.819Z",
-   "score": 0,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 plans/price/availability \"price\""
-   ],
-   "status": "below",
-   "hash": "8ed5ac9e"
-  },
-  "https://mc.merill.net/message/MC1558817": {
-   "title": "MC1558817: Dataverse - Dataverse Data Available in Agent Builder Declarative Agents",
-   "link": "https://mc.merill.net/message/MC1558817",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-18T08:47:11.000Z",
-   "updated": null,
-   "summary": "We are announcing the ability to select Power Platform and Dynamics 365 data as a knowledge data source when creating and editing Declarative Agents built in Agent Builder in Microsoft Dataverse. This feature reached general availability on November 17, 2026. How does this affect me? With this featu",
-   "first": "2026-11-18T13:16:59.819Z",
-   "score": 2,
-   "reasons": [
-    "-2 source mc-merill",
-    "+1 niche (agent)",
-    "+2 launch \"Available in\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "d97441d2"
-  },
-  "https://apple.com/newsroom/2026/11/meet-the-2026-app-store-award-finalists": {
-   "title": "Meet the 2026 App Store Award finalists",
-   "link": "https://www.apple.com/newsroom/2026/11/meet-the-2026-app-store-award-finalists/",
-   "source": "apple-newsroom",
-   "topic": "mobiles",
-   "category": "launch",
-   "date": "2026-11-18T13:59:20.769Z",
-   "updated": "2026-11-18T13:59:20.769Z",
-   "summary": "Apple announced the finalists for the 2026 App Store Awards, recognizing 45 developers from around the world for exceptional apps and games.",
-   "first": "2026-11-18T14:16:39.425Z",
-   "score": -2,
-   "reasons": [
-    "+1 source apple-newsroom",
-    "-3 corporate/announcement \"Award\""
-   ],
-   "status": "below",
-   "hash": "ba64d79a"
-  },
-  "https://blog.google/innovation-and-ai/technology/safety-security/cybersecurity-tips": {
-   "title": "Cybersecurity tips and tools to keep you safe online",
-   "link": "https://blog.google/innovation-and-ai/technology/safety-security/cybersecurity-tips/",
-   "source": "google-keyword",
-   "topic": "how-to-tips",
-   "category": "launch",
-   "date": "2026-11-18T14:00:00.000Z",
-   "updated": null,
-   "summary": "Explore this collection to see how Google’s cybersecurity tips and tools can keep your accounts and information safe.",
-   "first": "2026-11-18T14:16:39.425Z",
-   "score": 0,
-   "reasons": [],
-   "status": "below",
-   "hash": "387335e2"
-  },
-  "https://blog.google/products/marketingplatform/360/google-marketing-platform-drop-november": {
-   "title": "Drive your best ROI reaching new holiday shoppers with November’s Google Marketing Platform Drop.",
-   "link": "https://blog.google/products/marketingplatform/360/google-marketing-platform-drop-november/",
-   "source": "google-keyword",
-   "topic": "how-to-tips",
-   "category": "launch",
-   "date": "2026-11-18T14:00:00.000Z",
-   "updated": null,
-   "summary": "Boost holiday ROI with November 2026 Google Marketing Platform updates, including Spotify audiences, Pinterest inventory, and Loblaw integration. Get the details.",
-   "first": "2026-11-18T14:16:39.425Z",
-   "score": 0,
-   "reasons": [],
-   "status": "below",
-   "hash": "437ab7d4"
   },
   "https://about.fb.com/news/2026/11/meta-welcomes-loblaw-as-first-canadian-retail-partner-to-muse": {
    "title": "Meta Welcomes Loblaw as First Canadian Retail Partner to Muse",
@@ -2629,145 +2471,6 @@
    ],
    "status": "below",
    "hash": "aedc8863"
-  },
-  "https://news.samsung.com/in/galaxy-a57-5g-and-a37-5g-give-young-users-ai-tools-for-photo-editing-productivity-and-social-media": {
-   "title": "Galaxy A57 5G and A37 5G Give Young Users AI Tools for Photo-Editing, Productivity and Social Media",
-   "link": "https://news.samsung.com/in/galaxy-a57-5g-and-a37-5g-give-young-users-ai-tools-for-photo-editing-productivity-and-social-media",
-   "source": "samsung-india",
-   "topic": "mobiles",
-   "category": "launch",
-   "date": "2026-11-18T16:45:44.000Z",
-   "updated": null,
-   "summary": "Samsung’s Galaxy A57 5G and Galaxy A37 5G are smartphones built for young users who prioritise photography, performance, AI-enabled everyday features and durability. Built for millennials and Gen Z consumers who rely on their phones for content creation, social media and entertainment, the devices b",
-   "first": "2026-11-18T14:16:39.425Z",
-   "score": 1,
-   "reasons": [
-    "+1 niche (galaxy)"
-   ],
-   "status": "below",
-   "hash": "b924e65e"
-  },
-  "https://news.lenovo.com/bring-sovereign-secure-ai-to-where-your-business-runs": {
-   "title": "Bring sovereign, secure AI to where your business runs",
-   "link": "https://news.lenovo.com/bring-sovereign-secure-ai-to-where-your-business-runs/",
-   "source": "lenovo-news",
-   "topic": "laptops-hardware",
-   "category": "launch",
-   "date": "2026-11-18T14:00:12.000Z",
-   "updated": null,
-   "summary": "New Lenovo Hybrid AI Factory solutions with Microsoft enable enterprises to design, deploy, and sustain sovereign AI environments",
-   "first": "2026-11-18T14:16:39.425Z",
-   "score": 2,
-   "reasons": [
-    "+2 user steps \"enable\""
-   ],
-   "status": "below",
-   "hash": "cb9124e7"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63997": {
-   "title": "RBI to conduct Overnight Variable Rate Reverse Repo (VRRR) auction under LAF on November 19, 2026",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63997",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-18T19:00:00.000Z",
-   "updated": null,
-   "summary": "On a review of current and evolving liquidity conditions, it has been decided to conduct a Variable Rate Reverse Repo (VRRR) auction on Thursday, November 19, 2026, as under: Sl. No. Notified Amount (₹ crore) Tenor (day) Window Timing Date of Reversal 1 50,000 1 10:30 AM to 11:00 AM November 20, 202",
-   "first": "2026-11-18T14:16:39.425Z",
-   "score": -1,
-   "reasons": [
-    "-1 source rbi-press"
-   ],
-   "status": "below",
-   "hash": "13ef30e7"
-  },
-  "https://blogs.nvidia.com/blog/rtx-spark-desktop-local-ai-available-now": {
-   "title": "NVIDIA RTX Spark Compact Desktops Out Now",
-   "link": "https://blogs.nvidia.com/blog/rtx-spark-desktop-local-ai-available-now/",
-   "source": "nvidia-news",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-18T14:00:31.000Z",
-   "updated": null,
-   "summary": "New NVIDIA RTX Spark compact desktops from ASUS, Dell and MSI are available today, bringing local AI agents, image and video generation, and model fine-tuning to a dedicated Windows PC. With up to 128GB of unified memory and NVIDIA’s AI software stack, these systems provide room for larger local mod",
-   "first": "2026-11-18T14:16:39.425Z",
-   "score": 3,
-   "reasons": [
-    "-1 source nvidia-news",
-    "+2 niche (windows, agents)",
-    "+2 launch \"available today\""
-   ],
-   "status": "below",
-   "hash": "6ae78c63"
-  },
-  "https://dell.com/en-us/blog/bringing-enterprise-ai-closer-to-your-data": {
-   "title": "Bringing Enterprise AI Closer to Your Data",
-   "link": "https://www.dell.com/en-us/blog/bringing-enterprise-ai-closer-to-your-data",
-   "source": "dell-blog",
-   "topic": "laptops-hardware",
-   "category": "launch",
-   "date": "2026-11-18T14:00:00.000Z",
-   "updated": null,
-   "summary": "",
-   "first": "2026-11-18T14:16:39.425Z",
-   "score": -1,
-   "reasons": [
-    "-1 source dell-blog"
-   ],
-   "status": "below",
-   "hash": "4aea8c0"
-  },
-  "https://dell.com/en-us/blog/enterprise-power-without-enterprise-sprawl": {
-   "title": "Enterprise Power Without Enterprise Sprawl",
-   "link": "https://www.dell.com/en-us/blog/enterprise-power-without-enterprise-sprawl",
-   "source": "dell-blog",
-   "topic": "laptops-hardware",
-   "category": "launch",
-   "date": "2026-11-18T14:00:00.000Z",
-   "updated": null,
-   "summary": "Run demanding AI workloads across distributed sites with Dell Distributed Private Cloud. Discover zero-touch provisioning and flexible hardware options.",
-   "first": "2026-11-18T14:16:39.425Z",
-   "score": -1,
-   "reasons": [
-    "-1 source dell-blog"
-   ],
-   "status": "below",
-   "hash": "8edaa039"
-  },
-  "https://docker.com/blog/agentic-ai-security-docker-governance": {
-   "title": "The Trust Layer: Securing Agentic AI with Docker AI Governance",
-   "link": "https://www.docker.com/blog/agentic-ai-security-docker-governance/",
-   "source": "docker-blog",
-   "topic": "ai-engineering",
-   "category": "launch",
-   "date": "2026-11-18T14:00:00.000Z",
-   "updated": null,
-   "summary": "Learn how Docker AI Governance secures agentic AI with sandbox policies, MCP tool governance, and audit visibility to support controlled AI agent workflows.",
-   "first": "2026-11-18T14:16:39.425Z",
-   "score": 0,
-   "reasons": [
-    "-1 source docker-blog",
-    "+1 niche (agent)"
-   ],
-   "status": "below",
-   "hash": "881d87a1"
-  },
-  "https://salesforce.com/blog/small-business/ai-governance-best-practices": {
-   "title": "AI Governance On Your List of Things to Learn? SMBs — Read This First",
-   "link": "https://www.salesforce.com/blog/small-business/ai-governance-best-practices/",
-   "source": "salesforce-blog",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-18T14:00:00.000Z",
-   "updated": null,
-   "summary": "Let’s talk about governing our AI, shall we?",
-   "first": "2026-11-18T14:16:39.425Z",
-   "score": -1,
-   "reasons": [
-    "-1 source salesforce-blog"
-   ],
-   "status": "below",
-   "hash": "7a9c1890"
   },
   "https://openai.com/index/advancing-chip-design-with-our-models": {
    "title": "Advancing chip design with OpenAI models",
@@ -13605,6 +13308,30 @@
    ],
    "status": "below",
    "hash": "c5f36ab8"
+  },
+  "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOZmtWb1RsOXhxTzNjTDFWcG02OGx0ZnZleVktMVhtdHY0QWhESF90VkxuVnpzZzFoVFVwMUJlY1ZYZ25acUp6cVI0YTB1dVBpalBOMk5US3B5UlQ1RFo3aE5ZX3pxUDIxcU5fYnJSYVV1NjRFaWpvbnpHU24xZWhnWG1OTlpjdTZHdEtKMFhoVDNnaFdJanhYSmtqVy12a1hlTFBvWU9naC1nOUtvXzJoNVB4QllhMVhwQ1VrZFBpVDZfa01lZGVRZmcxT3JnMlJTSXFUbmRhOTNFVzFlV2U5N2QycXVCUFotQkxPM09KN2lBalNmZVlwWEFYUUJ1Zw?oc=5": {
+   "title": "Outlook, FAA, bank outage, oh my! How to practice 'cyber hygiene' in the AI age",
+   "link": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOZmtWb1RsOXhxTzNjTDFWcG02OGx0ZnZleVktMVhtdHY0QWhESF90VkxuVnpzZzFoVFVwMUJlY1ZYZ25acUp6cVI0YTB1dVBpalBOMk5US3B5UlQ1RFo3aE5ZX3pxUDIxcU5fYnJSYVV1NjRFaWpvbnpHU24xZWhnWG1OTlpjdTZHdEtKMFhoVDNnaFdJanhYSmtqVy12a1hlTFBvWU9naC1nOUtvXzJoNVB4QllhMVhwQ1VrZFBpVDZfa01lZGVRZmcxT3JnMlJTSXFUbmRhOTNFVzFlV2U5N2QycXVCUFotQkxPM09KN2lBalNmZVlwWEFYUUJ1Zw?oc=5",
+   "source": "gnews-infra",
+   "topic": "microsoft-365",
+   "category": "outage",
+   "date": "2026-11-21T13:30:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-21T14:16:47.085Z",
+   "score": 8,
+   "reasons": [
+    "-1 source gnews-infra",
+    "+6 outage \"outage\"",
+    "+3 major platform (microsoft)",
+    "backlog teams-not-working-today-fix-windows-mac-us"
+   ],
+   "status": "below",
+   "hash": "c3c6422c",
+   "families": [
+    "microsoft"
+   ],
+   "backlog": "teams-not-working-today-fix-windows-mac-us"
   }
  },
  "devices": {},
@@ -13659,8 +13386,8 @@
    "category": "launch",
    "topic": "ai-engineering",
    "parkOnly": false,
-   "last": "2026-11-21T13:15:20.000Z",
-   "date": "2026-11-21T13:15:20.000Z",
+   "last": "2026-11-21T14:03:21.000Z",
+   "date": "2026-11-21T14:03:21.000Z",
    "score": 13,
    "post": "anthropic-ipo-explained-claude-users"
   },

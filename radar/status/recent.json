@@ -1,7 +1,16 @@
 {
- "generated": "2026-11-19T04:59:51.747Z",
+ "generated": "2026-11-21T14:17:24.371Z",
  "services": {
   "microsoft-365": [
+   {
+    "time": "2026-11-21T13:30:00.000Z",
+    "headline": "Outlook, FAA, bank outage, oh my! How to practice 'cyber hygiene' in the AI age",
+    "source": "TheDailyNewsOnline.com",
+    "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOZmtWb1RsOXhxTzNjTDFWcG02OGx0ZnZleVktMVhtdHY0QWhESF90VkxuVnpzZzFoVFVwMUJlY1ZYZ25acUp6cVI0YTB1dVBpalBOMk5US3B5UlQ1RFo3aE5ZX3pxUDIxcU5fYnJSYVV1NjRFaWpvbnpHU24xZWhnWG1OTlpjdTZHdEtKMFhoVDNnaFdJanhYSmtqVy12a1hlTFBvWU9naC1nOUtvXzJoNVB4QllhMVhwQ1VrZFBpVDZfa01lZGVRZmcxT3JnMlJTSXFUbmRhOTNFVzFlV2U5N2QycXVCUFotQkxPM09KN2lBalNmZVlwWEFYUUJ1Zw?oc=5",
+    "reported": true,
+    "live": "/news/live/2026-11-21#u-12e11db9",
+    "post": null
+   },
    {
     "time": "2026-11-17T00:08:41.000Z",
     "headline": "High volume phishing campaign uses Microsoft 365 outage lures to target multiple industry sectors",
@@ -22,6 +31,15 @@
    }
   ],
   "outlook": [
+   {
+    "time": "2026-11-21T13:30:00.000Z",
+    "headline": "Outlook, FAA, bank outage, oh my! How to practice 'cyber hygiene' in the AI age",
+    "source": "TheDailyNewsOnline.com",
+    "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOZmtWb1RsOXhxTzNjTDFWcG02OGx0ZnZleVktMVhtdHY0QWhESF90VkxuVnpzZzFoVFVwMUJlY1ZYZ25acUp6cVI0YTB1dVBpalBOMk5US3B5UlQ1RFo3aE5ZX3pxUDIxcU5fYnJSYVV1NjRFaWpvbnpHU24xZWhnWG1OTlpjdTZHdEtKMFhoVDNnaFdJanhYSmtqVy12a1hlTFBvWU9naC1nOUtvXzJoNVB4QllhMVhwQ1VrZFBpVDZfa01lZGVRZmcxT3JnMlJTSXFUbmRhOTNFVzFlV2U5N2QycXVCUFotQkxPM09KN2lBalNmZVlwWEFYUUJ1Zw?oc=5",
+    "reported": true,
+    "live": "/news/live/2026-11-21#u-12e11db9",
+    "post": null
+   },
    {
     "time": "2026-11-17T00:08:41.000Z",
     "headline": "High volume phishing campaign uses Microsoft 365 outage lures to target multiple industry sectors",

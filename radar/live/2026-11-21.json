@@ -2,7 +2,7 @@
  "date": "2026-11-21",
  "title": "Tech news today, 21 November 2026",
  "published": "2026-11-20T20:46:38.014Z",
- "updated": "2026-11-21T13:16:55.541Z",
+ "updated": "2026-11-21T14:16:47.085Z",
  "items": [
   {
    "id": "3b5198cc",
@@ -972,7 +972,37 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "12e11db9",
+   "key": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOZmtWb1RsOXhxTzNjTDFWcG02OGx0ZnZleVktMVhtdHY0QWhESF90VkxuVnpzZzFoVFVwMUJlY1ZYZ25acUp6cVI0YTB1dVBpalBOMk5US3B5UlQ1RFo3aE5ZX3pxUDIxcU5fYnJSYVV1NjRFaWpvbnpHU24xZWhnWG1OTlpjdTZHdEtKMFhoVDNnaFdJanhYSmtqVy12a1hlTFBvWU9naC1nOUtvXzJoNVB4QllhMVhwQ1VrZFBpVDZfa01lZGVRZmcxT3JnMlJTSXFUbmRhOTNFVzFlV2U5N2QycXVCUFotQkxPM09KN2lBalNmZVlwWEFYUUJ1Zw?oc=5",
+   "time": "2026-11-21T13:30:00.000Z",
+   "seen": "2026-11-21T14:16:47.085Z",
+   "kind": "outage",
+   "tier": 2,
+   "headline": "Outlook, FAA, bank outage, oh my! How to practice 'cyber hygiene' in the AI age",
+   "summary": "",
+   "lines": [
+    "Reported by TheDailyNewsOnline.com: The headline references Outlook, the FAA and a bank outage, and covers cyber hygiene in the AI age.",
+    "The article text was not provided, so details on the outages, dates and affected regions are not available."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "TheDailyNewsOnline.com",
+    "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOZmtWb1RsOXhxTzNjTDFWcG02OGx0ZnZleVktMVhtdHY0QWhESF90VkxuVnpzZzFoVFVwMUJlY1ZYZ25acUp6cVI0YTB1dVBpalBOMk5US3B5UlQ1RFo3aE5ZX3pxUDIxcU5fYnJSYVV1NjRFaWpvbnpHU24xZWhnWG1OTlpjdTZHdEtKMFhoVDNnaFdJanhYSmtqVy12a1hlTFBvWU9naC1nOUtvXzJoNVB4QllhMVhwQ1VrZFBpVDZfa01lZGVRZmcxT3JnMlJTSXFUbmRhOTNFVzFlV2U5N2QycXVCUFotQkxPM09KN2lBalNmZVlwWEFYUUJ1Zw?oc=5"
+   },
+   "sourceId": "gnews-infra",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "families": [
+    "microsoft"
+   ],
+   "score": 8,
+   "story": "outage:microsoft"
   }
  ],
- "description": "33 technology updates from official sources, updated hourly: WhatsApp Patches 3 Security Flaws, Including Android Bug Suspected of Use in Scams; Who is getting rich from Anthropic's record IPO; Google rolls out new search homepage with AI chat history and no search button."
+ "description": "34 technology updates from official sources, updated hourly: WhatsApp Patches 3 Security Flaws, Including Android Bug Suspected of Use in Scams; Who is getting rich from Anthropic's record IPO; Google rolls out new search homepage with AI chat history and no search button."
 }
