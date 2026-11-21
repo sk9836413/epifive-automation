@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-21T05:13:18.883Z",
+ "lastScan": "2026-11-21T08:50:20.640Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -13581,6 +13581,23 @@
    "hash": "9c5a0e24",
    "status": "parked",
    "parkedAt": "2026-11-21T03:43:48.706Z"
+  },
+  "https://zoho.com/blog/recruit/how-staffing-agencies-can-hire-fast.html": {
+   "title": "How staffing agencies can ACE the hiring race",
+   "link": "https://www.zoho.com/blog/recruit/how-staffing-agencies-can-hire-fast.html",
+   "source": "zoho-blog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-20T15:46:47.000Z",
+   "updated": null,
+   "summary": "Your competitor has already submitted three candidates. Your client is expecting profiles by noon. Your recruiters are racing against the clock, and AI promises to make the process faster. But in an industry where the first submission can make all the difference, are staffing agencies becoming faste",
+   "first": "2026-11-21T08:50:20.640Z",
+   "score": -3,
+   "reasons": [
+    "-3 corporate/announcement \"hiring\""
+   ],
+   "status": "below",
+   "hash": "88c06f22"
   }
  },
  "devices": {},
@@ -13628,6 +13645,7 @@
     "Bloomberg",
     "CNBC",
     "WSJ",
+    "Financial Times",
     "CNN",
     "TechCrunch"
    ],
@@ -13635,8 +13653,8 @@
    "category": "launch",
    "topic": "ai-engineering",
    "parkOnly": false,
-   "last": "2026-11-21T04:47:25.000Z",
-   "date": "2026-11-21T04:47:25.000Z",
+   "last": "2026-11-21T08:00:32.000Z",
+   "date": "2026-11-21T08:00:32.000Z",
    "score": 14,
    "post": "anthropic-ipo-explained-claude-users"
   },
