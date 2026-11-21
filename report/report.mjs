@@ -156,10 +156,18 @@ async function articlesSection() {
   const title = '2. Aaj ke articles (www.epifive.com)';
   if (!env.SITE_REPO_TOKEN) return failedSection(title, 'SITE_REPO_TOKEN nahi hai');
   const text = await ghRaw('sk9836413/EPIVIFE', 'automation/log.md', env.SITE_REPO_TOKEN);
-  const rows = articlesOn(text, DATE);
+  const all = articlesOn(text, DATE);
+  // Refreshes of old posts and the daily internal-links pass (article.yml, growth plan 21 Nov 2026) are not new articles.
+  const upkeep = all.filter((r) => r.slug === 'interlink' || r.status.startsWith('refresh'));
+  const rows = all.filter((r) => !upkeep.includes(r));
+  const upkeepItems = upkeep.map((r) =>
+    r.slug === 'interlink'
+      ? { text: `Internal links: ${r.words}` }
+      : { text: `Purana post ${r.status === 'refreshed' ? 'refresh hua' : 'refresh fail hua (queue ke end me gaya)'}: ${r.slug}`, href: `${SITE}/blog/${r.slug}` },
+  );
   site.articles = rows.length;
   log.push(`articles: ok (${rows.length})`);
-  if (!rows.length) return { title, items: [{ text: 'Aaj abhi tak koi article publish nahi hua (log.md me aaj ki line nahi).' }, ...radarMissedTrends()] };
+  if (!rows.length) return { title, items: [{ text: 'Aaj abhi tak koi article publish nahi hua (log.md me aaj ki line nahi).' }, ...upkeepItems, ...radarMissedTrends()] };
   const items = [{ text: `${rows.length} article(s) aaj: ${rows.filter((r) => r.status === 'published').length} daily, ${rows.filter((r) => r.status.startsWith('fast-track')).length} fast-track` }];
   await Promise.all(rows.map(async (r) => {
     try {
@@ -169,6 +177,7 @@ async function articlesSection() {
     } catch { r.title = r.slug; }
   }));
   for (const r of rows) items.push({ text: `${r.title}${r.status === 'published' ? '' : ` [${r.status}]`}`, href: `${SITE}/blog/${r.slug}` });
+  items.push(...upkeepItems);
   items.push(...radarMissedTrends());
   return { title, items };
 }

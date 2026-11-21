@@ -1,5 +1,16 @@
-# Publishes one new article a day (automation/WRITER.md). Claude researches and writes; the
+# Publishes the day's new articles (automation/WRITER.md). Claude researches and writes; the
 # quality gate, build, commit, push and IndexNow ping are workflow steps.
+#
+# One run does ONE job, picked in this order (owner growth plan, 21 Nov 2026, item 3: "update old guides and internal links"):
+#   1. article   - a new article, until ARTICLES_PER_DAY (repo variable, default 1) are published today (IST);
+#   2. refresh   - an existing post updated in place from "## Refresh" in automation/backlog.md (WRITER.md section 6), until
+#                  REFRESH_PER_DAY (repo variable, default 2) refreshes were tried today. Refreshes never count as articles;
+#   3. interlink - once a day: scripts/seo/interlink.mjs adds "See also" links (orphans first; at most 40 posts a day),
+#                  and every Monday (IST) the full-site pass plus the Search Console striking-distance block at the top of
+#                  "## Refresh" (scripts/seo/refresh-queue.mjs gsc, GSC_* secrets).
+# Each job writes a line to automation/log.md (published / refreshed / refresh-failed / interlink), which is how later runs
+# know what is left, and a finished run starts the next one until the day's work is done (the scheduler only starts this
+# workflow at 09:13 and 10:13 IST). The `mode` input forces one job for a manual run.
 name: Daily article
 
 on:
@@ -9,6 +20,11 @@ on:
         description: Write and check the article but do not publish it
         type: boolean
         default: false
+      mode:
+        description: Job to run (auto = next one due today)
+        type: choice
+        options: [auto, article, refresh, interlink, interlink-full]
+        default: auto
 
 env:
   SITE_REMOTE: https://x-access-token:${{ secrets.SITE_REPO_TOKEN }}@github.com/sk9836413/EPIVIFE.git
@@ -51,23 +67,41 @@ jobs:
         if: steps.gate.outputs.ready == 'true'
         run: npm ci --no-audit --no-fund
 
-      - name: Today's date
+      - name: Today's date and job
         id: date
         if: steps.gate.outputs.ready == 'true'
+        env:
+          WANT: ${{ inputs.mode || 'auto' }}
+          DRY_RUN: ${{ inputs.dry_run || false }}
+          MAX: ${{ vars.ARTICLES_PER_DAY || '1' }}
+          RMAX: ${{ vars.REFRESH_PER_DAY || '2' }}
         run: |
           today=$(TZ=Asia/Kolkata date +%F)
           echo "today=$today" >> "$GITHUB_OUTPUT"
           # Articles per IST day: repo variable ARTICLES_PER_DAY (default 1; owner 16 Nov 2026: 5-10 a day). Each scheduler
-          # dispatch writes at most one; once today's count is reached, later runs do nothing.
-          max="${{ vars.ARTICLES_PER_DAY || '1' }}"
+          # dispatch writes at most one; once today's count is reached, the run refreshes or interlinks instead (header).
           n=$(grep -c "^$today | .* | published |" automation/log.md || true)
-          if [ "${{ inputs.dry_run }}" != "true" ] && [ "${n:-0}" -ge "$max" ]; then
-            echo "done=true" >> "$GITHUB_OUTPUT"
-            echo "::notice::$n of $max articles already published on $today; nothing to do."
-          fi
+          r=$(grep -cE "^$today \| [a-z0-9-]+ \| refresh(ed|-failed) \|" automation/log.md || true)
+          il=$(grep -c "^$today | interlink |" automation/log.md || true)
+          open=$(node scripts/seo/refresh-queue.mjs next | grep -c . || true)
+          full=false
+          [ "$(TZ=Asia/Kolkata date +%u)" = "1" ] && full=true
+          case "$WANT" in
+            article|refresh|interlink) mode="$WANT" ;;
+            interlink-full) mode=interlink; full=true ;;
+            *)
+              if [ "$DRY_RUN" = "true" ] || [ "${n:-0}" -lt "$MAX" ]; then mode=article
+              elif [ "${r:-0}" -lt "$RMAX" ] && [ "${open:-0}" -gt 0 ]; then mode=refresh
+              elif [ "${il:-0}" -eq 0 ]; then mode=interlink
+              else mode=none
+              fi ;;
+          esac
+          echo "mode=$mode" >> "$GITHUB_OUTPUT"
+          echo "full=$full" >> "$GITHUB_OUTPUT"
+          echo "::notice::$today: $n/$MAX articles, ${r:-0}/$RMAX refreshes ($open in the queue), interlink ${il:-0}/1 -> $mode"
 
       - name: Research and write (Claude)
-        if: steps.gate.outputs.ready == 'true' && steps.date.outputs.done != 'true'
+        if: steps.gate.outputs.ready == 'true' && steps.date.outputs.mode == 'article'
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
@@ -90,7 +124,7 @@ jobs:
 
       - name: Find the new article
         id: post
-        if: steps.gate.outputs.ready == 'true' && steps.date.outputs.done != 'true'
+        if: steps.gate.outputs.ready == 'true' && steps.date.outputs.mode == 'article'
         run: |
           new=$(git status --porcelain --untracked-files=all content/posts | awk '/^\?\?/ {print $2}')
           count=$(printf '%s' "$new" | grep -c . || true)
@@ -133,6 +167,7 @@ jobs:
         run: npm run build
 
       - name: Publish
+        id: publish
         if: steps.post.outputs.slug != '' && !inputs.dry_run
         env:
           FILE: ${{ steps.post.outputs.file }}
@@ -148,6 +183,7 @@ jobs:
           fi
           git commit -q -m "Add article: $TITLE" ${drip:+-m "$drip"} -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
           for i in 1 2 3; do git pull -q --rebase "$SITE_REMOTE" main && git push -q "$SITE_REMOTE" HEAD:main && break; sleep 10; done
+          echo "chain=true" >> "$GITHUB_OUTPUT"
 
       # Pushes made with GITHUB_TOKEN don't trigger indexnow.yml, so ping here.
       - name: Ping IndexNow
@@ -204,19 +240,219 @@ jobs:
             automation/backlog.md
             automation/log.md
           retention-days: 30
+
+      # ---------- refresh: update one existing post in place (automation/WRITER.md section 6) ----------
+      - name: Pick the refresh
+        id: rpick
+        if: steps.gate.outputs.ready == 'true' && steps.date.outputs.mode == 'refresh'
+        run: |
+          next=$(node scripts/seo/refresh-queue.mjs next)
+          slug=$(printf '%s' "$next" | cut -f1)
+          if [ -z "$slug" ]; then echo "::notice::No open refresh line with an existing post."; exit 0; fi
+          echo "slug=$slug" >> "$GITHUB_OUTPUT"
+          echo "file=content/posts/$slug.md" >> "$GITHUB_OUTPUT"
+          { echo 'line<<EOF_REFRESH_LINE'; printf '%s\n' "$next" | cut -f2-; echo 'EOF_REFRESH_LINE'; } >> "$GITHUB_OUTPUT"
+          echo "Refresh: $slug"
+
+      - name: Refresh the post (Claude)
+        if: steps.rpick.outputs.slug != ''
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          allowed_bots: "*"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          claude_args: |
+            --max-turns 120
+            --allowedTools "Read,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node scripts/check-posts.mjs:*),Bash(ls:*),Bash(wc:*)"
+          prompt: |
+            Refresh one existing EpiFive article in place. Today's date is ${{ steps.date.outputs.today }}.
+
+            The post is content/posts/${{ steps.rpick.outputs.slug }}.md. Its line in "## Refresh" of automation/backlog.md:
+            ${{ steps.rpick.outputs.line }}
+
+            Read automation/WRITER.md and follow section 6 (refresh runs) exactly, using sections 2 and 3 for research,
+            official sources, voice, "What we checked" and the banned claims (and section 7 if the post compares products).
+            Changes for this environment:
+            - Edit only content/posts/${{ steps.rpick.outputs.slug }}.md. Do not create, rename or delete files. Do not edit
+              automation/backlog.md or automation/log.md: the workflow ticks the line and logs the refresh.
+            - Keep the slug, `date` and the post's subject; set `updated: '${{ steps.date.outputs.today }}'`; never touch
+              `google` or `googleReleased`; leave the `## See also` list as it is.
+            - Run `node scripts/check-posts.mjs ${{ steps.rpick.outputs.slug }}` until it passes. Do NOT run `npm run build`,
+              `git commit` or `git push`; later workflow steps build, commit and publish.
+
+            Finish with a short report: what changed, the sources you added, and anything you left out because it could
+            not be verified.
+
+      - name: Check the refresh
+        id: refreshed
+        if: steps.rpick.outputs.slug != ''
+        env:
+          SLUG: ${{ steps.rpick.outputs.slug }}
+          FILE: ${{ steps.rpick.outputs.file }}
+          TODAY: ${{ steps.date.outputs.today }}
+        run: |
+          changed=$(git status --porcelain --untracked-files=all -- content automation src public scripts | awk '{print $2}')
+          if [ "$changed" != "$FILE" ]; then
+            echo "::error::Expected only $FILE to change, found: ${changed:-nothing}"
+            git status --short
+            exit 1
+          fi
+          grep -Eq "^updated: '?$TODAY'?\s*$" "$FILE" || echo "::warning::$FILE does not say updated: '$TODAY'"
+          node scripts/check-posts.mjs "$SLUG"
+          echo "title=$(node -e "console.log(require('gray-matter').read(process.argv[1]).data.title)" "$FILE")" >> "$GITHUB_OUTPUT"
+          echo "words=$(sed '1,/^---$/d' "$FILE" | wc -w)" >> "$GITHUB_OUTPUT"
+          git diff --stat
+
+      - name: Build (refresh)
+        if: steps.refreshed.outputs.title != ''
+        run: npm run build
+
+      - name: Publish the refresh
+        id: rpublish
+        if: steps.refreshed.outputs.title != '' && !inputs.dry_run
+        env:
+          SLUG: ${{ steps.rpick.outputs.slug }}
+          FILE: ${{ steps.rpick.outputs.file }}
+          TITLE: ${{ steps.refreshed.outputs.title }}
+          WORDS: ${{ steps.refreshed.outputs.words }}
+          TODAY: ${{ steps.date.outputs.today }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node scripts/seo/refresh-queue.mjs tick "$SLUG" "$TODAY"
+          [ -z "$(tail -c1 automation/log.md)" ] || echo >> automation/log.md
+          echo "$TODAY | $SLUG | refreshed | ~$WORDS words" >> automation/log.md
+          git add "$FILE" automation/backlog.md automation/log.md
+          git commit -q -m "Refresh article: $TITLE" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+          ok=""
+          for i in 1 2 3; do if git pull -q --rebase "$SITE_REMOTE" main && git push -q "$SITE_REMOTE" HEAD:main; then ok=1; break; fi; sleep 10; done
+          [ -n "$ok" ] || { echo "::error::Push failed"; exit 1; }
+          echo "chain=true" >> "$GITHUB_OUTPUT"
+          {
+            echo "## Refreshed: $TITLE"
+            echo
+            echo "https://www.epifive.com/blog/$SLUG ($WORDS words including code)"
+          } >> "$GITHUB_STEP_SUMMARY"
+          # Pushes made with GITHUB_TOKEN don't trigger indexnow.yml: tell Bing the page changed.
+          curl -sS -X POST https://api.indexnow.org/indexnow \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            -d "{\"host\":\"www.epifive.com\",\"key\":\"5bbd01230376e7468f09aef0ef85403c\",\"keyLocation\":\"https://www.epifive.com/5bbd01230376e7468f09aef0ef85403c.txt\",\"urlList\":[\"https://www.epifive.com/blog/$SLUG\"]}" \
+            -w '\nIndexNow HTTP %{http_code}\n' || true
+
+      # A refresh that fails (no change, gate, build) goes to the end of the queue with a note and still counts towards
+      # REFRESH_PER_DAY, so one bad line can never block the queue or loop.
+      - name: Defer a failed refresh
+        id: rdefer
+        if: failure() && steps.rpick.outputs.slug != '' && steps.rpublish.outputs.chain != 'true' && !inputs.dry_run
+        env:
+          SLUG: ${{ steps.rpick.outputs.slug }}
+          TODAY: ${{ steps.date.outputs.today }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch -q "$SITE_REMOTE" main && git reset -q --hard FETCH_HEAD
+          git clean -fdq -- content automation
+          node scripts/seo/refresh-queue.mjs defer "$SLUG" "$TODAY: refresh run failed"
+          [ -z "$(tail -c1 automation/log.md)" ] || echo >> automation/log.md
+          echo "$TODAY | $SLUG | refresh-failed | deferred to the end of the queue" >> automation/log.md
+          git add automation/backlog.md automation/log.md
+          git commit -q -m "Refresh queue: defer $SLUG (run failed)" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+          ok=""
+          for i in 1 2 3; do if git pull -q --rebase "$SITE_REMOTE" main && git push -q "$SITE_REMOTE" HEAD:main; then ok=1; break; fi; sleep 10; done
+          [ -n "$ok" ] && echo "chain=true" >> "$GITHUB_OUTPUT"
+
+      # ---------- interlink: "See also" links (daily, capped) and the weekly full pass ----------
+      - name: Search Console striking-distance block (Mondays)
+        id: gscblock
+        if: steps.gate.outputs.ready == 'true' && steps.date.outputs.mode == 'interlink' && steps.date.outputs.full == 'true'
+        continue-on-error: true
+        env:
+          GSC_CLIENT_ID: ${{ secrets.GSC_CLIENT_ID }}
+          GSC_CLIENT_SECRET: ${{ secrets.GSC_CLIENT_SECRET }}
+          GSC_REFRESH_TOKEN: ${{ secrets.GSC_REFRESH_TOKEN }}
+          GSC_SITE: ${{ secrets.GSC_SITE }}
+          DRY_RUN: ${{ inputs.dry_run || false }}
+        run: |
+          if [ "$DRY_RUN" = "true" ]; then node scripts/seo/refresh-queue.mjs gsc > "$RUNNER_TEMP/gsc.json"
+          else node scripts/seo/refresh-queue.mjs gsc --write > "$RUNNER_TEMP/gsc.json"; fi
+          n=$(node -e "console.log(require(process.argv[1]).picks.length)" "$RUNNER_TEMP/gsc.json")
+          echo "picks=$n" >> "$GITHUB_OUTPUT"
+          { echo "### Search Console refresh block: $n post(s)"; echo '```json'; cat "$RUNNER_TEMP/gsc.json"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Internal links
+        id: links
+        if: steps.gate.outputs.ready == 'true' && steps.date.outputs.mode == 'interlink'
+        env:
+          FULL: ${{ steps.date.outputs.full }}
+          DRY_RUN: ${{ inputs.dry_run || false }}
+        run: |
+          args=(--report "$RUNNER_TEMP/interlink.json")
+          [ "$FULL" = "true" ] || args+=(--max-files 40)
+          [ "$DRY_RUN" = "true" ] || args+=(--write)
+          node scripts/seo/interlink.mjs "${args[@]}" > "$RUNNER_TEMP/interlink-summary.json"
+          cat "$RUNNER_TEMP/interlink-summary.json"
+          echo "posts=$(git status --porcelain -- content/posts | grep -c . || true)" >> "$GITHUB_OUTPUT"
+          echo "links=$(node -e "console.log(require(process.argv[1]).linksInSelection)" "$RUNNER_TEMP/interlink-summary.json")" >> "$GITHUB_OUTPUT"
+          { echo "### Internal links (full pass: $FULL)"; echo '```json'; cat "$RUNNER_TEMP/interlink-summary.json"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Quality gate and build (internal links)
+        if: steps.links.outcome == 'success' && steps.links.outputs.posts != '0'
+        run: |
+          node scripts/check-posts.mjs
+          npm run build
+
+      - name: Publish internal links
+        id: lpublish
+        if: steps.links.outcome == 'success' && !inputs.dry_run
+        env:
+          TODAY: ${{ steps.date.outputs.today }}
+          POSTS: ${{ steps.links.outputs.posts }}
+          LINKS: ${{ steps.links.outputs.links }}
+          FULL: ${{ steps.date.outputs.full }}
+          GSC: ${{ steps.gscblock.outputs.picks }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          note="$LINKS links in $POSTS posts"
+          [ "$FULL" = "true" ] && note="$note, full pass"
+          [ -n "$GSC" ] && note="$note, Search Console refresh block: $GSC posts"
+          [ -z "$(tail -c1 automation/log.md)" ] || echo >> automation/log.md
+          # One line a day, even with nothing to add: it is how later runs know the pass is done.
+          echo "$TODAY | interlink | links | $note" >> automation/log.md
+          git add content/posts automation/backlog.md automation/log.md
+          git commit -q -m "Internal links: $note" -m "scripts/seo/interlink.mjs (See also lists, orphans first) run by the Daily article workflow." -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+          ok=""
+          for i in 1 2 3; do if git pull -q --rebase "$SITE_REMOTE" main && git push -q "$SITE_REMOTE" HEAD:main; then ok=1; break; fi; sleep 10; done
+          [ -n "$ok" ] || { echo "::error::Push failed"; exit 1; }
+          echo "chain=true" >> "$GITHUB_OUTPUT"
+
+      - name: Upload the internal-links report
+        if: always() && steps.links.outcome != 'skipped'
+        uses: actions/upload-artifact@v4
+        with:
+          name: interlink-${{ steps.date.outputs.today }}
+          path: ${{ runner.temp }}/interlink.json
+          retention-days: 30
+          if-no-files-found: ignore
+
       # Owner, 16 Nov 2026: 5-10 articles a day, but the scheduler starts this workflow only at 09:13 and 10:13 IST. So a
-      # published run starts the next one until ARTICLES_PER_DAY is reached (workflow_dispatch with GITHUB_TOKEN is allowed).
-      - name: Next article of the day
-        if: steps.post.outputs.slug != '' && !inputs.dry_run
+      # finished job starts the next run until the day's articles, refreshes and the interlink pass are done
+      # (workflow_dispatch with GITHUB_TOKEN is allowed). Every job logs a line first, so this always ends.
+      - name: Next job of the day
+        if: always() && !inputs.dry_run && (steps.publish.outputs.chain == 'true' || steps.rpublish.outputs.chain == 'true' || steps.rdefer.outputs.chain == 'true' || steps.lpublish.outputs.chain == 'true')
         env:
           GH_TOKEN: ${{ github.token }}
           MAX: ${{ vars.ARTICLES_PER_DAY || '1' }}
+          RMAX: ${{ vars.REFRESH_PER_DAY || '2' }}
         run: |
           today=$(TZ=Asia/Kolkata date +%F)
           n=$(grep -c "^$today | .* | published |" automation/log.md || true)
-          if [ "${n:-0}" -lt "$MAX" ]; then
+          r=$(grep -cE "^$today \| [a-z0-9-]+ \| refresh(ed|-failed) \|" automation/log.md || true)
+          il=$(grep -c "^$today | interlink |" automation/log.md || true)
+          open=$(node scripts/seo/refresh-queue.mjs next | grep -c . || true)
+          if [ "${n:-0}" -lt "$MAX" ] || { [ "${r:-0}" -lt "$RMAX" ] && [ "${open:-0}" -gt 0 ]; } || [ "${il:-0}" -eq 0 ]; then
             gh workflow run article.yml --repo "$GITHUB_REPOSITORY" --ref main
-            echo "::notice::$n of $MAX articles published today: started the next one."
+            echo "::notice::Today: $n/$MAX articles, ${r:-0}/$RMAX refreshes, interlink ${il:-0}/1: started the next run."
           else
-            echo "::notice::$n of $MAX articles published today: done for the day."
+            echo "::notice::Today: $n/$MAX articles, ${r:-0}/$RMAX refreshes, interlink done: finished for the day."
           fi
