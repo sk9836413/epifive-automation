@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-21T14:16:47.085Z",
+ "lastScan": "2026-11-21T16:25:57.531Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -13386,8 +13386,8 @@
    "category": "launch",
    "topic": "ai-engineering",
    "parkOnly": false,
-   "last": "2026-11-21T14:03:21.000Z",
-   "date": "2026-11-21T14:03:21.000Z",
+   "last": "2026-11-21T16:12:22.000Z",
+   "date": "2026-11-21T16:12:22.000Z",
    "score": 13,
    "post": "anthropic-ipo-explained-claude-users"
   },

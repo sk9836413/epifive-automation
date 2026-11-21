@@ -2,7 +2,7 @@
  "date": "2026-11-21",
  "title": "Tech news today, 21 November 2026",
  "published": "2026-11-20T20:46:38.014Z",
- "updated": "2026-11-21T14:16:47.085Z",
+ "updated": "2026-11-21T16:25:57.531Z",
  "items": [
   {
    "id": "3b5198cc",
@@ -1002,7 +1002,35 @@
    ],
    "score": 8,
    "story": "outage:microsoft"
+  },
+  {
+   "id": "9f9f7416",
+   "key": "https://bleepingcomputer.com/news/security/badbox-30-botnet-returns-with-record-breaking-40-billion-daily-ad-requests",
+   "time": "2026-11-21T15:17:27.000Z",
+   "seen": "2026-11-21T16:25:57.531Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "BADBOX botnet returns with record-breaking 40 billion daily ad requests",
+   "summary": "The BADBOX malware found in a broad range of generic Android TV boxes has returned to large-scale ad-fraud operations following last year's disruptions. [...]",
+   "lines": [
+    "Reported by BleepingComputer: the BADBOX malware, found in a broad range of generic Android TV boxes, has returned to large-scale ad-fraud operations.",
+    "The botnet is linked to a record-breaking 40 billion daily ad requests, following disruptions last year.",
+    "IT teams that manage generic Android TV boxes should note the return of this malware family."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/badbox-30-botnet-returns-with-record-breaking-40-billion-daily-ad-requests/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
   }
  ],
- "description": "34 technology updates from official sources, updated hourly: WhatsApp Patches 3 Security Flaws, Including Android Bug Suspected of Use in Scams; Who is getting rich from Anthropic's record IPO; Google rolls out new search homepage with AI chat history and no search button."
+ "description": "35 technology updates from official sources, updated hourly: WhatsApp Patches 3 Security Flaws, Including Android Bug Suspected of Use in Scams; Who is getting rich from Anthropic's record IPO; Google rolls out new search homepage with AI chat history and no search button."
 }
