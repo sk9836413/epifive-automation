@@ -2,3 +2,4 @@
 - 2026-11-18 | gta-6-storage-212gb-free-up-space-ps5-xbox | ig-en: https://www.instagram.com/reel/Df3WiEcDfkQ/
 - 2026-11-19 | gta-6-ps5-xbox-tv-settings-guide | ig-en: https://www.instagram.com/reel/Df5zEeLjWvI/
 - 2026-11-20 | gemini-app-lower-memory-android-go-set-up | ig-en: https://www.instagram.com/reel/Df8uLLqjDxq/
+- 2026-11-21 | gta-6-controller-drift-battery-vibration-fix | ig-en: https://www.instagram.com/reel/Df_FxxoDhqg/
