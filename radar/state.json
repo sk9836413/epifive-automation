@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-21T08:50:20.640Z",
+ "lastScan": "2026-11-21T13:16:55.541Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -2336,39 +2336,6 @@
    ],
    "status": "below",
    "hash": "f6479f0b"
-  },
-  "https://zoho.com/blog/marketplace/app-spotlight-springverify-for-zoho-recruit.html": {
-   "title": "App Spotlight: SpringVerify for Zoho Recruit",
-   "link": "https://www.zoho.com/blog/marketplace/app-spotlight-springverify-for-zoho-recruit.html",
-   "source": "zoho-blog",
-   "topic": "small-business-it",
-   "category": "launch",
-   "date": "2026-11-17T16:30:49.000Z",
-   "updated": null,
-   "summary": "Streamline employee background verification within Zoho Recruit with AI-powered document categorization, automated data retrieval, and real-time status updates to reduce manual effort and accelerate hiring.Get the extensionBusiness needsHiring teams running background checks (BGV) outside Zoho Recru",
-   "first": "2026-11-18T09:14:28.189Z",
-   "score": 0,
-   "reasons": [],
-   "status": "below",
-   "hash": "f843795f"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63994": {
-   "title": "91-Day, 182-Day and 364-Day T-Bill Auction Result: Cut-off",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63994",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-18T13:25:00.000Z",
-   "updated": null,
-   "summary": "T-Bill 91-Day 182-Day 364-Day I. Total Face Value Notified ₹8,000 Crore ₹8,000 Crore ₹7,000 Crore II. Cut-off Price (₹) and Implicit Yield at Cut-Off Price 98.5600 (YTM: 5.8602%) 96.8466 (YTM: 6.5300%) 93.7982 (YTM: 6.6300%) III. Total Face Value Accepted ₹8,000 Crore ₹8,000 Crore ₹7,000 Crore Ajit ",
-   "first": "2026-11-18T09:14:28.189Z",
-   "score": 0,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 plans/price/availability \"₹8\""
-   ],
-   "status": "below",
-   "hash": "e139aa73"
   },
   "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership": {
    "title": "Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT",
@@ -10387,8 +10354,9 @@
     "+1 launch in the headline",
     "+1 autocomplete (3)"
    ],
-   "status": "below",
-   "hash": "84214ed2"
+   "status": "parked",
+   "hash": "84214ed2",
+   "parkedAt": "2026-11-21T13:16:55.541Z"
   },
   "https://workspaceupdates.googleblog.com/2026/11/now-available-in-beta-collaborate-in-real-time-on-client-side-encrypted-Google-Docs.html": {
    "title": "Now available in beta: Collaborate in real-time on client-side encrypted (CSE) Google Docs",
@@ -13598,6 +13566,45 @@
    ],
    "status": "below",
    "hash": "88c06f22"
+  },
+  "https://thehackernews.com/2026/11/a-single-malicious-webpage-let.html": {
+   "title": "A Single Malicious Webpage Let Researchers Hijack Meta Muse and Access Private Chats",
+   "link": "https://thehackernews.com/2026/11/a-single-malicious-webpage-let.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-21T11:53:07.000Z",
+   "updated": null,
+   "summary": "A malicious webpage could extract a Meta Muse user's private conversations and stored memories from the assistant without triggering any approval prompt, researchers have shown. The same attack could be extended to reach the credentials Muse stores for the user's connected accounts. The work was a l",
+   "first": "2026-11-21T13:16:55.541Z",
+   "score": 7,
+   "reasons": [
+    "+1 source thn",
+    "+2 vulnerability \"flaw\"",
+    "+3 major platform (meta)",
+    "+1 user data or credentials exposed"
+   ],
+   "status": "below",
+   "hash": "9f136a7d"
+  },
+  "https://thehackernews.com/2026/11/gnupg-warns-critical-gpgme-flaw-could.html": {
+   "title": "GnuPG Warns Critical GPGME Flaw Could Expose App Data via Malicious OpenPGP Keys",
+   "link": "https://thehackernews.com/2026/11/gnupg-warns-critical-gpgme-flaw-could.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-21T11:05:53.000Z",
+   "updated": null,
+   "summary": "A malicious OpenPGP key with an unusually long user ID can trigger a critical memory bug in GPGME, the standard library that programs use to work with GnuPG. The GnuPG project warned yesterday that the flaw could be used to steal data from affected applications and has released fixed versions. The b",
+   "first": "2026-11-21T13:16:55.541Z",
+   "score": 6,
+   "reasons": [
+    "+1 source thn",
+    "+3 incident \"steal\"",
+    "+2 user action \"fixed\""
+   ],
+   "status": "below",
+   "hash": "c5f36ab8"
   }
  },
  "devices": {},
@@ -13606,7 +13613,8 @@
    "Email meeting guests from Google Calendar with the full capabilities of Gmail"
   ],
   "2026-11-21": [
-   "Google rolls out new search homepage with AI chat history and no search button"
+   "Google rolls out new search homepage with AI chat history and no search button",
+   "Google Vids now lets you reuse your media in video generation"
   ]
  },
  "trends": {
@@ -13645,17 +13653,15 @@
     "Bloomberg",
     "CNBC",
     "WSJ",
-    "Financial Times",
-    "CNN",
-    "TechCrunch"
+    "CNN"
    ],
    "techmeme": false,
    "category": "launch",
    "topic": "ai-engineering",
    "parkOnly": false,
-   "last": "2026-11-21T08:00:32.000Z",
-   "date": "2026-11-21T08:00:32.000Z",
-   "score": 14,
+   "last": "2026-11-21T13:15:20.000Z",
+   "date": "2026-11-21T13:15:20.000Z",
+   "score": 13,
    "post": "anthropic-ipo-explained-claude-users"
   },
   "milestone:google|9c5a0e24": {
@@ -13686,15 +13692,15 @@
   }
  },
  "missedCheck": {
-  "day": "2026-11-20",
-  "at": "2026-11-20T13:16:59.271Z",
+  "day": "2026-11-21",
+  "at": "2026-11-21T13:16:55.541Z",
   "checked": 3,
   "covered": 2,
   "items": [
    {
-    "title": "Email meeting guests from Google Calendar with the full capabilities of Gmail",
-    "link": "http://workspaceupdates.googleblog.com/2026/11/email-meeting-guests-from-google-Calendar-with-the-full-capabilities-of-Gmail.html",
-    "why": "below, score 8, workspace-updates",
+    "title": "Google Vids now lets you reuse your media in video generation",
+    "link": "http://workspaceupdates.googleblog.com/2026/11/google-vids-now-lets-you-reuse-your-media-in-video-generation.html",
+    "why": "below, score 9, workspace-updates",
     "parked": true
    }
   ]

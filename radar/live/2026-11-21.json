@@ -2,7 +2,7 @@
  "date": "2026-11-21",
  "title": "Tech news today, 21 November 2026",
  "published": "2026-11-20T20:46:38.014Z",
- "updated": "2026-11-21T03:43:48.706Z",
+ "updated": "2026-11-21T13:16:55.541Z",
  "items": [
   {
    "id": "3b5198cc",
@@ -860,7 +860,119 @@
    "ai": null,
    "score": 10,
    "story": "trend:milestone:google"
+  },
+  {
+   "id": "b79be032",
+   "key": "https://thehackernews.com/2026/11/a-single-malicious-webpage-let.html",
+   "time": "2026-11-21T11:53:07.000Z",
+   "seen": "2026-11-21T13:16:55.541Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "A Single Malicious Webpage Let Researchers Hijack Meta Muse and Access Private Chats",
+   "summary": "A malicious webpage could extract a Meta Muse user's private conversations and stored memories from the assistant without triggering any approval prompt, researchers have shown. The same attack could be extended to reach the credentials Muse stores for the user's connected accounts. The work was a laboratory demonstration, not an attack on real users, and it stayed inside the individual user's",
+   "lines": [
+    "Reported by The Hacker News: researchers showed that a malicious webpage could extract a Meta Muse user's private conversations and stored memories without triggering any approval prompt.",
+    "The same attack could be extended to reach credentials Muse stores for the user's connected accounts. The work was a laboratory demonstration, not an attack on real users.",
+    "IT teams and business users should consider the risk that AI assistants storing chats and account credentials could be exposed through web content a user opens."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/a-single-malicious-webpage-let.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 7,
+   "story": null
+  },
+  {
+   "id": "85e47cf8",
+   "key": "https://thehackernews.com/2026/11/gnupg-warns-critical-gpgme-flaw-could.html",
+   "time": "2026-11-21T11:05:53.000Z",
+   "seen": "2026-11-21T13:16:55.541Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "GnuPG Warns Critical GPGME Flaw Could Expose App Data via Malicious OpenPGP Keys",
+   "summary": "A malicious OpenPGP key with an unusually long user ID can trigger a critical memory bug in GPGME, the standard library that programs use to work with GnuPG. The GnuPG project warned yesterday that the flaw could be used to steal data from affected applications and has released fixed versions. The bug, tracked as CVE-2026-129975, affects all software that uses GPGME before version 2.3.0,",
+   "lines": [
+    "Reported by The Hacker News: the GnuPG project warned that a malicious OpenPGP key with an unusually long user ID can trigger a critical memory bug in GPGME.",
+    "The flaw, tracked as CVE-2026-129975, affects software that uses GPGME before version 2.3.0, and fixed versions have been released.",
+    "Applications that use GPGME could have data stolen, so IT teams should identify software that depends on GPGME and apply the fixed versions."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/gnupg-warns-critical-gpgme-flaw-could.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null
+  },
+  {
+   "id": "051872b6",
+   "key": "https://thehackernews.com/2026/11/attackers-ai-agents-found-zero-day-in.html",
+   "time": "2026-11-21T11:03:17.000Z",
+   "seen": "2026-11-21T13:16:55.541Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Attackers' AI Agents Found a Zero-Day in Medical-Imaging Software and Gained Root Access",
+   "summary": "Suspected China-linked hackers used autonomous AI agents to find a previously unknown flaw in MONAI Label, an open-source medical imaging server, and gain root access to a university server, Amazon Threat Intelligence said this week. The flaw allows an attacker with no account to write files outside the server's storage folder, and it affects MONAI Label 0.8.5 and earlier in the default setup,",
+   "lines": [
+    "Reported by The Hacker News: Amazon Threat Intelligence said suspected China-linked hackers used autonomous AI agents to find a previously unknown flaw in MONAI Label, an open-source medical imaging server.",
+    "The hackers gained root access to a university server. The flaw lets an attacker with no account write files outside the server's storage folder.",
+    "The flaw affects MONAI Label 0.8.5 and earlier in the default setup, so IT teams running this software should check their versions and configurations."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/attackers-ai-agents-found-zero-day-in.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "97615fa7",
+   "key": "https://thehackernews.com/2026/11/hackers-exploit-critical-vmware-cisco.html",
+   "time": "2026-11-21T08:49:13.000Z",
+   "seen": "2026-11-21T13:16:55.541Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Hackers Exploit Critical VMware, Cisco, and Apache Flaws as Espionage Attacks Emerge",
+   "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Friday added four flaws impacting Apache Roller, Cisco Expressway, SAP NetWeaver, and Broadcom VMware vCenter to its Known Exploited Vulnerabilities (KEV), citing evidence of active exploitation. The vulnerabilities are listed below - CVE-2026-129448 (CVSS score: 9.8) - A deserialization of untrusted data vulnerability in",
+   "lines": [
+    "Reported by The Hacker News: CISA added four flaws impacting Apache Roller, Cisco Expressway, SAP NetWeaver, and Broadcom VMware vCenter to its Known Exploited Vulnerabilities (KEV) catalog on Friday.",
+    "CISA cited evidence of active exploitation. One listed flaw, CVE-2026-129448, has a CVSS score of 9.8 and involves deserialization of untrusted data.",
+    "Because these flaws are being actively exploited, IT teams running the listed products should prioritize reviewing and patching them."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/hackers-exploit-critical-vmware-cisco.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
   }
  ],
- "description": "29 technology updates from official sources, updated hourly: WhatsApp Patches 3 Security Flaws, Including Android Bug Suspected of Use in Scams; Who is getting rich from Anthropic's record IPO; Google rolls out new search homepage with AI chat history and no search button."
+ "description": "33 technology updates from official sources, updated hourly: WhatsApp Patches 3 Security Flaws, Including Android Bug Suspected of Use in Scams; Who is getting rich from Anthropic's record IPO; Google rolls out new search homepage with AI chat history and no search button."
 }
