@@ -2,7 +2,7 @@
  "date": "2026-11-20",
  "title": "Tech news today, 20 November 2026",
  "published": "2026-11-19T23:16:35.731Z",
- "updated": "2026-11-20T14:16:36.844Z",
+ "updated": "2026-11-21T04:43:46.063Z",
  "items": [
   {
    "id": "9d95f41a",
@@ -882,7 +882,7 @@
    "time": "2026-11-20T10:38:22.000Z",
    "seen": "2026-11-20T12:22:01.168Z",
    "kind": "security",
-   "tier": 2,
+   "tier": 1,
    "headline": "SonicWall Warns Gen 6 Firewalls Won't Get Security Patches, Even for Critical Flaws",
    "summary": "SonicWall has urged all customers still running Generation 6 firewalls to retire and replace them immediately and stop exposing the devices on the internet edge, citing security risks fueled by AI-assisted attacks. \"Attackers now use automation and AI to find and exploit unsupported edge devices faster than ever,\" SonicWall said. \"We expect internet-facing Gen 6 firewalls to be actively",
    "lines": [
@@ -1072,5 +1072,5 @@
    "story": null
   }
  ],
- "description": "37 technology updates from official sources, updated hourly: VMware patches vCenter zero-day exploited in attacks since September; US plans to announce cause of outage that led to nationwide ground stop, FAA says; SonicWall Warns Gen 6 Firewalls Won't Get Security Patches, Even for Critical Flaws."
+ "description": "37 technology updates from official sources, updated hourly: VMware patches vCenter zero-day exploited in attacks since September; SonicWall Warns Gen 6 Firewalls Won't Get Security Patches, Even for Critical Flaws; US plans to announce cause of outage that led to nationwide ground stop, FAA says."
 }

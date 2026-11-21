@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-21T03:43:48.706Z",
+ "lastScan": "2026-11-21T04:43:46.063Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -7200,13 +7200,15 @@
     "+2 niche (gemini)",
     "+9 flagship AI model (Gemini 3.6)"
    ],
-   "status": "writing",
+   "status": "published",
    "hash": "488ac4c4",
    "story": "ai:gemini 3.6:release",
    "kind": "new",
    "extra": false,
    "taskAt": "2026-11-21T03:43:48.706Z",
-   "attempts": 1
+   "attempts": 1,
+   "slug": "gemini-api-tool-retrieval-set-up",
+   "resultAt": "2026-11-21T03:53:33.923Z"
   },
   "https://zoom.com/en/blog/zoom-marketplace-4000-apps": {
    "title": "4,000 apps and counting: What's new in the Zoom Marketplace",
@@ -9923,8 +9925,12 @@
     "+5 critical flaw in widely used software \"SonicWall\" / \"Critical\"",
     "+2 user action \"Patches\""
    ],
-   "status": "queued",
-   "hash": "51a59af9"
+   "status": "writing",
+   "hash": "51a59af9",
+   "kind": "new",
+   "extra": true,
+   "taskAt": "2026-11-21T04:43:46.063Z",
+   "attempts": 1
   },
   "https://zoho.com/blog/general/update-on-openjdk-and-nginx-vulnerabilities.html": {
    "title": "Update on OpenJDK (CVE-2026-114938) and nginx (CVE-2026-123007 & CVE-2026-123633) vulnerabilities",
@@ -13963,14 +13969,15 @@
     "WSJ",
     "Financial Times",
     "CNN",
-    "TechCrunch"
+    "TechCrunch",
+    "Business Standard"
    ],
    "techmeme": false,
    "category": "launch",
    "topic": "ai-engineering",
    "parkOnly": false,
-   "last": "2026-11-21T03:35:00.000Z",
-   "date": "2026-11-21T03:35:00.000Z",
+   "last": "2026-11-21T03:48:50.000Z",
+   "date": "2026-11-21T03:48:50.000Z",
    "score": 14,
    "post": "anthropic-ipo-explained-claude-users"
   },
