@@ -113,6 +113,22 @@ jobs:
           sudo apt-get -o Acquire::Retries=3 -o Acquire::http::Timeout=20 install -y -qq --no-install-recommends ffmpeg fonts-inter fonts-dejavu-core > /dev/null
           npm ci --no-audit --no-fund
 
+      # Owner growth plan, 21 Nov 2026: the site's 10 most-visited articles (real traffic, Cloudflare Web Analytics,
+      # last 28 days, China apart) get the next long tutorials first when they are how-tos with no video yet
+      # (longvideo.mjs pick --top). Live when the CF_API_TOKEN secret (Account Analytics: Read) exists, else the list
+      # committed in this repo (stats/top-articles.json, slugs only).
+      - name: Top articles by traffic
+        if: steps.gate.outputs.ready == 'true' && steps.pick.outputs.dir != '' && steps.pick.outputs.slug == ''
+        continue-on-error: true
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+        run: |
+          curl -fsSL "https://raw.githubusercontent.com/${{ github.repository }}/main/stats/top-articles.json" -o "$RUNNER_TEMP/top.json" || echo '[]' > "$RUNNER_TEMP/top.json"
+          if [ -n "$CF_API_TOKEN" ]; then
+            node scripts/stats/top-articles.mjs --days 28 --limit 10 --out "$RUNNER_TEMP/live.json" > /dev/null               && [ "$(node -p "require('$RUNNER_TEMP/live.json').length")" -gt 0 ] && cp "$RUNNER_TEMP/live.json" "$RUNNER_TEMP/top.json"               || echo "::warning::Cloudflare top articles failed; the committed list is used."
+          fi
+          echo "Top articles: $(node -p "require('$RUNNER_TEMP/top.json').slice(0, 10).map((x) => x.slug || x).join(', ')")"
+
       - name: Choose the article
         id: article
         if: steps.gate.outputs.ready == 'true' && steps.pick.outputs.dir != ''
@@ -129,7 +145,7 @@ jobs:
               exit 0
             fi
           fi
-          [ -n "$slug" ] || slug="$(node scripts/social/longvideo.mjs pick)"
+          [ -n "$slug" ] || slug="$(node scripts/social/longvideo.mjs pick --top "$RUNNER_TEMP/top.json")"
           echo "slug=$slug" >> "$GITHUB_OUTPUT"
           if [ -z "$slug" ]; then echo "::notice::No suitable article left for a long video."; else echo "Long video for $slug"; mkdir -p "${{ steps.pick.outputs.dir }}"; fi
 
