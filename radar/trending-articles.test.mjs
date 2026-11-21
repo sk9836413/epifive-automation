@@ -71,6 +71,20 @@ test('articleKind: launches, AI, security and payments outages are articles; bus
   assert.match(kind(['Microsoft unveils new Copilot features, plans to expand in 2027 says sources']).reject ?? 'ok', /ok|not launched/);
   assert.match(trendTopic('Microsoft 365 outage: Microsoft releases preliminary report on Outlook and Teams').reject, /IT outage/);});
 
+test('articleKind: a lawsuit or patent case against a product readers use is an article; settlements and fines are not', () => {
+  const kind = (titles) => {
+    const entries = titles.map((t) => ({ title: t, topic: trendTopic(t), members: [] }));
+    const [c] = clusterTrending(entries.filter((e) => e.topic.key).map((e) => ({ ...e, outlet: '', link: '', related: [] })));
+    assert.ok(c, `no cluster for ${titles[0]}`);
+    return articleKind(c);
+  };
+  assert.equal(trendTopic('Startup sues Apple in India over tap-to-share contacts feature').key, 'product-legal:apple');
+  assert.equal(trendTopic('US Startup Sues Apple for ₹1,500 Crore, Seeks Ban on NameDrop in India').key, 'product-legal:apple');
+  assert.deepEqual(kind(['Startup sues Apple in India over tap-to-share contacts feature', 'Apple sued in India, startup seeks ban on iPhones with NameDrop']), { category: 'launch', topic: 'mobiles' });
+  assert.ok(trendTopic('Apple unveils smart glasses deal with Meta in lawsuit settlement').reject);
+  assert.ok(trendTopic('Google fined over Android antitrust case').reject);
+});
+
 test('trendingArticles: Techmeme or 3+ reputable outlets, one story per cluster, with the outlets\' links and a score above the threshold', () => {
   const pool = [
     news('Google Cloud launches Gemini for Healthcare, an agentic AI platform for providers and payers', 'Engadget', 'https://www.engadget.com/ai/gemini-healthcare.html', { sourceId: 'engadget', source: { id: 'engadget', role: 'signal', outlet: 'Engadget' } }),

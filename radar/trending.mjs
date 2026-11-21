@@ -178,6 +178,12 @@ export function trendTopic(title = '') {
   if (leadership) return ok('leadership', firstCompany(t, t.search(ROLE)));
   if (IPO.test(t)) return ok('ipo', firstCompany(t, t.search(IPO)));
   if (FUNDING.test(t)) return { reject: 'funding round' };
+  // Owner 21 Nov 2026 (StayTouch v Apple over NameDrop): a lawsuit or patent case that targets a product or feature
+  // readers use, or asks a court to ban/halt it, is article material ("what it means for users"). Checked before the
+  // stock filter ("tap-to-share" would read as a stock move). Settlements, fines and antitrust stay news-only.
+  if (PRODUCT_LEGAL.test(t) && !LEGAL_NEWS_ONLY.test(t) && (USER_BLOCK.test(t) || DEVICE_WORDS.test(t) || PLATFORM_WORDS.test(t))) {
+    return ok('product-legal', entity);
+  }
   if (STOCK.test(t)) return { reject: 'stock move' };
   if (NOT_MILESTONE.test(t)) return { reject: 'policy, legal or jobs news' };
   // An Indian tech/AI company's business story: one "india" story per company (a launch and the backlash over it are
@@ -410,6 +416,9 @@ export function securityTopic(title = '') {
 
 const BUSINESS = /\b(earnings|revenue|profits?|shares?|stocks?|valuation|ipo|funding|raises?|raised|investors?|investment|acquir\w*|acquisition|merger|deal|contract|lawsuits?|sues|sued|suing|court|judge|antitrust|fines?|fined|settle(s|d|ment)?|layoffs?|job cuts|tariffs?|regulators?|lobby\w*|senators?|congress|white house|lawmakers|elections?|ban(s|ned)?|export (controls?|curbs?))\b/i;
 const NOT_YET = /\b(plans? to|planning to|sources( say|:)|considering|in talks|exploring|expected to|is said to|working on|could (launch|release)|may (launch|release))\b/i;
+const PRODUCT_LEGAL = /\b(sues?|sued|suing|lawsuits?|patent(s|ed)?|infring\w*|injunctions?|exclusion order)\b/i;
+const USER_BLOCK = /\b(ban(s|ned)?|halt(s|ed)?|block(s|ed)?|curbs?|stop (selling|sales)|sales ban|import ban|pull(s|ed)? .{1,30} from|remov(e|es|ed|al))\b/i;
+const LEGAL_NEWS_ONLY = /\b(settle(s|d|ment)?|fined|fines?|antitrust|class[- ]action|shareholders?|investors?)\b/i;
 const SPACE_EV = new Set(['spacex', 'nasa', 'blue-origin', 'waymo', 'tesla']);
 const OUTAGE_READERS = new Set(['payments', 'banking', 'telecom']);
 const IPO_ARTICLE_LABS = new Set(['anthropic', 'openai', 'xai']);
@@ -432,6 +441,10 @@ export function articleKind(c) {
   // material ("what it means for Claude/ChatGPT users"). Filings, plans and other companies' IPOs stay news-only.
   if (c.topic === 'ipo' && IPO_ARTICLE_LABS.has(c.entity) && titles.some((t) => IPO_DAY.test(t))) return { category: 'launch', topic: 'ai-engineering' };
   if (c.topic === 'leadership' || c.topic === 'ipo') return { reject: `business news (${c.topic})` };
+  if (c.topic === 'product-legal') {
+    const device = /\b(iphones?|ipads?|android|pixels?|galaxy|apple watch(es)?|(smart)?phones?|laptops?|tablets?)\b/i.test(titles.join(' '));
+    return { category: 'launch', topic: device ? 'mobiles' : 'how-to-tips' };
+  }
   if (titles.some((t) => /\boutages?\b|\b(is|are|went) down\b/i.test(t) && outageFamilies(t).length)) return { reject: 'IT outage (handled by the outage logic)' };
   if (majority(BUSINESS)) return { reject: 'business, finance, policy or legal news' };
   if (majority(NOT_YET)) return { reject: 'not launched yet (plans or sources)' };
