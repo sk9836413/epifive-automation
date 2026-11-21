@@ -9,3 +9,4 @@
 - 2026-11-14 | ai-ad-creatives-small-business-adcreative-canva-chatgpt | slides 5 | fb: https://www.facebook.com/1428744796978054_122123084247497479 | ig: https://www.instagram.com/p/DfuS6LGj5L0/ | takeaway: 122123084739497479 (scheduled 2026-11-14T17:30:00.000Z)
 - 2026-11-15 | defender-for-identity-classic-alerts-retire-migrate | slides 5 | fb: https://www.facebook.com/1428744796978054_122123468955497479 | ig: https://www.instagram.com/p/Dfw3uRAlBjp/ | takeaway: 122123469573497479 (scheduled 2026-11-15T17:30:00.000Z)
 - 2026-11-16 | how-to-migrate-g-suite-to-office-365-small-business | slides 5 | fb: https://www.facebook.com/1428744796978054_122123915067497479 | ig: https://www.instagram.com/p/DfzciqolzOv/ | takeaway: 122123916039497479 (scheduled 2026-11-16T17:30:00.000Z)
+- 2026-11-21 | laptop-battery-health-report-windows-powercfg | slides 8 (named) | fb: https://www.facebook.com/1428744796978054_122125764195497479 | ig: https://www.instagram.com/p/Df_o7EsnN2I/
