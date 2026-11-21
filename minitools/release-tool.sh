@@ -12,6 +12,15 @@ gh api "repos/epifive/$s" >/dev/null 2>&1 || gh repo create "epifive/$s" --priva
 push "work/$s" "$s"
 args=(); IFS=, read -ra T <<< "$topics"; for t in "${T[@]}"; do args+=(--add-topic "$t"); done
 gh repo edit "epifive/$s" --visibility public --accept-visibility-change-consequences "${args[@]}" >/dev/null
+# Public v1.0.0 release with a source zip, so downloads are countable (same naming as the other public repos).
+# Created directly (no release.yml push: the org token may lack the workflows scope). Never fails the run.
+if ! gh release view v1.0.0 -R "epifive/$s" >/dev/null 2>&1; then
+  src="$PWD/dist/$s-v1.0.0.zip"; mkdir -p "$PWD/dist"
+  git -C "work/$s" archive --format=zip --prefix="$s-v1.0.0/" -o "$src" HEAD \
+    && gh release create v1.0.0 -R "epifive/$s" "$src" --target main --title "$s v1.0.0" \
+         --notes "First public release. Download the source zip below. Guide and demo: $home" >/dev/null \
+    || echo "warning: public release for $s not created"
+fi
 
 gh api "repos/epifive/$s-pro" >/dev/null 2>&1 || gh repo create "epifive/$s-pro" --private --description "$s Pro source (private, sold via epifive.com)" >/dev/null
 push "work/$s-pro" "$s-pro"
