@@ -1,9 +1,9 @@
 {
- "generated": "2026-11-20T20:47:28.208Z",
+ "generated": "2026-11-21T03:44:18.235Z",
  "about": "Microsoft 365 / Azure / GitHub retirements for https://www.epifive.com/microsoft-365-retirements. Built by radar/retirements.mjs from official notices; see that file for sources and date rules.",
  "sources": {
-  "message-center": 122,
-  "azure": 80,
+  "message-center": 124,
+  "azure": 81,
   "github": 3
  },
  "errors": [],
@@ -1428,6 +1428,23 @@
    "firstSeen": "2026-11-19T04:58:43.152Z"
   },
   {
+   "id": "MC1515303",
+   "source": "message-center",
+   "product": "power-platform",
+   "title": "Power Apps - Information regarding the end of support for Power Apps Developer Plan and unmanaged developer environments",
+   "date": "2026-11-15",
+   "precision": "day",
+   "dateText": "Beginning with a regional rollout starting November 15, 2026 , users will no longer be able to sign up for the plan or create new unmanaged developer environments.",
+   "dateBasis": "stated",
+   "affected": "We have identified that your tenant has one or more unmanaged developer environments that use the free Power Apps Developer Plan.",
+   "action": "We recommend that Power Platform administrators and makers take the following actions: Identify unmanaged developer environments in your tenant and the apps, flows, solutions, and data in each one.",
+   "url": "https://admin.microsoft.com/#/MessageCenter/:/messages/MC1515303",
+   "mirror": "https://mc.merill.net/message/MC1515303",
+   "published": "2026-10-19T14:53:15Z",
+   "guide": null,
+   "firstSeen": "2026-11-21T03:44:18.235Z"
+  },
+  {
    "id": "gh-2026-11-16-github-copilot-models-deprecated-on-november-16-2",
    "source": "github-changelog",
    "product": "github",
@@ -2407,6 +2424,22 @@
    "firstSeen": "2026-11-19T04:58:43.152Z"
   },
   {
+   "id": "AZ579952",
+   "source": "azure-updates",
+   "product": "azure",
+   "title": "Support for Azure Functions OpenAI Extension ends on April 20, 2027",
+   "date": "2027-04-20",
+   "precision": "day",
+   "dateText": "Retirement: Support for Azure Functions OpenAI Extension ends on April 20, 2027",
+   "dateBasis": "stated",
+   "affected": "Customers using Azure Functions.",
+   "action": "Please migrate to OpenAI, Microsoft Foundry, or Azure AI Search SDKs directly, depending on your scenario, by that date.",
+   "url": "https://azure.microsoft.com/en-us/updates?id=579952",
+   "published": "2026-11-20T23:16:31.646Z",
+   "guide": null,
+   "firstSeen": "2026-11-21T03:44:18.235Z"
+  },
+  {
    "id": "AZ567334",
    "source": "azure-updates",
    "product": "azure",
@@ -2659,6 +2692,23 @@
    "published": "2026-10-06T18:21:59.354Z",
    "guide": null,
    "firstSeen": "2026-11-19T04:58:43.152Z"
+  },
+  {
+   "id": "MC1515294",
+   "source": "message-center",
+   "product": "teams",
+   "title": "Power Apps – Feature retirement of Microsoft Dataverse for Teams: migrate before September 15, 2027",
+   "date": "2027-09-15",
+   "precision": "day",
+   "dateText": "Power Apps – Feature retirement of Microsoft Dataverse for Teams: migrate before September 15, 2027.",
+   "dateBasis": "stated",
+   "affected": "We have identified that your tenant has one or more Dataverse for Teams environments. To see them, open the Power Platform admin center and review environments of type Microsoft Teams.",
+   "action": "We recommend Power Platform and Microsoft Teams administrators: Inventory your Dataverse for Teams environments and the apps, flows, agents, and data in each one.",
+   "url": "https://admin.microsoft.com/#/MessageCenter/:/messages/MC1515294",
+   "mirror": "https://mc.merill.net/message/MC1515294",
+   "published": "2026-10-19T14:48:11Z",
+   "guide": null,
+   "firstSeen": "2026-11-21T03:44:18.235Z"
   },
   {
    "id": "AZ570800",

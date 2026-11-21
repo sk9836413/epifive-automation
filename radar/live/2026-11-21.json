@@ -2,7 +2,7 @@
  "date": "2026-11-21",
  "title": "Tech news today, 21 November 2026",
  "published": "2026-11-20T20:46:38.014Z",
- "updated": "2026-11-21T01:47:47.236Z",
+ "updated": "2026-11-21T03:43:48.706Z",
  "items": [
   {
    "id": "3b5198cc",
@@ -796,7 +796,71 @@
    "ai": null,
    "score": 4,
    "story": null
+  },
+  {
+   "id": "064dfa45",
+   "key": "https://microsoft.com/microsoft-365/roadmap?id=581987",
+   "time": "2026-11-21T02:55:45.000Z",
+   "seen": "2026-11-21T03:43:48.706Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Trigger quality evaluations when a support case is resolved",
+   "summary": "Quality evaluation plans can now run automatically when a support case is resolved. This helps organizations evaluate customer interactions at the right point in the service lifecycle, without relying only on scheduled or manual review processes. By triggering evaluations from the case resolution event, teams can reduce unnecessary re-evaluation, save review effort, and generate timely quality insights for resolved cases. GA date: October CY2026",
+   "lines": [
+    "Quality evaluation plans can now run automatically when a support case is resolved, instead of relying only on scheduled or manual review.",
+    "GA date: October CY2026.",
+    "Triggering evaluations from case resolution can reduce unnecessary re-evaluation, save review effort, and provide timely quality insights for resolved cases."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Roadmap",
+    "url": "https://www.microsoft.com/microsoft-365/roadmap?id=581987"
+   },
+   "sourceId": "m365-roadmap",
+   "sourceMax": 4,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "d16dd88b",
+   "key": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOVDhwMzkzejNZQ1AtREVxR3l5d0lFS0phdjhnR002T1JjYmVQT2NULUdvd3Y2YnBTR2Nhb3BMZEt3VUdPSDk0Zzd5YmxtVTUxRGZoZ2Izeno4X3podnQ5c05SOEo0N3ZKQlB3ZWJqLU9USEFmMzhvWFYyTUhKZ1dvdS1UMlFXMHVhVWdyTXotbTRZWGtzMVU4SGRFbjVpb1Y5S0l1RkQwY0s0Q3ZHWTJZTg?oc=5",
+   "time": "2026-11-20T21:58:29.000Z",
+   "seen": "2026-11-21T03:43:48.706Z",
+   "kind": "trending",
+   "topic": "milestone",
+   "tier": 2,
+   "trending": true,
+   "trendKey": "milestone:google",
+   "techmeme": false,
+   "headline": "Google rolls out new search homepage with AI chat history and no search button",
+   "summary": "",
+   "lines": [
+    "Reported by Ars Technica: Google rolled out a new search homepage that includes AI chat history and has no search button.",
+    "The Verge and Engadget also reported on the change."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Ars Technica",
+    "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOVDhwMzkzejNZQ1AtREVxR3l5d0lFS0phdjhnR002T1JjYmVQT2NULUdvd3Y2YnBTR2Nhb3BMZEt3VUdPSDk0Zzd5YmxtVTUxRGZoZ2Izeno4X3podnQ5c05SOEo0N3ZKQlB3ZWJqLU9USEFmMzhvWFYyTUhKZ1dvdS1UMlFXMHVhVWdyTXotbTRZWGtzMVU4SGRFbjVpb1Y5S0l1RkQwY0s0Q3ZHWTJZTg?oc=5"
+   },
+   "sourceId": "gnews-tech",
+   "sourceMax": 4,
+   "reported": true,
+   "also": [
+    "The Verge",
+    "Engadget"
+   ],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 10,
+   "story": "trend:milestone:google"
   }
  ],
- "description": "27 technology updates from official sources, updated hourly: WhatsApp Patches 3 Security Flaws, Including Android Bug Suspected of Use in Scams; Who is getting rich from Anthropic's record IPO; Announcing new builds for 20 November 2026."
+ "description": "29 technology updates from official sources, updated hourly: WhatsApp Patches 3 Security Flaws, Including Android Bug Suspected of Use in Scams; Who is getting rich from Anthropic's record IPO; Google rolls out new search homepage with AI chat history and no search button."
 }

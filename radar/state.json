@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-21T01:47:47.236Z",
+ "lastScan": "2026-11-21T03:43:48.706Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -2274,212 +2274,6 @@
    ],
    "backlog": "microsoft-365-outlook-teams-down-what-to-do-business-continuity-plan",
    "post": "microsoft-365-outage-november-2026-root-cause-it-admin-lessons"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/elemental-inference-functions-decisions": {
-   "title": "Customize AWS Elemental Inference with custom models, prompts, and decisions",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/elemental-inference-functions-decisions/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-17T20:00:00.000Z",
-   "updated": null,
-   "summary": "AWS Elemental Inference now lets you customize how it analyzes your live video in two ways. You can create functions that ask custom questions of the video using multi-modal foundational models in Amazon Bedrock, or add contextual metadata decisions using labels and questions you define. Both run on",
-   "first": "2026-11-18T02:31:39.081Z",
-   "score": 2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now lets you\"",
-    "+2 user steps \"You can\""
-   ],
-   "status": "below",
-   "hash": "4c1cd2a5"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-managed-instances-scale-to-zero": {
-   "title": "AWS Lambda now supports scale to and from zero for Lambda Managed Instances",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-managed-instances-scale-to-zero/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-17T19:00:00.000Z",
-   "updated": null,
-   "summary": "AWS Lambda now supports scale to and from zero for Event Functions running on Lambda Managed Instances (LMI). Lambda automatically scales execution environments for your function to zero during idle periods and scales them back up when requests arrive, without requiring you to provision minimum capa",
-   "first": "2026-11-18T02:31:39.081Z",
-   "score": 4,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"you can\"",
-    "+1 plans/price/availability \"pricing\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "d5c689e3"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-corretto-nov-2026-updates": {
-   "title": "Amazon Corretto November 2026 Critical Security Patch Updates",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-corretto-nov-2026-updates/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-17T15:00:00.000Z",
-   "updated": null,
-   "summary": "On Nov 17, 2026, Amazon announced critical security patch update (CSPU) for Amazon Corretto Long-Term Support (LTS) and Feature Release (FR) versions of OpenJDK. Corretto 27.0.1.1.4, 25.0.5.1.2, 21.0.13.1.2, 17.0.21.1.2, 11.0.33.1.1, and 8u514 are now available for download . Amazon Corretto is a no",
-   "first": "2026-11-18T02:31:39.081Z",
-   "score": 2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now available\"",
-    "+2 user steps \"download\""
-   ],
-   "status": "below",
-   "hash": "566e791e"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/kinesis-data-streams-queues": {
-   "title": "Amazon Kinesis Data Streams announces queues to simplify and reduce costs of real-time processing",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/kinesis-data-streams-queues/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-17T08:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon Kinesis Data Streams now supports queues, a simpler and more cost-effective way to process a stream. Because queues track the delivery state of each record, your consumer instances receive records instead of leasing shards, acknowledge each record when processing is complete, and scale beyond",
-   "first": "2026-11-18T02:31:39.081Z",
-   "score": 0,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\""
-   ],
-   "status": "below",
-   "hash": "615cf50e"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/connect-case-and-calculated-attributes": {
-   "title": "Amazon Connect Customer now supports case and calculated template variables",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/connect-case-and-calculated-attributes/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-17T08:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon Connect Customer message templates, which personalize each message with details about its recipient, now support case fields from Cases and calculated attributes from Customer Profiles, such as a customer's most frequent contact channel. Companies that send updates about a claim, an order, or",
-   "first": "2026-11-18T02:31:39.081Z",
-   "score": 3,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"claim\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "aedba433"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/cost-hub-stop-idle-ec2": {
-   "title": "Cost Optimization Hub now supports stopping idle Amazon EC2 instances",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/cost-hub-stop-idle-ec2/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-17T08:00:00.000Z",
-   "updated": null,
-   "summary": "AWS Cost Optimization Hub now lets you stop idle Amazon EC2 instances directly from your recommendations. Cost Optimization Hub consolidates and prioritizes cost optimization recommendations across your AWS accounts and Regions, including idle resources. Previously, stopping an idle instance require",
-   "first": "2026-11-18T02:31:39.081Z",
-   "score": 4,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"you can\"",
-    "+1 plans/price/availability \"Regions\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "294fb770"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/transit-gateway-gwlb-integration": {
-   "title": "AWS Transit Gateway supports native integration with Gateway Load Balancer",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/transit-gateway-gwlb-integration/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-17T08:00:00.000Z",
-   "updated": null,
-   "summary": "AWS Transit Gateway now supports network function attachments of type Gateway Load Balancer, simplifying the deployment and management of network security across your AWS network. With a network function attachment, you can connect your transit gateway to a Gateway Load Balancer VPC endpoint service",
-   "first": "2026-11-18T02:31:39.081Z",
-   "score": 2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"you can\""
-   ],
-   "status": "below",
-   "hash": "97e839da"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-waf-bot-control-onboarding": {
-   "title": "AWS WAF announces simplified onboarding for Bot Control targeted protection",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-waf-bot-control-onboarding/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-17T08:00:00.000Z",
-   "updated": null,
-   "summary": "Today, AWS WAF announces a simplified console experience for Bot Control at the targeted inspection level. A single setting, Targeted bot control, turns on targeted protection for your Amazon CloudFront distributions with the configuration AWS recommends. It comes with two additions to the Bot Contr",
-   "first": "2026-11-18T02:31:39.081Z",
-   "score": -2,
-   "reasons": [
-    "-2 source aws-whats-new"
-   ],
-   "status": "below",
-   "hash": "70ca1e36"
-  },
-  "https://ai.google.dev/gemini-api/docs/changelog#2026-11-17-voice-editing-in-gemini-3-5-transcribe": {
-   "title": "Voice editing in Gemini 3.5 Transcribe",
-   "link": "https://ai.google.dev/gemini-api/docs/changelog#2026-11-17-voice-editing-in-gemini-3-5-transcribe",
-   "source": "gemini-api-changelog",
-   "topic": "ai-engineering",
-   "category": "launch",
-   "date": "2026-11-17T12:00:00.000Z",
-   "updated": null,
-   "summary": "gemini-3.5-transcribe and gemini-3.5-transcribe-live now support voice-driven editing, rewriting, and formatting of dictated speech or pre-existing text (source_text). See the Audio transcription and Live transcription guides.",
-   "first": "2026-11-18T03:43:41.994Z",
-   "score": 4,
-   "reasons": [
-    "+2 niche (gemini)",
-    "+2 launch \"now support\""
-   ],
-   "status": "below",
-   "hash": "ccb47e6d"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63992": {
-   "title": "Money Market Operations as on November 17, 2026",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63992",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-18T09:00:00.000Z",
-   "updated": null,
-   "summary": "(Amount in ₹ crore, Rate in Per cent) MONEY MARKETS @ --> Money Markets @ Volume (One Leg) Weighted Average Rate Range A. Overnight Segment (I+II+III+IV) 8,30,954.13 5.54 4.00-5.90 I. Call Money 12,574.30 5.57 4.00-5.75 II. Triparty Repo 6,12,171.10 5.52 5.15-5.65 III. Market Repo 1,98,960.38 5.58 4",
-   "first": "2026-11-18T03:43:41.994Z",
-   "score": -1,
-   "reasons": [
-    "-1 source rbi-press"
-   ],
-   "status": "below",
-   "hash": "b50474a"
-  },
-  "https://blogs.vmware.com/vmware-japan/2026/11/customer-case-studies-qsol.html": {
-   "title": "導入事例：Qsol株式会社様",
-   "link": "https://blogs.vmware.com/vmware-japan/2026/11/customer-case-studies-qsol.html",
-   "source": "vmware-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-18T02:04:22.000Z",
-   "updated": null,
-   "summary": "九州電力株式会社の電力安定供給に不可欠な基幹系システムをはじめ、九電グループ全体の多様な業務システムの開発・運用を担うQsol株式会社様。本日は、VMware ソリューションを活用したプライベートクラウド基盤の高度化と、プロフェッショナルサービス（VMware Cloud Foundation Professional Service / TAM）による伴走支援の事例をご紹介いたします。 社会インフラを支える同社の業務基盤では、厳格なセキュリティと高可用性の維持、さらには拠点移設に伴う大規模なアプリ改修コストの抑制やグループ全体のITガバナンス強化が求められていました。この課題を解決し、変化に",
-   "first": "2026-11-18T03:43:41.994Z",
-   "score": -1,
-   "reasons": [
-    "-1 source vmware-blog"
-   ],
-   "status": "below",
-   "hash": "795179c9"
   },
   "https://techcommunity.microsoft.com/t5/windows-it-pro-blog/windows-365-at-ignite-2026-introducing-new-cloud-pc-capabilities/ba-p/4570006": {
    "title": "Windows 365 at Ignite 2026: Introducing new Cloud PC capabilities for people, agents and IT",
@@ -6626,12 +6420,14 @@
     "+2 user action \"advisory\"",
     "+1 autocomplete (3)"
    ],
-   "status": "writing",
+   "status": "skipped",
    "hash": "60892634",
    "kind": "new",
    "extra": false,
    "taskAt": "2026-11-21T01:47:47.236Z",
-   "attempts": 1
+   "attempts": 1,
+   "resultAt": "2026-11-21T01:51:12.674Z",
+   "skipReason": "RADAR-SKIP: covered by /blog/vmware-vcenter-cve-2026-123890-patch-check"
   },
   "https://thehackernews.com/2026/11/drupal-patches-critical-installer-flaw.html": {
    "title": "Drupal Patches Critical Installer Flaw That Could Give Unauthenticated Attackers Control of Sites",
@@ -7404,9 +7200,13 @@
     "+2 niche (gemini)",
     "+9 flagship AI model (Gemini 3.6)"
    ],
-   "status": "queued",
+   "status": "writing",
    "hash": "488ac4c4",
-   "story": "ai:gemini 3.6:release"
+   "story": "ai:gemini 3.6:release",
+   "kind": "new",
+   "extra": false,
+   "taskAt": "2026-11-21T03:43:48.706Z",
+   "attempts": 1
   },
   "https://zoom.com/en/blog/zoom-marketplace-4000-apps": {
    "title": "4,000 apps and counting: What's new in the Zoom Marketplace",
@@ -13884,6 +13684,236 @@
    ],
    "status": "below",
    "hash": "bed85225"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=581992": {
+   "title": "Manage workforce requests in Microsoft 365 Copilot",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581992",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-21T02:55:45.000Z",
+   "updated": "2026-11-21T02:55:45.000Z",
+   "summary": "Dynamics 365 Workforce Engagement Management (WEM) integrates with Microsoft 365 Copilot through Model Context Protocol (MCP) tools. These tools connect Microsoft 365 Copilot with Dynamics 365 and Dataverse so supervisors and customer service representatives can use natural language to work with wor",
+   "first": "2026-11-21T03:43:48.706Z",
+   "score": 3,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+4 niche (copilot, microsoft 365)"
+   ],
+   "status": "below",
+   "hash": "e6f1bdfa"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=581987": {
+   "title": "Trigger quality evaluations when a support case is resolved",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581987",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-21T02:55:45.000Z",
+   "updated": "2026-11-21T02:55:45.000Z",
+   "summary": "Quality evaluation plans can now run automatically when a support case is resolved. This helps organizations evaluate customer interactions at the right point in the service lifecycle, without relying only on scheduled or manual review processes. By triggering evaluations from the case resolution ev",
+   "first": "2026-11-21T03:43:48.706Z",
+   "score": -2,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+1 plans/price/availability \"plans\"",
+    "-3 corporate/announcement \"evaluations\"",
+    "+1 category (Launched, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "a25166d1"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=581993": {
+   "title": "Sampling bulk records for quality evaluation equally by representatives",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581993",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-21T02:54:56.000Z",
+   "updated": "2026-11-21T02:54:56.000Z",
+   "summary": "Quality evaluaton allows quality managers to create bulk record samples with equal distribution across representatives. This helps ensure sampling is balanced and avoids over- or under-representing any individual representative in review sets. When generating a bulk sample via evaluation plans, the ",
+   "first": "2026-11-21T03:43:48.706Z",
+   "score": -2,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+1 plans/price/availability \"plans\"",
+    "-3 corporate/announcement \"evaluation\"",
+    "+1 category (Launched, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "99d804be"
+  },
+  "https://mc.merill.net/message/MC1557754": {
+   "title": "MC1557754: Microsoft Copilot: Continue using models after reaching usage limits with Copilot Credits",
+   "link": "https://mc.merill.net/message/MC1557754",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-20T17:47:55.000Z",
+   "updated": null,
+   "summary": "Microsoft Copilot now allows continued use of models after license usage limits via usage-based billing (UBB) with Copilot Credits. Users see credit indicators and can choose between Auto mode or credit-consuming models. Admins manage access and spending through updated policies and controls. Rollou",
+   "first": "2026-11-21T03:43:48.706Z",
+   "score": 1,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 niche (copilot)",
+    "+1 plans/price/availability \"Rollout\""
+   ],
+   "status": "below",
+   "hash": "2735123c"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-cloudwatch-omni-microsoft-azure": {
+   "title": "Amazon CloudWatch Omni now supports Microsoft Azure platform logs, metrics and traces",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-cloudwatch-omni-microsoft-azure",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-21T01:10:00.000Z",
+   "updated": null,
+   "summary": "Amazon CloudWatch Omni now supports collecting Azure resource logs, Azure Monitor platform metrics, virtual network (VNet) flow logs, and traces from Application Insights. Teams that run workloads on both AWS and Azure no longer need separate monitoring tools or custom pipelines to see their whole e",
+   "first": "2026-11-21T03:43:48.706Z",
+   "score": 5,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+1 niche (entra)",
+    "+2 launch \"now supports\"",
+    "+2 user steps \"get started\"",
+    "+1 plans/price/availability \"Region\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "686a607c"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-function-state-events": {
+   "title": "AWS Lambda now publishes Event Function state change events to Amazon EventBridge",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-function-state-events/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-20T22:40:00.000Z",
+   "updated": null,
+   "summary": "AWS Lambda now publishes Event Function state change events to Amazon EventBridge . Lambda emits an event each time an Event Function version changes state because of a customer action, such as creating, updating, publishing, or deleting a function. These events help platform and DevOps teams to tri",
+   "first": "2026-11-21T03:43:48.706Z",
+   "score": -5,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "-3 corporate/announcement \"Event\""
+   ],
+   "status": "below",
+   "hash": "39c96d32"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-cost-optimization-recommendations": {
+   "title": "AWS Lambda now provides cost optimization recommendations for Event Functions",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-cost-optimization-recommendations/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-20T19:00:00.000Z",
+   "updated": null,
+   "summary": "AWS Lambda now provides cost optimization recommendations for Event Functions in AWS Trusted Advisor . These recommendations identify on-demand functions where moving to Lambda Managed Instances (LMI) is estimated to reduce costs, and provide configuration guidance for running on LMI. With these rec",
+   "first": "2026-11-21T03:43:48.706Z",
+   "score": -2,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 user steps \"you can\"",
+    "+1 plans/price/availability \"pricing\"",
+    "-3 corporate/announcement \"Event\""
+   ],
+   "status": "below",
+   "hash": "6a5b1cfb"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-10K-batch-size-SQSFIFO": {
+   "title": "AWS Lambda now supports a batch size of up to 10,000 messages for Amazon SQS FIFO queues",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-10K-batch-size-SQSFIFO/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-20T19:00:00.000Z",
+   "updated": null,
+   "summary": "AWS Lambda now supports a batch size of up to 10,000 messages for Amazon Simple Queue Service (Amazon SQS) FIFO queue event source mappings (ESMs) in provisioned mode , up from 10 messages previously. With larger batches, you can process high-volume, ordered workloads such as financial transactions,",
+   "first": "2026-11-21T03:43:48.706Z",
+   "score": 3,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now supports\"",
+    "+2 user steps \"you can\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "2d4373f7"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/route-53-affinity-routing": {
+   "title": "Amazon Route 53 now supports Availability Zone (AZ) affinity routing",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/route-53-affinity-routing/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-20T08:21:00.000Z",
+   "updated": null,
+   "summary": "Amazon Route 53 now supports Availability Zone (AZ) affinity routing, which routes DNS queries from your VPCs to resources in the same AZ as the client that sends the query. This helps you keep traffic within the same AZ as the client, reducing latency and improving application performance. Until no",
+   "first": "2026-11-21T03:43:48.706Z",
+   "score": 1,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now supports\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "3f61e5e8"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/vpc-ipam-policies-firewall-lambda": {
+   "title": "Amazon VPC IPAM policies now support automated internet firewall and AWS Lambda Web Functions and MicroVMs",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/vpc-ipam-policies-firewall-lambda/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-20T08:06:00.000Z",
+   "updated": null,
+   "summary": "Amazon Virtual Private Cloud (VPC) IP Address Manager (IPAM) policies now support AWS Network Firewall automated internet firewall and AWS Lambda Web Functions and MicroVMs. You can centrally configure IPAM policies across AWS accounts and AWS Regions to allocate public IPv4 addresses to these resou",
+   "first": "2026-11-21T03:43:48.706Z",
+   "score": 4,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now support\"",
+    "+2 user steps \"You can\"",
+    "+1 plans/price/availability \"Regions\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "7f6f0370"
+  },
+  "https://news.google.com/rss/articles/CBMisAFBVV95cUxOVDhwMzkzejNZQ1AtREVxR3l5d0lFS0phdjhnR002T1JjYmVQT2NULUdvd3Y2YnBTR2Nhb3BMZEt3VUdPSDk0Zzd5YmxtVTUxRGZoZ2Izeno4X3podnQ5c05SOEo0N3ZKQlB3ZWJqLU9USEFmMzhvWFYyTUhKZ1dvdS1UMlFXMHVhVWdyTXotbTRZWGtzMVU4SGRFbjVpb1Y5S0l1RkQwY0s0Q3ZHWTJZTg?oc=5": {
+   "title": "Google rolls out new search homepage with AI chat history and no search button",
+   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOVDhwMzkzejNZQ1AtREVxR3l5d0lFS0phdjhnR002T1JjYmVQT2NULUdvd3Y2YnBTR2Nhb3BMZEt3VUdPSDk0Zzd5YmxtVTUxRGZoZ2Izeno4X3podnQ5c05SOEo0N3ZKQlB3ZWJqLU9USEFmMzhvWFYyTUhKZ1dvdS1UMlFXMHVhVWdyTXotbTRZWGtzMVU4SGRFbjVpb1Y5S0l1RkQwY0s0Q3ZHWTJZTg?oc=5",
+   "source": "gnews-tech",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-20T21:58:29.000Z",
+   "summary": "",
+   "first": "2026-11-21T03:43:48.706Z",
+   "score": 11,
+   "reasons": [
+    "+1 trending: The Verge, Ars Technica, Engadget"
+   ],
+   "trending": {
+    "key": "milestone:google",
+    "titles": [
+     "Google rolls out new search homepage with AI chat history and no search button"
+    ],
+    "links": [
+     "https://news.google.com/rss/articles/CBMisAFBVV95cUxOVDhwMzkzejNZQ1AtREVxR3l5d0lFS0phdjhnR002T1JjYmVQT2NULUdvd3Y2YnBTR2Nhb3BMZEt3VUdPSDk0Zzd5YmxtVTUxRGZoZ2Izeno4X3podnQ5c05SOEo0N3ZKQlB3ZWJqLU9USEFmMzhvWFYyTUhKZ1dvdS1UMlFXMHVhVWdyTXotbTRZWGtzMVU4SGRFbjVpb1Y5S0l1RkQwY0s0Q3ZHWTJZTg?oc=5"
+    ],
+    "outlets": [
+     "The Verge",
+     "Ars Technica",
+     "Engadget"
+    ],
+    "techmeme": false
+   },
+   "trendDay": "2026-11-21",
+   "hash": "9c5a0e24",
+   "status": "parked",
+   "parkedAt": "2026-11-21T03:43:48.706Z"
   }
  },
  "devices": {},
@@ -13891,14 +13921,16 @@
   "2026-11-20": [
    "Email meeting guests from Google Calendar with the full capabilities of Gmail"
   ],
-  "2026-11-21": []
+  "2026-11-21": [
+   "Google rolls out new search homepage with AI chat history and no search button"
+  ]
  },
  "trends": {
   "ipo:anthropic|63c1035a": {
    "first": "2026-11-19T14:45:12.000Z",
    "decision": "covered",
    "key": "ipo:anthropic",
-   "title": "Morning Bid: Anthropic's splashy IPO fails to lift AI boat",
+   "title": "Anthropic's IPO bank closed position meant to stabilize stock, removing source of support",
    "titles": [
     "Anthropic’s 7 founders cashed out nearly $2B in record-breaking IPO",
     "Anthropic’s IPO could deliver $156B to charity",
@@ -13923,11 +13955,12 @@
     "https://www.cnbc.com/2026/11/20/anthropic-ipo-greenshoe.html",
     "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQZXdyUExSdjhGa000MWtxaUR0YzhiVHJnNzN0N0lTUnNONktkaWZkUVUwdExoUXhXMTlJN0NEZ3F3M2RYbUZYelpiNFhpOE14LWdtYjF1MnB2M00xMk1GbENmci1UeFlXa3V0aHM4TWlxVVZNeFBwUkZjMTA2ZWhCSFBVaVVBb0FUdnpj?oc=5"
    ],
-   "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOQ2RGU3lYLUtMZ2FwZzBEU2hlcmRDbWV6c3dDRU9OYTVzU0pSa0xzeUpuVk9McG9lYTBKdEcxZEtRY0JXbmZ3dDJlZ2xiVG5Ba3pDdkotNXBIN3Z2a3hqcHdlUlNFekh6REp6bWo2bW1sS25mTUJWUDlqU3UtMU5DRlpERQ?oc=5",
+   "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQSVpRUnlwbWF4cmpjRkg1N1ZnRU9Dc1ZIRFFQU3pyMHNac0tJSXlINUg5YUdLRl9mMUEzQTRkZTdQWHJwRkhJbmYyWV9VYkt4dDVTSGRib3VzbVVENWd1WWllZkhzR2E5SGhrNm5xOUM1QzBfdFFqZlNvNmJDUHFNeU1IdnRMclVkRmdsNTRxTWVZY0hQYWJHN05EZ2xxZTFORDZ0V1g2eWZEWnBGRnVEVVNROURGMVFCTzkwbA?oc=5",
    "outlets": [
     "Reuters",
     "Bloomberg",
     "CNBC",
+    "WSJ",
     "Financial Times",
     "CNN",
     "TechCrunch"
@@ -13936,10 +13969,36 @@
    "category": "launch",
    "topic": "ai-engineering",
    "parkOnly": false,
-   "last": "2026-11-21T01:01:00.000Z",
-   "date": "2026-11-21T01:01:00.000Z",
+   "last": "2026-11-21T03:35:00.000Z",
+   "date": "2026-11-21T03:35:00.000Z",
    "score": 14,
    "post": "anthropic-ipo-explained-claude-users"
+  },
+  "milestone:google|9c5a0e24": {
+   "first": "2026-11-20T21:58:29.000Z",
+   "decision": "parked",
+   "key": "milestone:google",
+   "title": "Google rolls out new search homepage with AI chat history and no search button",
+   "titles": [
+    "Google rolls out new search homepage with AI chat history and no search button"
+   ],
+   "links": [
+    "https://news.google.com/rss/articles/CBMisAFBVV95cUxOVDhwMzkzejNZQ1AtREVxR3l5d0lFS0phdjhnR002T1JjYmVQT2NULUdvd3Y2YnBTR2Nhb3BMZEt3VUdPSDk0Zzd5YmxtVTUxRGZoZ2Izeno4X3podnQ5c05SOEo0N3ZKQlB3ZWJqLU9USEFmMzhvWFYyTUhKZ1dvdS1UMlFXMHVhVWdyTXotbTRZWGtzMVU4SGRFbjVpb1Y5S0l1RkQwY0s0Q3ZHWTJZTg?oc=5"
+   ],
+   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOVDhwMzkzejNZQ1AtREVxR3l5d0lFS0phdjhnR002T1JjYmVQT2NULUdvd3Y2YnBTR2Nhb3BMZEt3VUdPSDk0Zzd5YmxtVTUxRGZoZ2Izeno4X3podnQ5c05SOEo0N3ZKQlB3ZWJqLU9USEFmMzhvWFYyTUhKZ1dvdS1UMlFXMHVhVWdyTXotbTRZWGtzMVU4SGRFbjVpb1Y5S0l1RkQwY0s0Q3ZHWTJZTg?oc=5",
+   "outlets": [
+    "The Verge",
+    "Ars Technica",
+    "Engadget"
+   ],
+   "techmeme": false,
+   "category": "launch",
+   "topic": "ai-automation",
+   "parkOnly": false,
+   "last": "2026-11-20T21:58:29.000Z",
+   "date": "2026-11-20T21:58:29.000Z",
+   "score": 11,
+   "ref": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOVDhwMzkzejNZQ1AtREVxR3l5d0lFS0phdjhnR002T1JjYmVQT2NULUdvd3Y2YnBTR2Nhb3BMZEt3VUdPSDk0Zzd5YmxtVTUxRGZoZ2Izeno4X3podnQ5c05SOEo0N3ZKQlB3ZWJqLU9USEFmMzhvWFYyTUhKZ1dvdS1UMlFXMHVhVWdyTXotbTRZWGtzMVU4SGRFbjVpb1Y5S0l1RkQwY0s0Q3ZHWTJZTg?oc=5"
   }
  },
  "missedCheck": {
