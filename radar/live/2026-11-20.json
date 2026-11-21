@@ -2,7 +2,7 @@
  "date": "2026-11-20",
  "title": "Tech news today, 20 November 2026",
  "published": "2026-11-19T23:16:35.731Z",
- "updated": "2026-11-21T04:43:46.063Z",
+ "updated": "2026-11-21T05:13:18.883Z",
  "items": [
   {
    "id": "9d95f41a",
@@ -898,7 +898,7 @@
    "sourceId": "thn",
    "reported": true,
    "also": [],
-   "post": null,
+   "post": "sonicwall-gen-6-end-of-support-what-to-do",
    "device": null,
    "ai": null,
    "score": 10,
