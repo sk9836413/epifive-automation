@@ -2,7 +2,7 @@
  "date": "2026-11-21",
  "title": "Tech news today, 21 November 2026",
  "published": "2026-11-20T20:46:38.014Z",
- "updated": "2026-11-20T20:46:38.014Z",
+ "updated": "2026-11-21T01:47:47.236Z",
  "items": [
   {
    "id": "3b5198cc",
@@ -533,7 +533,7 @@
    "sourceId": "thn",
    "reported": true,
    "also": [],
-   "post": null,
+   "post": "whatsapp-cve-2026-23871-android-update-check",
    "device": null,
    "ai": null,
    "score": 12,
@@ -650,7 +650,153 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "17631696",
+   "key": "https://mc.merill.net/message/MC1515294",
+   "time": "2026-11-20T21:02:04.000Z",
+   "seen": "2026-11-21T01:47:47.236Z",
+   "kind": "retirement",
+   "tier": 2,
+   "headline": "MC1515294: Power Apps – Feature retirement of Microsoft Dataverse for Teams: migrate before September 15, 2027",
+   "summary": "We are announcing the retirement of Microsoft Dataverse for Teams, the built-in subset of Dataverse capabilities in Microsoft Teams. Beginning with a regional rollout on November 15, 2026, customers will no longer be able to create new Dataverse for Teams environments. Existing Dataverse for Teams environments will continue to function until the start of a regional rollout on September 15, 2027. Please note that this change does not cancel your Microsoft 365 or Teams subscription, nor does it im...",
+   "lines": [
+    "Microsoft is retiring Microsoft Dataverse for Teams, the built-in subset of Dataverse capabilities in Microsoft Teams.",
+    "Starting with a regional rollout on November 15, 2026, customers can no longer create new Dataverse for Teams environments. Existing environments keep working until the start of a regional rollout on September 15, 2027.",
+    "The change does not cancel Microsoft 365 or Teams subscriptions. IT teams with existing environments need to plan their migration before the September 15, 2027 date."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1515294"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 7,
+   "story": null
+  },
+  {
+   "id": "8a92d44d",
+   "key": "https://github.blog/changelog/2026-11-20-security-advisory-permissions-are-now-generally-available",
+   "time": "2026-11-20T21:49:29.000Z",
+   "seen": "2026-11-21T01:47:47.236Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Security advisory permissions are now generally available",
+   "summary": "Organization owners can now let people work on repository security advisories, including private vulnerability reports, through custom repository roles. You no longer have to make them repository administrators or give… The post Security advisory permissions are now generally available appeared first on The GitHub Blog .",
+   "lines": [
+    "Organization owners can now let people work on repository security advisories, including private vulnerability reports, through custom repository roles.",
+    "Users no longer have to be made repository administrators or be given other broader permissions to do this.",
+    "Teams can delegate security advisory work without granting administrator rights."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "GitHub Changelog",
+    "url": "https://github.blog/changelog/2026-11-20-security-advisory-permissions-are-now-generally-available"
+   },
+   "sourceId": "github-changelog",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null
+  },
+  {
+   "id": "9b7b4299",
+   "key": "https://github.blog/changelog/2026-11-20-github-enterprise-server-3-23-release-candidate",
+   "time": "2026-11-20T20:41:26.000Z",
+   "seen": "2026-11-21T01:47:47.236Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "GitHub Enterprise Server 3.23 release candidate",
+   "summary": "GitHub Enterprise Server (GHES) 3.23 is now available and introduces new capabilities across the platform. Here are a few highlights in the 3.23 release: When working in GitHub Projects, you… The post GitHub Enterprise Server 3.23 release candidate appeared first on The GitHub Blog .",
+   "lines": [
+    "GitHub Enterprise Server (GHES) 3.23 is now available and introduces new capabilities across the platform.",
+    "The announcement highlights several changes, including items related to GitHub Projects.",
+    "IT admins who run GHES can review the 3.23 highlights when planning upgrades."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "GitHub Changelog",
+    "url": "https://github.blog/changelog/2026-11-20-github-enterprise-server-3-23-release-candidate"
+   },
+   "sourceId": "github-changelog",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "2840679d",
+   "key": "https://mc.merill.net/message/MC1230457",
+   "time": "2026-11-20T22:45:08.000Z",
+   "seen": "2026-11-21T01:47:47.236Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1230457: Moderation approvals now available across Outlook apps",
+   "summary": "Moderation approvals in Exchange Online will use Actionable Messages adaptive cards across all Outlook clients starting March 2026, completing by November 2026. Dual-mode approvals end July 31, 2026. Moderators must have Microsoft 365 mailboxes. Actionable Messages must be enabled to prepare for this update.",
+   "lines": [
+    "Moderation approvals in Exchange Online will use Actionable Messages adaptive cards across all Outlook clients.",
+    "The rollout starts in March 2026 and completes by November 2026. Dual-mode approvals end July 31, 2026.",
+    "Moderators must have Microsoft 365 mailboxes, and Actionable Messages must be enabled to prepare for this update.",
+    "IT admins should enable Actionable Messages and confirm that moderators have Microsoft 365 mailboxes."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1230457"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "76615103",
+   "key": "https://azure.microsoft.com/updates?id=579952",
+   "time": "2026-11-20T23:16:31.000Z",
+   "seen": "2026-11-21T01:47:47.236Z",
+   "kind": "retirement",
+   "tier": 2,
+   "headline": "Retirement: Support for Azure Functions OpenAI Extension ends on April 20, 2027",
+   "summary": "Support for Azure Functions OpenAI extension will end on April 20, 2027. Please migrate to OpenAI, Microsoft Foundry, or Azure AI Search SDKs directly, depending on your scenario, by that date. Until you migrate to the appropriate scenario SDK, .NET app",
+   "lines": [
+    "Support for the Azure Functions OpenAI extension will end on April 20, 2027.",
+    "Customers should migrate directly to the OpenAI, Microsoft Foundry, or Azure AI Search SDKs, depending on their scenario, by that date.",
+    "Teams that use the extension need a migration plan in place before the end date."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Azure Updates",
+    "url": "https://azure.microsoft.com/updates?id=579952"
+   },
+   "sourceId": "azure-updates",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
   }
  ],
- "description": "22 technology updates from official sources, updated hourly: WhatsApp Patches 3 Security Flaws, Including Android Bug Suspected of Use in Scams; Who is getting rich from Anthropic's record IPO; Announcing new builds for 20 November 2026."
+ "description": "27 technology updates from official sources, updated hourly: WhatsApp Patches 3 Security Flaws, Including Android Bug Suspected of Use in Scams; Who is getting rich from Anthropic's record IPO; Announcing new builds for 20 November 2026."
 }
