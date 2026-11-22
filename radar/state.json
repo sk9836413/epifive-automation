@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-22T08:54:04.512Z",
+ "lastScan": "2026-11-22T13:16:59.085Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -2827,57 +2827,6 @@
    "status": "below",
    "hash": "1c07ebd1"
   },
-  "https://blog.google/company-news/outreach-and-initiatives/sustainability/new-water-stewardship-commitments": {
-   "title": "Google’s water stewardship commitments for local communities",
-   "link": "https://blog.google/company-news/outreach-and-initiatives/sustainability/new-water-stewardship-commitments/",
-   "source": "google-keyword",
-   "topic": "how-to-tips",
-   "category": "launch",
-   "date": "2026-11-19T10:00:00.000Z",
-   "updated": null,
-   "summary": "Learn about our new water stewardship commitments, initiatives and recent Water Replenishment Projects Request for Information.",
-   "first": "2026-11-19T10:28:24.940Z",
-   "score": 0,
-   "reasons": [],
-   "status": "below",
-   "hash": "9524ebe8"
-  },
-  "https://news.samsung.com/in/samsung-begins-one-ui-9-5-beta-program": {
-   "title": "Samsung Begins One UI 9.5 Beta Program",
-   "link": "https://news.samsung.com/in/samsung-begins-one-ui-9-5-beta-program",
-   "source": "samsung-india",
-   "topic": "mobiles",
-   "category": "launch",
-   "date": "2026-11-19T11:52:47.000Z",
-   "updated": null,
-   "summary": "Samsung has launched the One UI 9.5 beta program, giving users an early look at One UI 9.5 ahead of its official debut. The One UI 9.5 beta introduces more precise camera controls, personalized health insights, improved accessibility features, and stronger privacy protections for everyday use. Enhan",
-   "first": "2026-11-19T10:28:24.940Z",
-   "score": 3,
-   "reasons": [
-    "+2 launch \"launched\"",
-    "+1 also on samsung-global"
-   ],
-   "status": "below",
-   "hash": "5aa47a65"
-  },
-  "https://news.samsung.com/in/get-more-out-of-your-galaxy-buds4-pro-10-hidden-features-and-smart-tricks-to-try": {
-   "title": "Get More Out of Your Galaxy Buds4 Pro: 10 Hidden Features and Smart Tricks to Try",
-   "link": "https://news.samsung.com/in/get-more-out-of-your-galaxy-buds4-pro-10-hidden-features-and-smart-tricks-to-try",
-   "source": "samsung-india",
-   "topic": "mobiles",
-   "category": "launch",
-   "date": "2026-11-19T11:24:26.000Z",
-   "updated": null,
-   "summary": "Galaxy Buds4 Pro bring together premium sound, intuitive controls and intelligent features designed to make everyday listening more convenient. But beyond playing music and taking calls, the earbuds offer several smart capabilities that users may not have explored yet. From intuitive pinch controls ",
-   "first": "2026-11-19T10:28:24.940Z",
-   "score": 2,
-   "reasons": [
-    "+1 niche (galaxy)",
-    "+1 plans/price/availability \"free\""
-   ],
-   "status": "below",
-   "hash": "f3355b28"
-  },
   "https://bleepingcomputer.com/news/security/drupal-patches-critical-rce-flaw-warns-exploits-may-surface-quickly": {
    "title": "Drupal patches critical RCE flaw, warns exploits may surface quickly",
    "link": "https://www.bleepingcomputer.com/news/security/drupal-patches-critical-rce-flaw-warns-exploits-may-surface-quickly/",
@@ -2906,189 +2855,6 @@
    "attempts": 1,
    "slug": "drupal-sa-core-2026-017-rce-update-check",
    "resultAt": "2026-11-20T04:52:34.163Z"
-  },
-  "https://blog.google/innovation-and-ai/models-and-research/google-research/blue-origin-project-suncatcher-partnership": {
-   "title": "We’re partnering with Blue Origin on our first heavy-lift Project Suncatcher launch.",
-   "link": "https://blog.google/innovation-and-ai/models-and-research/google-research/blue-origin-project-suncatcher-partnership/",
-   "source": "google-keyword",
-   "topic": "how-to-tips",
-   "category": "launch",
-   "date": "2026-11-19T13:00:00.000Z",
-   "updated": null,
-   "summary": "We’re partnering with Blue Origin on the first heavy-lift launch for Project Suncatcher, our long-term moonshot to scale AI infrastructure in space by tapping into the a…",
-   "first": "2026-11-19T13:16:57.239Z",
-   "score": 3,
-   "reasons": [
-    "+2 launch \"launch\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "77e09c00"
-  },
-  "https://salesforce.com/news/stories/cyber-week-ai-sales-2026": {
-   "title": "Salesforce Data: Record Cyber Week Expected to Deliver $75.8B in AI-Driven Sales",
-   "link": "https://www.salesforce.com/news/stories/cyber-week-ai-sales-2026/",
-   "source": "salesforce-news",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-19T13:00:00.000Z",
-   "updated": null,
-   "summary": "Retailers with shopper agents set to score big as consumers turn to AI and personal agents to find deals this holiday season",
-   "first": "2026-11-19T13:16:57.239Z",
-   "score": 2,
-   "reasons": [
-    "+1 niche (agents)",
-    "+1 plans/price/availability \"$7\""
-   ],
-   "status": "below",
-   "hash": "87659127"
-  },
-  "https://salesforce.com/news/press-releases/2026/11/19/salesforce-si-export-consortium": {
-   "title": "Salesforce to Lead Consortium Bringing Trusted American SI to Global Markets",
-   "link": "https://www.salesforce.com/news/press-releases/2026/11/19/salesforce-si-export-consortium/",
-   "source": "salesforce-news",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-19T13:00:00.000Z",
-   "updated": null,
-   "summary": "Commerce designation supports Salesforce’s delivery of governed data, model choice, and agents that modernize government services and business operations",
-   "first": "2026-11-19T13:16:57.239Z",
-   "score": 1,
-   "reasons": [
-    "+1 niche (agents)"
-   ],
-   "status": "below",
-   "hash": "58c9984d"
-  },
-  "https://zoom.com/en/blog/zoom-in-on-cx-episode4-hopewood": {
-   "title": "Zoom in on CX Podcast: The \"Purposeful Friction\" Trick That Builds Customer Trust",
-   "link": "https://www.zoom.com/en/blog/zoom-in-on-cx-episode4-hopewood/",
-   "source": "zoom-blog",
-   "topic": "small-business-it",
-   "category": "launch",
-   "date": "2026-11-19T11:00:00.000Z",
-   "updated": null,
-   "summary": "AI is changing every customer conversation—but is it building trust or breaking it? Ben Neo sits down with Leigh Hopwood, CEO of the CCMA, to unpack why trust is becoming the defining differentiator in customer experience.",
-   "first": "2026-11-19T13:16:57.239Z",
-   "score": -3,
-   "reasons": [
-    "-3 corporate/announcement \"Podcast\""
-   ],
-   "status": "below",
-   "hash": "4ea3738e"
-  },
-  "https://github.blog/changelog/2026-11-19-s3-audit-log-streaming-with-openid-connect-expands-to-ghe-com": {
-   "title": "S3 audit log streaming with OpenID Connect expands to GHE.com",
-   "link": "https://github.blog/changelog/2026-11-19-s3-audit-log-streaming-with-openid-connect-expands-to-ghe-com",
-   "source": "github-changelog",
-   "topic": "ai-engineering",
-   "category": "launch",
-   "date": "2026-11-19T08:27:16.000Z",
-   "updated": null,
-   "summary": "You can now stream enterprise audit logs to Amazon S3 using OpenID Connect (OIDC) on GitHub Enterprise Cloud with data residency (GHE.com). This extends the existing github.com capability, letting you… The post S3 audit log streaming with OpenID Connect expands to GHE.com appeared first on The GitHu",
-   "first": "2026-11-19T13:16:57.239Z",
-   "score": 4,
-   "reasons": [
-    "-1 source github-changelog",
-    "+2 launch \"expands to\"",
-    "+2 user steps \"You can\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "1b89e4f6"
-  },
-  "https://news.sap.com/2026/11/five-rules-creating-supply-chains-that-can-take-a-hit": {
-   "title": "Who Wins the Next Disruption: Five Rules for Creating Supply Chains that Can Take a Hit",
-   "link": "https://news.sap.com/2026/11/five-rules-creating-supply-chains-that-can-take-a-hit/",
-   "source": "sap-news",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-19T12:15:00.000Z",
-   "updated": null,
-   "summary": "The goal is to build a supply chain that can adapt and keep moving.",
-   "first": "2026-11-19T13:16:57.239Z",
-   "score": -1,
-   "reasons": [
-    "-1 source sap-news"
-   ],
-   "status": "below",
-   "hash": "32580cb6"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64002": {
-   "title": "Finances of Panchayati Raj Institutions",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64002",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-19T17:35:00.000Z",
-   "updated": null,
-   "summary": "Today, the Reserve Bank released the second edition of its biennial Report titled “ Finances of Panchayati Raj Institutions ”. The theme of this edition is ‘Local Finances and Capacity Building in Rural India’. Drawing upon a balanced panel of 2.25 lakh Gram Panchayats for the period 2022-23 to 2024",
-   "first": "2026-11-19T13:16:57.239Z",
-   "score": 0,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 plans/price/availability \"India\""
-   ],
-   "status": "below",
-   "hash": "e3cb2fe1"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64001": {
-   "title": "Overseas Direct Investment for October 2026",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64001",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-19T16:40:00.000Z",
-   "updated": null,
-   "summary": "The Reserve Bank of India has today released the data on Overseas Direct Investment , both under Automatic Route and the Approval Route, for the month of October 2026. Ajit Prasad Deputy General Manager (Communications) Press Release: 2026-2027/1523",
-   "first": "2026-11-19T13:16:57.239Z",
-   "score": 0,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 plans/price/availability \"India\""
-   ],
-   "status": "below",
-   "hash": "609ab9da"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-transform-optimized-storage": {
-   "title": "AWS Transform supports optimized storage for server migration",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-transform-optimized-storage/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-19T08:00:00.000Z",
-   "updated": null,
-   "summary": "AWS Transform for migrations now recommends the optimized storage type and configuration for every server you migrate, so you no longer do it server by server. Building on recent storage assessment capabilities , AWS Transform's recommendations use each server's observed performance and capacity dat",
-   "first": "2026-11-19T13:16:57.239Z",
-   "score": -2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"launch\"",
-    "+2 user steps \"migration\"",
-    "-4 customer story"
-   ],
-   "status": "below",
-   "hash": "d47fcbf8"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-transform-automates-source-actions": {
-   "title": "AWS Transform automates source and migration target actions to accelerate cutover",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-transform-automates-source-actions/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-19T08:00:00.000Z",
-   "updated": null,
-   "summary": "AWS Transform now automates the tasks that prepare and validate your servers during a migration, before they move and after they launch on AWS. AWS Transform is the agentic AI service that speeds up cloud migration, application modernization, and continuous tech debt reduction. With the new source a",
-   "first": "2026-11-19T13:16:57.239Z",
-   "score": -2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"launch\"",
-    "+2 user steps \"migration\"",
-    "-4 customer story"
-   ],
-   "status": "below",
-   "hash": "7be09830"
   },
   "https://techcommunity.microsoft.com/t5/exchange-team-blog/sending-from-email-aliases-general-availability/ba-p/4562543": {
    "title": "Sending From Email Aliases – General Availability",
@@ -11136,17 +10902,10 @@
   }
  },
  "missedCheck": {
-  "day": "2026-11-21",
-  "at": "2026-11-21T13:16:55.541Z",
-  "checked": 3,
-  "covered": 2,
-  "items": [
-   {
-    "title": "Google Vids now lets you reuse your media in video generation",
-    "link": "http://workspaceupdates.googleblog.com/2026/11/google-vids-now-lets-you-reuse-your-media-in-video-generation.html",
-    "why": "below, score 9, workspace-updates",
-    "parked": true
-   }
-  ]
+  "day": "2026-11-22",
+  "at": "2026-11-22T13:16:59.085Z",
+  "checked": 0,
+  "covered": 0,
+  "items": []
  }
 }
