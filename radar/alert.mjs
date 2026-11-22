@@ -25,8 +25,8 @@ export const ALERT = {
   from: 'EpiFive <newsletter@epifive.com>',
   replyTo: 'epifive2@gmail.com',
   site: 'https://www.epifive.com',
-  /** Used until ALERT_POSTAL_ADDRESS is set (the same default the outreach footer uses outside the US). */
-  defaultAddress: 'Gurugram, Haryana 122001, India',
+  /** Used until ALERT_POSTAL_ADDRESS is set: the outreach footer's default (owner 15 Nov 2026: never an NCR address). */
+  defaultAddress: 'Adarsh Colony, Deoghar, Jharkhand 814112, India',
 };
 
 /** outage -> outage list, incident and patch-tuesday -> security list, anything else (launch how-tos) -> no alert. */

@@ -147,7 +147,7 @@ test('alert entries in results.jsonl never count as fast-track publishes', () =>
 // ---------- the email ----------
 
 test('the email has subject, 3 short lines, the link, unsubscribe and the postal footer', () => {
-  const mail = buildAlertEmail({ kind: 'outage', slug: 'microsoft-365-outage-november-2026-what-to-do', article, address: 'Gurugram, Haryana 122001, India' });
+  const mail = buildAlertEmail({ kind: 'outage', slug: 'microsoft-365-outage-november-2026-what-to-do', article, address: 'Adarsh Colony, Deoghar, Jharkhand 814112, India' });
   assert.equal(mail.subject, 'Outage alert: Microsoft 365 Outage (Nov 12-13, 2026)');
   assert.equal(mail.segment, 'Alerts: outage');
   assert.match(mail.text, /^What's down: Outlook, Teams calendars, Copilot and other Microsoft 365 services failed in every region from 12 November 2026\.$/m);
