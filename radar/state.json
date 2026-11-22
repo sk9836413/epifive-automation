@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-22T01:42:05.747Z",
+ "lastScan": "2026-11-22T03:43:42.871Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -8755,13 +8755,15 @@
     "+9 M365 retirement due in 73 days",
     "-1 in /news 2026-11-07-sonicwall-kev-exchange-admin-api-permissions"
    ],
-   "status": "writing",
+   "status": "skipped",
    "hash": "1d205867",
    "news": "2026-11-07-sonicwall-kev-exchange-admin-api-permissions",
    "kind": "new",
    "extra": false,
    "taskAt": "2026-11-22T01:42:05.747Z",
-   "attempts": 1
+   "attempts": 1,
+   "resultAt": "2026-11-22T01:44:33.985Z",
+   "skipReason": "RADAR-SKIP: covered by /blog/entra-sms-voice-mfa-retirement-migration"
   },
   "https://mc.merill.net/message/MC1561862": {
    "title": "MC1561862: Run Python code as a workflow step",
@@ -11471,6 +11473,25 @@
    ],
    "status": "below",
    "hash": "7b618e25"
+  },
+  "https://aws.amazon.com/blogs/machine-learning/meta-ads-is-now-available-in-aws-quick": {
+   "title": "Meta ads is now available in AWS Quick",
+   "link": "https://aws.amazon.com/blogs/machine-learning/meta-ads-is-now-available-in-aws-quick/",
+   "source": "aws-ml-blog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-22T01:59:13.000Z",
+   "updated": null,
+   "summary": "AWS Quick now has a Meta ads AI connector. Meta advertisers can use natural language in Quick to create, manage, and analyze campaigns while staying connected to the Meta ad management network, and combine Meta ad data with first- and third-party sources to build dashboards, documents, slide decks, ",
+   "first": "2026-11-22T03:43:42.871Z",
+   "score": 0,
+   "reasons": [
+    "-3 source aws-ml-blog",
+    "+2 launch \"now available\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "23a62ec4"
   }
  },
  "devices": {},
