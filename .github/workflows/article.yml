@@ -111,6 +111,14 @@ jobs:
           echo "full=$full" >> "$GITHUB_OUTPUT"
           echo "::notice::$today: $n/$MAX articles, error lane ${er:-0}/1 ($EMAX codes a run, ${eq:-0} open), ${r:-0}/$RMAX refreshes ($open in the queue), interlink ${il:-0}/1 -> $mode"
 
+      - name: Prompt for Research and write (Claude)
+        if: steps.gate.outputs.ready == 'true' && steps.date.outputs.mode == 'article'
+        env:
+          TODAY: ${{steps.date.outputs.today}}
+        run: |
+          if [ -d .git ]; then grep -qx '.ops-\*' .git/info/exclude || printf '.ops-*\n' >> .git/info/exclude; fi
+          node ops/prompts/render.mjs ops/prompts/article-research-and-write-claude.md .ops-prompt.md
+
       - name: Research and write (Claude)
         if: steps.gate.outputs.ready == 'true' && steps.date.outputs.mode == 'article'
         uses: anthropics/claude-code-action@v1
@@ -121,17 +129,7 @@ jobs:
           claude_args: |
             --max-turns 150
             --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node scripts/check-posts.mjs:*),Bash(ls:*),Bash(wc:*)"
-          prompt: |
-            Write today's EpiFive article. Today's date is ${{ steps.date.outputs.today }}; use it as the post's `date`.
-
-            Read automation/WRITER.md and follow it exactly, with these changes for this environment:
-            - Section 1: the repository is already checked out at the latest main; skip the git commands.
-            - Section 4: do steps 1, 3, 4 and 6 (quality gate until it passes, editor re-read, move the item
-              in automation/backlog.md, append the line to automation/log.md). Do NOT run `npm run build`,
-              `git commit` or `git push`; later workflow steps build, commit and publish.
-            - Write exactly one new file in content/posts/. Do not edit or delete any other post.
-
-            Finish with the section 5 report.
+          prompt: Your task for this run is in the file .ops-prompt.md in the repository root. Read it first and follow it exactly.
 
       - name: Find the new article
         id: post
@@ -267,6 +265,16 @@ jobs:
           { echo 'list<<EOF_ERROR_PICK'; awk -F'\t' '{printf "%d. %s | %s | %s | %s\n", NR, $1, $2, $3, $4}' "$RUNNER_TEMP/errors-pick.tsv"; echo 'EOF_ERROR_PICK'; } >> "$GITHUB_OUTPUT"
           cat "$RUNNER_TEMP/errors-pick.tsv"
 
+      - name: Prompt for Write the error pages (Claude)
+        if: steps.epick.outputs.count != '' && steps.epick.outputs.count != '0'
+        env:
+          TODAY: ${{steps.date.outputs.today}}
+          LIST: ${{steps.epick.outputs.list}}
+          MAX: ${{steps.epick.outputs.max}}
+        run: |
+          if [ -d .git ]; then grep -qx '.ops-\*' .git/info/exclude || printf '.ops-*\n' >> .git/info/exclude; fi
+          node ops/prompts/render.mjs ops/prompts/article-write-the-error-pages-claude.md .ops-prompt.md
+
       - name: Write the error pages (Claude)
         id: ewrite
         if: steps.epick.outputs.count != '' && steps.epick.outputs.count != '0'
@@ -279,42 +287,7 @@ jobs:
           claude_args: |
             --max-turns 220
             --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node scripts/error-source.mjs:*),Bash(node scripts/check-errors.mjs:*),Bash(ls:*),Bash(wc:*)"
-          prompt: |
-            Add new pages to the EpiFive error code library. Today's date is ${{ steps.date.outputs.today }}.
-
-            Read content/errors/README.md and follow it exactly; src/lib/error-rules.ts is the validator, and
-            content/errors/microsoft-365-sign-in/aadsts50126.md is a good example. Owner rule: quality over quantity.
-            Every code must appear on an official vendor page that you opened and read today; no invented codes,
-            meanings, causes or fixes; a code that cannot reach the minimum is not published.
-
-            Candidates, in priority order (product | code | official page to read first | note):
-            ${{ steps.epick.outputs.list }}
-
-            Work down the list until ${{ steps.epick.outputs.max }} new pages pass, then stop. For each candidate:
-            1. Read the official page with `node scripts/error-source.mjs <url> <CODE>` (and `--full` for the whole
-               text). Find Microsoft's dedicated article for the code if the page links one (WebSearch limited to
-               learn.microsoft.com or support.microsoft.com may help); read it the same way. Quotes in `sources` must be
-               copied from error-source output (drop table "|" characters), max 300 characters, and contain the code.
-            2. Skip the code if no official page documents it, if the vendor gives only a one-line meaning with no
-               causes or fixes (too thin for 400 words of vendor-backed prose and 3 real steps), or if an existing
-               entry already covers it (the same article and fix). To skip, append one line to `.errors-skipped.tsv`
-               in the repository root: product<TAB>code<TAB>short reason.
-            3. Otherwise write content/errors/<product>/<code-slug>.md with `date`, `updated` and `checked` set to
-               ${{ steps.date.outputs.today }} and "Last checked: ${{ steps.date.outputs.today }}." Use the code
-               spelling of the candidate line (or of the vendor page) and the product folder given. Label any step that
-               goes beyond the vendor pages "This is a general step." Say the error was not reproduced for the page.
-               Link related EpiFive posts (grep content/posts) as /blog/<slug> only where they really help; if a post's
-               slug, title or `query` contains the code, set `guide` to it (the check enforces this). `related` may only
-               list entries whose files exist. No first-person claims, no personal names, no emoji, no raw HTML.
-            4. Run `node scripts/check-errors.mjs <product>/<code-slug> --online --strict` and fix the page until it
-               passes. If it cannot pass (for example the quote is not on the page), delete the file and skip the code
-               as in step 2.
-
-            Do not edit or delete any other file: not content/errors/QUEUE.md, README.md, existing entries, posts,
-            src, scripts or automation (the workflow marks the queue and logs the run). Do NOT run `npm run build`,
-            `git commit` or `git push`.
-
-            Finish with a short report: pages added (with their source URLs) and codes skipped with the reason.
+          prompt: Your task for this run is in the file .ops-prompt.md in the repository root. Read it first and follow it exactly.
 
       - name: Gate the error pages
         id: egate
@@ -454,6 +427,16 @@ jobs:
           { echo 'line<<EOF_REFRESH_LINE'; printf '%s\n' "$next" | cut -f2-; echo 'EOF_REFRESH_LINE'; } >> "$GITHUB_OUTPUT"
           echo "Refresh: $slug"
 
+      - name: Prompt for Refresh the post (Claude)
+        if: steps.rpick.outputs.slug != ''
+        env:
+          TODAY: ${{steps.date.outputs.today}}
+          SLUG: ${{steps.rpick.outputs.slug}}
+          LINE: ${{steps.rpick.outputs.line}}
+        run: |
+          if [ -d .git ]; then grep -qx '.ops-\*' .git/info/exclude || printf '.ops-*\n' >> .git/info/exclude; fi
+          node ops/prompts/render.mjs ops/prompts/article-refresh-the-post-claude.md .ops-prompt.md
+
       - name: Refresh the post (Claude)
         if: steps.rpick.outputs.slug != ''
         uses: anthropics/claude-code-action@v1
@@ -464,24 +447,7 @@ jobs:
           claude_args: |
             --max-turns 120
             --allowedTools "Read,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node scripts/check-posts.mjs:*),Bash(ls:*),Bash(wc:*)"
-          prompt: |
-            Refresh one existing EpiFive article in place. Today's date is ${{ steps.date.outputs.today }}.
-
-            The post is content/posts/${{ steps.rpick.outputs.slug }}.md. Its line in "## Refresh" of automation/backlog.md:
-            ${{ steps.rpick.outputs.line }}
-
-            Read automation/WRITER.md and follow section 6 (refresh runs) exactly, using sections 2 and 3 for research,
-            official sources, voice, "What we checked" and the banned claims (and section 7 if the post compares products).
-            Changes for this environment:
-            - Edit only content/posts/${{ steps.rpick.outputs.slug }}.md. Do not create, rename or delete files. Do not edit
-              automation/backlog.md or automation/log.md: the workflow ticks the line and logs the refresh.
-            - Keep the slug, `date` and the post's subject; set `updated: '${{ steps.date.outputs.today }}'`; never touch
-              `google` or `googleReleased`; leave the `## See also` list as it is.
-            - Run `node scripts/check-posts.mjs ${{ steps.rpick.outputs.slug }}` until it passes. Do NOT run `npm run build`,
-              `git commit` or `git push`; later workflow steps build, commit and publish.
-
-            Finish with a short report: what changed, the sources you added, and anything you left out because it could
-            not be verified.
+          prompt: Your task for this run is in the file .ops-prompt.md in the repository root. Read it first and follow it exactly.
 
       - name: Check the refresh
         id: refreshed
