@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-22T13:16:59.085Z",
+ "lastScan": "2026-11-22T14:16:38.419Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -2876,133 +2876,6 @@
    ],
    "status": "below",
    "hash": "6a3fc5c4"
-  },
-  "https://about.fb.com/news/2026/11/meta-premieres-indias-first-government-led-microdrama-series-on-scams-awareness": {
-   "title": "Meta premieres India’s First Government-Led Microdrama Series on Scams Awareness",
-   "link": "https://about.fb.com/news/2026/11/meta-premieres-indias-first-government-led-microdrama-series-on-scams-awareness/",
-   "source": "meta-newsroom",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-19T13:05:53.000Z",
-   "updated": null,
-   "summary": "Meta has partnered with The Ministry of Information & Broadcasting (MIB), Prasar Bharati, Securities and Exchange Board of India (SEBI), and Indian Cyber Crime Coordination Centre (I4C) to launch India's first government-led public interest microdrama series on online scams. The post Meta premieres ",
-   "first": "2026-11-19T14:15:21.082Z",
-   "score": 4,
-   "reasons": [
-    "+1 niche (exchange)",
-    "+2 launch \"launch\"",
-    "+1 plans/price/availability \"India\""
-   ],
-   "status": "below",
-   "hash": "8a755bcf"
-  },
-  "https://salesforce.com/blog/small-business/contact-center-basics": {
-   "title": "Contact Center Basics: For Small Teams Who Want to Serve Big",
-   "link": "https://www.salesforce.com/blog/small-business/contact-center-basics/",
-   "source": "salesforce-blog",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-19T14:00:00.000Z",
-   "updated": null,
-   "summary": "Starting your first contact center? Or leveling yours up? Consider these basics first.",
-   "first": "2026-11-19T14:15:21.082Z",
-   "score": -1,
-   "reasons": [
-    "-1 source salesforce-blog"
-   ],
-   "status": "below",
-   "hash": "b3ffb6d0"
-  },
-  "https://blog.cloudflare.com/internet-traffic-2026-us-election": {
-   "title": "Internet traffic and attacks during the 2026 U.S. midterm elections",
-   "link": "https://blog.cloudflare.com/internet-traffic-2026-us-election/",
-   "source": "cloudflare-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-19T14:00:00.000Z",
-   "updated": null,
-   "summary": "On November 3, 2026 U.S. voters headed to the polls. Here’s what Cloudflare data across more than 1,400 protected sites tells us about Election Day Internet traffic and cyberattacks.",
-   "first": "2026-11-19T14:15:21.082Z",
-   "score": -4,
-   "reasons": [
-    "-1 source cloudflare-blog",
-    "-3 corporate/announcement \"elections\""
-   ],
-   "status": "below",
-   "hash": "dfe54d85"
-  },
-  "https://blogs.nvidia.com/blog/geforce-now-thursday-black-friday-2026": {
-   "title": "Season’s Streamings and Savings: Black Friday Deals Come to GeForce NOW",
-   "link": "https://blogs.nvidia.com/blog/geforce-now-thursday-black-friday-2026/",
-   "source": "nvidia-news",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-19T14:00:12.000Z",
-   "updated": null,
-   "summary": "GeForce NOW is kicking off Black Friday with more reasons to make time for gaming. Six-month memberships are back for a limited time. Save 30% on the first six-month term of a Performance or Ultimate membership. Big gaming plans, smaller price tag. Keep the holiday savings going: Check out more NVID",
-   "first": "2026-11-19T14:15:21.082Z",
-   "score": 0,
-   "reasons": [
-    "-1 source nvidia-news",
-    "+1 plans/price/availability \"plans\""
-   ],
-   "status": "below",
-   "hash": "f79a63ba"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64004": {
-   "title": "Auction of State Government Securities",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64004",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-19T19:05:00.000Z",
-   "updated": null,
-   "summary": "The following State Governments have offered to sell stock by way of auction, for an aggregate amount of ₹31,950 Crore (Face Value). Sr. No. State/UT Amount to be raised (₹ Crore) Tenor (Year) Type of Auction 1. Assam 1000 Re-issue of 7.66% Assam SGS 2036, issued on June 17, 2026 Price 2. Bihar 1000",
-   "first": "2026-11-19T14:15:21.082Z",
-   "score": 0,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 plans/price/availability \"₹3\"",
-    "re-scored (was -1)"
-   ],
-   "status": "below",
-   "hash": "632d44f2"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64003": {
-   "title": "RBI to conduct 3-day Variable Rate Repo (VRR) auction under LAF on November 20, 2026",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64003",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-19T19:00:00.000Z",
-   "updated": null,
-   "summary": "On a review of current and evolving liquidity conditions in the near term, it has been decided to conduct a Variable Rate Repo (VRR) auction on Friday, November 20, 2026, as under: Sl. No. Notified Amount (₹ crore) Tenor (day) Window Timing Date of Reversal 1 50,000 3 09:30 AM to 10:00 AM November 2",
-   "first": "2026-11-19T14:15:21.082Z",
-   "score": -1,
-   "reasons": [
-    "-1 source rbi-press"
-   ],
-   "status": "below",
-   "hash": "3363b2f2"
-  },
-  "https://aws.amazon.com/aws.amazon.com/about-aws/whats-new/2026/11/parameter-store-raises-api-throughput-limits": {
-   "title": "AWS Systems Manager Parameter Store raises API throughput limits",
-   "link": "https://aws.amazon.com/aws.amazon.com/about-aws/whats-new/2026/11/parameter-store-raises-api-throughput-limits/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-19T05:00:00.000Z",
-   "updated": null,
-   "summary": "AWS Systems Manager Parameter Store has increased the default throughput limits for five API operations. For accounts that have turned on the higher throughput setting, the quotas have changed as follows, in transactions per second (TPS): GetParametersByPath (from 100 to 500 TPS) PutParameter (10 to",
-   "first": "2026-11-19T14:15:21.082Z",
-   "score": -6,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "-1 narrow audience \"API\"",
-    "-3 corporate/announcement \"raises\""
-   ],
-   "status": "below",
-   "hash": "26c8cc3b"
   },
   "https://apple.com/newsroom/2026/11/apple-tv-becomes-the-new-us-home-of-f1-academy-the-all-female-racing-series": {
    "title": "Apple TV becomes the new U.S. home of F1 ACADEMY™, the all-female racing series",
@@ -10834,7 +10707,7 @@
    "first": "2026-11-19T14:45:12.000Z",
    "decision": "covered",
    "key": "ipo:anthropic",
-   "title": "Anthropic Share Slump Nearly Erases IPO Pop as AI Trade Unravels",
+   "title": "EXCLUSIVE: Like SpaceX, Anthropic ran an unusual IPO process, chafing some bankers",
    "titles": [
     "Anthropic’s 7 founders cashed out nearly $2B in record-breaking IPO",
     "Anthropic’s IPO could deliver $156B to charity",
@@ -10859,18 +10732,18 @@
     "https://www.cnbc.com/2026/11/20/anthropic-ipo-greenshoe.html",
     "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQZXdyUExSdjhGa000MWtxaUR0YzhiVHJnNzN0N0lTUnNONktkaWZkUVUwdExoUXhXMTlJN0NEZ3F3M2RYbUZYelpiNFhpOE14LWdtYjF1MnB2M00xMk1GbENmci1UeFlXa3V0aHM4TWlxVVZNeFBwUkZjMTA2ZWhCSFBVaVVBb0FUdnpj?oc=5"
    ],
-   "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQSWx3SUw5VXNrMldJUzZ3UnQ4SGxJWXBHNTEwcWViWlJhMC1GaVJQZ3ZWNXdmajdFR3N6SHJaYlU2c0ZJcTFaOGpRdndOU0d0enNJdzdMY1NYdWt3Vk1QMnNSTFZUcHp4dXJCOUItQzJFck5GZDlkNXppT2lCRmJhcGl0bW80cEs2VVhTd240Q0pWRFFEUUxFTHo0VVVjaDVCc3hqVnJMSnp5Mm9UOHVObk9EakYxdw?oc=5",
+   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNT1RsTFBlMWZGejNqWjVvdVlYX2lRTGpZZXhoYXFXN2RuV3lHZ09ra0ctdnZqc3hiVENXSlc2ZTBIbDRyTmpTS1Nhdk1kdU5HLW5FNGdNRTNoeXVBeEc5cDl5VGx3c3dUSzNDYkVVTHVfenVQbHFUQ0hQS2NfalhuNDczWFdUS0FWQS1iZ1ZhVnNYMy1FOHVSUmlBMmI3NTdVTGY1X0JxTFRmYnptV3huQQ?oc=5",
    "outlets": [
-    "Bloomberg",
-    "CNBC",
-    "WSJ"
+    "Reuters",
+    "Financial Times",
+    "NDTV"
    ],
    "techmeme": false,
    "category": "launch",
    "topic": "ai-engineering",
    "parkOnly": false,
-   "last": "2026-11-21T20:44:29.000Z",
-   "date": "2026-11-21T20:44:29.000Z",
+   "last": "2026-11-22T13:29:02.000Z",
+   "date": "2026-11-22T13:29:02.000Z",
    "score": 11,
    "post": "anthropic-ipo-explained-claude-users"
   },
