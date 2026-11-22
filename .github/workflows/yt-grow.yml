@@ -1,16 +1,4 @@
-# YouTube search growth upkeep (owner growth plan, 21 Nov 2026; 92% of EpiFive's YouTube views come from search).
-# scripts/social/yt-grow.mjs in the site repo:
-#   - six topic playlists (Microsoft 365, Azure, Power Automate, Security alerts, Windows fixes, AI tools; created when
-#     missing) and every upload, old and new, added to its topic's playlist (a video that fits none stays out);
-#   - descriptions: the article link stays first, each Short links its article's public long video ("Full video
-#     tutorial: ..."), at least 3 hashtags. Titles are not changed here (new titles are checked against the article's
-#     main query when they are written: validate.mjs, longvideo.mjs);
-#   - reports whether the channel may set custom thumbnails (phone-verified) and that pinning a comment is not in the API.
-# When: no cron of its own and no scheduler change. It runs after every Long video and Social media run (the new uploads
-# of the day), or by hand. Quota: ~10 units to read; at most 40 playlist adds and 30 description updates a run (50 units
-# each), so the backlog of old videos is spread over 2-3 days; a quota error ends the run cleanly.
-# Switch: repository variable YT_GROW = "off" stops the automatic runs (manual runs always work).
-# Log (public, counts and video ids only): yt/log/<YYYY-MM>.md.
+# YouTube growth. Code, prompts and notes live in the private repo (ops/; annotated copy: ops/docs/workflow-notes/yt-grow.yml).
 name: YouTube growth
 
 on:
@@ -66,7 +54,6 @@ jobs:
           cache: npm
           cache-dependency-path: site/package-lock.json
 
-      # The YouTube token only reaches this step and is never printed (public logs).
       - name: Playlists, descriptions, capabilities
         env:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}

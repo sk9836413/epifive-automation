@@ -1,21 +1,4 @@
-# Daily EpiFive carousel (owner growth plan, 21 Nov 2026: "Instagram carousels, new lane"). Tech carousels (step-by-step
-# fixes, cheat sheets, "X vs Y") earn saves and sends, which Instagram ranks on (ALGO-RESEARCH-2026-11). Made by
-# scripts/social/photo-carousel.mjs + carousel-lib.mjs in the site repo from one article, with no AI writing and no AI
-# pictures: 6-8 slides of 1080x1350 in the site's brand style (hook, steps, optional "remember", "Full guide: link in
-# bio / epifive.com"), a keyword-rich Instagram caption (the article's main query first) with 3-5 hashtags.
-#   Instagram: Graph API CAROUSEL flow (child image containers, each polled to FINISHED, then the parent container,
-#   polled, then media_publish). Facebook Page: the same slides as one multi-photo post with the article link.
-# Article: the newest step-by-step article of the last 3 days that fills 6 slides, else the site's most-visited
-# article (stats/top-articles.json, refreshed from Cloudflare Web Analytics when the CF_API_TOKEN secret exists), else
-# the newest unused one; every article is used once (photos/log.md).
-#
-# Switches (repository variables): CAROUSEL = "on" for the daily post (off/unset = no automatic post; manual runs
-# always work); CAROUSEL_AT_IST = the time, "HH:MM" in IST (default 11:30: Indian late morning, 7 hours before the
-# 18:46 IST Reel so the two never crowd each other; the research notes' only time signal is "10:00-13:00 IST slightly
-# higher"); CAROUSEL_WINDOW_HOURS = how long after that time a late run may still post (default 8).
-# When: no Cloudflare cron of its own. It checks after every Launch radar run (about hourly) and on a few GitHub
-# schedule tries around 11:30 IST; the scheduler's existing 18:46/19:46 IST dispatches of this workflow are late
-# retries inside the window. A run that is not due ends in seconds. PHOTO_POSTS (the old 3-5 slide post) is retired.
+# Photo posts. Code, prompts and notes live in the private repo (ops/; annotated copy: ops/docs/workflow-notes/photos.yml).
 name: Photo posts
 
 on:
@@ -41,7 +24,6 @@ on:
         default: false
 
 env:
-  # Instagram caption wording of the "Comment GUIDE" ask (see social.yml).
   COMMENT_FUNNEL_IG: ${{ vars.COMMENT_FUNNEL_IG }}
 
 permissions:
@@ -106,8 +88,6 @@ jobs:
           sudo apt-get -o Acquire::Retries=3 install -y -qq --no-install-recommends fonts-inter > /dev/null
           cd site && npm ci --no-audit --no-fund
 
-      # The most-visited articles (fallback for the article choice). Live from Cloudflare Web Analytics when the
-      # CF_API_TOKEN secret (Account Analytics: Read) exists, else the committed stats/top-articles.json (slugs only).
       - name: Top articles
         if: steps.gate.outputs.skip != 'true'
         env:
@@ -121,7 +101,6 @@ jobs:
           fi
           echo "Top articles: $(node -p "require('$RUNNER_TEMP/top.json').length")"
 
-      # The Meta token only reaches this step and is never printed (public logs).
       - name: Render and post
         id: post
         if: steps.gate.outputs.skip != 'true'

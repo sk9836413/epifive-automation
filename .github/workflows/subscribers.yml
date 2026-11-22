@@ -1,5 +1,4 @@
-# Prints how many newsletter subscribers EpiFive has (counts only: this is a public repo, so no
-# email addresses are ever printed). Run it by hand from the Actions tab.
+# Subscriber count. Code, prompts and notes live in the private repo (ops/; annotated copy: ops/docs/workflow-notes/subscribers.yml).
 name: Subscriber count
 
 on:
@@ -32,4 +31,3 @@ jobs:
               require("fs").appendFileSync(process.env.GITHUB_STEP_SUMMARY, `Subscribers: **${active}** active, ${total - active} unsubscribed, ${last7} new in 7 days\n`);
             })();
           '
-

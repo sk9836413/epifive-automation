@@ -1,14 +1,4 @@
-# AI Tasks: the owner writes a task in the CRM (AI Tasks screen, owner only); the CRM starts this workflow
-# (workflow_dispatch with its GH_DISPATCH_TOKEN). One run = one task:
-#   claim the next queued task (CRM, INGEST_TOKEN) -> check out the target repo -> Claude Code does the work under the
-#   house rules (site repo automation/OWNER-RULES.md) -> quality gates -> push (main only when publishing is allowed,
-#   else branch ai-task/<id> for the owner's Approve) -> allowed follow-up workflows -> result to the CRM + a short
-#   Hinglish email to the owner -> start the next run while tasks are queued.
-# THIS REPO IS PUBLIC and so is this log: the prompt, thread, summary and links live in the runner temp dir / .ai-task/
-# (git-excluded) and in the CRM, never in the log. Claude's output is not printed (show_full_output and display_report
-# off). Claude gets no secrets and no git credentials: checkouts use persist-credentials: false; only the push step
-# below holds a token.
-# Caps: one task at a time (concurrency), Claude 35 minutes and 120 turns, the whole job 50 minutes.
+# AI task. Code, prompts and notes live in the private repo (ops/; annotated copy: ops/docs/workflow-notes/ai-task.yml).
 name: AI task
 
 on:
@@ -52,7 +42,6 @@ jobs:
             echo "ready=true" >> "$GITHUB_OUTPUT"
           fi
 
-      # The helper scripts are copied out of the workspace: the target repo is checked out into the workspace root.
       - uses: actions/checkout@v4
         if: steps.gate.outputs.ready == 'true'
         with:
@@ -77,10 +66,8 @@ jobs:
         run: |
           mkdir -p "$AUTO_DIR/data/report" "$AUTO_DIR/data/radar" "$AI_TASK_DIR"
           cp -r _ops/ops/ai-task _ops/ops/report "$AUTO_DIR/"
-          # The data the report reads (this repo's report/snapshot.json and radar/state.json).
           cp report/snapshot.json "$AUTO_DIR/data/report/" 2>/dev/null || true
           cp radar/state.json "$AUTO_DIR/data/radar/" 2>/dev/null || true
-          # Empty the workspace (incl. the sparse .git) so the target checkout starts clean.
           find . -mindepth 1 -delete
 
       - uses: actions/setup-node@v4
@@ -100,7 +87,6 @@ jobs:
           SITE_REPO_TOKEN: ${{ secrets.SITE_REPO_TOKEN }}
         run: node "$AUTO_DIR/ai-task/task.mjs" claim --dir "$AI_TASK_DIR"
 
-      # Target repo at the workspace root (Claude works there). Continue on the task's branch when it has one.
       - name: Check out the task branch
         id: checkout_branch
         if: steps.claim.outputs.id != '' && steps.claim.outputs.ref != ''
@@ -128,7 +114,6 @@ jobs:
         continue-on-error: true
         run: npm ci --no-audit --no-fund > /dev/null 2>&1 || echo "::warning::npm ci failed"
 
-      # "Aaj ka performance": the daily report's numbers, written to a git-excluded file for the agent (never logged).
       - name: Performance numbers
         if: steps.claim.outputs.id != '' && steps.claim.outputs.with_report == 'true'
         continue-on-error: true
@@ -188,8 +173,6 @@ jobs:
           ON_BRANCH: ${{ steps.checkout_branch.outcome == 'success' }}
         run: node "$AUTO_DIR/ai-task/task.mjs" collect --dir "$AI_TASK_DIR"
 
-      # Quality gates: the site build runs every content check (prebuild: check-posts, errors, devices, news, ...);
-      # automation/Shyam run the node tests next to every changed file; the CRM runs typecheck + tests.
       - name: Quality gates
         id: gates
         if: steps.collect.outputs.pending == 'true'
@@ -229,7 +212,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           remote="https://x-access-token:${PUSH_TOKEN}@github.com/${REPO}.git"
-          # Only the files the agent changed (collected before the gates: a build may touch other files).
           if [ -s "$AI_TASK_DIR/changes.txt" ]; then xargs -d '\n' -a "$AI_TASK_DIR/changes.txt" git add -A --; fi
           if ! git diff --cached --quiet; then
             git commit -q -m "$MSG" -m "AI task #$ID from the owner's CRM (ai-task.yml)." -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"

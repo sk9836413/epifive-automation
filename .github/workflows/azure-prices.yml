@@ -1,7 +1,4 @@
-# Weekly Azure VM price refresh: re-reads Microsoft's public Azure Retail Prices API
-# (https://prices.azure.com/api/retail/prices, no auth) and updates src/data/azure-vm-prices.json,
-# which the /azure/vm-pricing pages are built from. Commits only when the file changed.
-# Started on Mondays by the Cloudflare scheduler (13 5 UTC). Uses no API keys.
+# Azure VM prices. Code, prompts and notes live in the private repo (ops/; annotated copy: ops/docs/workflow-notes/azure-prices.yml).
 name: Azure VM prices
 
 on:

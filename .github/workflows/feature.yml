@@ -1,6 +1,4 @@
-# Weekly feature builder: builds the next free browser tool from automation/features.md (filled by
-# the daily trend job), checks that only tool files changed and that the site builds, then pushes.
-# Cloudflare Pages deploys it. Started on Wednesdays by the Cloudflare scheduler.
+# Feature builder. Code, prompts and notes live in the private repo (ops/; annotated copy: ops/docs/workflow-notes/feature.yml).
 name: Feature builder
 
 on:

@@ -1,6 +1,4 @@
-# Daily share kit: ready-to-paste posts for Facebook groups, WhatsApp, Quora and forums, emailed to the
-# owner each morning (09:13 IST). The owner posts them by hand: groups and forums treat automated
-# posting as spam. Started daily by the Cloudflare scheduler.
+# Share kit. Code, prompts and notes live in the private repo (ops/; annotated copy: ops/docs/workflow-notes/sharekit.yml).
 name: Share kit
 
 on:

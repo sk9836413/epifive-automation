@@ -1,59 +1,10 @@
-# Launch radar: watches official product feeds (radar/sources.json) and publishes a same-day step-by-step
-# how-to for a big launch ("fast track", site instructions automation/RADAR.md), on top of the daily article.
-# Sources with category "incident" (security news, vendor security blogs) add same-day security incident guides
-# ("what happened / am I affected / what to do now / how to prevent it"), under the same daily caps.
-# Big service outages on major platforms (news feeds, and status pages with category "outage") add outage guides
-# ("what happened / how to check status / what users and admins can do / SLA credits / post-incident review").
-#
-# When: no cron of its own. It starts whenever the scheduler requests the Daily article (43 3 and 43 4 UTC) or
-# Social media (13 5, 16 13 and 16 14 UTC) workflow, so it rides the scheduler's 5 existing slots (up to 5 scans
-# a day; a scan within 25 minutes of the last one is skipped). A scan is plain Node (a few seconds, no Claude).
-# Caps: at most 2 fast-track articles a day (3 attempts), plus 1 extra a day for a major outage once those are used
-# up, and 2 updates of existing posts a day. A draft that fails the
-# quality gate gets one fix attempt, then the launch is parked in automation/backlog.md "(fast-track, failed gate)".
-# Trending videos: when a new outage or incident guide, or a fast-track article that scored 12 or more, is published,
-# the write job starts the Short (social.yml, force) and the long video (longvideo.yml, publish_now: public on
-# YouTube and the Facebook Page at once) for it. At most 1 such pair a UTC day; consumer topics get the Short only
-# (radar/lib.mjs autoVideoPlan). A Social media run started that way (github-actions[bot]) starts no extra scan.
-# Email alerts: when a new outage guide (or security incident guide) is published and live, the write job emails each
-# reader who signed up for that kind in the article box (one Resend segment "Alerts"; the kinds are the contact property
-# `alerts`), one email per contact with a one-click unsubscribe link, never a broadcast: 1 per incident, at most 2 a day
-# (1 security), never for an update or a resolved outage (radar/alert.mjs). Secret RESEND_API_KEY; optional
-# ALERT_POSTAL_ADDRESS (the CAN-SPAM postal footer). Logged in radar/results.jsonl (type alert). Checks: alerts.yml.
-# Tiers (radar/brief.mjs, owner asked 14 Nov 2026 for every IT/tech/AI/device update within about an hour):
-#   Tier 1 = the fast-track article above (caps unchanged); flagship devices (new iPhone, Galaxy S/Z, Pixel), new
-#            flagship AI models from OpenAI/Anthropic/Google/Meta, big AI price drops and AI model retirements due within
-#            120 days get a score floor, still inside the same 2 + 1 outage cap.
-#   Tier 2 = every relevant item from every source on ONE page per day, radar/live/<IST date>.json, served live by the
-#            site at https://www.epifive.com/news/live/<date> (Pages Function, no site rebuild). 2-4 factual lines per
-#            item from one batched Claude call per scan (haiku, no tools; lines are checked so every number comes from
-#            the official text, else template lines from the official text). Dedupe across sources and 3 days.
-#            IndexNow ping for the day page at most once an hour, only when it changed.
-#            Trending tier (radar/trending.mjs, owner asked 15 Nov 2026): big general tech stories from Techmeme and Google
-#            News that Techmeme lists or 3+ reputable outlets cover (leadership/IPOs at major tech companies, big product,
-#            AI, space and EV milestones, critical-infrastructure outages), safety-filtered, "Reported by <outlet>", 4 a day.
-#            Trending articles (owner, 20 Nov 2026): a trending story that is a launch, AI/cloud/security/major-platform
-#            news or a payments/banking/telecom outage, with no post yet, takes a fast-track slot or is parked at the top of
-#            the site backlog (max 4 a day, settings.maxTrendingArticlesPerDay); a writer skip that is not "covered by" /
-#            "news only" is parked there too, and a once-a-day missed-trends check (first scan from 18:30 IST) parks
-#            whatever big story of the last 48 hours is still uncovered (radar/trending.mjs, logged as "Missed-trends check").
-#   Tier 3 = official device launches start devices.yml in launch mode (spec page from the maker's official page only),
-#            at most 2 runs a day, 3 devices a run.
-# Patch Tuesday (owner approved 19 Nov 2026): from 18:00 UTC on the second Tuesday, once MSRC lists the month's release,
-# the scan queues "patch-tuesday-<yyyy-mm>" as a Tier 1 fast-track (category patch-tuesday, top score, same daily caps). The
-# write job gives the writer Microsoft's official counts (radar/patch-tuesday.mjs: MSRC CVRF + CISA KEV); the post joins
-# https://www.epifive.com/patch-tuesday and its email goes to the Security alerts list. No cron change.
-# Off switch: repository variable RADAR (automatic scans run only while it is "on").
-# Logs (public, no secrets): radar/log/<YYYY-MM>.md per scan, radar/results.jsonl per write, radar/live/ day pages.
+# Launch radar. Code, prompts and notes live in the private repo (ops/; annotated copy: ops/docs/workflow-notes/radar.yml).
 name: Launch radar
 
 on:
   workflow_run:
     workflows: [Daily article, Social media]
     types: [requested]
-  # Hourly scan (owner approved 13 Nov 2026, "jod do") so an overnight outage or launch is caught within about an
-  # hour. GitHub's own scheduler (free for this public repo), not the Cloudflare scheduler, whose 5 slots are fixed.
-  # The scan is a ~5 s Node script with no Claude; the 25-minute gap and the daily caps still apply.
   schedule:
     - cron: '7,23,38,53 * * * *'   # four tries an hour: GitHub drops many scheduled runs; the 25-minute gap guard keeps it to ~1-2 scans an hour
   workflow_dispatch:
@@ -91,8 +42,6 @@ env:
 
 jobs:
   scan:
-    # Automatic scans need the repository variable RADAR = on (the off switch); manual runs always work.
-    # A Social media run this workflow started itself (the trending Short, github-actions[bot]) starts no extra scan.
     if: >-
       (github.event_name == 'workflow_run' && vars.RADAR == 'on' && github.event.workflow_run.triggering_actor.login != 'github-actions[bot]') ||
       (github.event_name == 'schedule' && vars.RADAR == 'on') ||
@@ -103,7 +52,6 @@ jobs:
       group: radar-scan
       cancel-in-progress: false
     env:
-      # Code: the private site repo's ops/radar (checked out at site/). Data the workflows commit stays here in radar/.
       RADAR_DATA: ${{ github.workspace }}/radar
     steps:
       - uses: actions/checkout@v4
@@ -160,8 +108,6 @@ jobs:
             sleep 10
           done
 
-      # Tier 2: one batched Claude call for the new items on today's news page (haiku, no tools, one turn). The scan
-      # already wrote template lines from the official text, so a failure here (usage limit, timeout) changes nothing.
       - name: News page lines (Claude)
         id: lines
         if: steps.scan.outputs.brief_pending == 'true' && !inputs.dry_run
@@ -180,11 +126,6 @@ jobs:
         if: steps.scan.outputs.brief_pending == 'true' && !inputs.dry_run
         run: node site/ops/radar/radar.mjs brief-apply --pending "$RUNNER_TEMP/brief.json" --answer "$RUNNER_TEMP/brief-answer.txt" | tee -a "$GITHUB_STEP_SUMMARY"
 
-      # Site pages that render from this repo without a rebuild (owner approved 19 Nov 2026):
-      # radar/status/recent.json = recent outage items per service for https://www.epifive.com/status/<service>
-      # (the pages read the vendors' official status feeds themselves); radar/retirements.json = the Microsoft 365
-      # retirement calendar (https://www.epifive.com/microsoft-365-retirements, its ICS and RSS), rebuilt from the
-      # official notices at most every 6 hours. Both are plain Node, no Claude; a failure here changes nothing else.
       - name: Status snapshot and retirement calendar
         if: ${{ !inputs.dry_run }}
         continue-on-error: true
@@ -204,8 +145,6 @@ jobs:
           git commit -q -m "Radar scan $(TZ=Asia/Kolkata date '+%F %H:%M') IST"
           for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep 5; done
 
-      # The news page reads radar/live from this public repo (raw.githubusercontent.com, cached up to 5 minutes), so it is
-      # live once the push lands. IndexNow: only when today's page changed, at most once an hour (the scan decides).
       - name: Ping IndexNow for the news page
         if: steps.scan.outputs.brief_ping != '' && !inputs.dry_run
         continue-on-error: true
@@ -215,7 +154,6 @@ jobs:
           sleep 60
           node site/ops/radar/radar.mjs indexnow --url "$URL"
 
-      # Tier 3: official device launches go to the device portal (devices.yml launch mode: the maker's spec page only).
       - name: Start the device portal job
         if: steps.scan.outputs.devices_count != '' && !inputs.dry_run
         continue-on-error: true
@@ -240,7 +178,6 @@ jobs:
       group: radar-write
       cancel-in-progress: false
     env:
-      # Code: ops/radar in the site checkout (repository root). Data the workflows commit: _radar/radar (this repo).
       RADAR_DATA: ${{ github.workspace }}/_radar/radar
     steps:
       - name: Check Claude token
@@ -287,9 +224,6 @@ jobs:
           '
           echo "today=$(TZ=Asia/Kolkata date +%F)" >> "$GITHUB_OUTPUT"
 
-      # Patch Tuesday (category patch-tuesday): Microsoft's official counts for the month from the MSRC CVRF release and
-      # CISA's KEV feed (radar/patch-tuesday.mjs), so the writer never has to read the 19 MB CVRF file itself. .radar-* is
-      # git-excluded above. A failure here leaves the writer to open the official pages itself.
       - name: Patch Tuesday data (MSRC CVRF + CISA KEV)
         if: steps.task.outputs.patch_tuesday != ''
         continue-on-error: true
@@ -309,7 +243,6 @@ jobs:
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # The write run is started by the scan job (github-actions bot), so the action must accept a bot actor.
           allowed_bots: "*"
           claude_args: |
             --max-turns 150
@@ -322,7 +255,6 @@ jobs:
           KIND: ${{ steps.task.outputs.kind }}
           SLUG: ${{ steps.task.outputs.slug }}
         run: |
-          # Only content/posts may change; undo anything else the writer touched.
           git status --porcelain --untracked-files=all | awk '{print $2}' | grep -v '^content/posts/' | while read -r f; do
             echo "::warning::Reverting unexpected change: $f"
             git checkout -q -- "$f" 2>/dev/null || rm -f "$f"
@@ -372,7 +304,6 @@ jobs:
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # The write run is started by the scan job (github-actions bot), so the action must accept a bot actor.
           allowed_bots: "*"
           claude_args: |
             --max-turns 60
@@ -443,7 +374,6 @@ jobs:
             msg="Radar: park $SLUG (fast-track, failed gate)"
           fi
           done=""
-          # Re-apply on a fresh main each try, so a concurrent daily article never causes a rebase conflict.
           for i in 1 2 3 4; do
             git fetch -q "$SITE_REMOTE" main && git checkout -q -f -B radar-pub FETCH_HEAD || { sleep 10; continue; }
             if [ "$RESULT" = "published" ]; then
@@ -462,7 +392,6 @@ jobs:
           done
           [ -n "$done" ] || { echo "::error::Could not push to the site repo"; exit 1; }
 
-      # Pushes made by this job don't trigger the IndexNow workflow, so ping here once the page is live.
       - name: Ping IndexNow
         if: ${{ !inputs.dry_run && steps.verdict.outputs.result == 'published' && steps.publish.outcome == 'success' }}
         env:
@@ -477,11 +406,6 @@ jobs:
           done
           node scripts/seo/indexnow.mjs "$URL"
 
-      # Email alert to the "Outage alerts" / "Security alerts" readers for a new outage or incident guide (radar/alert.mjs):
-      # 1 per incident, at most 2 a day, never an update or a resolved outage; waits until the page is live, then one
-      # email per contact whose `alerts` property has the kind. Appends to _radar/radar/results.jsonl, which "Record the
-      # outcome" commits. Dry run: prints the email and the recipient count, sends and logs nothing.
-      # Never fails the run.
       - name: Email alert
         if: steps.verdict.outputs.result == 'published' && (inputs.dry_run || steps.publish.outcome == 'success') && (steps.task.outputs.category == 'outage' || steps.task.outputs.category == 'incident' || steps.task.outputs.category == 'patch-tuesday')
         continue-on-error: true
@@ -495,15 +419,6 @@ jobs:
           [ "$DRY" = true ] && args+=(--dry-run)
           node ops/radar/radar.mjs "${args[@]}" | tee -a "$GITHUB_STEP_SUMMARY"
 
-      # Views on a trending topic come in the first hours: an outage or incident guide, or a fast-track article that
-      # scored 12+, starts the Short (social.yml, force) and the long video (longvideo.yml, publish_now = public on
-      # YouTube and the Facebook Page at once) as soon as the page is live. At most 1 pair a UTC day, counted in
-      # radar/results.jsonl (autoVideo); consumer topics get the Short only (radar/lib.mjs autoVideoPlan). GITHUB_TOKEN
-      # may start workflow_dispatch runs in this repo (actions: write, as the scan does for this job). Dry run: prints
-      # the commands only. Never fails the run.
-      # Owner plan, 16 Nov 2026: videos only for fixes/how-tos. Outage and incident guides (news) start nothing; any other
-      # article only when the site's classifier (scripts/social/video-kind.mjs) calls it a fix. social.yml and
-      # longvideo.yml check again (no allow_news here) and social.yml keeps to one topic a UTC day.
       - name: Trending Short and long video
         id: videos
         if: steps.verdict.outputs.result == 'published' && (inputs.dry_run || steps.publish.outcome == 'success')
@@ -525,7 +440,6 @@ jobs:
           }
           slug=$(get slug)
           start social.yml -f slug="$slug" -f force=true -f brief="$(get brief)"
-          # Counted for the daily cap as soon as anything started.
           [ "$DRY" = true ] || echo "day=$(get day)" >> "$GITHUB_OUTPUT"
           if [ "$(get long)" = true ]; then
             start longvideo.yml -f mode=video -f slug="$slug" -f force=true -f publish_now=true -f upload=true
@@ -552,8 +466,6 @@ jobs:
           [ -n "$AUTO_VIDEO" ] && args+=(--auto-video "$AUTO_VIDEO")
           [ -n "$SLUG" ] && args+=(--slug "$SLUG")
           [ -n "$TITLE" ] && args+=(--title "$TITLE")
-          # The writer's RADAR-SKIP line (one short line; a skip that is not "covered by" / "news only" is parked at the
-          # top of the site backlog by the next scan).
           if [ "$status" = "skipped" ] && [ -f ../.radar-skip.txt ]; then args+=(--reason "$(head -c 300 ../.radar-skip.txt | tr '\r\n' '  ')"); fi
           node ../ops/radar/radar.mjs "${args[@]}"
           git config user.name "github-actions[bot]"

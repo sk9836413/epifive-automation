@@ -1,8 +1,4 @@
-# Daily EpiFive lead job: automatic follow-ups (working days, IST) and the owner's lead digest.
-# Dispatched by the epifive-scheduler Worker on its 13 5 UTC cron (10:43 IST). The work runs in the site's Pages
-# Function https://www.epifive.com/api/lead-jobs (source: functions/api/lead-jobs.ts in sk9836413/EPIVIFE), which
-# holds the Resend key and the email templates. THIS REPO IS PUBLIC: this job only starts that function with the
-# INGEST_TOKEN secret and prints the HTTP status. The response (counts only) is not printed; no lead data passes here.
+# Lead jobs. Code, prompts and notes live in the private repo (ops/; annotated copy: ops/docs/workflow-notes/lead-jobs.yml).
 name: Lead jobs
 
 on:

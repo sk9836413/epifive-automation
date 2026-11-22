@@ -1,8 +1,4 @@
-# Email digest through a Resend broadcast. Readers pick the frequency when they subscribe.
-#   mode=weekly: the last 7 days to every subscriber (General segment). Scheduler: Sundays.
-#   mode=daily:  today's new articles/brief to the "Daily" segment, only if something was published. Scheduler: every day.
-# Started by the Cloudflare scheduler after the daily article and brief. This repo is public: the script
-# prints only "Resend ...: HTTP <status>" lines, never addresses, keys or API responses.
+# Email digest. Code, prompts and notes live in the private repo (ops/; annotated copy: ops/docs/workflow-notes/digest.yml).
 name: Email digest
 
 on:

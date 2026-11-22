@@ -1,5 +1,4 @@
-# Weekly growth review: pulls the YouTube numbers, then Claude rewrites automation/STRATEGY.md
-# (hooks, length, titles) from what worked. Started on Sundays by the Cloudflare scheduler.
+# Growth review. Code, prompts and notes live in the private repo (ops/; annotated copy: ops/docs/workflow-notes/growth.yml).
 name: Growth review
 
 on:
@@ -43,8 +42,6 @@ jobs:
           node scripts/social/yt-stats.mjs | tee "$RUNNER_TEMP/report.json"
           echo "file=automation/growth/$(date -u +%F).md" >> "$GITHUB_OUTPUT"
 
-      # Off until the Make scenario's stats route (with filters that stop stats requests from
-      # posting) is verified; then set the repository variable LINKEDIN_STATS to "on".
       - name: LinkedIn report
         if: vars.LINKEDIN_STATS == 'on'
         env:

@@ -1,7 +1,4 @@
-# Daily numbers for the EpiFive CRM dashboard (website, Search Console, YouTube x2, Facebook/Instagram/LinkedIn
-# via the Make stats route, newsletter, dev.to) plus the automation logs for its content calendar.
-# Runs on GitHub's own schedule (no Cloudflare cron: all 5 free triggers are used), so it may start late.
-# THIS REPO IS PUBLIC: crm/collect.mjs prints only source names and statuses, never values, secrets or emails.
+# CRM collect. Code, prompts and notes live in the private repo (ops/; annotated copy: ops/docs/workflow-notes/crm-collect.yml).
 name: CRM collect
 
 on:

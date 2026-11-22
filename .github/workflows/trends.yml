@@ -1,6 +1,4 @@
-# Daily trend research: turns Google Trends, Google autocomplete and Search Console queries into
-# the next article ideas (top of automation/backlog.md) and tool ideas (automation/features.md).
-# Started daily by the Cloudflare scheduler (13 5 UTC). Nothing is published by this job.
+# Trend research. Code, prompts and notes live in the private repo (ops/; annotated copy: ops/docs/workflow-notes/trends.yml).
 name: Trend research
 
 on:

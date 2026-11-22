@@ -1,29 +1,6 @@
-# Shares the newest unshared article on Facebook, Instagram and LinkedIn (draft) once a day.
-# Claude only writes the texts; picking, rendering, checking, posting and logging are scripts,
-# and the Meta credentials are only exposed to the posting step.
+# Social media. Code, prompts and notes live in the private repo (ops/; annotated copy: ops/docs/workflow-notes/social.yml).
 name: Social media
 
-# Started daily at 13:16 UTC (18:46 IST) by the Cloudflare scheduler (scheduler/). No GitHub
-# `schedule`: it fires hours late in this repo and would post at the wrong time.
-# Character Shorts: when the repository variable CHAR_SHORTS is "on", the day's second share is a "Max & Riya"
-# cartoon dialogue (SOCIAL.md "dialogue.json"; engine: characters/ in the public repo sk9836413/shyam-premi-sn).
-# Lip-sync runs on Kaggle when the KAGGLE_API_TOKEN secret exists, else still images with a speaker highlight; any
-# failure keeps the normal reel. Unset CHAR_SHORTS = every share is the normal reel, exactly as before.
-# Every share publishes at once (YouTube Short public, Facebook/Instagram Reels and the Make posts straight away), so
-# a trending one-off needs no extra switch: the launch radar starts it with slug + force + a hook brief right after
-# an outage or incident guide is published (radar.yml "Trending Short and long video"). Such a bot-started run skips
-# an article that was already shared, so it never doubles a scheduled share.
-#
-# Owner plan, 16 Nov 2026 (automation/SOCIAL.md "Video policy"): ONE fix/how-to topic a day (scripts/social/pick.mjs +
-# video-kind.mjs). News (outages, CEO/corporate news, retirements, security incidents, launches) gets no video, even on a
-# forced or radar-started run, unless allow_news is set. At most one share per UTC day; only an owner's manual force adds
-# another (the radar's bot runs never do). Two versions of the topic: the Hinglish Reel/Short goes out at once (18:46 IST
-# run = Indian evening) on Facebook, Instagram and YouTube (language "hi"); the English one at the next English slot
-# 5+ hours later (scripts/social/slots.mjs, default 00:30 UTC = 7:30 PM New York, variable EN_SLOT_UTC): YouTube and
-# Facebook schedule it natively, the Instagram copy is queued in reels/queue.jsonl of this repo for reels-later.yml
-# (only when the variable REELS_LATER is "on"; otherwise Instagram gets the Hinglish Reel only). No Facebook link post
-# any more (the Reel captions carry the guide link). HINGLISH_REELS = "off" turns the Hinglish version off; when its
-# checks fail (validate --part hi, the Whisper check) the share goes out in English only, at once, as before.
 on:
   workflow_dispatch:
     inputs:
@@ -58,16 +35,7 @@ on:
 
 env:
   SITE_REMOTE: https://x-access-token:${{ secrets.SITE_REPO_TOKEN }}@github.com/sk9836413/EPIVIFE.git
-  # Caption wording of the "Comment GUIDE" ask on Instagram (scripts/social/post.mjs): "manychat" or "dm" promises the guide
-  # in a DM (ManyChat or META_DM answers Instagram comments by DM); unset = "we'll reply with the guide" (public reply).
   COMMENT_FUNNEL_IG: ${{ vars.COMMENT_FUNNEL_IG }}
-  # Reel renderer (owner, 20 Nov 2026): unset = the native reel (scripts/social/reel.mjs: 4 rotating formats, 15-30 s);
-  # "motion" = the old animated-text renderer (reel.json is converted). REEL_BED=off drops the background music.
-  # Sound (owner, 20 Nov 2026: the plain neural voice "sounds even MORE AI", the story-narration voice chain "sounds
-  # human, use it"): unset REEL_AUDIO = the cards (cards.txt) plus a human-sounding narrator who explains each card
-  # (narration.txt, scripts/social/humanize.py; Andrew / Madhur) over a quiet bed, WITH the Meta AI label (realistic
-  # synthetic speech, meta-post.mjs videoAiLabel); REEL_AUDIO=text = silent-text reels, no voice, no label;
-  # REEL_AUDIO=voice = the old plain narrator (narration.txt only), labelled. REEL_VOICE_EN / REEL_VOICE_HI override. IG_TRIAL_REELS=manual|auto posts Instagram Reels as Trial Reels.
   REEL_STYLE: ${{ vars.REEL_STYLE }}
   REEL_AUDIO: ${{ vars.REEL_AUDIO }}
   REEL_BED: ${{ vars.REEL_BED }}
@@ -175,8 +143,6 @@ jobs:
         env:
           SLUG_INPUT: ${{ inputs.slug }}
         run: |
-          # One topic a day (owner plan, 16 Nov 2026; it replaces SHARES_PER_DAY): each scheduler trigger after the
-          # day's share does nothing. Only an owner's manual force run shares another; the radar's bot runs never do.
           today=$(date -u +%F)
           max=1
           count=$(grep -c "^- $today | " automation/social-log.md || true)
@@ -187,8 +153,6 @@ jobs:
             echo "slug=" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          # The audience is mostly in the US: scheduler triggers before SHARE_FROM_UTC_HOUR
-          # (repository variable, default 0) do nothing, so posts land in the US morning.
           if [ "${{ inputs.force }}" != "true" ] && [ "$(date -u +%-H)" -lt "${{ vars.SHARE_FROM_UTC_HOUR || 0 }}" ]; then
             echo "::notice::Before ${{ vars.SHARE_FROM_UTC_HOUR }}:00 UTC; shares wait for the US-morning slots."
             echo "slug=" >> "$GITHUB_OUTPUT"
@@ -201,7 +165,6 @@ jobs:
             echo "slug=" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          # Wednesday and Saturday: the day's first share is a promo (automation/PROMOS.md).
           if [ -z "$slug" ] && [ "$count" -eq 0 ]; then
             node scripts/social/promo.mjs > "$RUNNER_TEMP/promo.json"
             slug=$(node -p "require('$RUNNER_TEMP/promo.json').slug || ''")
@@ -210,14 +173,12 @@ jobs:
               echo "Promo share: $slug"
             fi
           fi
-          # A promo article that is not a fix/how-to waits; the day's best fix goes out instead.
           if [ -n "$slug" ] && [ -z "$SLUG_INPUT" ] && [ "$(node scripts/social/video-kind.mjs "$slug" | node -p 'JSON.parse(require("fs").readFileSync(0, "utf8")).video')" != true ]; then
             echo "::notice::Promo article $slug is not a fix/how-to; the day's fix article goes out instead."
             slug=""
             echo "brief<<EOF_BRIEF" >> "$GITHUB_OUTPUT"; echo "EOF_BRIEF" >> "$GITHUB_OUTPUT"
           fi
           [ -n "$slug" ] || slug="$(node scripts/social/pick.mjs)"
-          # Fix/how-to only: news never gets a Short or Reel, even on a forced or radar-started run, unless allow_news.
           if [ -n "$slug" ]; then
             kind=$(node scripts/social/video-kind.mjs "$slug")
             echo "Video kind: $kind"
@@ -228,9 +189,7 @@ jobs:
             fi
           fi
           echo "slug=$slug" >> "$GITHUB_OUTPUT"
-          # Two versions (Hinglish now, English 5+ hours later) unless HINGLISH_REELS is "off".
           echo "hinglish=$([ "${{ vars.HINGLISH_REELS }}" = off ] && echo false || echo true)" >> "$GITHUB_OUTPUT"
-          # The day's second share is the Max & Riya character Short when CHAR_SHORTS is "on" (or format=dialogue).
           fmt=reel
           if [ "${{ inputs.format }}" = dialogue ] || { [ "${{ vars.CHAR_SHORTS }}" = on ] && [ "$count" -eq 1 ] && [ -z "$SLUG_INPUT" ]; }; then fmt=dialogue; fi
           echo "format=$fmt" >> "$GITHUB_OUTPUT"
@@ -253,13 +212,11 @@ jobs:
         if: steps.pick.outputs.slug != ''
         uses: anthropics/claude-code-action@v1
         env:
-          # The motion reel draws every frame, so a render takes several minutes.
           BASH_DEFAULT_TIMEOUT_MS: '1200000'
           BASH_MAX_TIMEOUT_MS: '1500000'
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # The launch radar starts trending shares with GITHUB_TOKEN (github-actions bot), so a bot actor is allowed.
           allowed_bots: "*"
           claude_args: |
             --max-turns 90
@@ -279,11 +236,6 @@ jobs:
           path: ~/.cache/huggingface
           key: faster-whisper-small-v1
 
-      # The Hinglish version goes out only when its drafts pass (validate --part hi) and, for a narrated reel (the default
-      # human narrator, or REEL_AUDIO=voice), a Whisper check hears the English tech terms and every error code in its
-      # voice-over (scripts/social/hinglish-check.py); a silent-text reel (hi/reel-meta.json "audio": "text") has no
-      # voice to check. Otherwise English only.
-      # Then the English slot: the next EN_SLOT_UTC (default 00:30) at least 5 hours away (scripts/social/slots.mjs).
       - name: Hinglish version check
         id: hi
         if: steps.pick.outputs.slug != '' && steps.pick.outputs.hinglish == 'true'
@@ -320,8 +272,6 @@ jobs:
           repository: sk9836413/shyam-premi-sn
           path: .charkit
 
-      # Voices (edge-tts, pauses between turns), shot plan, lip-sync on Kaggle (sps-char-epifive, ~8-12 GPU-min, same
-      # one-session lock as the Shyam kernels), render with the visuals.json mock-ups. Never blocks the share.
       - name: Character Short (Max & Riya)
         id: char
         if: steps.pick.outputs.slug != '' && steps.pick.outputs.format == 'dialogue'
@@ -333,7 +283,6 @@ jobs:
           DIR: ${{ steps.pick.outputs.dir }}
         run: |
           sudo apt-get -o Acquire::Retries=3 install -y -qq --no-install-recommends fonts-dejavu-core > /dev/null || true
-          # The voice-over venv from setup-tts.sh ($PYTHON: edge-tts, soundfile, kokoro) also runs the characters engine.
           export PATH="$(dirname "$PYTHON"):$PATH"
           pip install -q pillow
           K=.charkit; w="$RUNNER_TEMP/char"; mkdir -p "$w"
@@ -356,7 +305,6 @@ jobs:
             --visuals "$DIR/visuals.json" --out "$DIR/dialogue.mp4" --srt "$DIR/dialogue.srt" --meta "$DIR/dialogue-meta.json"
           echo "- Max & Riya: $(tail -1 "$w/lipsync.log" | head -c 200) | $(head -c 300 "$DIR/dialogue-meta.json" | tr '\n' ' ')" >> "$GITHUB_STEP_SUMMARY"
 
-      # The dialogue goes to YouTube; Facebook Reels stop at 90 s, so Facebook/Instagram get it only when it is at most 89 s.
       - name: Pick the videos
         id: media
         if: steps.pick.outputs.slug != ''
@@ -370,11 +318,6 @@ jobs:
           fi
           { echo "youtube=$yt"; echo "captions=$cap"; echo "social=$social"; } >> "$GITHUB_OUTPUT"
 
-      # Facebook (Reel + link post to the article) and Instagram (Reel) go straight through the Meta Graph API
-      # (meta-post.mjs, never-expiring Page token) when the META_* secrets exist; Make then posts LinkedIn only.
-      # Without the secrets, or when the direct path could not run at all (token rejected, crash), Make posts all
-      # three exactly as before. A partial failure is logged, not retried through Make (no duplicate posts).
-      # Never fails the run. The token only reaches this step and is never printed (public logs).
       - name: Publish to Facebook and Instagram (Graph API)
         id: meta
         if: steps.pick.outputs.slug != ''
@@ -394,9 +337,6 @@ jobs:
             echo "::notice::META_* secrets not set; Facebook and Instagram go through Make."
             exit 0
           fi
-          # One topic, two Reels per platform: Hinglish now (Facebook + Instagram), the English Facebook Reel scheduled
-          # for EN_AT (Meta publishes it); the English Instagram Reel is queued below. English only when Hinglish failed.
-          # No Facebook link post (owner plan: Reels only; the caption carries the guide link).
           if [ "$HI" = true ]; then
             set -- --slug "$SLUG" --video "$DIR/hi/reel.mp4" --fb-reel "$DIR/hi/fb-reel.txt" --ig "$DIR/hi/instagram.txt" --lang hi
           else
@@ -425,13 +365,6 @@ jobs:
             echo "::warning::The Graph API path did not run ($status); Make posts Facebook and Instagram instead."
           fi
 
-      # The EpiFive LinkedIn Page through LinkedIn's own API (linkedin-post.mjs; owner, 20 Nov 2026: Make kept failing)
-      # when the LINKEDIN_PAGE_TOKEN secret exists (Community Management API token from scripts/social/linkedin-auth.mjs
-      # page, valid 60 days; the variable LINKEDIN_PAGE_TOKEN_EXPIRES gives a warning 7 days ahead). Same text and card as
-      # the Make payload, same LINKEDIN_FORMATS rotation (image|text; video becomes image). Make then skips LinkedIn.
-      # When the API refused the post (expired token, missing permission: nothing was published), Make posts the Page
-      # as before. A failure that may have published (5xx/network on the post call) is logged, not sent to Make too.
-      # Never fails the run. The token only reaches this step and is never printed (public logs).
       - name: Publish to the LinkedIn Page (LinkedIn API)
         id: linkedin
         if: steps.pick.outputs.slug != ''
@@ -486,7 +419,6 @@ jobs:
             echo "::notice::MAKE_WEBHOOK_URL not set; $([ "$LI_DIRECT" = true ] && echo 'Facebook/Instagram fallback skipped' || echo 'LinkedIn is draft only')."
             exit 0
           fi
-          # Make fetches the media by URL, so host them on the site. Keep the last 14 days only.
           mkdir -p public/social
           cutoff=$(date -d '14 days ago' +%s)
           for f in public/social/*; do
@@ -501,8 +433,6 @@ jobs:
           git add -A public/social
           git commit -q -m "Host social media for $SLUG"
           for i in 1 2 3; do git pull -q --rebase "$SITE_REMOTE" main && git push -q "$SITE_REMOTE" HEAD:main && break; sleep 10; done
-          # $ONLY = --linkedin-only when Facebook and Instagram already went out through the Graph API, --no-linkedin when
-          # only the LinkedIn Page did (LinkedIn API step above).
           node scripts/social/make-send.mjs "$SLUG" "$DIR" $ONLY > "$RUNNER_TEMP/make-result.json" \
             || echo "::warning::Sending to Make failed; see the log line."
           cat "$RUNNER_TEMP/make-result.json"
@@ -524,9 +454,6 @@ jobs:
             echo "::notice::YouTube credentials not set; drafts only."
             exit 0
           fi
-          # Two Shorts of one topic (quota: ~550 units each from the 10k bucket, the upload itself has its own bucket):
-          # the Hinglish one public now (language "hi", playlist "Tech fixes in Hinglish"), the English one private
-          # until EN_AT (language "en"; YouTube publishes it, comment-replies.mjs adds its first comment once public).
           en=()
           if [ "$HI" = true ]; then
             node scripts/social/youtube.mjs upload --video "$DIR/hi/reel.mp4" --meta "$DIR/hi/youtube.txt" --captions "$DIR/hi/captions.srt" \
@@ -589,8 +516,6 @@ jobs:
           retention-days: 90
           if-no-files-found: ignore
 
-      # The English Instagram Reel waits for its slot (Instagram's API cannot schedule): queued in reels/queue.jsonl of
-      # this repo; reels-later.yml posts it from this run's artifact. Only when the variable REELS_LATER is "on".
       - name: Queue the English Instagram Reel
         if: >-
           steps.pick.outputs.slug != '' && !inputs.dry_run && vars.REELS_LATER == 'on' &&

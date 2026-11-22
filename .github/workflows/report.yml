@@ -1,11 +1,4 @@
-# Owner's daily performance email ("aaj ka performance batao"): website (Cloudflare Web Analytics), today's articles,
-# YouTube (EpiFive + Shyam Premi SN), Facebook/Instagram (both, in separate sections), CRM leads and outreach, tomorrow's
-# plan and one "aaj ki seekh" line. Sent via Resend from hello@epifive.com to info@epifive.com (BCC the owner's inbox).
-# Started by the Cloudflare scheduler in its 14:16 UTC slot (19:46 IST), so it arrives around 19:50-20:00 IST.
-# No GitHub `schedule` (it fires hours late in this repo). A day already sent (report/snapshot.json "sent") is skipped
-# unless `force`; the Resend idempotency key also stops a double send.
-# THIS REPO IS PUBLIC: report/report.mjs logs section statuses and counts only. A dry run prints the email text with the
-# private lines (lead names, deals) masked; the snapshot holds public counts only (subscribers, views, followers).
+# Daily performance report. Code, prompts and notes live in the private repo (ops/; annotated copy: ops/docs/workflow-notes/report.yml).
 name: Daily performance report
 
 on:
@@ -48,7 +41,6 @@ jobs:
           sparse-checkout: |
             ops/report
 
-      # Shyam's day plan for tomorrow (public repo; only the files scripts/day-plan.mjs reads).
       - name: Check out Shyam's day plan
         continue-on-error: true
         uses: actions/checkout@v4
@@ -97,7 +89,6 @@ jobs:
           SHYAM_META_PAGE_TOKEN: ${{ secrets.SHYAM_META_PAGE_TOKEN }}
           SHYAM_IG_USER_ID: ${{ secrets.SHYAM_IG_USER_ID }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          # LinkedIn API token expiry dates (set by the site repo's scripts/social/linkedin-auth.mjs): warning 7 days ahead.
           LINKEDIN_PAGE_TOKEN_EXPIRES: ${{ vars.LINKEDIN_PAGE_TOKEN_EXPIRES }}
           LINKEDIN_MEMBER_TOKEN_EXPIRES: ${{ vars.LINKEDIN_MEMBER_TOKEN_EXPIRES }}
         run: |

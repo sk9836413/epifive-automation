@@ -1,18 +1,4 @@
-# EpiFive daily mini tools (cloud port, 21 Nov 2026, of the PC's Claude scheduled task "epifive-daily-mini-tools";
-# the PC shuts down on 30 Nov 2026). Each run ships up to 2 tools, each FREE (public MIT repo epifive/<slug>, demo on
-# Cloudflare Pages) + PRO (private epifive/<slug>-pro, release zip in private epifive/pro-releases).
-#   plan    Claude picks the next tools from the pipeline (site repo automation/minitools/MINI-TOOLS-PIPELINE.md, not
-#           in the Release log or the org) and does the name check -> plan.json, validated by minitools/plan-check.mjs
-#   build   one job per tool (max 2 in parallel): Claude builds work/<slug> + work/<slug>-pro under FACTORY-RULES.md;
-#           minitools/verify.sh (identity, authorship, licences, build) -> demo deploy -> zip -> release
-#   finish  org profile card (epifive/.github), Release log row + HANDOFF.md into the site repo, email to the owner
-#           with the ready-to-paste CRM AI task for the store page / blog / Short (the old "website session" handoff).
-# Switch: the schedule runs only when the repo variable MINI_TOOLS is "on" (the PC task must be paused first, so tools
-# are never built twice). Manual runs always work; dry_run builds and verifies but deploys/publishes/commits nothing.
-# THIS REPO IS PUBLIC and so is this log: Claude's output is hidden; scripts print slugs, URLs and statuses only.
-# Secrets: CLAUDE_CODE_OAUTH_TOKEN, SITE_REPO_TOKEN (site repo, contents read/write), EPIFIVE_ORG_TOKEN (fine-grained,
-# owner epifive, all repos: Administration + Contents read/write), CLOUDFLARE_API_TOKEN (Pages edit), IDENTITY_PATTERN
-# (regex of personal strings that must never appear), RESEND_API_KEY.
+# Mini tools. Code, prompts and notes live in the private repo (ops/; annotated copy: ops/docs/workflow-notes/mini-tools.yml).
 name: Mini tools
 
 on:

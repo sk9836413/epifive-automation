@@ -1,6 +1,4 @@
-# Cross-posts EpiFive articles to DEV and Hashnode (canonical link back to epifive.com).
-# Started daily by the Cloudflare scheduler after the daily article; posts the newest
-# articles that haven't been syndicated yet, so the back catalogue drains a few per day.
+# Syndicate. Code, prompts and notes live in the private repo (ops/; annotated copy: ops/docs/workflow-notes/syndicate.yml).
 name: Syndicate
 
 on:

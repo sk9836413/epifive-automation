@@ -1,20 +1,6 @@
-# The daily long YouTube tutorial (6-10 minutes, 16:9): one Microsoft 365 task from one EpiFive article.
-# Claude only writes the script (automation/LONGVIDEO.md in EPIVIFE); picking, checking, rendering,
-# uploading and logging are scripts, and the YouTube credentials are only exposed to the upload step.
+# Long video. Code, prompts and notes live in the private repo (ops/; annotated copy: ops/docs/workflow-notes/longvideo.yml).
 name: Long video
 
-# Started daily at 05:13 UTC by the Cloudflare scheduler (scheduler/index.js in EPIVIFE). The video is
-# uploaded private and YouTube publishes it at 14:00 UTC (10 AM ET). At 14:16 UTC the scheduler starts
-# mode "facebook": today's newest video that is not on Facebook yet goes to the Facebook Page as a normal 16:9 Page
-# video (not a Reel). publish_now (trending topics; the launch radar sets it for outage and incident guides): the
-# video is public on YouTube as soon as it is uploaded, and the same run sends it to the Facebook Page straight away
-# through the Graph API (when the META_* secrets exist; otherwise, or when that fails, the 14:16 UTC run sends it).
-# When the
-# META_* secrets exist it is uploaded straight through the Graph API (meta-post.mjs --long-video: title,
-# description with the article link and chapters, thumbnail), whatever FB_LONG_VIDEO says. Without them (or
-# when Meta rejects the token) and only when the repository variable FB_LONG_VIDEO is "on", it goes through
-# the Make scenario (action "long_video"), hosted as a GitHub release asset of this public repo (deleted
-# after 14 days). Never fails the run.
 on:
   workflow_dispatch:
     inputs:
@@ -82,8 +68,6 @@ jobs:
           SLUG_INPUT: ${{ inputs.slug }}
         run: |
           today=$(date -u +%F)
-          # "Today's video already uploaded" = a YouTube URL in today's log (a trending publish_now video counts too,
-          # so it replaces the daily one when it was made first).
           if [ "${{ inputs.force }}" != "true" ] && grep -q "^- $today | .* | yt: https://" automation/longvideo-log.md 2>/dev/null; then
             echo "::notice::Today's long video is already uploaded."
             echo "slug=" >> "$GITHUB_OUTPUT"
@@ -91,7 +75,6 @@ jobs:
           fi
           slug="$SLUG_INPUT"
           if [ -n "$slug" ] && { ! [[ "$slug" =~ ^[a-z0-9-]+$ ]] || ! ls content/posts/"$slug".md* > /dev/null 2>&1; }; then echo "::error::No article $slug"; exit 1; fi
-          # A run the launch radar started (github-actions[bot]) never makes a second video of the same article.
           if [ -n "$slug" ] && [ "$GITHUB_ACTOR" = "github-actions[bot]" ] && grep -q "^- [0-9-]* | $slug | yt: https://" automation/longvideo-log.md 2>/dev/null; then
             echo "::notice::$slug already has a long video; nothing to do."
             echo "slug=" >> "$GITHUB_OUTPUT"
@@ -113,10 +96,6 @@ jobs:
           sudo apt-get -o Acquire::Retries=3 -o Acquire::http::Timeout=20 install -y -qq --no-install-recommends ffmpeg fonts-inter fonts-dejavu-core > /dev/null
           npm ci --no-audit --no-fund
 
-      # Owner growth plan, 21 Nov 2026: the site's 10 most-visited articles (real traffic, Cloudflare Web Analytics,
-      # last 28 days, China apart) get the next long tutorials first when they are how-tos with no video yet
-      # (longvideo.mjs pick --top). Live when the CF_API_TOKEN secret (Account Analytics: Read) exists, else the list
-      # committed in this repo (stats/top-articles.json, slugs only).
       - name: Top articles by traffic
         if: steps.gate.outputs.ready == 'true' && steps.pick.outputs.dir != '' && steps.pick.outputs.slug == ''
         continue-on-error: true
@@ -134,9 +113,6 @@ jobs:
         if: steps.gate.outputs.ready == 'true' && steps.pick.outputs.dir != ''
         run: |
           slug="${{ steps.pick.outputs.slug }}"
-          # Owner plan, 16 Nov 2026: how-to videos only. A named article that is news (outage, CEO/corporate, retirement,
-          # security incident, launch; scripts/social/video-kind.mjs) gets no long video unless allow_news is set.
-          # (longvideo.mjs pick already skips news.)
           if [ -n "$slug" ] && [ "${{ inputs.allow_news }}" != "true" ]; then
             kind=$(node scripts/social/video-kind.mjs "$slug")
             if [ "$(node -p 'JSON.parse(process.argv[1]).kind' "$kind")" = news ]; then
@@ -176,7 +152,6 @@ jobs:
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # The launch radar starts trending videos with GITHUB_TOKEN (github-actions bot), so a bot actor is allowed.
           allowed_bots: "*"
           claude_args: |
             --max-turns 60
@@ -195,7 +170,6 @@ jobs:
         run: |
           node scripts/social/longvideo.mjs render "${{ steps.pick.outputs.dir }}" | tee "$RUNNER_TEMP/render.json"
           ffprobe -v error -show_entries stream=codec_name,width,height,r_frame_rate:format=duration -of compact "${{ steps.pick.outputs.dir }}/video.mp4"
-          # A copy under ~24 MB for the Facebook Page video (sent at 14:16 UTC by mode "facebook").
           if [ "${{ vars.FB_LONG_VIDEO }}" = "on" ]; then node scripts/social/longvideo.mjs webcopy "${{ steps.pick.outputs.dir }}"; fi
 
       - name: Upload to YouTube
@@ -209,7 +183,6 @@ jobs:
           PUBLISH_NOW: ${{ inputs.publish_now }}
         run: |
           result="$RUNNER_TEMP/yt-result.json"
-          # Daily videos: private, published by YouTube at 14:00 UTC. publish_now: public at once.
           when=(--publish-hour 14)
           [ "$PUBLISH_NOW" = "true" ] && when=(--public-now)
           node scripts/social/youtube.mjs upload-long --dir "$DIR" "${when[@]}" > "$result" || true
@@ -224,10 +197,6 @@ jobs:
             *) echo "::error::YouTube upload failed; see the result above." ;;
           esac
 
-      # publish_now: YouTube is public already, so the Facebook Page gets the video now too (meta-post.mjs --long-video,
-      # published at once) instead of in the 14:16 UTC "facebook" run, which skips videos already on Facebook. No
-      # META_* secrets, a rejected token or a failed upload: the 14:16 UTC run sends it (with the Make fallback).
-      # The token only reaches this step and is never printed (public logs).
       - name: Facebook Page now (publish_now)
         id: fbnow
         if: inputs.publish_now && steps.youtube.outputs.status == 'ok'
@@ -320,10 +289,6 @@ jobs:
         run: |
           today=$(date -u +%F)
           log=automation/longvideo-log.md
-          # The newest of today's uploaded videos that is not on Facebook yet (a publish_now video went out at once).
-          # Fields split on " | ": "- <date>", "<slug>", "yt: <url>" or "fb-long: <url | via make | error ...>".
-          # (The old check, grep -E with unescaped "|", matched today's YouTube line itself, so it always said
-          # "Already sent" and no long video ever reached the Page.)
           uploaded=$(awk -F' [|] ' -v d="- $today" '$1 == d && $3 ~ /^yt: https:/ { print $2 }' "$log")
           sent=$(awk -F' [|] ' -v d="- $today" '$1 == d && $3 ~ /^fb-long: (via make|https:)/ { print $2 }' "$log")
           if [ -z "$uploaded" ]; then echo "::notice::No long video uploaded today."; exit 0; fi
@@ -347,8 +312,6 @@ jobs:
         if: steps.find.outputs.slug != ''
         run: npm ci --no-audit --no-fund
 
-      # The full-quality video.mp4 (and thumbnail.jpg) from the artifact, published straight away (YouTube went
-      # public at 14:00 UTC). The token only reaches this step and is never printed (public logs).
       - name: Upload to the Facebook Page (Graph API)
         id: meta
         if: steps.find.outputs.slug != ''
@@ -365,7 +328,6 @@ jobs:
               || echo "::warning::The Facebook Page video upload failed; see the result."
             cat "$result"
             echo "result=$result" >> "$GITHUB_OUTPUT"
-            # Make takes over only when the direct path could not run at all (token rejected) and FB_LONG_VIDEO is on.
             grep -q '"authFailed":true' "$result" || make=false
           fi
           echo "make=$make" >> "$GITHUB_OUTPUT"
@@ -395,7 +357,6 @@ jobs:
           base="https://github.com/$GITHUB_REPOSITORY/releases/download/$tag"
           echo "video=$base/$SLUG.mp4" >> "$GITHUB_OUTPUT"
           echo "thumb=$base/$SLUG.jpg" >> "$GITHUB_OUTPUT"
-          # Remove long-video releases older than 14 days.
           cutoff=$(date -u -d '14 days ago' +%F)
           gh release list -R "$GITHUB_REPOSITORY" --limit 100 --json tagName --jq '.[].tagName' | grep '^longvideo-' | while read -r old; do
             [ "${old#longvideo-}" \< "$cutoff" ] && gh release delete "$old" -R "$GITHUB_REPOSITORY" --cleanup-tag -y || true

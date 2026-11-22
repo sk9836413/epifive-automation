@@ -1,13 +1,4 @@
-# Free 7-day email courses (site repo: src/lib/courses.ts, content/courses, scripts/courses/send-courses.mjs).
-# Once a day it sends each course contact the lesson for their day (day = IST days since signup + 1, up to 7), then
-# records the day in the Resend contact, so a lesson is never sent twice and the course stops after day 7. Day 1 goes
-# out at confirmation time from the site (/api/course); this job sends days 2..7.
-#
-# Schedule: GitHub cron (no scheduler Worker change). 08:05 IST, with retries at 09:05 and 11:35 IST because GitHub
-# drops some scheduled runs; the retries only send what the earlier run did not (per-contact state + Idempotency-Key).
-# Manual runs: mode dry-run (counts only), send, setup (contact properties; lists segment names), enrol-test / unenrol-test
-# (an @epifive.com test contact only). THIS REPO IS PUBLIC: the script prints counts, course ids and HTTP statuses,
-# never an address, contact id, key or API response.
+# Email courses. Code, prompts and notes live in the private repo (ops/; annotated copy: ops/docs/workflow-notes/courses.yml).
 name: Email courses
 
 on:

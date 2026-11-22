@@ -1,6 +1,4 @@
-# Daily IT & AI brief: Claude researches the last 48 hours of changes and writes content/news/<date>-*.md,
-# then the brief is gated, built, published and pinged to IndexNow.
-# Started daily by the Cloudflare scheduler (same slots as the daily article).
+# Daily news brief. Code, prompts and notes live in the private repo (ops/; annotated copy: ops/docs/workflow-notes/news.yml).
 name: Daily news brief
 
 on:

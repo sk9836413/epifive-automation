@@ -1,10 +1,4 @@
-# CRM Control Center snapshots (owner-only screen in the CRM): performance (website today vs yesterday at the same time,
-# China bots apart, sources, top pages, 7-day trend; YouTube x2; newsletter), health (last run of the important
-# workflows in all 3 repos + token checks), content queue, social, Shyam. control/snapshot.mjs posts the JSON to the CRM
-# (POST /api/ingest/control, INGEST_TOKEN). The secrets stay here; the CRM gets numbers and statuses only.
-# Started by the CRM's "Refresh" button (workflow_dispatch with GH_DISPATCH_TOKEN) and after the daily report and social
-# runs (workflow_run). No cron and no scheduler change.
-# THIS REPO IS PUBLIC: the log shows "<snapshot>: ok|failed" only, never numbers, names or secrets.
+# Control Center snapshot. Code, prompts and notes live in the private repo (ops/; annotated copy: ops/docs/workflow-notes/control.yml).
 name: Control Center snapshot
 
 on:

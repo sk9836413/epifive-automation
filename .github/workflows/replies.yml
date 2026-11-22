@@ -1,24 +1,4 @@
-# "Comment a keyword, get the link" (owner, 16 Nov 2026): answers comments such as GUIDE, LINK, PDF, CHECKLIST,
-# MIGRATE, DMARC, FIX or QUOTE (and Hinglish asks like "link bhejo") on EpiFive's YouTube videos, Facebook Page posts and
-# Reels, and Instagram posts and Reels, with the video's own guide or a www.epifive.com/get/<keyword> page (UTM tagged).
-# Script: scripts/social/comment-replies.mjs in the site repo (keywords: scripts/social/comment-keywords.mjs).
-#
-# When: no cron of its own and no change to the Cloudflare scheduler. It runs when a Launch radar, Social media, Long
-# video, Photo posts or Daily article run completes (the scheduler's slots plus the radar's own GitHub schedule, which
-# GitHub often drops), and a run within 50 minutes of the last one is skipped: about 8-12 runs a day, with gaps of a few
-# hours overnight.
-# Quota: YouTube ~2-4 units a run to read (one commentThreads.list for the whole channel) + 50 per reply; max 8
-# replies a run and 30 per platform a day, so at most ~1,500 units a day in the worst case (EpiFive's budget ~5,000).
-# No spam: one reply per comment and per person per video, never our own comments, 2 s between writes; a rate limit
-# ends the run; a policy or permission error pauses that platform until a manual run with "resume".
-# Instagram/Facebook private replies (DMs) run only when the repository variable META_DM is "on" (Meta allows private
-# replies to people without a role on the app only with Advanced Access); a permission error switches them off
-# ("dm: blocked" in the log) and the public reply is used.
-#
-# Switches (repository variables): COMMENT_REPLIES = "on" for the automatic runs (manual runs always work);
-# COMMENT_REPLY_PLATFORMS = which platforms (default youtube,facebook,instagram; drop instagram when ManyChat answers
-# Instagram comments, so nobody gets two replies); META_DM = "on" for private replies.
-# Logs (public, counts only, no names or comment texts): replies/log/<YYYY-MM>.md; state (hashed ids): replies/state.json.
+# Comment replies. Code, prompts and notes live in the private repo (ops/; annotated copy: ops/docs/workflow-notes/replies.yml).
 name: Comment replies
 
 on:
@@ -102,7 +82,6 @@ jobs:
           RESUME: ${{ inputs.resume }}
           DRY: ${{ inputs.dry_run }}
         run: |
-          # reels/log.md: the English Instagram Reels posted hours after the share (reels-later.yml).
           set -- --state ../replies/state.json --log-dir ../replies/log --photos-log ../photos/log.md --extra-log ../reels/log.md --platforms "$PLATFORMS" --max "$MAX"
           [ -n "$RESUME" ] && set -- "$@" --resume "$RESUME"
           [ "$DRY" = "true" ] && set -- "$@" --dry-run

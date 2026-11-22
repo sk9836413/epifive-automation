@@ -1,21 +1,4 @@
-# Publishes the day's new articles (automation/WRITER.md). Claude researches and writes; the
-# quality gate, build, commit, push and IndexNow ping are workflow steps.
-#
-# One run does ONE job, picked in this order (owner growth plan, 21 Nov 2026, item 3: "update old guides and internal links"):
-#   1. article   - a new article, until ARTICLES_PER_DAY (repo variable, default 1) are published today (IST);
-#   2. errors    - once a day (owner, 21 Nov 2026: error codes are the long tail a small site can win): up to ERRORS_PER_DAY
-#                  (repo variable, default 5; 0 turns the lane off) new error code pages written from the top of
-#                  content/errors/QUEUE.md (scripts/error-queue.mjs). Every page must pass
-#                  `check-errors <id> --online --strict` (official source fetched, verbatim quote on the page); a page
-#                  that fails is deleted and its line marked skipped, never published. Logged as "<day> | errors | ...";
-#   3. refresh   - an existing post updated in place from "## Refresh" in automation/backlog.md (WRITER.md section 6), until
-#                  REFRESH_PER_DAY (repo variable, default 2) refreshes were tried today. Refreshes never count as articles;
-#   4. interlink - once a day: scripts/seo/interlink.mjs adds "See also" links (orphans first; at most 40 posts a day),
-#                  and every Monday (IST) the full-site pass plus the Search Console striking-distance block at the top of
-#                  "## Refresh" (scripts/seo/refresh-queue.mjs gsc, GSC_* secrets).
-# Each job writes a line to automation/log.md (published / errors / refreshed / refresh-failed / interlink), which is how later runs
-# know what is left, and a finished run starts the next one until the day's work is done (the scheduler only starts this
-# workflow at 09:13 and 10:13 IST). The `mode` input forces one job for a manual run.
+# Daily article. Code, prompts and notes live in the private repo (ops/; annotated copy: ops/docs/workflow-notes/article.yml).
 name: Daily article
 
 on:
@@ -84,13 +67,10 @@ jobs:
         run: |
           today=$(TZ=Asia/Kolkata date +%F)
           echo "today=$today" >> "$GITHUB_OUTPUT"
-          # Articles per IST day: repo variable ARTICLES_PER_DAY (default 1; owner 16 Nov 2026: 5-10 a day). Each scheduler
-          # dispatch writes at most one; once today's count is reached, the run refreshes or interlinks instead (header).
           n=$(grep -c "^$today | .* | published |" automation/log.md || true)
           r=$(grep -cE "^$today \| [a-z0-9-]+ \| refresh(ed|-failed) \|" automation/log.md || true)
           il=$(grep -c "^$today | interlink |" automation/log.md || true)
           open=$(node scripts/seo/refresh-queue.mjs next | grep -c . || true)
-          # Error code lane: one run a day writes up to ERRORS_PER_DAY codes from content/errors/QUEUE.md.
           er=$(grep -c "^$today | errors |" automation/log.md || true)
           eq=0
           [ -f scripts/error-queue.mjs ] && eq=$(node scripts/error-queue.mjs next 1 | grep -c . || true)
@@ -153,11 +133,6 @@ jobs:
         if: steps.post.outputs.slug != ''
         run: node scripts/check-posts.mjs "${{ steps.post.outputs.slug }}"
 
-      # Google drip (EPIVIFE src/lib/google-drip.ts, owner 16 Nov 2026): new posts are held back from Google (googlebot
-      # noindex, Google sitemap) while Bing gets everything at once. Each day the best held posts (GOOGLE_RELEASES_PER_DAY,
-      # 3) are released here, plus this run's article at once if the backlog marked it trending/outage. The frontmatter
-      # changes ride in the article commit below, so releases cost no extra Pages build. Optional secret
-      # BING_WEBMASTER_API_KEY adds Bing clicks/impressions to the pick.
       - name: Google drip (release held posts to Google)
         id: drip
         if: steps.post.outputs.slug != '' && !inputs.dry_run
@@ -194,7 +169,6 @@ jobs:
           for i in 1 2 3; do git pull -q --rebase "$SITE_REMOTE" main && git push -q "$SITE_REMOTE" HEAD:main && break; sleep 10; done
           echo "chain=true" >> "$GITHUB_OUTPUT"
 
-      # Pushes made with GITHUB_TOKEN don't trigger indexnow.yml, so ping here.
       - name: Ping IndexNow
         if: steps.post.outputs.slug != '' && !inputs.dry_run
         env:
@@ -209,8 +183,6 @@ jobs:
             -d "{\"host\":\"www.epifive.com\",\"key\":\"5bbd01230376e7468f09aef0ef85403c\",\"keyLocation\":\"https://www.epifive.com/5bbd01230376e7468f09aef0ef85403c.txt\",\"urlList\":[\"$URL\"]}" \
             -w '\nHTTP %{http_code}\n'
 
-      # Released posts reach Google through the sitemap lastmod (their release date); re-submitting /sitemap.xml asks
-      # Google to read it again. Runs after the IndexNow step, which waits until the deploy with this commit is live.
       - name: Re-submit the Google sitemap
         if: steps.drip.outputs.released == 'true' && !inputs.dry_run
         continue-on-error: true
@@ -250,14 +222,12 @@ jobs:
             automation/log.md
           retention-days: 30
 
-      # ---------- errors: new error code pages from content/errors/QUEUE.md (header item 2) ----------
       - name: Pick the error codes
         id: epick
         if: steps.gate.outputs.ready == 'true' && steps.date.outputs.mode == 'errors'
         env:
           EMAX: ${{ vars.ERRORS_PER_DAY || '5' }}
         run: |
-          # Twice the day's quota as candidates: codes that cannot be verified are skipped, the next ones are tried.
           node scripts/error-queue.mjs next $(( EMAX * 2 )) > "$RUNNER_TEMP/errors-pick.tsv"
           n=$(grep -c . "$RUNNER_TEMP/errors-pick.tsv" || true)
           echo "count=$n" >> "$GITHUB_OUTPUT"
@@ -300,7 +270,6 @@ jobs:
           touch .errors-skipped.tsv
           tr -d '\r' < .errors-skipped.tsv > "$skipped"
           rm -f .errors-skipped.tsv
-          # Only new files under content/errors/<product>/ may change: put everything else back.
           git diff --name-only | while read -r f; do echo "::warning::Reverting an edit outside the lane: $f"; git checkout -- "$f"; done
           { git ls-files --others --exclude-standard | grep -Ev '^content/errors/[a-z0-9-]+/[a-z0-9-]+\.md$' || true; } | while read -r f; do
             echo "::warning::Removing a file outside the lane: $f"; rm -f -- "$f"
@@ -313,12 +282,10 @@ jobs:
             echo "::warning::Not published: $id ($2)"
             rm -f -- "$1"
           }
-          # Per page: the schema plus the official source fetched again and the verbatim quote found on it.
           for f in $(new); do
             id=$(printf '%s' "$f" | sed -E 's#^content/errors/##; s#\.md$##')
             node scripts/check-errors.mjs "$id" --online --strict || drop "$f" "failed check-errors --online --strict"
           done
-          # Whole library (cross-checks such as `related` and duplicate codes): drop new pages the failures name.
           for pass in 1 2 3; do
             out=$(node scripts/check-errors.mjs 2>&1) && break
             echo "$out"
@@ -330,7 +297,6 @@ jobs:
           added=$(new | tr '\n' ' ')
           echo "added=$added" >> "$GITHUB_OUTPUT"
           echo "count=$(new | grep -c . || true)" >> "$GITHUB_OUTPUT"
-          # Tick the queue: added lines, and the codes skipped by the writer or the gate. Untried candidates stay open.
           for f in $(new); do
             code=$(node -e "console.log(require('gray-matter').read(process.argv[1]).data.code)" "$f")
             product=$(printf '%s' "$f" | cut -d/ -f3)
@@ -363,7 +329,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           ids=$(for f in $ADDED; do printf '%s ' "$(printf '%s' "$f" | sed -E 's#^content/errors/##; s#\.md$##')"; done)
           [ -z "$(tail -c1 automation/log.md)" ] || echo >> automation/log.md
-          # One line a day, even when nothing passed: it is how later runs know the lane ran today.
           echo "$TODAY | errors | added | ${COUNT:-0} codes: ${ids:-none}; skipped ${SKIPPED:-0}" >> automation/log.md
           git add content/errors automation/log.md
           git commit -q -m "Error library: ${COUNT:-0} new codes (daily lane)" -m "${ids:-No page passed today; queue lines marked.}" -m "Each page passed check-errors --online --strict (official source fetched, verbatim quote found). Skipped: ${SKIPPED:-0}." -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
@@ -377,8 +342,6 @@ jobs:
             for id in $ids; do echo "- https://www.epifive.com/errors/$id"; done
           } >> "$GITHUB_STEP_SUMMARY"
 
-      # A lane run that fails (gate, build, push) is logged so it is not retried today; its pages are dropped and the
-      # queue is left as it was, so tomorrow's run picks the same candidates again.
       - name: Log a failed error run
         id: edefer
         if: failure() && steps.epick.outputs.count != '' && steps.epick.outputs.count != '0' && steps.epublish.outputs.chain != 'true' && !inputs.dry_run
@@ -398,7 +361,6 @@ jobs:
           for i in 1 2 3; do if git pull -q --rebase "$SITE_REMOTE" main && git push -q "$SITE_REMOTE" HEAD:main; then ok=1; break; fi; sleep 10; done
           [ -n "$ok" ] && echo "chain=true" >> "$GITHUB_OUTPUT"
 
-      # Pushes made with GITHUB_TOKEN don't trigger indexnow.yml: ping the new error pages (and the hub) once live.
       - name: Ping IndexNow (error pages)
         if: steps.epublish.outputs.ids != '' && !inputs.dry_run
         continue-on-error: true
@@ -414,7 +376,6 @@ jobs:
           for id in $IDS; do urls+=("https://www.epifive.com/errors/$id"); done
           node scripts/seo/indexnow.mjs "${urls[@]}"
 
-      # ---------- refresh: update one existing post in place (automation/WRITER.md section 6) ----------
       - name: Pick the refresh
         id: rpick
         if: steps.gate.outputs.ready == 'true' && steps.date.outputs.mode == 'refresh'
@@ -499,14 +460,11 @@ jobs:
             echo
             echo "https://www.epifive.com/blog/$SLUG ($WORDS words including code)"
           } >> "$GITHUB_STEP_SUMMARY"
-          # Pushes made with GITHUB_TOKEN don't trigger indexnow.yml: tell Bing the page changed.
           curl -sS -X POST https://api.indexnow.org/indexnow \
             -H 'Content-Type: application/json; charset=utf-8' \
             -d "{\"host\":\"www.epifive.com\",\"key\":\"5bbd01230376e7468f09aef0ef85403c\",\"keyLocation\":\"https://www.epifive.com/5bbd01230376e7468f09aef0ef85403c.txt\",\"urlList\":[\"https://www.epifive.com/blog/$SLUG\"]}" \
             -w '\nIndexNow HTTP %{http_code}\n' || true
 
-      # A refresh that fails (no change, gate, build) goes to the end of the queue with a note and still counts towards
-      # REFRESH_PER_DAY, so one bad line can never block the queue or loop.
       - name: Defer a failed refresh
         id: rdefer
         if: failure() && steps.rpick.outputs.slug != '' && steps.rpublish.outputs.chain != 'true' && !inputs.dry_run
@@ -527,7 +485,6 @@ jobs:
           for i in 1 2 3; do if git pull -q --rebase "$SITE_REMOTE" main && git push -q "$SITE_REMOTE" HEAD:main; then ok=1; break; fi; sleep 10; done
           [ -n "$ok" ] && echo "chain=true" >> "$GITHUB_OUTPUT"
 
-      # ---------- interlink: "See also" links (daily, capped) and the weekly full pass ----------
       - name: Search Console striking-distance block (Mondays)
         id: gscblock
         if: steps.gate.outputs.ready == 'true' && steps.date.outputs.mode == 'interlink' && steps.date.outputs.full == 'true'
@@ -583,7 +540,6 @@ jobs:
           [ "$FULL" = "true" ] && note="$note, full pass"
           [ -n "$GSC" ] && note="$note, Search Console refresh block: $GSC posts"
           [ -z "$(tail -c1 automation/log.md)" ] || echo >> automation/log.md
-          # One line a day, even with nothing to add: it is how later runs know the pass is done.
           echo "$TODAY | interlink | links | $note" >> automation/log.md
           git add content/posts automation/backlog.md automation/log.md
           git commit -q -m "Internal links: $note" -m "scripts/seo/interlink.mjs (See also lists, orphans first) run by the Daily article workflow." -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
@@ -601,9 +557,6 @@ jobs:
           retention-days: 30
           if-no-files-found: ignore
 
-      # Owner, 16 Nov 2026: 5-10 articles a day, but the scheduler starts this workflow only at 09:13 and 10:13 IST. So a
-      # finished job starts the next run until the day's articles, error codes, refreshes and the interlink pass are done
-      # (workflow_dispatch with GITHUB_TOKEN is allowed). Every job logs a line first, so this always ends.
       - name: Next job of the day
         if: always() && !inputs.dry_run && (steps.publish.outputs.chain == 'true' || steps.epublish.outputs.chain == 'true' || steps.edefer.outputs.chain == 'true' || steps.rpublish.outputs.chain == 'true' || steps.rdefer.outputs.chain == 'true' || steps.lpublish.outputs.chain == 'true')
         env:

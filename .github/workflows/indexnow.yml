@@ -1,5 +1,4 @@
-# Tells Bing, Yandex and other IndexNow engines about new or changed articles after each deploy.
-# The daily writer (article.yml) pings its own new post, because bot pushes don't fire `push`.
+# IndexNow ping. Code, prompts and notes live in the private repo (ops/; annotated copy: ops/docs/workflow-notes/indexnow.yml).
 name: IndexNow ping
 
 on:
