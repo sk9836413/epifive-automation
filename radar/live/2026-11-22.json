@@ -2,7 +2,7 @@
  "date": "2026-11-22",
  "title": "Tech news today, 22 November 2026",
  "published": "2026-11-21T21:50:10.554Z",
- "updated": "2026-11-21T21:50:10.554Z",
+ "updated": "2026-11-22T01:42:05.747Z",
  "items": [
   {
    "id": "11953c1d",
@@ -31,7 +31,35 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "5e3848c7",
+   "key": "https://bleepingcomputer.com/news/security/rackspace-spot-breach-let-hackers-access-customer-kubernetes-secrets",
+   "time": "2026-11-21T22:59:58.000Z",
+   "seen": "2026-11-22T01:42:05.747Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Rackspace Spot breach let hackers access customer Kubernetes secrets",
+   "summary": "Rackspace warned customers that hackers breached its Rackspace Spot cloud platform using compromised credentials, allowing them to deploy unauthorized workloads and access Kubernetes secrets in customer clusters. [...]",
+   "lines": [
+    "Reported by BleepingComputer: Rackspace warned customers that hackers breached its Rackspace Spot cloud platform using compromised credentials.",
+    "The attackers could deploy unauthorized workloads and access Kubernetes secrets in customer clusters.",
+    "IT teams that use Rackspace Spot may need to review credentials and Kubernetes secrets tied to their clusters."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/rackspace-spot-breach-let-hackers-access-customer-kubernetes-secrets/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null
   }
  ],
- "description": "1 technology update from official sources, updated hourly: Microsoft Entra Connect Health flaw exploited to steal tenant data."
+ "description": "2 technology updates from official sources, updated hourly: Rackspace Spot breach let hackers access customer Kubernetes secrets; Microsoft Entra Connect Health flaw exploited to steal tenant data."
 }
