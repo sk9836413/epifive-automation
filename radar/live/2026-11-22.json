@@ -2,7 +2,7 @@
  "date": "2026-11-22",
  "title": "Tech news today, 22 November 2026",
  "published": "2026-11-21T21:50:10.554Z",
- "updated": "2026-11-22T08:54:04.512Z",
+ "updated": "2026-11-22T17:02:47.942Z",
  "items": [
   {
    "id": "11953c1d",
@@ -87,7 +87,35 @@
    "ai": null,
    "score": 5,
    "story": null
+  },
+  {
+   "id": "0e144cfc",
+   "key": "https://bleepingcomputer.com/news/security/cleverbridge-warns-hackers-stole-credit-card-numbers-cvvs-in-data-breach",
+   "time": "2026-11-22T15:43:04.000Z",
+   "seen": "2026-11-22T17:02:47.942Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Cleverbridge warns hackers stole credit card numbers, CVVs in data breach",
+   "summary": "E-commerce platform Cleverbridge is warning that hackers breached its systems and stole customers' payment card information, including credit card numbers and CVV security codes. [...]",
+   "lines": [
+    "Reported by BleepingComputer: E-commerce platform Cleverbridge is warning that hackers breached its systems and stole customers' payment card information.",
+    "The stolen data includes credit card numbers and CVV security codes.",
+    "IT teams and business users who buy through Cleverbridge-powered storefronts should review card activity and monitor for suspicious charges."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/cleverbridge-warns-hackers-stole-credit-card-numbers-cvvs-in-data-breach/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null
   }
  ],
- "description": "3 technology updates from official sources, updated hourly: Rackspace Spot breach let hackers access customer Kubernetes secrets; Researchers Demonstrate Ghostscript Sandbox-Escape RCE via Crafted File Uploads in Popular Apps; Microsoft Entra Connect Health flaw exploited to steal tenant data."
+ "description": "4 technology updates from official sources, updated hourly: Rackspace Spot breach let hackers access customer Kubernetes secrets; Cleverbridge warns hackers stole credit card numbers, CVVs in data breach; Researchers Demonstrate Ghostscript Sandbox-Escape RCE via Crafted File Uploads in Popular Apps"
 }
