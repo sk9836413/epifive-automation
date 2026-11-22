@@ -15,10 +15,11 @@
 # the write job starts the Short (social.yml, force) and the long video (longvideo.yml, publish_now: public on
 # YouTube and the Facebook Page at once) for it. At most 1 such pair a UTC day; consumer topics get the Short only
 # (radar/lib.mjs autoVideoPlan). A Social media run started that way (github-actions[bot]) starts no extra scan.
-# Email alerts: when a new outage guide (or security incident guide) is published and live, the write job sends one
-# short Resend broadcast to the readers who signed up in the article box (segments "Alerts: outage" / "Alerts: security"):
-# 1 per incident, at most 2 a day (1 security), never for an update or a resolved outage (radar/alert.mjs). Secret
-# RESEND_API_KEY; optional ALERT_POSTAL_ADDRESS (the CAN-SPAM postal footer). Logged in radar/results.jsonl (type alert).
+# Email alerts: when a new outage guide (or security incident guide) is published and live, the write job emails each
+# reader who signed up for that kind in the article box (one Resend segment "Alerts"; the kinds are the contact property
+# `alerts`), one email per contact with a one-click unsubscribe link, never a broadcast: 1 per incident, at most 2 a day
+# (1 security), never for an update or a resolved outage (radar/alert.mjs). Secret RESEND_API_KEY; optional
+# ALERT_POSTAL_ADDRESS (the CAN-SPAM postal footer). Logged in radar/results.jsonl (type alert). Checks: alerts.yml.
 # Tiers (radar/brief.mjs, owner asked 14 Nov 2026 for every IT/tech/AI/device update within about an hour):
 #   Tier 1 = the fast-track article above (caps unchanged); flagship devices (new iPhone, Galaxy S/Z, Pixel), new
 #            flagship AI models from OpenAI/Anthropic/Google/Meta, big AI price drops and AI model retirements due within
@@ -472,9 +473,10 @@ jobs:
           done
           node scripts/seo/indexnow.mjs "$URL"
 
-      # Email alert to the "Outage alerts" / "Security alerts" list for a new outage or incident guide (radar/alert.mjs):
-      # 1 per incident, at most 2 a day, never an update or a resolved outage; waits until the page is live. Appends to
-      # _radar/radar/results.jsonl, which "Record the outcome" commits. Dry run: prints the email, sends and logs nothing.
+      # Email alert to the "Outage alerts" / "Security alerts" readers for a new outage or incident guide (radar/alert.mjs):
+      # 1 per incident, at most 2 a day, never an update or a resolved outage; waits until the page is live, then one
+      # email per contact whose `alerts` property has the kind. Appends to _radar/radar/results.jsonl, which "Record the
+      # outcome" commits. Dry run: prints the email and the recipient count, sends and logs nothing.
       # Never fails the run.
       - name: Email alert
         if: steps.verdict.outputs.result == 'published' && (inputs.dry_run || steps.publish.outcome == 'success') && (steps.task.outputs.category == 'outage' || steps.task.outputs.category == 'incident' || steps.task.outputs.category == 'patch-tuesday')

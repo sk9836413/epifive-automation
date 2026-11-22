@@ -1,11 +1,15 @@
 // Email alerts for the "Outage alerts" and "Security alerts" lists on www.epifive.com.
 //
 // Readers sign up in the box on outage and incident guides (site: src/components/AlertSignup.tsx, POST /api/subscribe
-// magnet "alerts:outage-alerts" | "alerts:security-alerts"), which puts them in the Resend segment "Alerts: outage" or
-// "Alerts: security". When the radar's write job publishes a NEW outage guide (or security incident guide) and the page
-// is live, `node radar/radar.mjs alert` sends ONE short Resend broadcast to that segment, built from the article:
-// subject, what is down, the "Status as of ... IST" sentence, the first thing to do, the link, the unsubscribe link
-// (Resend fills {{{RESEND_UNSUBSCRIBE_URL}}}) and the postal footer.
+// magnet "alerts:outage-alerts" | "alerts:security-alerts"). The Resend plan allows 3 segments (General, Daily,
+// Alerts), so every alert reader is in the one segment "Alerts" (formerly "Alerts: outage", same id) and the kinds
+// they want are the contact property `alerts` ("outage", "security" or "outage,security"; site src/lib/alerts.ts).
+// When the radar's write job publishes a NEW outage guide (or security incident guide) and the page is live,
+// `node radar/radar.mjs alert` emails each member of that segment whose property includes the alert's kind, one
+// email per contact (never a broadcast), built from the article: subject, what is down, the "Status as of ... IST"
+// sentence, the first thing to do, the link, a one-click unsubscribe link (site /api/alerts, also the
+// List-Unsubscribe header) and the postal footer. Each send carries a Resend Idempotency-Key per alert and contact,
+// and the contact property `alert_last` records "<kind>:<slug>", so a retry never emails anyone twice.
 //
 // Rules (alertGate): new fast-track articles only (never an update), outage or incident only, never a resolved outage,
 // at most 1 alert per incident (same radar key, slug, or outage platform family within 3 days), at most 2 alerts in
@@ -20,8 +24,13 @@ export const ALERT = {
   familyDays: 3,
   /** An article older than this (by its frontmatter date) is not news any more. */
   maxArticleAgeDays: 2,
-  // Must match ALERT_LISTS in the site's src/lib/alerts.ts.
-  segments: { outage: 'Alerts: outage', security: 'Alerts: security' },
+  // Must match the site's src/lib/alerts.ts (ALERTS_SEGMENT, ALERTS_SEGMENT_OLD_NAMES, PROP_ALERTS, PROP_ALERT_LAST).
+  segment: 'Alerts',
+  segmentOldNames: ['Alerts: outage'],
+  property: 'alerts',
+  lastProperty: 'alert_last',
+  /** The site page behind every alert's unsubscribe link and List-Unsubscribe header (functions/api/alerts.ts). */
+  unsubscribePath: '/api/alerts',
   from: 'EpiFive <newsletter@epifive.com>',
   replyTo: 'epifive2@gmail.com',
   site: 'https://www.epifive.com',
@@ -244,7 +253,7 @@ export function buildAlertEmail({ kind, slug, article, address = ALERT.defaultAd
     '',
     '--',
     why,
-    'Unsubscribe: {{{RESEND_UNSUBSCRIBE_URL}}}',
+    'Stop these alerts: {{unsubscribe_url}}',
     `EpiFive, ${address}`,
   ].join('\n');
   const html = `<!doctype html><html><body style="margin:0;background:#f5f6f4">
@@ -255,8 +264,71 @@ export function buildAlertEmail({ kind, slug, article, address = ALERT.defaultAd
   ${lines.map(([k, v]) => `<tr><td style="padding:0 0 10px;font:15px/1.55 Arial,sans-serif;color:#3a424c"><strong style="color:#14181d">${esc(k)}:</strong> ${esc(v)}</td></tr>`).join('\n  ')}
   <tr><td style="padding:6px 0 18px"><a href="${esc(url)}" style="display:inline-block;font:600 15px Arial,sans-serif;color:#fff;background:#0a7560;padding:10px 16px;border-radius:6px;text-decoration:none">Read the full guide</a></td></tr>
   <tr><td style="padding-top:16px;border-top:1px solid #d9dee1;font:12px/1.5 Arial,sans-serif;color:#65707b">
-    ${esc(why)} <a href="{{{RESEND_UNSUBSCRIBE_URL}}}" style="color:#65707b">Unsubscribe</a> in one click.<br>EpiFive, ${esc(address)}
+    ${esc(why)} <a href="{{unsubscribe_url}}" style="color:#65707b">Stop these alerts</a> in one click.<br>EpiFive, ${esc(address)}
   </td></tr>
 </table></td></tr></table></body></html>`;
-  return { subject, text, html, previewText: cap(lines[1]?.[1] ?? what, 140), url, segment: settings.segments[kind] };
+  return { subject, text, html, previewText: cap(lines[1]?.[1] ?? what, 140), url, kind };
+}
+
+// ---------- recipients (one email per contact) ----------
+
+/** A contact property value as Resend returns it ({ value, type } per key, or the bare value). */
+export function propValue(props, key) {
+  if (!props || typeof props !== 'object') return undefined;
+  const raw = props[key];
+  const v = raw && typeof raw === 'object' && 'value' in raw ? raw.value : raw;
+  return typeof v === 'string' || typeof v === 'number' ? v : undefined;
+}
+
+/** The alert kinds in a stored `alerts` value ("outage,security" -> ['outage', 'security']). */
+export function alertKindsOf(value) {
+  const have = new Set(String(value ?? '').split(',').map((x) => x.trim().toLowerCase()));
+  return ['outage', 'security'].filter((k) => have.has(k));
+}
+
+/** The `alert_last` value for an alert: "<kind>:<slug>". */
+export const alertTag = (kind, slug) => `${kind}:${slug}`;
+
+/**
+ * Whether one contact gets this alert. contact = { unsubscribed, properties } (a Resend contact).
+ * Returns { send, reason }: never when globally unsubscribed, when the `alerts` property lacks the kind, or when
+ * `alert_last` says this alert already went to them.
+ */
+export function recipientDecision(contact, kind, slug, settings = ALERT) {
+  if (!contact || contact.unsubscribed === true) return { send: false, reason: 'unsubscribed' };
+  const kinds = alertKindsOf(propValue(contact.properties, settings.property));
+  if (!kinds.length) return { send: false, reason: 'no alert kinds' };
+  if (!kinds.includes(kind)) return { send: false, reason: `wants ${kinds.join(',')} only` };
+  if (propValue(contact.properties, settings.lastProperty) === alertTag(kind, slug)) return { send: false, reason: 'already sent' };
+  return { send: true, reason: 'subscribed' };
+}
+
+/** One-click unsubscribe URL for a contact (Resend contact id) and kind. */
+export const alertUnsubscribeUrl = (contactId, kind, settings = ALERT) =>
+  `${settings.site}${settings.unsubscribePath}?unsubscribe=${encodeURIComponent(contactId)}&kind=${encodeURIComponent(kind)}`;
+
+/** The Resend POST /emails body and headers for one contact. */
+export function alertEmailFor(mail, contact, slug, settings = ALERT) {
+  const unsub = alertUnsubscribeUrl(contact.id, mail.kind, settings);
+  return {
+    body: {
+      from: settings.from,
+      to: [contact.email],
+      reply_to: settings.replyTo,
+      subject: mail.subject,
+      text: mail.text.replaceAll('{{unsubscribe_url}}', unsub),
+      html: mail.html.replaceAll('{{unsubscribe_url}}', esc(unsub)),
+      headers: { 'List-Unsubscribe': `<${unsub}>`, 'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click' },
+    },
+    idempotencyKey: `alert-${mail.kind}-${slug}-${contact.id}`.slice(0, 256),
+  };
+}
+
+/** The alerts segment among Resend's segments: "Alerts", else an old name. Null when there is none. */
+export function findAlertsSegment(segments, settings = ALERT) {
+  for (const name of [settings.segment, ...settings.segmentOldNames]) {
+    const hit = (segments ?? []).find((s) => s.name === name);
+    if (hit) return hit;
+  }
+  return null;
 }

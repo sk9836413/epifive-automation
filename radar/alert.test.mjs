@@ -2,8 +2,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  ALERT, alertGate, alertKindForCategory, alertSubject, buildAlertEmail, completeAddress, ensureAlertField, firstAction,
-  looksResolved, readArticle, sentences,
+  ALERT, alertEmailFor, alertGate, alertKindForCategory, alertKindsOf, alertSubject, alertTag, alertUnsubscribeUrl, buildAlertEmail,
+  completeAddress, ensureAlertField, findAlertsSegment, firstAction, looksResolved, propValue, readArticle, recipientDecision, sentences,
 } from './alert.mjs';
 import { todayCounts } from './lib.mjs';
 
@@ -149,23 +149,24 @@ test('alert entries in results.jsonl never count as fast-track publishes', () =>
 test('the email has subject, 3 short lines, the link, unsubscribe and the postal footer', () => {
   const mail = buildAlertEmail({ kind: 'outage', slug: 'microsoft-365-outage-november-2026-what-to-do', article, address: 'Adarsh Colony, Deoghar, Jharkhand 814112, India' });
   assert.equal(mail.subject, 'Outage alert: Microsoft 365 Outage (Nov 12-13, 2026)');
-  assert.equal(mail.segment, 'Alerts: outage');
+  assert.equal(mail.kind, 'outage');
   assert.match(mail.text, /^What's down: Outlook, Teams calendars, Copilot and other Microsoft 365 services failed in every region from 12 November 2026\.$/m);
   assert.match(mail.text, /^Status: As of 11:47 IST, 13 November 2026/m);
   assert.match(mail.text, /^Do this first: Try another way in, but don't keep switching\.$/m);
   assert.match(mail.text, /https:\/\/www\.epifive\.com\/blog\/microsoft-365-outage-november-2026-what-to-do\?utm_source=alert/);
   for (const part of [mail.text, mail.html]) {
-    assert.ok(part.includes('{{{RESEND_UNSUBSCRIBE_URL}}}'), 'unsubscribe placeholder');
+    assert.ok(part.includes('{{unsubscribe_url}}'), 'per-contact unsubscribe placeholder');
+    assert.ok(!part.includes('RESEND_UNSUBSCRIBE_URL'), 'not a broadcast placeholder');
     assert.ok(part.includes('Adarsh Colony, Deoghar, Jharkhand 814112, India'), 'postal footer');
   }
   assert.doesNotMatch(mail.html, /<script/i);
   assert.equal(ALERT.from, 'EpiFive <newsletter@epifive.com>');
 });
 
-test('security alerts use the security segment and subject', () => {
+test('security alerts use the security kind and subject', () => {
   const mail = buildAlertEmail({ kind: 'security', slug: 'sbi-data-leak', article: { ...article, title: 'SBI Data Leak on the Dark Web: What SBI Said and What to Do' } });
   assert.equal(mail.subject, 'Security alert: SBI Data Leak on the Dark Web');
-  assert.equal(mail.segment, 'Alerts: security');
+  assert.equal(mail.kind, 'security');
   assert.match(mail.text, /^What happened: /m);
   assert.equal(alertSubject('outage', 'x'.repeat(200)).length <= 90, true);
 });
@@ -185,4 +186,57 @@ test('ensureAlertField adds alert: outage|security after topic, once', () => {
   assert.match(ensureAlertField(md, 'incident'), /^alert: security$/m);
   assert.equal(ensureAlertField(md, 'launch'), md);
   assert.equal(ensureAlertField(md.replace(/\n/g, '\r\n'), 'outage').includes('\r\nalert: outage\r\n'), true);
+});
+
+// ---------- recipients: one Alerts segment, kinds in the contact property `alerts` ----------
+
+test('settings match the site (src/lib/alerts.ts): one "Alerts" segment, properties alerts / alert_last', () => {
+  assert.equal(ALERT.segment, 'Alerts');
+  assert.deepEqual(ALERT.segmentOldNames, ['Alerts: outage']);
+  assert.equal(ALERT.property, 'alerts');
+  assert.equal(ALERT.lastProperty, 'alert_last');
+  assert.equal(ALERT.unsubscribePath, '/api/alerts');
+  assert.equal('segments' in ALERT, false, 'no per-kind segments');
+});
+
+test('findAlertsSegment prefers "Alerts", accepts the old name, else null', () => {
+  assert.equal(findAlertsSegment([{ id: 'g', name: 'General' }, { id: 'o', name: 'Alerts: outage' }]).id, 'o');
+  assert.equal(findAlertsSegment([{ id: 'o', name: 'Alerts: outage' }, { id: 'a', name: 'Alerts' }]).id, 'a');
+  assert.equal(findAlertsSegment([{ id: 'g', name: 'General' }, { id: 'd', name: 'Daily' }]), null);
+  assert.equal(findAlertsSegment(undefined), null);
+});
+
+test('recipientDecision: the kind must be in the property; unsubscribed and already-sent contacts are skipped', () => {
+  const c = (alerts, extra = {}) => ({ id: 'c1', unsubscribed: false, properties: alerts === undefined ? {} : { alerts: { value: alerts, type: 'string' } }, ...extra });
+  assert.deepEqual(recipientDecision(c('security'), 'security', 'x'), { send: true, reason: 'subscribed' });
+  assert.deepEqual(recipientDecision(c('outage,security'), 'outage', 'x'), { send: true, reason: 'subscribed' });
+  assert.equal(recipientDecision(c('outage'), 'security', 'x').send, false, 'an outage reader gets no security alert');
+  assert.equal(recipientDecision(c('security'), 'outage', 'x').send, false);
+  assert.equal(recipientDecision(c(undefined), 'outage', 'x').reason, 'no alert kinds');
+  assert.equal(recipientDecision(c(''), 'outage', 'x').reason, 'no alert kinds', 'stopped all alerts');
+  assert.equal(recipientDecision(c('security', { unsubscribed: true }), 'security', 'x').reason, 'unsubscribed');
+  const sent = { id: 'c1', unsubscribed: false, properties: { alerts: 'security', alert_last: alertTag('security', 'x') } };
+  assert.equal(recipientDecision(sent, 'security', 'x').reason, 'already sent', 'bare property values work too');
+  assert.equal(recipientDecision(sent, 'security', 'y').send, true, 'a new alert still goes');
+  assert.deepEqual(alertKindsOf('Security, outage,nope'), ['outage', 'security']);
+  assert.equal(propValue({ a: { value: 'v' } }, 'a'), 'v');
+  assert.equal(propValue(null, 'a'), undefined);
+});
+
+test('each contact gets its own email: one-click unsubscribe link and header, idempotency key per alert and contact', () => {
+  const mail = buildAlertEmail({ kind: 'security', slug: 'sbi-data-leak', article: { ...article, title: 'SBI Data Leak: What to Do' } });
+  const contact = { id: '4ef9a8b2-0000-4c1d-9a00-0123456789ab', email: 'reader@example.com' };
+  const { body, idempotencyKey } = alertEmailFor(mail, contact, 'sbi-data-leak');
+  const unsub = 'https://www.epifive.com/api/alerts?unsubscribe=4ef9a8b2-0000-4c1d-9a00-0123456789ab&kind=security';
+  assert.equal(alertUnsubscribeUrl(contact.id, 'security'), unsub);
+  assert.deepEqual(body.to, ['reader@example.com']);
+  assert.equal(body.from, ALERT.from);
+  assert.equal(body.headers['List-Unsubscribe'], `<${unsub}>`);
+  assert.equal(body.headers['List-Unsubscribe-Post'], 'List-Unsubscribe=One-Click');
+  assert.ok(body.text.includes(`Stop these alerts: ${unsub}`));
+  assert.ok(body.html.includes(unsub.replace('&', '&amp;')));
+  assert.ok(!body.text.includes('{{unsubscribe_url}}') && !body.html.includes('{{unsubscribe_url}}'));
+  assert.ok(body.text.includes('Adarsh Colony, Deoghar, Jharkhand 814112, India'), 'postal footer');
+  assert.equal(idempotencyKey, 'alert-security-sbi-data-leak-4ef9a8b2-0000-4c1d-9a00-0123456789ab');
+  assert.equal('segment_id' in body, false, 'never a broadcast');
 });

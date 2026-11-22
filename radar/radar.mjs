@@ -18,9 +18,12 @@
 //        outage guides: their own sections, IST + ET timeline, a "status as of <time> IST" line)
 //   node radar/radar.mjs alert --task task.json --status published --file content/posts/x.md [--site .] [--dry-run] [--now ISO]
 //        email alert for a new outage / incident guide (radar/alert.mjs): gate (1 per incident, 2 a day, never an
-//        update or a resolved outage), wait until the page is live, one Resend broadcast to "Alerts: outage" /
-//        "Alerts: security", logged in radar/results.jsonl. --dry-run prints the decision and the email, sends nothing
-//        and writes nothing. Env: RESEND_API_KEY, optional ALERT_POSTAL_ADDRESS.
+//        update or a resolved outage), wait until the page is live, then one email per contact in the Resend segment
+//        "Alerts" whose `alerts` property has the kind (never a broadcast), logged in radar/results.jsonl. --dry-run
+//        prints the decision, the email and the recipient count, sends nothing and writes nothing.
+//        Env: RESEND_API_KEY, optional ALERT_POSTAL_ADDRESS.
+//   node radar/radar.mjs alert-admin --setup | --recipients --kind k | --test-send --only <@epifive.com> --kind k --file f
+//        alert list upkeep: properties, segment rename + migration, recipient counts, a test send to our own inbox
 //
 // State (all in this public repo, no secrets): radar/state.json (items seen and their decisions),
 // radar/results.jsonl (write outcomes and alert sends), radar/log/<YYYY-MM>.md (one block per run).
@@ -38,7 +41,10 @@ import {
   BRIEF, classifyBrief, briefItem, mergeIntoDays, tier1Floor, storyKey, detectDevice, detectAiModel, findDeviceSlug, emptyDay,
   touchDay, updateIndex, linesPrompt, parseLinesAnswer, applyLines, templateLines, deviceFocus,
 } from './brief.mjs';
-import { ALERT, alertGate, buildAlertEmail, completeAddress, ensureAlertField, readArticle } from './alert.mjs';
+import {
+  ALERT, alertEmailFor, alertGate, alertKindsOf, alertTag, buildAlertEmail, completeAddress, ensureAlertField, findAlertsSegment, propValue,
+  readArticle, recipientDecision,
+} from './alert.mjs';
 import { msrcReleased, patchTuesdayDue, patchTuesdayItem } from './patch-tuesday.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -890,8 +896,127 @@ async function videoPlan() {
   console.log(JSON.stringify(plan));
 }
 
+// ---------- Resend (alerts) ----------
+// Logs are public: methods, path shapes, HTTP statuses and counts only, never addresses, contact ids, keys or bodies.
+
+let lastResendCall = 0;
+/** Resend call paced under the default 2 requests/second, retried on 429. Never throws. */
+async function resend(method, url, body, extraHeaders = {}) {
+  const shape = `${method} ${url.split('?')[0].split('/').slice(0, 2).join('/')}`;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    const wait = lastResendCall + 600 - Date.now();
+    if (wait > 0) await new Promise((r) => setTimeout(r, wait));
+    lastResendCall = Date.now();
+    try {
+      const res = await fetch(`https://api.resend.com${url}`, {
+        method,
+        headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, 'Content-Type': 'application/json', ...extraHeaders },
+        body: body === undefined ? undefined : JSON.stringify(body),
+        signal: AbortSignal.timeout(30000),
+      });
+      const json = await res.json().catch(() => ({}));
+      if (res.status === 429 && attempt < 2) {
+        await new Promise((r) => setTimeout(r, 2000));
+        continue;
+      }
+      if (!res.ok) console.log(`Resend ${shape}: HTTP ${res.status}`);
+      return { ok: res.ok, status: res.status, json };
+    } catch (e) {
+      console.log(`Resend ${shape}: ${e.name}`);
+      return { ok: false, status: 0, json: {}, error: e.name };
+    }
+  }
+  return { ok: false, status: 429, json: {} };
+}
+
+async function resendSegments() {
+  const all = [];
+  let after = '';
+  for (let page = 0; page < 20; page++) {
+    const res = await resend('GET', `/segments?limit=100${after ? `&after=${encodeURIComponent(after)}` : ''}`);
+    if (!res.ok) return null;
+    const data = res.json.data ?? [];
+    all.push(...data);
+    if (!res.json.has_more || !data.length) break;
+    after = data[data.length - 1].id;
+  }
+  return all;
+}
+
+/** Contacts of a segment (or every contact when segmentId is null), each with its properties. */
+async function* resendContacts(segmentId) {
+  let after = '';
+  for (let page = 0; page < 500; page++) {
+    const q = new URLSearchParams({ limit: '100', ...(segmentId ? { segment_id: segmentId } : {}), ...(after ? { after } : {}) });
+    const res = await resend('GET', `/contacts?${q}`);
+    if (!res.ok) throw new Error(`contact list HTTP ${res.status}`);
+    const data = res.json.data ?? [];
+    for (const listed of data) {
+      if (listed.properties) yield listed;
+      else {
+        // The list may omit custom properties; then read the contact itself.
+        const full = await resend('GET', `/contacts/${encodeURIComponent(listed.id)}`);
+        yield full.ok ? { ...listed, ...full.json } : listed;
+      }
+    }
+    if (!res.json.has_more || !data.length) break;
+    after = data[data.length - 1].id;
+  }
+}
+
+/**
+ * Who gets this alert: members of the "Alerts" segment (or, if that segment is missing, every contact) whose
+ * `alerts` property includes the kind. Returns { source, members, send: [contact], skipped: { reason: n }, own }.
+ * `own` = the @epifive.com addresses among the recipients (our own test inboxes; safe to print in public logs).
+ */
+async function alertRecipients(kind, slug, { only } = {}) {
+  const segments = await resendSegments();
+  if (!segments) throw new Error('segment list failed');
+  const segment = findAlertsSegment(segments);
+  const out = { source: segment ? `segment "${segment.name}"` : 'every contact (no alerts segment)', members: 0, send: [], skipped: {}, own: [] };
+  for await (const c of resendContacts(segment?.id ?? null)) {
+    if (only && String(c.email).toLowerCase() !== only) continue;
+    out.members++;
+    const d = recipientDecision(c, kind, slug);
+    if (!d.send) {
+      out.skipped[d.reason] = (out.skipped[d.reason] ?? 0) + 1;
+      continue;
+    }
+    out.send.push({ id: c.id, email: c.email });
+    if (/@epifive\.com$/i.test(String(c.email))) out.own.push(String(c.email).toLowerCase());
+  }
+  return out;
+}
+
+const recipientSummary = (kind, r, { own = true } = {}) =>
+  `${kind} alert recipients from ${r.source}: ${r.send.length} of ${r.members} contact(s)` +
+  `${Object.keys(r.skipped).length ? `; not sent: ${Object.entries(r.skipped).map(([k, v]) => `${k} ${v}`).join(', ')}` : ''}` +
+  `${own && r.own.length ? `; our own test addresses among them: ${r.own.join(', ')}` : ''}`;
+
+/** Sends one alert email to each recipient. Returns { sent, failed }. */
+async function sendAlertEmails(mail, slug, recipients, { record = true } = {}) {
+  let sent = 0;
+  let failed = 0;
+  for (const contact of recipients) {
+    const { body, idempotencyKey } = alertEmailFor(mail, contact, slug);
+    const res = await resend('POST', '/emails', body, { 'Idempotency-Key': idempotencyKey });
+    // A timeout (status 0) may still have sent it: counted as sent; the Idempotency-Key and alert_last stop a second
+    // copy on a retry.
+    if (!res.ok && res.status !== 0) {
+      failed++;
+      continue;
+    }
+    sent++;
+    if (record) {
+      const patched = await resend('PATCH', `/contacts/${encodeURIComponent(contact.id)}`, { properties: { [ALERT.lastProperty]: alertTag(mail.kind, slug) } });
+      if (!patched.ok) console.log(`Record alert_last: HTTP ${patched.status}`);
+    }
+  }
+  return { sent, failed };
+}
+
 // Email alert for a just-published outage / incident guide (radar/alert.mjs). Never throws on a send problem: the
-// outcome is logged and the job carries on. Logs are public: statuses only, never addresses, keys or API bodies.
+// outcome is logged and the job carries on. Logs are public: statuses and counts only, never addresses or keys.
 async function alert() {
   const site = opt('site', '.');
   const file = opt('file');
@@ -920,9 +1045,16 @@ async function alert() {
   if (dryRun) {
     console.log(`[dry run] gate: ${gate.send ? 'SEND' : 'skip'} (${gate.reason})`);
     if (mail) {
-      console.log(`[dry run] to Resend segment "${mail.segment}", from ${ALERT.from}, reply-to ${ALERT.replyTo}`);
+      console.log(`[dry run] one email per contact in the Resend segment "${ALERT.segment}" whose "${ALERT.property}" property includes ${gate.kind}, from ${ALERT.from}, reply-to ${ALERT.replyTo}`);
       console.log(`[dry run] subject: ${mail.subject}\n[dry run] preview: ${mail.previewText}\n----- text -----\n${mail.text}\n----------------`);
       if (opt('html')) console.log(mail.html);
+    }
+    if (process.env.RESEND_API_KEY && slug) {
+      try {
+        console.log(`[dry run] ${recipientSummary(gate.kind, await alertRecipients(gate.kind, slug))}`);
+      } catch (e) {
+        console.log(`[dry run] recipients: ${e.message}`);
+      }
     }
     console.log('[dry run] nothing sent, nothing logged.');
     return;
@@ -955,55 +1087,115 @@ async function alert() {
     return;
   }
 
-  const headers = { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, 'Content-Type': 'application/json' };
-  let segment = null;
+  let recipients;
   try {
-    let after = '';
-    for (let page = 0; page < 20 && !segment; page++) {
-      const res = await fetch(`https://api.resend.com/segments?limit=100${after ? `&after=${encodeURIComponent(after)}` : ''}`, { headers });
-      console.log(`Resend segments: HTTP ${res.status}`);
-      if (!res.ok) break;
-      const list = await res.json();
-      segment = list.data?.find((s) => s.name === mail.segment)?.id ?? null;
-      if (!list.has_more || !list.data?.length) break;
-      after = list.data[list.data.length - 1].id;
-    }
+    recipients = await alertRecipients(gate.kind, slug);
   } catch (e) {
-    console.log(`Resend segments: ${e.name}`);
-  }
-  if (!segment) {
-    console.log(`Alert: no "${mail.segment}" segment (no signups yet, or the lookup failed); not sent.`);
-    log({ status: 'skipped', reason: 'segment missing (no signups yet) or lookup failed' });
+    console.log(`Alert: could not read the subscribers (${e.message}); not sent.`);
+    log({ status: 'failed', reason: `recipients: ${e.message}` });
     return;
   }
-  try {
-    const res = await fetch('https://api.resend.com/broadcasts', {
-      method: 'POST',
-      headers,
-      body: JSON.stringify({
-        name: `${gate.kind === 'outage' ? 'Outage' : 'Security'} alert ${slug}`.slice(0, 120),
-        segment_id: segment,
-        from: ALERT.from,
-        reply_to: ALERT.replyTo,
-        subject: mail.subject,
-        preview_text: mail.previewText,
-        html: mail.html,
-        text: mail.text,
-        send: true,
-      }),
-    });
-    console.log(`Resend broadcast: HTTP ${res.status}`);
-    const body = await res.json().catch(() => ({}));
-    if (res.ok) log({ status: 'sent', broadcast: body.id ?? null, subject: mail.subject });
-    else log({ status: 'failed', reason: `HTTP ${res.status}` });
-  } catch (e) {
-    console.log(`Resend broadcast: ${e.name}`);
-    // A timeout may still have sent it: count it as sent so a retry can never send a second alert.
-    log({ status: 'sent', broadcast: null, subject: mail.subject, reason: `uncertain (${e.name})` });
+  console.log(recipientSummary(gate.kind, recipients, { own: false }));
+  if (!recipients.send.length) {
+    console.log('Alert: nobody wants this kind of alert yet; not sent.');
+    log({ status: 'skipped', reason: `no ${gate.kind} subscribers`, recipients: 0 });
+    return;
   }
+  const { sent, failed } = await sendAlertEmails(mail, slug, recipients.send);
+  console.log(`Alert: sent ${sent}, failed ${failed}.`);
+  // Counted as sent once any email went out, so a retry of this job never starts a second round.
+  if (sent) log({ status: 'sent', recipients: recipients.send.length, sent, failed, subject: mail.subject });
+  else log({ status: 'failed', reason: `all ${failed} sends failed`, recipients: recipients.send.length });
 }
 
-const commands = { scan, record, 'site-apply': siteApply, check, 'video-plan': videoPlan, alert, 'brief-apply': briefApply, indexnow: indexNow };
+// Alert list upkeep (no gate, nothing in results.jsonl):
+//   alert-admin --setup                 create the `alerts` / `alert_last` contact properties, rename the segment
+//                                       "Alerts: outage" to "Alerts" (same id), and give its members without the
+//                                       property alerts=outage (they joined the outage list before 22 Nov 2026)
+//   alert-admin --recipients --kind outage|security [--slug s]   who would get an alert now (counts)
+//   alert-admin --test-send --only <@epifive.com address> --kind k --site . --file content/posts/x.md
+//                                       send that article's alert to one of our own addresses (not recorded)
+async function alertAdmin() {
+  if (!process.env.RESEND_API_KEY) {
+    console.log('RESEND_API_KEY is not set');
+    process.exit(1);
+  }
+  const kind = opt('kind');
+  if (opt('setup')) {
+    const props = await resend('GET', '/contact-properties?limit=100');
+    const have = new Set((props.json.data ?? []).map((p) => p.key));
+    for (const key of [ALERT.property, ALERT.lastProperty]) {
+      if (have.has(key)) continue;
+      const res = await resend('POST', '/contact-properties', { key, type: 'string' });
+      console.log(`Create contact property ${key}: HTTP ${res.status}`);
+    }
+    const segments = await resendSegments();
+    if (!segments) process.exit(1);
+    console.log(`Segments (${segments.length}): ${segments.map((s) => s.name).join(' | ')}`);
+    const seg = findAlertsSegment(segments);
+    if (!seg) {
+      console.log('No alerts segment (neither "Alerts" nor an old name); signups create "Alerts" when the plan has room.');
+      return;
+    }
+    if (seg.name !== ALERT.segment) {
+      const res = await resend('PATCH', `/segments/${encodeURIComponent(seg.id)}`, { name: ALERT.segment });
+      console.log(`Rename segment "${seg.name}" -> "${ALERT.segment}": HTTP ${res.status}`);
+    }
+    let members = 0;
+    let migrated = 0;
+    const kinds = {};
+    for await (const c of resendContacts(seg.id)) {
+      members++;
+      const value = propValue(c.properties, ALERT.property);
+      if (value === undefined) {
+        // Joined "Alerts: outage" before the property existed: an outage reader.
+        const res = await resend('PATCH', `/contacts/${encodeURIComponent(c.id)}`, { properties: { [ALERT.property]: 'outage' } });
+        if (res.ok) migrated++;
+        kinds.outage = (kinds.outage ?? 0) + 1;
+      } else {
+        const k = alertKindsOf(value).join(',') || 'none';
+        kinds[k] = (kinds[k] ?? 0) + 1;
+      }
+    }
+    console.log(`Alerts segment: ${members} member(s); set alerts=outage on ${migrated} without the property; by kind: ${Object.entries(kinds).map(([k, v]) => `${k} ${v}`).join(', ') || 'none'}`);
+    return;
+  }
+  if (kind !== 'outage' && kind !== 'security') {
+    console.log('Usage: alert-admin --setup | --recipients --kind outage|security | --test-send --only <@epifive.com> --kind k --file f');
+    process.exit(1);
+  }
+  if (opt('recipients')) {
+    console.log(recipientSummary(kind, await alertRecipients(kind, String(opt('slug', 'recipients-check')))));
+    return;
+  }
+  if (opt('test-send')) {
+    const only = String(opt('only', '')).trim().toLowerCase();
+    const file = opt('file');
+    const site = opt('site', '.');
+    if (!/^[^\s@]+@epifive\.com$/.test(only) || typeof file !== 'string' || !fs.existsSync(path.join(site, file))) {
+      console.log('test-send needs --only <@epifive.com address> and --file <post in --site>');
+      process.exit(1);
+    }
+    const slug = path.basename(file).replace(/\.mdx?$/, '');
+    const article = readArticle(fs.readFileSync(path.join(site, file), 'utf8'));
+    const address = (process.env.ALERT_POSTAL_ADDRESS || '').trim() || ALERT.defaultAddress;
+    const mail = buildAlertEmail({ kind, slug, article, address });
+    const testSlug = `test-${slug}-${Date.now()}`;
+    const r = await alertRecipients(kind, testSlug, { only });
+    console.log(recipientSummary(kind, r));
+    if (!r.send.length) {
+      console.log('Test send: that address would not get this alert (see above); nothing sent.');
+      process.exit(1);
+    }
+    const res = await sendAlertEmails({ ...mail, subject: `[Test] ${mail.subject}` }, testSlug, r.send, { record: false });
+    console.log(`Test send: sent ${res.sent}, failed ${res.failed}.`);
+    process.exit(res.sent ? 0 : 1);
+  }
+  console.log('Nothing to do: pass --setup, --recipients or --test-send.');
+  process.exit(1);
+}
+
+const commands = { scan, record, 'site-apply': siteApply, check, 'video-plan': videoPlan, alert, 'alert-admin': alertAdmin, 'brief-apply': briefApply, indexnow: indexNow };
 if (!commands[cmd]) {
   console.error(`Usage: node radar/radar.mjs <${Object.keys(commands).join('|')}> ...`);
   process.exit(2);

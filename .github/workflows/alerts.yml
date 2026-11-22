@@ -1,0 +1,83 @@
+# Email alert lists (outage and security alerts): upkeep and checks by hand. The alerts themselves are sent by the
+# Launch radar write job (radar.yml, "Email alert"). Modes:
+#   recipients  how many contacts would get an alert of that kind now (counts; our own @epifive.com addresses by name)
+#   dry-run     the full alert for an article (slug), as the radar would build it, plus its recipient count; sends nothing
+#   test-send   that alert to one @epifive.com address only (subject "[Test] ..."); nothing is recorded
+#   setup       contact properties, rename the segment "Alerts: outage" -> "Alerts", alerts=outage for its old members
+# No schedule. THIS REPO IS PUBLIC: counts, segment names and HTTP statuses only, never a reader's address.
+name: Email alerts
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: What to do
+        type: choice
+        options: [recipients, dry-run, test-send, setup]
+        default: recipients
+      kind:
+        description: Alert kind
+        type: choice
+        options: [security, outage]
+        default: security
+      slug:
+        description: Article slug for dry-run / test-send (content/posts/<slug>.md)
+        default: ''
+      only:
+        description: test-send only, an @epifive.com address
+        default: ''
+
+permissions:
+  contents: read
+
+concurrency:
+  group: alerts-admin
+  cancel-in-progress: false
+
+jobs:
+  alerts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/checkout@v4
+        if: inputs.mode == 'dry-run' || inputs.mode == 'test-send'
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+          path: site
+          sparse-checkout: content/posts
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Run
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          ALERT_POSTAL_ADDRESS: ${{ secrets.ALERT_POSTAL_ADDRESS }}
+          MODE: ${{ inputs.mode }}
+          KIND: ${{ inputs.kind }}
+          SLUG: ${{ inputs.slug }}
+          ONLY: ${{ inputs.only }}
+        run: |
+          case "$KIND" in outage|security) ;; *) echo "Bad kind"; exit 1 ;; esac
+          case "$SLUG" in '') ;; *[!a-z0-9-]*) echo "Bad slug"; exit 1 ;; esac
+          case "$ONLY" in ''|*@epifive.com) ;; *) echo "only: an @epifive.com address or empty"; exit 1 ;; esac
+          need_post() { [ -n "$SLUG" ] && [ -f "site/content/posts/$SLUG.md" ] || { echo "No content/posts/$SLUG.md"; exit 1; }; }
+          case "$MODE" in
+            setup) node radar/radar.mjs alert-admin --setup ;;
+            recipients) node radar/radar.mjs alert-admin --recipients --kind "$KIND" ;;
+            dry-run)
+              need_post
+              [ "$KIND" = outage ] && category=outage || category=incident
+              printf '{"kind":"new","category":"%s","key":"alerts-dry-run","link":"https://www.epifive.com/blog/%s","title":"dry run"}' "$category" "$SLUG" > "$RUNNER_TEMP/task.json"
+              node radar/radar.mjs alert --dry-run --site site --task "$RUNNER_TEMP/task.json" --status published --file "content/posts/$SLUG.md" ;;
+            test-send)
+              need_post
+              [ -n "$ONLY" ] || { echo "test-send needs only=<@epifive.com address>"; exit 1; }
+              node radar/radar.mjs alert-admin --test-send --only "$ONLY" --kind "$KIND" --site site --file "content/posts/$SLUG.md" ;;
+            *) echo "Unknown mode"; exit 1 ;;
+          esac 2>&1 | tee -a "$GITHUB_STEP_SUMMARY"
+          exit "${PIPESTATUS[0]}"
