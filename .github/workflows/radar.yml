@@ -102,6 +102,9 @@ jobs:
     concurrency:
       group: radar-scan
       cancel-in-progress: false
+    env:
+      # Code: the private site repo's ops/radar (checked out at site/). Data the workflows commit stays here in radar/.
+      RADAR_DATA: ${{ github.workspace }}/radar
     steps:
       - uses: actions/checkout@v4
         with:
@@ -117,13 +120,15 @@ jobs:
             content/news
             content/devices
             automation
+            ops/radar
+            ops/prompts
 
       - uses: actions/setup-node@v4
         with:
           node-version: 24
 
       - name: Unit tests
-        run: node --test radar/radar.test.mjs radar/alert.test.mjs radar/brief.test.mjs radar/status.test.mjs radar/retirements.test.mjs radar/patch-tuesday.test.mjs radar/trending-articles.test.mjs
+        run: node --test site/ops/radar/*.test.mjs
 
       - name: Scan
         id: scan
@@ -137,7 +142,7 @@ jobs:
           args=(scan --site site --out task.json --brief-out "$RUNNER_TEMP/brief.json" --trigger "$TRIGGER")
           [ -n "$DRY" ] && args+=(--dry-run)
           [ -n "$FORCE_URL" ] && args+=(--force-url "$FORCE_URL" --force-category "${FORCE_CATEGORY:-launch}")
-          node radar/radar.mjs "${args[@]}" | tee -a "$GITHUB_STEP_SUMMARY"
+          node site/ops/radar/radar.mjs "${args[@]}" | tee -a "$GITHUB_STEP_SUMMARY"
 
       - name: Park expired launches in the site backlog
         if: steps.scan.outputs.parks == 'true' && !inputs.dry_run
@@ -147,7 +152,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           for i in 1 2 3; do
             git fetch -q "$SITE_REMOTE" main && git checkout -q -f -B radar FETCH_HEAD || { sleep 10; continue; }
-            node ../radar/radar.mjs site-apply --site . --task ../task.json
+            node ops/radar/radar.mjs site-apply --site . --task ../task.json
             git add automation/backlog.md
             git diff --cached --quiet && break
             git commit -q -m "Radar: queue launches that missed the fast-track cap"
@@ -167,13 +172,13 @@ jobs:
         run: |
           npm install -g @anthropic-ai/claude-code --silent --no-audit --no-fund
           claude -p --model haiku --tools "" --max-turns 1 --output-format text \
-            --system-prompt "You write short factual lines for a technology news page. Use only the facts in the input. Answer with JSON only." \
+            --system-prompt "$(cat site/ops/prompts/radar-lines-system.txt)" \
             < "$RUNNER_TEMP/brief.json.prompt.txt" > "$RUNNER_TEMP/brief-answer.txt"
           wc -c "$RUNNER_TEMP/brief-answer.txt"
 
       - name: News page lines (check and apply)
         if: steps.scan.outputs.brief_pending == 'true' && !inputs.dry_run
-        run: node radar/radar.mjs brief-apply --pending "$RUNNER_TEMP/brief.json" --answer "$RUNNER_TEMP/brief-answer.txt" | tee -a "$GITHUB_STEP_SUMMARY"
+        run: node site/ops/radar/radar.mjs brief-apply --pending "$RUNNER_TEMP/brief.json" --answer "$RUNNER_TEMP/brief-answer.txt" | tee -a "$GITHUB_STEP_SUMMARY"
 
       # Site pages that render from this repo without a rebuild (owner approved 19 Nov 2026):
       # radar/status/recent.json = recent outage items per service for https://www.epifive.com/status/<service>
@@ -184,8 +189,8 @@ jobs:
         if: ${{ !inputs.dry_run }}
         continue-on-error: true
         run: |
-          node radar/status.mjs | tee -a "$GITHUB_STEP_SUMMARY"
-          node radar/retirements.mjs --site site | tee -a "$GITHUB_STEP_SUMMARY"
+          node site/ops/radar/status.mjs | tee -a "$GITHUB_STEP_SUMMARY"
+          node site/ops/radar/retirements.mjs --site site | tee -a "$GITHUB_STEP_SUMMARY"
 
       - name: Save radar state and log
         if: ${{ !inputs.dry_run }}
@@ -208,7 +213,7 @@ jobs:
           URL: ${{ steps.scan.outputs.brief_ping }}
         run: |
           sleep 60
-          node radar/radar.mjs indexnow --url "$URL"
+          node site/ops/radar/radar.mjs indexnow --url "$URL"
 
       # Tier 3: official device launches go to the device portal (devices.yml launch mode: the maker's spec page only).
       - name: Start the device portal job
@@ -234,6 +239,9 @@ jobs:
     concurrency:
       group: radar-write
       cancel-in-progress: false
+    env:
+      # Code: ops/radar in the site checkout (repository root). Data the workflows commit: _radar/radar (this repo).
+      RADAR_DATA: ${{ github.workspace }}/_radar/radar
     steps:
       - name: Check Claude token
         id: gate
@@ -267,7 +275,7 @@ jobs:
           TASK: ${{ inputs.task }}
         run: |
           printf '%s' "$TASK" > .radar-task.json
-          printf '_radar/\n.radar-*\n' >> .git/info/exclude
+          printf '_radar/\n.radar-*\n.ops-*\n' >> .git/info/exclude
           node -e '
             const t = JSON.parse(require("fs").readFileSync(".radar-task.json", "utf8"));
             if (!["new", "update"].includes(t.kind) || !t.key || !t.link) { console.error("Bad task"); process.exit(1); }
@@ -287,7 +295,14 @@ jobs:
         continue-on-error: true
         env:
           MONTH: ${{ steps.task.outputs.patch_tuesday }}
-        run: node _radar/radar/patch-tuesday.mjs summary --month "$MONTH" --out .radar-patch-tuesday.json
+        run: node ops/radar/patch-tuesday.mjs summary --month "$MONTH" --out .radar-patch-tuesday.json
+
+      - name: Prompt (attempt 1)
+        env:
+          KIND: ${{ steps.task.outputs.kind }}
+          CATEGORY: ${{ steps.task.outputs.category }}
+          TODAY: ${{ steps.task.outputs.today }}
+        run: node ops/prompts/render.mjs ops/prompts/radar-write.md .ops-prompt.md
 
       - name: Write (Claude, attempt 1)
         uses: anthropics/claude-code-action@v1
@@ -298,24 +313,8 @@ jobs:
           allowed_bots: "*"
           claude_args: |
             --max-turns 150
-            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node scripts/check-posts.mjs:*),Bash(node _radar/radar/radar.mjs check:*),Bash(ls:*),Bash(wc:*)"
-          prompt: |
-            Launch radar fast-track, mode "${{ steps.task.outputs.kind }}", category "${{ steps.task.outputs.category }}".
-            Today's date (IST) is ${{ steps.task.outputs.today }}. For category "incident", follow the "Security incidents"
-            section of RADAR.md (primary sources first, label claims as claims, name no individuals, no speculation, only
-            published indicators of compromise). For category "outage", follow the "Outages" section of RADAR.md (status
-            "as of <time> IST" with a timestamp, vendor status updates quoted exactly with times, IST and ET timeline, no
-            speculation on the cause beyond what the vendor said, SLA credits only from the vendor's SLA document).
-            For category "patch-tuesday", follow the "Patch Tuesday" section of RADAR.md: Microsoft's official counts are in
-            .radar-patch-tuesday.json (MSRC CVRF data and CISA's KEV feed) and the slug is the "backlog" value in .radar-task.json.
-            The item is described in .radar-task.json. Read automation/RADAR.md and follow it exactly (it builds on
-            automation/WRITER.md, which you should also read). The repository is already checked out at the latest main.
-            Do not run npm, git or a build, and do not edit automation/backlog.md or automation/log.md: later workflow
-            steps check, build, publish and record. Never mention any person's name; publish under the EpiFive brand only.
-            If the task has "trending" (a story many outlets carry) or "coverage", follow "Trending stories and blocked
-            official pages" in RADAR.md: an official page that blocks automated fetches (HTTP 403, e.g. openai.com) is never
-            a reason to skip. If you do finish with RADAR-SKIP, also write that same one-line RADAR-SKIP reason to the file
-            .radar-skip.txt in the repository root (the radar logs it and parks the story for the daily writer).
+            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node scripts/check-posts.mjs:*),Bash(node ops/radar/radar.mjs check:*),Bash(ls:*),Bash(wc:*)"
+          prompt: Your task for this run is in the file .ops-prompt.md in the repository root. Read it first and follow it exactly.
 
       - name: Find the article
         id: post
@@ -353,10 +352,19 @@ jobs:
           TODAY: ${{ steps.task.outputs.today }}
         run: |
           set +e
-          { node scripts/check-posts.mjs "$SLUG" && node _radar/radar/radar.mjs check --file "$FILE" --kind "$KIND" --today "$TODAY" --category "$CATEGORY"; } > .radar-gate.txt 2>&1
+          { node scripts/check-posts.mjs "$SLUG" && node ops/radar/radar.mjs check --file "$FILE" --kind "$KIND" --today "$TODAY" --category "$CATEGORY"; } > .radar-gate.txt 2>&1
           rc=$?
           cat .radar-gate.txt
           if [ $rc = 0 ]; then echo "ok=true" >> "$GITHUB_OUTPUT"; else echo "ok=false" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Prompt (attempt 2)
+        if: steps.gate1.outputs.ok == 'false'
+        env:
+          FILE: ${{ steps.post.outputs.file }}
+          KIND: ${{ steps.task.outputs.kind }}
+          CATEGORY: ${{ steps.task.outputs.category }}
+          TODAY: ${{ steps.task.outputs.today }}
+        run: node ops/prompts/render.mjs ops/prompts/radar-fix.md .ops-prompt.md
 
       - name: Fix (Claude, attempt 2)
         if: steps.gate1.outputs.ok == 'false'
@@ -368,12 +376,8 @@ jobs:
           allowed_bots: "*"
           claude_args: |
             --max-turns 60
-            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node scripts/check-posts.mjs:*),Bash(node _radar/radar/radar.mjs check:*),Bash(ls:*),Bash(wc:*)"
-          prompt: |
-            The quality gate failed for ${{ steps.post.outputs.file }} (launch radar, mode "${{ steps.task.outputs.kind }}", category "${{ steps.task.outputs.category }}",
-            today ${{ steps.task.outputs.today }}). The errors are in .radar-gate.txt. Fix them in that one file only,
-            following automation/RADAR.md and automation/WRITER.md: add real, official-source content where something is
-            missing, never invented facts. Re-run both checks named in RADAR.md until they pass. Edit no other file.
+            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node scripts/check-posts.mjs:*),Bash(node ops/radar/radar.mjs check:*),Bash(ls:*),Bash(wc:*)"
+          prompt: Your task for this run is in the file .ops-prompt.md in the repository root. Read it first and follow it exactly.
 
       - name: Quality gate (attempt 2)
         id: gate2
@@ -386,7 +390,7 @@ jobs:
           TODAY: ${{ steps.task.outputs.today }}
         run: |
           set +e
-          { node scripts/check-posts.mjs "$SLUG" && node _radar/radar/radar.mjs check --file "$FILE" --kind "$KIND" --today "$TODAY" --category "$CATEGORY"; } > .radar-gate.txt 2>&1
+          { node scripts/check-posts.mjs "$SLUG" && node ops/radar/radar.mjs check --file "$FILE" --kind "$KIND" --today "$TODAY" --category "$CATEGORY"; } > .radar-gate.txt 2>&1
           rc=$?
           cat .radar-gate.txt
           if [ $rc = 0 ]; then echo "ok=true" >> "$GITHUB_OUTPUT"; else echo "ok=false" >> "$GITHUB_OUTPUT"; fi
@@ -444,11 +448,11 @@ jobs:
             git fetch -q "$SITE_REMOTE" main && git checkout -q -f -B radar-pub FETCH_HEAD || { sleep 10; continue; }
             if [ "$RESULT" = "published" ]; then
               cp "$RUNNER_TEMP/post.md" "$FILE"
-              node _radar/radar/radar.mjs site-apply --site . --task .radar-task.json --result published --file "$FILE" --date "$TODAY"
+              node ops/radar/radar.mjs site-apply --site . --task .radar-task.json --result published --file "$FILE" --date "$TODAY"
               git add "$FILE" automation/backlog.md automation/log.md
             else
               rm -f "$FILE"
-              node _radar/radar/radar.mjs site-apply --site . --task .radar-task.json --result failed --slug "$SLUG" --date "$TODAY"
+              node ops/radar/radar.mjs site-apply --site . --task .radar-task.json --result failed --slug "$SLUG" --date "$TODAY"
               git add automation/backlog.md
             fi
             git diff --cached --quiet && { done=1; break; }
@@ -489,7 +493,7 @@ jobs:
         run: |
           args=(alert --site . --task .radar-task.json --status published --file "$FILE")
           [ "$DRY" = true ] && args+=(--dry-run)
-          node _radar/radar/radar.mjs "${args[@]}" | tee -a "$GITHUB_STEP_SUMMARY"
+          node ops/radar/radar.mjs "${args[@]}" | tee -a "$GITHUB_STEP_SUMMARY"
 
       # Views on a trending topic come in the first hours: an outage or incident guide, or a fast-track article that
       # scored 12+, starts the Short (social.yml, force) and the long video (longvideo.yml, publish_now = public on
@@ -509,7 +513,7 @@ jobs:
           DRY: ${{ inputs.dry_run && 'true' || 'false' }}
           FILE: ${{ steps.post.outputs.file }}
         run: |
-          plan=$(node _radar/radar/radar.mjs video-plan --site . --task .radar-task.json --status published --file "$FILE")
+          plan=$(node ops/radar/radar.mjs video-plan --site . --task .radar-task.json --status published --file "$FILE")
           echo "$plan"
           get() { node -e 'const v = JSON.parse(process.argv[1])[process.argv[2]]; process.stdout.write(v == null ? "" : String(v))' "$plan" "$1"; }
           if [ "$(get dispatch)" != true ]; then
@@ -551,7 +555,7 @@ jobs:
           # The writer's RADAR-SKIP line (one short line; a skip that is not "covered by" / "news only" is parked at the
           # top of the site backlog by the next scan).
           if [ "$status" = "skipped" ] && [ -f ../.radar-skip.txt ]; then args+=(--reason "$(head -c 300 ../.radar-skip.txt | tr '\r\n' '  ')"); fi
-          node radar/radar.mjs "${args[@]}"
+          node ../ops/radar/radar.mjs "${args[@]}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add radar/results.jsonl

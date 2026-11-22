@@ -41,13 +41,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # The code is in the private site repo (ops/radar); radar/results.jsonl here is the alert log the gate reads.
       - uses: actions/checkout@v4
-        if: inputs.mode == 'dry-run' || inputs.mode == 'test-send'
         with:
           repository: sk9836413/EPIVIFE
           token: ${{ secrets.SITE_REPO_TOKEN }}
           path: site
-          sparse-checkout: content/posts
+          sparse-checkout: |
+            content/posts
+            ops/radar
 
       - uses: actions/setup-node@v4
         with:
@@ -55,6 +57,7 @@ jobs:
 
       - name: Run
         env:
+          RADAR_DATA: ${{ github.workspace }}/radar
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           ALERT_POSTAL_ADDRESS: ${{ secrets.ALERT_POSTAL_ADDRESS }}
           MODE: ${{ inputs.mode }}
@@ -67,17 +70,17 @@ jobs:
           case "$ONLY" in ''|*@epifive.com) ;; *) echo "only: an @epifive.com address or empty"; exit 1 ;; esac
           need_post() { [ -n "$SLUG" ] && [ -f "site/content/posts/$SLUG.md" ] || { echo "No content/posts/$SLUG.md"; exit 1; }; }
           case "$MODE" in
-            setup) node radar/radar.mjs alert-admin --setup ;;
-            recipients) node radar/radar.mjs alert-admin --recipients --kind "$KIND" ;;
+            setup) node site/ops/radar/radar.mjs alert-admin --setup ;;
+            recipients) node site/ops/radar/radar.mjs alert-admin --recipients --kind "$KIND" ;;
             dry-run)
               need_post
               [ "$KIND" = outage ] && category=outage || category=incident
               printf '{"kind":"new","category":"%s","key":"alerts-dry-run","link":"https://www.epifive.com/blog/%s","title":"dry run"}' "$category" "$SLUG" > "$RUNNER_TEMP/task.json"
-              node radar/radar.mjs alert --dry-run --site site --task "$RUNNER_TEMP/task.json" --status published --file "content/posts/$SLUG.md" ;;
+              node site/ops/radar/radar.mjs alert --dry-run --site site --task "$RUNNER_TEMP/task.json" --status published --file "content/posts/$SLUG.md" ;;
             test-send)
               need_post
               [ -n "$ONLY" ] || { echo "test-send needs only=<@epifive.com address>"; exit 1; }
-              node radar/radar.mjs alert-admin --test-send --only "$ONLY" --kind "$KIND" --site site --file "content/posts/$SLUG.md" ;;
+              node site/ops/radar/radar.mjs alert-admin --test-send --only "$ONLY" --kind "$KIND" --site site --file "content/posts/$SLUG.md" ;;
             *) echo "Unknown mode"; exit 1 ;;
           esac 2>&1 | tee -a "$GITHUB_STEP_SUMMARY"
           exit "${PIPESTATUS[0]}"
