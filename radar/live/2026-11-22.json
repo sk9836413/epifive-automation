@@ -2,7 +2,7 @@
  "date": "2026-11-22",
  "title": "Tech news today, 22 November 2026",
  "published": "2026-11-21T21:50:10.554Z",
- "updated": "2026-11-22T01:42:05.747Z",
+ "updated": "2026-11-22T08:54:04.512Z",
  "items": [
   {
    "id": "11953c1d",
@@ -59,7 +59,35 @@
    "ai": null,
    "score": 6,
    "story": null
+  },
+  {
+   "id": "62f7209e",
+   "key": "https://thehackernews.com/2026/11/researchers-demonstrate-ghostscript.html",
+   "time": "2026-11-22T05:03:41.000Z",
+   "seen": "2026-11-22T08:54:04.512Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Researchers Demonstrate Ghostscript Sandbox-Escape RCE via Crafted File Uploads in Popular Apps",
+   "summary": "A now-patched flaw in Ghostscript allows a crafted file to escape the program's security sandbox and run commands on the server that processes it. Ghostscript is the interpreter that many Linux servers use to convert uploaded PDFs, PostScript files, and images into other formats, often without the application calling it directly. Security firm pwn.ai showed this week that ordinary upload,",
+   "lines": [
+    "Reported by The Hacker News: Security firm pwn.ai showed that a now-patched Ghostscript flaw lets a crafted file escape the program's security sandbox and run commands on the server that processes it.",
+    "Ghostscript is the interpreter many Linux servers use to convert uploaded PDFs, PostScript files, and images into other formats, often without the application calling it directly.",
+    "For IT teams, servers that handle file uploads may run Ghostscript even when no application calls it directly, so confirming that installed versions include the patch is relevant."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/researchers-demonstrate-ghostscript.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
   }
  ],
- "description": "2 technology updates from official sources, updated hourly: Rackspace Spot breach let hackers access customer Kubernetes secrets; Microsoft Entra Connect Health flaw exploited to steal tenant data."
+ "description": "3 technology updates from official sources, updated hourly: Rackspace Spot breach let hackers access customer Kubernetes secrets; Researchers Demonstrate Ghostscript Sandbox-Escape RCE via Crafted File Uploads in Popular Apps; Microsoft Entra Connect Health flaw exploited to steal tenant data."
 }
