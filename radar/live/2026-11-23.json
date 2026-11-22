@@ -2,7 +2,7 @@
  "date": "2026-11-23",
  "title": "Tech news today, 23 November 2026",
  "published": "2026-11-22T18:45:06.177Z",
- "updated": "2026-11-22T18:45:06.177Z",
+ "updated": "2026-11-22T22:23:42.014Z",
  "items": [
   {
    "id": "9477151b",
@@ -33,7 +33,35 @@
    "families": [],
    "score": 4,
    "story": null
+  },
+  {
+   "id": "fee13a1c",
+   "key": "https://bleepingcomputer.com/news/security/hackers-exploit-glinet-cloud-flaw-to-infect-routers-kvm-devices",
+   "time": "2026-11-22T18:45:37.000Z",
+   "seen": "2026-11-22T22:23:42.014Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Hackers exploit GL.iNet cloud flaw to infect routers, KVM devices",
+   "summary": "GL.iNet has confirmed that hackers exploited a vulnerability in its cloud remote management services to install custom malware on customers' routers and KVM devices, with some affected users reporting backdoors and reverse shells giving remote access to infected devices. [...]",
+   "lines": [
+    "Reported by BleepingComputer: GL.iNet has confirmed that hackers exploited a vulnerability in its cloud remote management services to install custom malware on customers' routers and KVM devices.",
+    "Some affected users reported backdoors and reverse shells that gave remote access to infected devices.",
+    "IT teams that manage GL.iNet routers or KVM devices may want to review how those devices are reached through cloud remote management."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/hackers-exploit-glinet-cloud-flaw-to-infect-routers-kvm-devices/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
   }
  ],
- "description": "1 technology update from official sources, updated hourly: Delta flights in and out of Atlanta delayed due to system outage."
+ "description": "2 technology updates from official sources, updated hourly: Delta flights in and out of Atlanta delayed due to system outage; Hackers exploit GL.iNet cloud flaw to infect routers, KVM devices."
 }

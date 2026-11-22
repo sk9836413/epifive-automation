@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-22T18:45:06.177Z",
+ "lastScan": "2026-11-22T22:23:42.014Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -10405,6 +10405,23 @@
    ],
    "status": "below",
    "hash": "81a9c14c"
+  },
+  "https://blogs.vmware.com/cloud-foundation/2026/11/22/microsoft-sql-server-failover-clustering-on-vcf-9-1-vm-service-requirements-topology-and-methods-part-1": {
+   "title": "Microsoft SQL Server Failover Clustering on VCF 9.1 VM Service: Requirements, Topology and Methods (Part 1)",
+   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/22/microsoft-sql-server-failover-clustering-on-vcf-9-1-vm-service-requirements-topology-and-methods-part-1/",
+   "source": "vmware-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-22T21:00:00.000Z",
+   "updated": null,
+   "summary": "Introduction The transition to VMware Cloud Foundation (VCF) will typically involve questions about not only new functionalities, but also functionalities and capabilities that are already in use. One of the most common use cases for vSphere is virtualizing business-critical applications (BCA). Runn",
+   "first": "2026-11-22T22:23:42.014Z",
+   "score": -1,
+   "reasons": [
+    "-1 source vmware-blog"
+   ],
+   "status": "below",
+   "hash": "bb3de232"
   }
  },
  "devices": {},
@@ -10456,14 +10473,15 @@
     "WSJ",
     "Financial Times",
     "Business Standard",
+    "Moneycontrol",
     "NDTV"
    ],
    "techmeme": false,
    "category": "launch",
    "topic": "ai-engineering",
    "parkOnly": false,
-   "last": "2026-11-22T18:32:54.000Z",
-   "date": "2026-11-22T18:32:54.000Z",
+   "last": "2026-11-22T21:24:15.000Z",
+   "date": "2026-11-22T21:24:15.000Z",
    "score": 14,
    "post": "anthropic-ipo-explained-claude-users"
   },
