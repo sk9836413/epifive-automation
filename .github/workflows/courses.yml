@@ -1,0 +1,94 @@
+# Free 7-day email courses (site repo: src/lib/courses.ts, content/courses, scripts/courses/send-courses.mjs).
+# Once a day it sends each course contact the lesson for their day (day = IST days since signup + 1, up to 7), then
+# records the day in the Resend contact, so a lesson is never sent twice and the course stops after day 7. Day 1 goes
+# out at confirmation time from the site (/api/course); this job sends days 2..7.
+#
+# Schedule: GitHub cron (no scheduler Worker change). 08:05 IST, with retries at 09:05 and 11:35 IST because GitHub
+# drops some scheduled runs; the retries only send what the earlier run did not (per-contact state + Idempotency-Key).
+# Manual runs: mode dry-run (counts only), send, setup (contact properties + segments), enrol-test / unenrol-test
+# (an @epifive.com test contact only). THIS REPO IS PUBLIC: the script prints counts, course ids and HTTP statuses,
+# never an address, contact id, key or API response.
+name: Email courses
+
+on:
+  schedule:
+    - cron: '35 2 * * *'   # 08:05 IST
+    - cron: '35 3 * * *'   # 09:05 IST retry
+    - cron: '5 6 * * *'    # 11:35 IST retry
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: What to do
+        type: choice
+        options: [dry-run, send, setup, enrol-test, unenrol-test]
+        default: dry-run
+      only:
+        description: Limit send/dry-run to this @epifive.com test address (empty = everyone)
+        default: ''
+      course:
+        description: Course for enrol-test / unenrol-test
+        type: choice
+        options: [microsoft-365-admin, cybersecurity-career]
+        default: microsoft-365-admin
+      audience:
+        description: Audience for enrol-test
+        type: choice
+        options: [professional, student]
+        default: professional
+      start:
+        description: enrol-test start date (YYYY-MM-DD, IST). Empty = yesterday, so day 2 is due today.
+        default: ''
+
+permissions:
+  contents: read
+
+concurrency:
+  group: courses
+  cancel-in-progress: false
+
+jobs:
+  courses:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci --no-audit --no-fund
+
+      - name: Run
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          COURSE_POSTAL_ADDRESS: ${{ secrets.COURSE_POSTAL_ADDRESS }}
+          OUTREACH_POSTAL_ADDRESS: ${{ secrets.OUTREACH_POSTAL_ADDRESS }}
+          MODE: ${{ inputs.mode || 'send' }}
+          ONLY: ${{ inputs.only }}
+          COURSE: ${{ inputs.course }}
+          AUDIENCE: ${{ inputs.audience }}
+          START: ${{ inputs.start }}
+        run: |
+          case "$ONLY" in ''|*@epifive.com) ;; *) echo "only: an @epifive.com address or empty"; exit 1 ;; esac
+          case "$START" in ''|[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]) ;; *) echo "Bad start date"; exit 1 ;; esac
+          case "$COURSE" in ''|microsoft-365-admin|cybersecurity-career) ;; *) echo "Bad course"; exit 1 ;; esac
+          case "$AUDIENCE" in ''|professional|student) ;; *) echo "Bad audience"; exit 1 ;; esac
+          set -- ${ONLY:+--only "$ONLY"}
+          case "$MODE" in
+            send) node scripts/courses/send-courses.mjs "$@" ;;
+            dry-run) node scripts/courses/send-courses.mjs --dry-run "$@" ;;
+            setup) node scripts/courses/send-courses.mjs --setup ;;
+            enrol-test)
+              [ -n "$ONLY" ] || { echo "enrol-test needs only=<test address>"; exit 1; }
+              S="${START:-$(TZ=Asia/Kolkata date -d yesterday +%F)}"
+              node scripts/courses/send-courses.mjs --enrol-test "$ONLY" --course "$COURSE" --audience "$AUDIENCE" --start "$S" ;;
+            unenrol-test)
+              [ -n "$ONLY" ] || { echo "unenrol-test needs only=<test address>"; exit 1; }
+              node scripts/courses/send-courses.mjs --unenrol-test "$ONLY" --course "$COURSE" ;;
+            *) echo "Unknown mode"; exit 1 ;;
+          esac
