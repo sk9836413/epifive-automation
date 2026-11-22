@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-22T04:43:49.107Z",
+ "lastScan": "2026-11-22T05:13:18.360Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -2766,24 +2766,6 @@
    "status": "duplicate",
    "hash": "65e27645",
    "post": "php-security-release-november-2026-update"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/cloudwatch-network-path-monitoring": {
-   "title": "Amazon CloudWatch simplifies network performance monitoring for your Amazon Virtual Private Cloud (VPC)",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/cloudwatch-network-path-monitoring/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-18T08:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon CloudWatch Network Monitoring now allows you to monitor the health of the AWS network paths that your workloads take by using performance monitors. Performance monitors provide near real-time visibility into whether the AWS network is healthy for your workloads, without installing any softwar",
-   "first": "2026-11-19T05:13:16.704Z",
-   "score": 0,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 user steps \"enable\""
-   ],
-   "status": "below",
-   "hash": "baf20db3"
   },
   "https://medianama.com/2026/11/223-payu-cloud-server-breach": {
    "title": "PayU loses Rs 25.67 crore in alleged cloud server breach; two arrested",
