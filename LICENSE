@@ -1,0 +1,26 @@
+EpiFive Proprietary Licence - All Rights Reserved
+
+Copyright (c) 2026 EpiFive (www.epifive.com). All rights reserved.
+
+This repository and everything in it (source code, workflows, scripts, prompts, configuration, data and
+documentation, together "the Software") is the proprietary work of EpiFive. It is published on GitHub only so that
+its automated jobs can run. Publishing it does NOT grant you any licence.
+
+1. No permission is granted. You may not, in whole or in part, copy, reproduce, modify, adapt, translate, merge,
+   publish, distribute, sublicense, sell, rent, host, run, deploy or otherwise use the Software, or create works
+   based on it, for any purpose, commercial or non-commercial, without prior written permission from EpiFive.
+
+2. This includes, without limitation: repackaging the Software or any part of it (including its prompts, workflows,
+   scoring rules and checks) as an AI agent skill, plugin, template, course or product; listing it on any
+   marketplace; and using it to train, fine-tune or evaluate machine-learning models.
+
+3. The only use allowed is viewing the Software on GitHub as GitHub's Terms of Service require for public
+   repositories. Any fork created through GitHub's interface is covered by this licence and grants no right to use
+   the Software.
+
+4. Third-party components keep their own licences. Nothing here restricts your rights under those licences.
+
+5. The Software is provided "as is", without warranty of any kind. EpiFive is not liable for any claim, damage or
+   other liability arising from it.
+
+Permission requests: info@epifive.com
