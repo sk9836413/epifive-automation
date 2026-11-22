@@ -156,7 +156,7 @@ test('the email has subject, 3 short lines, the link, unsubscribe and the postal
   assert.match(mail.text, /https:\/\/www\.epifive\.com\/blog\/microsoft-365-outage-november-2026-what-to-do\?utm_source=alert/);
   for (const part of [mail.text, mail.html]) {
     assert.ok(part.includes('{{{RESEND_UNSUBSCRIBE_URL}}}'), 'unsubscribe placeholder');
-    assert.ok(part.includes('Gurugram, Haryana 122001, India'), 'postal footer');
+    assert.ok(part.includes('Adarsh Colony, Deoghar, Jharkhand 814112, India'), 'postal footer');
   }
   assert.doesNotMatch(mail.html, /<script/i);
   assert.equal(ALERT.from, 'EpiFive <newsletter@epifive.com>');
