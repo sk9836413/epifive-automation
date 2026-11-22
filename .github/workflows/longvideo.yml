@@ -160,6 +160,16 @@ jobs:
         if: steps.article.outputs.slug != ''
         run: bash scripts/social/setup-tts.sh ~/kokoro
 
+      - name: Prompt for Write the video script (Claude)
+        if: steps.article.outputs.slug != ''
+        env:
+          SLUG: ${{steps.article.outputs.slug}}
+          DIR: ${{steps.pick.outputs.dir}}
+          PUBLISH_NOW: ${{ inputs.publish_now }}
+        run: |
+          if [ -d .git ]; then grep -qx '.ops-\*' .git/info/exclude || printf '.ops-*\n' >> .git/info/exclude; fi
+          node ops/prompts/render.mjs ops/prompts/longvideo-write-the-video-script-claude.md .ops-prompt.md
+
       - name: Write the video script (Claude)
         if: steps.article.outputs.slug != ''
         uses: anthropics/claude-code-action@v1
@@ -171,20 +181,7 @@ jobs:
           claude_args: |
             --max-turns 60
             --allowedTools "Read,Write,Edit,Glob,Grep,Bash(node scripts/social/longvideo.mjs validate:*),Bash(node scripts/social/longvideo.mjs check:*),Bash(mkdir:*),Bash(ls:*)"
-          prompt: |
-            Write the script for today's long EpiFive YouTube tutorial about the article
-            `${{ steps.article.outputs.slug }}` (content/posts/${{ steps.article.outputs.slug }}.md,
-            live at https://www.epifive.com/blog/${{ steps.article.outputs.slug }}).
-
-            Read automation/LONGVIDEO.md and follow it exactly, then read automation/STRATEGY.md for the
-            current title rules. Write `${{ steps.pick.outputs.dir }}/script.json`.
-
-            When you are done, run `node scripts/social/longvideo.mjs check ${{ steps.pick.outputs.dir }}`
-            and fix every problem it reports until it passes.
-
-            ${{ inputs.publish_now && 'This topic is trending right now and the video goes public the moment it is uploaded: the first sentence names the problem exactly as viewers are living it (no intro), and the title leads with it.' || '' }}
-
-            Do not render, upload, commit or push, and do not edit files outside that folder.
+          prompt: Your task for this run is in the file .ops-prompt.md in the repository root. Read it first and follow it exactly.
 
       - name: Check the script
         if: steps.article.outputs.slug != ''

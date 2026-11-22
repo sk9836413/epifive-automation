@@ -237,6 +237,18 @@ jobs:
           echo "dir=social-drafts/$(date -u +%F)-$slug" >> "$GITHUB_OUTPUT"
           if [ -z "$slug" ]; then echo "::notice::Nothing new to share."; else echo "Sharing $slug"; fi
 
+      - name: Prompt for Write posts and render media (Claude)
+        if: steps.pick.outputs.slug != ''
+        env:
+          SLUG: ${{steps.pick.outputs.slug}}
+          DIR: ${{steps.pick.outputs.dir}}
+          BRIEF: ${{ inputs.brief || steps.pick.outputs.brief }}
+          DIALOGUE: ${{ steps.pick.outputs.format == 'dialogue' }}
+          HINGLISH: ${{ steps.pick.outputs.hinglish == 'true' }}
+        run: |
+          if [ -d .git ]; then grep -qx '.ops-\*' .git/info/exclude || printf '.ops-*\n' >> .git/info/exclude; fi
+          node ops/prompts/render.mjs ops/prompts/social-write-posts-and-render-media-claude.md .ops-prompt.md
+
       - name: Write posts and render media (Claude)
         if: steps.pick.outputs.slug != ''
         uses: anthropics/claude-code-action@v1
@@ -252,24 +264,7 @@ jobs:
           claude_args: |
             --max-turns 90
             --allowedTools "Read,Write,Edit,Glob,Grep,Bash(node scripts/social/card.mjs:*),Bash(node scripts/social/video.mjs:*),Bash(node scripts/social/validate.mjs:*),Bash(ffmpeg:*),Bash(mkdir:*),Bash(ls:*),Bash(rm ${{ steps.pick.outputs.dir }}/frame-*),Bash(rm ${{ steps.pick.outputs.dir }}/hi/frame-*)"
-          prompt: |
-            Prepare the social media drafts for the EpiFive article `${{ steps.pick.outputs.slug }}`
-            (content/posts/${{ steps.pick.outputs.slug }}.md, live at https://www.epifive.com/blog/${{ steps.pick.outputs.slug }}).
-
-            Read automation/SOCIAL.md and follow "Writing rules", "Files to write" and "Render and check the media"
-            exactly. The draft folder is `${{ steps.pick.outputs.dir }}` (create it).
-
-            When you are done, run `node scripts/social/validate.mjs ${{ steps.pick.outputs.slug }} ${{ steps.pick.outputs.dir }}`
-            and fix every problem it reports until it passes.
-
-            ${{ (inputs.brief || steps.pick.outputs.brief) && format('Extra instruction for this share (it overrides nothing in the Writing rules): {0}', inputs.brief || steps.pick.outputs.brief) || '' }}
-
-            ${{ steps.pick.outputs.format == 'dialogue' && 'This share is a "Max & Riya" character Short: also write dialogue.json exactly as SOCIAL.md section "dialogue.json" describes (Riya states the problem in the first line, Max gives the steps of points.txt). Every other file is written and rendered as usual.' || '' }}
-
-            ${{ steps.pick.outputs.hinglish == 'true' && 'After the English files, write the Hinglish version in the subfolder hi/ exactly as SOCIAL.md section "Hinglish Reel" describes (Roman-script Hinglish, English tech terms kept in English, its own cover, captions and YouTube title, different from the English ones) and render hi/reel.mp4 with video.mjs --lang hi as shown in "Render and check the media". validate.mjs checks both versions.' || '' }}
-
-            Do not publish anything, do not commit, do not push and do not edit files outside the draft folder.
-            Later workflow steps publish and log the result.
+          prompt: Your task for this run is in the file .ops-prompt.md in the repository root. Read it first and follow it exactly.
 
       - name: Validate drafts
         if: steps.pick.outputs.slug != ''
@@ -607,7 +602,7 @@ jobs:
         run: |
           git clone -q --depth 1 "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" "$RUNNER_TEMP/auto"
           cd "$RUNNER_TEMP/auto"
-          node reels/queue.mjs add --file reels/queue.jsonl --slug "$SLUG" --run "${{ github.run_id }}" --artifact "social-$SLUG" --due "$EN_AT"
+          node "$GITHUB_WORKSPACE/ops/reels/queue.mjs" add --file reels/queue.jsonl --slug "$SLUG" --run "${{ github.run_id }}" --artifact "social-$SLUG" --due "$EN_AT"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add reels/queue.jsonl

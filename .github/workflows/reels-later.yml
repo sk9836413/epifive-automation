@@ -45,11 +45,21 @@ jobs:
         with:
           ref: main
 
+      - name: Check out the code (private repo, ops/)
+        uses: actions/checkout@v4
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+          path: _ops
+          persist-credentials: false
+          sparse-checkout: |
+            ops/reels
+
       - name: Anything due?
         id: due
         run: |
           mkdir -p reels
-          it=$(node reels/queue.mjs due --file reels/queue.jsonl)
+          it=$(node _ops/ops/reels/queue.mjs due --file reels/queue.jsonl)
           echo "$it"
           get() { node -e 'const v = JSON.parse(process.argv[1])[process.argv[2]]; process.stdout.write(v == null ? "" : String(v))' "$it" "$1"; }
           { echo "slug=$(get slug)"; echo "run=$(get run)"; echo "artifact=$(get artifact)"; } >> "$GITHUB_OUTPUT"
@@ -116,7 +126,7 @@ jobs:
         run: |
           if [ -n "$SLUG" ]; then
             if [ -z "$RESULT" ] || [ ! -s "$RESULT" ]; then RESULT="$RUNNER_TEMP/none.json"; echo '{"status":"error","error":"no result"}' > "$RESULT"; fi
-            node reels/queue.mjs done --file reels/queue.jsonl --slug "$SLUG" --result "$RESULT" --log reels/log.md | tee -a "$GITHUB_STEP_SUMMARY"
+            node _ops/ops/reels/queue.mjs done --file reels/queue.jsonl --slug "$SLUG" --result "$RESULT" --log reels/log.md | tee -a "$GITHUB_STEP_SUMMARY"
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
