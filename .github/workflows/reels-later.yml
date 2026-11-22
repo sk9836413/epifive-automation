@@ -26,7 +26,7 @@ concurrency:
 jobs:
   post:
     runs-on: ubuntu-24.04
-    timeout-minutes: 25
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
         with:
@@ -88,6 +88,8 @@ jobs:
           META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
           META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          REELS_HOST_REPO: ${{ github.repository }}
+          REELS_HOST_TOKEN: ${{ github.token }}
           COMMENT_FUNNEL_IG: ${{ vars.COMMENT_FUNNEL_IG }}
           SLUG: ${{ steps.due.outputs.slug }}
           DRY: ${{ inputs.dry_run && 'true' || 'false' }}

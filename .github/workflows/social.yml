@@ -317,6 +317,9 @@ jobs:
             node -e "process.exit(require('./$DIR/dialogue-meta.json').seconds <= 89 ? 0 : 1)" && social="$DIR/dialogue.mp4"
           fi
           { echo "youtube=$yt"; echo "captions=$cap"; echo "social=$social"; } >> "$GITHUB_OUTPUT"
+          for f in "$DIR/reel.mp4" "$DIR/hi/reel.mp4" "$social"; do
+            if [ -s "$f" ]; then node scripts/social/reel-spec.mjs "$f" --fix || echo "::warning::$f does not meet Meta's Reels spec (see the line above)"; fi
+          done
 
       - name: Publish to Facebook and Instagram (Graph API)
         id: meta
@@ -325,6 +328,8 @@ jobs:
           META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
           META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          REELS_HOST_REPO: ${{ github.repository }}
+          REELS_HOST_TOKEN: ${{ github.token }}
           SLUG: ${{ steps.pick.outputs.slug }}
           DIR: ${{ steps.pick.outputs.dir }}
           VIDEO: ${{ steps.media.outputs.social }}
