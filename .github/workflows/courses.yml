@@ -5,7 +5,7 @@
 #
 # Schedule: GitHub cron (no scheduler Worker change). 08:05 IST, with retries at 09:05 and 11:35 IST because GitHub
 # drops some scheduled runs; the retries only send what the earlier run did not (per-contact state + Idempotency-Key).
-# Manual runs: mode dry-run (counts only), send, setup (contact properties + segments), enrol-test / unenrol-test
+# Manual runs: mode dry-run (counts only), send, setup (contact properties; lists segment names), enrol-test / unenrol-test
 # (an @epifive.com test contact only). THIS REPO IS PUBLIC: the script prints counts, course ids and HTTP statuses,
 # never an address, contact id, key or API response.
 name: Email courses

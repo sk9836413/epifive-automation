@@ -33,35 +33,3 @@ jobs:
             })();
           '
 
-      # Audience and course counts (owner, 22 Nov 2026: readers are "Working professional" or "Student"). Counts only.
-      - name: Count audience and course segments
-        env:
-          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-        run: |
-          node -e '
-            (async () => {
-              const H = { Authorization: `Bearer ${process.env.RESEND_API_KEY}` };
-              const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-              const segs = await (await fetch("https://api.resend.com/segments?limit=100", { headers: H })).json();
-              const names = ["Audience: professional", "Audience: student", "Course: Microsoft 365 Admin", "Course: Cybersecurity Career"];
-              const lines = [];
-              for (const name of names) {
-                const seg = (segs.data || []).find((s) => s.name === name);
-                if (!seg) { lines.push(`${name}: no segment yet`); continue; }
-                let after = "", active = 0, total = 0;
-                for (let page = 0; page < 100; page++) {
-                  await sleep(600);
-                  const q = new URLSearchParams({ limit: "100", segment_id: seg.id, ...(after ? { after } : {}) });
-                  const r = await fetch("https://api.resend.com/contacts?" + q, { headers: H });
-                  if (!r.ok) { lines.push(`${name}: HTTP ${r.status}`); break; }
-                  const j = await r.json();
-                  for (const c of j.data) { total++; if (!c.unsubscribed) active++; }
-                  if (!j.has_more || !j.data.length) break;
-                  after = j.data[j.data.length - 1].id;
-                }
-                lines.push(`${name}: ${active} active of ${total}`);
-              }
-              console.log(lines.join("\n"));
-              require("fs").appendFileSync(process.env.GITHUB_STEP_SUMMARY, lines.map((l) => `- ${l}`).join("\n") + "\n");
-            })();
-          '
