@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-22T17:02:47.942Z",
+ "lastScan": "2026-11-22T18:45:06.177Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -10369,6 +10369,42 @@
    "status": "duplicate",
    "hash": "abb9bc65",
    "post": "purview-dlp-policies-exchange-teams-endpoints"
+  },
+  "https://openai.com/index/perplexity-and-intelligence": {
+   "title": "Perplexity and Intelligence",
+   "link": "https://openai.com/index/perplexity-and-intelligence",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-22T00:00:00.000Z",
+   "updated": null,
+   "summary": "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.",
+   "first": "2026-11-22T18:45:06.177Z",
+   "score": 1,
+   "reasons": [
+    "+2 source openai-news",
+    "+1 also on techmeme",
+    "-2 category (Research)"
+   ],
+   "status": "below",
+   "hash": "7a06a3d5"
+  },
+  "https://intel.com/content/www/us/en/newsroom/news/client-computing/the-best-employee-experiences-start-with-technology-that-works-together.html": {
+   "title": "Best Experiences Start with Technology That Works",
+   "link": "https://www.intel.com/content/www/us/en/newsroom/news/client-computing/the-best-employee-experiences-start-with-technology-that-works-together.html",
+   "source": "intel-newsroom",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": null,
+   "updated": null,
+   "summary": "Client Computing",
+   "first": "2026-11-22T18:45:06.177Z",
+   "score": -1,
+   "reasons": [
+    "-1 source intel-newsroom"
+   ],
+   "status": "below",
+   "hash": "81a9c14c"
   }
  },
  "devices": {},
@@ -10380,7 +10416,8 @@
    "Google rolls out new search homepage with AI chat history and no search button",
    "Google Vids now lets you reuse your media in video generation"
   ],
-  "2026-11-22": []
+  "2026-11-22": [],
+  "2026-11-23": []
  },
  "trends": {
   "ipo:anthropic|63c1035a": {
@@ -10418,15 +10455,16 @@
     "AP",
     "WSJ",
     "Financial Times",
+    "Business Standard",
     "NDTV"
    ],
    "techmeme": false,
    "category": "launch",
    "topic": "ai-engineering",
    "parkOnly": false,
-   "last": "2026-11-22T16:00:21.000Z",
-   "date": "2026-11-22T16:00:21.000Z",
-   "score": 13,
+   "last": "2026-11-22T18:32:54.000Z",
+   "date": "2026-11-22T18:32:54.000Z",
+   "score": 14,
    "post": "anthropic-ipo-explained-claude-users"
   },
   "milestone:google|9c5a0e24": {

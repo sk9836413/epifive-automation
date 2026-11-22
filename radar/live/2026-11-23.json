@@ -1,0 +1,39 @@
+{
+ "date": "2026-11-23",
+ "title": "Tech news today, 23 November 2026",
+ "published": "2026-11-22T18:45:06.177Z",
+ "updated": "2026-11-22T18:45:06.177Z",
+ "items": [
+  {
+   "id": "9477151b",
+   "key": "https://theverge.com/transportation/1039779/delta-flights-delayed-system-outage",
+   "time": "2026-11-22T17:46:44.000Z",
+   "seen": "2026-11-22T18:45:06.177Z",
+   "kind": "outage",
+   "tier": 2,
+   "headline": "Delta flights in and out of Atlanta delayed due to system outage",
+   "summary": "All Delta flights in and out of Atlanta are facing significant delays on Sunday due to a problem with the system that calculates a plane's weight and balance. Hartsfield-Jackson Atlanta International Airport is Delta's largest hub and one of the busiest airports in the world. While only Delta is impacted at the moment, disruptions at […]",
+   "lines": [
+    "Reported by The Verge: All Delta flights in and out of Atlanta are facing significant delays on Sunday due to a problem with the system that calculates a plane's weight and balance.",
+    "Hartsfield-Jackson Atlanta International Airport is Delta's largest hub and one of the busiest airports in the world, and only Delta is affected at the moment.",
+    "For IT teams, the outage shows how a single system failure can delay operations at a major hub."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Verge",
+    "url": "https://www.theverge.com/transportation/1039779/delta-flights-delayed-system-outage"
+   },
+   "sourceId": "the-verge",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "families": [],
+   "score": 4,
+   "story": null
+  }
+ ],
+ "description": "1 technology update from official sources, updated hourly: Delta flights in and out of Atlanta delayed due to system outage."
+}
