@@ -61,7 +61,7 @@ jobs:
         if: steps.gate.outputs.ready == 'true'
         with:
           persist-credentials: false
-          sparse-checkout: minitools
+          sparse-checkout: .github
       - name: Site repo rules and pipeline (private)
         if: steps.gate.outputs.ready == 'true'
         uses: actions/checkout@v4
@@ -75,6 +75,8 @@ jobs:
             /automation/minitools/
             /automation/STORE.md
             /automation/OWNER-RULES.md
+            /ops/minitools/
+            /ops/prompts/
       - uses: actions/setup-node@v4
         if: steps.gate.outputs.ready == 'true'
         with:
@@ -88,6 +90,14 @@ jobs:
           printf '.site/\n.run/\n' >> .git/info/exclude
           gh repo list epifive -L 500 --json name -q '.[].name' > .run/existing.txt
           echo "org repos: $(wc -l < .run/existing.txt)"
+      - name: Prompt for Plan (Claude)
+        if: steps.gate.outputs.ready == 'true'
+        env:
+          COUNT: ${{inputs.count || '2'}}
+        run: |
+          if [ -d .git ]; then grep -qx '.ops-\*' .git/info/exclude || printf '.ops-*\n' >> .git/info/exclude; fi
+          node .site/ops/prompts/render.mjs .site/ops/prompts/mini-tools-plan-claude.md .ops-prompt.md
+
       - name: Plan (Claude)
         if: steps.gate.outputs.ready == 'true'
         continue-on-error: true
@@ -100,27 +110,13 @@ jobs:
           claude_args: |
             --max-turns 60
             --allowedTools "Read,Write,Glob,Grep,WebSearch,WebFetch,Bash(curl:*)"
-          prompt: |
-            You plan today's EpiFive mini tools. Read .site/automation/minitools/MINI-TOOLS-PIPELINE.md (ranked candidates,
-            week schedule, "Release log" at the bottom), .site/automation/minitools/FACTORY-RULES.md (NAMING RULE and NAME
-            CHECK) and .run/existing.txt (repos that already exist in the epifive GitHub org).
-            Pick the next ${{ inputs.count || '2' }} tools in the schedule that are NOT in the Release log and not in
-            existing.txt (match by purpose, not by the old "*zen" names; Termzen is dropped). If the schedule is exhausted,
-            pick the next highest-ranked unreleased candidates. Every tool is "EpiFive <plain descriptive name>"; slug =
-            descriptive part in kebab-case. Do the NAME CHECK for each (web search, domains with curl -sI, GitHub); if a
-            name clashes, pick another and re-check.
-            Write .run/plan.json: a JSON array, one object per tool:
-            {"slug","name","old_name","tag" (<= 48 chars, for the org profile card),"description" (<= 120 chars),
-             "topics" (6-8 lowercase GitHub topics),"free_features" [..],"pro_features" [..],"price_inr","price_usd",
-             "disclaimers" [legal lines from the pipeline, may be empty],"name_check" (short summary of queries + results)}
-            Take features, prices and disclaimers from the pipeline entry. Never write personal names or local paths.
-            Write only .run/plan.json. Never print secrets.
+          prompt: Your task for this run is in the file .ops-prompt.md in the repository root. Read it first and follow it exactly.
       - name: Check the plan
         id: check
         if: steps.gate.outputs.ready == 'true'
         run: |
           [ -f .run/plan.json ] || echo '[]' > .run/plan.json
-          m=$(node minitools/plan-check.mjs .run/plan.json .run/existing.txt "${{ inputs.count || '2' }}")
+          m=$(node .site/ops/minitools/plan-check.mjs .run/plan.json .run/existing.txt "${{ inputs.count || '2' }}")
           echo "matrix=$m" >> "$GITHUB_OUTPUT"
           echo "count=$(node -e 'console.log(JSON.parse(process.argv[1]).slug.length)' "$m")" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-artifact@v4
@@ -145,11 +141,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
           persist-credentials: false
-          sparse-checkout: minitools
+          sparse-checkout: ops/minitools
       - name: Keep the helper scripts outside the workspace
         run: |
-          mkdir -p "$AUTO_DIR" && cp -r minitools "$AUTO_DIR/" && find . -mindepth 1 -delete
+          mkdir -p "$AUTO_DIR" && cp -r ops/minitools "$AUTO_DIR/" && find . -mindepth 1 -delete
           mkdir -p work .run
       - name: Site repo rules (private)
         uses: actions/checkout@v4
@@ -162,6 +160,7 @@ jobs:
           sparse-checkout: |
             /automation/minitools/
             /automation/STORE.md
+            /ops/prompts/
       - uses: actions/download-artifact@v4
         with:
           name: plan
@@ -171,6 +170,13 @@ jobs:
           node-version: 24
       - name: Tool brief
         run: node -e 'const t=require("./.run/plan.json").find(x=>x.slug===process.env.SLUG); require("fs").writeFileSync(".run/tool.json", JSON.stringify(t,null,2)); console.log("building", t.slug)'
+      - name: Prompt for Build (Claude)
+        env:
+          WORKSPACE: ${{github.workspace}}
+        run: |
+          if [ -d .git ]; then grep -qx '.ops-\*' .git/info/exclude || printf '.ops-*\n' >> .git/info/exclude; fi
+          node .site/ops/prompts/render.mjs .site/ops/prompts/mini-tools-build-claude.md .ops-prompt.md
+
       - name: Build (Claude)
         id: agent
         continue-on-error: true
@@ -184,18 +190,7 @@ jobs:
           claude_args: |
             --max-turns 300
             --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(npm:*),Bash(npx:*),Bash(node:*),Bash(git:*),Bash(ls:*),Bash(mkdir:*),Bash(cp:*),Bash(mv:*),Bash(rm:*),Bash(cat:*),Bash(find:*),Bash(curl:*),Bash(grep:*),Bash(sed:*)"
-          prompt: |
-            Read .site/automation/minitools/FACTORY-RULES.md completely and follow it exactly (it overrides everything
-            else). Build the tool described in .run/tool.json (name, slug, FREE vs PRO features, prices, disclaimers,
-            name check already done: copy its result into HANDOFF.md under "## Name check"). Its pipeline entry (old name
-            in "old_name") is in .site/automation/minitools/MINI-TOOLS-PIPELINE.md.
-            Work only in work/<slug> (FREE) and work/<slug>-pro (PRO), both their own git repos on branch main, every
-            commit with git -c user.name=EpiFive -c user.email=newsletter@epifive.com (author AND committer: also set
-            GIT_COMMITTER_NAME/GIT_COMMITTER_EMAIL the same way). The screenshot helper is at $AUTO_DIR/minitools/screenshots.mjs
-            (AUTO_DIR=${{ github.workspace }}/../auto). Product page for "Get Pro" links:
-            https://www.epifive.com/products/<slug>-pro. Buying is "request to buy" by email (info@epifive.com) - never
-            another email. You never deploy, push or create repos: the workflow does that after its checks.
-            Finish with work/<slug>/HANDOFF.md and work/<slug>/RESULT.md. Never print secrets.
+          prompt: Your task for this run is in the file .ops-prompt.md in the repository root. Read it first and follow it exactly.
       - name: Verify
         id: verify
         env:
@@ -273,8 +268,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
           persist-credentials: false
-          sparse-checkout: minitools
+          sparse-checkout: ops/minitools
       - uses: actions/setup-node@v4
         with:
           node-version: 24
@@ -296,7 +293,7 @@ jobs:
           RELEASED: ${{ steps.rel.outputs.released }}
         run: |
           git clone -q "https://x-access-token:${GH_TOKEN}@github.com/epifive/.github.git" .profile
-          node minitools/finish.mjs profile .profile .run/plan/plan.json $RELEASED
+          node ops/minitools/finish.mjs profile .profile .run/plan/plan.json $RELEASED
           ( cd .profile && GITHUB_TOKEN="$GH_TOKEN" node scripts/build.mjs > /dev/null )
           git -C .profile add -A
           if ! git -C .profile diff --cached --quiet; then
@@ -314,7 +311,7 @@ jobs:
           git clone -q --depth 1 --filter=blob:none --sparse "https://x-access-token:${TOKEN}@github.com/sk9836413/EPIVIFE.git" .site
           git -C .site sparse-checkout set automation/minitools
           for s in $RELEASED; do f=$(find .run -name "$s.HANDOFF.md" | head -1); [ -n "$f" ] && cp "$f" ".site/automation/minitools/handoffs/$s.md"; done
-          node minitools/finish.mjs log .site/automation/minitools/MINI-TOOLS-PIPELINE.md .run/plan/plan.json .run
+          node ops/minitools/finish.mjs log .site/automation/minitools/MINI-TOOLS-PIPELINE.md .run/plan/plan.json .run
           git -C .site add automation/minitools
           if ! git -C .site diff --cached --quiet; then
             git -C .site -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
@@ -330,4 +327,4 @@ jobs:
           REPORT_TO: info@epifive.com
           REPORT_BCC: epifive2@gmail.com
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-        run: node minitools/finish.mjs email .run/plan/plan.json .run
+        run: node ops/minitools/finish.mjs email .run/plan/plan.json .run

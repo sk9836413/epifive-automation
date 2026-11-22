@@ -38,6 +38,13 @@ jobs:
         id: date
         run: echo "today=$(TZ=Asia/Kolkata date +%F)" >> "$GITHUB_OUTPUT"
 
+      - name: Prompt for Build one tool (Claude)
+        env:
+          TODAY: ${{steps.date.outputs.today}}
+        run: |
+          if [ -d .git ]; then grep -qx '.ops-\*' .git/info/exclude || printf '.ops-*\n' >> .git/info/exclude; fi
+          node ops/prompts/render.mjs ops/prompts/feature-build-one-tool-claude.md .ops-prompt.md
+
       - name: Build one tool (Claude)
         uses: anthropics/claude-code-action@v1
         with:
@@ -46,9 +53,7 @@ jobs:
           claude_args: |
             --max-turns 120
             --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(npm run build:*),Bash(ls:*),Bash(node:*)"
-          prompt: |
-            Follow automation/FEATURE.md exactly. Today's date (IST) is ${{ steps.date.outputs.today }}.
-            Build exactly one tool and make `npm run build` pass.
+          prompt: Your task for this run is in the file .ops-prompt.md in the repository root. Read it first and follow it exactly.
 
       - name: Check scope and build
         id: check

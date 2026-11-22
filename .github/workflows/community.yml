@@ -39,6 +39,13 @@ jobs:
       - name: Collect recent forum questions
         run: node scripts/seo/community-candidates.mjs > .community-candidates.json
 
+      - name: Prompt for Find questions and draft answers (Claude)
+        env:
+          TODAY: ${{steps.date.outputs.today}}
+        run: |
+          if [ -d .git ]; then grep -qx '.ops-\*' .git/info/exclude || printf '.ops-*\n' >> .git/info/exclude; fi
+          node ops/prompts/render.mjs ops/prompts/community-find-questions-and-draft-answers-claude.md .ops-prompt.md
+
       - name: Find questions and draft answers (Claude)
         uses: anthropics/claude-code-action@v1
         with:
@@ -47,9 +54,7 @@ jobs:
           claude_args: |
             --max-turns 80
             --allowedTools "Read,Write,Glob,Grep,WebSearch,WebFetch"
-          prompt: |
-            Follow automation/COMMUNITY.md exactly. The candidate questions are in .community-candidates.json. Today's date is ${{ steps.date.outputs.today }}.
-            Write the result to automation/community/${{ steps.date.outputs.today }}.md and nothing else.
+          prompt: Your task for this run is in the file .ops-prompt.md in the repository root. Read it first and follow it exactly.
 
       - name: Email the drafts
         env:

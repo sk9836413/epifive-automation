@@ -52,6 +52,14 @@ jobs:
         if: steps.date.outputs.done != 'true'
         run: npm ci --no-audit --no-fund
 
+      - name: Prompt for Research and write (Claude)
+        if: steps.date.outputs.done != 'true'
+        env:
+          TODAY: ${{steps.date.outputs.today}}
+        run: |
+          if [ -d .git ]; then grep -qx '.ops-\*' .git/info/exclude || printf '.ops-*\n' >> .git/info/exclude; fi
+          node ops/prompts/render.mjs ops/prompts/news-research-and-write-claude.md .ops-prompt.md
+
       - name: Research and write (Claude)
         if: steps.date.outputs.done != 'true'
         uses: anthropics/claude-code-action@v1
@@ -61,9 +69,7 @@ jobs:
           claude_args: |
             --max-turns 120
             --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node scripts/check-news.mjs:*),Bash(ls:*)"
-          prompt: |
-            Write today's EpiFive daily brief. Today's date (IST) is ${{ steps.date.outputs.today }}.
-            Follow automation/NEWS.md exactly. Write exactly one new file in content/news/ and nothing else.
+          prompt: Your task for this run is in the file .ops-prompt.md in the repository root. Read it first and follow it exactly.
 
       - name: Find the brief
         id: brief

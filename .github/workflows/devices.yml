@@ -65,6 +65,16 @@ jobs:
         with:
           node-version: 24
 
+      - name: Prompt for Add devices (Claude)
+        if: steps.date.outputs.done != 'true'
+        env:
+          TODAY: ${{steps.date.outputs.today}}
+          COUNT: ${{steps.date.outputs.count}}
+          FOCUS: ${{inputs.focus || 'none (rotate categories as DEVICES.md says)'}}
+        run: |
+          if [ -d .git ]; then grep -qx '.ops-\*' .git/info/exclude || printf '.ops-*\n' >> .git/info/exclude; fi
+          node ops/prompts/render.mjs ops/prompts/devices-add-devices-claude.md .ops-prompt.md
+
       - name: Add devices (Claude)
         id: claude
         continue-on-error: true # keep the devices already written if Claude runs out of turns
@@ -76,14 +86,7 @@ jobs:
           claude_args: |
             --max-turns ${{ steps.date.outputs.turns }}
             --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node scripts/check-devices.mjs:*),Bash(node scripts/seo/wikidata-device.mjs:*),Bash(node scripts/seo/build-vs-pairs.mjs:*),Bash(ls:*)"
-          prompt: |
-            Follow automation/DEVICES.md exactly. Today's date (IST) is ${{ steps.date.outputs.today }}.
-            Add ${{ steps.date.outputs.count }} new device(s).
-            Focus: ${{ inputs.focus || 'none (rotate categories as DEVICES.md says)' }}.
-            Only create new content/devices/<slug>.json files, append to automation/devices-log.md and
-            regenerate src/data/vs-pairs.json with node scripts/seo/build-vs-pairs.mjs.
-            If the focus starts with "Launch mode:", follow the "Launch mode" section of DEVICES.md instead of
-            section 1: only the devices named there (a "refresh <slug> =" entry may update that one existing file).
+          prompt: Your task for this run is in the file .ops-prompt.md in the repository root. Read it first and follow it exactly.
 
       - name: Claude's report
         if: always() && steps.claude.outputs.execution_file != ''

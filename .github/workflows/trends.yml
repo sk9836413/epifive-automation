@@ -48,6 +48,14 @@ jobs:
           GSC_SITE: ${{ secrets.GSC_SITE }}
         run: node scripts/seo/trend-signals.mjs > .trend-signals.json
 
+      - name: Prompt for Plan articles and tools (Claude)
+        if: steps.date.outputs.done != 'true'
+        env:
+          TODAY: ${{steps.date.outputs.today}}
+        run: |
+          if [ -d .git ]; then grep -qx '.ops-\*' .git/info/exclude || printf '.ops-*\n' >> .git/info/exclude; fi
+          node ops/prompts/render.mjs ops/prompts/trends-plan-articles-and-tools-claude.md .ops-prompt.md
+
       - name: Plan articles and tools (Claude)
         if: steps.date.outputs.done != 'true'
         uses: anthropics/claude-code-action@v1
@@ -57,10 +65,7 @@ jobs:
           claude_args: |
             --max-turns 60
             --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(ls:*)"
-          prompt: |
-            Follow automation/TRENDS.md exactly. Today's date (IST) is ${{ steps.date.outputs.today }}.
-            Signals are in .trend-signals.json. Only change automation/backlog.md, automation/features.md, automation/ideas.md
-            and automation/trends/${{ steps.date.outputs.today }}.md.
+          prompt: Your task for this run is in the file .ops-prompt.md in the repository root. Read it first and follow it exactly.
 
       - name: Save
         if: steps.date.outputs.done != 'true'

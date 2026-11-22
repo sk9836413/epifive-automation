@@ -35,6 +35,17 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Check out the code (private repo, ops/)
+        uses: actions/checkout@v4
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+          path: _ops
+          persist-credentials: false
+          sparse-checkout: |
+            ops/control
+            ops/report
+
       - name: Check out the site's automation logs (private)
         continue-on-error: true
         uses: actions/checkout@v4
@@ -71,7 +82,7 @@ jobs:
           node-version: 24
 
       - name: Tests
-        run: node --test control/control.test.mjs
+        run: node --test _ops/ops/control/control.test.mjs
 
       - name: Build and send to the CRM
         env:
@@ -97,4 +108,4 @@ jobs:
           LINKEDIN_MEMBER_TOKEN_EXPIRES: ${{ vars.LINKEDIN_MEMBER_TOKEN_EXPIRES }}
         run: |
           if [ -n "$ONLY" ] && ! printf '%s' "$ONLY" | grep -Eq '^[a-z,]+$'; then echo "Bad input"; exit 1; fi
-          node control/snapshot.mjs --site .site --shyam .shyam ${ONLY:+--only "$ONLY"}
+          AUTOMATION_DATA="$GITHUB_WORKSPACE" node _ops/ops/control/snapshot.mjs --site .site --shyam .shyam ${ONLY:+--only "$ONLY"}

@@ -97,6 +97,15 @@ jobs:
             console.log(`count=${count} mix=${mix}`);
             fs.appendFileSync(process.env.GITHUB_OUTPUT, [`count=${count}`, `mix=${mix}`, `from_target=${fromTarget}`, ""].join(String.fromCharCode(10)));
           '
+      - name: Prompt for Plan ideas (Claude)
+        if: steps.size.outputs.count != '0'
+        env:
+          COUNT: ${{steps.size.outputs.count}}
+          MIX: ${{steps.size.outputs.mix}}
+        run: |
+          if [ -d .git ]; then grep -qx '.ops-\*' .git/info/exclude || printf '.ops-*\n' >> .git/info/exclude; fi
+          node ops/prompts/render.mjs ops/prompts/bulk-plan-ideas-claude.md .ops-prompt.md
+
       - name: Plan ideas (Claude)
         if: steps.size.outputs.count != '0'
         uses: anthropics/claude-code-action@v1
@@ -106,10 +115,7 @@ jobs:
           claude_args: |
             --max-turns 120
             --allowedTools "Read,Write,Glob,Grep,WebSearch,WebFetch"
-          prompt: |
-            You are the planner in automation/BULK.md. Plan exactly ${{ steps.size.outputs.count }} article ideas with
-            this topic mix (topic=count): ${{ steps.size.outputs.mix }}.
-            Write the JSON array to automation/bulk/plan.json and nothing else.
+          prompt: Your task for this run is in the file .ops-prompt.md in the repository root. Read it first and follow it exactly.
       - name: Validate and split into batches of 8
         id: split
         run: |
@@ -170,6 +176,13 @@ jobs:
           '
         env:
           BATCH: ${{ matrix.batch }}
+      - name: Prompt for Write (Claude)
+        env:
+          DATE: ${{needs.plan.outputs.date}}
+        run: |
+          if [ -d .git ]; then grep -qx '.ops-\*' .git/info/exclude || printf '.ops-*\n' >> .git/info/exclude; fi
+          node ops/prompts/render.mjs ops/prompts/bulk-write-claude.md .ops-prompt.md
+
       - name: Write (Claude)
         uses: anthropics/claude-code-action@v1
         with:
@@ -178,16 +191,21 @@ jobs:
           claude_args: |
             --max-turns 250
             --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node scripts/check-posts.mjs:*),Bash(ls:*)"
-          prompt: |
-            You are the writer in automation/BULK.md. Use date '${{ needs.plan.outputs.date }}'.
-            Your articles are listed in assignment.txt. Write every one of them yourself, one at a time:
-            research it, write content/posts/<slug>.md, run the quality gate, then move to the next.
-            Do not use subagents or the Task tool. Do not stop until a file exists for every slug.
+          prompt: Your task for this run is in the file .ops-prompt.md in the repository root. Read it first and follow it exactly.
       - name: Find missing articles
         id: missing
         run: |
           m=""; for s in ${{ steps.assign.outputs.slugs }}; do [ -f "content/posts/$s.md" ] || m="$m $s"; done
           echo "slugs=$m" >> "$GITHUB_OUTPUT"; echo "Missing:$m"
+      - name: Prompt for Write the missing ones (Claude, retry)
+        if: steps.missing.outputs.slugs != ''
+        env:
+          DATE: ${{needs.plan.outputs.date}}
+          SLUGS: ${{steps.missing.outputs.slugs}}
+        run: |
+          if [ -d .git ]; then grep -qx '.ops-\*' .git/info/exclude || printf '.ops-*\n' >> .git/info/exclude; fi
+          node ops/prompts/render.mjs ops/prompts/bulk-write-the-missing-ones-claude-retry.md .ops-prompt.md
+
       - name: Write the missing ones (Claude, retry)
         if: steps.missing.outputs.slugs != ''
         uses: anthropics/claude-code-action@v1
@@ -197,11 +215,14 @@ jobs:
           claude_args: |
             --max-turns 250
             --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node scripts/check-posts.mjs:*),Bash(ls:*)"
-          prompt: |
-            You are the writer in automation/BULK.md. Use date '${{ needs.plan.outputs.date }}'.
-            Write these articles (details for each slug are in assignment.txt):${{ steps.missing.outputs.slugs }}
-            Write every one yourself, one at a time, and run the quality gate on each. Do not use subagents
-            or the Task tool. Do not stop until a file exists for every slug listed.
+          prompt: Your task for this run is in the file .ops-prompt.md in the repository root. Read it first and follow it exactly.
+      - name: Prompt for Fact-check (Claude, fresh context)
+        env:
+          SLUGS: ${{steps.assign.outputs.slugs}}
+        run: |
+          if [ -d .git ]; then grep -qx '.ops-\*' .git/info/exclude || printf '.ops-*\n' >> .git/info/exclude; fi
+          node ops/prompts/render.mjs ops/prompts/bulk-fact-check-claude-fresh-context.md .ops-prompt.md
+
       - name: Fact-check (Claude, fresh context)
         uses: anthropics/claude-code-action@v1
         with:
@@ -210,10 +231,7 @@ jobs:
           claude_args: |
             --max-turns 200
             --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node scripts/check-posts.mjs:*),Bash(ls:*)"
-          prompt: |
-            You are the editor in automation/BULK.md. Review these new articles in content/posts/ (skip any
-            slug that has no file): ${{ steps.assign.outputs.slugs }}
-            Review every one yourself, one at a time. Do not use subagents or the Task tool.
+          prompt: Your task for this run is in the file .ops-prompt.md in the repository root. Read it first and follow it exactly.
       - name: Collect
         if: always()
         run: |
