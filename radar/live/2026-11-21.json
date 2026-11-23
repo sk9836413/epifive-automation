@@ -2,7 +2,7 @@
  "date": "2026-11-21",
  "title": "Tech news today, 21 November 2026",
  "published": "2026-11-20T20:46:38.014Z",
- "updated": "2026-11-22T01:42:05.747Z",
+ "updated": "2026-11-23T03:02:13.148Z",
  "items": [
   {
    "id": "3b5198cc",
@@ -993,7 +993,9 @@
    },
    "sourceId": "gnews-infra",
    "reported": true,
-   "also": [],
+   "also": [
+    "The Verge"
+   ],
    "post": null,
    "device": null,
    "ai": null,

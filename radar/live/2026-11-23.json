@@ -2,7 +2,7 @@
  "date": "2026-11-23",
  "title": "Tech news today, 23 November 2026",
  "published": "2026-11-22T18:45:06.177Z",
- "updated": "2026-11-22T22:23:42.014Z",
+ "updated": "2026-11-23T03:02:13.148Z",
  "items": [
   {
    "id": "9477151b",
@@ -61,7 +61,36 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "4fd2579e",
+   "key": "https://news.samsung.com/global/the-technology-behind-more-precise-finding-with-galaxy-smarttag3-and-smartthings",
+   "time": "2026-11-23T03:02:13.148Z",
+   "seen": "2026-11-23T03:02:13.148Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "The Technology Behind More Precise Finding With Galaxy SmartTag3 and SmartThings",
+   "summary": "Samsung Electronics launched Galaxy SmartTag3, a compact tracker that helps locate personal belongings or pets. Weighing just 9.15 g — approximately 33% lighter and 35% smaller by volume than its predecessor — Galaxy SmartTag3 offers improved portability and battery life of up to 550 days under standard usage or 790 days in Power Saving Mode. […]",
+   "lines": [
+    "Samsung Electronics launched Galaxy SmartTag3, a compact tracker that helps locate personal belongings or pets.",
+    "The tracker weighs 9.15 g, about 33% lighter and 35% smaller by volume than its predecessor, with battery life of up to 550 days under standard usage or 790 days in Power Saving Mode.",
+    "The smaller size and longer battery life offer improved portability and ownership convenience for users who rely on the device to find belongings or pets."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Samsung Newsroom (global)",
+    "url": "https://news.samsung.com/global/the-technology-behind-more-precise-finding-with-galaxy-smarttag3-and-smartthings"
+   },
+   "sourceId": "samsung-global",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
   }
  ],
- "description": "2 technology updates from official sources, updated hourly: Delta flights in and out of Atlanta delayed due to system outage; Hackers exploit GL.iNet cloud flaw to infect routers, KVM devices."
+ "description": "3 technology updates from official sources, updated hourly: Delta flights in and out of Atlanta delayed due to system outage; The Technology Behind More Precise Finding With Galaxy SmartTag3 and SmartThings; Hackers exploit GL.iNet cloud flaw to infect routers, KVM devices."
 }
