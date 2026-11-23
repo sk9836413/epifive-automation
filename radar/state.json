@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-23T04:43:49.396Z",
+ "lastScan": "2026-11-23T05:13:18.329Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -7752,6 +7752,23 @@
    ],
    "status": "below",
    "hash": "b99adf73"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64019": {
+   "title": "RBI to conduct 2-day Variable Rate Repo (VRR) auction under LAF on November 23, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64019",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-23T10:15:00.000Z",
+   "updated": null,
+   "summary": "On a review of current and evolving liquidity conditions in the near term, it has been decided to conduct a second Variable Rate Repo (VRR) auction on Monday, November 23, 2026, as under: Sl. No. Notified Amount (₹ crore) Tenor (day) Window Timing Date of Reversal 1 50,000 2 10:30 AM to 11:00 AM Nov",
+   "first": "2026-11-23T05:13:18.329Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "f665c688"
   }
  },
  "devices": {},
@@ -7811,8 +7828,8 @@
    "category": "launch",
    "topic": "ai-engineering",
    "parkOnly": false,
-   "last": "2026-11-23T04:27:16.000Z",
-   "date": "2026-11-23T04:27:16.000Z",
+   "last": "2026-11-23T04:51:02.000Z",
+   "date": "2026-11-23T04:51:02.000Z",
    "score": 14,
    "post": "anthropic-ipo-explained-claude-users"
   },
