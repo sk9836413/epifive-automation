@@ -32,6 +32,11 @@ on:
         description: Make the video even if the article is news (outage, CEO, retirement, incident, launch); off = skip it
         type: boolean
         default: false
+      linkedin_via:
+        description: 'LinkedIn Page poster for this run only: empty = repo variable LINKEDIN_VIA (default make), or pipedream / make'
+        type: choice
+        options: ['', pipedream, make]
+        default: ''
 
 env:
   SITE_REMOTE: https://x-access-token:${{ secrets.SITE_REPO_TOKEN }}@github.com/sk9836413/EPIVIFE.git
@@ -370,10 +375,19 @@ jobs:
             echo "::warning::The Graph API path did not run ($status); Make posts Facebook and Instagram instead."
           fi
 
-      - name: Publish to the LinkedIn Page (LinkedIn API)
+      - name: Publish to the LinkedIn Page (Pipedream or LinkedIn API)
         id: linkedin
         if: steps.pick.outputs.slug != ''
         env:
+          LINKEDIN_VIA: ${{ inputs.linkedin_via || vars.LINKEDIN_VIA }}
+          PIPEDREAM_CLIENT_ID: ${{ secrets.PIPEDREAM_CLIENT_ID }}
+          PIPEDREAM_CLIENT_SECRET: ${{ secrets.PIPEDREAM_CLIENT_SECRET }}
+          PIPEDREAM_PROJECT_ID: ${{ secrets.PIPEDREAM_PROJECT_ID }}
+          PIPEDREAM_ENVIRONMENT: ${{ secrets.PIPEDREAM_ENVIRONMENT }}
+          CRM_URL: ${{ vars.CRM_URL || 'https://epifive-crm.pages.dev' }}
+          INGEST_TOKEN: ${{ secrets.INGEST_TOKEN }}
+          REELS_HOST_REPO: ${{ github.repository }}
+          REELS_HOST_TOKEN: ${{ github.token }}
           LINKEDIN_PAGE_TOKEN: ${{ secrets.LINKEDIN_PAGE_TOKEN }}
           LINKEDIN_PAGE_TOKEN_EXPIRES: ${{ vars.LINKEDIN_PAGE_TOKEN_EXPIRES }}
           LINKEDIN_FORMATS: ${{ vars.LINKEDIN_FORMATS }}
@@ -382,23 +396,27 @@ jobs:
           DRY_RUN: ${{ inputs.dry_run }}
         run: |
           echo "direct=false" >> "$GITHUB_OUTPUT"
-          if [ -z "$LINKEDIN_PAGE_TOKEN" ]; then
-            echo "::notice::LINKEDIN_PAGE_TOKEN secret not set; the LinkedIn Page goes through Make."
+          if [ "$LINKEDIN_VIA" = pipedream ]; then
+            poster=scripts/social/linkedin-pipedream.mjs; label="Pipedream"
+          elif [ -n "$LINKEDIN_PAGE_TOKEN" ]; then
+            poster=scripts/social/linkedin-post.mjs; label="LinkedIn API"
+          else
+            echo "::notice::LINKEDIN_VIA is not pipedream and LINKEDIN_PAGE_TOKEN is not set; the LinkedIn Page goes through Make."
             exit 0
           fi
           if [ "$DRY_RUN" = "true" ]; then
-            node scripts/social/linkedin-post.mjs page "$SLUG" "$DIR" --dry-run || true
+            node "$poster" page "$SLUG" "$DIR" --dry-run || true
             exit 0
           fi
           result="$RUNNER_TEMP/linkedin-result.json"
-          node scripts/social/linkedin-post.mjs page "$SLUG" "$DIR" > "$result" || echo "::warning::The LinkedIn Page post failed; see the result line."
+          node "$poster" page "$SLUG" "$DIR" > "$result" || echo "::warning::The LinkedIn Page post via $label failed; see the result line."
           cat "$result"
           take=$(node -p "try { const r = JSON.parse(require('fs').readFileSync('$result', 'utf8').trim().split('\n').pop()); r.status === 'ok' || (r.status === 'error' && r.safeToRetry === false) ? 'api' : 'make' } catch { 'make' }")
           if [ "$take" = api ]; then
             echo "direct=true" >> "$GITHUB_OUTPUT"
             echo "result=$result" >> "$GITHUB_OUTPUT"
           else
-            echo "::warning::The LinkedIn API did not post (expired token or refused; owner: re-run linkedin-auth.mjs page); Make posts the LinkedIn Page instead."
+            echo "::warning::$label did not post the LinkedIn Page (not configured, no Page chosen in the CRM, expired connection or refused); Make posts it instead."
           fi
 
       - name: Publish via Make (LinkedIn; Facebook and Instagram only as the fallback)
