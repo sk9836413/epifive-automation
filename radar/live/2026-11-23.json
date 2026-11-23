@@ -2,7 +2,7 @@
  "date": "2026-11-23",
  "title": "Tech news today, 23 November 2026",
  "published": "2026-11-22T18:45:06.177Z",
- "updated": "2026-11-23T14:16:39.869Z",
+ "updated": "2026-11-23T18:17:46.191Z",
  "items": [
   {
    "id": "9477151b",
@@ -388,7 +388,488 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "4fcea476",
+   "key": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps",
+   "time": "2026-11-23T17:00:00.000Z",
+   "seen": "2026-11-23T18:17:46.191Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "A more tailored Google Search that’s uniquely yours",
+   "summary": "Get more helpful Search responses by securely opting in to connect Google Wallet, Drive, and the Gemini app to Personal Intelligence in AI Mode.",
+   "lines": [
+    "Google Search in AI Mode can connect Google Wallet, Drive, and the Gemini app to Personal Intelligence, but only if users opt in.",
+    "Google says the opt-in lets Search return more helpful responses that are tailored to each user.",
+    "IT admins may want to know which personal services users can connect to Search, since connection requires an explicit opt-in."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google: Gemini app blog",
+    "url": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/"
+   },
+   "sourceId": "gemini-blog",
+   "reported": false,
+   "also": [
+    "google-keyword"
+   ],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "91b4f55f",
+   "key": "https://claude.com/resources/articles/zero-data-retention-with-enterprise-frontier-safeguards",
+   "time": "2026-11-23T12:00:00.000Z",
+   "seen": "2026-11-23T18:17:46.191Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Zero data retention with Enterprise Frontier Safeguards is now in beta",
+   "summary": "Enterprise Frontier Safeguards is now in public beta, providing detection of sophisticated misuse while remaining compatible with zero data retention. Category Product updates Product Claude Platform Date November 23, 2026 Reading time 2 min Share Copy link Over the past few months, we've been developing Enterprise Frontier Safeguards (EFS) for our business customers. EFS provides state-of-the-art detection of sophisticated misuse, while remaining compatible with zero data retention (ZDR): neither Anthropic nor any cloud providers retain enterprises' data. Since we announced EFS in September , we've been developing it further with over 100 of our customers—including a quarter of the Fortune ",
+   "lines": [
+    "Anthropic has released Enterprise Frontier Safeguards (EFS) in public beta for business customers.",
+    "EFS detects sophisticated misuse and remains compatible with zero data retention, so neither Anthropic nor any cloud providers retain enterprise data.",
+    "Enterprises that require zero data retention can use misuse detection without storing their data with the vendor or cloud providers."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Claude by Anthropic: articles (product updates)",
+    "url": "https://claude.com/resources/articles/zero-data-retention-with-enterprise-frontier-safeguards"
+   },
+   "sourceId": "claude-articles",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "1a2ae523",
+   "key": "https://workspaceupdates.googleblog.com/2026/11/google-meet-on-web-now-supports-sending-1080p-video-for-all-users-enabled-by-default.html",
+   "time": "2026-11-23T16:16:33.518Z",
+   "seen": "2026-11-23T18:17:46.191Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Google Meet on the web now supports sending 1080p video for all users, enabled by default",
+   "summary": "We’re expanding 1080p Full HD video sending in Google Meet on the web (previously limited to select paid editions) to all users. It is now enabled by default on computers with a 1080p camera and sufficient compute and bandwidth. Meet transmits 1080p only when a participant's video tile is large enough to display it, and automatically scales resolution down when CPU or bandwidth is constrained. Getting started Admins: The default video quality can be configured at the OU or group level in the Admin console, and existing bandwidth-limit settings remain applied. Visit the Help Center to learn more about configuring default video quality . End users: 1080p will be ON by default under Auto on eli",
+   "lines": [
+    "Google Meet on the web now supports 1080p video sending for all users, not only those on select paid editions.",
+    "1080p is enabled by default on computers with a 1080p camera and sufficient compute and bandwidth. Meet sends 1080p only when a video tile is large enough to display it and scales down when CPU or bandwidth is constrained.",
+    "Admins can set the default video quality at the OU or group level in the Admin console, and existing bandwidth-limit settings remain applied."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google Workspace Updates",
+    "url": "http://workspaceupdates.googleblog.com/2026/11/google-meet-on-web-now-supports-sending-1080p-video-for-all-users-enabled-by-default.html"
+   },
+   "sourceId": "workspace-updates",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "dc01847d",
+   "key": "https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls",
+   "time": "2026-11-23T16:12:00.000Z",
+   "seen": "2026-11-23T18:17:46.191Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Introducing file slicing controls in the Gemini API",
+   "summary": "New file slicing controls and native Office file support in the Gemini API let agents inspect targeted slices across Google AI Studio and Vertex AI while paying only for…",
+   "lines": [
+    "Google introduced file slicing controls and native Office file support in the Gemini API.",
+    "The controls let agents inspect targeted slices of files across Google AI Studio and Vertex AI."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google: The Keyword",
+    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/"
+   },
+   "sourceId": "google-keyword",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "30de97bf",
+   "key": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification",
+   "time": "2026-11-23T16:59:40.000Z",
+   "seen": "2026-11-23T18:17:46.191Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Finding faster quantum algorithms with agents and formal verification",
+   "summary": "Using agent teams and formal verification to improve quantum algorithms for fusion and chemistry.",
+   "lines": [
+    "Google DeepMind describes using agent teams and formal verification to improve quantum algorithms for fusion and chemistry.",
+    "The post is aimed at finding faster quantum algorithms, and its relevance is mainly to teams following quantum computing research."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google DeepMind Blog",
+    "url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/"
+   },
+   "sourceId": "deepmind-blog",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "6cfa59c6",
+   "key": "https://workspaceupdates.googleblog.com/2026/11/make-messages-in-google-chat-from-apps-and-agents-easier-to-read-with-tables-and-headings.html",
+   "time": "2026-11-23T14:53:48.742Z",
+   "seen": "2026-11-23T18:17:46.191Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Make messages in Google Chat from apps and agents easier to read with tables and headings",
+   "summary": "Agents and apps in Google Chat can now send messages formatted with tables and headings. Tables make it easy to compare options, share status trackers, and present data in rows and columns. Headings provide a way to separate long messages, like summaries, reports, and plans, into clear, scannable sections. Developers can add both through the Google Chat API using standard Markdown. Headings support three levels (#, ##, and ###). Text in tables and headings can use formatting like bold, italics, links, and emoji. Everyone in the conversation will see tables and headings when an app or agent sends them. On the web, tables appear in the message, and you can scroll to see wider tables. On Androi",
+   "lines": [
+    "Agents and apps in Google Chat can now send messages formatted with tables and headings through the Google Chat API, using standard Markdown.",
+    "Headings support three levels, and tables and headings can include bold, italics, links, and emoji. Everyone in the conversation sees them.",
+    "Tables help compare options and present data, while headings separate long summaries, reports, and plans into scannable sections."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google Workspace Updates",
+    "url": "http://workspaceupdates.googleblog.com/2026/11/make-messages-in-google-chat-from-apps-and-agents-easier-to-read-with-tables-and-headings.html"
+   },
+   "sourceId": "workspace-updates",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "69bfc8a1",
+   "key": "https://news.samsung.com/global/samsung-launches-odyssey-g6-the-worlds-first-1100hz-gaming-monitor",
+   "time": "2026-11-23T18:17:46.191Z",
+   "seen": "2026-11-23T18:17:46.191Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Samsung Launches Odyssey G6: The World’s First 1,100Hz Gaming Monitor",
+   "summary": "Samsung Electronics today announced the launch of the 27-inch Odyssey G6 (G60H), the world’s first gaming monitor to support a refresh rate of up to 1,100Hz in HD. The monitor also features Dual Mode, which allows players to choose between HD at up to 1,100Hz and QHD at up to 600Hz to suit their game and […]",
+   "lines": [
+    "Samsung Electronics announced the 27-inch Odyssey G6 (G60H), a gaming monitor that supports a refresh rate of up to 1,100Hz in HD.",
+    "Dual Mode lets players choose between HD at up to 1,100Hz and QHD at up to 600Hz.",
+    "The monitor is relevant mainly to buyers comparing high-refresh-rate gaming displays."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Samsung Newsroom (global)",
+    "url": "https://news.samsung.com/global/samsung-launches-odyssey-g6-the-worlds-first-1100hz-gaming-monitor"
+   },
+   "sourceId": "samsung-global",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "caed4009",
+   "key": "https://ninjaone.com/blog/chromeos-support-generally-available",
+   "time": "2026-11-23T13:56:28.000Z",
+   "seen": "2026-11-23T18:17:46.191Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "NinjaOne Launches ChromeOS Support for Enhanced Device Management and Integration",
+   "summary": "Today, we’re making ChromeOS device support generally available with our 16.0 release, bringing ChromeOS devices into the inventory and support workflows you’re using in NinjaOne for your other endpoints. We’ve had an exciting early access period, with plenty of feedback from customers putting the integration to work, and we thank everyone who’s taken the time […]",
+   "lines": [
+    "NinjaOne has made ChromeOS device support generally available with its 16.0 release.",
+    "ChromeOS devices can now be included in NinjaOne inventory and support workflows alongside other endpoints.",
+    "The release followed an early access period, and IT teams managing mixed device fleets can use one tool for ChromeOS and other endpoints."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "NinjaOne Blog",
+    "url": "https://www.ninjaone.com/blog/chromeos-support-generally-available/"
+   },
+   "sourceId": "ninjaone-blog",
+   "sourceMax": 1,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "c62c031c",
+   "key": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-vcs-static-cred-hr7EWZ8t?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Cisco%20Expressway%20Series%20Remote%20Code%20Execution%20Vulnerability%26vs_k=1",
+   "time": "2026-11-23T15:51:28.000Z",
+   "seen": "2026-11-23T18:17:46.191Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Cisco Expressway Series Remote Code Execution Vulnerability",
+   "summary": "A vulnerability in the database service feature of Cisco Expressway Series could allow an unauthenticated, remote attacker with network access to a Cisco Expressway device to execute arbitrary operating system commands as root . This vulnerability is due to the use of persistent cookies. Additionally, there is insufficient validation of client certificates when the TLS Verify Mode is set to Enabled for clustering, which means that client certificates are not validated. An attacker with possession of the cookies could exploit this vulnerability by connecting to the database service and invoking specific remote procedure call (RPC) commands. A successful exploit could allow the attacker to exe",
+   "lines": [
+    "Cisco disclosed a vulnerability in the database service feature of Cisco Expressway Series that could let an unauthenticated remote attacker with network access run arbitrary OS commands as root.",
+    "The flaw stems from persistent cookies and insufficient validation of client certificates when TLS Verify Mode is set to Enabled for clustering.",
+    "IT teams running Cisco Expressway devices should check the advisory to determine whether their configurations are affected."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Cisco Security Advisories (PSIRT)",
+    "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-vcs-static-cred-hr7EWZ8t?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Cisco%20Expressway%20Series%20Remote%20Code%20Execution%20Vulnerability%26vs_k=1"
+   },
+   "sourceId": "cisco-psirt",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "670ef88a",
+   "key": "https://sophos.com/en-us/security-advisories/sophos-sa-20261118-nginx2root",
+   "time": "2026-11-23T00:00:00.000Z",
+   "seen": "2026-11-23T18:17:46.191Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Advisory: NGINX Vulnerabilities - nginx2root (CVE-2026-123007 and others)",
+   "summary": "Severity: Informational CVE: CVE-2026-123007, CVE-2026-123633, CVE-2026-123634, CVE-2026-121810, CVE-2026-113425 First Published: Wed, 18 Nov 2026 16:55:00 GMT Updated: Mon, 23 Nov 2026 00:00:00 GMT Publication ID: sophos-sa-20261118-nginx2root Article Version: 5",
+   "lines": [
+    "Sophos published an advisory on NGINX vulnerabilities, called nginx2root, covering CVE-2026-123007, CVE-2026-123633, CVE-2026-123634, CVE-2026-121810, and CVE-2026-113425.",
+    "Sophos rates the advisory Informational severity. It was first published November 18, 2026 and updated November 23, 2026.",
+    "IT teams running NGINX can use the listed CVE identifiers to check their exposure."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Sophos Security Advisories",
+    "url": "https://www.sophos.com/en-us/security-advisories/sophos-sa-20261118-nginx2root"
+   },
+   "sourceId": "sophos-advisories",
+   "reported": false,
+   "also": [],
+   "post": "nginx-http2-cve-2026-123007-patch-guide",
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "3ff630c9",
+   "key": "https://sophos.com/en-us/security-advisories/sophos-sa-20261118-noisytcp",
+   "time": "2026-11-23T00:00:00.000Z",
+   "seen": "2026-11-23T18:17:46.191Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Advisory: Linux Kernel TCP Vulnerability - NoisyTCP (CVE-2026-99288)",
+   "summary": "Severity: Informational CVE: CVE-2026-99288 First Published: Wed, 18 Nov 2026 09:30:00 GMT Updated: Mon, 23 Nov 2026 00:00:00 GMT Publication ID: sophos-sa-20261118-noisytcp Article Version: 2",
+   "lines": [
+    "Sophos published an advisory on a Linux kernel TCP vulnerability called NoisyTCP, tracked as CVE-2026-99288.",
+    "Sophos rates the advisory Informational severity. It was first published November 18, 2026 and updated November 23, 2026.",
+    "Teams running Linux systems can use the CVE identifier to check whether their kernels are affected."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Sophos Security Advisories",
+    "url": "https://www.sophos.com/en-us/security-advisories/sophos-sa-20261118-noisytcp"
+   },
+   "sourceId": "sophos-advisories",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "d066e5a7",
+   "key": "https://sophos.com/en-us/security-advisories/sophos-sa-20261123-upload2shell",
+   "time": "2026-11-23T00:00:00.000Z",
+   "seen": "2026-11-23T18:17:46.191Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Advisory: Ghostscript Sandbox Bypass Vulnerability - Upload2Shell (CVE-2026-125396)",
+   "summary": "Severity: Informational CVE: CVE-2026-125396 First Published: Mon, 23 Nov 2026 16:00:00 GMT Updated: Mon, 23 Nov 2026 00:00:00 GMT Publication ID: sophos-sa-20261123-upload2shell Article Version: 1",
+   "lines": [
+    "Sophos published an advisory on a Ghostscript sandbox bypass vulnerability called Upload2Shell, tracked as CVE-2026-125396.",
+    "Sophos rates the advisory Informational severity. It was first published November 23, 2026.",
+    "Teams that run Ghostscript can use the CVE identifier to check their exposure."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Sophos Security Advisories",
+    "url": "https://www.sophos.com/en-us/security-advisories/sophos-sa-20261123-upload2shell"
+   },
+   "sourceId": "sophos-advisories",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "75c4cab8",
+   "key": "https://aws.amazon.com/agentcore-runtime-instances-aws-govcloud-us",
+   "time": "2026-11-23T17:21:00.000Z",
+   "seen": "2026-11-23T18:17:46.191Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "AgentCore runtime instances are now generally available in the AWS GovCloud (US-West) Region",
+   "summary": "Amazon Bedrock AgentCore runtime instances are now available in the AWS GovCloud (US-West) Region. Runtime instances run your agents on Amazon EC2 instances in your own account, while AgentCore handles provisioning, patching, scaling, and lifecycle management. With runtime instances, teams in AWS GovCloud (US) can choose GPU-accelerated, memory-optimized, or compute-optimized instance types for their agents and run agent sessions of up to 14 days. Agent instances, storage volumes, and session data stay in the AWS GovCloud (US-West) Region, which helps public sector organizations and their partners meet data residency and compliance requirements. Runtime instances work alongside the default s",
+   "lines": [
+    "Amazon Bedrock AgentCore runtime instances are now generally available in the AWS GovCloud (US-West) Region.",
+    "Runtime instances run agents on Amazon EC2 instances in the customer's account, while AgentCore handles provisioning, patching, scaling, and lifecycle management.",
+    "Agent sessions can run for up to 14 days, and agent instances, storage, and session data stay in the GovCloud (US-West) Region to help meet data residency requirements."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/agentcore-runtime-instances-aws-govcloud-us"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "ba1a5ec7",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-g7-metal-size",
+   "time": "2026-11-23T16:00:00.000Z",
+   "seen": "2026-11-23T18:17:46.191Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Announcing metal size for Amazon EC2 G7 instances",
+   "summary": "Today, AWS announces the general availability of the metal size for Amazon Elastic Compute Cloud (Amazon EC2) G7 instances, accelerated by NVIDIA RTX PRO 4500 Blackwell Server Edition GPUs. G7 instances deliver up to 4.6x AI inference performance and up to 2.1x graphics performance compared to G6. Customers can use the metal size of G7 instances to run physical AI simulations, deploy AI agent sandboxes, and accelerate graphics workloads that need direct access to bare metal infrastructure. G7 metal instances enable customers to run specialized workloads that require a custom virtualization stack, hypervisor-level GPU drivers, or licensing-restricted applications. The metal size of G7 instanc",
+   "lines": [
+    "AWS announced general availability of the metal size for Amazon EC2 G7 instances, accelerated by NVIDIA RTX PRO 4500 Blackwell Server Edition GPUs.",
+    "AWS says G7 instances deliver up to 4.6x AI inference performance and up to 2.1x graphics performance compared to G6.",
+    "Metal sizes give workloads direct access to bare metal, which suits custom virtualization stacks, hypervisor-level GPU drivers, and licensing-restricted applications."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-g7-metal-size/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "4688c025",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-studio-hyperpod",
+   "time": "2026-11-23T08:00:00.000Z",
+   "seen": "2026-11-23T18:17:46.191Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Amazon SageMaker Studio now supports training job submission and model deployment for SageMaker HyperPod clusters",
+   "summary": "Amazon SageMaker Studio now provides a native developer experience for Amazon SageMaker HyperPod, enabling data scientists to submit distributed training jobs, deploy models, and monitor workloads through a visual interface on HyperPod clusters orchestrated with Amazon Elastic Kubernetes Service (Amazon EKS). SageMaker HyperPod is a purpose-built infrastructure for distributed training and fine-tuning of foundation models at scale, designed to reduce infrastructure management overhead. Submitting training jobs and deploying custom models on HyperPod at scale requires familiarity with kubectl and authoring Kubernetes manifests, creating operational burden for data scientists who prefer to wor",
+   "lines": [
+    "Amazon SageMaker Studio now provides a native visual interface for submitting distributed training jobs, deploying models, and monitoring workloads on SageMaker HyperPod clusters orchestrated with Amazon EKS.",
+    "Data scientists can use the visual interface instead of kubectl and Kubernetes manifests for these tasks.",
+    "SageMaker HyperPod is infrastructure for distributed training and fine-tuning of foundation models at scale, designed to reduce infrastructure management overhead."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-studio-hyperpod/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "5819a176",
+   "key": "https://thehackernews.com/2026/11/webworm-suspected-of-modifying.html",
+   "time": "2026-11-23T17:45:15.000Z",
+   "seen": "2026-11-23T18:17:46.191Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Webworm Suspected of Modifying SoftEther VPN to Evade Detection and Hide Remote Access",
+   "summary": "The China-aligned threat actor known as Webworm is suspected to be using a custom version of the open-source SoftEther VPN Bridge tool in an attempt to remove recognizable detection fingerprints, while disguising it as network-monitoring software to establish covert remote access to compromised networks. The modified variant \"implements various tricks to hide itself from security tools,\"",
+   "lines": [
+    "Reported by The Hacker News: the China-aligned threat actor Webworm is suspected of using a custom version of the open-source SoftEther VPN Bridge tool.",
+    "The tool is disguised as network-monitoring software to establish covert remote access to compromised networks, and the modified variant includes methods to hide from security tools.",
+    "IT teams may review network monitoring and VPN tools on their networks for unexpected components."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/webworm-suspected-of-modifying.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null
+  },
+  {
+   "id": "90ec7a18",
+   "key": "https://bleepingcomputer.com/news/security/globetopper-loses-25-million-after-hackers-steal-70k-in-gift-cards",
+   "time": "2026-11-23T16:50:01.000Z",
+   "seen": "2026-11-23T18:17:46.191Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "GlobeTopper loses $2.5 million after hackers steal $70k in gift cards",
+   "summary": "A cyberattack disrupted operations at B2B top-up solutions provider GlobeTopper, causing an estimated $2.5 million in lost revenue, while the attacker redeemed digital gift cards worth $70,000. [...]",
+   "lines": [
+    "Reported by BleepingComputer: a cyberattack disrupted operations at B2B top-up solutions provider GlobeTopper.",
+    "The attack caused an estimated $2.5 million in lost revenue, and the attacker redeemed digital gift cards worth $70,000.",
+    "The incident shows how a single attack can disrupt operations and cause both lost revenue and fraudulent redemptions."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/globetopper-loses-25-million-after-hackers-steal-70k-in-gift-cards/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
   }
  ],
- "description": "13 technology updates from official sources, updated hourly: CISA flags critical Cisco RCE flaw as actively exploited in attacks; Marlowe, which develops cloud infrastructure and performance tools to optimize non-Nvidia AI chips, raised a $277M seed led by Accel at a $1.15B valuation; Hackers Exploi"
+ "description": "30 technology updates from official sources, updated hourly: CISA flags critical Cisco RCE flaw as actively exploited in attacks; Marlowe, which develops cloud infrastructure and performance tools to optimize non-Nvidia AI chips, raised a $277M seed led by Accel at a $1.15B valuation; Hackers Exploi"
 }

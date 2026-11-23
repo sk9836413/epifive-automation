@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-23T14:16:39.869Z",
+ "lastScan": "2026-11-23T18:17:46.191Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -7753,6 +7753,835 @@
    ],
    "status": "below",
    "hash": "dea0acb0"
+  },
+  "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps": {
+   "title": "A more tailored Google Search that’s uniquely yours",
+   "link": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/",
+   "source": "gemini-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-23T17:00:00.000Z",
+   "updated": null,
+   "summary": "Get more helpful Search responses by securely opting in to connect Google Wallet, Drive, and the Gemini app to Personal Intelligence in AI Mode.",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 4,
+   "reasons": [
+    "+1 source gemini-blog",
+    "+2 niche (gemini)",
+    "+1 also on google-keyword"
+   ],
+   "status": "below",
+   "hash": "201ccfbc"
+  },
+  "https://claude.com/resources/articles/zero-data-retention-with-enterprise-frontier-safeguards": {
+   "title": "Zero data retention with Enterprise Frontier Safeguards is now in beta",
+   "link": "https://claude.com/resources/articles/zero-data-retention-with-enterprise-frontier-safeguards",
+   "source": "claude-articles",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-23T12:00:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 5,
+   "reasons": [
+    "+1 source claude-articles",
+    "+2 niche (claude)",
+    "+2 user steps \"enable\""
+   ],
+   "status": "below",
+   "hash": "ffaa5141"
+  },
+  "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification": {
+   "title": "Finding faster quantum algorithms with agents and formal verification",
+   "link": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/",
+   "source": "deepmind-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-23T16:59:40.000Z",
+   "updated": null,
+   "summary": "Using agent teams and formal verification to improve quantum algorithms for fusion and chemistry.",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 2,
+   "reasons": [
+    "+1 source deepmind-blog",
+    "+1 niche (agents)"
+   ],
+   "status": "below",
+   "hash": "89101d6f"
+  },
+  "https://thehackernews.com/2026/11/webworm-suspected-of-modifying.html": {
+   "title": "Webworm Suspected of Modifying SoftEther VPN to Evade Detection and Hide Remote Access",
+   "link": "https://thehackernews.com/2026/11/webworm-suspected-of-modifying.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-23T17:45:15.000Z",
+   "updated": null,
+   "summary": "The China-aligned threat actor known as Webworm is suspected to be using a custom version of the open-source SoftEther VPN Bridge tool in an attempt to remove recognizable detection fingerprints, while disguising it as network-monitoring software to establish covert remote access to compromised netw",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 6,
+   "reasons": [
+    "+1 source thn",
+    "+3 incident \"compromised\"",
+    "+2 user action \"remove\""
+   ],
+   "status": "below",
+   "hash": "593909d"
+  },
+  "https://workspaceupdates.googleblog.com/2026/11/google-meet-on-web-now-supports-sending-1080p-video-for-all-users-enabled-by-default.html": {
+   "title": "Google Meet on the web now supports sending 1080p video for all users, enabled by default",
+   "link": "http://workspaceupdates.googleblog.com/2026/11/google-meet-on-web-now-supports-sending-1080p-video-for-all-users-enabled-by-default.html",
+   "source": "workspace-updates",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-23T16:16:33.518Z",
+   "updated": "2026-11-23T16:18:34.901Z",
+   "summary": "We’re expanding 1080p Full HD video sending in Google Meet on the web (previously limited to select paid editions) to all users. It is now enabled by default on computers with a 1080p camera and sufficient compute and bandwidth. Meet transmits 1080p only when a participant's video tile is large enou",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 6,
+   "reasons": [
+    "+1 source workspace-updates",
+    "+1 niche (google meet)",
+    "+2 launch \"now supports\"",
+    "+1 plans/price/availability \"paid\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "49b95017"
+  },
+  "https://workspaceupdates.googleblog.com/2026/11/make-messages-in-google-chat-from-apps-and-agents-easier-to-read-with-tables-and-headings.html": {
+   "title": "Make messages in Google Chat from apps and agents easier to read with tables and headings",
+   "link": "http://workspaceupdates.googleblog.com/2026/11/make-messages-in-google-chat-from-apps-and-agents-easier-to-read-with-tables-and-headings.html",
+   "source": "workspace-updates",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-23T14:53:48.742Z",
+   "updated": "2026-11-23T14:53:48.743Z",
+   "summary": "Agents and apps in Google Chat can now send messages formatted with tables and headings. Tables make it easy to compare options, share status trackers, and present data in rows and columns. Headings provide a way to separate long messages, like summaries, reports, and plans, into clear, scannable se",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 5,
+   "reasons": [
+    "+1 source workspace-updates",
+    "+1 niche (agents)",
+    "+2 user steps \"you can\"",
+    "+1 plans/price/availability \"plans\""
+   ],
+   "status": "below",
+   "hash": "25732f5a"
+  },
+  "https://blog.google/products-and-platforms/products/photos/google-photo-tools-holiday-season-2026": {
+   "title": "Organize and share your holiday memories with these five updates in Google Photos.",
+   "link": "https://blog.google/products-and-platforms/products/photos/google-photo-tools-holiday-season-2026/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-23T17:00:00.000Z",
+   "updated": null,
+   "summary": "Organize holiday memories with five new Google Photos updates. Use Gemini for video tasks and filter shared albums by people. Try these features today.",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 3,
+   "reasons": [
+    "+3 niche (gemini, google photos)"
+   ],
+   "status": "below",
+   "hash": "52ec8130"
+  },
+  "https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls": {
+   "title": "Introducing file slicing controls in the Gemini API",
+   "link": "https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-23T16:12:00.000Z",
+   "updated": null,
+   "summary": "New file slicing controls and native Office file support in the Gemini API let agents inspect targeted slices across Google AI Studio and Vertex AI while paying only for…",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 5,
+   "reasons": [
+    "+3 niche (gemini, agents)",
+    "+2 launch \"Introducing\"",
+    "+1 launch in the headline",
+    "-1 narrow audience \"API\""
+   ],
+   "status": "below",
+   "hash": "dd7b6ac3"
+  },
+  "https://about.fb.com/news/2026/11/researchers-using-meta-open-weight-ai-models-medical-breakthroughs": {
+   "title": "Researchers Are Using Meta’s Open-Weight AI Models to Transform Medicine",
+   "link": "https://about.fb.com/news/2026/11/researchers-using-meta-open-weight-ai-models-medical-breakthroughs/",
+   "source": "meta-newsroom",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-23T18:00:01.000Z",
+   "updated": null,
+   "summary": "We brought researchers together for the Open Source AI For Science Summit, where they shared how they’re using AI to accelerate scientific discovery. The post Researchers Are Using Meta’s Open-Weight AI Models to Transform Medicine appeared first on Meta Newsroom .",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": -3,
+   "reasons": [
+    "+1 also on meta-ai-tag",
+    "-4 customer story"
+   ],
+   "status": "below",
+   "hash": "4feb1670"
+  },
+  "https://microsoft.ai/news/rl-infrastructure-at-microsoft-ai": {
+   "title": "Rl infrastructure at microsoft ai",
+   "link": "https://microsoft.ai/news/rl-infrastructure-at-microsoft-ai/",
+   "source": "microsoft-ai",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-23T17:24:33.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "b47124a1"
+  },
+  "https://news.samsung.com/global/samsung-launches-odyssey-g6-the-worlds-first-1100hz-gaming-monitor": {
+   "title": "Samsung Launches Odyssey G6: The World’s First 1,100Hz Gaming Monitor",
+   "link": "https://news.samsung.com/global/samsung-launches-odyssey-g6-the-worlds-first-1100hz-gaming-monitor",
+   "source": "samsung-global",
+   "topic": "mobiles",
+   "category": "launch",
+   "date": "2026-11-23T22:00:00.000Z",
+   "updated": null,
+   "summary": "Samsung Electronics today announced the launch of the 27-inch Odyssey G6 (G60H), the world’s first gaming monitor to support a refresh rate of up to 1,100Hz in HD. The monitor also features Dual Mode, which allows players to choose between HD at up to 1,100Hz and QHD at up to 600Hz to suit their gam",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 3,
+   "reasons": [
+    "+2 launch \"Launches\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "50aca823"
+  },
+  "https://news.lenovo.com/signs-antalya-ai-pledge-cop31": {
+   "title": "Lenovo signs the Antalya AI Pledge at COP31",
+   "link": "https://news.lenovo.com/signs-antalya-ai-pledge-cop31/",
+   "source": "lenovo-news",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-23T17:16:58.000Z",
+   "updated": null,
+   "summary": "Lenovo joins a global pledge to make AI part of the climate solution, with a commitment to circularity by 2030.",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "d23ee4ba"
+  },
+  "https://github.blog/changelog/2026-11-23-code-coverage-uploads-now-flag-invalid-report-formats": {
+   "title": "Code coverage uploads now flag invalid report formats",
+   "link": "https://github.blog/changelog/2026-11-23-code-coverage-uploads-now-flag-invalid-report-formats",
+   "source": "github-changelog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-23T15:28:36.000Z",
+   "updated": null,
+   "summary": "The GitHub Code Quality upload-code-coverage action now checks that your coverage report is in Cobertura XML format. If it isn’t in a supported format, the upload step fails and the… The post Code coverage uploads now flag invalid report formats appeared first on The GitHub Blog .",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": -1,
+   "reasons": [
+    "-1 source github-changelog"
+   ],
+   "status": "below",
+   "hash": "e02afdbf"
+  },
+  "https://blogs.vmware.com/cloud-foundation/2026/11/23/agentic-ai-for-enhanced-network-operations-in-vmware-cloud-foundation": {
+   "title": "Agentic AI for Enhanced Network Operations in VMware Cloud Foundation",
+   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/23/agentic-ai-for-enhanced-network-operations-in-vmware-cloud-foundation/",
+   "source": "vmware-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T16:00:00.000Z",
+   "updated": null,
+   "summary": "For networking and operations teams, a single incident can require evidence from several parts of the private cloud. Gathering that evidence often means moving between management consoles, running diagnostic commands, and checking the results against known issues. Recent advancements in agentic AI t",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": -1,
+   "reasons": [
+    "-1 source vmware-blog"
+   ],
+   "status": "below",
+   "hash": "365d307f"
+  },
+  "https://blogs.vmware.com/cloud-foundation/2026/11/23/microsoft-sql-server-failover-clustering-on-vcf-9-1-vm-service-vcf-automation-blueprint-based-implementation-part-4": {
+   "title": "Microsoft SQL Server Failover Clustering on VCF 9.1 VM Service: VCF Automation Blueprint Based Implementation (Part 4)",
+   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/23/microsoft-sql-server-failover-clustering-on-vcf-9-1-vm-service-vcf-automation-blueprint-based-implementation-part-4/",
+   "source": "vmware-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T15:00:00.000Z",
+   "updated": null,
+   "summary": "Introduction In this part of the series, we will build the two nodes MSSQL FCI Cluster via VMware Cloud Foundation (VCF) Automation and its IaaS Services Console. Part 1 focuses on Requirements, Topology and Methods. Part 2 focuses on the Supervisor direct implementation. Part 3 focuses on the VCF A",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": -1,
+   "reasons": [
+    "-1 source vmware-blog"
+   ],
+   "status": "below",
+   "hash": "f6c92b7b"
+  },
+  "https://blogs.vmware.com/cloud-foundation/2026/11/23/escaping-the-silos-a-deep-dive-into-vsphere-kubernetes-service-3-6-and-the-hands-on-lab-you-need-to-take": {
+   "title": "Escaping the Silos: A Deep Dive into vSphere Kubernetes Service 3.6 (and the Hands-on Lab You Need to Take)",
+   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/23/escaping-the-silos-a-deep-dive-into-vsphere-kubernetes-service-3-6-and-the-hands-on-lab-you-need-to-take/",
+   "source": "vmware-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T14:00:00.000Z",
+   "updated": null,
+   "summary": "At a Glance: 500 Clusters per Control Plane: Single Supervisor scale increases from 190 to 500 clusters, eliminating fragmented management planes. 70% Faster Provisioning: Fast Deploy leverages per-datastore caching and linked-mode delta disks to cut cluster provisioning from 37 to 11 minutes and up",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 1,
+   "reasons": [
+    "-1 source vmware-blog",
+    "+2 user steps \"upgrade\""
+   ],
+   "status": "below",
+   "hash": "34571b8f"
+  },
+  "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/from-one-textbook-to-eight-ccies.html": {
+   "title": "From One Textbook to Eight CCIEs",
+   "link": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/from-one-textbook-to-eight-ccies.html?source=rss",
+   "source": "cisco-newsroom",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T13:00:00.000Z",
+   "updated": null,
+   "summary": "Curiosity and perseverance helped Somit Maloo go from a struggling student to a holder of eight CCIE certifications. More RSS Feeds: https://newsroom.cisco.com/c/r/newsroom/en/us/rss-feeds.html",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": -1,
+   "reasons": [
+    "-1 source cisco-newsroom"
+   ],
+   "status": "below",
+   "hash": "55ff05f8"
+  },
+  "https://blog.webex.com/collaboration/cisco-ucm-15-su5-planning-your-next-virtualization-and-hardware-move": {
+   "title": "Cisco UCM 15 SU5: Planning Your Next Virtualization and Hardware Move",
+   "link": "https://blog.webex.com/collaboration/cisco-ucm-15-su5-planning-your-next-virtualization-and-hardware-move/",
+   "source": "webex-blog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-23T16:40:04.000Z",
+   "updated": null,
+   "summary": "Explore Cisco UCM 15 SU5 virtualization and hardware options, including VMware, Nutanix, Cisco NFVIS-for-UC, and practical migration planning guidance. The post Cisco UCM 15 SU5: Planning Your Next Virtualization and Hardware Move appeared first on Webex Blog .",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 1,
+   "reasons": [
+    "-1 source webex-blog",
+    "+2 user steps \"migration\""
+   ],
+   "status": "below",
+   "hash": "9940c62f"
+  },
+  "https://ninjaone.com/blog/chromeos-support-generally-available": {
+   "title": "NinjaOne Launches ChromeOS Support for Enhanced Device Management and Integration",
+   "link": "https://www.ninjaone.com/blog/chromeos-support-generally-available/",
+   "source": "ninjaone-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T13:56:28.000Z",
+   "updated": null,
+   "summary": "Today, we’re making ChromeOS device support generally available with our 16.0 release, bringing ChromeOS devices into the inventory and support workflows you’re using in NinjaOne for your other endpoints. We’ve had an exciting early access period, with plenty of feedback from customers putting the i",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 2,
+   "reasons": [
+    "-1 source ninjaone-blog",
+    "+2 launch \"Launches\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "bceafb44"
+  },
+  "https://ninjaone.com/blog/how-to-resolve-backup-policy-conflicts": {
+   "title": "How to Resolve Backup Policy Conflicts Across Enterprise Endpoint Groups",
+   "link": "https://www.ninjaone.com/blog/how-to-resolve-backup-policy-conflicts/",
+   "source": "ninjaone-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T09:02:01.000Z",
+   "updated": null,
+   "summary": "When a device is assigned to multiple clusters or groups, that device would be impacted by any backup rules applied to any group it belongs to, introducing backup conflicts. Backup policy conflicts usually affect enterprise environments since IT teams in large infrastructure rarely assign devices to",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 3,
+   "reasons": [
+    "-1 source ninjaone-blog",
+    "+2 launch \"introducing\"",
+    "+2 user steps \"How to\""
+   ],
+   "status": "below",
+   "hash": "b827279c"
+  },
+  "https://ninjaone.com/blog/backup-policy-template-for-device-owner-attestation": {
+   "title": "How to Use a Backup Policy Template for Device Owner Attestation",
+   "link": "https://www.ninjaone.com/blog/backup-policy-template-for-device-owner-attestation/",
+   "source": "ninjaone-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T09:00:04.000Z",
+   "updated": null,
+   "summary": "Formal backup policies define how an enterprise manages data, including how it’s backed up, stored, tested, and governed. On the other hand, backup policy templates turn those into a repeatable structure that teams can apply across endpoints, servers, clouds, and the like. For enterprise device envi",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": -3,
+   "reasons": [
+    "-1 source ninjaone-blog",
+    "+2 user steps \"How to\"",
+    "-4 customer story"
+   ],
+   "status": "below",
+   "hash": "3b19c46d"
+  },
+  "https://ninjaone.com/blog/how-to-plan-virtual-desktop-backup-for-vdi-and-daas": {
+   "title": "How to Plan Virtual Desktop Backup for VDI and DaaS",
+   "link": "https://www.ninjaone.com/blog/how-to-plan-virtual-desktop-backup-for-vdi-and-daas/",
+   "source": "ninjaone-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T08:56:11.000Z",
+   "updated": null,
+   "summary": "Virtual desktop environments change how endpoint backup works. In Virtual Desktop Infrastructure (VDI) and Desktop as a Service (DaaS) environments”, desktops are not always tied to a single physical device. Desktop images, applications, user profiles, policies, and data may live in centralized infr",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 2,
+   "reasons": [
+    "-1 source ninjaone-blog",
+    "+2 user steps \"How to\"",
+    "+1 plans/price/availability \"Plan\""
+   ],
+   "status": "below",
+   "hash": "23bc1bba"
+  },
+  "https://ninjaone.com/blog/how-to-back-up-shared-and-frontline-endpoint-devices": {
+   "title": "How to Back Up Shared and Frontline Endpoint Devices",
+   "link": "https://www.ninjaone.com/blog/how-to-back-up-shared-and-frontline-endpoint-devices/",
+   "source": "ninjaone-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T08:53:14.000Z",
+   "updated": null,
+   "summary": "Shared and frontline devices include things like point-of-sale (POS) terminals, kiosks, warehouse scanners, nursing station endpoints, and shift-based laptops that employees use every day. These devices keep daily operations running regardless of industry, whether it be in retail, healthcare, or fie",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 1,
+   "reasons": [
+    "-1 source ninjaone-blog",
+    "+2 user steps \"How to\""
+   ],
+   "status": "below",
+   "hash": "acf367a6"
+  },
+  "https://cloud.google.com/blog/products/databases/alloydb-omni-integration-with-local-models": {
+   "title": "Data + AI Anywhere: AlloyDB Omni integration with local models",
+   "link": "https://cloud.google.com/blog/products/databases/alloydb-omni-integration-with-local-models/",
+   "source": "gcloud-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T17:00:00.000Z",
+   "updated": null,
+   "summary": "Open models like Gemma 4 from Google DeepMind are a great option to keep your data local. But how can a local AI model integrate with on-premises data? AlloyDB Omni , Google’s 100% PostgreSQL-compatible database that runs anywhere, now integrates with locally hosted large language models (LLMs). Wit",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 1,
+   "reasons": [
+    "-1 source gcloud-blog",
+    "+2 user steps \"you can\""
+   ],
+   "status": "below",
+   "hash": "471d088f"
+  },
+  "https://cloud.google.com/blog/products/data-analytics/how-sinch-migrated-from-snowflake-to-bigquery-to-power-ai": {
+   "title": "How Sinch modernized its enterprise data warehouse from Snowflake to BigQuery to power AI",
+   "link": "https://cloud.google.com/blog/products/data-analytics/how-sinch-migrated-from-snowflake-to-bigquery-to-power-ai/",
+   "source": "gcloud-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T17:00:00.000Z",
+   "updated": null,
+   "summary": "As the scale of global communications grows larger and larger, enterprise platforms must process billions of interactions with customers across a complex network of touchpoints without breaking them. A prime example is Sinch , one of the world’s leading cloud communications and customer engagement (",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": -1,
+   "reasons": [
+    "-1 source gcloud-blog"
+   ],
+   "status": "below",
+   "hash": "8ac74a7f"
+  },
+  "https://backblaze.com/blog/the-storage-impact-of-ai-how-it-leaders-are-handling-ai-data-growth": {
+   "title": "The Storage Impact of AI: How IT Leaders Are Handling AI Data Growth",
+   "link": "https://www.backblaze.com/blog/the-storage-impact-of-ai-how-it-leaders-are-handling-ai-data-growth/",
+   "source": "backblaze-blog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-23T14:00:00.000Z",
+   "updated": null,
+   "summary": "AI data growth is putting cloud storage costs and provider lock-in under scrutiny. New research reveals why IT leaders are considering a switch, what’s holding them back, and how to rethink storage before the next wave of AI data arrives. The post The Storage Impact of AI: How IT Leaders Are Handlin",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 3,
+   "reasons": [
+    "-1 source backblaze-blog",
+    "+2 launch \"arrives\"",
+    "+2 user steps \"how to\""
+   ],
+   "status": "below",
+   "hash": "2827f78a"
+  },
+  "https://veeam.com/blog/veeam-intelligent-resops-microsoft-365-compliance.html": {
+   "title": "Cut Microsoft 365 Audit Prep with Veeam Intelligent ResOps",
+   "link": "https://www.veeam.com/blog/veeam-intelligent-resops-microsoft-365-compliance.html",
+   "source": "veeam-blog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-23T14:59:37.000Z",
+   "updated": null,
+   "summary": "Consider a hypothetical company that is preparing for its annual external audit. The company’s HR and Finance teams keep employee tax forms in Microsoft 365. Three weeks before the audit, the auditor sends the company’s Microsoft 365 administrator a request with four questions. Where do the employee",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 1,
+   "reasons": [
+    "-1 source veeam-blog",
+    "+2 niche (microsoft 365)"
+   ],
+   "status": "below",
+   "hash": "18400f3e"
+  },
+  "https://veeam.com/blog/veeam-intelligent-resops-rot-data-quarantine.html": {
+   "title": "Find and Quarantine ROT Data in Microsoft 365 with Veeam Intelligent ResOps",
+   "link": "https://www.veeam.com/blog/veeam-intelligent-resops-rot-data-quarantine.html",
+   "source": "veeam-blog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-23T14:55:15.000Z",
+   "updated": null,
+   "summary": "Consider a hypothetical company with 2,000 Microsoft 365 users. Microsoft allocates SharePoint storage to an organization as a pool: 1 TB for the organization, plus 10 GB for each eligible license. For this company, the pool is about 21 TB. The company passed that limit last year and has bought extr",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 3,
+   "reasons": [
+    "-1 source veeam-blog",
+    "+3 niche (microsoft 365, sharepoint)",
+    "+1 plans/price/availability \"eligible\""
+   ],
+   "status": "below",
+   "hash": "836d036b"
+  },
+  "https://veeam.com/blog/veeam-intelligent-resops-copilot-ai-agents.html": {
+   "title": "Get Microsoft 365 Ready for Copilot and AI Agents with Veeam Intelligent ResOps",
+   "link": "https://www.veeam.com/blog/veeam-intelligent-resops-copilot-ai-agents.html",
+   "source": "veeam-blog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-23T14:50:22.000Z",
+   "updated": null,
+   "summary": "Consider a hypothetical company that is preparing to deploy Microsoft 365 Copilot and AI agents to all of its employees. Before the deployment goes ahead, the company’s CIO asks IT a single question: what data will our agents be able to access? The answer depends entirely on existing permissions, be",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 3,
+   "reasons": [
+    "-1 source veeam-blog",
+    "+4 niche (copilot, microsoft 365, agents)"
+   ],
+   "status": "below",
+   "hash": "f8f28914"
+  },
+  "https://blogs.nvidia.com/blog/nvidia-technologies-holidays-2026": {
+   "title": "Merry Making: Play, Build and Create With NVIDIA Technologies This Holiday Season",
+   "link": "https://blogs.nvidia.com/blog/nvidia-technologies-holidays-2026/",
+   "source": "nvidia-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-23T17:00:08.000Z",
+   "updated": null,
+   "summary": "The elves don’t have to be the only ones busy in the workshop this holiday season. With the lights twinkling and the gift wrap out, it’s the perfect time to give someone — or yourself — a spark to take a hobby to the next level. For some, that means diving into a new game. […]",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": -5,
+   "reasons": [
+    "-1 source nvidia-news",
+    "-4 customer story"
+   ],
+   "status": "below",
+   "hash": "db19172a"
+  },
+  "https://intel.com/content/www/us/en/newsroom/news/artificial-intelligence/viettel-real-time-operational-insights.html": {
+   "title": "Viettel Turns Complex Data Into Real-time Insight",
+   "link": "https://www.intel.com/content/www/us/en/newsroom/news/artificial-intelligence/viettel-real-time-operational-insights.html",
+   "source": "intel-newsroom",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-23T12:00:00.000Z",
+   "updated": null,
+   "summary": "Artificial Intelligence (AI)",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": -1,
+   "reasons": [
+    "-1 source intel-newsroom"
+   ],
+   "status": "below",
+   "hash": "e277f9ba"
+  },
+  "https://sophos.com/en-us/security-advisories/sophos-sa-20261118-nginx2root": {
+   "title": "Advisory: NGINX Vulnerabilities - nginx2root (CVE-2026-123007 and others)",
+   "link": "https://www.sophos.com/en-us/security-advisories/sophos-sa-20261118-nginx2root",
+   "source": "sophos-advisories",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-23T00:00:00.000Z",
+   "updated": null,
+   "summary": "Severity: Informational CVE: CVE-2026-123007, CVE-2026-123633, CVE-2026-123634, CVE-2026-121810, CVE-2026-113425 First Published: Wed, 18 Nov 2026 16:55:00 GMT Updated: Mon, 23 Nov 2026 00:00:00 GMT Publication ID: sophos-sa-20261118-nginx2root Article Version: 5",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 5,
+   "reasons": [
+    "-1 source sophos-advisories",
+    "+2 vulnerability \"Vulnerabilities\"",
+    "+2 user action \"Advisory\"",
+    "+2 corroborated by cisco-psirt (CVE-2026-123007)",
+    "covered by /blog/nginx-http2-cve-2026-123007-patch-guide"
+   ],
+   "status": "duplicate",
+   "hash": "31eec90",
+   "post": "nginx-http2-cve-2026-123007-patch-guide"
+  },
+  "https://sophos.com/en-us/security-advisories/sophos-sa-20261118-noisytcp": {
+   "title": "Advisory: Linux Kernel TCP Vulnerability - NoisyTCP (CVE-2026-99288)",
+   "link": "https://www.sophos.com/en-us/security-advisories/sophos-sa-20261118-noisytcp",
+   "source": "sophos-advisories",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-23T00:00:00.000Z",
+   "updated": null,
+   "summary": "Severity: Informational CVE: CVE-2026-99288 First Published: Wed, 18 Nov 2026 09:30:00 GMT Updated: Mon, 23 Nov 2026 00:00:00 GMT Publication ID: sophos-sa-20261118-noisytcp Article Version: 2",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 3,
+   "reasons": [
+    "-1 source sophos-advisories",
+    "+2 vulnerability \"Vulnerability\"",
+    "+2 user action \"Advisory\""
+   ],
+   "status": "below",
+   "hash": "1f53c45a"
+  },
+  "https://sophos.com/en-us/security-advisories/sophos-sa-20261123-upload2shell": {
+   "title": "Advisory: Ghostscript Sandbox Bypass Vulnerability - Upload2Shell (CVE-2026-125396)",
+   "link": "https://www.sophos.com/en-us/security-advisories/sophos-sa-20261123-upload2shell",
+   "source": "sophos-advisories",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-23T00:00:00.000Z",
+   "updated": null,
+   "summary": "Severity: Informational CVE: CVE-2026-125396 First Published: Mon, 23 Nov 2026 16:00:00 GMT Updated: Mon, 23 Nov 2026 00:00:00 GMT Publication ID: sophos-sa-20261123-upload2shell Article Version: 1",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 3,
+   "reasons": [
+    "-1 source sophos-advisories",
+    "+2 vulnerability \"Vulnerability\"",
+    "+2 user action \"Advisory\""
+   ],
+   "status": "below",
+   "hash": "441f95e9"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/partner-analytics-agent-s3": {
+   "title": "AWS Partner Central expands analytics access with Partner Central Agents and Data Subscriptions",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/partner-analytics-agent-s3/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T17:36:00.000Z",
+   "updated": null,
+   "summary": "AWS Partners and AWS Marketplace sellers now have two new ways to access their analytics data in AWS Partner Central. Partner Central Agents answer questions in plain language, and Data Subscriptions deliver Partner Central data to an Amazon Simple Storage Service (Amazon S3) bucket every day. Partn",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 0,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+1 niche (agents)",
+    "+1 plans/price/availability \"Subscriptions\""
+   ],
+   "status": "below",
+   "hash": "523a895"
+  },
+  "https://aws.amazon.com/agentcore-runtime-instances-aws-govcloud-us": {
+   "title": "AgentCore runtime instances are now generally available in the AWS GovCloud (US-West) Region",
+   "link": "https://aws.amazon.com/agentcore-runtime-instances-aws-govcloud-us",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T17:21:00.000Z",
+   "updated": null,
+   "summary": "Amazon Bedrock AgentCore runtime instances are now available in the AWS GovCloud (US-West) Region. Runtime instances run your agents on Amazon EC2 instances in your own account, while AgentCore handles provisioning, patching, scaling, and lifecycle management. With runtime instances, teams in AWS Go",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 3,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+1 niche (agents)",
+    "+2 launch \"generally available\"",
+    "+1 plans/price/availability \"Region\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "e76510e3"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/01/amazon-cloudfront-http2-origins": {
+   "title": "Amazon CloudFront Announces HTTP/2 Support for Connections to Origins",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/01/amazon-cloudfront-http2-origins/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T17:00:00.000Z",
+   "updated": null,
+   "summary": "Amazon CloudFront now supports HTTP/2 connections to custom origins and VPC origins. HTTP/2 lets CloudFront send many requests over fewer connections to your origin. This means fewer connections and TLS handshakes for your origin to handle, which improves performance for API and agentic workloads, s",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 1,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+1 niche (agents)",
+    "+2 launch \"now supports\""
+   ],
+   "status": "below",
+   "hash": "2ce9fdaf"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/global-accelerator-client-ip-nlb-tls": {
+   "title": "AWS Global Accelerator now preserves client IPs for NLBs with TLS listeners",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/global-accelerator-client-ip-nlb-tls/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T16:00:00.000Z",
+   "updated": null,
+   "summary": "AWS Global Accelerator now preserves the client IP address for traffic sent to Network Load Balancer (NLB) endpoints with TLS listeners. You can terminate TLS at your NLB and still see the original client IP address in your application. This means you can apply security groups, geo-blocking, rate li",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 3,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+1 niche (fraud)",
+    "+2 launch \"launch\"",
+    "+2 user steps \"You can\""
+   ],
+   "status": "below",
+   "hash": "dccb0353"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-g7-metal-size": {
+   "title": "Announcing metal size for Amazon EC2 G7 instances",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-g7-metal-size/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T16:00:00.000Z",
+   "updated": null,
+   "summary": "Today, AWS announces the general availability of the metal size for Amazon Elastic Compute Cloud (Amazon EC2) G7 instances, accelerated by NVIDIA RTX PRO 4500 Blackwell Server Edition GPUs. G7 instances deliver up to 4.6x AI inference performance and up to 2.1x graphics performance compared to G6. C",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 3,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+1 niche (agent)",
+    "+2 launch \"general availability\"",
+    "+2 user steps \"enable\""
+   ],
+   "status": "below",
+   "hash": "22e62bb1"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-studio-hyperpod": {
+   "title": "Amazon SageMaker Studio now supports training job submission and model deployment for SageMaker HyperPod clusters",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-studio-hyperpod/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T08:00:00.000Z",
+   "updated": null,
+   "summary": "Amazon SageMaker Studio now provides a native developer experience for Amazon SageMaker HyperPod, enabling data scientists to submit distributed training jobs, deploy models, and monitor workloads through a visual interface on HyperPod clusters orchestrated with Amazon Elastic Kubernetes Service (Am",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 1,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now supports\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "e7782b28"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/systems-manager-multicloud-automation": {
+   "title": "AWS Systems Manager Automation now automates operational tasks in Azure and Google Cloud",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/systems-manager-multicloud-automation/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T08:00:00.000Z",
+   "updated": null,
+   "summary": "AWS Systems Manager Automation now lets you create custom workflows (runbooks) that can automate operational tasks across Microsoft Azure, Google Cloud, and AWS resources. Automation helps you make changes safely at scale, such as remediating misconfigurations or cleaning up idle resources. Runbooks",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 2,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now lets you\"",
+    "+2 user steps \"You can\""
+   ],
+   "status": "below",
+   "hash": "72e4111a"
+  },
+  "https://ivanti.com/blog/uem-layer-autonomous-endpoint-management": {
+   "title": "The UEM Layer of Autonomous Endpoint Management",
+   "link": "https://www.ivanti.com/blog/uem-layer-autonomous-endpoint-management",
+   "source": "ivanti-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T13:00:08.000Z",
+   "updated": null,
+   "summary": "Back to Basics: Autonomous Endpoint Management Fundamentals | Part 2 of 5 In Part 1 , we established why Autonomous Endpoint Management (AEM) depends on a data foundation : a system of record with the authority to declare what's true and the governance to enforce it. But, that foundation is only as ",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": -2,
+   "reasons": [
+    "-2 source ivanti-blog"
+   ],
+   "status": "below",
+   "hash": "412675e2"
+  },
+  "https://blog.scalefusion.com/teamviewer-alternatives": {
+   "title": "Alternatives to TeamViewer: Comparison guide for remote access solutions",
+   "link": "https://blog.scalefusion.com/teamviewer-alternatives/",
+   "source": "scalefusion-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T08:09:03.000Z",
+   "updated": null,
+   "summary": "TeamViewer has long been a popular choice for remote access and support, helping IT teams and individuals connect to devices, troubleshoot technical issues, and provide assistance remotely. However, as organizations manage more devices across multiple locations, their requirements may extend beyond ",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": -2,
+   "reasons": [
+    "-2 source scalefusion-blog"
+   ],
+   "status": "below",
+   "hash": "a100ffb6"
+  },
+  "https://kubernetes.io/blog/2026/11/23/kubernetes-v1-38-sneak-peek": {
+   "title": "Kubernetes v1.38 Sneak Peek",
+   "link": "https://kubernetes.io/blog/2026/11/23/kubernetes-v1-38-sneak-peek/",
+   "source": "kubernetes-blog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-23T16:00:00.000Z",
+   "updated": null,
+   "summary": "As we get closer to the release date for Kubernetes v1.38, the project develops and matures, features may be deprecated, removed, or replaced with better ones for the project's overall health. This blog post outlines some of the planned changes for the Kubernetes v1.38 release that the release team ",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": 1,
+   "reasons": [
+    "-2 source kubernetes-blog",
+    "+2 user steps \"opt-out\"",
+    "+1 retirement/migration"
+   ],
+   "status": "below",
+   "hash": "ea578938"
+  },
+  "https://elevenlabs.io/blog/elevenmusic-vs-elevencreative": {
+   "title": "ElevenMusic vs. music in ElevenCreative: which do I need?",
+   "link": "https://elevenlabs.io/blog/elevenmusic-vs-elevencreative",
+   "source": "elevenlabs-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-23T12:00:00.000Z",
+   "updated": null,
+   "summary": "Compare ElevenMusic and ElevenCreative music generation. See what each does, how pricing differs, and which fits your song or project.",
+   "first": "2026-11-23T18:17:46.191Z",
+   "score": -1,
+   "reasons": [
+    "-2 source elevenlabs-blog",
+    "+1 plans/price/availability \"pricing\""
+   ],
+   "status": "below",
+   "hash": "f762f229"
   }
  },
  "devices": {},
@@ -7805,15 +8634,14 @@
     "TechCrunch",
     "The Economic Times",
     "Business Standard",
-    "The Hindu",
-    "NDTV"
+    "The Hindu"
    ],
    "techmeme": false,
    "category": "launch",
    "topic": "ai-engineering",
    "parkOnly": false,
-   "last": "2026-11-23T13:54:03.000Z",
-   "date": "2026-11-23T13:54:03.000Z",
+   "last": "2026-11-23T17:51:51.000Z",
+   "date": "2026-11-23T17:51:51.000Z",
    "score": 14,
    "post": "anthropic-ipo-explained-claude-users"
   },
