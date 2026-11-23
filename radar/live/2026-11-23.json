@@ -2,7 +2,7 @@
  "date": "2026-11-23",
  "title": "Tech news today, 23 November 2026",
  "published": "2026-11-22T18:45:06.177Z",
- "updated": "2026-11-23T12:11:08.778Z",
+ "updated": "2026-11-23T13:16:57.470Z",
  "items": [
   {
    "id": "9477151b",
@@ -144,7 +144,7 @@
    "sourceId": "bleepingcomputer",
    "reported": true,
    "also": [],
-   "post": null,
+   "post": "cisco-expressway-cve-2026-76466-exploited-patch",
    "device": null,
    "ai": null,
    "score": 14,
@@ -177,7 +177,130 @@
    "ai": null,
    "score": 8,
    "story": null
+  },
+  {
+   "id": "e4ae1851",
+   "key": "https://bloomberg.com/news/articles/2026-11-23/marlowe-raises-277-million-to-bolster-alternatives-to-nvidia-chips",
+   "time": "2026-11-23T12:15:00.000Z",
+   "seen": "2026-11-23T13:16:57.470Z",
+   "kind": "trending",
+   "topic": "ipo",
+   "tier": 2,
+   "trending": true,
+   "trendKey": "ipo:nvidia",
+   "techmeme": true,
+   "headline": "Marlowe, which develops cloud infrastructure and performance tools to optimize non-Nvidia AI chips, raised a $277M seed led by Accel at a $1.15B valuation",
+   "summary": "Marlowe, a six-month-old startup co-founded by two Microsoft Corp. vice presidents, has raised $277 million to pursue ways …",
+   "lines": [
+    "Reported by Bloomberg: Marlowe, which develops cloud infrastructure and performance tools to optimize non-Nvidia AI chips, raised a $277M seed led by Accel at a $1.15B valuation.",
+    "Listed among the top headlines on Techmeme."
+   ],
+   "linesBy": "template",
+   "source": {
+    "name": "Bloomberg",
+    "url": "https://www.bloomberg.com/news/articles/2026-11-23/marlowe-raises-277-million-to-bolster-alternatives-to-nvidia-chips"
+   },
+   "sourceId": "techmeme",
+   "sourceMax": 4,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 11,
+   "story": "trend:ipo:nvidia",
+   "linesNote": "name not in the headline: Microsoft Corp."
+  },
+  {
+   "id": "05b9a107",
+   "key": "https://thehackernews.com/2026/11/hackers-exploit-critical-screenconnect.html",
+   "time": "2026-11-23T12:41:04.000Z",
+   "seen": "2026-11-23T13:16:57.470Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Hackers Exploit Critical ScreenConnect Flaw to Hijack MSP Technician PCs Without Warning",
+   "summary": "Threat actors are exploiting a now-patched security flaw in ConnectWise ScreenConnect to target managed service provider (MSP) servers. The activity revolves around CVE-2026-84869 (CVSS score: 9.9), a critical ScreenConnect client flaw that allows a guest to transfer and execute a malicious payload on a connecting technician's host. \"On November 12, 2026, we observed one managed service",
+   "lines": [
+    "Reported by The Hacker News: Threat actors are exploiting a now-patched ConnectWise ScreenConnect flaw to target managed service provider (MSP) servers.",
+    "The flaw, CVE-2026-84869 (CVSS score 9.9), is a critical ScreenConnect client flaw that allows a guest to transfer and execute a malicious payload on a connecting technician's host.",
+    "The flaw matters to MSPs and technicians who use ScreenConnect for remote connections, because a guest session can reach a technician's host."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/hackers-exploit-critical-screenconnect.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null
+  },
+  {
+   "id": "5960adb0",
+   "key": "https://thehackernews.com/2026/11/n-able-discloses-critical-mail-assure.html",
+   "time": "2026-11-23T12:28:09.000Z",
+   "seen": "2026-11-23T13:16:57.470Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "N-able Discloses Critical Mail Assure Vulnerability Found During Breach Investigation",
+   "summary": "N-able yesterday disclosed a critical flaw it found while investigating the breach of its Mail Assure and SpamExperts Hosted Cloud, an email filtering service it runs for managed service providers. The bug, tracked as CVE-2026-134624, is a server-side request forgery (SSRF) flaw. It allowed a user with high-level API access to open connections to internal systems of the user's choosing on the",
+   "lines": [
+    "Reported by The Hacker News: N-able disclosed a critical flaw it found while investigating a breach of its Mail Assure and SpamExperts Hosted Cloud email filtering service.",
+    "The flaw, tracked as CVE-2026-134624, is a server-side request forgery (SSRF) bug that allowed a user with high-level API access to open connections to internal systems of the user's choosing.",
+    "The disclosure matters to MSPs that rely on N-able's email filtering service for their customers."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/n-able-discloses-critical-mail-assure.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "087f6d4e",
+   "key": "https://gsmarena.com/apple_will_focus_on_affordable_models__iphone_18e_new_ipad_new_macbook_neo__in_early_2027-news-75591.php",
+   "time": "2026-11-23T12:51:02.000Z",
+   "seen": "2026-11-23T13:16:57.470Z",
+   "kind": "device",
+   "tier": 2,
+   "headline": "Apple will focus on affordable models in early 2027 - iPhone 18e, new iPad, new MacBook Neo",
+   "summary": "When he took over the CEO position, John Ternus said that he wants Apple to move away from the traditional big September announcement and to launch new products more often. We’re already seeing that – the September iPhone event only brought the two iPhone 18 Pro models and Apple’s first foldable. The remaining iPhone models will come next year. It will start with the iPhone 18e in the February-March time frame, according to Bloomberg’s Mark Gurman. This is when Apple is expected to release iOS 27.4. The “.4” releases tend to be a major milestone in the iOS release cycle – any features that...",
+   "lines": [
+    "Reported by GSMArena news: Apple plans to focus on more affordable models in early 2027, including the iPhone 18e, a new iPad and a new MacBook Neo.",
+    "According to Bloomberg's Mark Gurman, the iPhone 18e is expected in the February-March time frame, around when Apple is expected to release iOS 27.4.",
+    "Apple CEO John Ternus said he wants the company to move away from a traditional big September announcement and launch new products more often."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "GSMArena news",
+    "url": "https://www.gsmarena.com/apple_will_focus_on_affordable_models__iphone_18e_new_ipad_new_macbook_neo__in_early_2027-news-75591.php"
+   },
+   "sourceId": "gsmarena-news",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": {
+    "model": "Apple iPhone 18e",
+    "brand": "Apple",
+    "category": "phone",
+    "key": "apple iphone 18e"
+   },
+   "ai": null,
+   "score": 5,
+   "story": "device:apple iphone 18e"
   }
  ],
- "description": "6 technology updates from official sources, updated hourly: CISA flags critical Cisco RCE flaw as actively exploited in attacks; Hackers Exploit Critical ASP.NET Anti-CSRF Library Flaw Allowing Unauthenticated RCE; Delta flights in and out of Atlanta delayed due to system outage."
+ "description": "10 technology updates from official sources, updated hourly: CISA flags critical Cisco RCE flaw as actively exploited in attacks; Marlowe, which develops cloud infrastructure and performance tools to optimize non-Nvidia AI chips, raised a $277M seed led by Accel at a $1.15B valuation; Hackers Exploi"
 }

@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-23T12:11:08.778Z",
+ "lastScan": "2026-11-23T13:16:57.470Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -3268,24 +3268,6 @@
    "status": "below",
    "hash": "a19e75d"
   },
-  "https://techcommunity.microsoft.com/t5/microsoft-teams-blog/the-designs-we-didn-t-ship-how-user-feedback-shaped-the-new/ba-p/4573046": {
-   "title": "The designs we didn't ship: How user feedback shaped the new Teams meeting controls",
-   "link": "https://techcommunity.microsoft.com/t5/microsoft-teams-blog/the-designs-we-didn-t-ship-how-user-feedback-shaped-the-new/ba-p/4573046",
-   "source": "tc-teams",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-19T18:12:44.000Z",
-   "updated": null,
-   "summary": "Some of the most important product decisions we've made weren't about what to ship. They were about what not to ship. When we began rethinking the meeting controls in Microsoft Teams, the challenge was clear. Meetings had become more capable, and the interface had grown along with them. As Teams mee",
-   "first": "2026-11-20T12:22:01.168Z",
-   "score": 3,
-   "reasons": [
-    "+1 source tc-teams",
-    "+2 niche (teams meeting)"
-   ],
-   "status": "below",
-   "hash": "4a3ab326"
-  },
   "https://bleepingcomputer.com/news/security/f5-releases-emergency-patches-for-critical-big-ip-rce-flaws": {
    "title": "F5 releases emergency patches for critical BIG-IP RCE flaws",
    "link": "https://www.bleepingcomputer.com/news/security/f5-releases-emergency-patches-for-critical-big-ip-rce-flaws/",
@@ -3332,346 +3314,6 @@
    "slug": "sonicwall-gen-6-end-of-support-what-to-do",
    "resultAt": "2026-11-21T04:52:48.723Z"
   },
-  "https://zoho.com/blog/general/update-on-openjdk-and-nginx-vulnerabilities.html": {
-   "title": "Update on OpenJDK (CVE-2026-114938) and nginx (CVE-2026-123007 & CVE-2026-123633) vulnerabilities",
-   "link": "https://www.zoho.com/blog/general/update-on-openjdk-and-nginx-vulnerabilities.html",
-   "source": "zoho-blog",
-   "topic": "small-business-it",
-   "category": "launch",
-   "date": "2026-11-19T22:11:51.000Z",
-   "updated": null,
-   "summary": "Overview On November 17, 2026, OpenJDK published security advisories for CVE-2026-114938 (commonly referred to as Java4Shell), a critical memory-corruption vulnerability in the OpenJDK's Base64 decoder. Under specific runtime and hardware conditions, malformed Base64 input can lead to unauthorized m",
-   "first": "2026-11-20T12:22:01.168Z",
-   "score": 0,
-   "reasons": [],
-   "status": "below",
-   "hash": "bc3640a"
-  },
-  "https://zoho.com/blog/marketplace/app-spotlight-treble-for-zoho-crm.html": {
-   "title": "App Spotlight: Treble for Zoho CRM",
-   "link": "https://www.zoho.com/blog/marketplace/app-spotlight-treble-for-zoho-crm.html",
-   "source": "zoho-blog",
-   "topic": "small-business-it",
-   "category": "launch",
-   "date": "2026-11-19T17:39:43.000Z",
-   "updated": null,
-   "summary": "App Spotlight brings you hand-picked solutions that enhance your Zoho apps and tools. Visit Zoho Marketplace to explore all of our apps, integrations, and extensions.Treble connects WhatsApp Business API to Zoho CRM with AI agents that read and update Leads, Contacts, Deals, and Pipelines in real ti",
-   "first": "2026-11-20T12:22:01.168Z",
-   "score": 4,
-   "reasons": [
-    "+4 niche (whatsapp, agents)"
-   ],
-   "status": "below",
-   "hash": "74d84750"
-  },
-  "https://googlecloudpresscorner.com/2026-11-19-Google-and-Ohio-Power-Company-Announce-New-Initiative-to-Unlock-New-Capacity-with-Advanced-Transmission-Technology": {
-   "title": "Google and Ohio Power Company Announce New Initiative to Unlock New Capacity with Advanced Transmission Technology",
-   "link": "https://www.googlecloudpresscorner.com/2026-11-19-Google-and-Ohio-Power-Company-Announce-New-Initiative-to-Unlock-New-Capacity-with-Advanced-Transmission-Technology",
-   "source": "gcloud-press",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-19T16:45:00.000Z",
-   "updated": null,
-   "summary": "The first-of-a-kind voluntary corporate-funded infrastructure upgrade will benefit Ohioans by adding capacity and strengthening reliability",
-   "first": "2026-11-20T12:22:01.168Z",
-   "score": 2,
-   "reasons": [
-    "+2 user steps \"upgrade\""
-   ],
-   "status": "below",
-   "hash": "19b98668"
-  },
-  "https://news.samsung.com/in/samsung-tv-plus-brings-2026-mama-awards-to-k-pop-fans-around-the-world": {
-   "title": "Samsung TV Plus Brings 2026 MAMA AWARDS to K-pop Fans Around the World",
-   "link": "https://news.samsung.com/in/samsung-tv-plus-brings-2026-mama-awards-to-k-pop-fans-around-the-world",
-   "source": "samsung-india",
-   "topic": "mobiles",
-   "category": "launch",
-   "date": "2026-11-20T08:57:00.000Z",
-   "updated": null,
-   "summary": "Samsung Electronics is once again connecting K-pop fans worldwide by livestreaming 2026 MAMA AWARDS. Through a partnership with CJ ENM, a leading Korean entertainment company, Samsung TV Plus will broadcast the entire two-day event, with CHAPTER 1 taking place on November 20 and CHAPTER 2 on Novembe",
-   "first": "2026-11-20T12:22:01.168Z",
-   "score": -2,
-   "reasons": [
-    "+1 also on samsung-global",
-    "-3 corporate/announcement \"AWARDS\""
-   ],
-   "status": "below",
-   "hash": "bcf7241b"
-  },
-  "https://ai.google.dev/gemini-api/docs/changelog#2026-11-19-genie-4-genie-4-generally-available-ga": {
-   "title": "Genie 4 (genie-4) generally available (GA)",
-   "link": "https://ai.google.dev/gemini-api/docs/changelog#2026-11-19-genie-4-genie-4-generally-available-ga",
-   "source": "gemini-api-changelog",
-   "topic": "ai-engineering",
-   "category": "launch",
-   "date": "2026-11-19T12:00:00.000Z",
-   "updated": null,
-   "summary": "Released Genie 4 (genie-4) on the Interactions API (v1beta) for real-time interactive world generation, streaming steerable 24 fps 16:9 video with synchronized 48 kHz stereo audio over WebRTC and WebSockets. Seed worlds from text, a 16:9 reference image, or both, and steer live with WASD/arrow keys ",
-   "first": "2026-11-20T12:22:01.168Z",
-   "score": 4,
-   "reasons": [
-    "+2 launch \"generally available\"",
-    "+1 plans/price/availability \"paid\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "5a74a99e"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64015": {
-   "title": "RBI imposes monetary penalty on Fusion Finance Limited",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64015",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-20T17:35:00.000Z",
-   "updated": null,
-   "summary": "The Reserve Bank of India (RBI) has, by an order dated November 17, 2026, imposed a monetary penalty of ₹7.50 lakh (Rupees Seven Lakh Fifty Thousand only) on Fusion Finance Limited (the company) for non-compliance with certain provisions of directions issued by RBI on ‘Know Your Customer (KYC)’ and ",
-   "first": "2026-11-20T12:22:01.168Z",
-   "score": 1,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 niche (kyc)",
-    "+1 plans/price/availability \"India\""
-   ],
-   "status": "below",
-   "hash": "e337a7b4"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64014": {
-   "title": "Auction of 91-Day, 182-Day and 364-Day Treasury Bills",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64014",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-20T17:20:00.000Z",
-   "updated": null,
-   "summary": "Reserve Bank of India announces the auction of Government of India Treasury Bills as per the following details: Sr. No. Treasury Bill Notified Amount (₹ crore) Auction Date Settlement Date 1 91-Day 8,000 November 25, 2026 (Wednesday) November 26, 2026 (Thursday) 2 182-Day 8,000 3 364-Day 7,000 Total",
-   "first": "2026-11-20T12:22:01.168Z",
-   "score": 0,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 plans/price/availability \"India\""
-   ],
-   "status": "below",
-   "hash": "9f357e85"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64013": {
-   "title": "Reserve Bank of India – Bulletin Weekly Statistical Supplement – Extract",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64013",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-20T17:00:00.000Z",
-   "updated": null,
-   "summary": "1. Reserve Bank of India - Liabilities and Assets* (₹ Crore) Item 2025 2026 Variation Nov. 14 Nov. 6 Nov. 13 Week Year 1 2 3 4 5 4 Loans and Advances 4.1 Central Government 0 0 0 0 0 4.2 State Governments 31808 15415 21004 5589 -10804 * Data are provisional; difference, if any, is due to rounding of",
-   "first": "2026-11-20T12:22:01.168Z",
-   "score": 1,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 niche (exchange)",
-    "+1 plans/price/availability \"India\""
-   ],
-   "status": "below",
-   "hash": "502294fa"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64012": {
-   "title": "Government Stock - Full Auction Results",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64012",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-20T15:30:00.000Z",
-   "updated": null,
-   "summary": "(Amount in ₹ Crore) Auction Results 6.53% GS 2031 7.71% GS 2066 I. Notified Amount 19,000 14,000 II. Competitive Bids Received (i) Number 251 292 (ii) Amount 48,923.250 36,969.000 III. Cut-off price (₹) / Yield 97.66 98.80 (YTM: 7.1116%) (YTM: 7.8083%) IV. Competitive Bids Accepted (i) Number 84 89 ",
-   "first": "2026-11-20T12:22:01.168Z",
-   "score": 0,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 plans/price/availability \"price\""
-   ],
-   "status": "below",
-   "hash": "dfd297a"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64011": {
-   "title": "Government Stock - Auction Results: Cut-off",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64011",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-20T14:00:00.000Z",
-   "updated": null,
-   "summary": "6.53% GS 2031 7.71% GS 2066 I. Notified Amount ₹19,000 crore ₹14,000 crore II. Cut off Price (₹) / Implicit Yield at cut-off 97.66/7.1116% 98.80/7.8083% III. Amount accepted in the auction ₹19,000 crore ₹14,000 crore IV. Devolvement on Primary Dealers NIL NIL Ajit Prasad Deputy General Manager (Comm",
-   "first": "2026-11-20T12:22:01.168Z",
-   "score": 0,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 plans/price/availability \"₹1\""
-   ],
-   "status": "below",
-   "hash": "87820051"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64010": {
-   "title": "Result of the Second 3-day Variable Rate Repo (VRR) auction held on November 20, 2026",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64010",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-20T13:40:00.000Z",
-   "updated": null,
-   "summary": "Tenor 3-day Notified Amount (in ₹ crore) 25,000 Total amount of bids received (in ₹ crore) 48,040 Amount allotted (in ₹ crore) 25,007 Cut off Rate (%) 5.58 Weighted Average Rate (%) 5.61 Partial Allotment Percentage of bids received at cut off rate (%) 50.24 Ajit Prasad Deputy General Manager (Commu",
-   "first": "2026-11-20T12:22:01.168Z",
-   "score": -1,
-   "reasons": [
-    "-1 source rbi-press"
-   ],
-   "status": "below",
-   "hash": "2d7e2840"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64009": {
-   "title": "Reserve Bank issues Foreign Exchange Management (Export and Import of Goods and Services) (Second Amendment) Regulations, 2026",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64009",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-20T13:15:00.000Z",
-   "updated": null,
-   "summary": "The Foreign Exchange Management (Export of Goods and Services) Regulations, 2015 were superseded by the Foreign Exchange Management (Export and Import of Goods and Services) Regulations, 2026, which were issued on January 13, 2026 , and became effective from October 01, 2026. The new regulations are",
-   "first": "2026-11-20T12:22:01.168Z",
-   "score": 0,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 niche (exchange)"
-   ],
-   "status": "below",
-   "hash": "d5d9ad02"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64008": {
-   "title": "RBI to conduct Second 3-day Variable Rate Repo (VRR) auction under LAF on November 20, 2026",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64008",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-20T12:35:00.000Z",
-   "updated": null,
-   "summary": "On a review of current and evolving liquidity conditions in the near term, it has been decided to conduct a second Variable Rate Repo (VRR) auction on Friday, November 20, 2026, as under: Sl. No. Notified Amount (₹ crore) Tenor (day) Window Timing Date of Reversal 1 25,000 3 12:45 PM to 1:15 PM Nove",
-   "first": "2026-11-20T12:22:01.168Z",
-   "score": -1,
-   "reasons": [
-    "-1 source rbi-press"
-   ],
-   "status": "below",
-   "hash": "8e4975f8"
-  },
-  "https://microsoft.com/en-us/research/podcast/can-ai-help-build-a-healthier-future": {
-   "title": "The future of medicine: Could AI help predict and prevent disease?",
-   "link": "https://www.microsoft.com/en-us/research/podcast/can-ai-help-build-a-healthier-future/",
-   "source": "ms-source",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-19T22:14:18.000Z",
-   "updated": null,
-   "summary": "The post The future of medicine: Could AI help predict and prevent disease? appeared first on Source .",
-   "first": "2026-11-20T12:22:01.168Z",
-   "score": -1,
-   "reasons": [
-    "-1 source ms-source"
-   ],
-   "status": "below",
-   "hash": "bd5e5236"
-  },
-  "https://blogs.vmware.com/cloud-foundation/2026/11/19/vcf-9-1-vpc-networking-part-2-ip-blocks-external-connections-transit-gateways-subnets-and-nat": {
-   "title": "VCF 9.1 VPC Networking, Part 2: IP Blocks, External Connections, Transit Gateways, Subnets, and NAT",
-   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/19/vcf-9-1-vpc-networking-part-2-ip-blocks-external-connections-transit-gateways-subnets-and-nat/",
-   "source": "vmware-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T06:09:37.000Z",
-   "updated": null,
-   "summary": "Series · Part 2 of 6 The VCF 9.1 VPC Networking Mental Model 1VCF 9.1 VPC Networking, Part 1: From External Connection to VPC 2VCF 9.1 VPC Networking, Part 2: IP Blocks, External Connections, Transit Gateways, Subnets, and NATYou are here 3VCF 9.1 VPC Networking, Part 3: The Distributed Transit Gate",
-   "first": "2026-11-20T12:22:01.168Z",
-   "score": -1,
-   "reasons": [
-    "-1 source vmware-blog"
-   ],
-   "status": "below",
-   "hash": "ccdbb053"
-  },
-  "https://news.sap.com/2026/11/takeda-turns-to-sap-erp-digital-transformation": {
-   "title": "Takeda Turns to SAP S/4HANA to Support Digital Transformation",
-   "link": "https://news.sap.com/2026/11/takeda-turns-to-sap-erp-digital-transformation/",
-   "source": "sap-news",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T12:15:00.000Z",
-   "updated": null,
-   "summary": "The biotech company’s move to SAP S/4HANA supports process simplification, AI adoption, and a more connected way of working.",
-   "first": "2026-11-20T12:22:01.168Z",
-   "score": -1,
-   "reasons": [
-    "-1 source sap-news"
-   ],
-   "status": "below",
-   "hash": "f9699ee0"
-  },
-  "https://news.sap.com/2026/11/why-enterprise-architecture-is-becoming-key-to-successful-ai": {
-   "title": "Why Enterprise Architecture Is Becoming Key to Successful AI",
-   "link": "https://news.sap.com/2026/11/why-enterprise-architecture-is-becoming-key-to-successful-ai/",
-   "source": "sap-news",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T11:15:00.000Z",
-   "updated": null,
-   "summary": "Trusted data, business context, and human accountability are essential to turning AI ambition into business value.",
-   "first": "2026-11-20T12:22:01.168Z",
-   "score": -1,
-   "reasons": [
-    "-1 source sap-news"
-   ],
-   "status": "below",
-   "hash": "1d2ece44"
-  },
-  "https://mc.merill.net/message/MC1551122": {
-   "title": "MC1551122: Power Platform - Information regarding the end of support for SharePoint temporary authentication URLs",
-   "link": "https://mc.merill.net/message/MC1551122",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-20T07:22:33.000Z",
-   "updated": null,
-   "summary": "Starting April 1, 2027, SharePoint temporary authentication URLs will no longer be available. Power Apps and Automate functionality that relies on these URLs will break when they are retired. How does this affect me? Any Power Apps app or Power Automate cloud flow that relies upon the temporary auth",
-   "first": "2026-11-20T12:22:01.168Z",
-   "score": -1,
-   "reasons": [
-    "-2 source mc-merill",
-    "+1 niche (sharepoint)",
-    "+1 retirement/migration",
-    "-1 in /news 2026-11-14-server-2016-ltsc-2021-end-slmgr-fix"
-   ],
-   "status": "below",
-   "hash": "8307c35c",
-   "news": "2026-11-14-server-2016-ltsc-2021-end-slmgr-fix"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-local-zone-bogota-colombia": {
-   "title": "Announcing the general availability of a new AWS Local Zone in Bogotá, Colombia",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-local-zone-bogota-colombia/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T08:00:00.000Z",
-   "updated": null,
-   "summary": "Today, AWS announces the general availability of a new Local Zone in Bogotá, Colombia, bringing AWS infrastructure closer to end users for applications that require single-digit millisecond latency. You can use the Bogotá Local Zone for workloads such as real-time gaming, live video streaming, medic",
-   "first": "2026-11-20T12:22:01.168Z",
-   "score": 4,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"general availability\"",
-    "+2 user steps \"You can\"",
-    "+1 plans/price/availability \"Regions\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "5a795e6"
-  },
   "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-devops-agent-slack-code-channels-teams-two-way": {
    "title": "AWS DevOps Agent now supports Slack code channels and Microsoft Teams two-way conversations",
    "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-devops-agent-slack-code-channels-teams-two-way/",
@@ -3692,110 +3334,6 @@
    ],
    "status": "below",
    "hash": "ed7753bf"
-  },
-  "https://manageengine.com/blog/blog/general/modular-it-platform-approach.html": {
-   "title": "Drive real IT advantage with a modular platform approach that grows with you",
-   "link": "https://www.manageengine.com/blog/blog/general/modular-it-platform-approach.html",
-   "source": "manageengine-blog",
-   "topic": "security-identity",
-   "category": "launch",
-   "date": "2026-11-20T11:00:00.000Z",
-   "updated": null,
-   "summary": "Behind every great shot is a photographer's decision to use the right lens. While that may be one of many factors to consider, it can largely change the narrative. A prime lens captures a quiet moment between a deer and its fawn from a distance. Alternatively, the same forest through a telephoto len",
-   "first": "2026-11-20T12:22:01.168Z",
-   "score": -2,
-   "reasons": [
-    "-2 source manageengine-blog"
-   ],
-   "status": "below",
-   "hash": "e8493904"
-  },
-  "https://manageengine.com/blog/general/ai-in-itsm-what-to-automate-what-needs-human-judgment.html": {
-   "title": "AI in ITSM: What to automate, what needs human judgment",
-   "link": "https://www.manageengine.com/blog/general/ai-in-itsm-what-to-automate-what-needs-human-judgment.html",
-   "source": "manageengine-blog",
-   "topic": "security-identity",
-   "category": "launch",
-   "date": "2026-11-20T04:30:00.000Z",
-   "updated": null,
-   "summary": "Should an algorithm decide whether to restart a production database at 2 a.m., or should a human make that call? That question sits at the center of every serious conversation about AI in service management today, and most IT leaders don't yet have a confident answer.ITSM automation has existed for ",
-   "first": "2026-11-20T12:22:01.168Z",
-   "score": -2,
-   "reasons": [
-    "-2 source manageengine-blog"
-   ],
-   "status": "below",
-   "hash": "150ecbc0"
-  },
-  "https://manageengine.com/blog/general/update-on-openjdk-cve2026114938-and-nginx-cve2026123007-cve2026123633-vulnerabilities-for-manageengine-cloud-services.html": {
-   "title": "Update on OpenJDK (CVE-2026-114938) and nginx (CVE-2026-123007, CVE-2026-123633) vulnerabilities for ManageEngine cloud services",
-   "link": "https://www.manageengine.com/blog/general/update-on-openjdk-cve2026114938-and-nginx-cve2026123007-cve2026123633-vulnerabilities-for-manageengine-cloud-services.html",
-   "source": "manageengine-blog",
-   "topic": "security-identity",
-   "category": "launch",
-   "date": "2026-11-19T22:30:00.000Z",
-   "updated": null,
-   "summary": "Overview On November 17, 2026, OpenJDK published a security advisory for CVE-2026-114938 (commonly referred to as Java4Shell), a critical memory-corruption vulnerability in OpenJDK's Base64 decoder. Under specific runtime and hardware conditions, malformed Base64 input can lead to unauthorized memor",
-   "first": "2026-11-20T12:22:01.168Z",
-   "score": -2,
-   "reasons": [
-    "-2 source manageengine-blog"
-   ],
-   "status": "below",
-   "hash": "49a33b37"
-  },
-  "https://manageengine.com/blog/general/top-tips-how-to-make-better-decisions-in-an-algorithmdriven-world.html": {
-   "title": "Top tips: How to make better decisions in an algorithm-driven world",
-   "link": "https://www.manageengine.com/blog/general/top-tips-how-to-make-better-decisions-in-an-algorithmdriven-world.html",
-   "source": "manageengine-blog",
-   "topic": "security-identity",
-   "category": "launch",
-   "date": "2026-11-19T17:30:00.000Z",
-   "updated": null,
-   "summary": "Top tips is a weekly column where we highlight what’s trending in the tech world and list ways to explore these trends. This week, we’re considering algorithmic recommendations and the importance of upholding human cognition in decision-making processes.When browsing digital platforms, how often do ",
-   "first": "2026-11-20T12:22:01.168Z",
-   "score": 0,
-   "reasons": [
-    "-2 source manageengine-blog",
-    "+2 user steps \"How to\""
-   ],
-   "status": "below",
-   "hash": "54d7c782"
-  },
-  "https://manageengine.com/blog/general/nonhuman-identity-security-why-ownership-and-governance-matters.html": {
-   "title": "Non-human identity security: Why ownership and governance matters",
-   "link": "https://www.manageengine.com/blog/general/nonhuman-identity-security-why-ownership-and-governance-matters.html",
-   "source": "manageengine-blog",
-   "topic": "security-identity",
-   "category": "launch",
-   "date": "2026-11-19T15:00:00.000Z",
-   "updated": null,
-   "summary": "Nowadays, it's not uncommon to see modern enterprises rely on automated processes, APIs, microservices, and AI-powered applications. These systems use non-human identities to authenticate, communicate, and access the resources they need to function.However, managing and securing non-human identities",
-   "first": "2026-11-20T12:22:01.168Z",
-   "score": -2,
-   "reasons": [
-    "-2 source manageengine-blog"
-   ],
-   "status": "below",
-   "hash": "b71b051c"
-  },
-  "https://manageengine.com/blog/general/what-are-data-silos-breaking-down-its-visibility-gap.html": {
-   "title": "What are data silos? Breaking down IT's visibility gap",
-   "link": "https://www.manageengine.com/blog/general/what-are-data-silos-breaking-down-its-visibility-gap.html",
-   "source": "manageengine-blog",
-   "topic": "security-identity",
-   "category": "launch",
-   "date": "2026-11-19T04:30:00.000Z",
-   "updated": null,
-   "summary": "Data silos are where IT data gets locked up in isolated, disconnected systems, and you can't get a view across service management, security, and operations. They're the result of organizational boundaries, legacy tools, and poor data governance. For IT managers looking to tackle silos, the first ste",
-   "first": "2026-11-20T12:22:01.168Z",
-   "score": 0,
-   "reasons": [
-    "-2 source manageengine-blog",
-    "+2 user steps \"you can\""
-   ],
-   "status": "below",
-   "hash": "f91ae5c8"
   },
   "https://anthropic.com/news/ipo-close": {
    "title": "Anthropic announces closing of initial public offering, including full exercise of underwriters’ option to purchase additional shares, and closing of concurrent private placement",
@@ -7736,12 +7274,14 @@
     "+1 category (Security)",
     "+2 corroborated by thn (cisco)"
    ],
-   "status": "writing",
+   "status": "published",
    "hash": "b1fd074d",
    "kind": "new",
    "extra": false,
    "taskAt": "2026-11-23T12:11:08.778Z",
-   "attempts": 1
+   "attempts": 1,
+   "slug": "cisco-expressway-cve-2026-76466-exploited-patch",
+   "resultAt": "2026-11-23T12:20:12.125Z"
   },
   "https://thehackernews.com/2026/11/hackers-exploit-critical-aspnet-anti.html": {
    "title": "Hackers Exploit Critical ASP.NET Anti-CSRF Library Flaw Allowing Unauthenticated RCE",
@@ -8039,6 +7579,114 @@
    ],
    "status": "below",
    "hash": "351f810e"
+  },
+  "https://thehackernews.com/2026/11/hackers-exploit-critical-screenconnect.html": {
+   "title": "Hackers Exploit Critical ScreenConnect Flaw to Hijack MSP Technician PCs Without Warning",
+   "link": "https://thehackernews.com/2026/11/hackers-exploit-critical-screenconnect.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-23T12:41:04.000Z",
+   "updated": null,
+   "summary": "Threat actors are exploiting a now-patched security flaw in ConnectWise ScreenConnect to target managed service provider (MSP) servers. The activity revolves around CVE-2026-84869 (CVSS score: 9.9), a critical ScreenConnect client flaw that allows a guest to transfer and execute a malicious payload ",
+   "first": "2026-11-23T13:16:57.470Z",
+   "score": 6,
+   "reasons": [
+    "+1 source thn",
+    "+3 incident \"Hackers\"",
+    "+2 user action \"patched\""
+   ],
+   "status": "below",
+   "hash": "6e1b5d1a"
+  },
+  "https://thehackernews.com/2026/11/n-able-discloses-critical-mail-assure.html": {
+   "title": "N-able Discloses Critical Mail Assure Vulnerability Found During Breach Investigation",
+   "link": "https://thehackernews.com/2026/11/n-able-discloses-critical-mail-assure.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-23T12:28:09.000Z",
+   "updated": null,
+   "summary": "N-able yesterday disclosed a critical flaw it found while investigating the breach of its Mail Assure and SpamExperts Hosted Cloud, an email filtering service it runs for managed service providers. The bug, tracked as CVE-2026-134624, is a server-side request forgery (SSRF) flaw. It allowed a user w",
+   "first": "2026-11-23T13:16:57.470Z",
+   "score": 5,
+   "reasons": [
+    "+1 source thn",
+    "+3 incident \"Breach\"",
+    "+1 user data or credentials exposed"
+   ],
+   "status": "below",
+   "hash": "19ecea79"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64030": {
+   "title": "Premature redemption under Sovereign Gold Bond (SGB) Scheme - Redemption Price for premature redemption of SGB 2021-22 Series I due on November 25, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64030",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-23T18:10:00.000Z",
+   "updated": null,
+   "summary": "In terms of GOI notification F. No. 4(5)-B(W&M)/2021 dated May 12, 2021 (SGB 2021-22 Series I - Issue date May 25, 2021) on Sovereign Gold Bond Scheme, premature redemption of Gold Bond may be permitted after fifth year from the date of issue of such Gold Bond on the date on which interest is payabl",
+   "first": "2026-11-23T13:16:57.470Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"Price\""
+   ],
+   "status": "below",
+   "hash": "b04738de"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64029": {
+   "title": "Auction of Government of India Dated Securities",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64029",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-23T17:45:00.000Z",
+   "updated": null,
+   "summary": "Government of India (GoI) has announced the sale (re-issue) of four dated securities for a notified amount of ₹33,000 crore as per the following details: Sr No Security Date of Repayment Notified Amount (₹ Crore) GoI specific Notification Auction Date Settlement Date 1 6.20% GS 2029 Aug 17, 2029 9,0",
+   "first": "2026-11-23T13:16:57.470Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"India\""
+   ],
+   "status": "below",
+   "hash": "49f9dbd2"
+  },
+  "https://blog.webex.com/workspaces/conversational-ai-agent-meeting-room-collaboration-cisco-ai-assistant": {
+   "title": "Make the Meeting Room Part of the Conversation with Cisco AI ...",
+   "link": "https://blog.webex.com/workspaces/conversational-ai-agent-meeting-room-collaboration-cisco-ai-assistant/",
+   "source": "webex-blog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-23T13:00:00.000Z",
+   "updated": null,
+   "summary": "It’s an ongoing meeting and the discussion is finally getting somewhere. Six people are gathered around a board, working through […] The post Make the Meeting Room Part of the Conversation with Cisco AI ... appeared first on Webex Blog .",
+   "first": "2026-11-23T13:16:57.470Z",
+   "score": -1,
+   "reasons": [
+    "-1 source webex-blog"
+   ],
+   "status": "below",
+   "hash": "367f5d9b"
+  },
+  "https://news.sap.com/2026/11/how-sap-store-certification-turns-into-customer-trust-for-vertex": {
+   "title": "How SAP Store Certification Turns into Customer Trust for Vertex",
+   "link": "https://news.sap.com/2026/11/how-sap-store-certification-turns-into-customer-trust-for-vertex/",
+   "source": "sap-news",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T12:15:00.000Z",
+   "updated": null,
+   "summary": "For partners weighing whether SAP Store certification effort is worth it, Vertex's experience makes the case.",
+   "first": "2026-11-23T13:16:57.470Z",
+   "score": -1,
+   "reasons": [
+    "-1 source sap-news"
+   ],
+   "status": "below",
+   "hash": "d4667b72"
   }
  },
  "devices": {},
@@ -8058,7 +7706,7 @@
    "first": "2026-11-19T14:45:12.000Z",
    "decision": "covered",
    "key": "ipo:anthropic",
-   "title": "Anthropic's record IPO raises hopes for a charitable windfall that has nonprofits preparing to scale",
+   "title": "Anthropic Faces New Pressures From Public Investors After Successful IPO",
    "titles": [
     "Anthropic’s 7 founders cashed out nearly $2B in record-breaking IPO",
     "Anthropic’s IPO could deliver $156B to charity",
@@ -8083,21 +7731,24 @@
     "https://www.cnbc.com/2026/11/20/anthropic-ipo-greenshoe.html",
     "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQZXdyUExSdjhGa000MWtxaUR0YzhiVHJnNzN0N0lTUnNONktkaWZkUVUwdExoUXhXMTlJN0NEZ3F3M2RYbUZYelpiNFhpOE14LWdtYjF1MnB2M00xMk1GbENmci1UeFlXa3V0aHM4TWlxVVZNeFBwUkZjMTA2ZWhCSFBVaVVBb0FUdnpj?oc=5"
    ],
-   "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNOTZBX2xZWWNQeGFIRExEbFNFSUJiV3I1cG80MzZzUUh2ZDZQTXM0dC1iNDdRVTZLZkFWelpTWnRvODY4clRUUmNaamdBQXdRSmM3U3NQdS1RbzU3dF92OVBfMTRRM3JIbF8tMlIzZ1JRUWFVV3Q0U2xtZHlCRU5YWkhIV3hQNURrVnZFU2d2NA?oc=5",
+   "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNaWEtdlp4ZFBsaUpfZVZsTW9BeTRLYmRFSXcyT1RFbFZzcmp5OGtQRy1ob2I2Q1FET2ZJbG9ha1BtSlpJaVd5UVFMZFZXX2F4OE52QmEwRko0bDhLendUOXdpWVpZZGhCcDRYNGZhVzBDdWtpWTBXOU5reDB0ZkU1ZURrQXptREdqMXNwbGNySWdwcEN5aDNFazVQTXc5TGc?oc=5",
    "outlets": [
-    "AP",
     "Bloomberg",
     "WSJ",
     "TechCrunch",
-    "The Hindu"
+    "The Economic Times",
+    "Business Standard",
+    "The Hindu",
+    "Moneycontrol",
+    "NDTV"
    ],
    "techmeme": false,
    "category": "launch",
    "topic": "ai-engineering",
    "parkOnly": false,
-   "last": "2026-11-23T12:02:01.000Z",
-   "date": "2026-11-23T12:02:01.000Z",
-   "score": 13,
+   "last": "2026-11-23T13:07:52.000Z",
+   "date": "2026-11-23T13:07:52.000Z",
+   "score": 14,
    "post": "anthropic-ipo-explained-claude-users"
   },
   "milestone:google|9c5a0e24": {
@@ -8128,8 +7779,8 @@
   }
  },
  "missedCheck": {
-  "day": "2026-11-22",
-  "at": "2026-11-22T13:16:59.085Z",
+  "day": "2026-11-23",
+  "at": "2026-11-23T13:16:57.470Z",
   "checked": 0,
   "covered": 0,
   "items": []
