@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-23T13:16:57.470Z",
+ "lastScan": "2026-11-23T14:16:39.869Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -3334,132 +3334,6 @@
    ],
    "status": "below",
    "hash": "ed7753bf"
-  },
-  "https://anthropic.com/news/ipo-close": {
-   "title": "Anthropic announces closing of initial public offering, including full exercise of underwriters’ option to purchase additional shares, and closing of concurrent private placement",
-   "link": "https://www.anthropic.com/news/ipo-close",
-   "source": "anthropic-news",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-20T00:00:00.000Z",
-   "updated": null,
-   "summary": "Today Anthropic, PBC announced the closing of its initial public offering of an aggregate of 1,127,000,000 shares of its Class A common stock at a public offering price of $83.00 per share, including the full exercise by the underwriters of their option to purchase an additional 147,000,000 shares o",
-   "first": "2026-11-20T13:16:59.271Z",
-   "score": 3,
-   "reasons": [
-    "+1 source anthropic-news",
-    "+1 niche (exchange)",
-    "+1 plans/price/availability \"price\""
-   ],
-   "status": "below",
-   "hash": "2c82b1d1"
-  },
-  "https://thehackernews.com/2026/11/new-linux-kvm-flaw-cve-2026-99312-lets.html": {
-   "title": "Linux KVM Flaw CVE-2026-99312 Lets Guest VMs Access Host Memory on AMD Hosts",
-   "link": "https://thehackernews.com/2026/11/new-linux-kvm-flaw-cve-2026-99312-lets.html",
-   "source": "thn",
-   "topic": "security-identity",
-   "category": "incident",
-   "date": "2026-11-20T12:20:00.000Z",
-   "updated": null,
-   "summary": "A flaw in KVM, the hypervisor built into the Linux kernel, let researchers read about 127 GB of a cloud server's memory from inside a virtual machine of their own on DigitalOcean. On a shared server, that memory can include other customers' virtual machines. The flaw, tracked as CVE-2026-99312, affe",
-   "first": "2026-11-20T13:16:59.271Z",
-   "score": 5,
-   "reasons": [
-    "+1 source thn",
-    "+2 vulnerability \"Flaw\"",
-    "+2 user action \"Fixed\""
-   ],
-   "status": "below",
-   "hash": "13833613"
-  },
-  "https://news.sap.com/2026/11/how-sap-concur-helps-san-francisco-49ers-take-game-global": {
-   "title": "From Melbourne to Mexico: How SAP Concur and AI Help the San Francisco 49ers Take Their Game Global",
-   "link": "https://news.sap.com/2026/11/how-sap-concur-helps-san-francisco-49ers-take-game-global/",
-   "source": "sap-news",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T13:15:00.000Z",
-   "updated": null,
-   "summary": "Traveling across continents during the 2026 NFL International Series, SAP software keeps the team moving seamlessly.",
-   "first": "2026-11-20T13:16:59.271Z",
-   "score": -1,
-   "reasons": [
-    "-1 source sap-news"
-   ],
-   "status": "below",
-   "hash": "173c279c"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64016": {
-   "title": "RBI to conduct 4-day Variable Rate Repo (VRR) auction under LAF on November 23, 2026",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64016",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-20T19:25:00.000Z",
-   "updated": null,
-   "summary": "On a review of current and evolving liquidity conditions in the near term, it has been decided to conduct a Variable Rate Repo (VRR) auction on Monday, November 23, 2026, as under: Sl. No. Notified Amount (₹ crore) Tenor (day) Window Timing Date of Reversal 1 50,000 4 9:30 AM to 10:00 AM November 27",
-   "first": "2026-11-20T14:16:36.844Z",
-   "score": -1,
-   "reasons": [
-    "-1 source rbi-press"
-   ],
-   "status": "below",
-   "hash": "7fae733e"
-  },
-  "https://salesforce.com/blog/salesforce-to-salesforce-replacement-architecture": {
-   "title": "Replace Salesforce to Salesforce Before Its Spring ’27 Retirement",
-   "link": "https://www.salesforce.com/blog/salesforce-to-salesforce-replacement-architecture/",
-   "source": "salesforce-blog",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-20T14:00:18.000Z",
-   "updated": null,
-   "summary": "Select a cross-org sharing architecture that fits your use case ahead of the Spring ’27 Salesforce to Salesforce retirement.",
-   "first": "2026-11-20T14:16:36.844Z",
-   "score": 0,
-   "reasons": [
-    "-1 source salesforce-blog",
-    "+1 retirement/migration"
-   ],
-   "status": "below",
-   "hash": "75581f13"
-  },
-  "https://salesforce.com/blog/small-business/ai-orchestrator-basics": {
-   "title": "AI Orchestrators: What the New Generation Needs to Know for Business-led AI Agents",
-   "link": "https://www.salesforce.com/blog/small-business/ai-orchestrator-basics/",
-   "source": "salesforce-blog",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-20T14:00:00.000Z",
-   "updated": null,
-   "summary": "Your next hire might be the person who knows how to conduct a team of AI agents.",
-   "first": "2026-11-20T14:16:36.844Z",
-   "score": 2,
-   "reasons": [
-    "-1 source salesforce-blog",
-    "+1 niche (agents)",
-    "+2 user steps \"how to\""
-   ],
-   "status": "below",
-   "hash": "893ee541"
-  },
-  "https://news.sap.com/2026/11/how-sap-microsoft-innovate-deliver-ai-value-enterprise": {
-   "title": "How SAP and Microsoft Innovate Together to Deliver AI Value for the Enterprise",
-   "link": "https://news.sap.com/2026/11/how-sap-microsoft-innovate-deliver-ai-value-enterprise/",
-   "source": "sap-news",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T14:15:00.000Z",
-   "updated": null,
-   "summary": "Together, SAP and Microsoft solve challenges and unlock exponential AI value.",
-   "first": "2026-11-20T14:16:36.844Z",
-   "score": -1,
-   "reasons": [
-    "-1 source sap-news"
-   ],
-   "status": "below",
-   "hash": "eecaaa43"
   },
   "https://dell.com/en-us/blog/how-to-check-computer-specs-on-windows": {
    "title": "How to Check Computer Specs on Windows",
@@ -7687,6 +7561,198 @@
    ],
    "status": "below",
    "hash": "d4667b72"
+  },
+  "https://news.samsung.com/in/samsung-csr-programmes-have-empowered-thousands-of-tamil-nadu-youth-through-skills-innovation-and-careers": {
+   "title": "Samsung CSR Programmes Have Empowered Thousands of Tamil Nadu Youth Through Skills, Innovation and Careers",
+   "link": "https://news.samsung.com/in/samsung-csr-programmes-have-empowered-thousands-of-tamil-nadu-youth-through-skills-innovation-and-careers",
+   "source": "samsung-india",
+   "topic": "mobiles",
+   "category": "launch",
+   "date": "2026-11-23T17:21:05.000Z",
+   "updated": null,
+   "summary": "A team of students in Chennai is developing a tactile pad that could help people with visual impairments access digital content. In Coimbatore, young innovators are using AI to make workplace learning easier to access. Across Tamil Nadu, other students are gaining technology skills, while young peop",
+   "first": "2026-11-23T14:16:39.869Z",
+   "score": -3,
+   "reasons": [
+    "-3 corporate/announcement \"Careers\""
+   ],
+   "status": "below",
+   "hash": "b77fedcd"
+  },
+  "https://news.lenovo.com/pressroom/press-releases/lenovo-leader-2026-idc-marketscape-dws": {
+   "title": "Lenovo Named a Leader in the 2026 IDC MarketScape for Worldwide Digital Workplace Services",
+   "link": "https://news.lenovo.com/pressroom/press-releases/lenovo-leader-2026-idc-marketscape-dws/",
+   "source": "lenovo-news",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-23T14:00:23.000Z",
+   "updated": null,
+   "summary": "IDC MarketScape recognizes Lenovo as a Leader amid enterprise shift from reactive support models to more proactive, personalized workplace experiences tied to improved productivity and business outcomes",
+   "first": "2026-11-23T14:16:39.869Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "2e1d80c6"
+  },
+  "https://salesforce.com/blog/small-business/agentforce-coworker-in-salesforce-suites": {
+   "title": "The End of CRM Busywork: How Agentforce Coworker Helps Run Your Small Business",
+   "link": "https://www.salesforce.com/blog/small-business/agentforce-coworker-in-salesforce-suites/",
+   "source": "salesforce-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-23T14:00:00.000Z",
+   "updated": null,
+   "summary": "Agentforce Coworker is now available for small businesses at Salesforce, and the future looks bright.",
+   "first": "2026-11-23T14:16:39.869Z",
+   "score": 1,
+   "reasons": [
+    "-1 source salesforce-blog",
+    "+2 launch \"now available\""
+   ],
+   "status": "below",
+   "hash": "86825a99"
+  },
+  "https://blog.cloudflare.com/probing-dns-at-cloudflare": {
+   "title": "Probing DNS at Cloudflare",
+   "link": "https://blog.cloudflare.com/probing-dns-at-cloudflare/",
+   "source": "cloudflare-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T14:00:00.000Z",
+   "updated": null,
+   "summary": "At Cloudflare we’ve built tools to enable teams to extend our internal testing framework and build test tooling for networking protocols. This is the story of how this was used for DNS.",
+   "first": "2026-11-23T14:16:39.869Z",
+   "score": 1,
+   "reasons": [
+    "-1 source cloudflare-blog",
+    "+2 user steps \"enable\""
+   ],
+   "status": "below",
+   "hash": "48addb2a"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64033": {
+   "title": "RBI to conduct Overnight Variable Rate Repo (VRR) auction under LAF on November 25, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64033",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-23T19:25:00.000Z",
+   "updated": null,
+   "summary": "On a review of current and evolving liquidity conditions in the near term, it has been decided to conduct a Variable Rate Repo (VRR) auction on Wednesday, November 25, 2026, as under: Sl. No. Notified Amount (₹ crore) Tenor (day) Window Timing Date of Reversal 1 50,000 1 09:30 AM to 10:00 AM Novembe",
+   "first": "2026-11-23T14:16:39.869Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "300504a9"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64032": {
+   "title": "Governor, Reserve Bank of India meets Managing Directors & Chief Executive Officers of select NBFCs, HFCs and Industry Representatives in Mumbai on November 23, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64032",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-23T19:20:00.000Z",
+   "updated": null,
+   "summary": "As part of the Reserve Bank’s ongoing engagement with regulated entities, the Governor, Reserve Bank of India, today met in Mumbai with the Managing Directors and Chief Executive Officers (MDs & CEOs) of select Non-Banking Financial Companies (NBFCs), including Government NBFCs, Housing Finance Comp",
+   "first": "2026-11-23T14:16:39.869Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"India\""
+   ],
+   "status": "below",
+   "hash": "16834e0f"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64031": {
+   "title": "Governor, Reserve Bank of India meets Chairpersons and Managing Directors & Chief Executive Officers of select UCBs and Industry Representatives in Mumbai on November 23, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64031",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-23T19:15:00.000Z",
+   "updated": null,
+   "summary": "As part of the Reserve Bank of India's continued engagement with regulated entities, the Governor today met in Mumbai with the Chairpersons and Managing Directors & Chief Executive Officers (MDs & CEOs) of select Urban Cooperative Banks (UCBs) across different tiers. Representatives of the National ",
+   "first": "2026-11-23T14:16:39.869Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"India\""
+   ],
+   "status": "below",
+   "hash": "48dfa50c"
+  },
+  "https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director": {
+   "title": "NVIDIA Board Reinstates Jensen Huang as President, CEO and Board Director",
+   "link": "https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director",
+   "source": "nvidia-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-23T13:55:00.000Z",
+   "updated": null,
+   "summary": "NVIDIA (NASDAQ: NVDA) today announced that effective immediately, Jensen Huang has been reinstated as President and Chief Executive Officer and as a member of the Board.",
+   "first": "2026-11-23T14:16:39.869Z",
+   "score": 0,
+   "reasons": [
+    "-1 source nvidia-news",
+    "+1 also on techmeme"
+   ],
+   "status": "below",
+   "hash": "221eab12"
+  },
+  "https://dell.com/en-us/blog/ai-is-expanding-research-computing-access-will-define-what-comes-next-": {
+   "title": "AI Is Expanding Research Computing. Access Will Define What Comes Next.",
+   "link": "https://www.dell.com/en-us/blog/ai-is-expanding-research-computing-access-will-define-what-comes-next-",
+   "source": "dell-blog",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-23T15:00:00.000Z",
+   "updated": null,
+   "summary": "Research leaders explain how higher education institutions can expand secure access to AI and high-performance computing through usable tools, governance and investment in people.",
+   "first": "2026-11-23T14:16:39.869Z",
+   "score": -4,
+   "reasons": [
+    "-1 source dell-blog",
+    "-3 corporate/announcement \"Research\""
+   ],
+   "status": "below",
+   "hash": "f8c43127"
+  },
+  "https://dell.com/en-us/blog/agentic-ai-and-you-giving-your-agent-hands-and-memory": {
+   "title": "Agentic AI and You: Giving Your Agent Hands and Memory",
+   "link": "https://www.dell.com/en-us/blog/agentic-ai-and-you-giving-your-agent-hands-and-memory",
+   "source": "dell-blog",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-23T14:00:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-23T14:16:39.869Z",
+   "score": 0,
+   "reasons": [
+    "-1 source dell-blog",
+    "+1 niche (agent)"
+   ],
+   "status": "below",
+   "hash": "3a8bf442"
+  },
+  "https://dell.com/en-us/blog/powering-the-future-of-intelligent-imaging-at-rsna-2026": {
+   "title": "Powering the Future of Intelligent Imaging at RSNA 2026",
+   "link": "https://www.dell.com/en-us/blog/powering-the-future-of-intelligent-imaging-at-rsna-2026",
+   "source": "dell-blog",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-23T14:00:00.000Z",
+   "updated": null,
+   "summary": "Explore Dell Technologies and NVIDIA's medical imaging AI solutions, hands-on workshops, and interactive demonstrations at RSNA 2026.",
+   "first": "2026-11-23T14:16:39.869Z",
+   "score": -1,
+   "reasons": [
+    "-1 source dell-blog"
+   ],
+   "status": "below",
+   "hash": "dea0acb0"
   }
  },
  "devices": {},
@@ -7734,20 +7800,20 @@
    "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNaWEtdlp4ZFBsaUpfZVZsTW9BeTRLYmRFSXcyT1RFbFZzcmp5OGtQRy1ob2I2Q1FET2ZJbG9ha1BtSlpJaVd5UVFMZFZXX2F4OE52QmEwRko0bDhLendUOXdpWVpZZGhCcDRYNGZhVzBDdWtpWTBXOU5reDB0ZkU1ZURrQXptREdqMXNwbGNySWdwcEN5aDNFazVQTXc5TGc?oc=5",
    "outlets": [
     "Bloomberg",
+    "CNBC",
     "WSJ",
     "TechCrunch",
     "The Economic Times",
     "Business Standard",
     "The Hindu",
-    "Moneycontrol",
     "NDTV"
    ],
    "techmeme": false,
    "category": "launch",
    "topic": "ai-engineering",
    "parkOnly": false,
-   "last": "2026-11-23T13:07:52.000Z",
-   "date": "2026-11-23T13:07:52.000Z",
+   "last": "2026-11-23T13:54:03.000Z",
+   "date": "2026-11-23T13:54:03.000Z",
    "score": 14,
    "post": "anthropic-ipo-explained-claude-users"
   },
