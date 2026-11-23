@@ -2,7 +2,7 @@
  "date": "2026-11-23",
  "title": "Tech news today, 23 November 2026",
  "published": "2026-11-22T18:45:06.177Z",
- "updated": "2026-11-23T03:02:13.148Z",
+ "updated": "2026-11-23T12:11:08.778Z",
  "items": [
   {
    "id": "9477151b",
@@ -55,7 +55,9 @@
    },
    "sourceId": "bleepingcomputer",
    "reported": true,
-   "also": [],
+   "also": [
+    "The Hacker News"
+   ],
    "post": null,
    "device": null,
    "ai": null,
@@ -90,7 +92,92 @@
    "ai": null,
    "score": 4,
    "story": null
+  },
+  {
+   "id": "8ae541ae",
+   "key": "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64025",
+   "time": "2026-11-23T12:11:08.778Z",
+   "seen": "2026-11-23T12:11:08.778Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "RBI releases 2026 list of Domestic Systemically Important Banks (D-SIBs)",
+   "summary": "State Bank of India, HDFC Bank, and ICICI Bank continue to be identified as Domestic Systemically Important Banks (D-SIBs) under the same bucketing structure as in the 2025 list of D-SIBs . The additional Common Equity Tier 1 (CET1) requirement for these D-SIBs will be in addition to the capital conservation buffer. The list of D-SIBs is as follows: Bucket Banks Additional Common Equity Tier 1 requirement as a percentage of Risk Weighted Assets (RWAs) 5 - 1% 4 State Bank of India 0.80% 3 - 0.60% 2 HDFC Bank 0.40% 1 ICICI Bank 0.20% Background: The Reserve Bank had issued the Framework for dealing with Domestic Systemically Important Banks (D-SIBs) on July 22, 2014 , which was subsequently up",
+   "lines": [
+    "The Reserve Bank of India released its 2026 list of Domestic Systemically Important Banks (D-SIBs). State Bank of India, HDFC Bank and ICICI Bank remain on the list under the same bucketing structure as the 2025 list.",
+    "Additional Common Equity Tier 1 (CET1) requirements, as a percentage of Risk Weighted Assets, are 0.80% for State Bank of India, 0.40% for HDFC Bank and 0.20% for ICICI Bank, in addition to the capital conservation buffer.",
+    "Banking, compliance and finance teams tracking capital requirements should note the updated D-SIB list and its additional CET1 requirements."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Reserve Bank of India press releases",
+    "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64025"
+   },
+   "sourceId": "rbi-press",
+   "sourceMax": 3,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "71ea5124",
+   "key": "https://bleepingcomputer.com/news/security/cisa-flags-critical-cisco-expressway-rce-flaw-as-actively-exploited",
+   "time": "2026-11-23T07:44:19.000Z",
+   "seen": "2026-11-23T12:11:08.778Z",
+   "kind": "security",
+   "tier": 1,
+   "headline": "CISA flags critical Cisco RCE flaw as actively exploited in attacks",
+   "summary": "The US Cybersecurity and Infrastructure Security Agency (CISA) warned federal agencies that attackers are now exploiting a recently patched critical Cisco Expressway vulnerability in the wild. [...]",
+   "lines": [
+    "Reported by BleepingComputer: The US Cybersecurity and Infrastructure Security Agency (CISA) warned federal agencies that attackers are exploiting a recently patched critical Cisco Expressway vulnerability in the wild.",
+    "The flaw is described as a critical remote code execution (RCE) vulnerability in Cisco Expressway.",
+    "IT teams running Cisco Expressway should confirm that the patch is applied, since attacks on this flaw are already occurring."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/cisa-flags-critical-cisco-expressway-rce-flaw-as-actively-exploited/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 14,
+   "story": null
+  },
+  {
+   "id": "25e7f7f3",
+   "key": "https://thehackernews.com/2026/11/hackers-exploit-critical-aspnet-anti.html",
+   "time": "2026-11-23T09:11:56.000Z",
+   "seen": "2026-11-23T12:11:08.778Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Hackers Exploit Critical ASP.NET Anti-CSRF Library Flaw Allowing Unauthenticated RCE",
+   "summary": "Cybersecurity researchers have urged users to discontinue using a legacy ASP.NET anti-CSRF library named Idunno.AntiCsrf (\"Idunno.AntiCsrf.dll\") following the discovery of a critical vulnerability that has been exploited in the wild. The vulnerability, tracked as CVE-2026-131914, carries a CVSS score of 9.3 out of 10.0. The issue affects versions 0.9.1.0 and 0.9.1 Beta, and relates to an",
+   "lines": [
+    "Reported by The Hacker News: Researchers urged users to stop using the legacy ASP.NET anti-CSRF library Idunno.AntiCsrf after a critical vulnerability was found being exploited in the wild.",
+    "The flaw, tracked as CVE-2026-131914, has a CVSS score of 9.3 out of 10.0 and affects versions 0.9.1.0 and 0.9.1 Beta. The headline describes it as allowing unauthenticated remote code execution.",
+    "Developers and IT teams using this legacy library should identify affected versions and plan to move off it, as the source advises."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/hackers-exploit-critical-aspnet-anti.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 8,
+   "story": null
   }
  ],
- "description": "3 technology updates from official sources, updated hourly: Delta flights in and out of Atlanta delayed due to system outage; The Technology Behind More Precise Finding With Galaxy SmartTag3 and SmartThings; Hackers exploit GL.iNet cloud flaw to infect routers, KVM devices."
+ "description": "6 technology updates from official sources, updated hourly: CISA flags critical Cisco RCE flaw as actively exploited in attacks; Hackers Exploit Critical ASP.NET Anti-CSRF Library Flaw Allowing Unauthenticated RCE; Delta flights in and out of Atlanta delayed due to system outage."
 }

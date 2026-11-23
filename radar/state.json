@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-23T05:13:18.329Z",
+ "lastScan": "2026-11-23T12:11:08.778Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -3267,60 +3267,6 @@
    ],
    "status": "below",
    "hash": "a19e75d"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64007": {
-   "title": "Result of the 3-day Variable Rate Repo (VRR) auction held on November 20, 2026",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64007",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-20T10:20:00.000Z",
-   "updated": null,
-   "summary": "Tenor 3-day Notified Amount (in ₹ crore) 50,000 Total amount of bids received (in ₹ crore) 1,12,555 Amount allotted (in ₹ crore) 50,003 Cut off Rate (%) 5.56 Weighted Average Rate (%) 5.58 Partial Allotment Percentage of bids received at cut off rate (%) 37.48 Ajit Prasad Deputy General Manager (Com",
-   "first": "2026-11-20T05:13:24.965Z",
-   "score": -1,
-   "reasons": [
-    "-1 source rbi-press"
-   ],
-   "status": "below",
-   "hash": "f6ef788"
-  },
-  "https://mc.merill.net/message/MC1551151": {
-   "title": "MC1551151: Microsoft Entra ID: Risk-based anti-bot verification (CAPTCHA) for SMS and voice multi-factor authentication",
-   "link": "https://mc.merill.net/message/MC1551151",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-19T21:12:52.000Z",
-   "updated": null,
-   "summary": "Starting mid-November 2026, Microsoft Entra ID will add risk-based CAPTCHA verification for SMS and voice MFA to prevent automated fraud. Some users may need to complete CAPTCHA before receiving codes or calls. Organizations should prepare help desks, notify users, and ensure network readiness, whil",
-   "first": "2026-11-20T05:13:24.965Z",
-   "score": -1,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 niche (entra, fraud)",
-    "-1 in /news 2026-11-14-server-2016-ltsc-2021-end-slmgr-fix"
-   ],
-   "status": "below",
-   "hash": "a7e3e83a",
-   "news": "2026-11-14-server-2016-ltsc-2021-end-slmgr-fix"
-  },
-  "https://news.samsung.com/in/at-home-on-the-move-or-connected-three-ways-to-use-extend-unlock-on-your-galaxy-smartphone": {
-   "title": "At Home, On the Move or Connected: Three Ways to Use Extend Unlock on Your Galaxy Smartphone",
-   "link": "https://news.samsung.com/in/at-home-on-the-move-or-connected-three-ways-to-use-extend-unlock-on-your-galaxy-smartphone",
-   "source": "samsung-india",
-   "topic": "mobiles",
-   "category": "launch",
-   "date": "2026-11-20T10:30:00.000Z",
-   "updated": null,
-   "summary": "Unlocking your smartphone multiple times throughout the day can become repetitive, especially when you are at home, travelling or using connected devices. Galaxy smartphones offer a convenient solution with the Extend Unlock feature, which allows users to keep their devices unlocked in certain trust",
-   "first": "2026-11-20T05:42:29.332Z",
-   "score": 1,
-   "reasons": [
-    "+1 niche (galaxy)"
-   ],
-   "status": "below",
-   "hash": "e190ebe8"
   },
   "https://techcommunity.microsoft.com/t5/microsoft-teams-blog/the-designs-we-didn-t-ship-how-user-feedback-shaped-the-new/ba-p/4573046": {
    "title": "The designs we didn't ship: How user feedback shaped the new Teams meeting controls",
@@ -7769,6 +7715,330 @@
    ],
    "status": "below",
    "hash": "f665c688"
+  },
+  "https://bleepingcomputer.com/news/security/cisa-flags-critical-cisco-expressway-rce-flaw-as-actively-exploited": {
+   "title": "CISA flags critical Cisco RCE flaw as actively exploited in attacks",
+   "link": "https://www.bleepingcomputer.com/news/security/cisa-flags-critical-cisco-expressway-rce-flaw-as-actively-exploited/",
+   "source": "bleepingcomputer",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-23T07:44:19.000Z",
+   "updated": null,
+   "summary": "The US Cybersecurity and Infrastructure Security Agency (CISA) warned federal agencies that attackers are now exploiting a recently patched critical Cisco Expressway vulnerability in the wild. [...]",
+   "first": "2026-11-23T12:11:08.778Z",
+   "score": 16,
+   "reasons": [
+    "+1 source bleepingcomputer",
+    "+3 incident \"actively exploited\"",
+    "+2 exploited \"exploited\"",
+    "+5 critical flaw in widely used software \"Cisco\" / \"critical\"",
+    "+2 user action \"patched\"",
+    "+1 category (Security)",
+    "+2 corroborated by thn (cisco)"
+   ],
+   "status": "writing",
+   "hash": "b1fd074d",
+   "kind": "new",
+   "extra": false,
+   "taskAt": "2026-11-23T12:11:08.778Z",
+   "attempts": 1
+  },
+  "https://thehackernews.com/2026/11/hackers-exploit-critical-aspnet-anti.html": {
+   "title": "Hackers Exploit Critical ASP.NET Anti-CSRF Library Flaw Allowing Unauthenticated RCE",
+   "link": "https://thehackernews.com/2026/11/hackers-exploit-critical-aspnet-anti.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-23T09:11:56.000Z",
+   "updated": null,
+   "summary": "Cybersecurity researchers have urged users to discontinue using a legacy ASP.NET anti-CSRF library named Idunno.AntiCsrf (\"Idunno.AntiCsrf.dll\") following the discovery of a critical vulnerability that has been exploited in the wild. The vulnerability, tracked as CVE-2026-131914, carries a CVSS scor",
+   "first": "2026-11-23T12:11:08.778Z",
+   "score": 8,
+   "reasons": [
+    "+1 source thn",
+    "+3 incident \"Hackers\"",
+    "+2 exploited \"exploited\"",
+    "+2 user action \"urged users\""
+   ],
+   "status": "below",
+   "hash": "d189b967"
+  },
+  "https://thehackernews.com/2026/11/hackers-exploited-glinet-cloud-flaw-to.html": {
+   "title": "Hackers Exploited GL.iNet Cloud Flaw to Install Malware on Routers and KVM Devices",
+   "link": "https://thehackernews.com/2026/11/hackers-exploited-glinet-cloud-flaw-to.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-23T09:04:08.000Z",
+   "updated": null,
+   "summary": "Hackers exploited a vulnerability in GL.iNet's GoodCloud remote management service to install malware on some customer routers and KVM devices, the maker of travel routers and remote-access KVM hardware said in a security notice updated today. The company identified and fixed the flaw on Friday and ",
+   "first": "2026-11-23T12:11:08.778Z",
+   "score": 8,
+   "reasons": [
+    "+1 source thn",
+    "+3 incident \"Hackers\"",
+    "+2 exploited \"Exploited\"",
+    "+2 user action \"fixed\""
+   ],
+   "status": "below",
+   "hash": "e85f621d"
+  },
+  "https://news.samsung.com/in/winning-pitch-that-earned-team-morphism-a-place-among-the-sft-2026-winners": {
+   "title": "Winning Pitch that Earned Team Morphism a Place Among the SFT 2026 Winners",
+   "link": "https://news.samsung.com/in/winning-pitch-that-earned-team-morphism-a-place-among-the-sft-2026-winners",
+   "source": "samsung-india",
+   "topic": "mobiles",
+   "category": "launch",
+   "date": "2026-11-23T09:53:33.000Z",
+   "updated": null,
+   "summary": "What if artificial intelligence could help people understand emotions that are often difficult to recognise or express? This was the central idea behind Team Morphism from Raipur, Chhattisgarh, one of the winning teams of Samsung Solve for Tomorrow (SFT) 2026. Led by Ananya Agrawal and Adityasai Bak",
+   "first": "2026-11-23T12:11:08.778Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "9a5c7602"
+  },
+  "https://news.lenovo.com/pressroom/press-releases/lenovo-earns-frost-sullivans-2026-asia-pacific-agentic-ai-solutions-competitive-strategy-leadership-recognition": {
+   "title": "Lenovo Earns Frost & Sullivan’s 2026 Asia-Pacific Agentic AI Solutions Competitive Strategy Leadership Recognition",
+   "link": "https://news.lenovo.com/pressroom/press-releases/lenovo-earns-frost-sullivans-2026-asia-pacific-agentic-ai-solutions-competitive-strategy-leadership-recognition/",
+   "source": "lenovo-news",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-23T03:00:36.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-23T12:11:08.778Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "16d644de"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64028": {
+   "title": "Reserve Bank (Securitisation Transactions) Amendment Directions, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64028",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-23T17:00:00.000Z",
+   "updated": null,
+   "summary": "The Reserve Bank of India had, on July 27, 2026 , issued the Draft (Securitisation Transactions) Amendment Directions for stakeholder feedback. 2. Feedback received on the draft Directions has been examined and consequent modifications, as deemed appropriate, have been suitably incorporated in the f",
+   "first": "2026-11-23T12:11:08.778Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"India\""
+   ],
+   "status": "below",
+   "hash": "15d73597"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64027": {
+   "title": "State Government Securities - Full Auction Result",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64027",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-23T16:50:00.000Z",
+   "updated": null,
+   "summary": "The result of the auction of State Government Securities held on November 23, 2026 is as under: (Amount in ₹ Crore) ASSAM SGS 2036 BIHAR SGS 2035* BIHAR SGS 2041 CHHATTISGARH SGS 2038 @ Notified Amount 1000 1000 2000 900 Tenor Re-issue of 7.66% ASSAM SGS 2036 issued on 17-JUN-2026 Re-issue of 8.18% ",
+   "first": "2026-11-23T12:11:08.778Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"Price\""
+   ],
+   "status": "below",
+   "hash": "2b2431e8"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64026": {
+   "title": "RBI issues Draft Amendment Directions for ‘Preventive Safeguards for Electronic Banking Transactions (EBTs)’",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64026",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-23T16:35:00.000Z",
+   "updated": null,
+   "summary": "The Reserve Bank had issued the Amendment Directions dated June 24, 2026 on ‘ Customer Protection in Fraudulent Electronic Banking Transactions ’ which, inter alia, strengthened the existing framework for limiting liability of customers in unauthorised Electronic Banking Transactions (EBTs). While t",
+   "first": "2026-11-23T12:11:08.778Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "1f3cce11"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64025": {
+   "title": "RBI releases 2026 list of Domestic Systemically Important Banks (D-SIBs)",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64025",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-23T16:30:00.000Z",
+   "updated": null,
+   "summary": "State Bank of India, HDFC Bank, and ICICI Bank continue to be identified as Domestic Systemically Important Banks (D-SIBs) under the same bucketing structure as in the 2025 list of D-SIBs . The additional Common Equity Tier 1 (CET1) requirement for these D-SIBs will be in addition to the capital con",
+   "first": "2026-11-23T12:11:08.778Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"India\""
+   ],
+   "status": "below",
+   "hash": "8b1a56c"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64024": {
+   "title": "Result of Yield/Price Based Auction of State Government Securities",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64024",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-23T15:05:00.000Z",
+   "updated": null,
+   "summary": "Sr. No State/UT Amount to be raised (₹ Crore) Amount Accepted (₹ Crore) Cut off Price (₹)/ Yield (%) Tenor (Year) 1. Assam 1000 1000 98.00/7.9615 Re-issue of 7.66% Assam SGS 2036, issued on June 17, 2026 2. Bihar* 1000 941.919 101.51/7.9390 Re-issue of 8.18% Bihar SGS 2035, issued on October 28, 202",
+   "first": "2026-11-23T12:11:08.778Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"Price\""
+   ],
+   "status": "below",
+   "hash": "50b64cb9"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64023": {
+   "title": "Money Market Operations as on November 22, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64023",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-23T11:45:00.000Z",
+   "updated": null,
+   "summary": "(Amount in ₹ crore, Rate in Per cent) MONEY MARKETS @ --> Money Markets @ Volume (One Leg) Weighted Average Rate Range A. Overnight Segment (I+II+III+IV) 0.00 - - I. Call Money 0.00 - - II. Triparty Repo 0.00 - - III. Market Repo 0.00 - - IV. Repo in Corporate Bond 0.00 - - B. Term Segment I. Notice",
+   "first": "2026-11-23T12:11:08.778Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "53d9797c"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64022": {
+   "title": "Money Market Operations as on November 21, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64022",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-23T11:40:00.000Z",
+   "updated": null,
+   "summary": "(Amount in ₹ crore, Rate in Per cent) MONEY MARKETS @ --> Money Markets @ Volume (One Leg) Weighted Average Rate Range A. Overnight Segment (I+II+III+IV) 10,954.47 5.69 4.75-6.50 I. Call Money 2,098.75 5.45 4.80-5.85 II. Triparty Repo 8,753.45 5.75 4.75-6.50 III. Market Repo 102.27 5.70 5.70-5.70 IV",
+   "first": "2026-11-23T12:11:08.778Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "ede69a5f"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64021": {
+   "title": "Result of the 2-day Variable Rate Repo (VRR) auction held on November 23, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64021",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-23T11:35:00.000Z",
+   "updated": null,
+   "summary": "Tenor 2-day Notified Amount (in ₹ crore) 50,000 Total amount of bids received (in ₹ crore) 1,37,612 Amount allotted (in ₹ crore) 50,003 Cut off Rate (%) 5.64 Weighted Average Rate (%) 5.65 Partial Allotment Percentage of bids received at cut off rate (%) 89.95 Ajit Prasad Deputy General Manager (Com",
+   "first": "2026-11-23T12:11:08.778Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "d6e39374"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64020": {
+   "title": "Result of the 4-day Variable Rate Repo (VRR) auction held on November 23, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64020",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-23T10:40:00.000Z",
+   "updated": null,
+   "summary": "Tenor 4-day Notified Amount (in ₹ crore) 50,000 Total amount of bids received (in ₹ crore) 1,51,982 Amount allotted (in ₹ crore) 50,005 Cut off Rate (%) 5.62 Weighted Average Rate (%) 5.63 Partial Allotment Percentage of bids received at cut off rate (%) 86.98 Ajit Prasad Deputy General Manager (Com",
+   "first": "2026-11-23T12:11:08.778Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "794a1081"
+  },
+  "https://blogs.vmware.com/cloud-foundation/2026/11/23/microsoft-sql-server-failover-clustering-on-vcf-9-1-vm-service-vcf-automation-manual-implementation-part-3": {
+   "title": "Microsoft SQL Server Failover Clustering on VCF 9.1 VM Service: VCF Automation Manual Implementation (Part 3)",
+   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/23/microsoft-sql-server-failover-clustering-on-vcf-9-1-vm-service-vcf-automation-manual-implementation-part-3/",
+   "source": "vmware-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T09:00:00.000Z",
+   "updated": null,
+   "summary": "Introduction In this part of the series, we will build the two nodes MSSQL FCI Cluster via VMware Cloud Foundation (VCF) Automation and its IaaS Services Console. Part 1 focuses on Requirements, Topology and Methods. Part 2 focuses on the Supervisor direct implementation. Part 3 (this article) focus",
+   "first": "2026-11-23T12:11:08.778Z",
+   "score": -1,
+   "reasons": [
+    "-1 source vmware-blog"
+   ],
+   "status": "below",
+   "hash": "7072e66e"
+  },
+  "https://blogs.vmware.com/cloud-foundation/2026/11/22/vcf-9-1-vpc-networking-part-3-the-distributed-transit-gateway": {
+   "title": "VCF 9.1 VPC Networking, Part 3: The Distributed Transit Gateway",
+   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/22/vcf-9-1-vpc-networking-part-3-the-distributed-transit-gateway/",
+   "source": "vmware-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T06:28:16.000Z",
+   "updated": null,
+   "summary": "Series · Part 3 of 6 The VCF 9.1 VPC Networking Mental Model 1VCF 9.1 VPC Networking, Part 1: From External Connection to VPC 2VCF 9.1 VPC Networking, Part 2: IP Blocks, External Connections, Transit Gateways, Subnets, and NAT 3VCF 9.1 VPC Networking, Part 3: The Distributed Transit GatewayYou are h",
+   "first": "2026-11-23T12:11:08.778Z",
+   "score": -1,
+   "reasons": [
+    "-1 source vmware-blog"
+   ],
+   "status": "below",
+   "hash": "d812930a"
+  },
+  "https://news.sap.com/2026/11/interview-sindhu-gangadharan-sap-labs-india": {
+   "title": "Interview with Sindhu Gangadharan: “I Want People to Say ‘That Idea Started in India'”",
+   "link": "https://news.sap.com/2026/11/interview-sindhu-gangadharan-sap-labs-india/",
+   "source": "sap-news",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T05:15:00.000Z",
+   "updated": null,
+   "summary": "As SAP's biggest R&D base outside Walldorf, SAP Labs India sits at the center of the company's AI ambitions. Managing Director Sindhu Gangadharan explains why the location matters.",
+   "first": "2026-11-23T12:11:08.778Z",
+   "score": -3,
+   "reasons": [
+    "-1 source sap-news",
+    "+1 plans/price/availability \"India\"",
+    "-3 corporate/announcement \"Interview\""
+   ],
+   "status": "below",
+   "hash": "77378d1d"
+  },
+  "https://elevenlabs.io/blog/postnord": {
+   "title": "How the Nordics' leading postal operator rebuilt its customer support on ElevenAgents",
+   "link": "https://elevenlabs.io/blog/postnord",
+   "source": "elevenlabs-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-23T12:00:00.000Z",
+   "updated": null,
+   "summary": "Raising AI resolution rate from 45% to 60% on ElevenAgents in 90 days",
+   "first": "2026-11-23T12:11:08.778Z",
+   "score": -2,
+   "reasons": [
+    "-2 source elevenlabs-blog"
+   ],
+   "status": "below",
+   "hash": "351f810e"
   }
  },
  "devices": {},
@@ -7788,7 +8058,7 @@
    "first": "2026-11-19T14:45:12.000Z",
    "decision": "covered",
    "key": "ipo:anthropic",
-   "title": "EXCLUSIVE: Like SpaceX, Anthropic ran an unusual IPO process, chafing some bankers",
+   "title": "Anthropic's record IPO raises hopes for a charitable windfall that has nonprofits preparing to scale",
    "titles": [
     "Anthropic’s 7 founders cashed out nearly $2B in record-breaking IPO",
     "Anthropic’s IPO could deliver $156B to charity",
@@ -7813,24 +8083,21 @@
     "https://www.cnbc.com/2026/11/20/anthropic-ipo-greenshoe.html",
     "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQZXdyUExSdjhGa000MWtxaUR0YzhiVHJnNzN0N0lTUnNONktkaWZkUVUwdExoUXhXMTlJN0NEZ3F3M2RYbUZYelpiNFhpOE14LWdtYjF1MnB2M00xMk1GbENmci1UeFlXa3V0aHM4TWlxVVZNeFBwUkZjMTA2ZWhCSFBVaVVBb0FUdnpj?oc=5"
    ],
-   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNT1RsTFBlMWZGejNqWjVvdVlYX2lRTGpZZXhoYXFXN2RuV3lHZ09ra0ctdnZqc3hiVENXSlc2ZTBIbDRyTmpTS1Nhdk1kdU5HLW5FNGdNRTNoeXVBeEc5cDl5VGx3c3dUSzNDYkVVTHVfenVQbHFUQ0hQS2NfalhuNDczWFdUS0FWQS1iZ1ZhVnNYMy1FOHVSUmlBMmI3NTdVTGY1X0JxTFRmYnptV3huQQ?oc=5",
+   "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNOTZBX2xZWWNQeGFIRExEbFNFSUJiV3I1cG80MzZzUUh2ZDZQTXM0dC1iNDdRVTZLZkFWelpTWnRvODY4clRUUmNaamdBQXdRSmM3U3NQdS1RbzU3dF92OVBfMTRRM3JIbF8tMlIzZ1JRUWFVV3Q0U2xtZHlCRU5YWkhIV3hQNURrVnZFU2d2NA?oc=5",
    "outlets": [
-    "Reuters",
     "AP",
+    "Bloomberg",
     "WSJ",
-    "Financial Times",
     "TechCrunch",
-    "Business Standard",
-    "The Hindu",
-    "Moneycontrol"
+    "The Hindu"
    ],
    "techmeme": false,
    "category": "launch",
    "topic": "ai-engineering",
    "parkOnly": false,
-   "last": "2026-11-23T04:51:02.000Z",
-   "date": "2026-11-23T04:51:02.000Z",
-   "score": 14,
+   "last": "2026-11-23T12:02:01.000Z",
+   "date": "2026-11-23T12:02:01.000Z",
+   "score": 13,
    "post": "anthropic-ipo-explained-claude-users"
   },
   "milestone:google|9c5a0e24": {
