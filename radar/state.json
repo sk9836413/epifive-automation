@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-23T03:02:13.148Z",
+ "lastScan": "2026-11-23T03:43:50.488Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -3175,77 +3175,6 @@
    "status": "expired",
    "hash": "f03e13b0"
   },
-  "https://openai.com/business/learn/deploying-daybreak-red": {
-   "title": "Deploying Daybreak Red",
-   "link": "https://openai.com/business/learn/deploying-daybreak-red",
-   "source": "openai-news",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-19T00:00:00.000Z",
-   "updated": null,
-   "summary": "Explore a reference architecture for supervised security investigations with Daybreak Red, including safety controls, setup, and monitoring.",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": 4,
-   "reasons": [
-    "+2 source openai-news",
-    "+2 user steps \"setup\""
-   ],
-   "status": "below",
-   "hash": "fa9e9921"
-  },
-  "https://openai.com/business/learn/pr-scans-demo": {
-   "title": "See PR scans in action",
-   "link": "https://openai.com/business/learn/pr-scans-demo",
-   "source": "openai-news",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-19T00:00:00.000Z",
-   "updated": null,
-   "summary": "Watch a walkthrough of PR scans and see how the presenter reviews scan results in a pull request workflow.",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": 2,
-   "reasons": [
-    "+2 source openai-news"
-   ],
-   "status": "below",
-   "hash": "712b9a48"
-  },
-  "https://openai.com/business/learn/codex-security-plugin-demo": {
-   "title": "Explore the Codex Security Plugin",
-   "link": "https://openai.com/business/learn/codex-security-plugin-demo",
-   "source": "openai-news",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-19T00:00:00.000Z",
-   "updated": null,
-   "summary": "Watch a demo of the Codex Security Plugin and see the workflow in action, from getting started to reviewing the results shown in the recording.",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": 3,
-   "reasons": [
-    "+2 source openai-news",
-    "+1 niche (codex)"
-   ],
-   "status": "below",
-   "hash": "2d6fa306"
-  },
-  "https://openai.com/business/learn/daybreak-blue-onboarding-demo": {
-   "title": "Get started with Daybreak Blue",
-   "link": "https://openai.com/business/learn/daybreak-blue-onboarding-demo",
-   "source": "openai-news",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-19T00:00:00.000Z",
-   "updated": null,
-   "summary": "Watch a walkthrough of onboarding to Daybreak Blue, with a closer look at the setup experience and how to get started.",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": 4,
-   "reasons": [
-    "+2 source openai-news",
-    "+2 user steps \"Get started\""
-   ],
-   "status": "below",
-   "hash": "8dd37bd3"
-  },
   "https://bleepingcomputer.com/news/security/vmware-patches-vcenter-zero-day-exploited-in-attacks-since-september": {
    "title": "VMware patches vCenter zero-day exploited in attacks since September",
    "link": "https://www.bleepingcomputer.com/news/security/vmware-patches-vcenter-zero-day-exploited-in-attacks-since-september/",
@@ -3276,206 +3205,6 @@
    "slug": "vmware-vcenter-cve-2026-123890-patch-check",
    "resultAt": "2026-11-20T03:53:45.672Z"
   },
-  "https://news.samsung.com/global/samsung-electronics-announces-new-leadership-5": {
-   "title": "Samsung Electronics Announces New Leadership",
-   "link": "https://news.samsung.com/global/samsung-electronics-announces-new-leadership-5",
-   "source": "samsung-global",
-   "topic": "mobiles",
-   "category": "launch",
-   "date": "2026-11-20T09:01:00.000Z",
-   "updated": null,
-   "summary": "Samsung Electronics today announced new leadership for the next phase of the Company’s growth and to strengthen its future competitiveness on the semiconductor business. Sang Joon Hwang was promoted to President and will become the Head of Memory Business, while Sangyeun Cho was also promoted to Pre",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": 0,
-   "reasons": [],
-   "status": "below",
-   "hash": "97bd762b"
-  },
-  "https://microsoft.com/microsoft-365/roadmap?id=579890": {
-   "title": "Microsoft Teams: Pick up where you left off in channels on desktop",
-   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=579890",
-   "source": "m365-roadmap",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-20T01:24:53.000Z",
-   "updated": "2026-11-20T01:24:53.000Z",
-   "summary": "Stay on top of channel conversations by picking up right where you left off. Choose to open Teams channels at your last read message instead of the most recent message, making it easier to catch up on conversations and follow discussions without losing your place. GA date: February CY2027",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": -3,
-   "reasons": [
-    "-1 source m365-roadmap",
-    "+2 niche (microsoft teams)",
-    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
-   ],
-   "status": "below",
-   "hash": "a271769a"
-  },
-  "https://microsoft.com/microsoft-365/roadmap?id=581801": {
-   "title": "Microsoft Edge: Smarter and faster update application",
-   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581801",
-   "source": "m365-roadmap",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-19T23:37:54.000Z",
-   "updated": "2026-11-19T23:37:54.000Z",
-   "summary": "Microsoft Edge can now apply pending updates when your browser is idle. We've updated the Relaunch Notification policy to allow you to manage idle restarts for your organization. More info: https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies/relaunchnotification GA date: January CY2",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": -5,
-   "reasons": [
-    "-1 source m365-roadmap",
-    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
-   ],
-   "status": "below",
-   "hash": "670df14f"
-  },
-  "https://microsoft.com/microsoft-365/roadmap?id=580451": {
-   "title": "Microsoft Teams: Configure a list of allowed external meeting notetaker bots for your Teams meetings",
-   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=580451",
-   "source": "m365-roadmap",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-19T23:37:54.000Z",
-   "updated": "2026-11-19T23:37:54.000Z",
-   "summary": "Admins will be able to configure more granular and advanced controls for managing external bots and their access to meetings hosted in their organization. Admins will be able to configure a list of external meeting bots which are allowed to join meetings hosted in their organization. Admins can also",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": -1,
-   "reasons": [
-    "-1 source m365-roadmap",
-    "+2 niche (microsoft teams)",
-    "+2 user steps \"Configure\"",
-    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
-   ],
-   "status": "below",
-   "hash": "36635f13"
-  },
-  "https://github.blog/changelog/2026-11-19-improvements-on-the-pull-request-overview-in-public-preview": {
-   "title": "Improvements on the pull request overview in public preview",
-   "link": "https://github.blog/changelog/2026-11-19-improvements-on-the-pull-request-overview-in-public-preview",
-   "source": "github-changelog",
-   "topic": "ai-engineering",
-   "category": "launch",
-   "date": "2026-11-20T00:02:21.000Z",
-   "updated": null,
-   "summary": "Your feedback has helped improve the new pull request Overview page since its November 5, 2026 public preview. Here’s what’s new! Clearer merge status and next steps Failed optional checks… The post Improvements on the pull request overview in public preview appeared first on The GitHub Blog .",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": -1,
-   "reasons": [
-    "-1 source github-changelog"
-   ],
-   "status": "below",
-   "hash": "fdd6c064"
-  },
-  "https://blog.cloudflare.com/nginx2root": {
-   "title": "nginx2root: Five new nginx vulnerabilities, and how Cloudflare protects origins from the worst of them",
-   "link": "https://blog.cloudflare.com/nginx2root/",
-   "source": "cloudflare-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T01:58:29.000Z",
-   "updated": null,
-   "summary": "Five memory corruption bugs in nginx, called nginx2root, can let an unauthenticated attacker run code on a server. Here’s how they work, and why origins behind Cloudflare's proxy are shielded from the most serious of these bugs.",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": -1,
-   "reasons": [
-    "-1 source cloudflare-blog"
-   ],
-   "status": "below",
-   "hash": "ddd75927"
-  },
-  "https://blogs.vmware.com/vmware-japan/2026/11/customer-case-studies-roundone.html": {
-   "title": "導入事例：株式会社ラウンドワンジャパン様",
-   "link": "https://blogs.vmware.com/vmware-japan/2026/11/customer-case-studies-roundone.html",
-   "source": "vmware-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T02:15:20.000Z",
-   "updated": null,
-   "summary": "ボウリングやアミューズメント、カラオケ、スポッチャなど、屋内型複合レジャー施設を国内外に162店舗展開する株式会社ラウンドワンジャパン様。本日は、VMware Cloud Foundation® Edge（VCF Edge）および VMware Cloud Foundation Operations（VCF Operations）を活用した店舗サーバー基盤の刷新事例をご紹介いたします。 同社では、店舗ごとの個別POS運用や紙・FAXによるアナログな集計業務から脱却し、店舗同士をつなぐオンライン対戦コンテンツの提供や店舗運営の省力化を実現する新たな環境整備が求められていました。この課題を解決し、",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": 0,
-   "reasons": [
-    "-1 source vmware-blog",
-    "+1 also on acer-news"
-   ],
-   "status": "below",
-   "hash": "eddbc660"
-  },
-  "https://mc.merill.net/message/MC1560996": {
-   "title": "MC1560996: Copilot Studio - Create Dataverse agent users with Microsoft Entra agent 's user account",
-   "link": "https://mc.merill.net/message/MC1560996",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-20T01:57:14.000Z",
-   "updated": null,
-   "summary": "We are announcing the ability to create Dataverse agent users with Microsoft Entra agent's user account in Copilot Studio. This feature will reach general availability on December 8th, 2026. How does this affect me? This feature enables you to securely deploy agents to access and interact with Datav",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": 4,
-   "reasons": [
-    "-2 source mc-merill",
-    "+4 niche (copilot, entra, agent)",
-    "+2 launch \"general availability\""
-   ],
-   "status": "below",
-   "hash": "db4a4649"
-  },
-  "https://mc.merill.net/message/MC1560951": {
-   "title": "MC1560951: Low-latency alerts and metrics in Monitor",
-   "link": "https://mc.merill.net/message/MC1560951",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-20T01:06:39.000Z",
-   "updated": null,
-   "summary": "We are announcing the ability to evaluate alert rules and review supported metrics for business-critical resources every hour in Monitor, helping admins identify potential issues sooner. This feature will enter public preview on November 23, 2026. How does this affect me? When creating or editing an",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": 1,
-   "reasons": [
-    "-2 source mc-merill",
-    "+1 niche (agent)",
-    "+2 user steps \"admins can\""
-   ],
-   "status": "below",
-   "hash": "aa73e1b5"
-  },
-  "https://mc.merill.net/message/MC1560957": {
-   "title": "MC1560957: Power Platform Monitor - Route alert notifications to connector-backed destinations",
-   "link": "https://mc.merill.net/message/MC1560957",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-20T00:57:54.000Z",
-   "updated": null,
-   "summary": "We are announcing the ability to route Power Platform Monitor alert notifications to Microsoft Teams, SMS, work item tracking systems, and other connector-backed destinations in Power Platform. This feature will reach public preview on November 20, 2026. How does this affect me? Tenant admins can us",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": 2,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 niche (microsoft teams)",
-    "+2 user steps \"admins can\""
-   ],
-   "status": "below",
-   "hash": "14f45ae"
-  },
-  "https://mc.merill.net/message/MC1518034": {
-   "title": "MC1518034: Clipchamp/ Copilot 'Create a video' experience is going to have an admin control available",
-   "link": "https://mc.merill.net/message/MC1518034",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-20T00:50:19.000Z",
-   "updated": null,
-   "summary": "Microsoft Clipchamp is adding an admin policy control to manage user access to the AI video creation feature, defaulting to disabled. The feature is now only available from Clipchamp Home. Rollout begins late November 2026, with no action needed to keep the feature disabled.",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": 1,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 niche (copilot)",
-    "+1 plans/price/availability \"Rollout\""
-   ],
-   "status": "below",
-   "hash": "3e216aea"
-  },
   "https://mc.merill.net/message/MC1560929": {
    "title": "MC1560929: Updates to Workforce Insights Agent (Frontier) for Admins in Microsoft 365 Copilot",
    "link": "https://mc.merill.net/message/MC1560929",
@@ -3495,102 +3224,6 @@
    ],
    "status": "below",
    "hash": "52bcb070"
-  },
-  "https://mc.merill.net/message/MC1560924": {
-   "title": "MC1560924: Microsoft Teams: Tenant policy controls who can record and transcribe",
-   "link": "https://mc.merill.net/message/MC1560924",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-20T00:04:57.000Z",
-   "updated": null,
-   "summary": "Microsoft Teams will introduce a tenant policy controlling who can record and transcribe meetings, allowing admins to set permissions for organizers, co-organizers, and presenters with options to lock or allow changes. Rollout begins December 2026, with no action required unless restricting presente",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": 1,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 niche (microsoft teams)",
-    "+1 plans/price/availability \"Rollout\""
-   ],
-   "status": "below",
-   "hash": "f1439cba"
-  },
-  "https://mc.merill.net/message/MC1560923": {
-   "title": "MC1560923: Enhanced prompt categories for Microsoft 365 Copilot in Microsoft Copilot Dashboard and Agent 365 Business Analytics",
-   "link": "https://mc.merill.net/message/MC1560923",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-20T00:04:07.000Z",
-   "updated": null,
-   "summary": "Microsoft 365 Copilot introduces 13 enhanced prompt categories replacing four legacy ones in the Copilot Dashboard and Agent 365 Business Analytics. This update, rolling out worldwide in December 2026, offers detailed insights into Copilot Chat usage by licensed users, with no admin action needed.",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": 4,
-   "reasons": [
-    "-2 source mc-merill",
-    "+4 niche (copilot, microsoft 365, agent)",
-    "+2 launch \"introduces\""
-   ],
-   "status": "below",
-   "hash": "196cae55"
-  },
-  "https://mc.merill.net/message/MC1560922": {
-   "title": "MC1560922: Microsoft Copilot: In-app browsing will be enabled by default in the desktop app",
-   "link": "https://mc.merill.net/message/MC1560922",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-20T00:03:31.000Z",
-   "updated": null,
-   "summary": "Microsoft Copilot desktop app will enable in-app browsing by default starting January 2027, allowing users to open websites shared in chat within the app alongside conversations. No action is needed unless organizations want to disable or manage this feature via policies.",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": 2,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 niche (copilot)",
-    "+2 user steps \"enable\""
-   ],
-   "status": "below",
-   "hash": "b3c62ea4"
-  },
-  "https://mc.merill.net/message/MC1560920": {
-   "title": "MC1560920: Copilot video creation in Clipchamp Video Hub is now live in Frontier Public",
-   "link": "https://mc.merill.net/message/MC1560920",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-20T00:01:12.000Z",
-   "updated": null,
-   "summary": "Copilot video creation in Clipchamp Video Hub is now in public preview, enabling users to create and refine videos from documents and prompts using Copilot Credits. Admins must enable Anthropic models and configure spending policies. Videos export as MP4 with an AI watermark, and some preview limita",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": 2,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 niche (copilot)",
-    "+2 user steps \"enable\""
-   ],
-   "status": "below",
-   "hash": "514dc8c9"
-  },
-  "https://mc.merill.net/message/MC1560919": {
-   "title": "MC1560919: Microsoft Teams mobile: Updated app bar and More menu on iOS and iPadOS",
-   "link": "https://mc.merill.net/message/MC1560919",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-20T00:00:19.000Z",
-   "updated": null,
-   "summary": "Microsoft Teams for iOS/iPadOS will update the app bar and More menu to align with iOS 26 design, showing four apps plus a categorized More menu. Rollout is from December 10-16, 2026. Users can reorder and pin apps; no apps are removed. No action required.",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": 5,
-   "reasons": [
-    "-2 source mc-merill",
-    "+4 niche (microsoft teams, ipados)",
-    "+2 user steps \"Users can\"",
-    "+1 plans/price/availability \"Rollout\""
-   ],
-   "status": "below",
-   "hash": "2edc868b"
   },
   "https://mc.merill.net/message/MC1560916": {
    "title": "MC1560916: Microsoft Copilot: GPT-6.2 Sol and Astra rolling out",
@@ -3614,66 +3247,6 @@
    "hash": "51648f5a",
    "story": "ai:gpt-6.2:release"
   },
-  "https://mc.merill.net/message/MC1532253": {
-   "title": "MC1532253: Enhanced Copilot and AI controls for meetings",
-   "link": "https://mc.merill.net/message/MC1532253",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-19T22:31:02.000Z",
-   "updated": null,
-   "summary": "Microsoft Teams is replacing the Copilot meeting policy with two policies—MeetingAI and TranscriptionWithMeetingAI—for clearer control over AI and transcription in meetings. New meeting options provide granular management of AI use. Rollout begins December 2026; existing settings will be automatical",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": 3,
-   "reasons": [
-    "-2 source mc-merill",
-    "+4 niche (copilot, microsoft teams)",
-    "+1 plans/price/availability \"Rollout\""
-   ],
-   "status": "below",
-   "hash": "9a78ae4e"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/cognito-client-id-metadata-documents": {
-   "title": "Amazon Cognito now supports client ID metadata documents",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/cognito-client-id-metadata-documents/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-19T21:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon Cognito now supports OAuth client ID metadata documents (CIMD). Amazon Cognito helps you implement secure sign-in and access control for users, AI agents, and microservices in minutes. With CIMD, Model Context Protocol (MCP) clients and AI agents can sign users in to your user pool without re",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": 2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (agents)",
-    "+2 launch \"now supports\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "7f64571a"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-workspaces-applications-webauthn-redirection": {
-   "title": "Amazon WorkSpaces Applications now supports WebAuthn redirection",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-workspaces-applications-webauthn-redirection/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-19T19:57:00.000Z",
-   "updated": null,
-   "summary": "Amazon WorkSpaces Applications now supports WebAuthn redirection, so users can sign in to websites and applications in their streaming session with a FIDO2 authenticator on their local device, such as a security key, Windows Hello, or Touch ID. Previously, an authenticator attached to the user's com",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": 4,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (windows)",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"users can\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "2df47e79"
-  },
   "https://aws.amazon.com/about-aws/whats-new/2026/11/agentcore-nested-virtualization": {
    "title": "AgentCore runtime instances now support Nested Virtualization",
    "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/agentcore-nested-virtualization/",
@@ -3694,300 +3267,6 @@
    ],
    "status": "below",
    "hash": "a19e75d"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/data-competency-open-data-category": {
-   "title": "AWS Data Competency adds Open Data and Interoperability category for Software Partners",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/data-competency-open-data-category/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-19T08:00:00.000Z",
-   "updated": null,
-   "summary": "Today, AWS announces the Open Data and Interoperability category within the AWS Data Competency. The new category recognizes AWS Software Partners whose solutions keep customer data open and under customer control, letting multiple analytics engines and AI agents work on a single shared copy without",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": -1,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (agents)"
-   ],
-   "status": "below",
-   "hash": "fb1c76a9"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/connect-competency-software-partners": {
-   "title": "AWS expands Amazon Connect Customer Competency to Software Partners",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/connect-competency-software-partners/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-19T08:00:00.000Z",
-   "updated": null,
-   "summary": "AWS announces the expansion of the Amazon Connect Customer Competency to Software Partners. The AWS Specialization now recognizes both Services and Software Partners with technical depth and proven success on Amazon Connect Customer—from migrating legacy contact centers and operationalizing AI at sc",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": -2,
-   "reasons": [
-    "-2 source aws-whats-new"
-   ],
-   "status": "below",
-   "hash": "4b5e648a"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/continuum-pentest-pause-resume": {
-   "title": "AWS Continuum for Penetration Testing now supports pause and resume",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/continuum-pentest-pause-resume/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-19T08:00:00.000Z",
-   "updated": null,
-   "summary": "AWS Continuum for Penetration Testing (formerly AWS Security Agent) now lets you pause a running penetration test job and resume it later from its last saved checkpoint. Continuum for Penetration Testing runs on-demand, AI-driven penetration tests against your web applications and APIs. Previously, ",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": 4,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (agent)",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"You can\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "4ceff13c"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/site-to-site-vpn-post-quantum": {
-   "title": "AWS Site-to-Site VPN now supports post-quantum key exchanges",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/site-to-site-vpn-post-quantum/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-19T08:00:00.000Z",
-   "updated": null,
-   "summary": "AWS Site-to-Site VPN now supports post-quantum key exchanges to help improve the security posture of your VPN tunnels. This feature supports your migration to post-quantum cryptography based on NIST guidelines. AWS Site-to-Site VPN is a fully managed service that creates an encrypted connection betw",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": 5,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (exchange)",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"migration\"",
-    "+1 plans/price/availability \"Regions\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "855626fe"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/sts-getscopedcredentials": {
-   "title": "AWS STS announces GetScopedCredentials to scope down permissions at runtime",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/sts-getscopedcredentials/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-19T08:00:00.000Z",
-   "updated": null,
-   "summary": "AWS Security Token Service (AWS STS) announces GetScopedCredentials, a new API that lets you scope down the permissions of existing temporary security credentials. With GetScopedCredentials, you can give your agents, sub agents and workloads their own set of credentials with only the permissions the",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": 1,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (agents)",
-    "+2 user steps \"you can\""
-   ],
-   "status": "below",
-   "hash": "d679d88"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-outposts-thf-european-sovereign": {
-   "title": "Second-generation AWS Outposts racks now supported in the AWS European Sovereign Cloud (Germany) Region",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-outposts-thf-european-sovereign/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-19T08:00:00.000Z",
-   "updated": null,
-   "summary": "Second-generation AWS Outposts racks are now supported in the AWS European Sovereign Cloud (Germany) Region. Outposts racks extend AWS infrastructure, AWS services, APIs, and tools to virtually any on-premises data center or colocation space for a truly consistent hybrid experience. Organizations of",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": -1,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 plans/price/availability \"Region\""
-   ],
-   "status": "below",
-   "hash": "419527a3"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/bedrock-agentcore-identity-private-ca": {
-   "title": "Amazon Bedrock AgentCore Identity adds private certificate authority support",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/bedrock-agentcore-identity-private-ca/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-19T08:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon Bedrock AgentCore Identity now supports private certificate authorities (CAs) for custom OAuth 2.0 credential providers. If you already connect your agents to identity providers (IdPs) hosted in your VPC, you can now configure those connections to trust certificates issued by your own CA — in",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": 3,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (agents)",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"you can\""
-   ],
-   "status": "below",
-   "hash": "6c063870"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/cognito-dynamic-client-registration": {
-   "title": "Amazon Cognito now supports dynamic client registration",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/cognito-dynamic-client-registration/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-19T08:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon Cognito now supports OAuth dynamic client registration (DCR, RFC 7591). Amazon Cognito helps you implement secure sign-in and access control for users, AI agents, and microservices in minutes. With DCR support, Model Context Protocol (MCP) clients and AI agents can register themselves at runt",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": 2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (agents)",
-    "+2 launch \"now supports\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "85287ebf"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/network-load-balancer-mtls": {
-   "title": "AWS Network Load Balancer now supports mutual TLS authentication",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/network-load-balancer-mtls/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-19T08:00:00.000Z",
-   "updated": null,
-   "summary": "AWS Network Load Balancer (NLB) now supports mutual TLS (mTLS) authentication for clients that present X.509 certificates. Until now, customers who needed mTLS with NLB built their own solutions or ran third-party proxies to authenticate clients. With this launch, NLB verifies client certificates on",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": 3,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"You can\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "d4ac508b"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/network-firewall-proxy-nat-gateway": {
-   "title": "AWS Network Firewall launches explicit proxy functionality and NAT Gateway association",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/network-firewall-proxy-nat-gateway/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-19T08:00:00.000Z",
-   "updated": null,
-   "summary": "You can now associate AWS Network Firewall with NAT Gateway and use it both as an explicit proxy and a transparent firewall with native network address translation. You can use this capability with existing Network Firewall features to filter traffic to and from your applications and prevent data ex",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": 3,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"launches\"",
-    "+2 user steps \"You can\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "a2e7779a"
-  },
-  "https://azure.microsoft.com/updates?id=580700": {
-   "title": "Announcing: Multiparty private offers in Microsoft Marketplace expands to Malaysia and Saudi Arabia",
-   "link": "https://azure.microsoft.com/updates?id=580700",
-   "source": "azure-updates",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T00:00:14.000Z",
-   "updated": "2026-11-20T00:00:14.000Z",
-   "summary": "Multiparty private offers give Microsoft partners a way to procure third-party cloud and AI solutions for customers through Marketplace. Software companies can expand into new markets by working with partners that bring established customer relationships,",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": 0,
-   "reasons": [
-    "-2 source azure-updates",
-    "+2 launch \"expands to\"",
-    "+1 launch in the headline",
-    "-1 narrow audience \"Marketplace\""
-   ],
-   "status": "below",
-   "hash": "7a0bf7a6"
-  },
-  "https://azure.microsoft.com/updates?id=581907": {
-   "title": "[Launched] Generally Available: Soft delete in Azure Compute Gallery",
-   "link": "https://azure.microsoft.com/updates?id=581907",
-   "source": "azure-updates",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-19T23:47:55.000Z",
-   "updated": "2026-11-19T23:47:55.000Z",
-   "summary": "Soft delete in Azure Compute Gallery is now generally available, so you can recover image versions that were deleted by accident. You can set a retention period of 7 to 365 days. During retention, you can still deploy from soft-deleted images (API version",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": 3,
-   "reasons": [
-    "-2 source azure-updates",
-    "+2 launch \"Launched\"",
-    "+2 user steps \"you can\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "5e4a8133"
-  },
-  "https://azure.microsoft.com/updates?id=574587": {
-   "title": "[In preview] Public Preview: PostgreSQL 19 on Azure Database for PostgreSQL",
-   "link": "https://azure.microsoft.com/updates?id=574587",
-   "source": "azure-updates",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-19T23:25:49.000Z",
-   "updated": "2026-11-19T23:25:49.000Z",
-   "summary": "You can now try PostgreSQL 19 in public preview on Azure Database for PostgreSQL – Flexible Server in the East Asia region. With this preview, you can provision new PostgreSQL 19 servers through the Azure portal and Azure CLI, enabling you to test major v",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": 3,
-   "reasons": [
-    "-2 source azure-updates",
-    "+2 launch \"You can now\"",
-    "+2 user steps \"You can\"",
-    "+1 plans/price/availability \"region\""
-   ],
-   "status": "below",
-   "hash": "c9ecd483"
-  },
-  "https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-inference-2026-launches-in-review-part-2": {
-   "title": "Amazon SageMaker Inference: 2026 launches in review, part 2",
-   "link": "https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-inference-2026-launches-in-review-part-2/",
-   "source": "aws-ml-blog",
-   "topic": "ai-engineering",
-   "category": "launch",
-   "date": "2026-11-20T00:34:07.000Z",
-   "updated": null,
-   "summary": "This second installment reviews 13 more Amazon SageMaker AI inference launches from 2026, spanning configuration recommendations, fitting more models onto each GPU, serving models too large for one instance, cross-Region routing, and post-launch tuning, bringing the year's total to 26.",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": 1,
-   "reasons": [
-    "-3 source aws-ml-blog",
-    "+2 launch \"launches\"",
-    "+1 plans/price/availability \"Region\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "a0132b00"
-  },
-  "https://aws.amazon.com/blogs/machine-learning/use-kimi-code-cli-with-models-on-amazon-bedrock": {
-   "title": "Use Kimi Code CLI with models on Amazon Bedrock",
-   "link": "https://aws.amazon.com/blogs/machine-learning/use-kimi-code-cli-with-models-on-amazon-bedrock/",
-   "source": "aws-ml-blog",
-   "topic": "ai-engineering",
-   "category": "launch",
-   "date": "2026-11-20T00:33:30.000Z",
-   "updated": null,
-   "summary": "Kimi Code CLI v2.7.0 adds a native Amazon Bedrock provider, so you can connect the open source coding agent to models like Kimi K3.1 Pro using your standard AWS credential chain (named profiles or SSO) instead of a separate API key. This post shows how to configure the provider and send your first r",
-   "first": "2026-11-20T03:43:42.909Z",
-   "score": 0,
-   "reasons": [
-    "-3 source aws-ml-blog",
-    "+1 niche (agent)",
-    "+2 user steps \"you can\""
-   ],
-   "status": "below",
-   "hash": "62d988e0"
   },
   "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64006": {
    "title": "Result of Underwriting Auction conducted on November 20, 2026",
@@ -8474,6 +7753,40 @@
    ],
    "status": "below",
    "hash": "4421aee6"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64018": {
+   "title": "Money Market Operations as on November 20, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64018",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-23T09:00:00.000Z",
+   "updated": null,
+   "summary": "(Amount in ₹ crore, Rate in Per cent) MONEY MARKETS @ --> Money Markets @ Volume (One Leg) Weighted Average Rate Range A. Overnight Segment (I+II+III+IV) 14,897.60 5.64 4.80-5.95 I. Call Money 1,283.60 5.27 5.00-5.70 II. Triparty Repo 5,479.30 5.56 5.00-5.74 III. Market Repo 302.75 5.09 4.80-5.50 IV",
+   "first": "2026-11-23T03:43:50.488Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "507f324e"
+  },
+  "https://blogs.vmware.com/cloud-foundation/2026/11/22/microsoft-sql-server-failover-clustering-on-vcf-9-1-vm-service-supervisor-direct-implementation-part-2": {
+   "title": "Microsoft SQL Server Failover Clustering on VCF 9.1 VM Service: Supervisor Direct Implementation (Part 2)",
+   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/22/microsoft-sql-server-failover-clustering-on-vcf-9-1-vm-service-supervisor-direct-implementation-part-2/",
+   "source": "vmware-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T03:00:00.000Z",
+   "updated": null,
+   "summary": "Introduction In this part of the series, we will build the two nodes MSSQL FCI Cluster via the vSphere Supervisor and the Local Consumption Interface service. Part 1 focuses on Requirements, Topology, and Methods. Part 2 (this article) focuses on the Supervisor Direct Implementation. Part 3 focuses ",
+   "first": "2026-11-23T03:43:50.488Z",
+   "score": -1,
+   "reasons": [
+    "-1 source vmware-blog"
+   ],
+   "status": "below",
+   "hash": "b99adf73"
   }
  },
  "devices": {},
@@ -8527,15 +7840,14 @@
     "TechCrunch",
     "Business Standard",
     "The Hindu",
-    "Moneycontrol",
-    "NDTV"
+    "Moneycontrol"
    ],
    "techmeme": false,
    "category": "launch",
    "topic": "ai-engineering",
    "parkOnly": false,
-   "last": "2026-11-23T02:14:00.000Z",
-   "date": "2026-11-23T02:14:00.000Z",
+   "last": "2026-11-23T03:26:49.000Z",
+   "date": "2026-11-23T03:26:49.000Z",
    "score": 14,
    "post": "anthropic-ipo-explained-claude-users"
   },
