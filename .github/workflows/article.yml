@@ -118,6 +118,7 @@ jobs:
           new=$(git status --porcelain --untracked-files=all content/posts | awk '/^\?\?/ {print $2}')
           count=$(printf '%s' "$new" | grep -c . || true)
           if [ "$count" != "1" ]; then
+            [ "$count" = "0" ] && echo "empty=true" >> "$GITHUB_OUTPUT"
             echo "::error::Expected exactly one new post, found $count: $new"
             git status --short
             exit 1
@@ -557,8 +558,28 @@ jobs:
           retention-days: 30
           if-no-files-found: ignore
 
+      - name: Defer a backlog line the writer gave up on
+        id: adefer
+        if: failure() && steps.post.outputs.empty == 'true' && !inputs.dry_run
+        env:
+          TODAY: ${{ steps.date.outputs.today }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch -q "$SITE_REMOTE" main && git reset -q --hard FETCH_HEAD
+          git clean -fdq -- content automation
+          slug=$(node ops/article/defer-top.mjs "$TODAY")
+          [ -n "$slug" ] || exit 0
+          [ -z "$(tail -c1 automation/log.md)" ] || echo >> automation/log.md
+          echo "$TODAY | $slug | no-post | deferred to the end of its section" >> automation/log.md
+          git add automation/backlog.md automation/log.md
+          git commit -q -m "Backlog: defer $slug (writer finished without a post)" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+          ok=""
+          for i in 1 2 3; do if git pull -q --rebase "$SITE_REMOTE" main && git push -q "$SITE_REMOTE" HEAD:main; then ok=1; break; fi; sleep 10; done
+          [ -n "$ok" ] && echo "chain=true" >> "$GITHUB_OUTPUT"
+
       - name: Next job of the day
-        if: always() && !inputs.dry_run && (steps.publish.outputs.chain == 'true' || steps.epublish.outputs.chain == 'true' || steps.edefer.outputs.chain == 'true' || steps.rpublish.outputs.chain == 'true' || steps.rdefer.outputs.chain == 'true' || steps.lpublish.outputs.chain == 'true')
+        if: always() && !inputs.dry_run && (steps.publish.outputs.chain == 'true' || steps.epublish.outputs.chain == 'true' || steps.edefer.outputs.chain == 'true' || steps.rpublish.outputs.chain == 'true' || steps.rdefer.outputs.chain == 'true' || steps.lpublish.outputs.chain == 'true' || steps.adefer.outputs.chain == 'true')
         env:
           GH_TOKEN: ${{ github.token }}
           MAX: ${{ vars.ARTICLES_PER_DAY || '1' }}
