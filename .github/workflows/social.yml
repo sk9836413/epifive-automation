@@ -398,10 +398,12 @@ jobs:
           echo "direct=false" >> "$GITHUB_OUTPUT"
           if [ "$LINKEDIN_VIA" = pipedream ]; then
             poster=scripts/social/linkedin-pipedream.mjs; label="Pipedream"
-          elif [ -n "$LINKEDIN_PAGE_TOKEN" ]; then
+          elif [ -n "$LINKEDIN_PAGE_TOKEN" ] || [ -n "$INGEST_TOKEN" ]; then
+            # Token: CRM "Connect LinkedIn (Page)" (fetched by linkedin-post.mjs with INGEST_TOKEN + this job's GitHub OIDC
+            # token, id-token: write above) or the PC backup secret LINKEDIN_PAGE_TOKEN, whichever expires later.
             poster=scripts/social/linkedin-post.mjs; label="LinkedIn API"
           else
-            echo "::notice::LINKEDIN_VIA is not pipedream and LINKEDIN_PAGE_TOKEN is not set; the LinkedIn Page goes through Make."
+            echo "::notice::LINKEDIN_VIA is not pipedream and no LinkedIn Page token is set up; the LinkedIn Page goes through Make."
             exit 0
           fi
           if [ "$DRY_RUN" = "true" ]; then
