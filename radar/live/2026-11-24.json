@@ -1,0 +1,586 @@
+{
+ "date": "2026-11-24",
+ "title": "Tech news today, 24 November 2026",
+ "published": "2026-11-23T23:59:46.286Z",
+ "updated": "2026-11-23T23:59:46.286Z",
+ "items": [
+  {
+   "id": "2dc368ba",
+   "key": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nov2026-java-rce-eCa6ss9z?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerability%20in%20Oracle%20OpenJDK%20(Java4Shell)%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+   "time": "2026-11-23T20:32:33.000Z",
+   "seen": "2026-11-23T23:59:46.286Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Vulnerability in Oracle OpenJDK (Java4Shell) Affecting Cisco Products: November 2026",
+   "summary": "On November 17, 2026, Oracle announced the availability of fixes for a vulnerability in OpenJDK that could lead to remote code execution identified by CVE-2026-114938. The vulnerability affects OpenJDK Java 17.0.6 and later on x86-64 platforms when processing Base64 encoded content. For more information, see the Oracle Critical Security Patch Update Advisory - November 2026 and the OpenJDK Vulnerability Advisory: 2026/11/17 . For additional information, see the Talos blog post: Talos Threat Advisory CVE-2026-114938: Critical vulnerability in OpenJDK JAVA This advisory will be updated as additional information becomes available. This advisory is available at the following link: https://sec.cl",
+   "lines": [
+    "Oracle announced fixes on November 17, 2026 for CVE-2026-114938, an OpenJDK vulnerability that could lead to remote code execution.",
+    "The flaw affects OpenJDK Java 17.0.6 and later on x86-64 platforms when processing Base64 encoded content.",
+    "Cisco's advisory on the issue will be updated as more information becomes available. IT teams running affected Java versions should review the Oracle and Cisco advisories."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Cisco Security Advisories (PSIRT)",
+    "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nov2026-java-rce-eCa6ss9z?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerability%20in%20Oracle%20OpenJDK%20(Java4Shell)%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1"
+   },
+   "sourceId": "cisco-psirt",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 8,
+   "story": null
+  },
+  {
+   "id": "c7c1369e",
+   "key": "https://openai.com/index/introducing-shirudo",
+   "time": "2026-11-23T21:20:00.000Z",
+   "seen": "2026-11-23T23:59:46.286Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "OpenAI and Cisco introduce Shirudo",
+   "summary": "OpenAI and Cisco introduce Shirudo, an open-source runtime for Linux. It helps teams protect running systems while they roll out patches.",
+   "lines": [
+    "OpenAI and Cisco introduced Shirudo, an open-source runtime for Linux.",
+    "Shirudo helps teams protect running systems while they roll out patches."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "OpenAI News",
+    "url": "https://openai.com/index/introducing-shirudo"
+   },
+   "sourceId": "openai-news",
+   "reported": false,
+   "also": [
+    "Cisco Newsroom"
+   ],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null
+  },
+  {
+   "id": "cb8ed89d",
+   "key": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-hydrogen-builders",
+   "time": "2026-11-23T18:00:00.000Z",
+   "seen": "2026-11-23T23:59:46.286Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "See what 6 builders are making with Gemini 4 Hydrogen",
+   "summary": "See six projects builders created with Gemini 4 Hydrogen, from rainy sci-fi skies and pixelated koi ponds to an interactive moth.",
+   "lines": [
+    "Google's Gemini app blog highlights six projects builders created with Gemini 4 Hydrogen.",
+    "Examples include a rainy sci-fi sky, a pixelated koi pond, and an interactive moth."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google: Gemini app blog",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-hydrogen-builders/"
+   },
+   "sourceId": "gemini-blog",
+   "reported": false,
+   "also": [
+    "google-keyword"
+   ],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "d7befb4d",
+   "key": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-canvas-tasks",
+   "time": "2026-11-23T18:00:00.000Z",
+   "seen": "2026-11-23T23:59:46.286Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Here are 4 things you didn’t know you could do with Gemini Canvas",
+   "summary": "Boost productivity with Google Gemini Canvas. Build web apps, create custom study tools, and refine writing side-by-side. Try it in your next chat.",
+   "lines": [
+    "Google's Gemini app blog describes four things users can do with Gemini Canvas.",
+    "Canvas can be used to build web apps, create custom study tools, and refine writing side-by-side in a chat."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google: Gemini app blog",
+    "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-canvas-tasks/"
+   },
+   "sourceId": "gemini-blog",
+   "reported": false,
+   "also": [
+    "google-keyword"
+   ],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "a4f86428",
+   "key": "https://github.blog/changelog/2026-11-23-issue-statuses-and-repository-boards-are-in-public-preview",
+   "time": "2026-11-23T20:37:11.000Z",
+   "seen": "2026-11-23T23:59:46.286Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Issue statuses and repository boards are in public preview",
+   "summary": "Open or closed doesn’t always tell you where an issue stands. You can now use more specific statuses to give your team and agents shared context about what’s in flight… The post Issue statuses and repository boards are in public preview appeared first on The GitHub Blog .",
+   "lines": [
+    "GitHub has made issue statuses and repository boards available in public preview.",
+    "More specific issue statuses give teams and agents shared context about what is in progress.",
+    "Teams can track work more precisely than with open or closed issue states alone."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "GitHub Changelog",
+    "url": "https://github.blog/changelog/2026-11-23-issue-statuses-and-repository-boards-are-in-public-preview"
+   },
+   "sourceId": "github-changelog",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "5fd7c997",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-waf-introduces-simplified-pricing",
+   "time": "2026-11-23T18:51:00.000Z",
+   "seen": "2026-11-23T23:59:46.286Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "AWS WAF introduces simplified pricing",
+   "summary": "AWS WAF now offers simplified pricing that follows what you protect instead of how you configure it. Previously, you paid separate charges for each web ACL, rule, rule group subscription, and capacity tier, making every security decision a billing calculation. Now, your bill follows three dimensions: the resources you protect, the traffic AWS WAF inspects, and the level of protection you apply. This makes the cost-benefit trade-off easy to understand, and adding or changing rules no longer changes your rate. The new model makes protection costs predictable before you deploy. Each web ACL now includes up to 2,500 WCU at no extra charge, up from 1,500, and you can add rules such as Bot Control",
+   "lines": [
+    "AWS WAF now offers simplified pricing based on the resources protected, the traffic AWS WAF inspects, and the level of protection applied.",
+    "Each web ACL now includes up to 2,500 WCU at no extra charge, up from 1,500.",
+    "Adding or changing rules no longer changes the rate, which makes protection costs more predictable before deployment."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-waf-introduces-simplified-pricing/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "fe09c49e",
+   "key": "https://azure.microsoft.com/updates?id=577474",
+   "time": "2026-11-23T18:11:31.000Z",
+   "seen": "2026-11-23T23:59:46.286Z",
+   "kind": "retirement",
+   "tier": 2,
+   "headline": "Retirement: Azure AI Content Safety selected features will be retired on April 30, 2027",
+   "summary": "The following Azure AI Content Safety preview capabilities will retire on April 30, 2027:Analyze MultimodalCustom categories (rapid), including text and imageConnected containers for Text, Image, and Prompt ShieldsDisconnected containers for Text, ImageEm",
+   "lines": [
+    "Microsoft will retire selected Azure AI Content Safety preview capabilities on April 30, 2027.",
+    "Affected capabilities include Analyze Multimodal, custom categories (rapid), and connected and disconnected containers for text and image.",
+    "Teams using these preview features should plan migrations before the retirement date."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Azure Updates",
+    "url": "https://azure.microsoft.com/updates?id=577474"
+   },
+   "sourceId": "azure-updates",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "dc492cf0",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/waf-ai-endpoint-discovery-protection",
+   "time": "2026-11-23T18:47:00.000Z",
+   "seen": "2026-11-23T23:59:46.286Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "AWS WAF announces automated discovery and protection for LLM, MCP, and A2A endpoints using Amazon Bedrock Guardrails",
+   "summary": "Automated AI endpoint discovery and protection are now generally available, enabling you to discover language model (LLM), Model Context Protocol (MCP), and Agent2Agent (A2A) endpoints behind Amazon API Gateway, Application Load Balancers, and Amazon CloudFront across your AWS Organization and protect them using AWS WAF. Discovery is available through the new API Gateway API Portal, which recognizes the AI endpoints among the APIs it discovers automatically from traffic logs and service configuration records, with no agents to deploy or logs to forward. An undocumented, public-facing MCP server appears as a shadow API. For unprotected AI endpoints, customers can enable protection using WAF.",
+   "lines": [
+    "Automated AI endpoint discovery and protection are now generally available in AWS WAF.",
+    "Discovery covers LLM, MCP, and A2A endpoints behind Amazon API Gateway, Application Load Balancers, and Amazon CloudFront across an AWS Organization.",
+    "Discovery requires no agents to deploy or logs to forward. Unprotected AI endpoints can be protected with WAF, and undocumented public MCP servers appear as shadow APIs."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/waf-ai-endpoint-discovery-protection/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "d4e0fea6",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-connect-force-logout",
+   "time": "2026-11-23T18:35:00.000Z",
+   "seen": "2026-11-23T23:59:46.286Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Amazon Connect Customer launches the ability to force logout agents directly from the analytics dashboard",
+   "summary": "Amazon Connect Customer now allows supervisors to force logout agents directly from the real-time analytics dashboard, eliminating the need to manually contact agents to end their sessions. Force logout ends all active agent sessions and records the logout event in the Login/Logout report, so agent timecards stay complete. For example, a supervisor identifies an agent who left their workstation without logging out after a shift, and force logs them out from the dashboard, preventing idle time from accruing on the agent's timecard. Agent force logout is available in all AWS Regions where Amazon Connect Customer is offered. To learn more about analytics dashboards, see the Amazon Connect Custo",
+   "lines": [
+    "Amazon Connect Customer now lets supervisors force logout agents from the real-time analytics dashboard.",
+    "Force logout ends all active agent sessions and records the event in the Login/Logout report so agent timecards stay complete.",
+    "Agent force logout is available in all AWS Regions where Amazon Connect Customer is offered."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-connect-force-logout/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "490cda2b",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/cloudfront-european-sovereign-cloud",
+   "time": "2026-11-23T18:00:00.000Z",
+   "seen": "2026-11-23T23:59:46.286Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Amazon CloudFront is now available in the AWS European Sovereign Cloud",
+   "summary": "Amazon CloudFront is now available in the AWS European Sovereign Cloud. Organizations with strict EU sovereignty requirements can now deliver websites, applications, and APIs with the performance, security, and scale of CloudFront, all within the EU. Until now, customers had to build and run their own delivery and TLS termination infrastructure to keep traffic and data inside the EU. With CloudFront in the AWS European Sovereign Cloud, content delivery, TLS termination, logs, and customer configuration stay within the European Sovereign Cloud boundary. The AWS European Sovereign Cloud is physically and logically separate from other AWS Regions, and only EU-resident personnel operate it. This",
+   "lines": [
+    "Amazon CloudFront is now available in the AWS European Sovereign Cloud.",
+    "Content delivery, TLS termination, logs, and customer configuration stay within the European Sovereign Cloud boundary.",
+    "The AWS European Sovereign Cloud is physically and logically separate from other AWS Regions, and only EU-resident personnel operate it. Organizations with strict EU sovereignty requirements can avoid building their own delivery infrastructure."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/cloudfront-european-sovereign-cloud"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "7ea446ab",
+   "key": "https://azure.microsoft.com/updates?id=581353",
+   "time": "2026-11-23T21:12:25.000Z",
+   "seen": "2026-11-23T23:59:46.286Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "[Launched] Public Preview: Style and instruction control for HD V3 voices in Azure Speech in Foundry Tools",
+   "summary": "Azure Speech in Foundry Tools provides HD V3 voices with style and instruction control in public preview.Use supported controls to shape voice delivery for voice agents, narration, and other speech experiences.Learn more.",
+   "lines": [
+    "Azure Speech in Foundry Tools now offers style and instruction control for HD V3 voices in public preview.",
+    "Supported controls shape voice delivery for voice agents, narration, and other speech experiences."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Azure Updates",
+    "url": "https://azure.microsoft.com/updates?id=581353"
+   },
+   "sourceId": "azure-updates",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "fe8939ae",
+   "key": "https://azure.microsoft.com/updates?id=581383",
+   "time": "2026-11-23T20:31:40.000Z",
+   "seen": "2026-11-23T23:59:46.286Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "[In preview] Public Preview: Use the Messages API with model router in Microsoft Foundry",
+   "summary": "Model router in Microsoft Foundry supports the Messages API in public preview. Messages-based applications and coding tools can use automatic model selection while keeping the Anthropic request and response format.Messages requests route only to supported",
+   "lines": [
+    "Model router in Microsoft Foundry now supports the Messages API in public preview.",
+    "Messages-based applications and coding tools can use automatic model selection while keeping the Anthropic request and response format."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Azure Updates",
+    "url": "https://azure.microsoft.com/updates?id=581383"
+   },
+   "sourceId": "azure-updates",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "3ee0e3e6",
+   "key": "https://azure.microsoft.com/updates?id=582030",
+   "time": "2026-11-23T18:51:31.000Z",
+   "seen": "2026-11-23T23:59:46.286Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "[Launched] Generally Available: Wildcard domain support in Azure Firewall network rules",
+   "summary": "Wildcard domain support in Azure Firewall network rules is now generally available. This capability enables customers to use wildcard patterns, such as *.contoso.com, when defining FQDN-based network rules. Wildcard support makes it easier to secure desti",
+   "lines": [
+    "Wildcard domain support in Azure Firewall network rules is now generally available.",
+    "Customers can use wildcard patterns, such as *.contoso.com, when defining FQDN-based network rules."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Azure Updates",
+    "url": "https://azure.microsoft.com/updates?id=582030"
+   },
+   "sourceId": "azure-updates",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "0524f6d9",
+   "key": "https://azure.microsoft.com/updates?id=574535",
+   "time": "2026-11-23T18:09:39.000Z",
+   "seen": "2026-11-23T23:59:46.286Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "[In preview] Public Preview: Azure Database for PostgreSQL enhanced Burstable tier (Basv2)",
+   "summary": "Enhanced Burstable tier (Basv2) builds on the existing burstable model with improved performance predictability and more efficient burst utilization, delivering a better cost-performance balance. Now you can run steady workloads more economically while au",
+   "lines": [
+    "Azure Database for PostgreSQL has an enhanced Burstable tier (Basv2) in public preview.",
+    "The tier improves performance predictability and burst utilization on the existing burstable model.",
+    "Steady workloads can run more economically on the new tier."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Azure Updates",
+    "url": "https://azure.microsoft.com/updates?id=574535"
+   },
+   "sourceId": "azure-updates",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "5f5c7bf5",
+   "key": "https://azure.microsoft.com/updates?id=579280",
+   "time": "2026-11-23T18:02:38.000Z",
+   "seen": "2026-11-23T23:59:46.286Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "[Launched] Generally Available: WAF Insights for Azure Application Gateway",
+   "summary": "WAF Insights for Azure Application Gateway Web Application Firewall (WAF) is now generally available. WAF Insights is a built-in experience in the WAF policy that brings WAF logs and metrics together in interactive dashboards, so you can investigate block",
+   "lines": [
+    "WAF Insights for Azure Application Gateway is now generally available.",
+    "WAF Insights is a built-in experience in the WAF policy that brings WAF logs and metrics together in interactive dashboards."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Azure Updates",
+    "url": "https://azure.microsoft.com/updates?id=579280"
+   },
+   "sourceId": "azure-updates",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "c5992b3c",
+   "key": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNaWEtdlp4ZFBsaUpfZVZsTW9BeTRLYmRFSXcyT1RFbFZzcmp5OGtQRy1ob2I2Q1FET2ZJbG9ha1BtSlpJaVd5UVFMZFZXX2F4OE52QmEwRko0bDhLendUOXdpWVpZZGhCcDRYNGZhVzBDdWtpWTBXOU5reDB0ZkU1ZURrQXptREdqMXNwbGNySWdwcEN5aDNFazVQTXc5TGc?oc=5",
+   "time": "2026-11-23T12:02:01.000Z",
+   "seen": "2026-11-23T23:59:46.286Z",
+   "kind": "trending",
+   "topic": "ipo",
+   "tier": 2,
+   "trending": true,
+   "trendKey": "ipo:anthropic",
+   "techmeme": false,
+   "headline": "Anthropic Faces New Pressures From Public Investors After Successful IPO",
+   "summary": "",
+   "lines": [
+    "Reported by Bloomberg: Anthropic faces new pressures from public investors following its IPO.",
+    "CNBC, WSJ, and TechCrunch also reported on the story."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Bloomberg",
+    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNaWEtdlp4ZFBsaUpfZVZsTW9BeTRLYmRFSXcyT1RFbFZzcmp5OGtQRy1ob2I2Q1FET2ZJbG9ha1BtSlpJaVd5UVFMZFZXX2F4OE52QmEwRko0bDhLendUOXdpWVpZZGhCcDRYNGZhVzBDdWtpWTBXOU5reDB0ZkU1ZURrQXptREdqMXNwbGNySWdwcEN5aDNFazVQTXc5TGc?oc=5"
+   },
+   "sourceId": "gnews-ipo",
+   "sourceMax": 4,
+   "reported": true,
+   "also": [
+    "CNBC",
+    "WSJ",
+    "TechCrunch"
+   ],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 12,
+   "story": "trend:ipo:anthropic"
+  },
+  {
+   "id": "6a978f98",
+   "key": "https://bleepingcomputer.com/news/security/microsoft-azure-flaw-exploited-to-steal-customers-api-credentials",
+   "time": "2026-11-23T19:42:20.000Z",
+   "seen": "2026-11-23T23:59:46.286Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Microsoft Azure flaw exploited to steal customers' API credentials",
+   "summary": "Microsoft is warning customers that a security vulnerability in Azure API Management (APIM) Classic tiers was exploited to steal stored API credentials, with Norwegian authorities linking the flaw to cyberattacks against energy companies. [...]",
+   "lines": [
+    "Reported by BleepingComputer: Microsoft warned customers that a vulnerability in Azure API Management (APIM) Classic tiers was exploited to steal stored API credentials.",
+    "Norwegian authorities linked the flaw to cyberattacks against energy companies.",
+    "Teams using APIM Classic tiers should review stored API credentials."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/microsoft-azure-flaw-exploited-to-steal-customers-api-credentials/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 11,
+   "story": null
+  },
+  {
+   "id": "d8694d80",
+   "key": "https://bleepingcomputer.com/news/security/south-koreas-power-giant-kepco-confirms-data-breach-impacting-15-million",
+   "time": "2026-11-23T20:54:51.000Z",
+   "seen": "2026-11-23T23:59:46.286Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "South Korea’s power giant KEPCO confirms data breach impacting 1.5 million",
+   "summary": "A threat actor breached the internal network of Korea Electric Power Corporation (KEPCO) and accessed two systems containing customer, employee, and contractor data. [...]",
+   "lines": [
+    "Reported by BleepingComputer: South Korea's Korea Electric Power Corporation (KEPCO) confirmed a data breach impacting 1.5 million.",
+    "A threat actor breached KEPCO's internal network and accessed two systems containing customer, employee, and contractor data.",
+    "Security teams can use this incident to review access controls for systems that hold customer and employee data."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/south-koreas-power-giant-kepco-confirms-data-breach-impacting-15-million/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 8,
+   "story": null
+  },
+  {
+   "id": "d3087c72",
+   "key": "https://bleepingcomputer.com/news/security/spanish-laliga-confirms-hackers-stole-soccer-fans-personal-data",
+   "time": "2026-11-23T18:38:40.000Z",
+   "seen": "2026-11-23T23:59:46.286Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Spanish LaLiga confirms hackers stole soccer fans’ personal data",
+   "summary": "LaLiga, Spain's top men's football league, disclosed a data breach that exposed personal information belonging to users of its services and those of some affiliated clubs. [...]",
+   "lines": [
+    "Reported by BleepingComputer: Spain's LaLiga disclosed a data breach that exposed personal information of users of its services.",
+    "The personal information of users of some affiliated clubs was also exposed."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/spanish-laliga-confirms-hackers-stole-soccer-fans-personal-data/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null
+  },
+  {
+   "id": "6ab30e0d",
+   "key": "https://engadget.com/2325643/the-infamous-gta-6-hacker-has-been-released-after-pleading-guilty",
+   "time": "2026-11-23T19:42:43.000Z",
+   "seen": "2026-11-23T23:59:46.286Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "The infamous GTA 6 hacker has been released after pleading guilty",
+   "summary": "A judge warned the hacker not to \"let this happen again.\"",
+   "lines": [
+    "Reported by Engadget: A hacker described as the GTA 6 hacker has been released after pleading guilty.",
+    "A judge warned the hacker not to \"let this happen again.\""
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Engadget",
+    "url": "https://www.engadget.com/2325643/the-infamous-gta-6-hacker-has-been-released-after-pleading-guilty/"
+   },
+   "sourceId": "engadget",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null
+  }
+ ],
+ "description": "20 technology updates from official sources, updated hourly: Anthropic Faces New Pressures From Public Investors After Successful IPO; Microsoft Azure flaw exploited to steal customers' API credentials; Vulnerability in Oracle OpenJDK (Java4Shell) Affecting Cisco Products: November 2026."
+}

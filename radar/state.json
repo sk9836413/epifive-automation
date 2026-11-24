@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-23T18:17:46.191Z",
+ "lastScan": "2026-11-23T23:59:46.286Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -3357,81 +3357,6 @@
    "hash": "e2b2f106",
    "post": "how-to-check-laptop-specs-windows-11-mac"
   },
-  "https://openai.com/index/combatting-adversarial-distillation": {
-   "title": "Combatting adversarial distillation",
-   "link": "https://openai.com/index/combatting-adversarial-distillation",
-   "source": "openai-news",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-20T10:00:00.000Z",
-   "updated": null,
-   "summary": "OpenAI’s layered approach to adversarial distillation combines model training, safeguards, detection, and enforcement to protect against capability extraction.",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 1,
-   "reasons": [
-    "+2 source openai-news",
-    "+1 niche (openai)",
-    "-2 category (none)"
-   ],
-   "status": "below",
-   "hash": "1e404268"
-  },
-  "https://openai.com/business/customer-stories/hebbia": {
-   "title": "Hebbia sees improvements in financial research with GPT-6 Astra",
-   "link": "https://openai.com/business/customer-stories/hebbia",
-   "source": "openai-news",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-20T00:00:00.000Z",
-   "updated": null,
-   "summary": "Hebbia tested GPT-6 Astra for financial research. Its prerelease evaluations found gains in source coverage, citation relevance, and presentation quality.",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": -3,
-   "reasons": [
-    "+2 source openai-news",
-    "-3 corporate/announcement \"research\"",
-    "-2 category (none)"
-   ],
-   "status": "below",
-   "hash": "4e9dfe9a"
-  },
-  "https://openai.com/index/introducing-medchembench": {
-   "title": "Can AI help scientists identify promising drug candidates?",
-   "link": "https://openai.com/index/introducing-medchembench",
-   "source": "openai-news",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-20T00:00:00.000Z",
-   "updated": null,
-   "summary": "MedChemBench evaluates how well AI models interpret molecular structures, reason from experimental evidence, and select compounds in early drug discovery.",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 0,
-   "reasons": [
-    "+2 source openai-news",
-    "-2 category (Research)"
-   ],
-   "status": "below",
-   "hash": "487ba386"
-  },
-  "https://blogs.windows.com/windows-insider/2026/11/20/announcing-new-builds-for-20-november-2026": {
-   "title": "Announcing new builds for 20 November 2026",
-   "link": "https://blogs.windows.com/windows-insider/2026/11/20/announcing-new-builds-for-20-november-2026/",
-   "source": "windows-blog",
-   "topic": "how-to-tips",
-   "category": "launch",
-   "date": "2026-11-20T18:05:27.000Z",
-   "updated": null,
-   "summary": "Hello Windows Insiders, Today, we’re releasing new Windows 11 Insider Preview builds to the Beta and Experimental channels. New builds this week Select your channel below to view its release notes: Beta: The post Announcing new builds for 20 November 2026 appeared first on Windows Blog .",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 5,
-   "reasons": [
-    "+1 source windows-blog",
-    "+3 niche (windows 11, windows)",
-    "+1 also on windows-insider"
-   ],
-   "status": "below",
-   "hash": "a8ceeb0"
-  },
   "https://bleepingcomputer.com/news/security/bell-canada-says-agentic-hacker-stole-enterprise-customer-data": {
    "title": "Bell Canada says 'agentic' hacker stole enterprise customer data",
    "link": "https://www.bleepingcomputer.com/news/security/bell-canada-says-agentic-hacker-stole-enterprise-customer-data/",
@@ -3499,25 +3424,6 @@
    "attempts": 1,
    "slug": "whatsapp-cve-2026-23871-android-update-check",
    "resultAt": "2026-11-20T20:55:43.503Z"
-  },
-  "https://workspaceupdates.googleblog.com/2026/11/expanded-google-vault-support-for-external-spaces-and-group-conversations-in-Google-Chat.html": {
-   "title": "Expanded Google Vault support for external spaces and group conversations in Google Chat",
-   "link": "http://workspaceupdates.googleblog.com/2026/11/expanded-google-vault-support-for-external-spaces-and-group-conversations-in-Google-Chat.html",
-   "source": "workspace-updates",
-   "topic": "small-business-it",
-   "category": "launch",
-   "date": "2026-11-20T19:17:44.967Z",
-   "updated": "2026-11-20T19:17:44.967Z",
-   "summary": "To give organizations more consistent visibility and help support their compliance requirements, we’re expanding Google Vault support in Google Chat. Starting mid-February 2027, Vault admins can retain, hold, search, and export messages from external spaces and group direct messages that include Wor",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 5,
-   "reasons": [
-    "+1 source workspace-updates",
-    "+2 launch \"available in\"",
-    "+2 user steps \"admins can\""
-   ],
-   "status": "below",
-   "hash": "b39a1e5d"
   },
   "https://workspaceupdates.googleblog.com/2026/11/google-vids-now-lets-you-reuse-your-media-in-video-generation.html": {
    "title": "Google Vids now lets you reuse your media in video generation",
@@ -3593,602 +3499,6 @@
    "slug": "google-workspace-studio-data-regions-set-up",
    "resultAt": "2026-11-21T21:57:52.424Z"
   },
-  "https://about.fb.com/news/2026/11/advancing-science-together-highlights-from-the-open-source-ai-for-science-summit": {
-   "title": "Advancing Science Together: Highlights From the Open Source AI For Science Summit",
-   "link": "https://about.fb.com/news/2026/11/advancing-science-together-highlights-from-the-open-source-ai-for-science-summit/",
-   "source": "meta-newsroom",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-20T18:30:45.000Z",
-   "updated": null,
-   "summary": "We brought researchers from universities, hospitals, and industry together for the Open Source AI for Science Summit, an event built around using open source AI to accelerate scientific discovery. The post Advancing Science Together: Highlights From the Open Source AI For Science Summit appeared fir",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": -2,
-   "reasons": [
-    "+1 also on meta-ai-tag",
-    "-3 corporate/announcement \"Summit\""
-   ],
-   "status": "below",
-   "hash": "2ad894e5"
-  },
-  "https://blog.google/products-and-platforms/products/search/connected-apps-holiday-errands": {
-   "title": "Get your year-end tasks done with new Connected Apps.",
-   "link": "https://blog.google/products-and-platforms/products/search/connected-apps-holiday-errands/",
-   "source": "gemini-blog",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-20T18:00:00.000Z",
-   "updated": null,
-   "summary": "Google Connected Apps simplify your year-end tasks. Manage groceries, credit scores, and home services directly in Search. Get the details for November 2026.",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 2,
-   "reasons": [
-    "+1 source gemini-blog",
-    "+1 also on google-keyword",
-    "re-scored (was 0)"
-   ],
-   "status": "below",
-   "hash": "690880ea"
-  },
-  "https://blog.google/company-news/outreach-and-initiatives/google-org/watch-duty-gemini-tool": {
-   "title": "How Watch Duty is using Gemini to get wildfire alerts out faster",
-   "link": "https://blog.google/company-news/outreach-and-initiatives/google-org/watch-duty-gemini-tool/",
-   "source": "google-keyword",
-   "topic": "how-to-tips",
-   "category": "launch",
-   "date": "2026-11-20T17:00:00.000Z",
-   "updated": null,
-   "summary": "Watch Duty uses Gemini to turn noisy fire radio into text, spotting wildfire dispatches in under 30 seconds so alerts go out faster.",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 2,
-   "reasons": [
-    "+2 niche (gemini)"
-   ],
-   "status": "below",
-   "hash": "13bddeb1"
-  },
-  "https://zoom.com/en/blog/content-marketing-guide": {
-   "title": "Content marketing guide: how to plan, create, and measure content",
-   "link": "https://www.zoom.com/en/blog/content-marketing-guide/",
-   "source": "zoom-blog",
-   "topic": "small-business-it",
-   "category": "launch",
-   "date": "2026-11-20T19:36:00.000Z",
-   "updated": null,
-   "summary": "Use this content marketing guide to set goals, build a strategy, create content people want, repurpose it, and measure what works.",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 3,
-   "reasons": [
-    "+2 user steps \"how to\"",
-    "+1 plans/price/availability \"plan\""
-   ],
-   "status": "below",
-   "hash": "198bd452"
-  },
-  "https://zoom.com/en/blog/multi-location-ai-virtual-agent": {
-   "title": "How multi-location businesses scale AI virtual agents with one central team",
-   "link": "https://www.zoom.com/en/blog/multi-location-ai-virtual-agent/",
-   "source": "zoom-blog",
-   "topic": "small-business-it",
-   "category": "launch",
-   "date": "2026-11-20T16:25:37.000Z",
-   "updated": null,
-   "summary": "See how a multi-location virtual agent helps one small team deliver consistent, personalized AI customer service across 1,200+ stores.",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 1,
-   "reasons": [
-    "+1 niche (agents)"
-   ],
-   "status": "below",
-   "hash": "686281e3"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64017": {
-   "title": "Conversion/Switch of State Government Securities",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64017",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-20T19:45:00.000Z",
-   "updated": null,
-   "summary": "The following State Governments have announced the conversion/switch of their securities through auction for an aggregate amount of ₹10,800 crore (face value). The security-wise details of the conversion/switch are given as under: Date of Auction Source Securities Amount (FV) of Source Securities (i",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 0,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 plans/price/availability \"₹1\""
-   ],
-   "status": "below",
-   "hash": "61a35718"
-  },
-  "https://github.blog/changelog/2026-11-20-pin-your-favorite-repositories-to-your-dashboard": {
-   "title": "Pin your favorite repositories to your dashboard",
-   "link": "https://github.blog/changelog/2026-11-20-pin-your-favorite-repositories-to-your-dashboard",
-   "source": "github-changelog",
-   "topic": "ai-engineering",
-   "category": "launch",
-   "date": "2026-11-20T14:12:05.000Z",
-   "updated": null,
-   "summary": "Choose which repositories appear on the Dashboard with the new Favorite repositories section. If the new dashboard experience isn’t enabled, Top repositories remains unchanged. Select Edit or Add repositories to… The post Pin your favorite repositories to your dashboard appeared first on The GitHub ",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": -1,
-   "reasons": [
-    "-1 source github-changelog"
-   ],
-   "status": "below",
-   "hash": "c6298da0"
-  },
-  "https://github.blog/changelog/2026-11-19-github-desktop-now-supports-multiple-accounts-per-host": {
-   "title": "GitHub Desktop now supports multiple accounts per host",
-   "link": "https://github.blog/changelog/2026-11-19-github-desktop-now-supports-multiple-accounts-per-host",
-   "source": "github-changelog",
-   "topic": "ai-engineering",
-   "category": "launch",
-   "date": "2026-11-20T02:06:01.000Z",
-   "updated": null,
-   "summary": "GitHub Desktop now lets you sign in with more than one account on the same host, including GitHub.com, GitHub Enterprise Server, and GHE.com. This has been one of the most… The post GitHub Desktop now supports multiple accounts per host appeared first on The GitHub Blog .",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 2,
-   "reasons": [
-    "-1 source github-changelog",
-    "+2 launch \"now supports\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "1cc729cd"
-  },
-  "https://blogs.vmware.com/cloud-foundation/2026/11/20/from-ai-experimentation-to-production-key-takeaways-from-kubecon-north-america-2026": {
-   "title": "From AI Experimentation to Production: Key Takeaways from KubeCon North America 2026",
-   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/20/from-ai-experimentation-to-production-key-takeaways-from-kubecon-north-america-2026/",
-   "source": "vmware-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T16:10:00.000Z",
-   "updated": null,
-   "summary": "Walk the halls of KubeCon + CloudNativeCon North America 2026 in Salt Lake City, and you’ll notice a subtle but unmistakable shift in how engineers talk about AI. A year ago, the dominant question was whether Kubernetes could handle AI workloads at all. This year, nobody is debating capability anymo",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": -1,
-   "reasons": [
-    "-1 source vmware-blog"
-   ],
-   "status": "below",
-   "hash": "6638b2ae"
-  },
-  "https://blogs.vmware.com/cloud-foundation/2026/11/20/how-glencore-cut-memory-costs-by-pairing-dram-with-nvme-tiering-in-vmware-cloud-foundation": {
-   "title": "How Glencore Cut Memory Costs by Pairing DRAM with NVMe Tiering in VMware Cloud Foundation",
-   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/20/how-glencore-cut-memory-costs-by-pairing-dram-with-nvme-tiering-in-vmware-cloud-foundation/",
-   "source": "vmware-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T16:00:00.000Z",
-   "updated": null,
-   "summary": "Server memory prices have surged over the past year, with some DRAM modules rising as much as 60% in a single month and no meaningful relief until 20271 and prices for server vendors are under even more pressure as lead times stretch from weeks to months2. Glencore, one of the world’s largest divers",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": -1,
-   "reasons": [
-    "-1 source vmware-blog"
-   ],
-   "status": "below",
-   "hash": "8883e685"
-  },
-  "https://blogs.vmware.com/cloud-foundation/2026/11/20/migrate-from-vsan-osa-to-vsan-esa-in-vcf-9-1-without-extra-hardware": {
-   "title": "Migrate from vSAN OSA to vSAN ESA in VCF 9.1 Without Extra Hardware",
-   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/20/migrate-from-vsan-osa-to-vsan-esa-in-vcf-9-1-without-extra-hardware/",
-   "source": "vmware-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T13:00:00.000Z",
-   "updated": null,
-   "summary": "The use of extra hardware has been a common element in migrations and upgrades. Extra servers would be provisioned as a new vSphere or vSAN cluster, and workloads would be moved over using vMotion and storage vMotion. It was the de facto approach for migrating from vSAN OSA to vSAN ESA, since no cla",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 1,
-   "reasons": [
-    "-1 source vmware-blog",
-    "+2 user steps \"Migrate\""
-   ],
-   "status": "below",
-   "hash": "d367950c"
-  },
-  "https://blog.webex.com/customer-experience/new-castle-county-cuts-queue-waits-from-seven-minutes-to-two-with-webex-ai-agent": {
-   "title": "New Castle County Cuts Queue Waits from Seven Minutes to Two with ...",
-   "link": "https://blog.webex.com/customer-experience/new-castle-county-cuts-queue-waits-from-seven-minutes-to-two-with-webex-ai-agent/",
-   "source": "webex-blog",
-   "topic": "small-business-it",
-   "category": "launch",
-   "date": "2026-11-20T19:59:43.000Z",
-   "updated": null,
-   "summary": "See how New Castle County uses Webex AI Agent to resolve 40%+ of calls, cut queue waits by 71%, and speed housing applications. The post New Castle County Cuts Queue Waits from Seven Minutes to Two with ... appeared first on Webex Blog .",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 0,
-   "reasons": [
-    "-1 source webex-blog",
-    "+1 niche (agent)"
-   ],
-   "status": "below",
-   "hash": "5c0df04f"
-  },
-  "https://salesforce.com/blog/pick-a-partner": {
-   "title": "We Won’t Pick Your Favorite Partner, But We’ll Show You How to Pick Yours",
-   "link": "https://www.salesforce.com/blog/pick-a-partner/",
-   "source": "salesforce-blog",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-20T19:00:30.000Z",
-   "updated": null,
-   "summary": "You’ve picked the platform. Now comes a choice that shapes your results as much as the technology: who will help you get the most value from it? We know that real value comes…",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 1,
-   "reasons": [
-    "-1 source salesforce-blog",
-    "+2 user steps \"How to\""
-   ],
-   "status": "below",
-   "hash": "6a35cd4b"
-  },
-  "https://salesforce.com/blog/how-to-write-knowledge-articles": {
-   "title": "Want Your AI Agents to Give the Right Answers? Fix Your Knowledge Articles First",
-   "link": "https://www.salesforce.com/blog/how-to-write-knowledge-articles/",
-   "source": "salesforce-blog",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-20T18:45:06.000Z",
-   "updated": null,
-   "summary": "Here’s how to structure Salesforce Knowledge so AI agents retrieve the right slice of data and deliver the right answers.",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 2,
-   "reasons": [
-    "-1 source salesforce-blog",
-    "+1 niche (agents)",
-    "+2 user steps \"how to\""
-   ],
-   "status": "below",
-   "hash": "ae99ba57"
-  },
-  "https://salesforce.com/blog/deploying-agents-tableau-mcp-best-practices": {
-   "title": "Deploying Agents with Tableau MCP: Best Practices to Optimize for Accuracy, Efficiency, and Trust",
-   "link": "https://www.salesforce.com/blog/deploying-agents-tableau-mcp-best-practices/",
-   "source": "salesforce-blog",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-20T18:44:23.000Z",
-   "updated": null,
-   "summary": "Discover best practices for building custom agents with Tableau MCP, balancing enterprise data flexibility with trust and governance.",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 0,
-   "reasons": [
-    "-1 source salesforce-blog",
-    "+1 niche (agents)"
-   ],
-   "status": "below",
-   "hash": "c198751f"
-  },
-  "https://salesforce.com/blog/self-evolving-systems": {
-   "title": "Always Learning, Always Improving: The Era of Self-Evolving AI Systems",
-   "link": "https://www.salesforce.com/blog/self-evolving-systems/",
-   "source": "salesforce-blog",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-20T18:28:15.000Z",
-   "updated": null,
-   "summary": "What toddlers can teach us about recursive self-improvement Anyone who has watched a toddler build with wooden blocks has seen a hard research problem solved on a living room floor. I have spent…",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": -1,
-   "reasons": [
-    "-1 source salesforce-blog"
-   ],
-   "status": "below",
-   "hash": "e633a377"
-  },
-  "https://blog.cloudflare.com/ruby2shell-waf-protection": {
-   "title": "How Cloudflare WAF protects against ruby2shell (CVE-2026-132825)",
-   "link": "https://blog.cloudflare.com/ruby2shell-waf-protection/",
-   "source": "cloudflare-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T20:24:38.000Z",
-   "updated": null,
-   "summary": "ruby2shell lets attackers corrupt memory in default Rails and Sinatra apps without logging in. Cloudflare WAF blocks it for every customer, including Free plans. Upgrade Ruby now, and use the WAF to cover the gap.",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 2,
-   "reasons": [
-    "-1 source cloudflare-blog",
-    "+2 user steps \"Upgrade\"",
-    "+1 plans/price/availability \"Free\""
-   ],
-   "status": "below",
-   "hash": "5a86bbda"
-  },
-  "https://blog.cloudflare.com/phpaftershell-waf-protection": {
-   "title": "How Cloudflare WAF helps protect against phpAfterShell and other critical PHP flaws",
-   "link": "https://blog.cloudflare.com/phpaftershell-waf-protection/",
-   "source": "cloudflare-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T20:00:45.000Z",
-   "updated": null,
-   "summary": "phpAfterShell is a critical flaw in PHP's default session handler that can lead to code execution. Cloudflare WAF blocks it for all customers, including Free plans, and adds new rules for other PHP flaws fixed in the same release.",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 0,
-   "reasons": [
-    "-1 source cloudflare-blog",
-    "+1 plans/price/availability \"Free\""
-   ],
-   "status": "below",
-   "hash": "a739c8a7"
-  },
-  "https://intel.com/content/www/us/en/newsroom/news/client-computing/supercomputing-2026.html": {
-   "title": "Supercomputing 2026",
-   "link": "https://www.intel.com/content/www/us/en/newsroom/news/client-computing/supercomputing-2026.html",
-   "source": "intel-newsroom",
-   "topic": "laptops-hardware",
-   "category": "launch",
-   "date": "2026-11-20T12:00:00.000Z",
-   "updated": null,
-   "summary": "Artificial Intelligence (AI)",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": -1,
-   "reasons": [
-    "-1 source intel-newsroom"
-   ],
-   "status": "below",
-   "hash": "fbbdb8f4"
-  },
-  "https://cloud.google.com/blog/topics/developers-practitioners/how-to-fix-your-teams-api-keys": {
-   "title": "Ultimate guide for fixing your team’s API keys",
-   "link": "https://cloud.google.com/blog/topics/developers-practitioners/how-to-fix-your-teams-api-keys/",
-   "source": "gcloud-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T17:00:00.000Z",
-   "updated": null,
-   "summary": "Most Gemini prototypes start the same way. You grab an API key from Google AI Studio , then paste it into your coding agent to start building a prototype. That speed is the point, and shouldn’t be slowed down. The trouble starts later, when the prototype gets real users and the key comes along uncha",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 2,
-   "reasons": [
-    "-1 source gcloud-blog",
-    "+3 niche (gemini, agent)",
-    "+1 plans/price/availability \"$1\"",
-    "-1 narrow audience \"API\""
-   ],
-   "status": "below",
-   "hash": "53bfd477"
-  },
-  "https://cloud.google.com/blog/products/data-analytics/scaling-airflow-pipelines-with-ai-agents-on-managed-airflow": {
-   "title": "Drowning in clicks: Scaling Black Friday pipelines with Managed Airflow agents",
-   "link": "https://cloud.google.com/blog/products/data-analytics/scaling-airflow-pipelines-with-ai-agents-on-managed-airflow/",
-   "source": "gcloud-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T17:00:00.000Z",
-   "updated": null,
-   "summary": "When an Airflow pipeline fails in production, the hard part is rarely the fix. It's finding out what to fix. A task dies without a traceback. Is it the code, the data, or the environment? Hard to say, as clues are scattered across task logs, scheduler logs, and worker metrics. And once you know what",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 2,
-   "reasons": [
-    "-1 source gcloud-blog",
-    "+1 niche (agents)",
-    "+2 user steps \"upgrade\""
-   ],
-   "status": "below",
-   "hash": "51ddc2bb"
-  },
-  "https://cloud.google.com/blog/products/data-analytics/a-data-simulator-to-test-agents": {
-   "title": "Frontier and Center: Why your data agents need a “wind tunnel”",
-   "link": "https://cloud.google.com/blog/products/data-analytics/a-data-simulator-to-test-agents/",
-   "source": "gcloud-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T17:00:00.000Z",
-   "updated": null,
-   "summary": "Imagine you're building a data agent to answer questions about an enterprise data warehouse. Ideally, you'd develop and test it against production data, but access restrictions and data sensitivity make that difficult – especially when the engineers building the agent sit outside the team that owns ",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 2,
-   "reasons": [
-    "-1 source gcloud-blog",
-    "+1 niche (agents)",
-    "+2 user steps \"you can\""
-   ],
-   "status": "below",
-   "hash": "a2df8be9"
-  },
-  "https://cloud.google.com/blog/products/databases/dynaport-modernizes-with-alloydb": {
-   "title": "DynaPORT modernization on Google Cloud with AlloyDB for PostgreSQL and GKE",
-   "link": "https://cloud.google.com/blog/products/databases/dynaport-modernizes-with-alloydb/",
-   "source": "gcloud-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T17:00:00.000Z",
-   "updated": null,
-   "summary": "In global maritime logistics, Marine Ports and Terminals play a significant role in the movement of container and cargo, within and beyond. Marine ports and terminals world-wide use a Terminal Operating System (TOS) which acts as the central nervous system managing port operations 24 hours a day, 36",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 0,
-   "reasons": [
-    "-1 source gcloud-blog",
-    "+1 plans/price/availability \"plans\""
-   ],
-   "status": "below",
-   "hash": "a0ef613c"
-  },
-  "https://cloud.google.com/blog/products/data-analytics/whats-new-in-managed-service-for-apache-spark-4-0": {
-   "title": "What’s new in Managed Service for Apache Spark 4.0",
-   "link": "https://cloud.google.com/blog/products/data-analytics/whats-new-in-managed-service-for-apache-spark-4-0/",
-   "source": "gcloud-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T17:00:00.000Z",
-   "updated": null,
-   "summary": "As organizations move from reactive analytics to proactive systems of action powered by autonomous AI agents, data platforms face a new set of demands. Moving from human scale to agent scale changes both how data pipelines run and how they are built: Teams and AI agents now use Model Context Protoco",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 0,
-   "reasons": [
-    "-1 source gcloud-blog",
-    "+1 niche (agents)"
-   ],
-   "status": "below",
-   "hash": "3ac36a65"
-  },
-  "https://cloud.google.com/blog/products/databases/how-spanner-graph-detects-google-ads-fraud-and-abuse": {
-   "title": "How Spanner Graph detects ads fraud and abuse at Google at multi-billion node scale",
-   "link": "https://cloud.google.com/blog/products/databases/how-spanner-graph-detects-google-ads-fraud-and-abuse/",
-   "source": "gcloud-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T17:00:00.000Z",
-   "updated": null,
-   "summary": "Ever wonder how the Google Ads team keeps the massive system stable and online, despite continuous attempts by hackers to take it down? Part of the answer is using Spanner as its core operational and graph database. The Google Ads team uses a central graph-based platform to fight fraud and abuse wit",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 0,
-   "reasons": [
-    "-1 source gcloud-blog",
-    "+1 niche (fraud)"
-   ],
-   "status": "below",
-   "hash": "bae28fb1"
-  },
-  "https://cloud.google.com/blog/products/data-analytics/vodafone-cuts-data-pipeline-costs-30-via-data-engineeringagent": {
-   "title": "How Vodafone is using the Data Engineering Agent to improve their data pipelines",
-   "link": "https://cloud.google.com/blog/products/data-analytics/vodafone-cuts-data-pipeline-costs-30-via-data-engineeringagent/",
-   "source": "gcloud-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T17:00:00.000Z",
-   "updated": null,
-   "summary": "For large organizations, building and maintaining data pipelines is one of the most complex tasks that data engineering teams are tasked with. In BigQuery environments, the Data Engineering Agent can help, leveraging Gemini to to automate these workflows. In this blog post, Vodafone Czech Republic d",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 4,
-   "reasons": [
-    "-1 source gcloud-blog",
-    "+3 niche (gemini, agent)",
-    "+2 launch \"available in\""
-   ],
-   "status": "below",
-   "hash": "11fcb9c5"
-  },
-  "https://cloud.google.com/blog/products/networking/ambient-networking-for-gke-sidecarless-service-mesh": {
-   "title": "Introducing ambient networking for GKE",
-   "link": "https://cloud.google.com/blog/products/networking/ambient-networking-for-gke-sidecarless-service-mesh/",
-   "source": "gcloud-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T17:00:00.000Z",
-   "updated": null,
-   "summary": "Network sidecars have a deserved reputation for excessive resource consumption and increased management overhead, especially in a service mesh environment. Today, we are announcing the general availability of ambient networking for Google Kubernetes Engine (GKE). This milestone marks an important ev",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 2,
-   "reasons": [
-    "-1 source gcloud-blog",
-    "+2 launch \"Introducing\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "ea0b67a3"
-  },
-  "https://cloud.google.com/blog/products/identity-security/how-to-simplify-cloud-access-with-unified-access-policies": {
-   "title": "How to simplify cloud access with Unified Access Policies, now in preview",
-   "link": "https://cloud.google.com/blog/products/identity-security/how-to-simplify-cloud-access-with-unified-access-policies/",
-   "source": "gcloud-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T17:00:00.000Z",
-   "updated": null,
-   "summary": "As organizations scale their cloud footprint to thousands of autonomous agents and microservices, you can accidentally create an operational bottleneck with strict Identity and Access Management (IAM). Meanwhile, administrators still need to enforce least privilege across thousands of resources with",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 2,
-   "reasons": [
-    "-1 source gcloud-blog",
-    "+1 niche (agents)",
-    "+2 user steps \"How to\""
-   ],
-   "status": "below",
-   "hash": "2ca38db9"
-  },
-  "https://dell.com/en-us/blog/php2shell-what-the-critical-php-flaws-teach-us-about-ai-and-cyber-resilience": {
-   "title": "PHP2Shell: What the Critical PHP Flaws Teach Us About AI and Cyber Resilience",
-   "link": "https://www.dell.com/en-us/blog/php2shell-what-the-critical-php-flaws-teach-us-about-ai-and-cyber-resilience",
-   "source": "dell-blog",
-   "topic": "laptops-hardware",
-   "category": "launch",
-   "date": "2026-11-20T18:00:00.000Z",
-   "updated": null,
-   "summary": "",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": -1,
-   "reasons": [
-    "-1 source dell-blog"
-   ],
-   "status": "below",
-   "hash": "e116d201"
-  },
-  "https://dell.com/en-us/blog/sports-media-ai-starts-with-a-data-foundation": {
-   "title": "Sports Media AI starts with a Data Foundation",
-   "link": "https://www.dell.com/en-us/blog/sports-media-ai-starts-with-a-data-foundation",
-   "source": "dell-blog",
-   "topic": "laptops-hardware",
-   "category": "launch",
-   "date": "2026-11-20T16:00:00.000Z",
-   "updated": null,
-   "summary": "Learn how sports organizations, venues and broadcasters can build an AI-ready data foundation with the Dell AI Data Platform for analytics, media workflows and fan experiences.",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": -1,
-   "reasons": [
-    "-1 source dell-blog"
-   ],
-   "status": "below",
-   "hash": "aaf3143f"
-  },
-  "https://dell.com/en-us/blog/know-which-powermax-snapshots-you-can-trust": {
-   "title": "Know Which PowerMax Snapshots You Can Trust",
-   "link": "https://www.dell.com/en-us/blog/know-which-powermax-snapshots-you-can-trust",
-   "source": "dell-blog",
-   "topic": "laptops-hardware",
-   "category": "launch",
-   "date": "2026-11-20T16:00:00.000Z",
-   "updated": null,
-   "summary": "Dell Cyber Detect for Storage supports Dell PowerMax, helping teams validate primary-storage snapshots and identify trusted recovery points for mission-critical applications.",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 1,
-   "reasons": [
-    "-1 source dell-blog",
-    "+2 user steps \"You Can\""
-   ],
-   "status": "below",
-   "hash": "f183369b"
-  },
-  "https://dell.com/en-us/blog/protecting-your-small-business-during-the-holiday-season": {
-   "title": "Protecting Your Small Business During the Holiday Season",
-   "link": "https://www.dell.com/en-us/blog/protecting-your-small-business-during-the-holiday-season",
-   "source": "dell-blog",
-   "topic": "laptops-hardware",
-   "category": "launch",
-   "date": "2026-11-20T15:00:00.000Z",
-   "updated": null,
-   "summary": "Small business cybersecurity can slip when key people take holiday time off. Learn simple steps, built-in PC protection and expert support that help close gaps.",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": -1,
-   "reasons": [
-    "-1 source dell-blog"
-   ],
-   "status": "below",
-   "hash": "e7528eb8"
-  },
-  "https://mc.merill.net/message/MC1545694": {
-   "title": "MC1545694: Microsoft Entra: Updated passkey registration experience in My Sign-ins",
-   "link": "https://mc.merill.net/message/MC1545694",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-20T17:59:47.000Z",
-   "updated": null,
-   "summary": "Microsoft Entra is updating the passkey registration in My Sign-ins for Microsoft Authenticator users, adding a checkbox, updated link text, and guided steps to start registration. Rollout begins early December 2026, completing by end of December. Organizations should inform users and update guidanc",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 1,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 niche (entra, passkey)",
-    "+1 plans/price/availability \"Rollout\""
-   ],
-   "status": "below",
-   "hash": "728fc7cc"
-  },
   "https://mc.merill.net/message/MC1540327": {
    "title": "MC1540327: Action required: Prepare users who can’t use passkeys for SMS and voice retirement",
    "link": "https://mc.merill.net/message/MC1540327",
@@ -4217,556 +3527,6 @@
    "attempts": 1,
    "resultAt": "2026-11-22T01:44:33.985Z",
    "skipReason": "RADAR-SKIP: covered by /blog/entra-sms-voice-mfa-retirement-migration"
-  },
-  "https://mc.merill.net/message/MC1561862": {
-   "title": "MC1561862: Run Python code as a workflow step",
-   "link": "https://mc.merill.net/message/MC1561862",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-20T15:26:54.000Z",
-   "updated": null,
-   "summary": "We are announcing the ability to use the Code node to run Python as a step in a workflow for logic that expressions and connectors cannot handle in Copilot Studio. This feature will reach general availability on December 1, 2026. How does this affect me? Makers can add Python steps to workflows for ",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 2,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 niche (copilot)",
-    "+2 launch \"general availability\""
-   ],
-   "status": "below",
-   "hash": "b2f3f392"
-  },
-  "https://mc.merill.net/message/MC1561859": {
-   "title": "MC1561859: Generate documents from the Agent node in workflows",
-   "link": "https://mc.merill.net/message/MC1561859",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-20T15:22:06.000Z",
-   "updated": null,
-   "summary": "We are announcing the ability to generate documents from the Agent node in workflows within Copilot Studio. This feature will reach general availability on December 3, 2026. How does this affect me? With this feature, the Agent node can now return files that the agent generates, such as PDF, Word, E",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 4,
-   "reasons": [
-    "-2 source mc-merill",
-    "+4 niche (copilot, excel, agent)",
-    "+2 launch \"general availability\""
-   ],
-   "status": "below",
-   "hash": "39c37968"
-  },
-  "https://aws.amazon.com/whats-new/2026/1/sagemaker-jumpstart-model-leaderboard": {
-   "title": "Amazon SageMaker JumpStart now offers a model leaderboard to compare models on quality, speed, and cost",
-   "link": "https://aws.amazon.com/whats-new/2026/1/sagemaker-jumpstart-model-leaderboard/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T19:27:00.000Z",
-   "updated": null,
-   "summary": "Amazon SageMaker JumpStart now offers a model leaderboard in Amazon SageMaker Studio. You can use it to compare foundation models side by side on throughput, latency, and cost, and then deploy or customize the model that fits your workload. Comparing models has usually meant reading model cards one ",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 0,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 user steps \"You can\""
-   ],
-   "status": "below",
-   "hash": "3f632fa8"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/glue-catalog-data-quality-monitoring": {
-   "title": "AWS Glue Data Catalog introduces data quality monitoring for catalogs and databases",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/glue-catalog-data-quality-monitoring/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T19:00:00.000Z",
-   "updated": null,
-   "summary": "AWS Glue Data Catalog introduces data quality monitoring for catalogs and databases, powered by AWS Glue Data Quality, which profiles and evaluates your tables at catalog scale from a single configuration. You define data quality checks once for a catalog, a database, or a single table, and AWS Glue",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 3,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"introduces\"",
-    "+2 user steps \"setup\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "fc92ef42"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-pricing-calculator-api": {
-   "title": "AWS Pricing Calculator now estimates workload costs through a new API",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-pricing-calculator-api/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T18:35:00.000Z",
-   "updated": null,
-   "summary": "AWS Pricing Calculator now offers GetUsageLinesEstimatedCost, a new API that returns the estimated cost of a planned workload in a single API call. You send up to 500 usage lines in one request and get the cost back right away, without saving an estimate to your account. While workload estimates let",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 0,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 user steps \"You can\"",
-    "+1 plans/price/availability \"Pricing\"",
-    "-1 narrow audience \"API\""
-   ],
-   "status": "below",
-   "hash": "1a01466a"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-billing-cost-management-apis-payment-status": {
-   "title": "AWS Billing and Cost Management now offers APIs to track payment status",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-billing-cost-management-apis-payment-status/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T18:30:00.000Z",
-   "updated": null,
-   "summary": "Today, AWS Billing and Cost Management announces new APIs that let you view your AWS payment information through the AWS SDKs and the AWS CLI. With these APIs, you can check your account balance, find invoices that are due or past due, see which payments and credit memos were applied to each invoice",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 3,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (agent)",
-    "+2 launch \"Now you can\"",
-    "+2 user steps \"you can\""
-   ],
-   "status": "below",
-   "hash": "1940f308"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/eventbridge-scheduler-new-api-actions": {
-   "title": "Amazon EventBridge Scheduler adds 589 new API actions and event bus targets",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/eventbridge-scheduler-new-api-actions/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T18:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon EventBridge Scheduler expands its AWS SDK integrations with 589 new API actions across 81 AWS services, and adds templated targets for the enhanced EventBridge Custom event bus. You can now schedule direct invocations of a broader set of AWS services without writing custom integration code. E",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": -2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"You can now\"",
-    "+2 user steps \"You can\"",
-    "-1 narrow audience \"API\"",
-    "-3 corporate/announcement \"event\""
-   ],
-   "status": "below",
-   "hash": "92984c71"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/stacksets-custom-execution-roles": {
-   "title": "AWS CloudFormation Service-Managed StackSets adds custom execution roles with nested stacks support",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/stacksets-custom-execution-roles/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T17:45:00.000Z",
-   "updated": null,
-   "summary": "AWS CloudFormation StackSets now supports custom execution roles for service-managed stack sets, which enables you to scope the permissions StackSets uses in each target AWS account. StackSets deploys the same infrastructure, such as networking and security settings, across thousands of accounts and",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 3,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"you can\"",
-    "+1 plans/price/availability \"Regions\""
-   ],
-   "status": "below",
-   "hash": "d93de598"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-eventbridge-webhook-events": {
-   "title": "Amazon EventBridge Custom event bus now supports Webhook Events",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-eventbridge-webhook-events",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T17:30:00.000Z",
-   "updated": null,
-   "summary": "Amazon EventBridge now supports Webhook Events for the enhanced Custom event bus, so SaaS applications, AI agents, and custom integrations can send events to a bus over HTTPS. You no longer need to deploy and operate your own API endpoint and compute to receive webhooks and publish them to your bus.",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": -1,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (agents)",
-    "+2 launch \"now supports\"",
-    "+1 launch in the headline",
-    "-3 corporate/announcement \"event\""
-   ],
-   "status": "below",
-   "hash": "f9acb4e6"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-eventbridge-msk-target": {
-   "title": "Amazon EventBridge Custom event bus now supports Amazon MSK as a target",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-eventbridge-msk-target/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T17:30:00.000Z",
-   "updated": null,
-   "summary": "Amazon EventBridge now supports Amazon Managed Streaming for Apache Kafka (Amazon MSK) as a target for the enhanced Custom event bus, so you can deliver events to Kafka topics without running your own producer. The EventBridge Custom event bus is a serverless event broker that enables you to create ",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 0,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"you can\"",
-    "+1 launch in the headline",
-    "-3 corporate/announcement \"event\""
-   ],
-   "status": "below",
-   "hash": "42ed4479"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-aurora-mysql-8412-available": {
-   "title": "Amazon Aurora MySQL 8.4.12 is now generally available",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-aurora-mysql-8412-available/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T17:00:00.000Z",
-   "updated": null,
-   "summary": "Starting today, Amazon Aurora MySQL-Compatible Edition 8.4 supports MySQL 8.4.12. This release includes several security enhancements and bug fixes. We recommend upgrading to the newer minor versions to accept fixes for Common Vulnerabilities and Exposures (CVEs) in prior versions of MySQL and to be",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 4,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (windows)",
-    "+2 launch \"generally available\"",
-    "+2 user steps \"You can\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "9598e7e9"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-connect-cases-sla-enhancements": {
-   "title": "Amazon Connect Customer expands how teams track and act on service level agreements for cases",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-connect-cases-sla-enhancements/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T17:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon Connect Customer enhances service level agreements (SLAs) for cases, so teams can set service goals for more of their work and respond faster when a case falls behind. Admins can set SLAs on case fields beyond status, such as requiring a case’s severity to drop from high to medium within 24 h",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 4,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (agent)",
-    "+2 launch \"available in\"",
-    "+2 user steps \"Admins can\"",
-    "+1 plans/price/availability \"Regions\""
-   ],
-   "status": "below",
-   "hash": "28f182c7"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-transform-ui-windows": {
-   "title": "AWS Transform announces UI component modernization for Windows web applications",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-transform-ui-windows/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T16:30:00.000Z",
-   "updated": null,
-   "summary": "Today, AWS announced the general availability of third-party UI component porting for ASP.NET web site modernization in AWS Transform. When AWS Transform modernizes a legacy ASP.NET web site, it now detects dependencies on popular third-party UI component libraries. You can replace them with license",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 1,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 niche (windows, agent)",
-    "+2 launch \"general availability\"",
-    "+2 user steps \"You can\"",
-    "+1 plans/price/availability \"free\"",
-    "-4 customer story"
-   ],
-   "status": "below",
-   "hash": "4fdee43c"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-transform-windows-dotnet-11": {
-   "title": "AWS Transform announces support for .NET 11 and expanded project types",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-transform-windows-dotnet-11/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T16:00:00.000Z",
-   "updated": null,
-   "summary": "Today, AWS announced the general availability of .NET 11 support in AWS Transform for .NET. Support for VB.NET, desktop projects, and mobile projects, previously in preview, is also now generally available. You can modernize a broad range of Windows .NET workloads to the latest version of .NET and l",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": -1,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (windows)",
-    "+2 launch \"general availability\"",
-    "+2 user steps \"You can\"",
-    "-4 customer story"
-   ],
-   "status": "below",
-   "hash": "6454de74"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/ec2-t9g-instances-ga": {
-   "title": "Introducing Amazon EC2 T9g instances based on Graviton5",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/ec2-t9g-instances-ga/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T16:00:00.000Z",
-   "updated": null,
-   "summary": "AWS is announcing the general availability of new low-cost burstable Amazon EC2 T9g instances, which offer the best price performance among general-purpose EC2 instances. These instances are powered by AWS Graviton5 processors and built on the latest sixth generation AWS Nitro cards. T9g instances d",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"Introducing\"",
-    "+1 plans/price/availability \"price\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "21637e31"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-msk-standard-brokers-to-express-brokers-in-place-upgrade": {
-   "title": "Amazon MSK now supports in-place upgrade from Standard brokers to Express brokers",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-msk-standard-brokers-to-express-brokers-in-place-upgrade",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T16:00:00.000Z",
-   "updated": null,
-   "summary": "You can now upgrade existing Amazon MSK Provisioned clusters from Standard brokers to Express brokers in place, with fully managed data migration and no application changes. Express brokers are designed to deliver up to 3x more throughput per broker, scale up to 20x faster, and recover up to 90% fas",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 3,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"upgrade\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "67470d77"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-cur-cost-explorer": {
-   "title": "AWS launches standardized cost and rate columns in CUR 2.0 and Cost Explorer",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-cur-cost-explorer/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T14:00:00.000Z",
-   "updated": null,
-   "summary": "AWS Data Exports for Cost and Usage Report (CUR) 2.0 now includes standardized cost and rate columns that represent cost consistently across AWS purchase options, including On Demand, Savings Plans, Reserved Instances, EC2 Spot, and EC2 Capacity Blocks for ML. These 14 columns are added when you ena",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 4,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"launches\"",
-    "+2 user steps \"enable\"",
-    "+1 plans/price/availability \"Plans\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "965abdd9"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/vpc-lattice-cloudwatch-metrics": {
-   "title": "Amazon VPC Lattice now supports CloudWatch metrics for VPC resources",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/vpc-lattice-cloudwatch-metrics/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T08:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon VPC Lattice now publishes Amazon CloudWatch metrics for VPC resources. Resource owners — those who share resources via VPC Lattice — and resource consumers — those who access those shared resources — can now see TCP traffic to resources such as databases, clusters, and on-premises endpoints. ",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 3,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"you can\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "c4c6dff8"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-rtb-fabric-modules-marketplace": {
-   "title": "AWS RTB Fabric Modules are now generally available through AWS Marketplace",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-rtb-fabric-modules-marketplace/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-19T15:00:00.000Z",
-   "updated": null,
-   "summary": "AWS RTB Fabric Modules from AdTech partners including Pixalate, WURFL by ScientiaMobile, and Picnic are now available through AWS Marketplace. With AWS RTB Fabric Modules, any demand-side platform (DSP), supply-side platform (SSP), and publisher on RTB Fabric can discover, configure, and deploy part",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 3,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (fraud)",
-    "+2 launch \"generally available\"",
-    "+2 user steps \"configure\"",
-    "+1 launch in the headline",
-    "-1 narrow audience \"Marketplace\""
-   ],
-   "status": "below",
-   "hash": "fd2282b2"
-  },
-  "https://azure.microsoft.com/updates?id=581963": {
-   "title": "[In preview] Public Preview: Azure Firewall for Containers",
-   "link": "https://azure.microsoft.com/updates?id=581963",
-   "source": "azure-updates",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T20:05:17.000Z",
-   "updated": "2026-11-20T20:05:17.000Z",
-   "summary": "Azure Firewall for Containers extends Azure Firewall protection to containerized workloads, providing a centralized approach to securing network traffic for container environments. Customers can use Azure Firewall capabilities as part of their container n",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": -2,
-   "reasons": [
-    "-2 source azure-updates"
-   ],
-   "status": "below",
-   "hash": "c4d085b2"
-  },
-  "https://machinelearning.apple.com/research/depth-pro-2-monocular": {
-   "title": "Depth Pro 2: Sharp and Temporally Consistent Metric Monocular Depth",
-   "link": "https://machinelearning.apple.com/research/depth-pro-2-monocular",
-   "source": "apple-ml",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-20T00:00:00.000Z",
-   "updated": null,
-   "summary": "We present Depth Pro 2, an approach to estimating dense metric depth for images and video at full resolution. By analyzing prior methods for monocular depth estimation, we find that they commonly trade off temporal consistency and boundary sharpness: multi-frame methods favor consistency, single-fra",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": -2,
-   "reasons": [
-    "-2 source apple-ml"
-   ],
-   "status": "below",
-   "hash": "662f71ea"
-  },
-  "https://elevenlabs.io/blog/video-variants-localization-ads-engine": {
-   "title": "Introducing video ad variants and localization in Ads Engine",
-   "link": "https://elevenlabs.io/blog/video-variants-localization-ads-engine",
-   "source": "elevenlabs-blog",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-20T12:00:00.000Z",
-   "updated": null,
-   "summary": "Ads Engine makes new versions of the video ads you already run: new hooks, new soundtracks, and dubbed versions with translated captions.",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 1,
-   "reasons": [
-    "-2 source elevenlabs-blog",
-    "+2 launch \"Introducing\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "32a4b6cf"
-  },
-  "https://elevenlabs.io/blog/build-an-outbound-reminder-agent-with-architect": {
-   "title": "ElevenAgents for Healthcare: Build an outbound appointment reminder agent with Architect",
-   "link": "https://elevenlabs.io/blog/build-an-outbound-reminder-agent-with-architect",
-   "source": "elevenlabs-blog",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-20T12:00:00.000Z",
-   "updated": null,
-   "summary": "Build an outbound voice agent on ElevenAgents that verifies patients and confirms, reschedules, or cancels appointments in the EHR during the call.",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": -4,
-   "reasons": [
-    "-2 source elevenlabs-blog",
-    "+1 niche (agent)",
-    "-3 corporate/announcement \"appointment\""
-   ],
-   "status": "below",
-   "hash": "da069a44"
-  },
-  "https://manageengine.com/cloudspend/blog/aws-reinvent-cost-surprises.html": {
-   "title": "Going to re:Invent? Here’s the RCA for your surprise January AWS bill in advance",
-   "link": "https://www.manageengine.com/cloudspend/blog/aws-reinvent-cost-surprises.html",
-   "source": "manageengine-blog",
-   "topic": "security-identity",
-   "category": "launch",
-   "date": "2026-11-20T20:30:00.000Z",
-   "updated": null,
-   "summary": "It’s mid-January. Someone in finance asks why the latest AWS bill is so much higher than expected, and the room goes quiet. Nobody is sure which service caused it, which team launched it, or whether it’s still needed.Most teams have had this meeting. And a surprising number can trace it back to the ",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 0,
-   "reasons": [
-    "-2 source manageengine-blog",
-    "+2 launch \"launched\""
-   ],
-   "status": "below",
-   "hash": "9caec86d"
-  },
-  "https://changelog.shopify.com/posts/flow-new-updated-triggers-for-orders-customers-and-more": {
-   "title": "Flow: New \"updated\" triggers for orders, customers, and more",
-   "link": "https://changelog.shopify.com/posts/flow-new-updated-triggers-for-orders-customers-and-more",
-   "source": "shopify-changelog",
-   "topic": "small-business-it",
-   "category": "launch",
-   "date": "2026-11-20T20:30:00.000Z",
-   "updated": null,
-   "summary": "You can now build workflows that respond when a customer, order, refund, return, fulfillment order, collection, location, or inventory item is updated on your shop. Eight new triggers are available in Shopify Flow: Customer updated Order updated Refund updated Fulfillment order updated Return update",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 2,
-   "reasons": [
-    "-2 source shopify-changelog",
-    "+2 launch \"You can now\"",
-    "+2 user steps \"You can\""
-   ],
-   "status": "below",
-   "hash": "41505df0"
-  },
-  "https://changelog.shopify.com/posts/email-and-text-receipts-now-match-your-printed-receip": {
-   "title": "Email and text receipts now match your printed receipt",
-   "link": "https://changelog.shopify.com/posts/email-and-text-receipts-now-match-your-printed-receip",
-   "source": "shopify-changelog",
-   "topic": "small-business-it",
-   "category": "launch",
-   "date": "2026-11-20T17:00:00.000Z",
-   "updated": null,
-   "summary": "POS receipts sent by email or text now show the same content as your printed receipt. They use the template you already set up in the POS receipt editor, so there's no second template to keep up to date. Customers who choose text now get the receipt itself instead of a link to their order. We've als",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": 1,
-   "reasons": [
-    "-2 source shopify-changelog",
-    "+1 niche (exchange)",
-    "+2 user steps \"set up\""
-   ],
-   "status": "below",
-   "hash": "557cdb59"
-  },
-  "https://aws.amazon.com/blogs/machine-learning/how-standard-bank-group-automates-ai-risk-assessment-for-generative-ai": {
-   "title": "How Standard Bank Group automates AI risk assessment for generative AI",
-   "link": "https://aws.amazon.com/blogs/machine-learning/how-standard-bank-group-automates-ai-risk-assessment-for-generative-ai/",
-   "source": "aws-ml-blog",
-   "topic": "ai-engineering",
-   "category": "launch",
-   "date": "2026-11-20T20:37:31.000Z",
-   "updated": null,
-   "summary": "Standard Bank Group automated the evidence behind its generative AI approval gates. Working with AWS Professional Services, the bank built an assessment in its own AWS account that scores each use case against international AI standards and its own policies using LLM-as-a-judge on Amazon Bedrock, gi",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": -3,
-   "reasons": [
-    "-3 source aws-ml-blog"
-   ],
-   "status": "below",
-   "hash": "4963da69"
-  },
-  "https://aws.amazon.com/blogs/machine-learning/announcing-amazon-textract-insights-verifiable-generative-ai-for-documents": {
-   "title": "Announcing Amazon Textract Insights: Verifiable generative AI for documents",
-   "link": "https://aws.amazon.com/blogs/machine-learning/announcing-amazon-textract-insights-verifiable-generative-ai-for-documents/",
-   "source": "aws-ml-blog",
-   "topic": "ai-engineering",
-   "category": "launch",
-   "date": "2026-11-20T20:22:00.000Z",
-   "updated": null,
-   "summary": "Announcing the general availability of Amazon Textract Insights, a new generative AI feature of Amazon Textract. Describe the fields you need in natural language, submit a document or a mixed packet, and receive structured results with a confidence score and page-level grounding for each value, with",
-   "first": "2026-11-20T20:46:38.014Z",
-   "score": -1,
-   "reasons": [
-    "-3 source aws-ml-blog",
-    "+2 launch \"general availability\""
-   ],
-   "status": "below",
-   "hash": "80ca581a"
   },
   "https://workspaceupdates.googleblog.com/2026/11/weekly-recap-11-20-2026.html": {
    "title": "Google Workspace Weekly Recap - November 20, 2026",
@@ -7187,15 +5947,19 @@
    "updated": null,
    "summary": "Hackers exploited a vulnerability in GL.iNet's GoodCloud remote management service to install malware on some customer routers and KVM devices, the maker of travel routers and remote-access KVM hardware said in a security notice updated today. The company identified and fixed the flaw on Friday and ",
    "first": "2026-11-23T12:11:08.778Z",
-   "score": 8,
+   "score": 11,
    "reasons": [
     "+1 source thn",
     "+3 incident \"Hackers\"",
+    "+3 major platform (gl.inet)",
     "+2 exploited \"Exploited\"",
-    "+2 user action \"fixed\""
+    "+2 user action \"fixed\"",
+    "re-scored (was 8)",
+    "covered by /blog/glinet-goodcloud-compromise-check-update"
    ],
-   "status": "below",
-   "hash": "e85f621d"
+   "status": "duplicate",
+   "hash": "e85f621d",
+   "post": "glinet-goodcloud-compromise-check-update"
   },
   "https://news.samsung.com/in/winning-pitch-that-earned-team-morphism-a-place-among-the-sft-2026-winners": {
    "title": "Winning Pitch that Earned Team Morphism a Place Among the SFT 2026 Winners",
@@ -7464,11 +6228,13 @@
    "updated": null,
    "summary": "Threat actors are exploiting a now-patched security flaw in ConnectWise ScreenConnect to target managed service provider (MSP) servers. The activity revolves around CVE-2026-84869 (CVSS score: 9.9), a critical ScreenConnect client flaw that allows a guest to transfer and execute a malicious payload ",
    "first": "2026-11-23T13:16:57.470Z",
-   "score": 6,
+   "score": 8,
    "reasons": [
     "+1 source thn",
     "+3 incident \"Hackers\"",
-    "+2 user action \"patched\""
+    "+2 exploited \"Hackers Exploit\"",
+    "+2 user action \"patched\"",
+    "re-scored (was 6)"
    ],
    "status": "below",
    "hash": "6e1b5d1a"
@@ -8582,6 +7348,1217 @@
    ],
    "status": "below",
    "hash": "f762f229"
+  },
+  "https://openai.com/index/introducing-shirudo": {
+   "title": "OpenAI and Cisco introduce Shirudo",
+   "link": "https://openai.com/index/introducing-shirudo",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-23T21:20:00.000Z",
+   "updated": null,
+   "summary": "OpenAI and Cisco introduce Shirudo, an open-source runtime for Linux. It helps teams protect running systems while they roll out patches.",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 4,
+   "reasons": [
+    "+2 source openai-news",
+    "+1 niche (openai)",
+    "+2 launch \"roll out\"",
+    "-1 category (Security)"
+   ],
+   "status": "below",
+   "hash": "3dd0bc2e"
+  },
+  "https://openai.com/business/learn/connected-intelligence-for-in-house-legal": {
+   "title": "Connected intelligence for in-house legal",
+   "link": "https://openai.com/business/learn/connected-intelligence-for-in-house-legal",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-23T08:00:00.000Z",
+   "updated": null,
+   "summary": "Watch OpenAI’s Stacey Wang and Craig Bruney, Mary O’Carroll of LECG, and Cooley’s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get more from outside counsel.",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 3,
+   "reasons": [
+    "+2 source openai-news",
+    "+1 niche (openai)"
+   ],
+   "status": "below",
+   "hash": "e86b67ca"
+  },
+  "https://openai.com/business/customer-stories/richpanel-ai-customer-support": {
+   "title": "Richpanel helps companies automate 50% of support in 30 days",
+   "link": "https://openai.com/business/customer-stories/richpanel-ai-customer-support",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-23T08:00:00.000Z",
+   "updated": null,
+   "summary": "Richpanel uses GPT-6 Astra and GPT-6.1 Sol to equip its AI support agents with tools and procedures, and GPT-6 Luna for their conversations.",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 3,
+   "reasons": [
+    "+2 source openai-news",
+    "+1 niche (agents)"
+   ],
+   "status": "below",
+   "hash": "5946549c"
+  },
+  "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-hydrogen-builders": {
+   "title": "See what 6 builders are making with Gemini 4 Hydrogen",
+   "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-hydrogen-builders/",
+   "source": "gemini-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-23T18:00:00.000Z",
+   "updated": null,
+   "summary": "See six projects builders created with Gemini 4 Hydrogen, from rainy sci-fi skies and pixelated koi ponds to an interactive moth.",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 4,
+   "reasons": [
+    "+1 source gemini-blog",
+    "+2 niche (gemini)",
+    "+1 also on google-keyword"
+   ],
+   "status": "below",
+   "hash": "9d2228c3"
+  },
+  "https://blog.google/innovation-and-ai/products/gemini-app/gemini-canvas-tasks": {
+   "title": "Here are 4 things you didn’t know you could do with Gemini Canvas.",
+   "link": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-canvas-tasks/",
+   "source": "gemini-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-23T18:00:00.000Z",
+   "updated": null,
+   "summary": "Boost productivity with Google Gemini Canvas. Build web apps, create custom study tools, and refine writing side-by-side. Try it in your next chat.",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 6,
+   "reasons": [
+    "+1 source gemini-blog",
+    "+2 niche (gemini)",
+    "+2 user steps \"Try it\"",
+    "+1 also on google-keyword"
+   ],
+   "status": "below",
+   "hash": "684358d2"
+  },
+  "https://claude.com/resources/articles/kpmg-todd-lohr-on-ai-when-your-data-is-also-your-clients-data": {
+   "title": "KPMG's Todd Lohr on AI when your data is also your clients' data",
+   "link": "https://claude.com/resources/articles/kpmg-todd-lohr-on-ai-when-your-data-is-also-your-clients-data",
+   "source": "claude-articles",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-23T12:00:00.000Z",
+   "updated": null,
+   "summary": "Todd Lohr, KPMG US Vice Chair and Head of Client Technology & Innovation, on adopting frontier AI and building safeguards at the same time, and what that means for a firm that holds its clients' most sensitive data.",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 4,
+   "reasons": [
+    "+1 source claude-articles",
+    "+2 niche (claude)",
+    "+1 plans/price/availability \"countries\""
+   ],
+   "status": "below",
+   "hash": "4ed25550"
+  },
+  "https://claude.com/resources/articles/enterprise-guide-to-securing-coding-agents": {
+   "title": "The enterprise guide to securing coding agents",
+   "link": "https://claude.com/resources/articles/enterprise-guide-to-securing-coding-agents",
+   "source": "claude-articles",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-23T12:00:00.000Z",
+   "updated": null,
+   "summary": "How security and technical leaders can understand and bound risk as they scale Claude Code",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 7,
+   "reasons": [
+    "+1 source claude-articles",
+    "+3 niche (claude, agents)",
+    "+2 user steps \"you can\"",
+    "+1 plans/price/availability \"plans\""
+   ],
+   "status": "below",
+   "hash": "c6b84bb9"
+  },
+  "https://claude.com/resources/articles/introducing-claude-ship": {
+   "title": "Introducing Claude Ship",
+   "link": "https://claude.com/resources/articles/introducing-claude-ship",
+   "source": "claude-articles",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-23T12:00:00.000Z",
+   "updated": null,
+   "summary": "Open a pull request and get back to building. Claude can now review pull requests, fix them, and approve the ones that a team's policy allows.",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 10,
+   "reasons": [
+    "+1 source claude-articles",
+    "+3 niche (claude, agents)",
+    "+2 launch \"Introducing\"",
+    "+2 user steps \"how to\"",
+    "+1 launch in the headline",
+    "+1 autocomplete (9)"
+   ],
+   "status": "writing",
+   "hash": "d6e2bc06",
+   "kind": "new",
+   "extra": false,
+   "taskAt": "2026-11-23T23:59:46.286Z",
+   "attempts": 1
+  },
+  "https://bleepingcomputer.com/news/security/south-koreas-power-giant-kepco-confirms-data-breach-impacting-15-million": {
+   "title": "South Korea’s power giant KEPCO confirms data breach impacting 1.5 million",
+   "link": "https://www.bleepingcomputer.com/news/security/south-koreas-power-giant-kepco-confirms-data-breach-impacting-15-million/",
+   "source": "bleepingcomputer",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-23T20:54:51.000Z",
+   "updated": null,
+   "summary": "A threat actor breached the internal network of Korea Electric Power Corporation (KEPCO) and accessed two systems containing customer, employee, and contractor data. [...]",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 9,
+   "reasons": [
+    "+1 source bleepingcomputer",
+    "+3 incident \"breach\"",
+    "+2 large scale \"1.5 million\"",
+    "+1 user data or credentials exposed",
+    "+1 category (Security)",
+    "+1 autocomplete (9)"
+   ],
+   "status": "below",
+   "hash": "a0cb6a7e"
+  },
+  "https://bleepingcomputer.com/news/security/microsoft-azure-flaw-exploited-to-steal-customers-api-credentials": {
+   "title": "Microsoft Azure flaw exploited to steal customers' API credentials",
+   "link": "https://www.bleepingcomputer.com/news/security/microsoft-azure-flaw-exploited-to-steal-customers-api-credentials/",
+   "source": "bleepingcomputer",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-23T19:42:20.000Z",
+   "updated": null,
+   "summary": "Microsoft is warning customers that a security vulnerability in Azure API Management (APIM) Classic tiers was exploited to steal stored API credentials, with Norwegian authorities linking the flaw to cyberattacks against energy companies. [...]",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 11,
+   "reasons": [
+    "+1 source bleepingcomputer",
+    "+3 incident \"steal\"",
+    "+3 major platform (azure)",
+    "+2 exploited \"exploited\"",
+    "+1 user data or credentials exposed",
+    "+1 category (Security)",
+    "covered by /blog/workload-identity-federation-github-actions-azure"
+   ],
+   "status": "duplicate",
+   "hash": "df0fc97e",
+   "post": "workload-identity-federation-github-actions-azure"
+  },
+  "https://bleepingcomputer.com/news/security/spanish-laliga-confirms-hackers-stole-soccer-fans-personal-data": {
+   "title": "Spanish LaLiga confirms hackers stole soccer fans’ personal data",
+   "link": "https://www.bleepingcomputer.com/news/security/spanish-laliga-confirms-hackers-stole-soccer-fans-personal-data/",
+   "source": "bleepingcomputer",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-23T18:38:40.000Z",
+   "updated": null,
+   "summary": "LaLiga, Spain's top men's football league, disclosed a data breach that exposed personal information belonging to users of its services and those of some affiliated clubs. [...]",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 6,
+   "reasons": [
+    "+1 source bleepingcomputer",
+    "+3 incident \"hackers\"",
+    "+1 user data or credentials exposed",
+    "+1 category (Security)"
+   ],
+   "status": "below",
+   "hash": "e7d6084f"
+  },
+  "https://github.blog/changelog/2026-11-23-issue-statuses-and-repository-boards-are-in-public-preview": {
+   "title": "Issue statuses and repository boards are in public preview",
+   "link": "https://github.blog/changelog/2026-11-23-issue-statuses-and-repository-boards-are-in-public-preview",
+   "source": "github-changelog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-23T20:37:11.000Z",
+   "updated": null,
+   "summary": "Open or closed doesn’t always tell you where an issue stands. You can now use more specific statuses to give your team and agents shared context about what’s in flight… The post Issue statuses and repository boards are in public preview appeared first on The GitHub Blog .",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 4,
+   "reasons": [
+    "-1 source github-changelog",
+    "+1 niche (agents)",
+    "+2 launch \"You can now\"",
+    "+2 user steps \"You can\""
+   ],
+   "status": "below",
+   "hash": "280278c9"
+  },
+  "https://github.blog/changelog/2026-11-23-secret-scanning-reduces-false-positives-for-slack": {
+   "title": "Secret scanning reduces false positives for Slack",
+   "link": "https://github.blog/changelog/2026-11-23-secret-scanning-reduces-false-positives-for-slack",
+   "source": "github-changelog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-23T18:32:59.000Z",
+   "updated": null,
+   "summary": "Secret scanning now reduces false-positive detections for Slack secrets. False positives reduced The following detector improvements reduce false-positive matches for supported secrets. Provider Secret type Improvement Slack slack_incoming_webhook_url Exclude URLs… The post Secret scanning reduces f",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": -1,
+   "reasons": [
+    "-1 source github-changelog"
+   ],
+   "status": "below",
+   "hash": "5da2e186"
+  },
+  "https://github.blog/changelog/2026-11-23-usage-reports-will-include-a-user-id-column-starting-december-1": {
+   "title": "Usage reports will include a user ID column starting December 1",
+   "link": "https://github.blog/changelog/2026-11-23-usage-reports-will-include-a-user-id-column-starting-december-1",
+   "source": "github-changelog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-23T10:29:36.000Z",
+   "updated": null,
+   "summary": "Starting December 1, 2026, usage reports that include a username column will also include a user_id column next to it. Every column after username will move one position to the… The post Usage reports will include a user ID column starting December 1 appeared first on The GitHub Blog .",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": -1,
+   "reasons": [
+    "-1 source github-changelog"
+   ],
+   "status": "below",
+   "hash": "7bc2860"
+  },
+  "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/cisco-and-openai-launch-shirudo-a-new-project-to-safeguard-agentic-ai.html": {
+   "title": "Cisco and OpenAI Launch Shirudo, A New Project to Safeguard Agentic AI",
+   "link": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/cisco-and-openai-launch-shirudo-a-new-project-to-safeguard-agentic-ai.html?source=rss",
+   "source": "cisco-newsroom",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T21:20:00.000Z",
+   "updated": null,
+   "summary": "Cisco (NASDAQ: CSCO) and OpenAI today launched an open source effort to make infrastructure secure by default and able to defend itself against cyber attacks. More RSS Feeds: https://newsroom.cisco.com/c/r/newsroom/en/us/rss-feeds.html",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 3,
+   "reasons": [
+    "-1 source cisco-newsroom",
+    "+1 niche (openai)",
+    "+2 launch \"Launch\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "a1bd4465"
+  },
+  "https://cloud.google.com/blog/products/identity-security/google-is-named-a-leader-in-the-2026-gartner-magic-quadrant-for-siem": {
+   "title": "Google is named a Leader in the 2026 Gartner® Magic Quadrant™ for SIEM",
+   "link": "https://cloud.google.com/blog/products/identity-security/google-is-named-a-leader-in-the-2026-gartner-magic-quadrant-for-siem/",
+   "source": "gcloud-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T17:00:00.000Z",
+   "updated": null,
+   "summary": "Today, we are proud to announce that Gartner has recognized Google as a Leader in the 2026 Gartner® Magic Quadrant™ for Security Information and Event Management (SIEM). Among the 15 vendors evaluated this year, Google was positioned furthest on “Completeness of Vision.” Today's threat landscape req",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 0,
+   "reasons": [
+    "-1 source gcloud-blog",
+    "+1 niche (agents)"
+   ],
+   "status": "below",
+   "hash": "73b093da"
+  },
+  "https://intel.com/content/www/us/en/newsroom/news/corporate/investor-conferences-december-2026.html": {
+   "title": "Upcoming investor conferences",
+   "link": "https://www.intel.com/content/www/us/en/newsroom/news/corporate/investor-conferences-december-2026.html",
+   "source": "intel-newsroom",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-23T12:00:00.000Z",
+   "updated": null,
+   "summary": "Corporate Information",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": -1,
+   "reasons": [
+    "-1 source intel-newsroom"
+   ],
+   "status": "below",
+   "hash": "45ce6203"
+  },
+  "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nov2026-java-rce-eCa6ss9z?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerability%20in%20Oracle%20OpenJDK%20(Java4Shell)%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1": {
+   "title": "Vulnerability in Oracle OpenJDK (Java4Shell) Affecting Cisco Products: November 2026",
+   "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nov2026-java-rce-eCa6ss9z?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerability%20in%20Oracle%20OpenJDK%20(Java4Shell)%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+   "source": "cisco-psirt",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-23T20:32:33.000Z",
+   "updated": null,
+   "summary": "On November 17, 2026, Oracle announced the availability of fixes for a vulnerability in OpenJDK that could lead to remote code execution identified by CVE-2026-114938. The vulnerability affects OpenJDK Java 17.0.6 and later on x86-64 platforms when processing Base64 encoded content. For more informa",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 10,
+   "reasons": [
+    "-1 source cisco-psirt",
+    "+2 vulnerability \"Vulnerability\"",
+    "+5 critical flaw in widely used software \"OpenJDK\" / \"Java4Shell\"",
+    "+2 user action \"fixes\"",
+    "+2 corroborated by openai-news, bleepingcomputer, thn (cisco, java4shell)",
+    "covered by /blog/java4shell-cve-2026-114938-openjdk-check-patch-workaround"
+   ],
+   "status": "update-candidate",
+   "hash": "c78c7053",
+   "post": "java4shell-cve-2026-114938-openjdk-check-patch-workaround"
+  },
+  "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-phpaftershell-nov-2026-kT9pL4Xe?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerability%20in%20PHP%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1": {
+   "title": "Vulnerability in PHP Affecting Cisco Products: November 2026",
+   "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-phpaftershell-nov-2026-kT9pL4Xe?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerability%20in%20PHP%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+   "source": "cisco-psirt",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-23T20:20:00.000Z",
+   "updated": null,
+   "summary": "On November 19, 2026, the PHP Foundation announced the availability of security fixes that address a critical vulnerability that could lead to remote code execution. This vulnerability is identified by CVE-2026-126714. For information about this vulnerability, see the advisory GHSA-fm2m-fjf5-v3cp . ",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 10,
+   "reasons": [
+    "-1 source cisco-psirt",
+    "+2 vulnerability \"Vulnerability\"",
+    "+5 critical flaw in widely used software \"PHP\" / \"critical\"",
+    "+2 user action \"fixes\"",
+    "+2 corroborated by openai-news, bleepingcomputer (cisco)",
+    "same incident as \"Vulnerability in Oracle OpenJDK (Java4Shell) Affecting Cisco\""
+   ],
+   "status": "duplicate",
+   "hash": "1d4f5c6a",
+   "post": "cisco-expressway-cve-2026-76466-exploited-patch"
+  },
+  "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1": {
+   "title": "Vulnerabilities in nginx Affecting Cisco Products: November 2026",
+   "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+   "source": "cisco-psirt",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-23T20:14:39.000Z",
+   "updated": null,
+   "summary": "On November 18, 2026, nginx announced the availability of a fix for multiple critical vulnerabilities in nginx that could lead to remote code execution. These vulnerabilities affect nginx releases 1.9.5 through 1.31.8 and is fixed in releases 1.31.9 (mainline) and 1.30.7 (stable). These vulnerabilit",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 10,
+   "reasons": [
+    "-1 source cisco-psirt",
+    "+2 vulnerability \"Vulnerabilities\"",
+    "+5 critical flaw in widely used software \"nginx\" / \"critical\"",
+    "+2 user action \"fix\"",
+    "+2 corroborated by openai-news, bleepingcomputer, sophos-advisories (cisco, CVE-2026-113425)",
+    "same incident as \"Vulnerability in Oracle OpenJDK (Java4Shell) Affecting Cisco\""
+   ],
+   "status": "duplicate",
+   "hash": "b46c307f",
+   "post": "cisco-expressway-cve-2026-76466-exploited-patch"
+  },
+  "https://salesforce.com/blog/understanding-salesforce-connected-app-or-external-client-app-suspension": {
+   "title": "Understanding Salesforce Connected App or External Client App Suspension",
+   "link": "https://www.salesforce.com/blog/understanding-salesforce-connected-app-or-external-client-app-suspension/",
+   "source": "salesforce-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-23T18:42:47.000Z",
+   "updated": null,
+   "summary": "Many Connected Apps and External Client Apps are developed, maintained, and distributed by third parties on the AgentExchange and other marketplaces. Salesforce customers can choose to connect these third-party applications directly to their…",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": -1,
+   "reasons": [
+    "-1 source salesforce-blog"
+   ],
+   "status": "below",
+   "hash": "67facb64"
+  },
+  "https://mc.merill.net/message/MC1093912": {
+   "title": "MC1093912: Microsoft Outlook for iOS/Android: Improved Contacts with profile enrichment and duplicate management",
+   "link": "https://mc.merill.net/message/MC1093912",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-23T17:25:52.000Z",
+   "updated": null,
+   "summary": "Microsoft Outlook Mobile (iOS/Android) will unify duplicate contacts and enrich profiles with organizational info, improving contact views. The rollout starts mid-July 2025 and completes by March 2027, with no admin action needed. Users should update to the latest app version after rollout.",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 3,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (outlook, android)",
+    "+1 plans/price/availability \"rollout\""
+   ],
+   "status": "below",
+   "hash": "98a21f4d"
+  },
+  "https://mc.merill.net/message/MC1446796": {
+   "title": "MC1446796: Migrate Free/Busy, MailTips, and Calendar Sharing before EWS deprecation",
+   "link": "https://mc.merill.net/message/MC1446796",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-23T17:18:07.000Z",
+   "updated": null,
+   "summary": "Exchange Web Services (EWS) deprecation starts October 1, 2026, affecting cross-tenant Free/Busy, MailTips, and Calendar Sharing. Microsoft 365 Cross-Tenant Access Policy will replace EWS by September-December 2026. Organizations must migrate to avoid service disruption; hybrid/on-premises scenarios",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 10,
+   "reasons": [
+    "-2 source mc-merill",
+    "+3 niche (microsoft 365, exchange)",
+    "+2 user steps \"Migrate\"",
+    "+1 plans/price/availability \"Free\"",
+    "+1 retirement/migration",
+    "+6 M365 retirement due in 38 days",
+    "-1 in /news 2026-11-10-claude-eu-default-teams-free-ews-deadline"
+   ],
+   "status": "queued",
+   "hash": "57692dab",
+   "news": "2026-11-10-claude-eu-default-teams-free-ews-deadline"
+  },
+  "https://mc.merill.net/message/MC1557760": {
+   "title": "MC1557760: Microsoft Teams: Registration capacity for town halls and webinars increases to 20,000",
+   "link": "https://mc.merill.net/message/MC1557760",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-23T17:14:18.000Z",
+   "updated": null,
+   "summary": "Starting December 2026, Microsoft Teams town halls and webinars registration capacity scales with attendee limits, up to 20,000 registrations per event. Teams Enterprise allows 3,000; Attendee Capacity Packs allow up to 20,000. Rollout occurs from mid-December 2026 to late January 2027. No action re",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 1,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 niche (microsoft teams)",
+    "+1 plans/price/availability \"Rollout\""
+   ],
+   "status": "below",
+   "hash": "10afa042"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-waf-introduces-simplified-pricing": {
+   "title": "AWS WAF introduces simplified pricing",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-waf-introduces-simplified-pricing/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T18:51:00.000Z",
+   "updated": null,
+   "summary": "AWS WAF now offers simplified pricing that follows what you protect instead of how you configure it. Previously, you paid separate charges for each web ACL, rule, rule group subscription, and capacity tier, making every security decision a billing calculation. Now, your bill follows three dimensions",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 4,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"introduces\"",
+    "+2 user steps \"configure\"",
+    "+1 plans/price/availability \"pricing\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "fac1d6b6"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/waf-ai-endpoint-discovery-protection": {
+   "title": "AWS WAF announces automated discovery and protection for LLM, MCP, and A2A endpoints using Amazon Bedrock Guardrails",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/waf-ai-endpoint-discovery-protection/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T18:47:00.000Z",
+   "updated": null,
+   "summary": "Automated AI endpoint discovery and protection are now generally available, enabling you to discover language model (LLM), Model Context Protocol (MCP), and Agent2Agent (A2A) endpoints behind Amazon API Gateway, Application Load Balancers, and Amazon CloudFront across your AWS Organization and prote",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 3,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+1 niche (agents)",
+    "+2 launch \"generally available\"",
+    "+2 user steps \"enable\""
+   ],
+   "status": "below",
+   "hash": "99c2fed4"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-connect-force-logout": {
+   "title": "Amazon Connect Customer launches the ability to force logout agents directly from the analytics dashboard",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-connect-force-logout/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T18:35:00.000Z",
+   "updated": null,
+   "summary": "Amazon Connect Customer now allows supervisors to force logout agents directly from the real-time analytics dashboard, eliminating the need to manually contact agents to end their sessions. Force logout ends all active agent sessions and records the logout event in the Login/Logout report, so agent ",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 3,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+1 niche (agents)",
+    "+2 launch \"launches\"",
+    "+1 plans/price/availability \"Regions\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "1591006e"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-connect-customer-test-ai-model-version-upgrades-automated-evaluations": {
+   "title": "Amazon Connect Customer now lets you test AI model version upgrades for automated evaluations",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-connect-customer-test-ai-model-version-upgrades-automated-evaluations",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T18:00:00.000Z",
+   "updated": null,
+   "summary": "Amazon Connect Customer now enables managers to test new AI model versions for automated evaluations before switching, so evaluation scores remain consistent through model upgrades. When a new version becomes available, managers can test how it would score the same contacts compared to the current v",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 1,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+1 niche (agent)",
+    "+2 launch \"now lets you\"",
+    "+2 user steps \"upgrade\"",
+    "+1 launch in the headline",
+    "-3 corporate/announcement \"evaluations\""
+   ],
+   "status": "below",
+   "hash": "113b3da9"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-connect-customer-expands-automated-performance-evaluations-new-languages": {
+   "title": "Amazon Connect Customer expands automated performance evaluations to 45 new languages",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-connect-customer-expands-automated-performance-evaluations-new-languages/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T18:00:00.000Z",
+   "updated": null,
+   "summary": "Amazon Connect Customer now uses generative AI to automate evaluations of human and AI agent performance in 45 additional languages, such as Arabic, Dutch, Indonesian, and Polish. Managers define custom evaluation criteria in natural language and receive AI-generated evaluations with justifications ",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": -3,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+1 niche (agent)",
+    "+1 plans/price/availability \"regions\"",
+    "-3 corporate/announcement \"evaluations\""
+   ],
+   "status": "below",
+   "hash": "7c868ee"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/cloudfront-european-sovereign-cloud": {
+   "title": "Amazon CloudFront is now available in the AWS European Sovereign Cloud",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/cloudfront-european-sovereign-cloud",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T18:00:00.000Z",
+   "updated": null,
+   "summary": "Amazon CloudFront is now available in the AWS European Sovereign Cloud. Organizations with strict EU sovereignty requirements can now deliver websites, applications, and APIs with the performance, security, and scale of CloudFront, all within the EU. Until now, customers had to build and run their o",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 2,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now available\"",
+    "+1 plans/price/availability \"Regions\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "2504716d"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/agentcore-runtime-instances-govcloud": {
+   "title": "AgentCore runtime instances are now generally available in the AWS GovCloud (US-West) Region",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/agentcore-runtime-instances-govcloud",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T17:21:00.000Z",
+   "updated": null,
+   "summary": "Amazon Bedrock AgentCore runtime instances are now available in the AWS GovCloud (US-West) Region. Runtime instances run your agents on Amazon EC2 instances in your own account, while AgentCore handles provisioning, patching, scaling, and lifecycle management. With runtime instances, teams in AWS Go",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 3,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+1 niche (agents)",
+    "+2 launch \"generally available\"",
+    "+1 plans/price/availability \"Region\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "e76510e3"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/aurora-serverless-mysql-supports-384-acu": {
+   "title": "Amazon Aurora serverless for MySQL now supports up to 384 ACUs",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aurora-serverless-mysql-supports-384-acu/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T16:00:00.000Z",
+   "updated": null,
+   "summary": "Amazon Aurora serverless now supports database capacity of up to 384 Aurora Capacity Units (ACUs) for Aurora MySQL-Compatible Edition, a 50% increase from the previous maximum of 256 ACUs. Each ACU provides approximately 2 gibibytes (GiB) of memory with corresponding CPU and networking, so a single ",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 2,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+1 niche (windows)",
+    "+2 launch \"now supports\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "20952774"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/connect-ai-agents-fill-guides": {
+   "title": "Amazon Connect Customer AI agents now fill in step-by-step guides",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/connect-ai-agents-fill-guides/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T08:00:00.000Z",
+   "updated": null,
+   "summary": "AI agents in Amazon Connect Customer can now populate fields of a step-by-step guide for contact center agents during live customer interactions. With step-by-step guides, managers can design forms and other user interfaces for common workflows, such as rebooking a trip or submitting a claim. Now, A",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 1,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+1 niche (agents)",
+    "+2 user steps \"step-by-step\""
+   ],
+   "status": "below",
+   "hash": "f473fe82"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/inspector-runtime-reachability": {
+   "title": "Amazon Inspector expands runtime reachability analysis for ECR and EC2 findings",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/inspector-runtime-reachability/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T08:00:00.000Z",
+   "updated": null,
+   "summary": "Amazon Inspector has expanded its vulnerability management capabilities with runtime reachability analysis for findings originating from Amazon Elastic Container Registry (Amazon ECR) and Amazon Elastic Compute Cloud (Amazon EC2) instances. Previously, Inspector reported every vulnerability found in",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": -2,
+   "reasons": [
+    "-2 source aws-whats-new"
+   ],
+   "status": "below",
+   "hash": "c8835653"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-codedeploy-suspend-asg-processes": {
+   "title": "AWS CodeDeploy now supports suspending Amazon EC2 Auto Scaling processes",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-codedeploy-suspend-asg-processes/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T08:00:00.000Z",
+   "updated": null,
+   "summary": "AWS CodeDeploy can now suspend Amazon EC2 Auto Scaling processes during EC2 in-place deployments to Auto Scaling groups. CodeDeploy is a fully managed service that automates application deployments to Amazon EC2 instances, on-premises servers, AWS Lambda functions, and Amazon ECS services. This laun",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 3,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now supports\"",
+    "+2 user steps \"You can\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "7114b9b2"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-hyperpod-console-eks": {
+   "title": "Amazon SageMaker HyperPod launches a redesigned console experience for creating Amazon EKS-orchestrated clusters",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-hyperpod-console-eks/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T08:00:00.000Z",
+   "updated": null,
+   "summary": "Amazon SageMaker HyperPod now offers a redesigned AWS Management Console experience for creating clusters orchestrated by Amazon EKS. A guided workflow helps ML infrastructure administrators and platform teams set up networking, instance groups, storage, permissions, resiliency, observability, lifec",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 4,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"launches\"",
+    "+2 user steps \"set up\"",
+    "+1 plans/price/availability \"plan\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "2cdf089c"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/api-security-with-waf": {
+   "title": "API security with WAF",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/api-security-with-waf/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T08:00:00.000Z",
+   "updated": null,
+   "summary": "Automated API discovery and protection are now generally available, enabling you to discover every API behind Amazon API Gateway, Application Load Balancers, and Amazon CloudFront across your AWS Organization and protect them using AWS WAF. Discovery is available through the new API Gateway API Port",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 2,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+1 niche (agents)",
+    "+2 launch \"generally available\"",
+    "+2 user steps \"enable\"",
+    "-1 narrow audience \"API\""
+   ],
+   "status": "below",
+   "hash": "8a1ffe2d"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/ec2-capacity-blocks-ml-flex-search": {
+   "title": "Amazon EC2 Capacity Blocks for ML now supports search across multiple instance types and AWS Regions",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/ec2-capacity-blocks-ml-flex-search/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T08:00:00.000Z",
+   "updated": null,
+   "summary": "Amazon EC2 Capacity Blocks for ML now lets customers search across multiple instance types and AWS Regions in a single search, making it easier to find and reserve the capacity their ML workloads need. With Capacity Blocks for ML, customers can reserve accelerated compute instances such as Amazon EC",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 2,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now supports\"",
+    "+1 plans/price/availability \"Regions\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "297d218a"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-fsx-for-netapp-ontap-additional-resources": {
+   "title": "Amazon FSx for NetApp ONTAP adds AWS CloudFormation and Console support for snapshots, clones, and data replication",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-fsx-for-netapp-ontap-additional-resources/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T05:00:00.000Z",
+   "updated": null,
+   "summary": "Amazon FSx for NetApp ONTAP now lets you snapshot, clone, and replicate your data directly from the Amazon FSx Console and AWS CloudFormation. Today’s launch allows you to protect and copy your ONTAP data using the same AWS tools that you use across the rest of your AWS environments, with a few clic",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 2,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now lets you\"",
+    "+2 user steps \"set up\""
+   ],
+   "status": "below",
+   "hash": "99ded08f"
+  },
+  "https://ir.hubspot.com/news-releases/news-release-details/hubspot-and-catbird-turn-marketers-wins-wearable-signets": {
+   "title": "HubSpot and Catbird Turn Marketers’ Wins Into Wearable Signets at HubStack, With Emily in Paris Stars Lily Collins and Ashley Park",
+   "link": "https://ir.hubspot.com/news-releases/news-release-details/hubspot-and-catbird-turn-marketers-wins-wearable-signets",
+   "source": "hubspot-ir",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-23T20:39:00.000Z",
+   "updated": null,
+   "summary": "HubSpot and Catbird are launching a pop-up signet ring studio in New York City this December to celebrate marketers and their wins. Guests share the wins that defined their year. HubSpot’s emblem generator turns them into a custom insignia, and a Catbird jeweler personalizes the signet on site with",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 0,
+   "reasons": [
+    "-2 source hubspot-ir",
+    "+2 launch \"launching\""
+   ],
+   "status": "below",
+   "hash": "a6b84e6f"
+  },
+  "https://azure.microsoft.com/updates?id=581333": {
+   "title": "[In preview] Public Preview: Enterprise Knowledge Graph in Foundry IQ",
+   "link": "https://azure.microsoft.com/updates?id=581333",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T21:16:32.000Z",
+   "updated": "2026-11-23T21:16:32.000Z",
+   "summary": "Foundry IQ adds Enterprise Knowledge Graph as a knowledge source for questions that depend on relationships across your content.During indexing, it extracts entities and relationships from unstructured content, guided by an ontology you provide. Agents ca",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": -1,
+   "reasons": [
+    "-2 source azure-updates",
+    "+1 niche (agents)"
+   ],
+   "status": "below",
+   "hash": "11290cef"
+  },
+  "https://azure.microsoft.com/updates?id=581338": {
+   "title": "[In preview] Public Preview: Updated Guardrails experience in Microsoft Foundry",
+   "link": "https://azure.microsoft.com/updates?id=581338",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T21:15:04.000Z",
+   "updated": "2026-11-23T21:15:04.000Z",
+   "summary": "In Microsoft Foundry, Guardrails helps developers configure runtime safety controls for agents, including classifiers, deterministic rules, and LLM-based judges.When an administrator policy requires controls for a project, Guardrails surfaces those requir",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 1,
+   "reasons": [
+    "-2 source azure-updates",
+    "+1 niche (agents)",
+    "+2 user steps \"configure\""
+   ],
+   "status": "below",
+   "hash": "42481ea"
+  },
+  "https://azure.microsoft.com/updates?id=581343": {
+   "title": "[In preview] Public Preview: IQ Retriever Zero in Foundry IQ",
+   "link": "https://azure.microsoft.com/updates?id=581343",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T21:13:44.000Z",
+   "updated": "2026-11-23T21:13:44.000Z",
+   "summary": "Foundry IQ can use an iterative retrieval model to break complex questions into focused searches. The model reviews search results and searches again when needed, within a configured budget, then passes the retrieved evidence to the model that answers the",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": -2,
+   "reasons": [
+    "-2 source azure-updates"
+   ],
+   "status": "below",
+   "hash": "abf8376c"
+  },
+  "https://azure.microsoft.com/updates?id=581353": {
+   "title": "[Launched] Public Preview: Style and instruction control for HD V3 voices in Azure Speech in Foundry Tools",
+   "link": "https://azure.microsoft.com/updates?id=581353",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T21:12:25.000Z",
+   "updated": "2026-11-23T21:12:25.000Z",
+   "summary": "Azure Speech in Foundry Tools provides HD V3 voices with style and instruction control in public preview.Use supported controls to shape voice delivery for voice agents, narration, and other speech experiences.Learn more.",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 2,
+   "reasons": [
+    "-2 source azure-updates",
+    "+1 niche (agents)",
+    "+2 launch \"Launched\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "bd477b31"
+  },
+  "https://azure.microsoft.com/updates?id=581358": {
+   "title": "[In preview] Public Preview: Human annotation for agent evaluations in Microsoft Foundry",
+   "link": "https://azure.microsoft.com/updates?id=581358",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T21:11:23.000Z",
+   "updated": "2026-11-23T21:11:23.000Z",
+   "summary": "Human annotation for agent evaluations is in public preview in Microsoft Foundry, as announced in the Microsoft IQ launch blog.Reviewers can add ratings, tags, comments, and expected outputs to agent traces. Use annotated conversation traces to build eval",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": -2,
+   "reasons": [
+    "-2 source azure-updates",
+    "+1 niche (agent)",
+    "+2 launch \"launch\"",
+    "-3 corporate/announcement \"evaluations\""
+   ],
+   "status": "below",
+   "hash": "2e13ccdb"
+  },
+  "https://azure.microsoft.com/updates?id=581363": {
+   "title": "[Launched] Generally Available: Agent insights in Microsoft Foundry",
+   "link": "https://azure.microsoft.com/updates?id=581363",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T21:10:07.000Z",
+   "updated": "2026-11-23T21:10:07.000Z",
+   "summary": "In Microsoft Foundry, insights analyze agent traces to surface recurring patterns and group related issues.Review an insight and its supporting traces to investigate common failures and decide what to improve first.Use agent optimizer to test potential fi",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 2,
+   "reasons": [
+    "-2 source azure-updates",
+    "+1 niche (agent)",
+    "+2 launch \"Launched\"",
+    "+1 launch in the headline",
+    "backlog copilot-studio-vs-foundry-agents"
+   ],
+   "status": "below",
+   "hash": "eafd490",
+   "backlog": "copilot-studio-vs-foundry-agents"
+  },
+  "https://azure.microsoft.com/updates?id=581368": {
+   "title": "[Launched] Generally Available: Files knowledge source for Foundry IQ",
+   "link": "https://azure.microsoft.com/updates?id=581368",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T21:08:46.000Z",
+   "updated": "2026-11-23T21:08:46.000Z",
+   "summary": "Upload files directly to a managed knowledge source in Foundry IQ. Foundry IQ processes and indexes the files for retrieval through a knowledge base, so you don't need to provision a storage account or scheduled indexer.Learn more.",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 1,
+   "reasons": [
+    "-2 source azure-updates",
+    "+2 launch \"Launched\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "9255e8be"
+  },
+  "https://azure.microsoft.com/updates?id=581378": {
+   "title": "[In preview] Public Preview: Call model router without a deployment in Microsoft Foundry",
+   "link": "https://azure.microsoft.com/updates?id=581378",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T20:32:57.000Z",
+   "updated": "2026-11-23T20:32:57.000Z",
+   "summary": "Microsoft Foundry now lets you use model router without deploying it first. In a region that supports model router, set model to auto in a Responses or Chat Completions request to your Foundry resource.By default, Auto uses the Balanced routing mode acros",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 1,
+   "reasons": [
+    "-2 source azure-updates",
+    "+2 launch \"now lets you\"",
+    "+1 plans/price/availability \"region\""
+   ],
+   "status": "below",
+   "hash": "be785b7b"
+  },
+  "https://azure.microsoft.com/updates?id=581383": {
+   "title": "[In preview] Public Preview: Use the Messages API with model router in Microsoft Foundry",
+   "link": "https://azure.microsoft.com/updates?id=581383",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T20:31:40.000Z",
+   "updated": "2026-11-23T20:31:40.000Z",
+   "summary": "Model router in Microsoft Foundry supports the Messages API in public preview. Messages-based applications and coding tools can use automatic model selection while keeping the Anthropic request and response format.Messages requests route only to supported",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": -3,
+   "reasons": [
+    "-2 source azure-updates",
+    "-1 narrow audience \"API\""
+   ],
+   "status": "below",
+   "hash": "b1a2abd"
+  },
+  "https://azure.microsoft.com/updates?id=581388": {
+   "title": "[In preview] Public Preview: Use your model deployments with model router in Microsoft Foundry",
+   "link": "https://azure.microsoft.com/updates?id=581388",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T20:29:36.000Z",
+   "updated": "2026-11-23T20:29:36.000Z",
+   "summary": "Model router in Microsoft Foundry can use your existing model deployments to serve routed requests, in public preview. This helps you use capacity you already have while model router selects a model for each request.After selecting a model, model router f",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": -2,
+   "reasons": [
+    "-2 source azure-updates"
+   ],
+   "status": "below",
+   "hash": "ae504503"
+  },
+  "https://azure.microsoft.com/updates?id=581393": {
+   "title": "[Launched] Generally Available: Model router now supports the Responses API protocol in Microsoft Foundry",
+   "link": "https://azure.microsoft.com/updates?id=581393",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T20:28:24.000Z",
+   "updated": "2026-11-23T20:28:24.000Z",
+   "summary": "Model router in Microsoft Foundry now supports the Responses API protocol in general availability on both resource and project endpoints. Set model to your model router deployment name to add automatic model selection to Responses-based applications and a",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 0,
+   "reasons": [
+    "-2 source azure-updates",
+    "+2 launch \"Launched\"",
+    "+1 launch in the headline",
+    "-1 narrow audience \"API\""
+   ],
+   "status": "below",
+   "hash": "82731cd0"
+  },
+  "https://azure.microsoft.com/updates?id=581398": {
+   "title": "[In preview] Public Preview: Use model router with AI Gateway",
+   "link": "https://azure.microsoft.com/updates?id=581398",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T20:15:53.000Z",
+   "updated": "2026-11-23T20:15:53.000Z",
+   "summary": "Automatic model selection in AI Gateway uses model router from Microsoft Foundry to rank the models behind a model alias for each request. The gateway combines that ranking with the alias's priorities and weights to select a backend, while its access cont",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": -2,
+   "reasons": [
+    "-2 source azure-updates"
+   ],
+   "status": "below",
+   "hash": "8a318691"
+  },
+  "https://azure.microsoft.com/updates?id=581478": {
+   "title": "[Launched] Generally Available: Deploy hosted agents from your own container registry in Foundry Toolkit for VS Code",
+   "link": "https://azure.microsoft.com/updates?id=581478",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T20:13:42.000Z",
+   "updated": "2026-11-23T20:13:42.000Z",
+   "summary": "Foundry Toolkit for Visual Studio Code now deploys hosted agents from prebuilt images in customer-managed container registries, including registries other than Azure Container Registry. Choose the matching registry connection in your Foundry project; the",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 2,
+   "reasons": [
+    "-2 source azure-updates",
+    "+1 niche (agents)",
+    "+2 launch \"Launched\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "1377fa91"
+  },
+  "https://azure.microsoft.com/updates?id=582030": {
+   "title": "[Launched] Generally Available: Wildcard domain support in Azure Firewall network rules",
+   "link": "https://azure.microsoft.com/updates?id=582030",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T18:51:31.000Z",
+   "updated": "2026-11-23T18:51:31.000Z",
+   "summary": "Wildcard domain support in Azure Firewall network rules is now generally available. This capability enables customers to use wildcard patterns, such as *.contoso.com, when defining FQDN-based network rules. Wildcard support makes it easier to secure desti",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 1,
+   "reasons": [
+    "-2 source azure-updates",
+    "+2 launch \"Launched\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "27f61265"
+  },
+  "https://azure.microsoft.com/updates?id=577474": {
+   "title": "Retirement: Azure AI Content Safety selected features will be retired on April 30, 2027",
+   "link": "https://azure.microsoft.com/updates?id=577474",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T18:11:31.000Z",
+   "updated": "2026-11-23T18:11:31.000Z",
+   "summary": "The following Azure AI Content Safety preview capabilities will retire on April 30, 2027:Analyze MultimodalCustom categories (rapid), including text and imageConnected containers for Text, Image, and Prompt ShieldsDisconnected containers for Text, ImageEm",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": -1,
+   "reasons": [
+    "-2 source azure-updates",
+    "+1 retirement/migration"
+   ],
+   "status": "below",
+   "hash": "9f2b280c"
+  },
+  "https://azure.microsoft.com/updates?id=574535": {
+   "title": "[In preview] Public Preview: Azure Database for PostgreSQL enhanced Burstable tier (Basv2)",
+   "link": "https://azure.microsoft.com/updates?id=574535",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T18:09:39.000Z",
+   "updated": "2026-11-23T18:09:39.000Z",
+   "summary": "Enhanced Burstable tier (Basv2) builds on the existing burstable model with improved performance predictability and more efficient burst utilization, delivering a better cost-performance balance. Now you can run steady workloads more economically while au",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 3,
+   "reasons": [
+    "-2 source azure-updates",
+    "+2 launch \"Now you can\"",
+    "+2 user steps \"you can\"",
+    "+1 plans/price/availability \"tier\""
+   ],
+   "status": "below",
+   "hash": "bf7b237c"
+  },
+  "https://azure.microsoft.com/updates?id=579280": {
+   "title": "[Launched] Generally Available: WAF Insights for Azure Application Gateway",
+   "link": "https://azure.microsoft.com/updates?id=579280",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T18:02:38.000Z",
+   "updated": "2026-11-23T18:02:38.000Z",
+   "summary": "WAF Insights for Azure Application Gateway Web Application Firewall (WAF) is now generally available. WAF Insights is a built-in experience in the WAF policy that brings WAF logs and metrics together in interactive dashboards, so you can investigate block",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 3,
+   "reasons": [
+    "-2 source azure-updates",
+    "+2 launch \"Launched\"",
+    "+2 user steps \"you can\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "daf63334"
+  },
+  "https://azure.microsoft.com/updates?id=579285": {
+   "title": "[Launched] Generally Available: WAF Insights for Azure Front Door",
+   "link": "https://azure.microsoft.com/updates?id=579285",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T18:01:19.000Z",
+   "updated": "2026-11-23T18:01:19.000Z",
+   "summary": "WAF Insights is now generally available for Azure Front Door Web Application Firewall (WAF). WAF Insights is a built-in experience in the WAF policy that brings WAF logs and metrics together in interactive dashboards, so you can investigate blocked reques",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 3,
+   "reasons": [
+    "-2 source azure-updates",
+    "+2 launch \"Launched\"",
+    "+2 user steps \"you can\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "8791e09a"
+  },
+  "https://elevenlabs.io/blog/choose-the-best-speech-to-text-api": {
+   "title": "How to choose the best speech to text API for your use case",
+   "link": "https://elevenlabs.io/blog/choose-the-best-speech-to-text-api",
+   "source": "elevenlabs-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-23T12:00:00.000Z",
+   "updated": null,
+   "summary": "How to choose the best speech to text API for your business? Compare accuracy, latency, pricing, and more to find the best fit for your use case.",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 0,
+   "reasons": [
+    "-2 source elevenlabs-blog",
+    "+2 user steps \"How to\"",
+    "+1 plans/price/availability \"pricing\"",
+    "-1 narrow audience \"API\""
+   ],
+   "status": "below",
+   "hash": "a99f76e6"
+  },
+  "https://changelog.shopify.com/posts/manage-whether-ai-agents-can-buy-your-products-for-shoppers-through-chatgpt": {
+   "title": "Manage agentic checkout for ChatGPT",
+   "link": "https://changelog.shopify.com/posts/manage-whether-ai-agents-can-buy-your-products-for-shoppers-through-chatgpt",
+   "source": "shopify-changelog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-23T17:00:00.000Z",
+   "updated": null,
+   "summary": "Direct checkout is now called agentic checkout on all your AI channels, and it's now available for ChatGPT. Agentic checkout lets AI agents buy your products for shoppers using your Shopify checkout. Orders appear in your Shopify admin for you to manage as usual. For eligible stores, agentic checkou",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 7,
+   "reasons": [
+    "-2 source shopify-changelog",
+    "+4 niche (chatgpt, agents)",
+    "+2 launch \"now available\"",
+    "+2 user steps \"enable\"",
+    "+1 plans/price/availability \"eligible\""
+   ],
+   "status": "below",
+   "hash": "4ffea4f6"
+  },
+  "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOWC1OV3BqZEpRVDBvSHdVajAzOHF1UXB1QW1yOFhGb216LTdLc2pDcmF6STBJdkpiVkRJc05iSk1uVWVocTNPN1lVbUlJVjJDQnNtMkt6NXNWbGdTeFFXU2FFWUYyZWZFVXhWbDVHVlVseWVaSzhuSzZPVEdnb28yaFc0VlYtd1hYTktuZ1BJbVdKaS1JLUJwbXY3cWFtTzBIWGNTZ3pkeTlBRDJmSm13NUwzZi15bElMbzFCcnhITmVrSFV4emM3QlZCTkV1MUQ1UEsyc3VmM2h0LXptRGZSMFJXUWh5REJic3dIT3pieUIyQ0liNS1z?oc=5": {
+   "title": "US airline disruption and quarterly outlook (NASDAQ: JBLU): A ground stop interrupts the network rather than one route",
+   "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOWC1OV3BqZEpRVDBvSHdVajAzOHF1UXB1QW1yOFhGb216LTdLc2pDcmF6STBJdkpiVkRJc05iSk1uVWVocTNPN1lVbUlJVjJDQnNtMkt6NXNWbGdTeFFXU2FFWUYyZWZFVXhWbDVHVlVseWVaSzhuSzZPVEdnb28yaFc0VlYtd1hYTktuZ1BJbVdKaS1JLUJwbXY3cWFtTzBIWGNTZ3pkeTlBRDJmSm13NUwzZi15bElMbzFCcnhITmVrSFV4emM3QlZCTkV1MUQ1UEsyc3VmM2h0LXptRGZSMFJXUWh5REJic3dIT3pieUIyQ0liNS1z?oc=5",
+   "source": "gnews-infra",
+   "topic": "microsoft-365",
+   "category": "outage",
+   "date": "2026-11-23T09:40:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-23T23:59:46.286Z",
+   "score": 6,
+   "reasons": [
+    "-1 source gnews-infra",
+    "+4 outage \"disruption\"",
+    "+3 major platform (microsoft)",
+    "backlog teams-not-working-today-fix-windows-mac-us"
+   ],
+   "status": "below",
+   "hash": "aaf0fb3e",
+   "families": [
+    "microsoft"
+   ],
+   "backlog": "teams-not-working-today-fix-windows-mac-us"
   }
  },
  "devices": {},
@@ -8594,7 +8571,8 @@
    "Google Vids now lets you reuse your media in video generation"
   ],
   "2026-11-22": [],
-  "2026-11-23": []
+  "2026-11-23": [],
+  "2026-11-24": []
  },
  "trends": {
   "ipo:anthropic|63c1035a": {
@@ -8631,18 +8609,15 @@
     "Bloomberg",
     "CNBC",
     "WSJ",
-    "TechCrunch",
-    "The Economic Times",
-    "Business Standard",
-    "The Hindu"
+    "TechCrunch"
    ],
    "techmeme": false,
    "category": "launch",
    "topic": "ai-engineering",
    "parkOnly": false,
-   "last": "2026-11-23T17:51:51.000Z",
-   "date": "2026-11-23T17:51:51.000Z",
-   "score": 14,
+   "last": "2026-11-23T23:16:00.000Z",
+   "date": "2026-11-23T23:16:00.000Z",
+   "score": 12,
    "post": "anthropic-ipo-explained-claude-users"
   },
   "milestone:google|9c5a0e24": {
