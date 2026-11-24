@@ -2,7 +2,7 @@
  "date": "2026-11-24",
  "title": "Tech news today, 24 November 2026",
  "published": "2026-11-23T23:59:46.286Z",
- "updated": "2026-11-24T03:43:45.804Z",
+ "updated": "2026-11-24T06:20:50.738Z",
  "items": [
   {
    "id": "2dc368ba",
@@ -669,7 +669,152 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "94d93fe2",
+   "key": "https://mc.merill.net/message/MC1552394",
+   "time": "2026-11-23T22:15:32.000Z",
+   "seen": "2026-11-24T06:20:50.738Z",
+   "kind": "retirement",
+   "tier": 2,
+   "headline": "MC1552394: Microsoft Viva Engage: Retiring the legacy live event creation option in Engage",
+   "summary": "Starting December 7, 2026, Microsoft Viva Engage will retire the legacy live event creation option. Organizers can no longer create legacy events but can still use Broadcast, Meeting, and Async Engage events. Existing legacy events will run as planned. Update organizers and documentation accordingly.",
+   "lines": [
+    "Microsoft Viva Engage will retire the legacy live event creation option starting December 7, 2026.",
+    "Organizers can no longer create legacy events but can still use Broadcast, Meeting, and Async Engage events. Existing legacy events will run as planned.",
+    "IT teams should update organizers and documentation to reflect the change."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1552394"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "c8bebbff",
+   "key": "https://mc.merill.net/message/MC1519855",
+   "time": "2026-11-23T22:07:24.000Z",
+   "seen": "2026-11-24T06:20:50.738Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1519855: Microsoft Entra: Choose your own telephony provider now generally available",
+   "summary": "Microsoft Entra now generally supports Choose Your Own Telephony Provider (CYOT) and Bring Your Own Telephony Provider (BYOT) for SMS and voice authentication. Microsoft-provided SMS/voice retires February 1, 2027. Organizations must transition by then, prioritizing phishing-resistant methods and using telephony only when necessary.",
+   "lines": [
+    "Microsoft Entra now generally supports Choose Your Own Telephony Provider (CYOT) and Bring Your Own Telephony Provider (BYOT) for SMS and voice authentication.",
+    "Microsoft-provided SMS and voice authentication retires February 1, 2027.",
+    "Organizations must transition by then, prioritizing phishing-resistant methods and using telephony only when necessary, so IT teams should plan authentication changes before that date."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1519855"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "38bf2983",
+   "key": "https://mc.merill.net/message/MC1566260",
+   "time": "2026-11-24T04:10:02.000Z",
+   "seen": "2026-11-24T06:20:50.738Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1566260: Video creation from a prompt in Microsoft Clipchamp: now in Video Hub, with an upgraded experience coming",
+   "summary": "Microsoft Clipchamp's prompt-to-video feature is now in Video Hub. By February 2027, an upgraded version with better quality and fixes will replace it, available to current subscribers. Existing projects remain accessible, no admin action is needed, and users can refer to the provided support article.",
+   "lines": [
+    "Microsoft Clipchamp's prompt-to-video feature is now available in Video Hub.",
+    "By February 2027, an upgraded version with better quality and fixes will replace it for current subscribers.",
+    "Existing projects remain accessible and no admin action is needed; users can refer to the provided support article."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1566260"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "016e7647",
+   "key": "https://mc.merill.net/message/MC1559644",
+   "time": "2026-11-24T00:39:07.000Z",
+   "seen": "2026-11-24T06:20:50.738Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1559644: [Education] AI-powered teaching tools in OneNote Class Notebook",
+   "summary": "AI-powered Copilot teaching tools in OneNote Class Notebook help educators create personalized resources and interactive activities. Rolling out globally from mid-November to December 2026, these tools require no extra license and are managed via Copilot and Learning Activities settings. Educators should review AI-generated content before sharing.",
+   "lines": [
+    "AI-powered Copilot teaching tools in OneNote Class Notebook help educators create personalized resources and interactive activities.",
+    "These tools are rolling out globally from mid-November to December 2026, require no extra license, and are managed through Copilot and Learning Activities settings.",
+    "Educators should review AI-generated content before sharing it with students."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1559644"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "9dcdc139",
+   "key": "https://mc.merill.net/message/MC1325441",
+   "time": "2026-11-23T22:25:28.000Z",
+   "seen": "2026-11-24T06:20:50.738Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1325441: Microsoft Purview | Data Lifecycle Management - Archive SharePoint files under retention",
+   "summary": "Microsoft Purview Data Lifecycle Management will add an Archive option to retention policies, allowing admins to move inactive SharePoint files to Microsoft 365 Archive for cost savings while maintaining compliance and discoverability. Archived content is excluded from Copilot indexing. Rollout begins September 2026; admin configuration is required.",
+   "lines": [
+    "Microsoft Purview Data Lifecycle Management will add an Archive option to retention policies, letting admins move inactive SharePoint files to Microsoft 365 Archive.",
+    "Rollout begins September 2026, and admin configuration is required.",
+    "The archive option is intended to save costs while maintaining compliance and discoverability, and archived content is excluded from Copilot indexing."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1325441"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
   }
  ],
- "description": "23 technology updates from official sources, updated hourly: Anthropic Faces New Pressures From Public Investors After Successful IPO; Microsoft Azure flaw exploited to steal customers' API credentials; Vulnerability in Oracle OpenJDK (Java4Shell) Affecting Cisco Products: November 2026."
+ "description": "28 technology updates from official sources, updated hourly: Anthropic Faces New Pressures From Public Investors After Successful IPO; Microsoft Azure flaw exploited to steal customers' API credentials; Vulnerability in Oracle OpenJDK (Java4Shell) Affecting Cisco Products: November 2026."
 }

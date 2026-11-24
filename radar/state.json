@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-24T05:13:21.776Z",
+ "lastScan": "2026-11-24T06:20:50.738Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -865,7 +865,7 @@
    "category": "launch",
    "date": "2026-11-13T23:48:40.000Z",
    "updated": null,
-   "summary": "Starting December 7, 2026, users cannot create Teams town hall events from Viva Engage; previously scheduled events will continue. Organizers must use the new Events experience in Viva Engage or Microsoft Teams. Organizations should inform teams and update documentation accordingly before this date.",
+   "summary": "Starting December 7, 2026, Microsoft Viva Engage will retire the legacy live event creation option. Organizers can no longer create legacy events but can still use Broadcast, Meeting, and Async Engage events. Existing legacy events will run as planned. Update organizers and documentation accordingly",
    "first": "2026-11-14T03:43:44.961Z",
    "score": 11,
    "reasons": [
@@ -875,12 +875,12 @@
     "-3 corporate/announcement \"event\"",
     "+13 M365 retirement due in 23 days"
    ],
-   "status": "published",
-   "hash": "4b9133f6",
-   "kind": "new",
+   "status": "writing",
+   "hash": "7b541c8b",
+   "kind": "update",
    "extra": false,
-   "taskAt": "2026-11-14T18:38:28.597Z",
-   "attempts": 1,
+   "taskAt": "2026-11-24T06:20:50.738Z",
+   "attempts": 2,
    "slug": "viva-engage-teams-town-hall-creation-retirement",
    "resultAt": "2026-11-14T18:45:57.520Z"
   },
@@ -7081,6 +7081,294 @@
    ],
    "status": "below",
    "hash": "b36ea4a"
+  },
+  "https://zoho.com/blog/marketplace/3-ways-to-book-more-meetings-from-your-zoho-crm-leads.html": {
+   "title": "3 ways to book more meetings from your Zoho CRM leads",
+   "link": "https://www.zoho.com/blog/marketplace/3-ways-to-book-more-meetings-from-your-zoho-crm-leads.html",
+   "source": "zoho-blog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-23T17:09:18.000Z",
+   "updated": null,
+   "summary": "This is a guest post by Kriti Mishra, SaaS Product Marketer at Klenty.If you're running an SDR team on Zoho CRM, you already know the problem is turning those leads into conversations. That takes two things: reaching prospects across more than one channel and having enough live phone conversations t",
+   "first": "2026-11-24T06:20:50.738Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "a9aca116"
+  },
+  "https://zoho.com/blog/crm/introducing-vibe-ai-app-builder-within-zohocrm.html": {
+   "title": "Introducing Vibe: A prompt-to-app AI builder in Zoho CRM",
+   "link": "https://www.zoho.com/blog/crm/introducing-vibe-ai-app-builder-within-zohocrm.html",
+   "source": "zoho-blog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-23T13:27:53.000Z",
+   "updated": null,
+   "summary": "Everywhere you look, someone is building an app or tool using AI, and the scale is bigger than you might think. Lovable, an AI platform, is seeing 100,000+ new projects being launched every day (Sacra). So, what is Vibe coding?Vibe coding is the process of building software by describing what you wa",
+   "first": "2026-11-24T06:20:50.738Z",
+   "score": 3,
+   "reasons": [
+    "+2 launch \"Introducing\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "bfe5e9b7"
+  },
+  "https://mc.merill.net/message/MC1566260": {
+   "title": "MC1566260: Video creation from a prompt in Microsoft Clipchamp: now in Video Hub, with an upgraded experience coming",
+   "link": "https://mc.merill.net/message/MC1566260",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-24T04:10:02.000Z",
+   "updated": null,
+   "summary": "Microsoft Clipchamp's prompt-to-video feature is now in Video Hub. By February 2027, an upgraded version with better quality and fixes will replace it, available to current subscribers. Existing projects remain accessible, no admin action is needed, and users can refer to the provided support articl",
+   "first": "2026-11-24T06:20:50.738Z",
+   "score": 1,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 user steps \"users can\"",
+    "+1 plans/price/availability \"available to\""
+   ],
+   "status": "below",
+   "hash": "b6c79125"
+  },
+  "https://mc.merill.net/message/MC1559644": {
+   "title": "MC1559644: [Education] AI-powered teaching tools in OneNote Class Notebook",
+   "link": "https://mc.merill.net/message/MC1559644",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-24T00:39:07.000Z",
+   "updated": null,
+   "summary": "AI-powered Copilot teaching tools in OneNote Class Notebook help educators create personalized resources and interactive activities. Rolling out globally from mid-November to December 2026, these tools require no extra license and are managed via Copilot and Learning Activities settings. Educators s",
+   "first": "2026-11-24T06:20:50.738Z",
+   "score": 2,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 niche (copilot)",
+    "+2 launch \"Rolling out\""
+   ],
+   "status": "below",
+   "hash": "85832cc2"
+  },
+  "https://mc.merill.net/message/MC1530595": {
+   "title": "MC1530595: Microsoft Copilot Feedback UX update",
+   "link": "https://mc.merill.net/message/MC1530595",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-24T00:36:31.000Z",
+   "updated": null,
+   "summary": "Microsoft Copilot is updating its thumbs-down feedback to include selectable categories and optional comments for clearer, actionable input. The rollout starts mid-November 2026, completing by early December, affecting users with Microsoft Entra ID and consumer accounts, excluding some environments.",
+   "first": "2026-11-24T06:20:50.738Z",
+   "score": 2,
+   "reasons": [
+    "-2 source mc-merill",
+    "+3 niche (copilot, entra)",
+    "+1 plans/price/availability \"rollout\""
+   ],
+   "status": "below",
+   "hash": "b5874322"
+  },
+  "https://mc.merill.net/message/MC1565967": {
+   "title": "MC1565967: New VDI solution for Omnissa on Mac",
+   "link": "https://mc.merill.net/message/MC1565967",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-23T22:47:01.000Z",
+   "updated": null,
+   "summary": "A new VDI optimization for Omnissa on Mac using a SlimCore-based media engine will enhance Microsoft Teams' quality, reliability, and performance. Rollout starts December 2026 to February 2027. Upgrade Horizon Client (2609.1+) and Teams (26304.1207.5384.858+) to benefit. No compliance issues noted.",
+   "first": "2026-11-24T06:20:50.738Z",
+   "score": 4,
+   "reasons": [
+    "-2 source mc-merill",
+    "+3 niche (microsoft teams, mac)",
+    "+2 user steps \"Upgrade\"",
+    "+1 plans/price/availability \"Rollout\""
+   ],
+   "status": "below",
+   "hash": "57289895"
+  },
+  "https://mc.merill.net/message/MC1565964": {
+   "title": "MC1565964: Microsoft SharePoint Online: Classic publishing restrictions begin March 1, 2027",
+   "link": "https://mc.merill.net/message/MC1565964",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-23T22:43:52.000Z",
+   "updated": null,
+   "summary": "Starting March 1, 2027, SharePoint Online will block creation and activation of classic publishing sites and features, enforcing restrictions on custom scripting. New tenants face additional limits on classic pages. Administrators must update workflows and modernize pages before the rollout complete",
+   "first": "2026-11-24T06:20:50.738Z",
+   "score": 0,
+   "reasons": [
+    "-2 source mc-merill",
+    "+1 niche (sharepoint)",
+    "+1 plans/price/availability \"rollout\""
+   ],
+   "status": "below",
+   "hash": "c3654d0c"
+  },
+  "https://mc.merill.net/message/MC1565960": {
+   "title": "MC1565960: Plan for Change: Updates to policy-related reporting in Microsoft Intune Data Warehouse",
+   "link": "https://mc.merill.net/message/MC1565960",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-23T22:41:42.000Z",
+   "updated": null,
+   "summary": "Starting January 4, 2027, Microsoft Intune Data Warehouse will update policy-related reporting collections, possibly causing changes in policy-status counts. Existing connections and schemas remain unchanged, and no action is required. Differences from Intune admin center reports may occur due to ti",
+   "first": "2026-11-24T06:20:50.738Z",
+   "score": 0,
+   "reasons": [
+    "-2 source mc-merill",
+    "+1 niche (intune)",
+    "+1 plans/price/availability \"Plan\""
+   ],
+   "status": "below",
+   "hash": "c414d3c6"
+  },
+  "https://mc.merill.net/message/MC1565959": {
+   "title": "MC1565959: Plan for Change: Updated web-based device enrollment experience for iOS/iPadOS",
+   "link": "https://mc.merill.net/message/MC1565959",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-23T22:41:11.000Z",
+   "updated": null,
+   "summary": "Microsoft Intune will update the web-based device enrollment experience for iOS/iPadOS in late January 2027, affecting only tenants using this method. No admin action is needed, but user guidance may be updated. This change precedes web-based enrollment becoming the default for iOS/iPadOS.",
+   "first": "2026-11-24T06:20:50.738Z",
+   "score": 2,
+   "reasons": [
+    "-2 source mc-merill",
+    "+3 niche (ipados, intune)",
+    "+1 plans/price/availability \"Plan\""
+   ],
+   "status": "below",
+   "hash": "592ce684"
+  },
+  "https://mc.merill.net/message/MC1472601": {
+   "title": "MC1472601: Microsoft Purview: Archive SharePoint files under retention policies",
+   "link": "https://mc.merill.net/message/MC1472601",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-23T22:27:57.000Z",
+   "updated": null,
+   "summary": "Microsoft Purview Data Lifecycle Management will enable admins to archive inactive SharePoint files under retention policies starting mid-January 2027. Archived files move to Microsoft 365 Archive, remain compliant and discoverable, and are excluded from Copilot indexing to improve response relevanc",
+   "first": "2026-11-24T06:20:50.738Z",
+   "score": 4,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (copilot, microsoft 365, sharepoint)",
+    "+2 user steps \"enable\""
+   ],
+   "status": "below",
+   "hash": "c4c5f424"
+  },
+  "https://mc.merill.net/message/MC1325441": {
+   "title": "MC1325441: Microsoft Purview | Data Lifecycle Management - Archive SharePoint files under retention",
+   "link": "https://mc.merill.net/message/MC1325441",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-23T22:25:28.000Z",
+   "updated": null,
+   "summary": "Microsoft Purview Data Lifecycle Management will add an Archive option to retention policies, allowing admins to move inactive SharePoint files to Microsoft 365 Archive for cost savings while maintaining compliance and discoverability. Archived content is excluded from Copilot indexing. Rollout begi",
+   "first": "2026-11-24T06:20:50.738Z",
+   "score": 3,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (copilot, microsoft 365, sharepoint)",
+    "+1 plans/price/availability \"Rollout\""
+   ],
+   "status": "below",
+   "hash": "11eb86db"
+  },
+  "https://mc.merill.net/message/MC1261587": {
+   "title": "MC1261587: Microsoft Purview | Data Lifecycle Management - Hard delete OneDrive and SharePoint files with priority cleanup workflow",
+   "link": "https://mc.merill.net/message/MC1261587",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-23T22:22:22.000Z",
+   "updated": null,
+   "summary": "Microsoft Purview introduces a priority cleanup workflow allowing admins to hard delete specific OneDrive and SharePoint content, overriding retention policies with eDiscovery admin approval. Rolling out mid-August 2026 (preview) and early December 2026 (general availability), this feature requires ",
+   "first": "2026-11-24T06:20:50.738Z",
+   "score": 3,
+   "reasons": [
+    "-2 source mc-merill",
+    "+1 niche (onedrive)",
+    "+2 launch \"introduces\"",
+    "+2 user steps \"setup\""
+   ],
+   "status": "below",
+   "hash": "394671f0"
+  },
+  "https://mc.merill.net/message/MC1550542": {
+   "title": "MC1550542: Microsoft Teams: Updated recording and transcript access setting behavior for town halls and webinars",
+   "link": "https://mc.merill.net/message/MC1550542",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-23T22:19:25.000Z",
+   "updated": null,
+   "summary": "Microsoft Teams is updating the \"Who has access to the recording or transcript\" option for Events App town halls and webinars. Starting mid-January 2027, access will depend on the RecordingForTownhall or RecordingForWebinar settings, not AllowCloudRecording. No action is required.",
+   "first": "2026-11-24T06:20:50.738Z",
+   "score": -1,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 niche (microsoft teams)",
+    "-1 in /news 2026-11-16-fbi-artex-warning-rd-web-access-fix"
+   ],
+   "status": "below",
+   "hash": "63768fed",
+   "news": "2026-11-16-fbi-artex-warning-rd-web-access-fix"
+  },
+  "https://mc.merill.net/message/MC1519855": {
+   "title": "MC1519855: Microsoft Entra: Choose your own telephony provider now generally available",
+   "link": "https://mc.merill.net/message/MC1519855",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-23T22:07:24.000Z",
+   "updated": null,
+   "summary": "Microsoft Entra now generally supports Choose Your Own Telephony Provider (CYOT) and Bring Your Own Telephony Provider (BYOT) for SMS and voice authentication. Microsoft-provided SMS/voice retires February 1, 2027. Organizations must transition by then, prioritizing phishing-resistant methods and us",
+   "first": "2026-11-24T06:20:50.738Z",
+   "score": 11,
+   "reasons": [
+    "-2 source mc-merill",
+    "+1 niche (entra)",
+    "+2 launch \"generally available\"",
+    "+1 launch in the headline",
+    "+1 retirement/migration",
+    "+8 M365 retirement due in 69 days"
+   ],
+   "status": "queued",
+   "hash": "b014c96b"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/device-farm-device-connect": {
+   "title": "AWS Device Farm launches Device Connect for local access to remote Android devices",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/device-farm-device-connect/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T08:00:00.000Z",
+   "updated": null,
+   "summary": "AWS Device Farm , a service for testing mobile and web apps, now offers Device Connect. With Device Connect, you and AI agents can use remote Android devices from your local machine in an IDE, terminal, or development environment of your choice, as if it were plugged into your laptop. You can attach",
+   "first": "2026-11-24T06:20:50.738Z",
+   "score": 6,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+3 niche (android, agents)",
+    "+2 launch \"launches\"",
+    "+2 user steps \"You can\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "30e1eb6d"
   }
  },
  "devices": {},
@@ -7140,8 +7428,8 @@
    "category": "launch",
    "topic": "ai-engineering",
    "parkOnly": false,
-   "last": "2026-11-24T03:03:16.000Z",
-   "date": "2026-11-24T03:03:16.000Z",
+   "last": "2026-11-24T06:11:04.000Z",
+   "date": "2026-11-24T06:11:04.000Z",
    "score": 12,
    "post": "anthropic-ipo-explained-claude-users"
   },
