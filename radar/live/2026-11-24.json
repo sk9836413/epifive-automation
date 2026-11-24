@@ -2,7 +2,7 @@
  "date": "2026-11-24",
  "title": "Tech news today, 24 November 2026",
  "published": "2026-11-23T23:59:46.286Z",
- "updated": "2026-11-23T23:59:46.286Z",
+ "updated": "2026-11-24T03:43:45.804Z",
  "items": [
   {
    "id": "2dc368ba",
@@ -580,7 +580,96 @@
    "ai": null,
    "score": 6,
    "story": null
+  },
+  {
+   "id": "eef98f06",
+   "key": "https://microsoft.com/microsoft-365/roadmap?id=581803",
+   "time": "2026-11-24T00:13:11.000Z",
+   "seen": "2026-11-24T03:43:45.804Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Dynamics 365 Contact Center: Set wait times as short as 5 seconds in orchestration playbooks",
+   "summary": "Orchestration playbooks can now re-evaluate the conditions every 5 seconds instead of every 30 seconds. With this shorter interval, you get finer control over priority escalation and Bullseye pool expansion. As a result, conversations reach the right queue or specialist sooner when wait times or queue status change. GA date: October CY2026",
+   "lines": [
+    "Orchestration playbooks in Dynamics 365 Contact Center can now re-evaluate conditions every 5 seconds instead of every 30 seconds.",
+    "GA date: October CY2026.",
+    "The shorter interval gives finer control over priority escalation and Bullseye pool expansion, so conversations can reach the right queue or specialist sooner when wait times or queue status change."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Roadmap",
+    "url": "https://www.microsoft.com/microsoft-365/roadmap?id=581803"
+   },
+   "sourceId": "m365-roadmap",
+   "sourceMax": 4,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "9716cc1e",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ec2-x8i-new-zealand",
+   "time": "2026-11-23T23:21:00.000Z",
+   "seen": "2026-11-24T03:43:45.804Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Amazon EC2 X8i instances are now available in the Asia Pacific (New Zealand) Region",
+   "summary": "Starting today, Amazon Elastic Compute Cloud (Amazon EC2) X8i instances are available in the Asia Pacific (New Zealand) Region. These instances are powered by custom Intel Xeon 6 processors available only on AWS. X8i instances are SAP-certified and deliver the highest performance and fastest memory bandwidth among comparable Intel processors in the cloud. They deliver up to 43% higher performance, 1.5x more memory capacity (up to 6TB), and 3.3x more memory bandwidth compared to previous generation X2i instances. X8i instances are designed for memory-intensive workloads like SAP HANA, large databases, data analytics, and Electronic Design Automation (EDA). Compared to X2i instances, X8i insta",
+   "lines": [
+    "Amazon EC2 X8i instances are now available in the Asia Pacific (New Zealand) Region.",
+    "The instances use custom Intel Xeon 6 processors available only on AWS and are SAP-certified.",
+    "They deliver up to 43% higher performance, 1.5x more memory capacity (up to 6TB), and 3.3x more memory bandwidth than previous generation X2i instances.",
+    "They are designed for memory-intensive workloads such as SAP HANA, large databases, data analytics, and Electronic Design Automation (EDA)."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ec2-x8i-new-zealand/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "4eec4de2",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/configurable-aws-sign-in-duration",
+   "time": "2026-11-23T23:14:00.000Z",
+   "seen": "2026-11-24T03:43:45.804Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "AWS Sign-In introduces configurable Sign-in duration of up to 90 days",
+   "summary": "AWS Sign-In now enables developers and AI agents to stay authenticated for up to 90 days without frequent sign-ins or consent prompts. With this launch, administrators can configure Sign-in duration , which controls how long an OAuth Sign-in session remains active, for individual IAM users and roles. This capability reduces authentication interruptions for long-running workflows and provides a more secure alternative to static access keys by using short-lived, renewable credentials. Existing session duration limits remain unchanged unless administrators explicitly configure longer durations. Sign-In Duration supports AWS CLI (aws login), AWS MCP Server, and other OAuth-enabled applications.",
+   "lines": [
+    "AWS Sign-In now lets developers and AI agents stay authenticated for up to 90 days without frequent sign-ins or consent prompts.",
+    "Administrators can configure Sign-in duration for individual IAM users and roles, and it supports AWS CLI (aws login), AWS MCP Server, and other OAuth-enabled applications.",
+    "Existing session duration limits remain unchanged unless administrators explicitly configure longer durations.",
+    "The feature reduces authentication interruptions for long-running workflows and offers a more secure alternative to static access keys by using short-lived, renewable credentials."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/configurable-aws-sign-in-duration/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
   }
  ],
- "description": "20 technology updates from official sources, updated hourly: Anthropic Faces New Pressures From Public Investors After Successful IPO; Microsoft Azure flaw exploited to steal customers' API credentials; Vulnerability in Oracle OpenJDK (Java4Shell) Affecting Cisco Products: November 2026."
+ "description": "23 technology updates from official sources, updated hourly: Anthropic Faces New Pressures From Public Investors After Successful IPO; Microsoft Azure flaw exploited to steal customers' API credentials; Vulnerability in Oracle OpenJDK (Java4Shell) Affecting Cisco Products: November 2026."
 }

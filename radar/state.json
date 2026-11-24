@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-23T23:59:46.286Z",
+ "lastScan": "2026-11-24T03:43:45.804Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -3528,273 +3528,6 @@
    "resultAt": "2026-11-22T01:44:33.985Z",
    "skipReason": "RADAR-SKIP: covered by /blog/entra-sms-voice-mfa-retirement-migration"
   },
-  "https://workspaceupdates.googleblog.com/2026/11/weekly-recap-11-20-2026.html": {
-   "title": "Google Workspace Weekly Recap - November 20, 2026",
-   "link": "http://workspaceupdates.googleblog.com/2026/11/weekly-recap-11-20-2026.html",
-   "source": "workspace-updates",
-   "topic": "small-business-it",
-   "category": "launch",
-   "date": "2026-11-20T21:21:00.382Z",
-   "updated": "2026-11-20T21:21:00.383Z",
-   "summary": "Schedule meetings with a default 5-minute buffer in Google Calendar Back-to-back meetings can leave no time for a break in your day. To help you build in short breaks, we’re expanding the “Speedy meetings” setting in Google Calendar into new, per-calendar Event duration & buffer settings. | Learn mo",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 4,
-   "reasons": [
-    "+1 source workspace-updates",
-    "+4 niche (gemini, google workspace, microsoft word, google docs)",
-    "+2 launch \"generally available\"",
-    "-3 corporate/announcement \"Recap\""
-   ],
-   "status": "below",
-   "hash": "6673c7a2"
-  },
-  "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/demystifying-macos-platform-sso-how-apple-and-microsoft-entra-id/ba-p/4437423": {
-   "title": "Demystifying macOS Platform SSO: How Apple and Microsoft Entra ID work together",
-   "link": "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/demystifying-macos-platform-sso-how-apple-and-microsoft-entra-id/ba-p/4437423",
-   "source": "tc-entra",
-   "topic": "security-identity",
-   "category": "launch",
-   "date": "2026-11-20T16:00:00.000Z",
-   "updated": null,
-   "summary": "Platform SSO has been transforming the macOS sign-in experience by bringing Microsoft Entra authentication closer to the operating system. Users can sign in to their Mac and access work applications with fewer authentication prompts, while organizations retain Microsoft Entra device trust and access",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 4,
-   "reasons": [
-    "+2 niche (entra, macos)",
-    "+2 user steps \"Users can\""
-   ],
-   "status": "below",
-   "hash": "4a2721b5"
-  },
-  "https://microsoft.com/microsoft-365/roadmap?id=581893": {
-   "title": "Microsoft Teams: Set and manage meeting timers in Teams Rooms on Windows",
-   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581893",
-   "source": "m365-roadmap",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-21T00:14:55.000Z",
-   "updated": "2026-11-21T00:14:55.000Z",
-   "summary": "Keep meetings on track with a shared countdown timer in Microsoft Teams Rooms on Windows. Start, pause, resume, or cancel a timer from the room’s touch console, with the countdown visible on the front-of-room display and in participants’ meeting views. Available with a Teams Rooms Pro license. GA da",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": -2,
-   "reasons": [
-    "-1 source m365-roadmap",
-    "+3 niche (microsoft teams, windows)",
-    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
-   ],
-   "status": "below",
-   "hash": "eacd7773"
-  },
-  "https://microsoft.com/microsoft-365/roadmap?id=581866": {
-   "title": "Planner: Tab support for shared and private channels in Microsoft Teams in GCC, GCC-H and DoD",
-   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581866",
-   "source": "m365-roadmap",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-20T23:20:27.000Z",
-   "updated": "2026-11-20T23:20:27.000Z",
-   "summary": "Now you can add Microsoft Planner as a tab in shared and private channels in Microsoft Teams, which allows to create and manage tasks directly within the channel. GA date: January CY2027",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 1,
-   "reasons": [
-    "-1 source m365-roadmap",
-    "+2 niche (microsoft teams)",
-    "+2 launch \"Now you can\"",
-    "+2 user steps \"you can\"",
-    "-4 category (In development, General Availability, GCC)"
-   ],
-   "status": "below",
-   "hash": "170f155f"
-  },
-  "https://microsoft.com/microsoft-365/roadmap?id=581800": {
-   "title": "Dynamics 365 Finance: B2B electronic invoicing in Spain",
-   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581800",
-   "source": "m365-roadmap",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-20T23:20:27.000Z",
-   "updated": "2026-11-20T23:20:27.000Z",
-   "summary": "To support Spain's upcoming mandatory B2B electronic invoicing requirements under the Crea y Crece legislation, Microsoft Dynamics 365 Finance will introduce capabilities for domestic B2B electronic invoicing through a phased rollout. The planned rollout includes: Prerequisite data and invoice forma",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": -3,
-   "reasons": [
-    "-1 source m365-roadmap",
-    "+2 user steps \"Enable\"",
-    "+1 plans/price/availability \"rollout\"",
-    "-5 category (In development, General Availability, Preview)"
-   ],
-   "status": "below",
-   "hash": "7e53d2c5"
-  },
-  "https://microsoft.com/microsoft-365/roadmap?id=581780": {
-   "title": "Dynamics 365 Commerce: Update e-commerce integration with Adyen and introduce ACH and Pay by Bank payment methods",
-   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581780",
-   "source": "m365-roadmap",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-20T23:20:27.000Z",
-   "updated": "2026-11-20T23:20:27.000Z",
-   "summary": "This feature applies to Dynamics 365 Commerce e-commerce. It updates the Adyen API integration to address co-branded card processing requirements and adds support for ACH and Pay by Bank, both directly at checkout and through Pay by Link. Administrators enable the payment methods available to shoppe",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": -2,
-   "reasons": [
-    "-1 source m365-roadmap",
-    "+2 user steps \"enable\"",
-    "+1 plans/price/availability \"available to\"",
-    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
-   ],
-   "status": "below",
-   "hash": "83f56c9d"
-  },
-  "https://microsoft.com/microsoft-365/roadmap?id=581779": {
-   "title": "Dynamics 365 Finance: Collection Coordinator Skill",
-   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581779",
-   "source": "m365-roadmap",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-20T23:20:27.000Z",
-   "updated": "2026-11-20T23:20:27.000Z",
-   "summary": "Start every collections day with one prioritized view of your receivables portfolio that explains each recommendation. The skill shows which customers need attention, why, and what to do next. It helps collectors, collection managers and accounts receivable (AR) leaders act consistently, close perio",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": -6,
-   "reasons": [
-    "-1 source m365-roadmap",
-    "-5 category (In development, General Availability, Preview)"
-   ],
-   "status": "below",
-   "hash": "cf6374af"
-  },
-  "https://microsoft.com/microsoft-365/roadmap?id=581778": {
-   "title": "Exchange: Enable High Volume Email (HVE) for External Recipients",
-   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581778",
-   "source": "m365-roadmap",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-20T23:20:27.000Z",
-   "updated": "2026-11-20T23:20:27.000Z",
-   "summary": "High Volume Email (HVE) External Sending extends HVE in Exchange Online, which today sends only to recipients inside your organization, so it can also deliver bulk email to external recipients such as customers and partners. It is designed for operational and transactional messages, like notificatio",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": -3,
-   "reasons": [
-    "-1 source m365-roadmap",
-    "+1 niche (exchange)",
-    "+2 user steps \"Enable\"",
-    "-5 category (In development, General Availability, Preview)"
-   ],
-   "status": "below",
-   "hash": "44e78ba3"
-  },
-  "https://microsoft.com/microsoft-365/roadmap?id=581776": {
-   "title": "Dynamics 365 Human Resources: Ask HR - conversational HR self-service grounded in your own worker record",
-   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581776",
-   "source": "m365-roadmap",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-20T23:20:27.000Z",
-   "updated": "2026-11-20T23:20:27.000Z",
-   "summary": "Business value Employees and managers routinely contact HR for answers their HR system already holds — how much leave they have, what their policy allows in their location, where a request has reached. The information exists, but it is spread across separate records, so a generic answer is often wro",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": -5,
-   "reasons": [
-    "-1 source m365-roadmap",
-    "+1 plans/price/availability \"plan\"",
-    "-5 category (In development, General Availability, Preview)"
-   ],
-   "status": "below",
-   "hash": "7a91fd27"
-  },
-  "https://microsoft.com/microsoft-365/roadmap?id=581773": {
-   "title": "Dynamics 365 Human Resources: Streamline the employee offboarding experience",
-   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581773",
-   "source": "m365-roadmap",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-20T23:20:27.000Z",
-   "updated": "2026-11-20T23:20:27.000Z",
-   "summary": "Business value When an employee leaves, HR, managers, IT, facilities and payroll all have work to do, but the termination hasn't been connected to the request that starts the exit or the work that follows. Manual coordination can leave access open, property unreturned and final pay incomplete. This ",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": -6,
-   "reasons": [
-    "-1 source m365-roadmap",
-    "-5 category (In development, General Availability, Preview)"
-   ],
-   "status": "below",
-   "hash": "cf96a9c4"
-  },
-  "https://microsoft.com/microsoft-365/roadmap?id=570867": {
-   "title": "Work IQ: Listen",
-   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=570867",
-   "source": "m365-roadmap",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-20T23:20:27.000Z",
-   "updated": "2026-11-20T23:20:27.000Z",
-   "summary": "Enable agents to listen for supported Work IQ events and respond as relevant changes occur. GA date: January CY2027 Preview date: November CY2026",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": -3,
-   "reasons": [
-    "-1 source m365-roadmap",
-    "+1 niche (agents)",
-    "+2 user steps \"Enable\"",
-    "-5 category (In development, General Availability, Preview)"
-   ],
-   "status": "below",
-   "hash": "1521b69e"
-  },
-  "https://github.blog/changelog/2026-11-20-security-advisory-permissions-are-now-generally-available": {
-   "title": "Security advisory permissions are now generally available",
-   "link": "https://github.blog/changelog/2026-11-20-security-advisory-permissions-are-now-generally-available",
-   "source": "github-changelog",
-   "topic": "ai-engineering",
-   "category": "launch",
-   "date": "2026-11-20T21:49:29.000Z",
-   "updated": null,
-   "summary": "Organization owners can now let people work on repository security advisories, including private vulnerability reports, through custom repository roles. You no longer have to make them repository administrators or give… The post Security advisory permissions are now generally available appeared firs",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 2,
-   "reasons": [
-    "-1 source github-changelog",
-    "+2 launch \"generally available\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "1493b325"
-  },
-  "https://github.blog/changelog/2026-11-20-github-enterprise-server-3-23-release-candidate": {
-   "title": "GitHub Enterprise Server 3.23 release candidate",
-   "link": "https://github.blog/changelog/2026-11-20-github-enterprise-server-3-23-release-candidate",
-   "source": "github-changelog",
-   "topic": "ai-engineering",
-   "category": "launch",
-   "date": "2026-11-20T20:41:26.000Z",
-   "updated": null,
-   "summary": "GitHub Enterprise Server (GHES) 3.23 is now available and introduces new capabilities across the platform. Here are a few highlights in the 3.23 release: When working in GitHub Projects, you… The post GitHub Enterprise Server 3.23 release candidate appeared first on The GitHub Blog .",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 1,
-   "reasons": [
-    "-1 source github-changelog",
-    "+2 launch \"now available\""
-   ],
-   "status": "below",
-   "hash": "c907cb66"
-  },
-  "https://salesforce.com/blog/agentforce-coworker-practical-jobs": {
-   "title": "25 Practical Jobs Organizations are Giving Agentforce Coworker to Complete Right Now",
-   "link": "https://www.salesforce.com/blog/agentforce-coworker-practical-jobs/",
-   "source": "salesforce-blog",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-20T23:10:49.000Z",
-   "updated": null,
-   "summary": "You know those tasks that somehow eat up half your day? Digging through 14 tabs before a customer call. Writing the same weekly update for the 47th time. Hunting down one record that…",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": -1,
-   "reasons": [
-    "-1 source salesforce-blog"
-   ],
-   "status": "below",
-   "hash": "feec99e6"
-  },
   "https://mc.merill.net/message/MC1562279": {
    "title": "MC1562279: Microsoft Teams: View files and conversations side by side",
    "link": "https://mc.merill.net/message/MC1562279",
@@ -3814,143 +3547,6 @@
    ],
    "status": "below",
    "hash": "de5738a2"
-  },
-  "https://mc.merill.net/message/MC1562278": {
-   "title": "MC1562278: Microsoft Teams: Expanded Markdown support in the compose box",
-   "link": "https://mc.merill.net/message/MC1562278",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-20T23:36:46.000Z",
-   "updated": null,
-   "summary": "Microsoft Teams will launch an expanded Markdown compose experience in early December 2026, allowing users to write with visible Markdown syntax, use a dedicated toolbar, preview messages before sending, and switch between Markdown and rich text. No admin action is needed.",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 2,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 niche (microsoft teams)",
-    "+2 launch \"launch\""
-   ],
-   "status": "below",
-   "hash": "1f3da40a"
-  },
-  "https://mc.merill.net/message/MC1562277": {
-   "title": "MC1562277: Microsoft Teams: Copilot in channels provides channel-wide context",
-   "link": "https://mc.merill.net/message/MC1562277",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-20T23:36:02.000Z",
-   "updated": null,
-   "summary": "Microsoft Teams is adding a channel-level Copilot feature allowing users to ask questions and summarize all posts and replies in a channel. Public preview starts December 2026 worldwide, with no action required. Copilot responses will include source citations and be available on Teams desktop and mo",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 2,
-   "reasons": [
-    "-2 source mc-merill",
-    "+4 niche (copilot, microsoft teams)"
-   ],
-   "status": "below",
-   "hash": "d27169a0"
-  },
-  "https://mc.merill.net/message/MC1562275": {
-   "title": "MC1562275: Microsoft 365 Copilot app: New search experience for Microsoft 365 users without a Microsoft 365 Copilot license",
-   "link": "https://mc.merill.net/message/MC1562275",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-20T23:35:27.000Z",
-   "updated": null,
-   "summary": "Microsoft 365 is updating the Copilot app's search experience for users without a Copilot license, enabling modern search controls by default starting late November 2026. Users can toggle back to classic search. The update improves file and third-party content search while respecting access permissi",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 4,
-   "reasons": [
-    "-2 source mc-merill",
-    "+4 niche (copilot, microsoft 365)",
-    "+2 user steps \"Users can\""
-   ],
-   "status": "below",
-   "hash": "15f48d6b"
-  },
-  "https://mc.merill.net/message/MC1562272": {
-   "title": "MC1562272: New Contact Support Experience in Outlook for iOS, Android and Mac",
-   "link": "https://mc.merill.net/message/MC1562272",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-20T23:33:58.000Z",
-   "updated": null,
-   "summary": "A new Contact Support experience is rolling out in Outlook for iOS, Android, and Mac, aligning with the new Outlook for Windows. It uses the existing policy \"Allow access to Contact Support in the new Outlook.\" Rollout starts late November 2026, completing by January 2027. No new policy needed; admi",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 5,
-   "reasons": [
-    "-2 source mc-merill",
-    "+4 niche (outlook, android, windows, mac)",
-    "+2 launch \"rolling out\"",
-    "+1 plans/price/availability \"Rollout\""
-   ],
-   "status": "below",
-   "hash": "83399efa"
-  },
-  "https://mc.merill.net/message/MC1562269": {
-   "title": "MC1562269: Sync between Copilot desktop app and Microsoft Edge",
-   "link": "https://mc.merill.net/message/MC1562269",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-20T23:31:47.000Z",
-   "updated": null,
-   "summary": "Optional sync of passwords, personal info, settings, and browsing history between Copilot desktop app and Microsoft Edge will roll out worldwide in December 2026. Sync is account-based, opt-in, excludes payment info, and aims to improve user continuity and organizational productivity. Review governa",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 4,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 niche (copilot)",
-    "+2 launch \"roll out\"",
-    "+2 user steps \"opt-in\""
-   ],
-   "status": "below",
-   "hash": "c9ec0d63"
-  },
-  "https://mc.merill.net/message/MC1230457": {
-   "title": "MC1230457: Moderation approvals now available across Outlook apps",
-   "link": "https://mc.merill.net/message/MC1230457",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-20T22:45:08.000Z",
-   "updated": null,
-   "summary": "Moderation approvals in Exchange Online will use Actionable Messages adaptive cards across all Outlook clients starting March 2026, completing by November 2026. Dual-mode approvals end July 31, 2026. Moderators must have Microsoft 365 mailboxes. Actionable Messages must be enabled to prepare for thi",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 5,
-   "reasons": [
-    "-2 source mc-merill",
-    "+4 niche (microsoft 365, outlook, exchange)",
-    "+2 launch \"now available\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "450bee31"
-  },
-  "https://mc.merill.net/message/MC1515303": {
-   "title": "MC1515303: Power Apps - Information regarding the end of support for Power Apps Developer Plan and unmanaged developer environments",
-   "link": "https://mc.merill.net/message/MC1515303",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-20T21:10:07.000Z",
-   "updated": null,
-   "summary": "The free Power Apps Developer Plan is being retired. As this plan works only in unmanaged developer environments, these environments are also being retired. Beginning with a regional rollout starting November 15, 2026, users will no longer be able to sign up for the plan or create new unmanaged deve",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 1,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 user steps \"sign up\"",
-    "+1 plans/price/availability \"Plan\"",
-    "+1 retirement/migration",
-    "-1 narrow audience \"Developer\""
-   ],
-   "status": "below",
-   "hash": "555f6bcf"
   },
   "https://mc.merill.net/message/MC1515294": {
    "title": "MC1515294: Power Apps – Feature retirement of Microsoft Dataverse for Teams: migrate before September 15, 2027",
@@ -3972,1309 +3568,6 @@
    ],
    "status": "below",
    "hash": "ebd3f5c1"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/web-search-amazon-bedrock": {
-   "title": "Web Search on Amazon Bedrock expands language support and country-aware search",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/web-search-amazon-bedrock/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-21T00:17:00.000Z",
-   "updated": null,
-   "summary": "Web Search on Amazon Bedrock, the tool that grounds AI agents and applications in cited, current web information, now supports five new languages, plus non-US English, on Amazon Bedrock AgentCore and Amazon Bedrock: Spanish, French, German, Italian, and Japanese. Agents serving users in these langua",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (agents)",
-    "+2 launch \"now supports\"",
-    "+1 plans/price/availability \"countries\""
-   ],
-   "status": "below",
-   "hash": "7cf95802"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/rds-oracle-primary-endpoint-v2": {
-   "title": "Amazon RDS for Oracle now supports Primary Endpoint",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/rds-oracle-primary-endpoint-v2/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T22:54:00.000Z",
-   "updated": null,
-   "summary": "Amazon Relational Database Service (Amazon RDS) for Oracle now provides a Primary Endpoint, a DNS name that always resolves to the current primary DB instance in a replica configuration. When you switch over to an Oracle replica, Amazon RDS points the Primary Endpoint to the new primary DB instance,",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 4,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"you can\"",
-    "+1 plans/price/availability \"Region\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "270f312a"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/network-firewall-automated-internet": {
-   "title": "AWS Network Firewall introduces automated Internet firewall in public preview",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/network-firewall-automated-internet/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T22:38:00.000Z",
-   "updated": null,
-   "summary": "AWS Network Firewall announces the public preview of automated Internet firewall, a new centralized control that allows you to configure Network Firewall, with native network address translation (NAT) capability, on the internet gateways of all the Virtual Private Clouds (VPCs) in your environment. ",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 3,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"introduces\"",
-    "+2 user steps \"configure\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "2f82bc3f"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/rds-oracle-replica-first-patching": {
-   "title": "Amazon RDS for Oracle now supports Replica First Patching for reduced downtime",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/rds-oracle-replica-first-patching/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T22:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon Relational Database Service (Amazon RDS) for Oracle now supports Replica First Patching, which reduces downtime during minor version upgrades. Replica First Patching is available for Enterprise Edition DB instances. With Replica First Patching, you apply a minor version upgrade to a replica i",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 4,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"upgrade\"",
-    "+1 plans/price/availability \"Region\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "b8b6dae2"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/cognito-mrr-opt-in-regions": {
-   "title": "Amazon Cognito extends multi-Region replication to additional AWS Regions",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/cognito-mrr-opt-in-regions/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T22:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon Cognito multi-Region replication (MRR) now supports additional AWS Regions, extending the resilience benefits of MRR to more workloads. Amazon Cognito helps you implement secure sign-in and access control for users, AI agents, and microservices in minutes, and MRR lets you synchronize user an",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 4,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (agents)",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"you can\"",
-    "+1 plans/price/availability \"Region\""
-   ],
-   "status": "below",
-   "hash": "7ba51745"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-neptune-serverless-r8g-generally-available": {
-   "title": "Amazon Neptune Serverless now delivers up to 30% better performance and smarter scaling",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-neptune-serverless-r8g-generally-available",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T21:50:00.000Z",
-   "updated": null,
-   "summary": "Amazon Neptune Serverless now delivers up to 30% better performance at the same price per Neptune Capacity Unit, running on AWS Graviton4 processors. The new Graviton4-based platform also brings an improved scaling algorithm that adjusts Neptune Capacity Units (NCUs) more closely to your workload. T",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (fraud)",
-    "+2 user steps \"you can\"",
-    "+1 plans/price/availability \"price\""
-   ],
-   "status": "below",
-   "hash": "8fb6e38f"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/cloudwatch-promql-query-30days": {
-   "title": "Amazon CloudWatch extends the PromQL query window to 30 days",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/cloudwatch-promql-query-30days/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T21:23:00.000Z",
-   "updated": null,
-   "summary": "Amazon CloudWatch now supports a 30-day query window for PromQL queries against OpenTelemetry metrics, up from 7 days. You can query a month of data in a single request, chart month-over-month and week-over-week trends on one dashboard, and alarm on a 30-day baseline. Teams typically define service ",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"You can\""
-   ],
-   "status": "below",
-   "hash": "1d99066c"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/demand-center-partner-central": {
-   "title": "Demand Center now available in AWS Partner Central",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/demand-center-partner-central/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T21:00:00.000Z",
-   "updated": null,
-   "summary": "AWS Partners can now plan, launch, fund, and measure demand generation campaigns in one AI-powered experience. Demand Center in AWS Partner Central succeeds Marketing Central and brings together Marketing Central and MDF capabilities, letting you work in Partner Central, in your CRM, or in your AI a",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 3,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (agents)",
-    "+2 launch \"now available\"",
-    "+1 plans/price/availability \"plan\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "c63f10b8"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/account-mapping-and-planning": {
-   "title": "Account Mapping and Planning now available in AWS Partner Central",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/account-mapping-and-planning/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T21:00:00.000Z",
-   "updated": null,
-   "summary": "AWS Partners can now map their target accounts against AWS records and find where to collaborate with AWS on joint go-to-market before an opportunity exists. Account Mapping and Planning in AWS Partner Central replaces manual, spreadsheet-based account mapping. Upload a target account list through C",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now available\"",
-    "+1 plans/price/availability \"eligibility\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "9d70f7dc"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/partner-central-lead-groups": {
-   "title": "Lead groups and channel recommendations now available in AWS Partner Central",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/partner-central-lead-groups/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T21:00:00.000Z",
-   "updated": null,
-   "summary": "AWS Partners can now organize enriched leads and plan outreach with lead groups and channel recommendations in AWS Partner Central. Enriched leads are automatically grouped by solution area and segmented into sales-ready, marketing-ready, and limited-potential groups, so you no longer have to segmen",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now available\"",
-    "+1 plans/price/availability \"plan\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "a0b56b5d"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/cloudwatch-eks-kubernetes-tools": {
-   "title": "Amazon CloudWatch EKS Container Insights now offers built-in monitoring for open source Kubernetes tools",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/cloudwatch-eks-kubernetes-tools/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T20:47:00.000Z",
-   "updated": null,
-   "summary": "Today, Amazon CloudWatch announces built-in monitoring for open source tools running on your Amazon EKS clusters, including Karpenter, KEDA, vLLM, KServe, SGLang, Ray and Knative Serving. You get dashboards for the tools you already use without running Prometheus or Grafana yourself. Monitoring star",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 0,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 user steps \"enable\""
-   ],
-   "status": "below",
-   "hash": "84e5feff"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-quick-group-assignments-custom-permissions-limit-profiles": {
-   "title": "AWS Quick now supports group assignments for custom permissions and limit profiles",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-quick-group-assignments-custom-permissions-limit-profiles/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T20:42:00.000Z",
-   "updated": null,
-   "summary": "AWS Quick now supports assignments for custom permissions and limit profiles to groups from your enterprise identity provider (IdP). Administrators can now apply feature restrictions and per-user resource limits to IdP groups, in addition to the existing user, role, and account assignments. Organiza",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (agents)",
-    "+2 launch \"now supports\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "d465b2de"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-quick-enterprise-guardrails-preview": {
-   "title": "AWS Quick introduces enterprise guardrails (preview)",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-quick-enterprise-guardrails-preview/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T20:30:00.000Z",
-   "updated": null,
-   "summary": "AWS Quick now includes enterprise guardrails, giving administrators configurable content safety and sensitive-information controls for user prompts. Administrators can apply guardrail policies to individual users or enterprise identity provider (IdP) groups or set a policy as the account default. Us",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 1,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"introduces\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "9078ce11"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/data-hub-billing-cost-management-preview": {
-   "title": "AWS announces Data Hub in AWS Billing and Cost Management (preview)",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/data-hub-billing-cost-management-preview/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T20:30:00.000Z",
-   "updated": null,
-   "summary": "Today, AWS announces the preview of Data Hub in AWS Billing and Cost Management, a managed data layer that enables AWS FinOps Agent to query cost and usage data with SQL. In preview, Data Hub is available to AWS FinOps Agent, so the agent can identify the individual resources behind a cost change, b",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 0,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (agent)",
-    "+1 plans/price/availability \"available to\""
-   ],
-   "status": "below",
-   "hash": "688a4fd9"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/cloudwatch-eks-addon-custom-telemetry": {
-   "title": "Amazon CloudWatch Observability EKS add-on now supports custom OpenTelemetry and Prometheus telemetry",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/cloudwatch-eks-addon-custom-telemetry/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T20:05:00.000Z",
-   "updated": null,
-   "summary": "Today, Amazon CloudWatch announces support for your own application telemetry in the CloudWatch Observability EKS add-on. The CloudWatch agent you already run now accepts metrics, traces, and logs from your applications, so you don't deploy and operate a separate collector to get them into CloudWatc",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (agent)",
-    "+2 launch \"now supports\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "6260f1c1"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/dynamodb-vector-filters": {
-   "title": "Amazon DynamoDB vector search now supports new inline filter operators",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/dynamodb-vector-filters/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T20:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon DynamoDB vector search inline filters now support range comparisons, value lists, and logical operators in addition to the equality operator, so you can narrow a vector search to exactly the items you want. You can now filter on numeric ranges such as price, rating, or publish date, match an ",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 4,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"you can\"",
-    "+1 plans/price/availability \"price\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "e9f37ae7"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-transcribe-sync-api": {
-   "title": "Amazon Transcribe announces a synchronous transcription API",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-transcribe-sync-api/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T20:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon Transcribe now offers a synchronous transcription API, TranscribeAudio . Send a complete audio file in a single request and get the full transcript back in the same response. There is no job to start, no status to poll, no connection to manage. The transcripts are as accurate as Amazon Transc",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 0,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (agent)",
-    "+2 user steps \"you can\"",
-    "-1 narrow audience \"API\""
-   ],
-   "status": "below",
-   "hash": "9a87c500"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/cloudwatch-eks-otel-addon-filtering": {
-   "title": "Amazon CloudWatch Observability EKS add-on now supports telemetry filtering",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/cloudwatch-eks-otel-addon-filtering/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T19:52:00.000Z",
-   "updated": null,
-   "summary": "Today, Amazon CloudWatch announces telemetry filtering for the CloudWatch Observability EKS add-on, so you can stop paying to ingest telemetry you don't use. You can now set cluster-wide include and exclude lists for namespaces, metric names, and pod and node labels. Exclude the non-production names",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 3,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"you can\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "9d99ae6d"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/1/sagemaker-jumpstart-model-leaderboard": {
-   "title": "Amazon SageMaker JumpStart now offers a model leaderboard to compare models on quality, speed, and cost",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/1/sagemaker-jumpstart-model-leaderboard/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T19:27:00.000Z",
-   "updated": null,
-   "summary": "Amazon SageMaker JumpStart now offers a model leaderboard in Amazon SageMaker Studio. You can use it to compare foundation models side by side on throughput, latency, and cost, and then deploy or customize the model that fits your workload. Comparing models has usually meant reading model cards one ",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 0,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 user steps \"You can\""
-   ],
-   "status": "below",
-   "hash": "3f632fa8"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/partner-central-agents-support": {
-   "title": "AWS Partner Central Agents now help partners create and manage Partner Central and Marketplace support cases",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/partner-central-agents-support/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T19:07:00.000Z",
-   "updated": null,
-   "summary": "AWS Partner Central Agents now help AWS Partners create and manage AWS Partner Central and AWS Marketplace support cases in one place. The agents are available 24/7 and draw on Partner Central account details and authoritative, partner-specific knowledge from AWS to resolve most inquiries instantly.",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": -2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (agents)",
-    "-1 narrow audience \"Marketplace\""
-   ],
-   "status": "below",
-   "hash": "cea02e4a"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/sms": {
-   "title": "Spend limits in the new AWS experience now support SMS alerts",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/sms/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T19:03:00.000Z",
-   "updated": null,
-   "summary": "Builders using the new AWS experience on the Paid plan can now receive spend limit alerts by text message (SMS), alongside existing email notifications. A spend limit sets the maximum monthly cost for a project. Notifications are sent as a project approaches its limit, and when a project reaches its",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now support\"",
-    "+1 plans/price/availability \"Paid\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "5b8a42fe"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-s3-vectors-raises-filterable-metadata-40kb-per-vector": {
-   "title": "Amazon S3 Vectors raises the filterable metadata limit to 40 KB per vector",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-s3-vectors-raises-filterable-metadata-40kb-per-vector/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T19:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon S3 Vectors now supports up to 40 KB of filterable metadata per vector, up from 2 KB. You can attach and filter on more attributes per vector, such as category, permissions, timestamps, and descriptive tags, so your retrieval-augmented generation (RAG), agentic, and semantic-search application",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": -1,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"You can\"",
-    "-3 corporate/announcement \"raises\""
-   ],
-   "status": "below",
-   "hash": "990adeba"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-msk-standard-version-42": {
-   "title": "Amazon MSK Standard Brokers adds support for Apache Kafka version 4.2",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-msk-standard-version-42/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T17:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon Managed Streaming for Apache Kafka (Amazon MSK) now supports Apache Kafka version 4.2 on Standard brokers. A key highlight of this release is Queues for Kafka, which is now production ready. With Queues, multiple consumers can process messages from the same topic partitions, which improves pa",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 1,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+1 plans/price/availability \"Eligible\""
-   ],
-   "status": "below",
-   "hash": "d7fcd9ae"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ecs-action-logs-expanded-troubleshooting": {
-   "title": "Amazon ECS Action Logs now cover tasks, container instances, and capacity providers",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ecs-action-logs-expanded-troubleshooting",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T16:50:00.000Z",
-   "updated": null,
-   "summary": "Amazon Elastic Container Service (Amazon ECS) now extends Action Logs to include tasks, container instances, clusters, and capacity providers, so you can see why your tasks failed or why your clusters didn't scale as desired. Action Logs provide detailed, timestamped records of the actions Amazon EC",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 0,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 user steps \"you can\""
-   ],
-   "status": "below",
-   "hash": "32ac76ee"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-microvms-7-regions": {
-   "title": "AWS Lambda MicroVMs is now available in 7 additional AWS regions",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-microvms-7-regions",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T16:00:00.000Z",
-   "updated": null,
-   "summary": "AWS Lambda MicroVMs is now available in 7 additional AWS Regions: Asia Pacific (Osaka), Asia Pacific (Seoul), Canada (Central), Europe (London), Europe (Paris), South America (São Paulo), and US West (N. California). With this launch, you can use Lambda MicroVMs in a total of 21 AWS Regions. Lambda ",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 4,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now available\"",
-    "+2 user steps \"you can\"",
-    "+1 plans/price/availability \"regions\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "a6935a16"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/amp-supports-2b-metrics-300k-rules": {
-   "title": "Amazon Managed Service for Prometheus supports 2B active metrics and 300K rules per workspace",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amp-supports-2b-metrics-300k-rules/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T16:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon Managed Service for Prometheus now supports up to 2 billion active metric time series and up to 300,000 total recording and alerting rules per workspace. Customers can also create multiple workspaces per account. This lets them store and analyze billions of Prometheus metrics across their org",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"get started\""
-   ],
-   "status": "below",
-   "hash": "41bf1563"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/amp-aws-european-sovereign-cloud": {
-   "title": "Amazon Managed Service for Prometheus now available in the AWS European Sovereign Cloud (Germany) region",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amp-aws-european-sovereign-cloud/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T16:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon Managed Service for Prometheus is now available in the AWS European Sovereign Cloud (Germany) region, along with Amazon Managed Service for Prometheus collector. Amazon Managed Service for Prometheus is a fully managed, Prometheus-compatible monitoring service, that helps you monitor and aler",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now available\"",
-    "+1 plans/price/availability \"region\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "5fd8ac91"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-nodejs-26": {
-   "title": "AWS Lambda adds support for Node.js 26",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-nodejs-26/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T15:00:00.000Z",
-   "updated": null,
-   "summary": "AWS Lambda now supports creating serverless applications using Node.js 26, for both Lambda Web Functions and Lambda Event Functions. Developers can use Node.js 26 as both a managed runtime and a base container image (Event Functions only). AWS will automatically apply updates to the managed runtime ",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"you can\""
-   ],
-   "status": "below",
-   "hash": "d051a5de"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-s3-increases-read-request-rate": {
-   "title": "Amazon S3 increases the read request rate for general purpose buckets by up to 2x",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-s3-increases-read-request-rate/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T15:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon S3 now supports at least 11,000 GET/HEAD requests per second, up from 5,500, for general purpose buckets. With this higher request rate, you can retrieve data faster for read-intensive workloads such as machine learning training, data analytics, and data transfers. To maximize throughput, dis",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 3,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"you can\"",
-    "+1 plans/price/availability \"Regions\""
-   ],
-   "status": "below",
-   "hash": "d364e89"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-python-315": {
-   "title": "AWS Lambda adds support for Python 3.15",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-python-315/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T14:59:00.000Z",
-   "updated": null,
-   "summary": "AWS Lambda now supports creating serverless applications using Python 3.15. Python 3.15 is generally available for Lambda Event Functions and is available in public preview for Lambda Web Functions. This is the first Python runtime for Web Functions, which until now only supported Node.js. With this",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"you can\""
-   ],
-   "status": "below",
-   "hash": "6bcee333"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/cloudformation-stacks-per-account-quota": {
-   "title": "AWS CloudFormation increases the default stacks per account quota to 300,000",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/cloudformation-stacks-per-account-quota/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T12:35:00.000Z",
-   "updated": null,
-   "summary": "AWS CloudFormation now supports up to 300,000 stacks in each AWS account and Region by default (previously 2,000), which enables you to add stacks as your workloads grow without requesting a quota increase. CloudFormation manages related AWS resources as a stack that you create, update, and delete a",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 1,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+1 plans/price/availability \"Region\""
-   ],
-   "status": "below",
-   "hash": "fd0c3969"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/agentcore-ec2-g7": {
-   "title": "AgentCore runtime instances now support Amazon EC2 G7 instances",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/agentcore-ec2-g7/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T10:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon Bedrock AgentCore runtime instances now support Amazon EC2 G7 instances, powered by NVIDIA RTX PRO 4500 Blackwell Server Edition GPUs. Runtime instances run your agents on Amazon EC2 instances while AgentCore handles provisioning, patching, scaling, and lifecycle management. G7 instances give",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (agents)",
-    "+2 launch \"now support\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "7cd1755f"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-rds-db2-supports-rename-databases": {
-   "title": "​​​Amazon RDS for Db2 now supports renaming databases​",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-rds-db2-supports-rename-databases",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T08:53:00.000Z",
-   "updated": null,
-   "summary": "​​Amazon Relational Database Service (Amazon RDS) for Db2 now supports renaming databases in place. You can rename a database on your DB instance by calling the new rdsadmin.rename_database stored procedure. Previously, renaming a database required you to back it up and restore it under a new name. ",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 3,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"You can\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "325722bf"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-rds-db2-supports-new-canadian-time": {
-   "title": "Amazon RDS for Db2 now supports new Canadian time zones",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-rds-db2-supports-new-canadian-time",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T08:49:00.000Z",
-   "updated": null,
-   "summary": "​​Amazon RDS for Db2 now supports four new time zones, America/Vancouver, America/Edmonton, America/Inuvik, and America/Winnipeg, that reflect the updated local time rules for British Columbia, Alberta, the Northwest Territories, and Manitoba in Canada. As of November 1, 2026, these provinces and te",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 3,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"you can\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "328fc337"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-rds-db2-supports-object-level-audit-policies": {
-   "title": "Amazon RDS for Db2 now supports object-level audit policies",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-rds-db2-supports-object-level-audit-policies",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T08:34:00.000Z",
-   "updated": null,
-   "summary": "Amazon RDS for Db2 now supports object-level audit policies, giving you fine-grained control over which database objects are audited. You can create custom audit policies and attach them to specific tables, users, groups, roles, and authorities in your RDS for Db2 databases. With object-level audit ",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 3,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"You can\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "e72d49b6"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-rds-custom-supports-latest-cumulative-update-gdr-microsoft-sql-server": {
-   "title": "Amazon RDS Custom now supports the latest Cumulative Update and GDR updates for Microsoft SQL Server",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-rds-custom-supports-latest-cumulative-update-gdr-microsoft-sql-server/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T08:30:00.000Z",
-   "updated": null,
-   "summary": "Amazon Relational Database Service (Amazon RDS) Custom for SQL Server now supports the latest Cumulative Updates (CU) and General Distribution Release (GDR) updates for Microsoft SQL Server. This release includes support for SQL Server 2019 CU32 + GDR KB5128494 (RDS version 15.00.4500.2.v1) and SQL ",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 3,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"You can\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "64e7591"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/continuum-pentest-cost-estimates": {
-   "title": "AWS Continuum for Penetration Testing now estimates task hours before you run a test",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/continuum-pentest-cost-estimates/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T08:00:00.000Z",
-   "updated": null,
-   "summary": "AWS Continuum for Penetration Testing (formerly AWS Security Agent) now lets you estimate task hours before running a penetration test, so developers and security teams can see how many billable task hours a test is likely to need and choose a maximum task-hours limit with confidence. Continuum for ",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (agent)",
-    "+2 launch \"now lets you\"",
-    "+1 plans/price/availability \"plan\""
-   ],
-   "status": "below",
-   "hash": "cc91d2e0"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-outposts-racks-osaka": {
-   "title": "Second-generation AWS Outposts racks now supported in the AWS Asia Pacific (Osaka)",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-outposts-racks-osaka/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T08:00:00.000Z",
-   "updated": null,
-   "summary": "Second-generation AWS Outposts racks are now supported in the AWS Asia Pacific (Osaka) Region. Outposts racks extend AWS infrastructure, AWS services, APIs, and tools to virtually any on-premises data center or colocation space for a truly consistent hybrid experience. Organizations of every size, f",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": -1,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 plans/price/availability \"Region\""
-   ],
-   "status": "below",
-   "hash": "f453c72"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/agent-registry-webbotauth-support": {
-   "title": "AWS Agent Registry now supports WebBotAuth bot registration",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/agent-registry-webbotauth-support/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T08:00:00.000Z",
-   "updated": null,
-   "summary": "AWS Agent Registry now supports registering WebBotAuth (WBA) bots as a new record type, making it easier to verify legitimate bot traffic through a standardized protocol. Previously, organizations lacked a standardized way to distinguish verified bots from malicious traffic. Now, bots can prove doma",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 4,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (agent)",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"you can\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "432ed900"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-transcribe-germany": {
-   "title": "Amazon Transcribe now available in AWS European Sovereign Cloud",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-transcribe-germany/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T08:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon Transcribe is now available in the AWS European Sovereign Cloud (Germany) Region. Customers who need to keep data and operations within the EU for regulatory compliance and data sovereignty requirements can now use automatic speech recognition (ASR) in the Region to turn speech into text. Ama",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 4,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now available\"",
-    "+2 user steps \"you can\"",
-    "+1 plans/price/availability \"Region\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "ce408a20"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-backup-incremental-backups-dynamodb": {
-   "title": "AWS Backup now supports incremental backups for Amazon DynamoDB",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-backup-incremental-backups-dynamodb/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T08:00:00.000Z",
-   "updated": null,
-   "summary": "AWS Backup now supports incremental backups of Amazon DynamoDB tables, enabling you to reduce backup storage while maintaining backup schedules as frequent as one hour. Until now, AWS Backup created a full copy of your DynamoDB tables. With this launch, after an initial full backup, each incremental",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 3,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"You can\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "69c19c01"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-textract-core-skill-ai-agents": {
-   "title": "Announcing a new skill for AI agents in Amazon Textract Core",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-textract-core-skill-ai-agents/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T08:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon Textract Core now lets AI agents extract text, tables, forms, and other data from documents through a skill, with no server to run or infrastructure to deploy. The skill guides an agent to the right Amazon Textract Core API for each document and includes a tested parser that converts the outp",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": -1,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (agents)"
-   ],
-   "status": "below",
-   "hash": "2513b355"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/route-53-public-dns-fallback": {
-   "title": "Amazon Route 53 private hosted zones now support public DNS fallback",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/route-53-public-dns-fallback/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T08:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon Route 53 private hosted zones now support public DNS fallback. When a query for a name in your private hosted zone's domain doesn't match a record in the zone, Route 53 returns the answer from public DNS instead of a \"name not found\" (NXDOMAIN) error. Public DNS fallback is part of the Advanc",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 1,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now support\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "1d1552b1"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/devops-agent-tools-repository": {
-   "title": "AWS DevOps Agent adds community and partner tools repository",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/devops-agent-tools-repository/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T08:00:00.000Z",
-   "updated": null,
-   "summary": "AWS DevOps Agent now gives you ways to share and leverage skills, MCP servers, connectors, and custom agents that enhance the capabilities of your AWS DevOps Agent instances. The AWS DevOps Agent Tools open source repository is a centralized, AWS-curated collection of tools that extend AWS DevOps Ag",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": -1,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (agent)"
-   ],
-   "status": "below",
-   "hash": "cf7c746f"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/devops-agent-new-chat-capabilities": {
-   "title": "AWS DevOps Agent adds new chat capabilities",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/devops-agent-new-chat-capabilities/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T08:00:00.000Z",
-   "updated": null,
-   "summary": "AWS DevOps Agent now extends its chat capabilities across MCP clients like Kiro and Claude Code, as well as Slack and Microsoft Teams channels. With Model Context Protocol (MCP) support, AWS DevOps Agent can now take directed chat actions including support for GitHub, GitLab, Azure DevOps, ServiceNo",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 4,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+4 niche (microsoft teams, claude, agent)",
-    "+2 launch \"launch\""
-   ],
-   "status": "below",
-   "hash": "8ebb896"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/textract-insights-ga": {
-   "title": "Amazon Textract Insights is now generally available",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/textract-insights-ga/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T08:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon Textract Insights brings document understanding to Amazon Textract. It is a new generative AI feature of Amazon Textract, and is now generally available in the US East (N. Virginia) and US West (Oregon) AWS Regions. Amazon Textract Insights splits, classifies, and extracts structured data fro",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"generally available\"",
-    "+1 plans/price/availability \"Regions\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "8992616a"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/devops-agent-reduces-latency": {
-   "title": "AWS DevOps Agent reduces investigation latency",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/devops-agent-reduces-latency/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T08:00:00.000Z",
-   "updated": null,
-   "summary": "When an incident is occurring, mean time to recover needs to be as fast as possible. With this launch, incident investigations performed by AWS DevOps Agent complete faster. Investigations now also include a real-time summary that is updated with the current state of an investigation, so initial fin",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (agent)",
-    "+2 launch \"launch\"",
-    "+1 plans/price/availability \"plan\""
-   ],
-   "status": "below",
-   "hash": "6760f404"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/lambda-microvms-customer-managed-keys": {
-   "title": "AWS Lambda MicroVMs now supports customer managed keys in AWS KMS",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/lambda-microvms-customer-managed-keys/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T08:00:00.000Z",
-   "updated": null,
-   "summary": "AWS Lambda MicroVMs now supports customer managed keys (CMK) in AWS Key Management Service (KMS) for data encryption at rest. CMK gives you full control over the lifecycle and usage of your KMS keys , helping meet compliance requirements in regulated industries like financial services and healthcare",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 3,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"get started\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "548160ec"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/secrets-store-csi-driver-assumerole": {
-   "title": "AWS Secrets Store CSI Driver Provider now supports AssumeRole for cross-account secret access",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/secrets-store-csi-driver-assumerole/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T08:00:00.000Z",
-   "updated": null,
-   "summary": "The AWS Secrets Store CSI Driver Provider now supports AssumeRole (role-chaining), allowing Kubernetes pods to access secrets and parameters across AWS accounts by assuming an IAM role in the account where the secrets are stored. Previously, customers reading cross-account secrets needed to add a re",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 1,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "398eb7e4"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/agent-registry-naming-public-discovery": {
-   "title": "AWS Agent Registry now offers naming and public discovery capabilities",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/agent-registry-naming-public-discovery/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T08:00:00.000Z",
-   "updated": null,
-   "summary": "AWS Agent Registry now offers public naming capabilities, making it easy to attach verified domain names to your agents and AI tools. Developers and network admins can perform domain verification checks to prove domain ownership, then associate the verified domain names with their agents to promote ",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 3,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (agent)",
-    "+2 launch \"launch\"",
-    "+2 user steps \"admins can\""
-   ],
-   "status": "below",
-   "hash": "9a727e14"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/route-53-offers-advanced-hosted-zones": {
-   "title": "Amazon Route 53 now offers Advanced Hosted Zones",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/route-53-offers-advanced-hosted-zones/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T08:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon Route 53 now offers Advanced Hosted Zones, a new hosted zone tier with additional guardrails, visibility, and resilience features. Advanced Hosted Zones include Change Guardrails that prevent accidental record deletions, record-level Change History, and public DNS fallback in private hosted z",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": -1,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 plans/price/availability \"tier\""
-   ],
-   "status": "below",
-   "hash": "ce9a9ecb"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/device-farm-test-insights": {
-   "title": "Announcing Test Insights for AWS Device Farm",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/device-farm-test-insights/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T08:00:00.000Z",
-   "updated": null,
-   "summary": "AWS Device Farm , a service for testing mobile and web apps, now provides Test Insights for Appium, Espresso, and XCUITest runs across multiple devices. Test Insights helps you and AI agents understand the health of your tests and resolve failures faster by providing a detailed breakdown of your tes",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": -1,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (agents)"
-   ],
-   "status": "below",
-   "hash": "57f48632"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-sagemaker-adds-new-capabilities": {
-   "title": "Amazon SageMaker adds new capabilities – improved blueprints and catalog experience, simplified data quality monitoring, and support for DuckDB 2.0 and DuckDB extensions",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-sagemaker-adds-new-capabilities/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T08:00:00.000Z",
-   "updated": null,
-   "summary": "Improved blueprints: Amazon SageMaker Unified Studio now gives project teams more ownership of their data and resources, within governance policies that administrators set centrally. Additional releases include faster notebook queries through DuckDB 2.0 support and data quality monitoring at catalog",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": -2,
-   "reasons": [
-    "-2 source aws-whats-new"
-   ],
-   "status": "below",
-   "hash": "5a203113"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-fsx-for-netapp-ontap-third-generation": {
-   "title": "Amazon FSx for NetApp ONTAP launches a new generation of file systems with up to 3.6x higher performance",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-fsx-for-netapp-ontap-third-generation/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T05:00:00.000Z",
-   "updated": null,
-   "summary": "Today, we're announcing third-generation Amazon FSx for NetApp ONTAP file systems, which deliver up to 216 GB/s of throughput and 8.6 million SSD IOPS per file system, up to 3x more throughput and up to 3.6x more SSD IOPS than previous-generation file systems. Built on the latest AWS compute and sto",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 1,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"launches\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "707c36f8"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/partner-central-guides-mcp": {
-   "title": "AWS Partner Central guides now available in the console and through AWS Partner Central Agents",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/partner-central-guides-mcp/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-19T21:51:00.000Z",
-   "updated": null,
-   "summary": "AWS announces AWS Partner Central guides with access through the AWS Partner Central console and the AWS Partner Central Agents Model Context Protocol (MCP) server. The guides give AWS Partners one place to search, read, and share content that AWS organizes to help partners grow and expand their bus",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (agents)",
-    "+2 launch \"now available\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "5d0c017a"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/iam-roles-anywhere-alias": {
-   "title": "IAM Roles Anywhere now supports aliases to simplify workload configuration",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/iam-roles-anywhere-alias/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-19T19:23:00.000Z",
-   "updated": null,
-   "summary": "AWS Identity and Access Management (IAM) Roles Anywhere now supports aliases, which are readable names that you assign to trust anchors, profiles, and certificate revocation lists (CRLs). Your workloads can request temporary credentials using a trust anchor or profile alias Amazon Resource Name (ARN",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 3,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"you can\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "4d48730f"
-  },
-  "https://azure.microsoft.com/updates?id=581463": {
-   "title": "[Launched] Generally Available: Governance policy guidance in Foundry Canvas and VS Code",
-   "link": "https://azure.microsoft.com/updates?id=581463",
-   "source": "azure-updates",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-21T00:45:13.000Z",
-   "updated": "2026-11-21T00:45:13.000Z",
-   "summary": "Microsoft Foundry governance guidance is now available in Foundry Canvas and the Foundry Toolkit for Visual Studio Code. As developers build agents, both experiences surface relevant policies for agent types, models, toolboxes, and guardrails, with warnin",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 2,
-   "reasons": [
-    "-2 source azure-updates",
-    "+1 niche (agents)",
-    "+2 launch \"Launched\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "15cccafa"
-  },
-  "https://azure.microsoft.com/updates?id=581468": {
-   "title": "[In preview] Public Preview: Microsoft Copilot harness support in Foundry Toolkit for VS Code",
-   "link": "https://azure.microsoft.com/updates?id=581468",
-   "source": "azure-updates",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-21T00:43:13.000Z",
-   "updated": "2026-11-21T00:43:13.000Z",
-   "summary": "Agent Builder in Microsoft Foundry Toolkit for Visual Studio Code supports prompt agents that use the Microsoft Copilot harness in public preview. Developers can configure tools and skills, edit local YAML definitions, deploy changes to Foundry, and run d",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 3,
-   "reasons": [
-    "-2 source azure-updates",
-    "+3 niche (copilot, agent)",
-    "+2 user steps \"configure\""
-   ],
-   "status": "below",
-   "hash": "67484a39"
-  },
-  "https://azure.microsoft.com/updates?id=579952": {
-   "title": "Retirement: Support for Azure Functions OpenAI Extension ends on April 20, 2027",
-   "link": "https://azure.microsoft.com/updates?id=579952",
-   "source": "azure-updates",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T23:16:31.000Z",
-   "updated": "2026-11-20T23:16:31.000Z",
-   "summary": "Support for Azure Functions OpenAI extension will end on April 20, 2027. Please migrate to OpenAI, Microsoft Foundry, or Azure AI Search SDKs directly, depending on your scenario, by that date. Until you migrate to the appropriate scenario SDK, .NET app",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 2,
-   "reasons": [
-    "-2 source azure-updates",
-    "+1 niche (openai)",
-    "+2 user steps \"migrate\"",
-    "+1 retirement/migration"
-   ],
-   "status": "below",
-   "hash": "e6fd127e"
-  },
-  "https://azure.microsoft.com/updates?id=581713": {
-   "title": "[In preview] Public Preview: Programmed Training in Microsoft Foundry",
-   "link": "https://azure.microsoft.com/updates?id=581713",
-   "source": "azure-updates",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T22:58:28.000Z",
-   "updated": "2026-11-20T22:58:28.000Z",
-   "summary": "Programmed Training, an API for building your own post-training loop over open-weight models, is available in public preview in Microsoft Foundry. Access is available by request through the preview sign-up form.Managed training jobs work well when you onl",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 0,
-   "reasons": [
-    "-2 source azure-updates",
-    "+2 launch \"available in\""
-   ],
-   "status": "below",
-   "hash": "dc3eb279"
-  },
-  "https://azure.microsoft.com/updates?id=581746": {
-   "title": "[In preview] Public Preview: Multi-turn evaluation in Microsoft Foundry",
-   "link": "https://azure.microsoft.com/updates?id=581746",
-   "source": "azure-updates",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T22:56:51.000Z",
-   "updated": "2026-11-20T22:56:51.000Z",
-   "summary": "Multi-turn evaluation is now in public preview in Microsoft Foundry. You can assess complete agent conversations against your quality standards, not only individual responses.A response can look correct on its own and still be part of a conversation that",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": -2,
-   "reasons": [
-    "-2 source azure-updates",
-    "+1 niche (agent)",
-    "+2 user steps \"You can\"",
-    "-3 corporate/announcement \"evaluation\""
-   ],
-   "status": "below",
-   "hash": "a4fb58a4"
-  },
-  "https://elevenlabs.io/blog/fix-text-to-speech-accuracy-problems": {
-   "title": "How to fix text to speech accuracy problems",
-   "link": "https://elevenlabs.io/blog/fix-text-to-speech-accuracy-problems",
-   "source": "elevenlabs-blog",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-20T12:00:00.000Z",
-   "updated": null,
-   "summary": "Text to speech not working? Learn how to fix text to speech accuracy problems like mispronounced words, robotic delivery, and API errors with these tips.",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 0,
-   "reasons": [
-    "-2 source elevenlabs-blog",
-    "+2 user steps \"How to\""
-   ],
-   "status": "below",
-   "hash": "a638c3a7"
-  },
-  "https://elevenlabs.io/blog/fundacion-televisa-posible": {
-   "title": "How Fundación Televisa interviewed more than 1,000 entrepreneurs with voice AI",
-   "link": "https://elevenlabs.io/blog/fundacion-televisa-posible",
-   "source": "elevenlabs-blog",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-20T12:00:00.000Z",
-   "updated": null,
-   "summary": "Fundación Televisa used ElevenAgents to interview more than 1,000 entrepreneurs for POSiBLE, Mexico’s largest entrepreneurship accelerator.",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": -2,
-   "reasons": [
-    "-2 source elevenlabs-blog"
-   ],
-   "status": "below",
-   "hash": "eda40d49"
-  },
-  "https://aws.amazon.com/blogs/machine-learning/new-in-aws-quick-more-capable-flows-an-updated-web-experience-and-agents-that-work-together": {
-   "title": "New in AWS Quick: More capable flows, an updated web experience, and agents that work together",
-   "link": "https://aws.amazon.com/blogs/machine-learning/new-in-aws-quick-more-capable-flows-an-updated-web-experience-and-agents-that-work-together/",
-   "source": "aws-ml-blog",
-   "topic": "ai-engineering",
-   "category": "launch",
-   "date": "2026-11-21T01:06:42.000Z",
-   "updated": null,
-   "summary": "AWS Quick is the AI workspace built only for work. Today we're releasing updates that help your team get more done: build and run business-process flows in chat, triage your day in the updated web app, get more complete answers from multiple agents at once, and connect new data sources like Meta ads",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": -2,
-   "reasons": [
-    "-3 source aws-ml-blog",
-    "+1 niche (agents)"
-   ],
-   "status": "below",
-   "hash": "c297b91a"
-  },
-  "https://aws.amazon.com/blogs/machine-learning/cut-self-hosted-llm-cost-and-latency-with-the-distributed-kv-caching-agent-skill": {
-   "title": "Cut self-hosted LLM cost and latency with the distributed KV caching agent skill",
-   "link": "https://aws.amazon.com/blogs/machine-learning/cut-self-hosted-llm-cost-and-latency-with-the-distributed-kv-caching-agent-skill/",
-   "source": "aws-ml-blog",
-   "topic": "ai-engineering",
-   "category": "launch",
-   "date": "2026-11-21T00:14:26.000Z",
-   "updated": null,
-   "summary": "Self-hosting LLMs on GPUs means paying to recompute the same context on every turn. Distributed KV caching with Amazon ElastiCache can cut inference cost by up to 40% and time to first token by up to 80%. This post walks through the distributed KV caching skill in the Agent Toolkit for AWS, which ev",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": -2,
-   "reasons": [
-    "-3 source aws-ml-blog",
-    "+1 niche (agent)"
-   ],
-   "status": "below",
-   "hash": "5886d6a2"
-  },
-  "https://aws.amazon.com/blogs/machine-learning/introducing-managed-cluster-extensions-for-observability-and-user-management-in-amazon-sagemaker-hyperpod-slurm": {
-   "title": "Introducing managed cluster extensions for observability and user management in Amazon SageMaker HyperPod Slurm",
-   "link": "https://aws.amazon.com/blogs/machine-learning/introducing-managed-cluster-extensions-for-observability-and-user-management-in-amazon-sagemaker-hyperpod-slurm/",
-   "source": "aws-ml-blog",
-   "topic": "ai-engineering",
-   "category": "launch",
-   "date": "2026-11-20T23:07:03.000Z",
-   "updated": null,
-   "summary": "Amazon SageMaker HyperPod now offers managed cluster extensions for observability and user management, bringing declarative, API- and console-driven configuration to the software running on Slurm cluster nodes. This post explains how the extensions work and follows a platform team through a quarter ",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 0,
-   "reasons": [
-    "-3 source aws-ml-blog",
-    "+2 launch \"Introducing\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "56e89154"
-  },
-  "https://aws.amazon.com/blogs/machine-learning/introducing-amazon-sagemaker-hyperpod-global-inference-gateway-one-endpoint-across-regions-and-clusters": {
-   "title": "Introducing Amazon SageMaker HyperPod Global Inference Gateway: One endpoint across Regions and clusters",
-   "link": "https://aws.amazon.com/blogs/machine-learning/introducing-amazon-sagemaker-hyperpod-global-inference-gateway-one-endpoint-across-regions-and-clusters/",
-   "source": "aws-ml-blog",
-   "topic": "ai-engineering",
-   "category": "launch",
-   "date": "2026-11-20T22:35:24.000Z",
-   "updated": null,
-   "summary": "Amazon SageMaker HyperPod introduces the Global Inference Gateway, one managed endpoint that routes inference requests across your HyperPod clusters in one Region or across Regions. It picks the best cluster, fails over automatically, and authenticates every request with SigV4 and IAM over AWS Priva",
-   "first": "2026-11-21T01:47:47.236Z",
-   "score": 1,
-   "reasons": [
-    "-3 source aws-ml-blog",
-    "+2 launch \"Introducing\"",
-    "+1 plans/price/availability \"Regions\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "bed85225"
   },
   "https://microsoft.com/microsoft-365/roadmap?id=581992": {
    "title": "Manage workforce requests in Microsoft 365 Copilot",
@@ -7502,12 +5795,14 @@
     "+1 launch in the headline",
     "+1 autocomplete (9)"
    ],
-   "status": "writing",
+   "status": "published",
    "hash": "d6e2bc06",
    "kind": "new",
    "extra": false,
    "taskAt": "2026-11-23T23:59:46.286Z",
-   "attempts": 1
+   "attempts": 1,
+   "slug": "claude-ship-set-up-code-review-steward-approvals",
+   "resultAt": "2026-11-24T00:09:23.266Z"
   },
   "https://bleepingcomputer.com/news/security/south-koreas-power-giant-kepco-confirms-data-breach-impacting-15-million": {
    "title": "South Korea’s power giant KEPCO confirms data breach impacting 1.5 million",
@@ -7809,9 +6104,13 @@
     "+6 M365 retirement due in 38 days",
     "-1 in /news 2026-11-10-claude-eu-default-teams-free-ews-deadline"
    ],
-   "status": "queued",
+   "status": "writing",
    "hash": "57692dab",
-   "news": "2026-11-10-claude-eu-default-teams-free-ews-deadline"
+   "news": "2026-11-10-claude-eu-default-teams-free-ews-deadline",
+   "kind": "new",
+   "extra": false,
+   "taskAt": "2026-11-24T03:43:45.804Z",
+   "attempts": 1
   },
   "https://mc.merill.net/message/MC1557760": {
    "title": "MC1557760: Microsoft Teams: Registration capacity for town halls and webinars increases to 20,000",
@@ -8559,6 +6858,358 @@
     "microsoft"
    ],
    "backlog": "teams-not-working-today-fix-windows-mac-us"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=581967": {
+   "title": "Dynamics 365 Customer Insights - Journeys: Stop tracking email opens without disabling other tracking",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581967",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-24T00:13:11.000Z",
+   "updated": "2026-11-24T00:13:11.000Z",
+   "summary": "Choose whether to track email opens separately from other tracking in Dynamics 365 Customer Insights - Journeys. A dedicated consent purpose lets you omit tracking pixels from new emails while link clicks, website interactions, UTM parameters, and form prefill continue to follow their existing track",
+   "first": "2026-11-24T03:43:45.804Z",
+   "score": -5,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "7bf73593"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=581965": {
+   "title": "Microsoft Teams: Improved device settings experience on Teams Rooms on Android",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581965",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-24T00:13:11.000Z",
+   "updated": "2026-11-24T00:13:11.000Z",
+   "summary": "We’re enhancing the on-device admin settings experience for Teams Rooms on Android by improving information structure, organization and navigation. These updates make it easier for admins to find, understand, and adjust device settings directly from the console, improving overall usability and effic",
+   "first": "2026-11-24T03:43:45.804Z",
+   "score": -1,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+4 niche (microsoft teams, android)",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "876652d2"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=581803": {
+   "title": "Dynamics 365 Contact Center: Set wait times as short as 5 seconds in orchestration playbooks",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581803",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-24T00:13:11.000Z",
+   "updated": "2026-11-24T00:13:11.000Z",
+   "summary": "Orchestration playbooks can now re-evaluate the conditions every 5 seconds instead of every 30 seconds. With this shorter interval, you get finer control over priority escalation and Bullseye pool expansion. As a result, conversations reach the right queue or specialist sooner when wait times or que",
+   "first": "2026-11-24T03:43:45.804Z",
+   "score": 0,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+1 category (Launched, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "36ff08cb"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=581791": {
+   "title": "Dynamics 365 Human Resources: Expand talent sourcing through employee referrals",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581791",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-24T00:13:11.000Z",
+   "updated": "2026-11-24T00:13:11.000Z",
+   "summary": "Employee referrals provide organizations with an additional talent-sourcing channel by enabling employees to participate actively in the recruitment process. This capability helps organizations: Expand talent reach: Access potential candidates through employees' professional networks. Reduce recruit",
+   "first": "2026-11-24T03:43:45.804Z",
+   "score": -6,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "-5 category (In development, General Availability, Preview)"
+   ],
+   "status": "below",
+   "hash": "a4b742f0"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=581790": {
+   "title": "Dynamics 365 Sales: Customize how Recommended Actions are prioritized with custom instructions",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581790",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-24T00:13:11.000Z",
+   "updated": "2026-11-24T00:13:11.000Z",
+   "summary": "Administrators can customize how the Recommended Actions agent prioritizes actions by configuring natural-language instructions for individual source agents. This gives organizations greater flexibility to align AI-generated recommendations with their sales strategies while retaining the built-in in",
+   "first": "2026-11-24T03:43:45.804Z",
+   "score": -2,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+1 niche (agent)",
+    "+2 user steps \"Configure\"",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "2de6f5e0"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=581759": {
+   "title": "Dynamics 365 Contact Center: Trace conversation journeys end to end across your contact center",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581759",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-24T00:13:11.000Z",
+   "updated": "2026-11-24T00:13:11.000Z",
+   "summary": "Journey Visualization brings live conversation data onto the map of your contact center configuration, so admins can see how conversations actually flow, not just how they were designed to flow. Admins can spot patterns across many conversations, then select any single conversation and follow its pa",
+   "first": "2026-11-24T03:43:45.804Z",
+   "score": -4,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 user steps \"admins can\"",
+    "-5 category (In development, General Availability, Preview)"
+   ],
+   "status": "below",
+   "hash": "a80ac5ea"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=581758": {
+   "title": "Dynamics 365 Contact Center: Visualize and manage your contact center setup with visual designer",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581758",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-24T00:13:11.000Z",
+   "updated": "2026-11-24T00:13:11.000Z",
+   "summary": "Visual Designer shows your entire contact center configuration as one interactive map: channels, workstreams, classification and routing rules, queues, and overflow handling, and how they connect. Admins can see how conversations will flow, spot gaps or misconfigurations, and make common changes, su",
+   "first": "2026-11-24T03:43:45.804Z",
+   "score": -4,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 user steps \"setup\"",
+    "-5 category (In development, General Availability, Preview)"
+   ],
+   "status": "below",
+   "hash": "c38f0ff6"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=581721": {
+   "title": "Microsoft Edge: Choose a Profile at Startup",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581721",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-24T00:13:11.000Z",
+   "updated": "2026-11-24T00:13:11.000Z",
+   "summary": "Microsoft Edge is introducing a profile picker at startup, making it easier to begin each browsing session with the right profile. Users can choose among their work, personal, or other available profiles, add a new profile, or browse as a guest before opening the browser. This helps users keep their",
+   "first": "2026-11-24T03:43:45.804Z",
+   "score": -1,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 launch \"introducing\"",
+    "+2 user steps \"Users can\"",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "d3833c87"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=581720": {
+   "title": "Microsoft Teams: Raise your hand to speak up at large events with up to 100,000 attendees",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581720",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-24T00:13:11.000Z",
+   "updated": "2026-11-24T00:13:11.000Z",
+   "summary": "Ask your questions live and take part in the conversation, even at events with up to 100,000 attendees. In events this size, attendees can now raise their hand in Teams when they have a question. Organizers can then let people with a raised hand turn on their mic and camera to ask their question or ",
+   "first": "2026-11-24T03:43:45.804Z",
+   "score": -4,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 niche (microsoft teams)",
+    "+2 user steps \"turn on\"",
+    "-3 corporate/announcement \"events\"",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "20e80872"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=581719": {
+   "title": "Microsoft Teams: Share reactions at events with up to 100,000 attendees",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581719",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-24T00:13:11.000Z",
+   "updated": "2026-11-24T00:13:11.000Z",
+   "summary": "Stay more engaged and connected with the audience, even at events with up to 100,000 attendees. Teams now supports reactions in events at this scale. You can send reactions during the event and see the reactions others send, so everyone can share the moment together. GA date: December CY2026",
+   "first": "2026-11-24T03:43:45.804Z",
+   "score": -2,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 niche (microsoft teams)",
+    "+2 launch \"now supports\"",
+    "+2 user steps \"You can\"",
+    "-3 corporate/announcement \"events\"",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "2c18cc3e"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=580889": {
+   "title": "Microsoft Copilot (Microsoft 365): The more you use Copilot in Office the better it gets",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=580889",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-24T00:13:11.000Z",
+   "updated": "2026-11-24T00:13:11.000Z",
+   "summary": "Copilot in Word, Excel, PowerPoint, and Workspaces across Copilot App and OneNote will use memory to learn your work patterns and personalize responses. With memory, Copilot can offer more relevant suggestions, hold the pen in a way that represents you, and adapt to your preferences over time GA dat",
+   "first": "2026-11-24T03:43:45.804Z",
+   "score": -2,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+4 niche (copilot, microsoft 365, excel)",
+    "-5 category (In development, Current Channel, General Availability)",
+    "backlog mimecast-vs-proofpoint-vs-defender-office-365",
+    "covered by /blog/copilot-chat-vs-microsoft-365-copilot-what-business-pays-for"
+   ],
+   "status": "duplicate",
+   "hash": "4e597939",
+   "backlog": "mimecast-vs-proofpoint-vs-defender-office-365",
+   "post": "copilot-chat-vs-microsoft-365-copilot-what-business-pays-for"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=580885": {
+   "title": "Outlook: Add Custom Flag Descriptions for Clearer Follow-Ups",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=580885",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-24T00:13:11.000Z",
+   "updated": "2026-11-24T00:13:11.000Z",
+   "summary": "You can add custom text to an email's follow-up flag to describe what you need to do. Use your own words to capture the next step for each flagged message. This gives you a clear reminder of why you flagged the email when you return to it. #newoutlookforwindows GA date: February CY2027",
+   "first": "2026-11-24T03:43:45.804Z",
+   "score": -1,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 niche (outlook)",
+    "+2 user steps \"You can\"",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "7a7f5195"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=579892": {
+   "title": "PowerPoint: Customize your Presenter view layout",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=579892",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-24T00:13:11.000Z",
+   "updated": "2026-11-24T00:13:11.000Z",
+   "summary": "New controls in Presenter view will let you reposition and resize the speaker notes, set speaker notes to a specific text size, and customize the position of slides and notes into a view that works for you. The existing layout will remain the default unless you change it. GA date: January CY2027",
+   "first": "2026-11-24T03:43:45.804Z",
+   "score": -4,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+1 niche (powerpoint)",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "bbf84c62"
+  },
+  "https://manageengine.com/it-operations-management/blog/tech-comic-network-heroes-how-agentic-ai-decides-under-pressure.html": {
+   "title": "[Tech comic] Network heroes: How agentic AI decides under pressure",
+   "link": "https://www.manageengine.com/it-operations-management/blog/tech-comic-network-heroes-how-agentic-ai-decides-under-pressure.html",
+   "source": "manageengine-blog",
+   "topic": "security-identity",
+   "category": "launch",
+   "date": "2026-11-23T22:30:00.000Z",
+   "updated": null,
+   "summary": "Two drivers have identical points and machinery, and the only variable left is the engineer in the pit lane. That is the premise of Network Heroes: Race Conditions, a B2B comic ManageEngine created to illustrate what production-grade Agentic AI actually looks like when the stakes are real and the cl",
+   "first": "2026-11-24T03:43:45.804Z",
+   "score": -2,
+   "reasons": [
+    "-2 source manageengine-blog"
+   ],
+   "status": "below",
+   "hash": "791343a7"
+  },
+  "https://manageengine.com/identity-360/access-management/blog/microsoft-365-outage-phishing-campaign-highlights-the-need-for-phishing-resistant-mfa.html": {
+   "title": "Microsoft 365 outage phishing campaign highlights the need for phishing-resistant MFA",
+   "link": "https://www.manageengine.com/identity-360/access-management/blog/microsoft-365-outage-phishing-campaign-highlights-the-need-for-phishing-resistant-mfa.html",
+   "source": "manageengine-blog",
+   "topic": "security-identity",
+   "category": "launch",
+   "date": "2026-11-23T17:30:00.000Z",
+   "updated": null,
+   "summary": "After Microsoft 365's service disruption on November 12, 2026, attackers were quick to exploit the uncertainty. Within a day, a phishing campaign began circulating emails that appeared to be legitimate Microsoft 365 service-health notifications. The messages warned recipients that emails held during",
+   "first": "2026-11-24T03:43:45.804Z",
+   "score": 0,
+   "reasons": [
+    "-2 source manageengine-blog",
+    "+2 niche (microsoft 365)"
+   ],
+   "status": "below",
+   "hash": "853d2f7"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ec2-x8i-new-zealand": {
+   "title": "Amazon EC2 X8i instances are now available in the Asia Pacific (New Zealand) Region",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ec2-x8i-new-zealand/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T23:21:00.000Z",
+   "updated": null,
+   "summary": "Starting today, Amazon Elastic Compute Cloud (Amazon EC2) X8i instances are available in the Asia Pacific (New Zealand) Region. These instances are powered by custom Intel Xeon 6 processors available only on AWS. X8i instances are SAP-certified and deliver the highest performance and fastest memory ",
+   "first": "2026-11-24T03:43:45.804Z",
+   "score": 2,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now available\"",
+    "+1 plans/price/availability \"Region\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "8bd43071"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/configurable-aws-sign-in-duration": {
+   "title": "AWS Sign-In introduces configurable Sign-in duration of up to 90 days",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/configurable-aws-sign-in-duration/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T23:14:00.000Z",
+   "updated": null,
+   "summary": "AWS Sign-In now enables developers and AI agents to stay authenticated for up to 90 days without frequent sign-ins or consent prompts. With this launch, administrators can configure Sign-in duration , which controls how long an OAuth Sign-in session remains active, for individual IAM users and roles",
+   "first": "2026-11-24T03:43:45.804Z",
+   "score": 4,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+1 niche (agents)",
+    "+2 launch \"introduces\"",
+    "+2 user steps \"configure\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "cbaf04ce"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-hyperpod-extensions": {
+   "title": "Amazon SageMaker HyperPod now supports managed observability and user management extensions for Slurm clusters",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/sagemaker-hyperpod-extensions/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T20:00:00.000Z",
+   "updated": null,
+   "summary": "Amazon SageMaker HyperPod now supports managed cluster extensions for Slurm clusters. You can install, configure, update, and remove managed features through the SageMaker AI console or API. The first two extensions cover observability and user management. Earlier, every observability or user manage",
+   "first": "2026-11-24T03:43:45.804Z",
+   "score": 3,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now supports\"",
+    "+2 user steps \"You can\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "6557895d"
   }
  },
  "devices": {},
@@ -8579,7 +7230,7 @@
    "first": "2026-11-19T14:45:12.000Z",
    "decision": "covered",
    "key": "ipo:anthropic",
-   "title": "Anthropic Faces New Pressures From Public Investors After Successful IPO",
+   "title": "Bison Ventures' Tom Biegala on Anthropic IPO: The future of AI is quite bright",
    "titles": [
     "Anthropic’s 7 founders cashed out nearly $2B in record-breaking IPO",
     "Anthropic’s IPO could deliver $156B to charity",
@@ -8604,9 +7255,8 @@
     "https://www.cnbc.com/2026/11/20/anthropic-ipo-greenshoe.html",
     "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQZXdyUExSdjhGa000MWtxaUR0YzhiVHJnNzN0N0lTUnNONktkaWZkUVUwdExoUXhXMTlJN0NEZ3F3M2RYbUZYelpiNFhpOE14LWdtYjF1MnB2M00xMk1GbENmci1UeFlXa3V0aHM4TWlxVVZNeFBwUkZjMTA2ZWhCSFBVaVVBb0FUdnpj?oc=5"
    ],
-   "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNaWEtdlp4ZFBsaUpfZVZsTW9BeTRLYmRFSXcyT1RFbFZzcmp5OGtQRy1ob2I2Q1FET2ZJbG9ha1BtSlpJaVd5UVFMZFZXX2F4OE52QmEwRko0bDhLendUOXdpWVpZZGhCcDRYNGZhVzBDdWtpWTBXOU5reDB0ZkU1ZURrQXptREdqMXNwbGNySWdwcEN5aDNFazVQTXc5TGc?oc=5",
+   "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQM2tFTXRSLVNtYlZ6bHlMczZIRUljNnRaemdWY0NYSlhFUWtEbFptVXlXWEZ4ZUkwMTFMZHNCWXhIRGNUeXJVNzV4NkczQlZiTmtwY0ZXdzkwWnhjRmVzcHRlLXdTM1hiQ3BDb2Q2dmxSVXFYRC03SFRiaVRmT3ZIREUzU3pvMDFpcVFtYmVvVVV4dHVhTVNCN1hQR1JONlg5Z2pib0R1NXlLM1ROZ3pRM0NjRzY2ZlhSUkRj?oc=5",
    "outlets": [
-    "Bloomberg",
     "CNBC",
     "WSJ",
     "TechCrunch"
@@ -8615,9 +7265,9 @@
    "category": "launch",
    "topic": "ai-engineering",
    "parkOnly": false,
-   "last": "2026-11-23T23:16:00.000Z",
-   "date": "2026-11-23T23:16:00.000Z",
-   "score": 12,
+   "last": "2026-11-24T03:13:30.000Z",
+   "date": "2026-11-24T03:13:30.000Z",
+   "score": 11,
    "post": "anthropic-ipo-explained-claude-users"
   },
   "milestone:google|9c5a0e24": {
