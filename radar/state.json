@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-24T03:43:45.804Z",
+ "lastScan": "2026-11-24T04:26:09.691Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -3569,203 +3569,6 @@
    "status": "below",
    "hash": "ebd3f5c1"
   },
-  "https://microsoft.com/microsoft-365/roadmap?id=581992": {
-   "title": "Manage workforce requests in Microsoft 365 Copilot",
-   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581992",
-   "source": "m365-roadmap",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-21T02:55:45.000Z",
-   "updated": "2026-11-21T02:55:45.000Z",
-   "summary": "Dynamics 365 Workforce Engagement Management (WEM) integrates with Microsoft 365 Copilot through Model Context Protocol (MCP) tools. These tools connect Microsoft 365 Copilot with Dynamics 365 and Dataverse so supervisors and customer service representatives can use natural language to work with wor",
-   "first": "2026-11-21T03:43:48.706Z",
-   "score": 3,
-   "reasons": [
-    "-1 source m365-roadmap",
-    "+4 niche (copilot, microsoft 365)"
-   ],
-   "status": "below",
-   "hash": "e6f1bdfa"
-  },
-  "https://microsoft.com/microsoft-365/roadmap?id=581987": {
-   "title": "Trigger quality evaluations when a support case is resolved",
-   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581987",
-   "source": "m365-roadmap",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-21T02:55:45.000Z",
-   "updated": "2026-11-21T02:55:45.000Z",
-   "summary": "Quality evaluation plans can now run automatically when a support case is resolved. This helps organizations evaluate customer interactions at the right point in the service lifecycle, without relying only on scheduled or manual review processes. By triggering evaluations from the case resolution ev",
-   "first": "2026-11-21T03:43:48.706Z",
-   "score": -2,
-   "reasons": [
-    "-1 source m365-roadmap",
-    "+1 plans/price/availability \"plans\"",
-    "-3 corporate/announcement \"evaluations\"",
-    "+1 category (Launched, General Availability, Worldwide (Standard Multi-Tenant))"
-   ],
-   "status": "below",
-   "hash": "a25166d1"
-  },
-  "https://microsoft.com/microsoft-365/roadmap?id=581993": {
-   "title": "Sampling bulk records for quality evaluation equally by representatives",
-   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581993",
-   "source": "m365-roadmap",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-21T02:54:56.000Z",
-   "updated": "2026-11-21T02:54:56.000Z",
-   "summary": "Quality evaluaton allows quality managers to create bulk record samples with equal distribution across representatives. This helps ensure sampling is balanced and avoids over- or under-representing any individual representative in review sets. When generating a bulk sample via evaluation plans, the ",
-   "first": "2026-11-21T03:43:48.706Z",
-   "score": -2,
-   "reasons": [
-    "-1 source m365-roadmap",
-    "+1 plans/price/availability \"plans\"",
-    "-3 corporate/announcement \"evaluation\"",
-    "+1 category (Launched, General Availability, Worldwide (Standard Multi-Tenant))"
-   ],
-   "status": "below",
-   "hash": "99d804be"
-  },
-  "https://mc.merill.net/message/MC1557754": {
-   "title": "MC1557754: Microsoft Copilot: Continue using models after reaching usage limits with Copilot Credits",
-   "link": "https://mc.merill.net/message/MC1557754",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-20T17:47:55.000Z",
-   "updated": null,
-   "summary": "Microsoft Copilot now allows continued use of models after license usage limits via usage-based billing (UBB) with Copilot Credits. Users see credit indicators and can choose between Auto mode or credit-consuming models. Admins manage access and spending through updated policies and controls. Rollou",
-   "first": "2026-11-21T03:43:48.706Z",
-   "score": 1,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 niche (copilot)",
-    "+1 plans/price/availability \"Rollout\""
-   ],
-   "status": "below",
-   "hash": "2735123c"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-cloudwatch-omni-microsoft-azure": {
-   "title": "Amazon CloudWatch Omni now supports Microsoft Azure platform logs, metrics and traces",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-cloudwatch-omni-microsoft-azure",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-21T01:10:00.000Z",
-   "updated": null,
-   "summary": "Amazon CloudWatch Omni now supports collecting Azure resource logs, Azure Monitor platform metrics, virtual network (VNet) flow logs, and traces from Application Insights. Teams that run workloads on both AWS and Azure no longer need separate monitoring tools or custom pipelines to see their whole e",
-   "first": "2026-11-21T03:43:48.706Z",
-   "score": 5,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (entra)",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"get started\"",
-    "+1 plans/price/availability \"Region\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "686a607c"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-function-state-events": {
-   "title": "AWS Lambda now publishes Event Function state change events to Amazon EventBridge",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-function-state-events/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T22:40:00.000Z",
-   "updated": null,
-   "summary": "AWS Lambda now publishes Event Function state change events to Amazon EventBridge . Lambda emits an event each time an Event Function version changes state because of a customer action, such as creating, updating, publishing, or deleting a function. These events help platform and DevOps teams to tri",
-   "first": "2026-11-21T03:43:48.706Z",
-   "score": -5,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "-3 corporate/announcement \"Event\""
-   ],
-   "status": "below",
-   "hash": "39c96d32"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-cost-optimization-recommendations": {
-   "title": "AWS Lambda now provides cost optimization recommendations for Event Functions",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-cost-optimization-recommendations/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T19:00:00.000Z",
-   "updated": null,
-   "summary": "AWS Lambda now provides cost optimization recommendations for Event Functions in AWS Trusted Advisor . These recommendations identify on-demand functions where moving to Lambda Managed Instances (LMI) is estimated to reduce costs, and provide configuration guidance for running on LMI. With these rec",
-   "first": "2026-11-21T03:43:48.706Z",
-   "score": -2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 user steps \"you can\"",
-    "+1 plans/price/availability \"pricing\"",
-    "-3 corporate/announcement \"Event\""
-   ],
-   "status": "below",
-   "hash": "6a5b1cfb"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-10K-batch-size-SQSFIFO": {
-   "title": "AWS Lambda now supports a batch size of up to 10,000 messages for Amazon SQS FIFO queues",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-lambda-10K-batch-size-SQSFIFO/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T19:00:00.000Z",
-   "updated": null,
-   "summary": "AWS Lambda now supports a batch size of up to 10,000 messages for Amazon Simple Queue Service (Amazon SQS) FIFO queue event source mappings (ESMs) in provisioned mode , up from 10 messages previously. With larger batches, you can process high-volume, ordered workloads such as financial transactions,",
-   "first": "2026-11-21T03:43:48.706Z",
-   "score": 3,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"you can\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "2d4373f7"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/route-53-affinity-routing": {
-   "title": "Amazon Route 53 now supports Availability Zone (AZ) affinity routing",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/route-53-affinity-routing/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T08:21:00.000Z",
-   "updated": null,
-   "summary": "Amazon Route 53 now supports Availability Zone (AZ) affinity routing, which routes DNS queries from your VPCs to resources in the same AZ as the client that sends the query. This helps you keep traffic within the same AZ as the client, reducing latency and improving application performance. Until no",
-   "first": "2026-11-21T03:43:48.706Z",
-   "score": 1,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "3f61e5e8"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/vpc-ipam-policies-firewall-lambda": {
-   "title": "Amazon VPC IPAM policies now support automated internet firewall and AWS Lambda Web Functions and MicroVMs",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/vpc-ipam-policies-firewall-lambda/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-20T08:06:00.000Z",
-   "updated": null,
-   "summary": "Amazon Virtual Private Cloud (VPC) IP Address Manager (IPAM) policies now support AWS Network Firewall automated internet firewall and AWS Lambda Web Functions and MicroVMs. You can centrally configure IPAM policies across AWS accounts and AWS Regions to allocate public IPv4 addresses to these resou",
-   "first": "2026-11-21T03:43:48.706Z",
-   "score": 4,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now support\"",
-    "+2 user steps \"You can\"",
-    "+1 plans/price/availability \"Regions\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "7f6f0370"
-  },
   "https://news.google.com/rss/articles/CBMisAFBVV95cUxOVDhwMzkzejNZQ1AtREVxR3l5d0lFS0phdjhnR002T1JjYmVQT2NULUdvd3Y2YnBTR2Nhb3BMZEt3VUdPSDk0Zzd5YmxtVTUxRGZoZ2Izeno4X3podnQ5c05SOEo0N3ZKQlB3ZWJqLU9USEFmMzhvWFYyTUhKZ1dvdS1UMlFXMHVhVWdyTXotbTRZWGtzMVU4SGRFbjVpb1Y5S0l1RkQwY0s0Q3ZHWTJZTg?oc=5": {
    "title": "Google rolls out new search homepage with AI chat history and no search button",
    "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOVDhwMzkzejNZQ1AtREVxR3l5d0lFS0phdjhnR002T1JjYmVQT2NULUdvd3Y2YnBTR2Nhb3BMZEt3VUdPSDk0Zzd5YmxtVTUxRGZoZ2Izeno4X3podnQ5c05SOEo0N3ZKQlB3ZWJqLU9USEFmMzhvWFYyTUhKZ1dvdS1UMlFXMHVhVWdyTXotbTRZWGtzMVU4SGRFbjVpb1Y5S0l1RkQwY0s0Q3ZHWTJZTg?oc=5",
@@ -5652,15 +5455,31 @@
    "updated": null,
    "summary": "OpenAI and Cisco introduce Shirudo, an open-source runtime for Linux. It helps teams protect running systems while they roll out patches.",
    "first": "2026-11-23T23:59:46.286Z",
-   "score": 4,
+   "score": 11,
    "reasons": [
     "+2 source openai-news",
     "+1 niche (openai)",
     "+2 launch \"roll out\"",
-    "-1 category (Security)"
+    "-1 category (Security)",
+    "+1 trending: Techmeme top headline, no reputable outlet named"
    ],
-   "status": "below",
-   "hash": "3dd0bc2e"
+   "status": "parked",
+   "hash": "3dd0bc2e",
+   "trending": {
+    "key": "milestone:openai",
+    "titles": [
+     "OpenAI and Cisco launch Shirudo, an open-source runtime that helps teams protect running Linux systems without a reboot while they roll out patches",
+     "OpenAI rolls out a version of GPT-6.2 Sol that is \"optimized for everyday conversation\" to the Chat tab for Plus, Pro, Business, and Enterprise users"
+    ],
+    "links": [
+     "https://siliconangle.com/2026/11/23/cisco-and-openai-launch-shirudo-an-open-source-infrastructure-shield-to-protect-against-ai-driven-cyberattacks/",
+     "https://9to5mac.com/2026/11/23/chatgpt-expands-gpt-6-2-sol-as-openai-sets-retirement-date-for-two-models/"
+    ],
+    "outlets": [],
+    "techmeme": true
+   },
+   "trendDay": "2026-11-24",
+   "parkedAt": "2026-11-24T04:26:09.691Z"
   },
   "https://openai.com/business/learn/connected-intelligence-for-in-house-legal": {
    "title": "Connected intelligence for in-house legal",
@@ -6104,13 +5923,15 @@
     "+6 M365 retirement due in 38 days",
     "-1 in /news 2026-11-10-claude-eu-default-teams-free-ews-deadline"
    ],
-   "status": "writing",
+   "status": "published",
    "hash": "57692dab",
    "news": "2026-11-10-claude-eu-default-teams-free-ews-deadline",
    "kind": "new",
    "extra": false,
    "taskAt": "2026-11-24T03:43:45.804Z",
-   "attempts": 1
+   "attempts": 1,
+   "slug": "cross-tenant-free-busy-xtap-migration",
+   "resultAt": "2026-11-24T03:53:10.562Z"
   },
   "https://mc.merill.net/message/MC1557760": {
    "title": "MC1557760: Microsoft Teams: Registration capacity for town halls and webinars increases to 20,000",
@@ -7210,6 +7031,35 @@
    ],
    "status": "below",
    "hash": "6557895d"
+  },
+  "https://thenewstack.io/aws-strands-decider-v2": {
+   "title": "AWS debuts Strands Decider v2, a family of five open decision models based on Google's Gemma 4, ranging from 2B to 31B parameters, under the Apache 2.0 license",
+   "link": "https://thenewstack.io/aws-strands-decider-v2/",
+   "source": "techmeme",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-24T04:25:01.000Z",
+   "summary": "AWS on Monday launched Strands Decider v2, a family of five open decision models. The release comes only seven weeks after Strands Labs …",
+   "first": "2026-11-24T04:26:09.691Z",
+   "score": 11,
+   "reasons": [
+    "+1 trending: Techmeme top headline, no reputable outlet named"
+   ],
+   "trending": {
+    "key": "milestone:amazon",
+    "titles": [
+     "AWS debuts Strands Decider v2, a family of five open decision models based on Google's Gemma 4, ranging from 2B to 31B parameters, under the Apache 2.0 license"
+    ],
+    "links": [
+     "https://thenewstack.io/aws-strands-decider-v2/"
+    ],
+    "outlets": [],
+    "techmeme": true
+   },
+   "trendDay": "2026-11-24",
+   "hash": "12f167c1",
+   "status": "parked",
+   "parkedAt": "2026-11-24T04:26:09.691Z"
   }
  },
  "devices": {},
@@ -7223,14 +7073,17 @@
   ],
   "2026-11-22": [],
   "2026-11-23": [],
-  "2026-11-24": []
+  "2026-11-24": [
+   "AWS debuts Strands Decider v2, a family of five open decision models based on Go",
+   "OpenAI and Cisco launch Shirudo, an open-source runtime that helps teams protect"
+  ]
  },
  "trends": {
   "ipo:anthropic|63c1035a": {
    "first": "2026-11-19T14:45:12.000Z",
    "decision": "covered",
    "key": "ipo:anthropic",
-   "title": "Bison Ventures' Tom Biegala on Anthropic IPO: The future of AI is quite bright",
+   "title": "Anthropic Faces New Pressures From Public Investors After Successful IPO",
    "titles": [
     "Anthropic’s 7 founders cashed out nearly $2B in record-breaking IPO",
     "Anthropic’s IPO could deliver $156B to charity",
@@ -7255,8 +7108,9 @@
     "https://www.cnbc.com/2026/11/20/anthropic-ipo-greenshoe.html",
     "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQZXdyUExSdjhGa000MWtxaUR0YzhiVHJnNzN0N0lTUnNONktkaWZkUVUwdExoUXhXMTlJN0NEZ3F3M2RYbUZYelpiNFhpOE14LWdtYjF1MnB2M00xMk1GbENmci1UeFlXa3V0aHM4TWlxVVZNeFBwUkZjMTA2ZWhCSFBVaVVBb0FUdnpj?oc=5"
    ],
-   "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQM2tFTXRSLVNtYlZ6bHlMczZIRUljNnRaemdWY0NYSlhFUWtEbFptVXlXWEZ4ZUkwMTFMZHNCWXhIRGNUeXJVNzV4NkczQlZiTmtwY0ZXdzkwWnhjRmVzcHRlLXdTM1hiQ3BDb2Q2dmxSVXFYRC03SFRiaVRmT3ZIREUzU3pvMDFpcVFtYmVvVVV4dHVhTVNCN1hQR1JONlg5Z2pib0R1NXlLM1ROZ3pRM0NjRzY2ZlhSUkRj?oc=5",
+   "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNaWEtdlp4ZFBsaUpfZVZsTW9BeTRLYmRFSXcyT1RFbFZzcmp5OGtQRy1ob2I2Q1FET2ZJbG9ha1BtSlpJaVd5UVFMZFZXX2F4OE52QmEwRko0bDhLendUOXdpWVpZZGhCcDRYNGZhVzBDdWtpWTBXOU5reDB0ZkU1ZURrQXptREdqMXNwbGNySWdwcEN5aDNFazVQTXc5TGc?oc=5",
    "outlets": [
+    "Bloomberg",
     "CNBC",
     "WSJ",
     "TechCrunch"
@@ -7265,9 +7119,9 @@
    "category": "launch",
    "topic": "ai-engineering",
    "parkOnly": false,
-   "last": "2026-11-24T03:13:30.000Z",
-   "date": "2026-11-24T03:13:30.000Z",
-   "score": 11,
+   "last": "2026-11-24T03:03:16.000Z",
+   "date": "2026-11-24T03:03:16.000Z",
+   "score": 12,
    "post": "anthropic-ipo-explained-claude-users"
   },
   "milestone:google|9c5a0e24": {
@@ -7295,6 +7149,52 @@
    "date": "2026-11-20T21:58:29.000Z",
    "score": 11,
    "ref": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOVDhwMzkzejNZQ1AtREVxR3l5d0lFS0phdjhnR002T1JjYmVQT2NULUdvd3Y2YnBTR2Nhb3BMZEt3VUdPSDk0Zzd5YmxtVTUxRGZoZ2Izeno4X3podnQ5c05SOEo0N3ZKQlB3ZWJqLU9USEFmMzhvWFYyTUhKZ1dvdS1UMlFXMHVhVWdyTXotbTRZWGtzMVU4SGRFbjVpb1Y5S0l1RkQwY0s0Q3ZHWTJZTg?oc=5"
+  },
+  "milestone:amazon|12f167c1": {
+   "first": "2026-11-24T04:25:01.000Z",
+   "decision": "parked",
+   "key": "milestone:amazon",
+   "title": "AWS debuts Strands Decider v2, a family of five open decision models based on Google's Gemma 4, ranging from 2B to 31B parameters, under the Apache 2.0 license",
+   "titles": [
+    "AWS debuts Strands Decider v2, a family of five open decision models based on Google's Gemma 4, ranging from 2B to 31B parameters, under the Apache 2.0 license"
+   ],
+   "links": [
+    "https://thenewstack.io/aws-strands-decider-v2/"
+   ],
+   "link": "https://thenewstack.io/aws-strands-decider-v2/",
+   "outlets": [],
+   "techmeme": true,
+   "category": "launch",
+   "topic": "ai-automation",
+   "parkOnly": false,
+   "last": "2026-11-24T04:25:01.000Z",
+   "date": "2026-11-24T04:25:01.000Z",
+   "score": 11,
+   "ref": "https://thenewstack.io/aws-strands-decider-v2"
+  },
+  "milestone:openai|30dc9964": {
+   "first": "2026-11-24T03:45:01.000Z",
+   "decision": "parked",
+   "key": "milestone:openai",
+   "title": "OpenAI and Cisco launch Shirudo, an open-source runtime that helps teams protect running Linux systems without a reboot while they roll out patches",
+   "titles": [
+    "OpenAI and Cisco launch Shirudo, an open-source runtime that helps teams protect running Linux systems without a reboot while they roll out patches",
+    "OpenAI rolls out a version of GPT-6.2 Sol that is \"optimized for everyday conversation\" to the Chat tab for Plus, Pro, Business, and Enterprise users"
+   ],
+   "links": [
+    "https://siliconangle.com/2026/11/23/cisco-and-openai-launch-shirudo-an-open-source-infrastructure-shield-to-protect-against-ai-driven-cyberattacks/",
+    "https://9to5mac.com/2026/11/23/chatgpt-expands-gpt-6-2-sol-as-openai-sets-retirement-date-for-two-models/"
+   ],
+   "link": "https://siliconangle.com/2026/11/23/cisco-and-openai-launch-shirudo-an-open-source-infrastructure-shield-to-protect-against-ai-driven-cyberattacks/",
+   "outlets": [],
+   "techmeme": true,
+   "category": "launch",
+   "topic": "how-to-tips",
+   "parkOnly": false,
+   "last": "2026-11-24T04:15:00.000Z",
+   "date": "2026-11-24T04:15:00.000Z",
+   "score": 11,
+   "ref": "https://openai.com/index/introducing-shirudo"
   }
  },
  "missedCheck": {
