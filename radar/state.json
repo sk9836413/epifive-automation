@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-24T09:40:16.115Z",
+ "lastScan": "2026-11-24T10:06:28.091Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -7512,6 +7512,27 @@
    ],
    "status": "below",
    "hash": "9256e21c"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-opensearch-opensearch-3-9": {
+   "title": "Amazon OpenSearch Service now supports OpenSearch version 3.9",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-opensearch-opensearch-3-9",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T19:30:00.000Z",
+   "updated": null,
+   "summary": "You can now run OpenSearch version 3.9 on Amazon OpenSearch Service. OpenSearch 3.9 helps you reduce vector memory and storage, evaluate search quality with more large language model (LLM) providers, build more responsive AI agents, and control access to shared resources. This release adds a new hal",
+   "first": "2026-11-24T10:06:28.091Z",
+   "score": 4,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+1 niche (agents)",
+    "+2 launch \"now supports\"",
+    "+2 user steps \"You can\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "9c487252"
   }
  },
  "devices": {},

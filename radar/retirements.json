@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-24T03:44:05.774Z",
+ "generated": "2026-11-24T10:06:39.392Z",
  "about": "Microsoft 365 / Azure / GitHub retirements for https://www.epifive.com/microsoft-365-retirements. Built by radar/retirements.mjs from official notices; see that file for sources and date rules.",
  "sources": {
-  "message-center": 124,
+  "message-center": 126,
   "azure": 81,
   "github": 3
  },
@@ -519,7 +519,7 @@
    "url": "https://admin.microsoft.com/#/MessageCenter/:/messages/MC1446796",
    "mirror": "https://mc.merill.net/message/MC1446796",
    "published": "2026-08-03T22:18:34Z",
-   "guide": null,
+   "guide": "cross-tenant-free-busy-xtap-migration",
    "firstSeen": "2026-11-19T04:58:43.152Z"
   },
   {
@@ -1758,13 +1758,13 @@
   {
    "id": "MC1552394",
    "source": "message-center",
-   "product": "teams",
-   "title": "Microsoft Viva Engage: Retirement of Teams town hall event creation",
+   "product": "microsoft-365",
+   "title": "Microsoft Viva Engage: Retiring the legacy live event creation option in Engage",
    "date": "2026-12-07",
    "precision": "day",
    "dateBasis": "act-by",
-   "affected": "Event organizers who create Teams town hall events from Viva Engage. Communications teams responsible for organizing events.",
-   "action": "We recommend that you: Inform event organizers and communications teams about this change before December 7, 2026 . Create new and upcoming events using the new Events experience in Viva Engage or Microsoft Teams.",
+   "affected": "Event organizers who still create events with the legacy live event option in Engage. Organizers who already use Engage events won't see any change.",
+   "action": "We recommend that you: Tell organizers who use the legacy option about this change before December 7, 2026. Point organizers to Engage events for new and upcoming events.",
    "url": "https://admin.microsoft.com/#/MessageCenter/:/messages/MC1552394",
    "mirror": "https://mc.merill.net/message/MC1552394",
    "published": "2026-11-13T23:48:00Z",
@@ -2153,6 +2153,22 @@
    "firstSeen": "2026-11-19T04:58:43.152Z"
   },
   {
+   "id": "MC1566260",
+   "source": "message-center",
+   "product": "microsoft-365",
+   "title": "Video creation from a prompt in Microsoft Clipchamp: now in Video Hub, with an upgraded experience coming",
+   "date": "2027-02-01",
+   "precision": "month",
+   "dateText": "By the end of February 2027, we'll replace this experience with an upgraded version that does the same things, produces higher-quality videos and fixes known issues.",
+   "dateBasis": "stated",
+   "affected": "Users create videos from a prompt in Video Hub. See instructions here, How to create video with Copilot; When the upgraded experience arrives, users get the same capabilities with better video quality.",
+   "url": "https://admin.microsoft.com/#/MessageCenter/:/messages/MC1566260",
+   "mirror": "https://mc.merill.net/message/MC1566260",
+   "published": "2026-11-24T04:09:42Z",
+   "guide": null,
+   "firstSeen": "2026-11-24T10:06:39.392Z"
+  },
+  {
    "id": "AZ567934",
    "source": "azure-updates",
    "product": "azure",
@@ -2167,6 +2183,22 @@
    "published": "2026-10-08T18:20:34.009Z",
    "guide": null,
    "firstSeen": "2026-11-19T04:58:43.152Z"
+  },
+  {
+   "id": "MC1565964",
+   "source": "message-center",
+   "product": "sharepoint",
+   "title": "Microsoft SharePoint Online: Classic publishing restrictions begin March 1, 2027",
+   "date": "2027-02-28",
+   "precision": "day",
+   "dateBasis": "act-by",
+   "affected": "All SharePoint Online tenants. Administrators managing classic publishing sites, custom scripts, provisioning automation, and migration workflows.",
+   "action": "Before March 1, 2027: Identify provisioning automation and migration plans that create classic publishing site collections or subsites or activate publishing features. Update affected workflows to use modern alternatives.",
+   "url": "https://admin.microsoft.com/#/MessageCenter/:/messages/MC1565964",
+   "mirror": "https://mc.merill.net/message/MC1565964",
+   "published": "2026-11-23T22:43:31Z",
+   "guide": null,
+   "firstSeen": "2026-11-24T10:06:39.392Z"
   },
   {
    "id": "AZ558276",
