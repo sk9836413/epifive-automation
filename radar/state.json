@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-24T14:16:40.543Z",
+ "lastScan": "2026-11-24T16:12:11.104Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -7639,13 +7639,14 @@
    "updated": null,
    "summary": "OpenAI and Cisco launched an open-source Linux security tool named Shirudo that deploys temporary runtime protections to block vulnerability exploitation while administrators prepare and roll out patches, without restarting services. [...]",
    "first": "2026-11-24T14:16:40.543Z",
-   "score": 3,
+   "score": 9,
    "reasons": [
     "+1 source bleepingcomputer",
     "+2 vulnerability \"vulnerability\"",
     "+3 major platform (openai)",
     "+2 user action \"patches\"",
-    "-5 category (Security, Artificial Intelligence, Deals)"
+    "+1 category (Security, Artificial Intelligence, Linux)",
+    "re-scored (was 3)"
    ],
    "status": "below",
    "hash": "db535048"
@@ -7762,13 +7763,16 @@
     "+2 corroborated by openai-news, bleepingcomputer, thn (cisco)",
     "covered by /blog/cisco-expressway-cve-2026-76466-exploited-patch"
    ],
-   "status": "writing",
+   "status": "skipped",
    "hash": "87c38590",
    "post": "cisco-expressway-cve-2026-76466-exploited-patch",
    "kind": "update",
    "extra": false,
    "taskAt": "2026-11-24T14:16:40.543Z",
-   "attempts": 1
+   "attempts": 1,
+   "slug": "cisco-expressway-cve-2026-76466-exploited-patch",
+   "resultAt": "2026-11-24T14:19:33.804Z",
+   "skipReason": "RADAR-SKIP: no material change (Cisco ClamAV advisory affects Secure Endpoint connectors, does not mention Expressway or CVE-2026-76466; no known exploitation)"
   },
   "https://salesforce.com/blog/small-business/how-to-write-a-welcome-email": {
    "title": "How to Write a Welcome Email That Turns New Customers into Loyal Fans",
@@ -7804,6 +7808,131 @@
    ],
    "status": "below",
    "hash": "25393d61"
+  },
+  "https://blog.google/products-and-platforms/products/gemini/gemini-golden-state": {
+   "title": "How Gemini is changing the game for Golden State's organization and fans.",
+   "link": "https://blog.google/products-and-platforms/products/gemini/gemini-golden-state/",
+   "source": "gemini-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-24T16:00:00.000Z",
+   "updated": null,
+   "summary": "Google Gemini partners with Golden State to power fan experiences and business operations for the Warriors, Valkyries, and Chase Center. See the news.",
+   "first": "2026-11-24T16:12:11.104Z",
+   "score": 4,
+   "reasons": [
+    "+1 source gemini-blog",
+    "+2 niche (gemini)",
+    "+1 also on google-keyword"
+   ],
+   "status": "below",
+   "hash": "c21604b9"
+  },
+  "https://aws.amazon.com/blogs/aws/aws-weekly-roundup-local-zone-in-bogota-30-minute-lambda-timeout-and-more-november-24-2026": {
+   "title": "AWS Weekly Roundup: Local Zone in Bogotá, 30-minute Lambda timeout, and more (November 24, 2026)",
+   "link": "https://aws.amazon.com/blogs/aws/aws-weekly-roundup-local-zone-in-bogota-30-minute-lambda-timeout-and-more-november-24-2026/",
+   "source": "aws-news-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T15:39:59.000Z",
+   "updated": null,
+   "summary": "Some limits shape architecture more than any feature does. AWS Lambda launched in 2014 with a 60-second timeout, moved to 5 minutes in 2015 and to 15 minutes in 2018, and then stayed there for eight years. Last week the limit doubled, and in the same week Lambda learned to run on GPUs and gave […]",
+   "first": "2026-11-24T16:12:11.104Z",
+   "score": 2,
+   "reasons": [
+    "+2 launch \"launched\""
+   ],
+   "status": "below",
+   "hash": "b3e2fb09"
+  },
+  "https://blogs.vmware.com/cloud-foundation/2026/11/24/announcing-general-availability-of-vmware-cloud-foundation-9-1-2": {
+   "title": "Announcing General Availability of VMware Cloud Foundation 9.1.2",
+   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/24/announcing-general-availability-of-vmware-cloud-foundation-9-1-2/",
+   "source": "vmware-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T15:16:49.000Z",
+   "updated": null,
+   "summary": "As organizations strive to move faster, lower costs, secure more, there is also pressure to continually expand the breadth of applications and workloads to deliver new revenue streams. General Availability (GA) of VMware Cloud Foundation (VCF) 9.1.2 answers that pressure directly, delivering new AI ",
+   "first": "2026-11-24T16:12:11.104Z",
+   "score": 2,
+   "reasons": [
+    "-1 source vmware-blog",
+    "+2 launch \"General Availability\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "52a2140e"
+  },
+  "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/the-invisible-race.html": {
+   "title": "The Invisible Race",
+   "link": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/the-invisible-race.html?source=rss",
+   "source": "cisco-newsroom",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T13:00:00.000Z",
+   "updated": null,
+   "summary": "A behind-the-scenes look at how Cisco helps McLaren’s Formula 1 team win races with real-time data, mobile data centers and remote engineers. More RSS Feeds: https://newsroom.cisco.com/c/r/newsroom/en/us/rss-feeds.html",
+   "first": "2026-11-24T16:12:11.104Z",
+   "score": -1,
+   "reasons": [
+    "-1 source cisco-newsroom"
+   ],
+   "status": "below",
+   "hash": "18cb07c7"
+  },
+  "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/expanding-the-defender-window-with-self-defending-infrastructure.html": {
+   "title": "Expanding the Defender’s Window with Self-defending Infrastructure",
+   "link": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/expanding-the-defender-window-with-self-defending-infrastructure.html?source=rss",
+   "source": "cisco-newsroom",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T13:00:00.000Z",
+   "updated": null,
+   "summary": "Announcing Shirudo, an open-source project we are co-developing to enable systems to defend themselves and extend the defender’s window. More RSS Feeds: https://newsroom.cisco.com/c/r/newsroom/en/us/rss-feeds.html",
+   "first": "2026-11-24T16:12:11.104Z",
+   "score": 2,
+   "reasons": [
+    "-1 source cisco-newsroom",
+    "+1 niche (defender)",
+    "+2 user steps \"enable\""
+   ],
+   "status": "below",
+   "hash": "66aa2a95"
+  },
+  "https://dell.com/en-us/blog/plankton-produces-half-our-oxygen-ai-helps-protect-it-": {
+   "title": "Plankton Produces Half Our Oxygen. AI Helps Protect It.",
+   "link": "https://www.dell.com/en-us/blog/plankton-produces-half-our-oxygen-ai-helps-protect-it-",
+   "source": "dell-blog",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-24T15:00:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-24T16:12:11.104Z",
+   "score": -1,
+   "reasons": [
+    "-1 source dell-blog"
+   ],
+   "status": "below",
+   "hash": "b3af3732"
+  },
+  "https://dell.com/en-us/blog/why-your-laptop-s-audio-matters-more-than-you-think": {
+   "title": "Why Your Laptop's Audio Matters More Than You Think",
+   "link": "https://www.dell.com/en-us/blog/why-your-laptop-s-audio-matters-more-than-you-think",
+   "source": "dell-blog",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-24T15:00:00.000Z",
+   "updated": null,
+   "summary": "See how Dell Pro 5 laptop audio uses Cirrus Logic smart amplifiers and on-chip tuning to deliver balanced, clear sound for meetings and calls.",
+   "first": "2026-11-24T16:12:11.104Z",
+   "score": -1,
+   "reasons": [
+    "-1 source dell-blog"
+   ],
+   "status": "below",
+   "hash": "6a93a0b5"
   }
  },
  "devices": {},
@@ -7828,7 +7957,7 @@
    "first": "2026-11-19T14:45:12.000Z",
    "decision": "covered",
    "key": "ipo:anthropic",
-   "title": "Anthropic falls below $83 IPO price in swift reversal after record listing",
+   "title": "Anthropic falls 8%+ to ~$80, below its $83 IPO price and a sharp fall from its $111.50 IPO pop; Dario and Daniela Amodei each sold 3.37M+ shares worth $280M+",
    "titles": [
     "Anthropic’s 7 founders cashed out nearly $2B in record-breaking IPO",
     "Anthropic’s IPO could deliver $156B to charity",
@@ -7853,21 +7982,18 @@
     "https://www.cnbc.com/2026/11/20/anthropic-ipo-greenshoe.html",
     "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQZXdyUExSdjhGa000MWtxaUR0YzhiVHJnNzN0N0lTUnNONktkaWZkUVUwdExoUXhXMTlJN0NEZ3F3M2RYbUZYelpiNFhpOE14LWdtYjF1MnB2M00xMk1GbENmci1UeFlXa3V0aHM4TWlxVVZNeFBwUkZjMTA2ZWhCSFBVaVVBb0FUdnpj?oc=5"
    ],
-   "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNMHBNOVY5RDc1NmxUUjNnZkNhLWROQkhUOFZpVmQ0SEI0UG9aSUpTTjhpV3EydTNkdW8xYm1KOWF6OXg2Z3BMaUJCWTE3WnFCM0hCZGNuQ3ZKUklsYUROVWQzdExOamNKVlJLRTgwYWpoYVdOUjlDY0pxTmxZajlvckJ4cHc0TG1hbW1ZUkszaDZ2M2Rvd3RqTWRFaVRENXVWT0pr?oc=5",
+   "link": "https://www.reuters.com/business/anthropic-breaks-below-83-ipo-price-debut-rally-unravels-2026-11-24/",
    "outlets": [
     "Reuters",
-    "Bloomberg",
-    "WSJ",
-    "The Hindu",
-    "Moneycontrol"
+    "WSJ"
    ],
    "techmeme": true,
    "category": "launch",
    "topic": "ai-engineering",
    "parkOnly": false,
-   "last": "2026-11-24T14:06:14.000Z",
-   "date": "2026-11-24T14:06:14.000Z",
-   "score": 14,
+   "last": "2026-11-24T14:45:30.000Z",
+   "date": "2026-11-24T14:45:30.000Z",
+   "score": 11,
    "post": "anthropic-ipo-explained-claude-users"
   },
   "milestone:google|9c5a0e24": {

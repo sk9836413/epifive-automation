@@ -2,7 +2,7 @@
  "date": "2026-11-24",
  "title": "Tech news today, 24 November 2026",
  "published": "2026-11-23T23:59:46.286Z",
- "updated": "2026-11-24T14:16:40.543Z",
+ "updated": "2026-11-24T16:12:11.104Z",
  "items": [
   {
    "id": "2dc368ba",
@@ -1130,7 +1130,64 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "a214e34d",
+   "key": "https://blogs.vmware.com/cloud-foundation/2026/11/24/announcing-general-availability-of-vmware-cloud-foundation-9-1-2",
+   "time": "2026-11-24T15:16:49.000Z",
+   "seen": "2026-11-24T16:12:11.104Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Announcing General Availability of VMware Cloud Foundation 9.1.2",
+   "summary": "As organizations strive to move faster, lower costs, secure more, there is also pressure to continually expand the breadth of applications and workloads to deliver new revenue streams. General Availability (GA) of VMware Cloud Foundation (VCF) 9.1.2 answers that pressure directly, delivering new AI automation, with more VMware vSphere Kubernetes Service (VKS) enhancements and security … Continued The post Announcing General Availability of VMware Cloud Foundation 9.1.2 appeared first on VMware Blogs .",
+   "lines": [
+    "VMware announced general availability (GA) of VMware Cloud Foundation (VCF) 9.1.2.",
+    "The release adds AI automation and more VMware vSphere Kubernetes Service (VKS) enhancements, with security also addressed.",
+    "The update may help IT teams support a wider range of applications and workloads on their existing platform."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "VMware by Broadcom Blogs",
+    "url": "https://blogs.vmware.com/cloud-foundation/2026/11/24/announcing-general-availability-of-vmware-cloud-foundation-9-1-2/"
+   },
+   "sourceId": "vmware-blog",
+   "sourceMax": 4,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "e421c54d",
+   "key": "https://bleepingcomputer.com/news/security/from-vulnerability-noise-to-resilience-rethinking-security-in-the-ai-era",
+   "time": "2026-11-24T15:01:11.000Z",
+   "seen": "2026-11-24T16:12:11.104Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "From Vulnerability Noise to Resilience: Rethinking Security in the AI Era",
+   "summary": "AI-driven development is adding complexity to software supply chains, leaving security teams overwhelmed by vulnerabilities that may pose little actual risk. RapidFort explains how runtime visibility, container hardening, and automated remediation can reduce vulnerability noise and improve software resilience. [...]",
+   "lines": [
+    "Reported by BleepingComputer: AI-driven development is adding complexity to software supply chains, and security teams are overwhelmed by vulnerabilities that may pose little actual risk.",
+    "RapidFort explains how runtime visibility, container hardening, and automated remediation can reduce vulnerability noise and improve software resilience.",
+    "These approaches may help IT and security teams focus on the vulnerabilities that present real risk."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/from-vulnerability-noise-to-resilience-rethinking-security-in-the-ai-era/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
   }
  ],
- "description": "39 technology updates from official sources, updated hourly: MC1552394: Microsoft Viva Engage: Retiring the legacy live event creation option in Engage; VMware vCenter Hit by Another Critical 9.8-Rated Auth Bypass Flaw After Zero-Day Exploitation; Anthropic Faces New Pressures From Public Investors "
+ "description": "41 technology updates from official sources, updated hourly: MC1552394: Microsoft Viva Engage: Retiring the legacy live event creation option in Engage; VMware vCenter Hit by Another Critical 9.8-Rated Auth Bypass Flaw After Zero-Day Exploitation; Anthropic Faces New Pressures From Public Investors "
 }
