@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-24T13:16:55.808Z",
+ "lastScan": "2026-11-24T14:16:40.543Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -7608,6 +7608,202 @@
    ],
    "status": "below",
    "hash": "353fb82e"
+  },
+  "https://bleepingcomputer.com/news/security/mcdonalds-japan-data-breach-exposes-customer-location-information": {
+   "title": "McDonald's Japan data breach exposes customer location information",
+   "link": "https://www.bleepingcomputer.com/news/security/mcdonalds-japan-data-breach-exposes-customer-location-information/",
+   "source": "bleepingcomputer",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-24T14:09:37.000Z",
+   "updated": null,
+   "summary": "McDonald's Japan, the fast-food giant's Japanese subsidiary, has disclosed a data breach after attackers accessed a database containing sensitive information for users of the company's official smartphone app. [...]",
+   "first": "2026-11-24T14:16:40.543Z",
+   "score": 6,
+   "reasons": [
+    "+1 source bleepingcomputer",
+    "+3 incident \"breach\"",
+    "+1 user data or credentials exposed",
+    "+1 category (Security)"
+   ],
+   "status": "below",
+   "hash": "c9f5b0e5"
+  },
+  "https://bleepingcomputer.com/news/security/new-shirudo-tool-uses-ai-to-shield-unpatched-linux-systems-from-exploits": {
+   "title": "New Shirudo tool uses AI to shield unpatched Linux systems from exploits",
+   "link": "https://www.bleepingcomputer.com/news/security/new-shirudo-tool-uses-ai-to-shield-unpatched-linux-systems-from-exploits/",
+   "source": "bleepingcomputer",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-24T13:34:23.000Z",
+   "updated": null,
+   "summary": "OpenAI and Cisco launched an open-source Linux security tool named Shirudo that deploys temporary runtime protections to block vulnerability exploitation while administrators prepare and roll out patches, without restarting services. [...]",
+   "first": "2026-11-24T14:16:40.543Z",
+   "score": 3,
+   "reasons": [
+    "+1 source bleepingcomputer",
+    "+2 vulnerability \"vulnerability\"",
+    "+3 major platform (openai)",
+    "+2 user action \"patches\"",
+    "-5 category (Security, Artificial Intelligence, Deals)"
+   ],
+   "status": "below",
+   "hash": "db535048"
+  },
+  "https://thehackernews.com/2026/11/vmware-vcenter-hit-by-another-critical.html": {
+   "title": "VMware vCenter Hit by Another Critical 9.8-Rated Auth Bypass Flaw After Zero-Day Exploitation",
+   "link": "https://thehackernews.com/2026/11/vmware-vcenter-hit-by-another-critical.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-24T13:28:26.000Z",
+   "updated": null,
+   "summary": "Broadcom has shipped patches to address 23 vulnerabilities impacting VMware ESX, vCenter, Workstation, Fusion, and Avi Load Balancer, including one critical bug that could be abused to bypass authentication. The critical vulnerability, tracked as CVE-2026-123903, is rated 9.8 out of 10.0 on the CVSS",
+   "first": "2026-11-24T14:16:40.543Z",
+   "score": 13,
+   "reasons": [
+    "+1 source thn",
+    "+3 incident \"Zero-Day\"",
+    "+2 exploited \"Zero-Day\"",
+    "+5 critical flaw in widely used software \"VMware\" / \"Critical\"",
+    "+2 user action \"patches\"",
+    "covered by /blog/vmware-vcenter-cve-2026-123890-patch-check"
+   ],
+   "status": "duplicate",
+   "hash": "239ce2b",
+   "post": "vmware-vcenter-cve-2026-123890-patch-check"
+  },
+  "https://blog.google/innovation-and-ai/models-and-research/google-labs/women-in-film-india-google-flow": {
+   "title": "Independent filmmakers in India bring big-screen stories to life with Google Flow.",
+   "link": "https://blog.google/innovation-and-ai/models-and-research/google-labs/women-in-film-india-google-flow/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-24T14:00:00.000Z",
+   "updated": null,
+   "summary": "Indian filmmakers use Google Flow to create original short films. Watch five winning stories from the WIF India Filmathon. See the films now.",
+   "first": "2026-11-24T14:16:40.543Z",
+   "score": 1,
+   "reasons": [
+    "+1 plans/price/availability \"India\""
+   ],
+   "status": "below",
+   "hash": "4567cd40"
+  },
+  "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/cisco-to-participate-in-december-events-with-the-financial-community.html": {
+   "title": "Cisco to Participate in December Events with the Financial Community",
+   "link": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/cisco-to-participate-in-december-events-with-the-financial-community.html?source=rss",
+   "source": "cisco-newsroom",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T14:06:00.000Z",
+   "updated": null,
+   "summary": "Cisco to Participate in December Events with the Financial Community More RSS Feeds: https://newsroom.cisco.com/c/r/newsroom/en/us/rss-feeds.html",
+   "first": "2026-11-24T14:16:40.543Z",
+   "score": -4,
+   "reasons": [
+    "-1 source cisco-newsroom",
+    "-3 corporate/announcement \"Events\""
+   ],
+   "status": "below",
+   "hash": "bb8bff45"
+  },
+  "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/cisco-to-host-2026-virtual-annual-meeting-of-stockholders.html": {
+   "title": "Cisco to Host 2026 Virtual Annual Meeting of Stockholders",
+   "link": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/cisco-to-host-2026-virtual-annual-meeting-of-stockholders.html?source=rss",
+   "source": "cisco-newsroom",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T14:06:00.000Z",
+   "updated": null,
+   "summary": "Cisco (NASDAQ: CSCO) will host its 2026 Annual Meeting of Stockholders on Tuesday, December 15, 2026, beginning at 8:00 a.m. PST via audio webcast More RSS Feeds: https://newsroom.cisco.com/c/r/newsroom/en/us/rss-feeds.html",
+   "first": "2026-11-24T14:16:40.543Z",
+   "score": -1,
+   "reasons": [
+    "-1 source cisco-newsroom"
+   ],
+   "status": "below",
+   "hash": "75f47113"
+  },
+  "https://dell.com/en-us/blog/how-cyberattackers-target-small-businesses-and-how-to-stop-them": {
+   "title": "How Cyberattackers Target Small Businesses and How to Stop Them",
+   "link": "https://www.dell.com/en-us/blog/how-cyberattackers-target-small-businesses-and-how-to-stop-them",
+   "source": "dell-blog",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-24T14:00:00.000Z",
+   "updated": null,
+   "summary": "Learn how cyberattacks move through a small business, from first opening to disruption, and which PC, software and response controls help interrupt each stage.",
+   "first": "2026-11-24T14:16:40.543Z",
+   "score": 1,
+   "reasons": [
+    "-1 source dell-blog",
+    "+2 user steps \"How to\""
+   ],
+   "status": "below",
+   "hash": "7ba77bc7"
+  },
+  "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-clamav-multi-e93M3vdA?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=ClamAV%20Vulnerabilities%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1": {
+   "title": "ClamAV Vulnerabilities Affecting Cisco Products: November 2026",
+   "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-clamav-multi-e93M3vdA?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=ClamAV%20Vulnerabilities%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+   "source": "cisco-psirt",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-24T13:44:57.000Z",
+   "updated": null,
+   "summary": "Multiple vulnerabilities in ClamAV could allow a remote attacker to bypass configured file and scan time limits and cause a denial of service (DoS) condition, interrupting scanning operations. For more information about these vulnerabilities, see the Details section of this advisory. For additional ",
+   "first": "2026-11-24T14:16:40.543Z",
+   "score": 8,
+   "reasons": [
+    "-1 source cisco-psirt",
+    "+2 vulnerability \"Vulnerabilities\"",
+    "+3 major platform (windows)",
+    "+2 user action \"advisory\"",
+    "+2 corroborated by openai-news, bleepingcomputer, thn (cisco)",
+    "covered by /blog/cisco-expressway-cve-2026-76466-exploited-patch"
+   ],
+   "status": "writing",
+   "hash": "87c38590",
+   "post": "cisco-expressway-cve-2026-76466-exploited-patch",
+   "kind": "update",
+   "extra": false,
+   "taskAt": "2026-11-24T14:16:40.543Z",
+   "attempts": 1
+  },
+  "https://salesforce.com/blog/small-business/how-to-write-a-welcome-email": {
+   "title": "How to Write a Welcome Email That Turns New Customers into Loyal Fans",
+   "link": "https://www.salesforce.com/blog/small-business/how-to-write-a-welcome-email/",
+   "source": "salesforce-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-24T14:00:00.000Z",
+   "updated": null,
+   "summary": "Your first email sets the tone for the whole relationship — here's how to make it count, with a little help from AI.",
+   "first": "2026-11-24T14:16:40.543Z",
+   "score": 1,
+   "reasons": [
+    "-1 source salesforce-blog",
+    "+2 user steps \"How to\""
+   ],
+   "status": "below",
+   "hash": "aaa170c2"
+  },
+  "https://blog.scalefusion.com/patch-compliance": {
+   "title": "Patch compliance: Need, challenges, best practices",
+   "link": "https://blog.scalefusion.com/patch-compliance/",
+   "source": "scalefusion-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T13:54:42.000Z",
+   "updated": null,
+   "summary": "Patch compliance measures whether required updates have been installed on operating systems, applications, and endpoint devices within defined timelines. It helps IT teams identify overdue patches, track remediation progress, and reduce exposure to known vulnerabilities across their IT environment. ",
+   "first": "2026-11-24T14:16:40.543Z",
+   "score": -2,
+   "reasons": [
+    "-2 source scalefusion-blog"
+   ],
+   "status": "below",
+   "hash": "25393d61"
   }
  },
  "devices": {},
@@ -7632,7 +7828,7 @@
    "first": "2026-11-19T14:45:12.000Z",
    "decision": "covered",
    "key": "ipo:anthropic",
-   "title": "Anthropic breaks below $83 IPO price as debut rally unravels",
+   "title": "Anthropic falls below $83 IPO price in swift reversal after record listing",
    "titles": [
     "Anthropic’s 7 founders cashed out nearly $2B in record-breaking IPO",
     "Anthropic’s IPO could deliver $156B to charity",
@@ -7661,19 +7857,17 @@
    "outlets": [
     "Reuters",
     "Bloomberg",
-    "CNBC",
     "WSJ",
-    "TechCrunch",
     "The Hindu",
-    "Hindustan Times"
+    "Moneycontrol"
    ],
    "techmeme": true,
    "category": "launch",
    "topic": "ai-engineering",
    "parkOnly": false,
-   "last": "2026-11-24T13:01:46.000Z",
-   "date": "2026-11-24T13:01:46.000Z",
-   "score": 15,
+   "last": "2026-11-24T14:06:14.000Z",
+   "date": "2026-11-24T14:06:14.000Z",
+   "score": 14,
    "post": "anthropic-ipo-explained-claude-users"
   },
   "milestone:google|9c5a0e24": {
