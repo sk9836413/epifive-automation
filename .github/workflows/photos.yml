@@ -25,6 +25,7 @@ on:
 
 env:
   COMMENT_FUNNEL_IG: ${{ vars.COMMENT_FUNNEL_IG }}
+  META_DM: ${{ vars.META_DM }}
 
 permissions:
   contents: write

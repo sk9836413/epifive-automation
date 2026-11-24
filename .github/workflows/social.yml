@@ -41,6 +41,7 @@ on:
 env:
   SITE_REMOTE: https://x-access-token:${{ secrets.SITE_REPO_TOKEN }}@github.com/sk9836413/EPIVIFE.git
   COMMENT_FUNNEL_IG: ${{ vars.COMMENT_FUNNEL_IG }}
+  META_DM: ${{ vars.META_DM }}
   REEL_STYLE: ${{ vars.REEL_STYLE }}
   REEL_AUDIO: ${{ vars.REEL_AUDIO }}
   REEL_BED: ${{ vars.REEL_BED }}
@@ -316,13 +317,20 @@ jobs:
         env:
           DIR: ${{ steps.pick.outputs.dir }}
         run: |
-          yt="$DIR/reel.mp4"; cap="$DIR/captions.srt"; social="$DIR/reel.mp4"
+          # One version per platform (owner, 24 Nov 2026; video.mjs): reel.mp4 = YouTube (subscribe/like/comment GUIDE),
+          # reel-ig.mp4 = Instagram (follow/save/send/comment GUIDE for the guide in DM), reel-fb.mp4 = Facebook (follow +
+          # guide link in the caption, no like/comment ask; also the Make fallback). Older drafts without them use reel.mp4.
+          pick() { if [ -s "$1" ]; then echo "$1"; else echo "$2"; fi; }
+          yt="$DIR/reel.mp4"; cap="$DIR/captions.srt"
+          fb=$(pick "$DIR/reel-fb.mp4" "$DIR/reel.mp4"); ig=$(pick "$DIR/reel-ig.mp4" "$fb")
+          hi_fb=$(pick "$DIR/hi/reel-fb.mp4" "$DIR/hi/reel.mp4"); hi_ig=$(pick "$DIR/hi/reel-ig.mp4" "$hi_fb")
           if [ "${{ steps.char.outcome }}" = success ] && [ -s "$DIR/dialogue.mp4" ]; then
+            # The character Short ends with the YouTube ask (like and subscribe), so it goes to YouTube only;
+            # Facebook and Instagram get their own reel versions.
             yt="$DIR/dialogue.mp4"; cap="$DIR/dialogue.srt"
-            node -e "process.exit(require('./$DIR/dialogue-meta.json').seconds <= 89 ? 0 : 1)" && social="$DIR/dialogue.mp4"
           fi
-          { echo "youtube=$yt"; echo "captions=$cap"; echo "social=$social"; } >> "$GITHUB_OUTPUT"
-          for f in "$DIR/reel.mp4" "$DIR/hi/reel.mp4" "$social"; do
+          { echo "youtube=$yt"; echo "captions=$cap"; echo "social=$fb"; echo "fb=$fb"; echo "ig=$ig"; echo "hi_fb=$hi_fb"; echo "hi_ig=$hi_ig"; } >> "$GITHUB_OUTPUT"
+          for f in "$DIR/reel.mp4" "$DIR/hi/reel.mp4" "$fb" "$ig" "$hi_fb" "$hi_ig"; do
             if [ -s "$f" ]; then node scripts/social/reel-spec.mjs "$f" --fix || echo "::warning::$f does not meet Meta's Reels spec (see the line above)"; fi
           done
 
@@ -337,7 +345,10 @@ jobs:
           REELS_HOST_TOKEN: ${{ github.token }}
           SLUG: ${{ steps.pick.outputs.slug }}
           DIR: ${{ steps.pick.outputs.dir }}
-          VIDEO: ${{ steps.media.outputs.social }}
+          VIDEO: ${{ steps.media.outputs.fb }}
+          IG_VIDEO: ${{ steps.media.outputs.ig }}
+          HI_VIDEO: ${{ steps.media.outputs.hi_fb }}
+          HI_IG_VIDEO: ${{ steps.media.outputs.hi_ig }}
           DRY_RUN: ${{ inputs.dry_run }}
           HI: ${{ steps.hi.outputs.ok == 'true' }}
           EN_AT: ${{ steps.hi.outputs.en_at }}
@@ -348,9 +359,9 @@ jobs:
             exit 0
           fi
           if [ "$HI" = true ]; then
-            set -- --slug "$SLUG" --video "$DIR/hi/reel.mp4" --fb-reel "$DIR/hi/fb-reel.txt" --ig "$DIR/hi/instagram.txt" --lang hi
+            set -- --slug "$SLUG" --video "$HI_VIDEO" --ig-video "$HI_IG_VIDEO" --fb-reel "$DIR/hi/fb-reel.txt" --ig "$DIR/hi/instagram.txt" --lang hi
           else
-            set -- --slug "$SLUG" --video "$VIDEO" --fb-reel "$DIR/fb-reel.txt" --ig "$DIR/instagram.txt"
+            set -- --slug "$SLUG" --video "$VIDEO" --ig-video "$IG_VIDEO" --fb-reel "$DIR/fb-reel.txt" --ig "$DIR/instagram.txt"
           fi
           en=(--slug "$SLUG" --video "$VIDEO" --fb-reel "$DIR/fb-reel.txt" --only fb-reel --publish-at "$EN_AT")
           if [ "$DRY_RUN" = "true" ]; then

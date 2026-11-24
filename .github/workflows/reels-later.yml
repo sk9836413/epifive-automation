@@ -91,6 +91,7 @@ jobs:
           REELS_HOST_REPO: ${{ github.repository }}
           REELS_HOST_TOKEN: ${{ github.token }}
           COMMENT_FUNNEL_IG: ${{ vars.COMMENT_FUNNEL_IG }}
+          META_DM: ${{ vars.META_DM }}
           SLUG: ${{ steps.due.outputs.slug }}
           DRY: ${{ inputs.dry_run && 'true' || 'false' }}
         run: |
@@ -99,7 +100,9 @@ jobs:
             echo '{"status":"error","error":"share artifact or its reel.mp4/instagram.txt is missing"}' > "$result"
           else
             (cd site && npm ci --no-audit --no-fund --ignore-scripts > /dev/null)
-            set -- --slug "$SLUG" --video ../reel/reel.mp4 --ig ../reel/instagram.txt --only ig
+            # The Instagram version (reel-ig.mp4: follow/save/send/comment GUIDE; owner, 24 Nov 2026); older shares: reel.mp4.
+            video=../reel/reel.mp4; [ -s reel/reel-ig.mp4 ] && video=../reel/reel-ig.mp4
+            set -- --slug "$SLUG" --video "$video" --ig ../reel/instagram.txt --only ig
             [ "$DRY" = true ] && set -- "$@" --dry-run
             (cd site && node scripts/social/meta-post.mjs "$@") > "$result" || echo "::warning::The English Instagram Reel failed; see the result."
           fi
