@@ -2,7 +2,7 @@
  "date": "2026-11-24",
  "title": "Tech news today, 24 November 2026",
  "published": "2026-11-23T23:59:46.286Z",
- "updated": "2026-11-24T06:20:50.738Z",
+ "updated": "2026-11-24T09:40:16.115Z",
  "items": [
   {
    "id": "2dc368ba",
@@ -676,7 +676,7 @@
    "time": "2026-11-23T22:15:32.000Z",
    "seen": "2026-11-24T06:20:50.738Z",
    "kind": "retirement",
-   "tier": 2,
+   "tier": 1,
    "headline": "MC1552394: Microsoft Viva Engage: Retiring the legacy live event creation option in Engage",
    "summary": "Starting December 7, 2026, Microsoft Viva Engage will retire the legacy live event creation option. Organizers can no longer create legacy events but can still use Broadcast, Meeting, and Async Engage events. Existing legacy events will run as planned. Update organizers and documentation accordingly.",
    "lines": [
@@ -693,7 +693,7 @@
    "sourceMax": 5,
    "reported": false,
    "also": [],
-   "post": null,
+   "post": "viva-engage-teams-town-hall-creation-retirement",
    "device": null,
    "ai": null,
    "score": 4,
@@ -814,7 +814,146 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "367e0fd3",
+   "key": "https://about.fb.com/news/2026/11/introducing-muse-in-the-uk-a-personal-ai-agent-you-control",
+   "time": "2026-11-24T06:00:40.000Z",
+   "seen": "2026-11-24T09:40:16.115Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Introducing Muse in the UK: A Personal AI Agent You Control",
+   "summary": "Muse is now in the UK: a personal AI agent that doesn't just answer questions, but one that you can task to get things done on your behalf The post Introducing Muse in the UK: A Personal AI Agent You Control appeared first on Meta Newsroom .",
+   "lines": [
+    "Meta announced that Muse, its personal AI agent, is now available in the UK, and users can task it to get things done on their behalf.",
+    "Muse is available in the UK.",
+    "The launch shows AI agents that carry out tasks, rather than only answering questions, are reaching consumer users, which is relevant to IT teams planning for such tools."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Meta Newsroom",
+    "url": "https://about.fb.com/news/2026/11/introducing-muse-in-the-uk-a-personal-ai-agent-you-control/"
+   },
+   "sourceId": "meta-newsroom",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "c2435098",
+   "key": "https://about.fb.com/news/2026/11/muse-now-available-in-the-uk-muse-does-the-work-you-stay-in-control",
+   "time": "2026-11-24T06:00:04.000Z",
+   "seen": "2026-11-24T09:40:16.115Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Muse Now Available in the UK: Muse Does the Work, You Stay in Control",
+   "summary": "Muse, Meta’s personal AI agent, is now available to adults in the UK. Think of it as a helping hand for the jobs that pile up, like chasing a refund, renewing car insurance or keeping on top of the school calendar. To get those jobs done you can connect Muse to the apps you already use, from your email and calendar to the retailer apps you shop on. Handing tasks to an AI agent is new for most of us, and we know it’s an act of trust. That’s why we’ve designed Muse so you stay in control at every step. Here’s how. Muse Asks You to Approve Anything Important Once you’ve decided what Muse is connected to and what you want it to do, with your oversight, it can handle tasks like searching, compari",
+   "lines": [
+    "Meta made Muse, its personal AI agent, available to adults in the UK. Users can task it with jobs such as chasing a refund, renewing car insurance or keeping up with a school calendar.",
+    "Users can connect Muse to apps they already use, including email, calendar and retailer apps.",
+    "Muse asks users to approve important actions and is designed so users stay in control at every step, which matters to IT teams assessing AI agents that act through connected accounts."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Meta Newsroom",
+    "url": "https://about.fb.com/news/2026/11/muse-now-available-in-the-uk-muse-does-the-work-you-stay-in-control/"
+   },
+   "sourceId": "meta-newsroom",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "f3cd1e8f",
+   "key": "https://blog.google/company-news/inside-google/around-the-globe/google-europe/united-kingdom/expanding-london-home-kings-cross",
+   "time": "2026-11-24T08:00:00.000Z",
+   "seen": "2026-11-24T09:40:16.115Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "We’re expanding our London home in King's Cross",
+   "summary": "In 2016, we arrived in King’s Cross as founding residents of the Knowledge Quarter. Today, we’re announcing our plan to purchase 6 Pancras Square.Alongside Central Saint…",
+   "lines": [
+    "Google announced plans to purchase 6 Pancras Square as part of expanding its London home in King's Cross.",
+    "Google first arrived in King's Cross in 2016 as a founding resident of the Knowledge Quarter."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google: The Keyword",
+    "url": "https://blog.google/company-news/inside-google/around-the-globe/google-europe/united-kingdom/expanding-london-home-kings-cross/"
+   },
+   "sourceId": "google-keyword",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "76c05167",
+   "key": "https://thehackernews.com/2026/11/openai-and-cisco-unveil-ai-assisted.html",
+   "time": "2026-11-24T06:02:57.000Z",
+   "seen": "2026-11-24T09:40:16.115Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "OpenAI and Cisco Unveil AI-Assisted Linux Security Tool to Block Exploits Before Patching",
+   "summary": "OpenAI and Cisco have teamed up to launch Shirudo (meaning \"shield\" in Japanese), an open-source Linux runtime that allows artificial intelligence (AI) agents to defend systems without downtime. \"It lets agents write dynamic eBPF controls to shield systems from exploits, giving defenders more time to test and roll out patches,\" OpenAI said in a post on X. The AI upstart called the initiative a",
+   "lines": [
+    "Reported by The Hacker News: OpenAI and Cisco launched Shirudo, an open-source Linux runtime that lets AI agents defend systems without downtime.",
+    "According to OpenAI, the tool lets agents write dynamic eBPF controls to shield systems from exploits, giving defenders more time to test and roll out patches.",
+    "For IT teams running Linux, the approach is relevant because it aims to block exploits while patches are still being tested and deployed."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/openai-and-cisco-unveil-ai-assisted.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "669252a8",
+   "key": "https://thehackernews.com/2026/11/hackers-exploit-n-able-mailassure-flaw.html",
+   "time": "2026-11-24T06:02:45.000Z",
+   "seen": "2026-11-24T09:40:16.115Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Hackers Exploit N-able MailAssure Flaw While AI Agents Exploit MONAI Label Zero-Day",
+   "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday added two flaws impacting N-able MailAssure and MONAI Label to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation. The critical vulnerabilities are listed below - CVE-2026-134624 (CVSS score: 9.3) - A server-side request forgery (SSRF) vulnerability in N-able MailAssure's LDAP",
+   "lines": [
+    "Reported by The Hacker News: CISA added two flaws affecting N-able MailAssure and MONAI Label to its Known Exploited Vulnerabilities catalog on Monday, citing evidence of active exploitation.",
+    "One listed flaw, CVE-2026-134624, is a critical server-side request forgery vulnerability in N-able MailAssure's LDAP, with a CVSS score of 9.3.",
+    "IT teams running N-able MailAssure or MONAI Label should review the KEV listings and check their exposure to these flaws."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/hackers-exploit-n-able-mailassure-flaw.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
   }
  ],
- "description": "28 technology updates from official sources, updated hourly: Anthropic Faces New Pressures From Public Investors After Successful IPO; Microsoft Azure flaw exploited to steal customers' API credentials; Vulnerability in Oracle OpenJDK (Java4Shell) Affecting Cisco Products: November 2026."
+ "description": "33 technology updates from official sources, updated hourly: MC1552394: Microsoft Viva Engage: Retiring the legacy live event creation option in Engage; Anthropic Faces New Pressures From Public Investors After Successful IPO; Microsoft Azure flaw exploited to steal customers' API credentials."
 }

@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-24T06:20:50.738Z",
+ "lastScan": "2026-11-24T09:40:16.115Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -875,14 +875,14 @@
     "-3 corporate/announcement \"event\"",
     "+13 M365 retirement due in 23 days"
    ],
-   "status": "writing",
+   "status": "updated",
    "hash": "7b541c8b",
    "kind": "update",
    "extra": false,
    "taskAt": "2026-11-24T06:20:50.738Z",
    "attempts": 2,
    "slug": "viva-engage-teams-town-hall-creation-retirement",
-   "resultAt": "2026-11-14T18:45:57.520Z"
+   "resultAt": "2026-11-24T06:31:02.945Z"
   },
   "https://mc.merill.net/message/MC1552389": {
    "title": "MC1552389: Microsoft 365 Copilot: Workforce Intelligence plugin available in Copilot Cowork",
@@ -3601,23 +3601,6 @@
    "hash": "9c5a0e24",
    "status": "parked",
    "parkedAt": "2026-11-21T03:43:48.706Z"
-  },
-  "https://zoho.com/blog/recruit/how-staffing-agencies-can-hire-fast.html": {
-   "title": "How staffing agencies can ACE the hiring race",
-   "link": "https://www.zoho.com/blog/recruit/how-staffing-agencies-can-hire-fast.html",
-   "source": "zoho-blog",
-   "topic": "small-business-it",
-   "category": "launch",
-   "date": "2026-11-20T15:46:47.000Z",
-   "updated": null,
-   "summary": "Your competitor has already submitted three candidates. Your client is expecting profiles by noon. Your recruiters are racing against the clock, and AI promises to make the process faster. But in an industry where the first submission can make all the difference, are staffing agencies becoming faste",
-   "first": "2026-11-21T08:50:20.640Z",
-   "score": -3,
-   "reasons": [
-    "-3 corporate/announcement \"hiring\""
-   ],
-   "status": "below",
-   "hash": "88c06f22"
   },
   "https://thehackernews.com/2026/11/a-single-malicious-webpage-let.html": {
    "title": "A Single Malicious Webpage Let Researchers Hijack Meta Muse and Access Private Chats",
@@ -7369,6 +7352,166 @@
    ],
    "status": "below",
    "hash": "30e1eb6d"
+  },
+  "https://blog.google/company-news/inside-google/around-the-globe/google-europe/united-kingdom/expanding-london-home-kings-cross": {
+   "title": "We’re expanding our London home in King's Cross.",
+   "link": "https://blog.google/company-news/inside-google/around-the-globe/google-europe/united-kingdom/expanding-london-home-kings-cross/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-24T08:00:00.000Z",
+   "updated": null,
+   "summary": "In 2016, we arrived in King’s Cross as founding residents of the Knowledge Quarter. Today, we’re announcing our plan to purchase 6 Pancras Square.Alongside Central Saint…",
+   "first": "2026-11-24T09:40:16.115Z",
+   "score": 1,
+   "reasons": [
+    "+1 plans/price/availability \"plan\""
+   ],
+   "status": "below",
+   "hash": "d7c4d1e1"
+  },
+  "https://about.fb.com/news/2026/11/introducing-muse-in-the-uk-a-personal-ai-agent-you-control": {
+   "title": "Introducing Muse in the UK: A Personal AI Agent You Control",
+   "link": "https://about.fb.com/news/2026/11/introducing-muse-in-the-uk-a-personal-ai-agent-you-control/",
+   "source": "meta-newsroom",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-24T06:00:40.000Z",
+   "updated": null,
+   "summary": "Muse is now in the UK: a personal AI agent that doesn't just answer questions, but one that you can task to get things done on your behalf The post Introducing Muse in the UK: A Personal AI Agent You Control appeared first on Meta Newsroom .",
+   "first": "2026-11-24T09:40:16.115Z",
+   "score": 11,
+   "reasons": [
+    "+1 niche (agent)",
+    "+2 launch \"Introducing\"",
+    "+2 user steps \"you can\"",
+    "+1 launch in the headline",
+    "+1 trending: Techmeme top headline, no reputable outlet named"
+   ],
+   "status": "parked",
+   "hash": "1d63db0",
+   "trending": {
+    "key": "milestone:meta",
+    "titles": [
+     "Meta rolls out Muse to UK adults to help with everyday tasks, the first Big Tech company to launch an AI agent in the UK; UK watchdogs have warned about agents"
+    ],
+    "links": [
+     "https://www.politico.eu/article/meta-ai-agent-muse-launch-uk/"
+    ],
+    "outlets": [],
+    "techmeme": true
+   },
+   "trendDay": "2026-11-24",
+   "parkedAt": "2026-11-24T09:40:16.115Z"
+  },
+  "https://about.fb.com/news/2026/11/muse-now-available-in-the-uk-muse-does-the-work-you-stay-in-control": {
+   "title": "Muse Now Available in the UK: Muse Does the Work, You Stay in Control",
+   "link": "https://about.fb.com/news/2026/11/muse-now-available-in-the-uk-muse-does-the-work-you-stay-in-control/",
+   "source": "meta-newsroom",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-24T06:00:04.000Z",
+   "updated": null,
+   "summary": "Muse, Meta’s personal AI agent, is now available to adults in the UK. Think of it as a helping hand for the jobs that pile up, like chasing a refund, renewing car insurance or keeping on top of the school calendar. To get those jobs done you can connect Muse to the apps you already use, from your em",
+   "first": "2026-11-24T09:40:16.115Z",
+   "score": 7,
+   "reasons": [
+    "+1 niche (agent)",
+    "+2 launch \"Now Available\"",
+    "+2 user steps \"you can\"",
+    "+1 plans/price/availability \"available to\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "d2208e7f"
+  },
+  "https://news.lenovo.com/pressroom/press-releases/data-marc-marquez-history-motogp-championship-ducati": {
+   "title": "Lenovo reveals data behind Marc Márquez’s history-making MotoGP championship win with the Ducati Lenovo Team",
+   "link": "https://news.lenovo.com/pressroom/press-releases/data-marc-marquez-history-motogp-championship-ducati/",
+   "source": "lenovo-news",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-24T09:00:44.000Z",
+   "updated": null,
+   "summary": "Márquez’s resilience and determination, the expertise and teamwork of Ducati Corse engineers, and Lenovo devices and infrastructure combined to make victory possible.",
+   "first": "2026-11-24T09:40:16.115Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "5abdb870"
+  },
+  "https://ninjaone.com/blog/how-to-manage-backup-coverage-for-ownerless-enterprise-devices": {
+   "title": "How to Manage Backup Coverage for Ownerless Enterprise Devices",
+   "link": "https://www.ninjaone.com/blog/how-to-manage-backup-coverage-for-ownerless-enterprise-devices/",
+   "source": "ninjaone-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T08:16:40.000Z",
+   "updated": null,
+   "summary": "Unowned devices can emerge during enterprise inventory audits, typically left behind by reorganizations, offboarding gaps, or shadow IT activity. Regardless of root cause, ownerless devices create backup issues that can lead to security vulnerabilities and compliance failures. Backup coverage manage",
+   "first": "2026-11-24T09:40:16.115Z",
+   "score": 1,
+   "reasons": [
+    "-1 source ninjaone-blog",
+    "+2 user steps \"How to\""
+   ],
+   "status": "below",
+   "hash": "a7a44f8d"
+  },
+  "https://ninjaone.com/blog/how-to-document-assumptions-before-creating-an-it-backup-plan": {
+   "title": "How to Document Assumptions Before Creating an IT Backup Plan",
+   "link": "https://www.ninjaone.com/blog/how-to-document-assumptions-before-creating-an-it-backup-plan/",
+   "source": "ninjaone-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T08:16:39.000Z",
+   "updated": null,
+   "summary": "When employees save work on personal laptops or use unapproved apps, guessing where company data lives is dangerous. Before buying recovery software, you must verify your actual network requirements. In this guide, you will learn how to document these facts before creating a reliable IT backup plan.",
+   "first": "2026-11-24T09:40:16.115Z",
+   "score": 2,
+   "reasons": [
+    "-1 source ninjaone-blog",
+    "+2 user steps \"How to\"",
+    "+1 plans/price/availability \"Plan\""
+   ],
+   "status": "below",
+   "hash": "50b55105"
+  },
+  "https://ninjaone.com/blog/how-to-manage-local-data-backup-in-enterprise-device-policies": {
+   "title": "How to Manage Local Data Backup in Enterprise Device Policies",
+   "link": "https://www.ninjaone.com/blog/how-to-manage-local-data-backup-in-enterprise-device-policies/",
+   "source": "ninjaone-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T08:16:33.000Z",
+   "updated": null,
+   "summary": "Employees save business data in places IT never approved: desktops, downloads folders, local application directories, and temporary project folders that never reach a managed repository. When backup policies only cover standard folders or cloud-synced locations, those files fall through the cracks. ",
+   "first": "2026-11-24T09:40:16.115Z",
+   "score": 1,
+   "reasons": [
+    "-1 source ninjaone-blog",
+    "+2 user steps \"How to\""
+   ],
+   "status": "below",
+   "hash": "44b40346"
+  },
+  "https://ninjaone.com/blog/how-to-create-backup-policies-for-executive-and-previleged-user-devices": {
+   "title": "How to Create Backup Policies for Executive and Privileged-User Devices",
+   "link": "https://www.ninjaone.com/blog/how-to-create-backup-policies-for-executive-and-previleged-user-devices/",
+   "source": "ninjaone-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T08:16:31.000Z",
+   "updated": null,
+   "summary": "Executive and privileged-user devices present higher organizational risk than standard endpoints because they are used by individuals with access to sensitive information and critical systems. This means privileged endpoint backup policies are important, since they define how these high-risk devices",
+   "first": "2026-11-24T09:40:16.115Z",
+   "score": 1,
+   "reasons": [
+    "-1 source ninjaone-blog",
+    "+2 user steps \"How to\""
+   ],
+   "status": "below",
+   "hash": "9256e21c"
   }
  },
  "devices": {},
@@ -7384,7 +7527,8 @@
   "2026-11-23": [],
   "2026-11-24": [
    "AWS debuts Strands Decider v2, a family of five open decision models based on Go",
-   "OpenAI and Cisco launch Shirudo, an open-source runtime that helps teams protect"
+   "OpenAI and Cisco launch Shirudo, an open-source runtime that helps teams protect",
+   "Meta rolls out Muse to UK adults to help with everyday tasks, the first Big Tech"
   ]
  },
  "trends": {
@@ -7428,8 +7572,8 @@
    "category": "launch",
    "topic": "ai-engineering",
    "parkOnly": false,
-   "last": "2026-11-24T06:11:04.000Z",
-   "date": "2026-11-24T06:11:04.000Z",
+   "last": "2026-11-24T09:30:00.000Z",
+   "date": "2026-11-24T09:30:00.000Z",
    "score": 12,
    "post": "anthropic-ipo-explained-claude-users"
   },
@@ -7504,6 +7648,28 @@
    "date": "2026-11-24T04:15:00.000Z",
    "score": 11,
    "ref": "https://openai.com/index/introducing-shirudo"
+  },
+  "milestone:meta|1b4e8c44": {
+   "first": "2026-11-24T07:50:01.000Z",
+   "decision": "parked",
+   "key": "milestone:meta",
+   "title": "Meta rolls out Muse to UK adults to help with everyday tasks, the first Big Tech company to launch an AI agent in the UK; UK watchdogs have warned about agents",
+   "titles": [
+    "Meta rolls out Muse to UK adults to help with everyday tasks, the first Big Tech company to launch an AI agent in the UK; UK watchdogs have warned about agents"
+   ],
+   "links": [
+    "https://www.politico.eu/article/meta-ai-agent-muse-launch-uk/"
+   ],
+   "link": "https://www.politico.eu/article/meta-ai-agent-muse-launch-uk/",
+   "outlets": [],
+   "techmeme": true,
+   "category": "launch",
+   "topic": "ai-automation",
+   "parkOnly": false,
+   "last": "2026-11-24T07:50:01.000Z",
+   "date": "2026-11-24T07:50:01.000Z",
+   "score": 11,
+   "ref": "https://about.fb.com/news/2026/11/introducing-muse-in-the-uk-a-personal-ai-agent-you-control"
   }
  },
  "missedCheck": {
