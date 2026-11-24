@@ -36,3 +36,8 @@ jobs:
           else
             node scripts/seo/indexnow.mjs --days 2
           fi
+
+      - name: Ping WebSub (feeds)
+        if: ${{ !cancelled() }}
+        continue-on-error: true
+        run: node scripts/seo/websub.mjs || true

@@ -199,6 +199,13 @@ jobs:
           fi
           node scripts/seo/gsc.mjs submit-sitemap
 
+      - name: Ping WebSub (feeds)
+        if: ${{ !cancelled() && steps.publish.outputs.chain == 'true' && !inputs.dry_run }}
+        continue-on-error: true
+        env:
+          URL: https://www.epifive.com/blog/${{ steps.post.outputs.slug }}
+        run: node scripts/seo/websub.mjs --expect "$URL" || true
+
       - name: Summary
         if: always() && steps.post.outputs.slug != ''
         run: |
@@ -465,6 +472,20 @@ jobs:
             -H 'Content-Type: application/json; charset=utf-8' \
             -d "{\"host\":\"www.epifive.com\",\"key\":\"5bbd01230376e7468f09aef0ef85403c\",\"keyLocation\":\"https://www.epifive.com/5bbd01230376e7468f09aef0ef85403c.txt\",\"urlList\":[\"https://www.epifive.com/blog/$SLUG\"]}" \
             -w '\nIndexNow HTTP %{http_code}\n' || true
+
+      - name: Ping WebSub (refresh)
+        if: ${{ !cancelled() && steps.rpublish.outputs.chain == 'true' && !inputs.dry_run }}
+        continue-on-error: true
+        env:
+          URL: https://www.epifive.com/blog/${{ steps.rpick.outputs.slug }}
+          TODAY: ${{ steps.date.outputs.today }}
+        run: |
+          day=$(date -u -d "$TODAY" '+%d %b %Y')
+          for i in $(seq 1 30); do
+            curl -s "https://www.epifive.com/feed-updates.xml" | grep -A3 "<link>$URL</link>" | grep -q "$day" && break
+            sleep 20
+          done
+          node scripts/seo/websub.mjs || true
 
       - name: Defer a failed refresh
         id: rdefer

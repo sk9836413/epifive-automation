@@ -406,6 +406,11 @@ jobs:
           done
           node scripts/seo/indexnow.mjs "$URL"
 
+      - name: Ping WebSub (feeds)
+        if: ${{ !cancelled() && !inputs.dry_run && steps.verdict.outputs.result == 'published' && steps.publish.outcome == 'success' }}
+        continue-on-error: true
+        run: node scripts/seo/websub.mjs || true
+
       - name: Email alert
         if: steps.verdict.outputs.result == 'published' && (inputs.dry_run || steps.publish.outcome == 'success') && (steps.task.outputs.category == 'outage' || steps.task.outputs.category == 'incident' || steps.task.outputs.category == 'patch-tuesday')
         continue-on-error: true

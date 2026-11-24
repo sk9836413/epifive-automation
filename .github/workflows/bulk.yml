@@ -303,3 +303,7 @@ jobs:
         run: |
           sleep 420
           node scripts/seo/indexnow.mjs --days 2
+      - name: Ping WebSub (feeds)
+        if: ${{ !cancelled() && steps.gate.outputs.count != '0' }}
+        continue-on-error: true
+        run: node scripts/seo/websub.mjs || true
