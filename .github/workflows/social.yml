@@ -569,3 +569,174 @@ jobs:
           git add reels/queue.jsonl
           git commit -qm "Queue English Instagram Reel: $SLUG at $EN_AT"
           for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep 5; done
+
+  free-tool:
+    needs: share
+    if: always() && vars.FREE_TOOL_REELS == 'on' && (github.event_name == 'schedule' || !inputs.smoke)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Pick the free tool
+        id: pick
+        run: |
+          node scripts/social/free-tool.mjs pick --today "$(date -u +%F)" > "$RUNNER_TEMP/pick.json"
+          cat "$RUNNER_TEMP/pick.json"
+          id=$(node -p "require('$RUNNER_TEMP/pick.json').pick || ''")
+          if [ -z "$id" ]; then
+            echo "::notice::No free-tool reel today: $(node -p "require('$RUNNER_TEMP/pick.json').why")"
+            echo "id=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          { echo "id=$id"; echo "slug=$(node -p "require('$RUNNER_TEMP/pick.json').slug")"; echo "keyword=$(node -p "require('$RUNNER_TEMP/pick.json').keyword")"; echo "dir=social-drafts/$(date -u +%F)-tool-$id"; } >> "$GITHUB_OUTPUT"
+
+      - name: Install ffmpeg and fonts
+        if: steps.pick.outputs.id != ''
+        run: |
+          sudo apt-get -o Acquire::Retries=3 -o Acquire::http::Timeout=20 update -qq
+          sudo apt-get -o Acquire::Retries=3 -o Acquire::http::Timeout=20 install -y -qq --no-install-recommends ffmpeg fonts-inter > /dev/null
+
+      - name: Cache voice-over model
+        if: steps.pick.outputs.id != ''
+        uses: actions/cache@v4
+        with:
+          path: ~/kokoro
+          key: kokoro-onnx-model-files-v1.1
+
+      - name: Install voice-over
+        if: steps.pick.outputs.id != ''
+        run: bash scripts/social/setup-tts.sh ~/kokoro
+
+      - name: Render the free-tool reel (Hinglish and English, one version per platform)
+        if: steps.pick.outputs.id != ''
+        run: |
+          node scripts/social/free-tool.mjs render "${{ steps.pick.outputs.id }}" --out "${{ steps.pick.outputs.dir }}" --lang both
+          for f in "${{ steps.pick.outputs.dir }}"/reel*.mp4 "${{ steps.pick.outputs.dir }}"/hi/reel*.mp4; do
+            node scripts/social/reel-spec.mjs "$f" --fix || echo "::warning::$f does not meet Meta's Reels spec (see the line above)"
+          done
+
+      - name: Cache Whisper model
+        if: steps.pick.outputs.id != ''
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: faster-whisper-small-v1
+
+      - name: Hinglish voice check
+        id: hi
+        if: steps.pick.outputs.id != ''
+        env:
+          DIR: ${{ steps.pick.outputs.dir }}
+        run: |
+          ok=false
+          audio=$(node -p "try { JSON.parse(require('fs').readFileSync('$DIR/hi/reel-meta.json', 'utf8')).audio } catch { '' }")
+          if [ "$audio" = text ]; then
+            ok=true
+          elif [ "$audio" = human ]; then
+            "$PYTHON" -m pip install -q faster-whisper > /dev/null 2>&1 || echo "::warning::faster-whisper install failed"
+            if "$PYTHON" scripts/social/hinglish-check.py --audio "$DIR/hi/reel.mp4" --narration "$DIR/hi/narration.txt" > "$DIR/hi/voice-check.json"; then ok=true; fi
+            cat "$DIR/hi/voice-check.json"
+          fi
+          echo "ok=$ok" >> "$GITHUB_OUTPUT"
+          echo "en_at=$(node scripts/social/slots.mjs english --slot 02:00)" >> "$GITHUB_OUTPUT"
+
+      - name: Publish to Facebook and Instagram (Graph API)
+        id: meta
+        if: steps.pick.outputs.id != ''
+        env:
+          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+          META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          REELS_HOST_REPO: ${{ github.repository }}
+          REELS_HOST_TOKEN: ${{ github.token }}
+          SLUG: ${{ steps.pick.outputs.slug }}
+          KEYWORD: ${{ steps.pick.outputs.keyword }}
+          DIR: ${{ steps.pick.outputs.dir }}
+          HI: ${{ steps.hi.outputs.ok }}
+          EN_AT: ${{ steps.hi.outputs.en_at }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          if [ -z "$META_PAGE_TOKEN" ] || [ -z "$META_PAGE_ID" ]; then echo "::notice::META_* secrets not set; no Facebook/Instagram post."; exit 0; fi
+          common=(--slug "$SLUG" --series free-tool --keyword "$KEYWORD")
+          if [ "$HI" = true ]; then
+            now=("${common[@]}" --video "$DIR/hi/reel-fb.mp4" --ig-video "$DIR/hi/reel-ig.mp4" --fb-reel "$DIR/hi/fb-reel.txt" --ig "$DIR/hi/instagram.txt" --lang hi)
+          else
+            now=("${common[@]}" --video "$DIR/reel-fb.mp4" --ig-video "$DIR/reel-ig.mp4" --fb-reel "$DIR/fb-reel.txt" --ig "$DIR/instagram.txt")
+          fi
+          en=("${common[@]}" --video "$DIR/reel-fb.mp4" --fb-reel "$DIR/fb-reel.txt" --only fb-reel --publish-at "$EN_AT")
+          if [ "$DRY_RUN" = true ]; then
+            node scripts/social/meta-post.mjs "${now[@]}" --dry-run || true
+            [ "$HI" = true ] && { node scripts/social/meta-post.mjs "${en[@]}" --dry-run || true; }
+            exit 0
+          fi
+          node scripts/social/meta-post.mjs "${now[@]}" > "$RUNNER_TEMP/tool-meta.json" || echo "::warning::Some free-tool Facebook/Instagram posts failed; see the result line."
+          cat "$RUNNER_TEMP/tool-meta.json"
+          echo "result=$RUNNER_TEMP/tool-meta.json" >> "$GITHUB_OUTPUT"
+          if [ "$HI" = true ]; then
+            node scripts/social/meta-post.mjs "${en[@]}" > "$RUNNER_TEMP/tool-meta-en.json" || echo "::warning::Scheduling the English free-tool Facebook Reel failed."
+            cat "$RUNNER_TEMP/tool-meta-en.json"
+            echo "en_result=$RUNNER_TEMP/tool-meta-en.json" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Publish to YouTube Shorts
+        id: youtube
+        if: steps.pick.outputs.id != '' && !inputs.dry_run
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          KEYWORD: ${{ steps.pick.outputs.keyword }}
+          DIR: ${{ steps.pick.outputs.dir }}
+          HI: ${{ steps.hi.outputs.ok }}
+          EN_AT: ${{ steps.hi.outputs.en_at }}
+        run: |
+          if [ -z "$YT_REFRESH_TOKEN" ]; then echo "result=drafts-only" >> "$GITHUB_OUTPUT"; exit 0; fi
+          en=()
+          if [ "$HI" = true ]; then
+            node scripts/social/youtube.mjs upload --video "$DIR/hi/reel.mp4" --meta "$DIR/hi/youtube.txt" --captions "$DIR/hi/captions.srt" \
+              --lang hi --series free-tool --keyword "$KEYWORD" --playlist-name "Free tools" > "$RUNNER_TEMP/tool-yt-hi.json" || echo "::warning::Hinglish free-tool YouTube upload failed."
+            cat "$RUNNER_TEMP/tool-yt-hi.json"
+            echo "hi_result=$RUNNER_TEMP/tool-yt-hi.json" >> "$GITHUB_OUTPUT"
+            en=(--publish-at "$EN_AT")
+          fi
+          node scripts/social/youtube.mjs upload --video "$DIR/reel.mp4" --meta "$DIR/youtube.txt" --captions "$DIR/captions.srt" \
+            --series free-tool --keyword "$KEYWORD" --playlist-name "Free tools" "${en[@]}" > "$RUNNER_TEMP/tool-yt.json" || echo "::warning::English free-tool YouTube upload failed."
+          cat "$RUNNER_TEMP/tool-yt.json"
+          echo "result=$RUNNER_TEMP/tool-yt.json" >> "$GITHUB_OUTPUT"
+
+      - name: Log and push
+        if: steps.pick.outputs.id != '' && !inputs.dry_run && steps.youtube.outcome == 'success'
+        env:
+          HI_YT: ${{ steps.youtube.outputs.hi_result }}
+          EN_META: ${{ steps.meta.outputs.en_result }}
+        run: |
+          set -- --log automation/free-tool-log.md --tool "${{ steps.pick.outputs.id }}"
+          [ -n "$HI_YT" ] && set -- "$@" --hi-yt "$HI_YT" --en-ig "not posted (free-tool reels: Hinglish only on Instagram)"
+          [ -n "$EN_META" ] && set -- "$@" --en-meta "$EN_META"
+          node scripts/social/log.mjs "${{ steps.pick.outputs.slug }}" "${{ steps.meta.outputs.result || 'drafts-only' }}" "${{ steps.youtube.outputs.result }}" drafts-only "$@"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add automation/free-tool-log.md
+          git commit -q -m "Log free-tool reel ${{ steps.pick.outputs.id }} [CF-Pages-Skip]"
+          for i in 1 2 3; do git pull -q --rebase "$SITE_REMOTE" main && git push -q "$SITE_REMOTE" HEAD:main && break; sleep 10; done
+
+      - name: Upload drafts and video
+        if: always() && steps.pick.outputs.id != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: free-tool-${{ steps.pick.outputs.id }}
+          path: ${{ steps.pick.outputs.dir }}
+          retention-days: 30
+          if-no-files-found: ignore
