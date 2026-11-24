@@ -1,7 +1,16 @@
 {
- "generated": "2026-11-21T14:17:24.371Z",
+ "generated": "2026-11-24T20:24:28.616Z",
  "services": {
   "microsoft-365": [
+   {
+    "time": "2026-11-24T16:35:02.000Z",
+    "headline": "Internal memos: Microsoft declared a \"Code Red\" drive to overhaul how it prevents and responds to major service failures after the 24-hour Microsoft 365 outage",
+    "source": "Reuters",
+    "url": "https://www.reuters.com/business/microsoft-declares-code-red-after-historic-outage-internal-memos-show-2026-11-24/",
+    "reported": true,
+    "live": "/news/live/2026-11-25#u-b9bc1033",
+    "post": null
+   },
    {
     "time": "2026-11-21T13:30:00.000Z",
     "headline": "Outlook, FAA, bank outage, oh my! How to practice 'cyber hygiene' in the AI age",
@@ -32,6 +41,15 @@
   ],
   "outlook": [
    {
+    "time": "2026-11-24T16:35:02.000Z",
+    "headline": "Internal memos: Microsoft declared a \"Code Red\" drive to overhaul how it prevents and responds to major service failures after the 24-hour Microsoft 365 outage",
+    "source": "Reuters",
+    "url": "https://www.reuters.com/business/microsoft-declares-code-red-after-historic-outage-internal-memos-show-2026-11-24/",
+    "reported": true,
+    "live": "/news/live/2026-11-25#u-b9bc1033",
+    "post": null
+   },
+   {
     "time": "2026-11-21T13:30:00.000Z",
     "headline": "Outlook, FAA, bank outage, oh my! How to practice 'cyber hygiene' in the AI age",
     "source": "TheDailyNewsOnline.com",
@@ -60,6 +78,15 @@
    }
   ],
   "teams": [
+   {
+    "time": "2026-11-24T16:35:02.000Z",
+    "headline": "Internal memos: Microsoft declared a \"Code Red\" drive to overhaul how it prevents and responds to major service failures after the 24-hour Microsoft 365 outage",
+    "source": "Reuters",
+    "url": "https://www.reuters.com/business/microsoft-declares-code-red-after-historic-outage-internal-memos-show-2026-11-24/",
+    "reported": true,
+    "live": "/news/live/2026-11-25#u-b9bc1033",
+    "post": null
+   },
    {
     "time": "2026-11-17T00:08:41.000Z",
     "headline": "High volume phishing campaign uses Microsoft 365 outage lures to target multiple industry sectors",

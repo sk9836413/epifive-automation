@@ -2,7 +2,7 @@
  "date": "2026-11-24",
  "title": "Tech news today, 24 November 2026",
  "published": "2026-11-23T23:59:46.286Z",
- "updated": "2026-11-24T16:12:11.104Z",
+ "updated": "2026-11-24T20:23:44.941Z",
  "items": [
   {
    "id": "2dc368ba",
@@ -705,7 +705,7 @@
    "time": "2026-11-23T22:07:24.000Z",
    "seen": "2026-11-24T06:20:50.738Z",
    "kind": "launch",
-   "tier": 2,
+   "tier": 1,
    "headline": "MC1519855: Microsoft Entra: Choose your own telephony provider now generally available",
    "summary": "Microsoft Entra now generally supports Choose Your Own Telephony Provider (CYOT) and Bring Your Own Telephony Provider (BYOT) for SMS and voice authentication. Microsoft-provided SMS/voice retires February 1, 2027. Organizations must transition by then, prioritizing phishing-resistant methods and using telephony only when necessary.",
    "lines": [
@@ -1189,5 +1189,5 @@
    "story": null
   }
  ],
- "description": "41 technology updates from official sources, updated hourly: MC1552394: Microsoft Viva Engage: Retiring the legacy live event creation option in Engage; VMware vCenter Hit by Another Critical 9.8-Rated Auth Bypass Flaw After Zero-Day Exploitation; Anthropic Faces New Pressures From Public Investors "
+ "description": "41 technology updates from official sources, updated hourly: MC1552394: Microsoft Viva Engage: Retiring the legacy live event creation option in Engage; MC1519855: Microsoft Entra: Choose your own telephony provider now generally available; VMware vCenter Hit by Another Critical 9.8-Rated Auth Bypas"
 }

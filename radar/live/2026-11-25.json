@@ -1,0 +1,581 @@
+{
+ "date": "2026-11-25",
+ "title": "Tech news today, 25 November 2026",
+ "published": "2026-11-24T20:23:44.941Z",
+ "updated": "2026-11-24T20:23:44.941Z",
+ "items": [
+  {
+   "id": "e62d266c",
+   "key": "https://workspaceupdates.googleblog.com/2026/11/mcp-servers-cli-standardized-usage-tiers-now-available.html",
+   "time": "2026-11-24T17:02:59.959Z",
+   "seen": "2026-11-24T20:23:44.941Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Simplifying agent access while keeping organizations in control: MCP servers, CLI, standardized usage tiers, and admin policies",
+   "summary": "As AI agents transform how people work, we want to make it simple for developers to build agentic workflows while keeping organizations in control of their data in Google Workspace. We are making Workspace Model Context Protocol (MCP) servers and the official Workspace CLI generally available alongside standardized usage tiers to simplify how developers build and scale agents, paired with a new Workspace AI Tools Addendum and expanded enterprise controls over AI agents. Simplifying and securing agent access with governed Workspace MCP servers and the Workspace CLI Developers now have two Google-managed ways to connect AI agents to Workspace without custom integration code: Workspace MCP serv",
+   "lines": [
+    "Google is making Workspace Model Context Protocol (MCP) servers and the official Workspace CLI generally available, along with standardized usage tiers for developers building agents.",
+    "Google also introduced a new Workspace AI Tools Addendum and expanded enterprise controls over AI agents.",
+    "Developers can connect AI agents to Workspace without custom integration code, while organizations keep control of their data."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google Workspace Updates",
+    "url": "http://workspaceupdates.googleblog.com/2026/11/mcp-servers-cli-standardized-usage-tiers-now-available.html"
+   },
+   "sourceId": "workspace-updates",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "fe696c71",
+   "key": "https://workspaceupdates.googleblog.com/2026/11/new-study-enhancements-for-flashcards-in-Gemini-Notebook.html",
+   "time": "2026-11-24T16:37:41.444Z",
+   "seen": "2026-11-24T20:23:44.941Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "New study enhancements for Flashcards in Gemini Notebook",
+   "summary": "We introduced three updates to flashcards in Gemini Notebook to help users better retain information, measure recall speed, and maintain consistent review routines. Images: Flashcards now automatically incorporate relevant images directly from uploaded source materials, providing visual context alongside text prompts to aid comprehension. Built-in stopwatch: Users can enable a stopwatch while reviewing flashcards to track time during the session, making it easier to simulate timed exam conditions. Mobile study reminders: Using the Gemini Notebook mobile app, users can schedule notifications reminding them to review previously generated flashcards, supporting structured study cadences. These",
+   "lines": [
+    "Google added three updates to flashcards in Gemini Notebook to help users retain information, measure recall speed, and keep consistent review routines.",
+    "Flashcards now automatically include relevant images from uploaded source materials, and users can turn on a stopwatch during review.",
+    "Users of the Gemini Notebook mobile app can schedule reminders to review previously generated flashcards."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google Workspace Updates",
+    "url": "http://workspaceupdates.googleblog.com/2026/11/new-study-enhancements-for-flashcards-in-Gemini-Notebook.html"
+   },
+   "sourceId": "workspace-updates",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "fb7d9524",
+   "key": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/humanitys-first-exam",
+   "time": "2026-11-24T19:30:00.000Z",
+   "seen": "2026-11-24T20:23:44.941Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "We’re launching Humanity’s First Exam and a Kaggle hackathon to test LLM reliability",
+   "summary": "Google launches Humanity’s First Exam to test LLM reliability across 544 prompts.",
+   "lines": [
+    "Google launched Humanity's First Exam, a test of LLM reliability across 544 prompts.",
+    "Google also announced a Kaggle hackathon focused on testing LLM reliability."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google: The Keyword",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/humanitys-first-exam/"
+   },
+   "sourceId": "google-keyword",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "83e53408",
+   "key": "https://blogs.vmware.com/cloud-foundation/2026/11/24/announcing-ga-of-vsan-object-storage",
+   "time": "2026-11-24T15:30:00.000Z",
+   "seen": "2026-11-24T20:23:44.941Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Announcing General Availability of vSAN Native S3-Compatible Object Storage",
+   "summary": "VMware Cloud Foundation (VCF) 9.1.2 brings native S3-compatible object storage to vSAN. Block, file, and object are all a part of the vSAN component of VMware Cloud Foundation, so infrastructure teams can use their existing investments in vSAN to support cloud-native apps and AI workloads with S3-compatible object storage. The capability ships with the VCF … Continued The post Announcing General Availability of vSAN Native S3-Compatible Object Storage appeared first on VMware Blogs .",
+   "lines": [
+    "VMware announced general availability of native S3-compatible object storage for vSAN, shipping with VMware Cloud Foundation (VCF) 9.1.2.",
+    "vSAN already provides block, file, and object storage as part of VMware Cloud Foundation.",
+    "Infrastructure teams can use existing vSAN investments to support cloud-native apps and AI workloads with S3-compatible object storage."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "VMware by Broadcom Blogs",
+    "url": "https://blogs.vmware.com/cloud-foundation/2026/11/24/announcing-ga-of-vsan-object-storage/"
+   },
+   "sourceId": "vmware-blog",
+   "sourceMax": 4,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "954868f3",
+   "key": "https://digitalocean.com/blog/now-generally-available-insights",
+   "time": "2026-11-24T14:30:00.047Z",
+   "seen": "2026-11-24T20:23:44.941Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "DigitalOcean Insights is now generally available: Unified observability across every layer of your stack",
+   "summary": "Observability is critical for running software in production. It helps teams understand whether a service is healthy, why a request slowed down, and what changed before an incident began. Answering those questions draws on more than one signal. Metrics show that behavior has changed, logs record what happened, and traces show where along a request’s path it happened. These signals are most useful when you can move from one to the next without losing context. As a stack grows to span clusters, databases, and agents, a unified view across every layer allows a team to keep pace with the system it operates. DigitalOcean Insights gives you a unified observability stack built into the DigitalOcean",
+   "lines": [
+    "DigitalOcean Insights is now generally available as a unified observability stack built into DigitalOcean.",
+    "The product brings together metrics, logs, and traces so users can move between signals without losing context.",
+    "It is aimed at stacks that span clusters, databases, and agents."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "DigitalOcean Blog",
+    "url": "https://www.digitalocean.com/blog/now-generally-available-insights"
+   },
+   "sourceId": "digitalocean-blog",
+   "sourceMax": 1,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "9bb0eb97",
+   "key": "https://mc.merill.net/message/MC1558023",
+   "time": "2026-11-24T17:05:20.000Z",
+   "seen": "2026-11-24T20:23:44.941Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1558023: Microsoft Copilot in PowerPoint for Windows, Mac, and the web: Introducing new sales-focused skills",
+   "summary": "Microsoft Copilot in PowerPoint is introducing new sales-focused skills worldwide by late November 2026 to help sales teams prepare and refine presentations, work with sales data, and support sales conversations. No admin action is needed; users with licenses can enable these skills via the Sales plugin.",
+   "lines": [
+    "Microsoft is introducing sales-focused skills in Copilot in PowerPoint for Windows, Mac, and the web.",
+    "The skills help sales teams prepare and refine presentations, work with sales data, and support sales conversations. Rollout is worldwide by late November 2026.",
+    "No admin action is needed; users with licenses can enable the skills through the Sales plugin."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1558023"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "23ea2d3b",
+   "key": "https://security.paloaltonetworks.com/CVE-2026-123633",
+   "time": "2026-11-24T19:00:00.000Z",
+   "seen": "2026-11-24T20:23:44.941Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "CVE-2026-123633 Portfolio Status: Impact of NGINX Vulnerabilities (CVE-2026-123633, CVE-2026-123007) on Palo Alto Networks Products (Severity: CRITICAL)",
+   "summary": "Palo Alto Networks Security Advisory: CVE-2026-123633 Portfolio Status: Impact of NGINX Vulnerabilities (CVE-2026-123633, CVE-2026-123007) on Palo Alto Networks Products Palo Alto Networks is aware of the two Critical Severity vulnerabilities in NGINX: CVE-2026-123633, CVE-2026-123007. CVE-2026-123633 is a use-after-free vulnerability in NGINX HTTP/2 proxy handling where active connections fail to clear their reusable state. When worker connection slots run low, NGINX can prematurely close and free memory for connections still actively proxying requests to upstream servers. This allows an unauthenticated remote attacker to crash worker processes or execute arbitrary code. CVE-2026-123007 is ",
+   "lines": [
+    "Palo Alto Networks published an advisory on two Critical severity NGINX vulnerabilities, CVE-2026-123633 and CVE-2026-123007, and their impact on its products.",
+    "CVE-2026-123633 is a use-after-free flaw in NGINX HTTP/2 proxy handling that can let an unauthenticated remote attacker crash worker processes or execute arbitrary code.",
+    "Teams should review the vendor advisory to check which products are affected."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Palo Alto Networks Security Advisories",
+    "url": "https://security.paloaltonetworks.com/CVE-2026-123633"
+   },
+   "sourceId": "paloalto-advisories",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "fa24474c",
+   "key": "https://mc.merill.net/message/MC1532242",
+   "time": "2026-11-24T17:25:39.000Z",
+   "seen": "2026-11-24T20:23:44.941Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1532242: Microsoft Teams: Pinch to zoom in on shared screens",
+   "summary": "Microsoft Teams will add pinch-to-zoom on shared screens for easier viewing of details, rolling out worldwide from mid-November to late December 2026. This feature is enabled by default in all meetings, with no compliance issues identified. Organizations should update sharing policies and inform users.",
+   "lines": [
+    "Microsoft Teams will add pinch-to-zoom on shared screens to make details easier to view.",
+    "Rollout is worldwide from mid-November to late December 2026.",
+    "The feature is enabled by default in all meetings, so organizations should update sharing policies and inform users."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1532242"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "536d1b1a",
+   "key": "https://mc.merill.net/message/MC1521613",
+   "time": "2026-11-24T17:22:22.000Z",
+   "seen": "2026-11-24T20:23:44.941Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1521613: Microsoft Teams: Streaming switchboard for NDI sources in meetings and events",
+   "summary": "Microsoft Teams will introduce a streaming switchboard for event producers to manage and stream up to eight NDI sources in meetings and events, rolling out worldwide from mid-November to mid-December 2026. Admins must enable NDI streaming, and users must activate production capabilities in Teams.",
+   "lines": [
+    "Microsoft Teams will introduce a streaming switchboard that lets event producers manage and stream up to eight NDI sources in meetings and events.",
+    "Rollout is worldwide from mid-November to mid-December 2026.",
+    "Admins must enable NDI streaming, and users must activate production capabilities in Teams."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1521613"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "6b4f081a",
+   "key": "https://azure.microsoft.com/updates?id=582171",
+   "time": "2026-11-24T17:48:22.000Z",
+   "seen": "2026-11-24T20:23:44.941Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "[Launched] Generally Available: Azure Site Recovery support for zonal disaster recovery for Ultra disks",
+   "summary": "Azure Site Recovery now supports Zone-to-Zone Disaster Recovery (Zonal DR) for Azure Ultra disks. Customers can protect performance-intensive virtual machines across Availability Zones against zonal disruptions by replication and recovering them to anothe",
+   "lines": [
+    "Azure Site Recovery now supports Zone-to-Zone Disaster Recovery (Zonal DR) for Azure Ultra disks, now generally available.",
+    "Customers can protect performance-intensive virtual machines across Availability Zones against zonal disruptions through replication and recovery."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Azure Updates",
+    "url": "https://azure.microsoft.com/updates?id=582171"
+   },
+   "sourceId": "azure-updates",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "16ac2563",
+   "key": "https://azure.microsoft.com/updates?id=581498",
+   "time": "2026-11-24T16:50:47.000Z",
+   "seen": "2026-11-24T20:23:44.941Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "[In preview] Public Preview: Govern MCP tools with your own gateway in Microsoft Foundry Agent Service",
+   "summary": "In public preview, Microsoft Foundry Agent Service lets you route MCP tool traffic through existing AI Gateway or Azure API Management endpoints that your organization manages. Configure the MCP route in the gateway first, then enter the gateway-routed en",
+   "lines": [
+    "Microsoft Foundry Agent Service is in public preview with support for governing MCP tools through an organization's own gateway.",
+    "MCP tool traffic can be routed through existing AI Gateway or Azure API Management endpoints that the organization manages.",
+    "The MCP route is configured in the gateway first, and then the gateway-routed endpoint is entered in the service."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Azure Updates",
+    "url": "https://azure.microsoft.com/updates?id=581498"
+   },
+   "sourceId": "azure-updates",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "6e9d71b6",
+   "key": "https://azure.microsoft.com/updates?id=581303",
+   "time": "2026-11-24T16:49:39.000Z",
+   "seen": "2026-11-24T20:23:44.941Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "[Launched] Generally Available: Use Azure Storage permissions in Azure AI Search and Foundry IQ",
+   "summary": "Azure AI Search and Foundry IQ in Microsoft Foundry can use supported Azure Storage permissions to control access to search results.Once configured, search applications and AI agents return content based on each user's access. This reduces the need to cre",
+   "lines": [
+    "Azure AI Search and Foundry IQ in Microsoft Foundry can now use supported Azure Storage permissions to control access to search results. This is generally available.",
+    "Search applications and AI agents return content based on each user's access once this is configured."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Azure Updates",
+    "url": "https://azure.microsoft.com/updates?id=581303"
+   },
+   "sourceId": "azure-updates",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "ff9a8462",
+   "key": "https://azure.microsoft.com/updates?id=581318",
+   "time": "2026-11-24T16:45:59.000Z",
+   "seen": "2026-11-24T20:23:44.941Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "[In preview] Public Preview: Azure Developer CLI extension for Azure Document Intelligence and Content Understanding in Foundry Tools",
+   "summary": "Within Microsoft Foundry, use azd ai cu commands to analyze documents with Azure Document Intelligence and Content Understanding in Foundry Tools. The extension for Azure Developer CLI (azd) can save analysis results as Markdown or JSON.You can start with",
+   "lines": [
+    "Public preview of an Azure Developer CLI (azd) extension for Azure Document Intelligence and Content Understanding in Foundry Tools.",
+    "Using azd ai cu commands, users can analyze documents and save results as Markdown or JSON."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Azure Updates",
+    "url": "https://azure.microsoft.com/updates?id=581318"
+   },
+   "sourceId": "azure-updates",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "f9983c59",
+   "key": "https://azure.microsoft.com/updates?id=581328",
+   "time": "2026-11-24T16:42:20.000Z",
+   "seen": "2026-11-24T20:23:44.941Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "[In preview] Public Preview: Central governance of hosted-agent outbound domains in Foundry Agent Service",
+   "summary": "Administrators can use Azure Policy to govern outbound destinations for hosted agents in Foundry Agent Service. Agent authors configure and attach a compliant egress policy before creating an agent version. The egress policy then controls outbound request",
+   "lines": [
+    "Public preview of central governance for hosted-agent outbound domains in Foundry Agent Service.",
+    "Administrators can use Azure Policy to govern outbound destinations for hosted agents.",
+    "Agent authors attach a compliant egress policy before creating an agent version, and the policy controls outbound requests."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Azure Updates",
+    "url": "https://azure.microsoft.com/updates?id=581328"
+   },
+   "sourceId": "azure-updates",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "b9bc1033",
+   "key": "https://reuters.com/business/microsoft-declares-code-red-after-historic-outage-internal-memos-show-2026-11-24",
+   "time": "2026-11-24T16:35:02.000Z",
+   "seen": "2026-11-24T20:23:44.941Z",
+   "kind": "outage",
+   "tier": 2,
+   "headline": "Internal memos: Microsoft declared a \"Code Red\" drive to overhaul how it prevents and responds to major service failures after the 24-hour Microsoft 365 outage",
+   "summary": "Microsoft has declared a “Code Red” drive to overhaul how it prevents and responds to major service failures …",
+   "lines": [
+    "Reported by Reuters: Microsoft declared a 'Code Red' effort to overhaul how it prevents and responds to major service failures.",
+    "The effort follows a 24-hour Microsoft 365 outage, according to internal memos.",
+    "IT teams may want to review their Microsoft 365 incident response and communication plans."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Reuters",
+    "url": "https://www.reuters.com/business/microsoft-declares-code-red-after-historic-outage-internal-memos-show-2026-11-24/"
+   },
+   "sourceId": "techmeme",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "families": [
+    "microsoft"
+   ],
+   "score": 10,
+   "story": "outage:microsoft"
+  },
+  {
+   "id": "56a7b979",
+   "key": "https://bloomberg.com/news/articles/2026-11-24/xai-founders-unveil-new-ai-startup-to-predict-future-events",
+   "time": "2026-11-24T17:25:02.000Z",
+   "seen": "2026-11-24T20:23:44.941Z",
+   "kind": "trending",
+   "topic": "milestone",
+   "tier": 2,
+   "trending": true,
+   "trendKey": "milestone:xai",
+   "techmeme": true,
+   "headline": "Three xAI founding members launch Epochal to build AI agents that achieve \"superhuman prediction\"; source: co-founder Guodong Zhang personally invested $100M",
+   "summary": "Three founding members of Elon Musk's artificial intelligence business, xAI, have teamed up to build a new AI company …",
+   "lines": [
+    "Reported by Bloomberg: Three founding members of xAI have teamed up to build Epochal, a new AI company.",
+    "The company aims to build AI agents that achieve 'superhuman prediction,' according to the report."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Bloomberg",
+    "url": "https://www.bloomberg.com/news/articles/2026-11-24/xai-founders-unveil-new-ai-startup-to-predict-future-events"
+   },
+   "sourceId": "techmeme",
+   "sourceMax": 4,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 10,
+   "story": "trend:milestone:xai"
+  },
+  {
+   "id": "f4916791",
+   "key": "https://bleepingcomputer.com/news/security/radware-discloses-breach-exposing-customer-cloud-access-keys",
+   "time": "2026-11-24T17:49:05.000Z",
+   "seen": "2026-11-24T20:23:44.941Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Radware discloses breach exposing customer cloud access keys",
+   "summary": "Cybersecurity company Radware says attackers gained access to some of its customers' account details and cloud access keys through an unsecured internal Cloud WAF (Web Application Firewall) management API that was left exposed online. [...]",
+   "lines": [
+    "Reported by BleepingComputer: Cybersecurity company Radware says attackers gained access to some customers' account details and cloud access keys.",
+    "The access came through an unsecured internal Cloud WAF management API that was left exposed online.",
+    "IT teams using Radware services may want to review their cloud access keys."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/radware-discloses-breach-exposing-customer-cloud-access-keys/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null
+  },
+  {
+   "id": "e5352016",
+   "key": "https://bleepingcomputer.com/news/security/european-commission-confirms-data-theft-in-eu-academy-breach",
+   "time": "2026-11-24T16:22:44.000Z",
+   "seen": "2026-11-24T20:23:44.941Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "European Commission confirms data theft in EU Academy breach",
+   "summary": "The European Commission, the European Union's main executive body, has confirmed that attackers breached its EU Academy online learning hub and stole the personal data of an undisclosed number of users. [...]",
+   "lines": [
+    "Reported by BleepingComputer: The European Commission confirmed that attackers breached its EU Academy online learning hub and stole personal data of users.",
+    "The number of affected users was not disclosed.",
+    "Organizations running online learning platforms may want to review access controls and data exposure."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/european-commission-confirms-data-theft-in-eu-academy-breach/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null
+  },
+  {
+   "id": "487fbec7",
+   "key": "https://bleepingcomputer.com/news/security/hackers-compromise-check-point-servers-in-22-organizations",
+   "time": "2026-11-24T16:15:23.000Z",
+   "seen": "2026-11-24T20:23:44.941Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Hackers compromise Check Point Servers in 22 organizations",
+   "summary": "Threat actors have exploited multiple vulnerabilities to compromise two dozen Check Point Security management servers in an ongoing campaign targeting 22 organizations. [...]",
+   "lines": [
+    "Reported by BleepingComputer: Threat actors exploited multiple vulnerabilities to compromise two dozen Check Point Security management servers.",
+    "The ongoing campaign targets 22 organizations."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/hackers-compromise-check-point-servers-in-22-organizations/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "d781dfc4",
+   "key": "https://thehackernews.com/2026/11/iran-aligned-volant-manticore-uses-ipfs.html",
+   "time": "2026-11-24T16:54:07.000Z",
+   "seen": "2026-11-24T20:23:44.941Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Iran-Aligned Volant Manticore Uses IPFS-Based KuboShell Backdoor in Espionage Campaigns",
+   "summary": "A previously undocumented Iran-aligned cyber espionage group called Volant Manticore has targeted telecommunications companies, airlines, and critical infrastructure in Cyprus. Central to the group's operations is a backdoor called KuboShell that uses the InterPlanetary File System (IPFS) for command-and-control (C2) and deploys Homa, a post-compromise framework that's a reimplementation of",
+   "lines": [
+    "Reported by The Hacker News: Iran-aligned espionage group Volant Manticore, previously undocumented, has targeted telecommunications companies, airlines, and critical infrastructure in Cyprus.",
+    "The group uses a backdoor called KuboShell that relies on the InterPlanetary File System (IPFS) for command-and-control (C2).",
+    "The group also deploys Homa, a post-compromise framework."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/iran-aligned-volant-manticore-uses-ipfs.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  }
+ ],
+ "description": "20 technology updates from official sources, updated hourly: Internal memos: Microsoft declared a \"Code Red\" drive to overhaul how it prevents and responds to major service failures after the 24-hour Microsoft 365 outage; Three xAI founding members launch Epochal to build AI agents that achieve \"sup"
+}

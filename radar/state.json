@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-24T16:12:11.104Z",
+ "lastScan": "2026-11-24T20:23:44.941Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -7329,8 +7329,12 @@
     "+1 retirement/migration",
     "+8 M365 retirement due in 69 days"
    ],
-   "status": "queued",
-   "hash": "b014c96b"
+   "status": "writing",
+   "hash": "b014c96b",
+   "kind": "new",
+   "extra": false,
+   "taskAt": "2026-11-24T20:23:44.941Z",
+   "attempts": 1
   },
   "https://aws.amazon.com/about-aws/whats-new/2026/11/device-farm-device-connect": {
    "title": "AWS Device Farm launches Device Connect for local access to remote Android devices",
@@ -7933,6 +7937,904 @@
    ],
    "status": "below",
    "hash": "6a93a0b5"
+  },
+  "https://openai.com/index/searching-for-distant-planets-with-astra": {
+   "title": "Searching for distant planets with Astra",
+   "link": "https://openai.com/index/searching-for-distant-planets-with-astra",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-24T11:00:00.000Z",
+   "updated": null,
+   "summary": "See how two amateur astronomers used Codex and Astra to find potential exoplanets in public data from NASA’s Kepler and TESS space telescopes.",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 3,
+   "reasons": [
+    "+2 source openai-news",
+    "+1 niche (codex)"
+   ],
+   "status": "below",
+   "hash": "5a06dc62"
+  },
+  "https://openai.com/business/customer-stories/intentful-dots": {
+   "title": "How Intentful uses dots to make more time for growth",
+   "link": "https://openai.com/business/customer-stories/intentful-dots",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-24T00:00:00.000Z",
+   "updated": null,
+   "summary": "Marina Petrova’s dot Aria helps research websites and build proposals, while proactively flagging messages and resolving issues.",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": -4,
+   "reasons": [
+    "+2 source openai-news",
+    "-4 customer story",
+    "-2 category (none)"
+   ],
+   "status": "below",
+   "hash": "34875239"
+  },
+  "https://openai.com/business/customer-stories/ifood": {
+   "title": "How iFood scales coding agents across 15,000 repositories",
+   "link": "https://openai.com/business/customer-stories/ifood",
+   "source": "openai-news",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-24T00:00:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": -3,
+   "reasons": [
+    "+2 source openai-news",
+    "+1 niche (agents)",
+    "-4 customer story",
+    "-2 category (none)"
+   ],
+   "status": "below",
+   "hash": "ac760b70"
+  },
+  "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-neon-builders": {
+   "title": "See what 5 builders are making with Gemini 4 Neon",
+   "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-neon-builders/",
+   "source": "gemini-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-24T16:00:00.000Z",
+   "updated": null,
+   "summary": "See five projects builders created with Gemini 4 Neon, from a glowing 3D Earth and Three.js butterflies to an interactive black hole.",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 4,
+   "reasons": [
+    "+1 source gemini-blog",
+    "+2 niche (gemini)",
+    "+1 also on google-keyword"
+   ],
+   "status": "below",
+   "hash": "4633ff98"
+  },
+  "https://claude.com/resources/articles/install-as-app": {
+   "title": "Turn artifacts into Mac and Windows apps",
+   "link": "https://claude.com/resources/articles/install-as-app",
+   "source": "claude-articles",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-24T12:00:00.000Z",
+   "updated": null,
+   "summary": "Open the artifacts you use every day like any other app, and let them do more on your computer",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 8,
+   "reasons": [
+    "+1 source claude-articles",
+    "+4 niche (claude, windows, mac)",
+    "+2 user steps \"you can\"",
+    "+1 plans/price/availability \"plan\""
+   ],
+   "status": "below",
+   "hash": "3bc86d6e"
+  },
+  "https://claude.com/resources/articles/skills-over-mcp-tasks-and-more": {
+   "title": "MCP servers can now ship skills, run tasks, and more with Claude",
+   "link": "https://claude.com/resources/articles/skills-over-mcp-tasks-and-more",
+   "source": "claude-articles",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-24T12:00:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 7,
+   "reasons": [
+    "+1 source claude-articles",
+    "+3 niche (claude, agents)",
+    "+2 user steps \"how to\"",
+    "+1 plans/price/availability \"plans\""
+   ],
+   "status": "below",
+   "hash": "63c50fe4"
+  },
+  "https://bleepingcomputer.com/news/security/radware-discloses-breach-exposing-customer-cloud-access-keys": {
+   "title": "Radware discloses breach exposing customer cloud access keys",
+   "link": "https://www.bleepingcomputer.com/news/security/radware-discloses-breach-exposing-customer-cloud-access-keys/",
+   "source": "bleepingcomputer",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-24T17:49:05.000Z",
+   "updated": null,
+   "summary": "Cybersecurity company Radware says attackers gained access to some of its customers' account details and cloud access keys through an unsecured internal Cloud WAF (Web Application Firewall) management API that was left exposed online. [...]",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 6,
+   "reasons": [
+    "+1 source bleepingcomputer",
+    "+3 incident \"breach\"",
+    "+1 user data or credentials exposed",
+    "+1 category (Security)"
+   ],
+   "status": "below",
+   "hash": "7c4f0b10"
+  },
+  "https://bleepingcomputer.com/news/security/european-commission-confirms-data-theft-in-eu-academy-breach": {
+   "title": "European Commission confirms data theft in EU Academy breach",
+   "link": "https://www.bleepingcomputer.com/news/security/european-commission-confirms-data-theft-in-eu-academy-breach/",
+   "source": "bleepingcomputer",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-24T16:22:44.000Z",
+   "updated": null,
+   "summary": "The European Commission, the European Union's main executive body, has confirmed that attackers breached its EU Academy online learning hub and stole the personal data of an undisclosed number of users. [...]",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 6,
+   "reasons": [
+    "+1 source bleepingcomputer",
+    "+3 incident \"breach\"",
+    "+1 user data or credentials exposed",
+    "+1 category (Security)"
+   ],
+   "status": "below",
+   "hash": "cab94452"
+  },
+  "https://workspaceupdates.googleblog.com/2026/11/mcp-servers-cli-standardized-usage-tiers-now-available.html": {
+   "title": "Simplifying agent access while keeping organizations in control: MCP servers, CLI, standardized usage tiers, and admin policies",
+   "link": "http://workspaceupdates.googleblog.com/2026/11/mcp-servers-cli-standardized-usage-tiers-now-available.html",
+   "source": "workspace-updates",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-24T17:02:59.959Z",
+   "updated": "2026-11-24T17:02:59.959Z",
+   "summary": "As AI agents transform how people work, we want to make it simple for developers to build agentic workflows while keeping organizations in control of their data in Google Workspace. We are making Workspace Model Context Protocol (MCP) servers and the official Workspace CLI generally available alongs",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 6,
+   "reasons": [
+    "+1 source workspace-updates",
+    "+3 niche (google workspace, agent)",
+    "+2 launch \"generally available\""
+   ],
+   "status": "below",
+   "hash": "9807bd42"
+  },
+  "https://workspaceupdates.googleblog.com/2026/11/new-study-enhancements-for-flashcards-in-Gemini-Notebook.html": {
+   "title": "New study enhancements for Flashcards in Gemini Notebook",
+   "link": "http://workspaceupdates.googleblog.com/2026/11/new-study-enhancements-for-flashcards-in-Gemini-Notebook.html",
+   "source": "workspace-updates",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-24T16:37:41.444Z",
+   "updated": "2026-11-24T16:37:41.444Z",
+   "summary": "We introduced three updates to flashcards in Gemini Notebook to help users better retain information, measure recall speed, and maintain consistent review routines. Images: Flashcards now automatically incorporate relevant images directly from uploaded source materials, providing visual context alon",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 7,
+   "reasons": [
+    "+1 source workspace-updates",
+    "+2 niche (gemini)",
+    "+2 launch \"introduced\"",
+    "+2 user steps \"Users can\""
+   ],
+   "status": "below",
+   "hash": "efeb030e"
+  },
+  "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/humanitys-first-exam": {
+   "title": "We’re launching Humanity’s First Exam and a Kaggle hackathon to test LLM reliability.",
+   "link": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/humanitys-first-exam/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-24T19:30:00.000Z",
+   "updated": null,
+   "summary": "Google launches Humanity’s First Exam to test LLM reliability across 544 prompts.",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 3,
+   "reasons": [
+    "+2 launch \"launching\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "c4b15447"
+  },
+  "https://github.blog/changelog/2026-11-24-more-predictable-notifications-on-github-com": {
+   "title": "More predictable notifications on GitHub.com",
+   "link": "https://github.blog/changelog/2026-11-24-more-predictable-notifications-on-github-com",
+   "source": "github-changelog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-24T16:40:59.000Z",
+   "updated": null,
+   "summary": "Starting December 1, 2026, we’re migrating notifications on GitHub.com over the course of a week to make subscriptions more predictable, correct unexpected behavior, and support the growing scale of activity.… The post More predictable notifications on GitHub.com appeared first on The GitHub Blog .",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 0,
+   "reasons": [
+    "-1 source github-changelog",
+    "+1 plans/price/availability \"subscriptions\""
+   ],
+   "status": "below",
+   "hash": "297364fe"
+  },
+  "https://microsoft.com/en-us/education/blog/2026/11/how-higher-education-leaders-can-turn-institutional-intelligence-into-impact": {
+   "title": "3 questions that can help universities turn AI experiments into results",
+   "link": "https://www.microsoft.com/en-us/education/blog/2026/11/how-higher-education-leaders-can-turn-institutional-intelligence-into-impact/",
+   "source": "ms-source",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-23T19:37:01.000Z",
+   "updated": null,
+   "summary": "The post 3 questions that can help universities turn AI experiments into results appeared first on Source .",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": -1,
+   "reasons": [
+    "-1 source ms-source"
+   ],
+   "status": "below",
+   "hash": "c80d8f02"
+  },
+  "https://techcommunity.microsoft.com/blog/microsoft-discovery-blog/three-things-you-should-know-about-microsoft-discovery/4574970": {
+   "title": "How Microsoft Discovery helps scientists learn from failure and find new possibilities",
+   "link": "https://techcommunity.microsoft.com/blog/microsoft-discovery-blog/three-things-you-should-know-about-microsoft-discovery/4574970",
+   "source": "ms-source",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-23T19:32:13.000Z",
+   "updated": null,
+   "summary": "The post How Microsoft Discovery helps scientists learn from failure and find new possibilities appeared first on Source .",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": -1,
+   "reasons": [
+    "-1 source ms-source"
+   ],
+   "status": "below",
+   "hash": "56e1463a"
+  },
+  "https://crowdstrike.com/en-us/blog/reprioritizing-automated-leads-crowdstrike-signal": {
+   "title": "Reprioritizing Automated Leads with CrowdStrike Signal",
+   "link": "https://www.crowdstrike.com/en-us/blog/reprioritizing-automated-leads-crowdstrike-signal/",
+   "source": "crowdstrike-blog",
+   "topic": "security-identity",
+   "category": "launch",
+   "date": "2026-11-24T08:00:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": -1,
+   "reasons": [
+    "-1 source crowdstrike-blog"
+   ],
+   "status": "below",
+   "hash": "369e409a"
+  },
+  "https://salesforce.com/blog/datablazer-monthly-roundup": {
+   "title": "Datablazer Roundup: November",
+   "link": "https://www.salesforce.com/blog/datablazer-monthly-roundup/",
+   "source": "salesforce-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-24T18:29:17.000Z",
+   "updated": null,
+   "summary": "Welcome back, Datablazers, to the latest edition of the Datablazer Roundup. Your monthly dose of what you and fellow Datablazers are reading, writing, watching, building, and talking about. If November had a theme,…",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": -1,
+   "reasons": [
+    "-1 source salesforce-blog"
+   ],
+   "status": "below",
+   "hash": "37fd545"
+  },
+  "https://blogs.vmware.com/cloud-foundation/2026/11/24/whats-new-in-vmware-cloud-foundation-edge-9-1-2": {
+   "title": "What’s New in VMware Cloud Foundation Edge 9.1.2",
+   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/24/whats-new-in-vmware-cloud-foundation-edge-9-1-2/",
+   "source": "vmware-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T15:30:00.000Z",
+   "updated": null,
+   "summary": "Thousands of remote sites keep business moving, often without a single systems administrator on site. That gap creates the defining challenge of the distributed edge: heavy hardware sprawl run by a lean team. VMware Cloud Foundation Edge (VCF Edge) is an optimized configuration of VMware Cloud Found",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": -1,
+   "reasons": [
+    "-1 source vmware-blog"
+   ],
+   "status": "below",
+   "hash": "88f0e2ee"
+  },
+  "https://blogs.vmware.com/cloud-foundation/2026/11/24/automate-day-0-ai-deployment-with-ai-infrastructure-quickstart-in-vcf-9-1-2": {
+   "title": "Automate Day-0 AI Deployment with AI infrastructure quickstart in VCF 9.1.2",
+   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/24/automate-day-0-ai-deployment-with-ai-infrastructure-quickstart-in-vcf-9-1-2/",
+   "source": "vmware-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T15:30:00.000Z",
+   "updated": null,
+   "summary": "Introduction While artificial intelligence offers transformative potential, enterprise deployment remains constrained. At the forefront, privacy, IP protection, and compliance present severe existential threats. Foundational issues however are infrastructural demands—such as GPU bottlenecks, network",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": -1,
+   "reasons": [
+    "-1 source vmware-blog"
+   ],
+   "status": "below",
+   "hash": "984a40d9"
+  },
+  "https://blogs.vmware.com/cloud-foundation/2026/11/24/strengthening-security-and-simplifying-operations-with-vmware-vsphere-foundation-9-1-2": {
+   "title": "Strengthening Security and Simplifying Operations with VMware vSphere Foundation 9.1.2",
+   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/24/strengthening-security-and-simplifying-operations-with-vmware-vsphere-foundation-9-1-2/",
+   "source": "vmware-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T15:30:00.000Z",
+   "updated": null,
+   "summary": "Infrastructure teams don’t get to choose when a new threat emerges or when a support ticket lands at the worst possible moment. What they can choose is how prepared their platform is to respond. VMware vSphere Foundation 9.1 set out to modernize infrastructure economics by cutting operational downti",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": -1,
+   "reasons": [
+    "-1 source vmware-blog"
+   ],
+   "status": "below",
+   "hash": "309d0610"
+  },
+  "https://blogs.vmware.com/cloud-foundation/2026/11/24/announcing-ga-of-vsan-object-storage": {
+   "title": "Announcing General Availability of vSAN Native S3-Compatible Object Storage",
+   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/24/announcing-ga-of-vsan-object-storage/",
+   "source": "vmware-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T15:30:00.000Z",
+   "updated": null,
+   "summary": "VMware Cloud Foundation (VCF) 9.1.2 brings native S3-compatible object storage to vSAN. Block, file, and object are all a part of the vSAN component of VMware Cloud Foundation, so infrastructure teams can use their existing investments in vSAN to support cloud-native apps and AI workloads with S3-co",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 2,
+   "reasons": [
+    "-1 source vmware-blog",
+    "+2 launch \"General Availability\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "bcb82f2c"
+  },
+  "https://blogs.vmware.com/cloud-foundation/2026/11/24/beyond-the-public-cloud-delivering-native-s3-object-storage-as-a-self-service-private-cloud-reality": {
+   "title": "Beyond the Public Cloud: Delivering Native S3 Object Storage as a Self-Service Private Cloud Reality",
+   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/24/beyond-the-public-cloud-delivering-native-s3-object-storage-as-a-self-service-private-cloud-reality/",
+   "source": "vmware-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T15:30:00.000Z",
+   "updated": null,
+   "summary": "For modern enterprise infrastructure, the primary focus has shifted from merely virtualizing compute to mastering unstructured data. With IDC forecasting global storage capacity to exceed 700 zettabytes by 2030, with nearly 80% of it unstructured, enterprise platform teams face an unsustainable para",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": -1,
+   "reasons": [
+    "-1 source vmware-blog"
+   ],
+   "status": "below",
+   "hash": "e8228411"
+  },
+  "https://blogs.vmware.com/cloud-foundation/2026/11/24/powering-vmware-private-ai-cloud-centralized-service-management-and-enterprise-gitops-in-vmware-cloud-foundation-9-1-2": {
+   "title": "Powering VMware Private AI Cloud: Centralized Service Management and Enterprise GitOps in VMware Cloud Foundation 9.1.2",
+   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/24/powering-vmware-private-ai-cloud-centralized-service-management-and-enterprise-gitops-in-vmware-cloud-foundation-9-1-2/",
+   "source": "vmware-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T15:30:00.000Z",
+   "updated": null,
+   "summary": "As generative AI and AI agents redefine enterprise capabilities, organizations face a critical mandate to modernize their cloud infrastructure. With 56% of IT leaders running or planning to run production AI on private clouds*, the data center has become the strategic hub for next-generation innovat",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 0,
+   "reasons": [
+    "-1 source vmware-blog",
+    "+1 niche (agents)"
+   ],
+   "status": "below",
+   "hash": "74d2329a"
+  },
+  "https://blogs.vmware.com/cloud-foundation/2026/11/24/new-fleet-and-infrastructure-operations-capabilities-in-vmware-cloud-foundation-9-1-2": {
+   "title": "New Fleet and Infrastructure Operations Capabilities in VMware Cloud Foundation 9.1.2",
+   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/24/new-fleet-and-infrastructure-operations-capabilities-in-vmware-cloud-foundation-9-1-2/",
+   "source": "vmware-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T15:30:00.000Z",
+   "updated": null,
+   "summary": "VMware Cloud Foundation (VCF) 9.1.2 introduces several enhancements to VCF Operations to improve fleet management, security, and everyday operations, making it easier for our customers to adopt private cloud. These capabilities have been engineered to improve private cloud deployment, patching proce",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 1,
+   "reasons": [
+    "-1 source vmware-blog",
+    "+2 launch \"introduces\""
+   ],
+   "status": "below",
+   "hash": "ce53df79"
+  },
+  "https://backblaze.com/blog/the-physical-ai-data-flywheel-only-works-if-you-keep-the-data": {
+   "title": "The Physical AI Data Flywheel Only Works if You Keep the Data",
+   "link": "https://www.backblaze.com/blog/the-physical-ai-data-flywheel-only-works-if-you-keep-the-data/",
+   "source": "backblaze-blog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-24T17:27:43.000Z",
+   "updated": null,
+   "summary": "Many physical AI teams never decide to throw away their edge cases. A buffer, a threshold, or a cost-cutting rule does it for them. The post The Physical AI Data Flywheel Only Works if You Keep the Data appeared first on Backblaze Blog | Cloud Storage & Cloud Backup",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": -1,
+   "reasons": [
+    "-1 source backblaze-blog"
+   ],
+   "status": "below",
+   "hash": "a11d9820"
+  },
+  "https://digitalocean.com/blog/now-generally-available-insights": {
+   "title": "DigitalOcean Insights is now generally available: Unified observability across every layer of your stack",
+   "link": "https://www.digitalocean.com/blog/now-generally-available-insights",
+   "source": "digitalocean-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T14:30:00.047Z",
+   "updated": "2026-11-24T14:30:00.047Z",
+   "summary": "Observability is critical for running software in production. It helps teams understand whether a service is healthy, why a request slowed down, and what changed before an incident began. Answering those questions draws on more than one signal. Metrics show that behavior has changed, logs record wha",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 5,
+   "reasons": [
+    "-1 source digitalocean-blog",
+    "+1 niche (agents)",
+    "+2 launch \"generally available\"",
+    "+2 user steps \"you can\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "89c0100d"
+  },
+  "https://cloud.google.com/blog/products/identity-security/deploying-agents-safely-in-your-enterprise": {
+   "title": "Built for trust and control: Powering the next wave of AI agents across Google Workspace and Google Cloud",
+   "link": "https://cloud.google.com/blog/products/identity-security/deploying-agents-safely-in-your-enterprise/",
+   "source": "gcloud-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T17:00:00.000Z",
+   "updated": null,
+   "summary": "For over 20 years, we have protected 4 billion users and 13 million organizations in Workspace, and critical enterprise and government systems on Google Cloud. From personal and financial records to board materials, regulated workloads, applications, and AI models, those safeguards protect what matt",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 3,
+   "reasons": [
+    "-1 source gcloud-blog",
+    "+4 niche (google workspace, google drive, agents)"
+   ],
+   "status": "below",
+   "hash": "2333195c"
+  },
+  "https://cloud.google.com/blog/products/chrome-enterprise/enabling-zero-trust-allens-move-to-chrome-enterprise-premium": {
+   "title": "Enabling zero trust: ALLEN’s move to Chrome Enterprise Premium",
+   "link": "https://cloud.google.com/blog/products/chrome-enterprise/enabling-zero-trust-allens-move-to-chrome-enterprise-premium/",
+   "source": "gcloud-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T15:02:00.000Z",
+   "updated": null,
+   "summary": "Editor’s note: Founded in 1988 in Kota, Rajasthan, ALLEN is one of India’s leading coaching institutions, serving over 400,000 students across 350+ classroom campuses in 78 cities. Here, the IT and Cybersecurity Leadership Team shares how they standardized on Chrome Enterprise Premium to secure sens",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 3,
+   "reasons": [
+    "-1 source gcloud-blog",
+    "+2 user steps \"enable\"",
+    "+1 plans/price/availability \"India\"",
+    "+1 also on chrome-enterprise-blog"
+   ],
+   "status": "below",
+   "hash": "abaedadb"
+  },
+  "https://mc.merill.net/message/MC1532242": {
+   "title": "MC1532242: Microsoft Teams: Pinch to zoom in on shared screens",
+   "link": "https://mc.merill.net/message/MC1532242",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-24T17:25:39.000Z",
+   "updated": null,
+   "summary": "Microsoft Teams will add pinch-to-zoom on shared screens for easier viewing of details, rolling out worldwide from mid-November to late December 2026. This feature is enabled by default in all meetings, with no compliance issues identified. Organizations should update sharing policies and inform use",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 2,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 niche (microsoft teams)",
+    "+2 launch \"rolling out\""
+   ],
+   "status": "below",
+   "hash": "eb7f7c75"
+  },
+  "https://mc.merill.net/message/MC1521613": {
+   "title": "MC1521613: Microsoft Teams: Streaming switchboard for NDI sources in meetings and events",
+   "link": "https://mc.merill.net/message/MC1521613",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-24T17:22:22.000Z",
+   "updated": null,
+   "summary": "Microsoft Teams will introduce a streaming switchboard for event producers to manage and stream up to eight NDI sources in meetings and events, rolling out worldwide from mid-November to mid-December 2026. Admins must enable NDI streaming, and users must activate production capabilities in Teams.",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 1,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 niche (microsoft teams)",
+    "+2 launch \"rolling out\"",
+    "+2 user steps \"enable\"",
+    "-3 corporate/announcement \"events\""
+   ],
+   "status": "below",
+   "hash": "3f6ecf7f"
+  },
+  "https://mc.merill.net/message/MC1478957": {
+   "title": "MC1478957: Microsoft 365 profile card: View dotted-line managers in the organization panel",
+   "link": "https://mc.merill.net/message/MC1478957",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-24T17:20:28.000Z",
+   "updated": null,
+   "summary": "The dotted-line manager feature in Microsoft 365 profile cards has been postponed indefinitely, with no new rollout date. Organizations should not expect this feature soon and need to update any related plans or communications accordingly. No preparation is required at this time.",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 1,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 niche (microsoft 365)",
+    "+1 plans/price/availability \"rollout\""
+   ],
+   "status": "below",
+   "hash": "f719b78e"
+  },
+  "https://mc.merill.net/message/MC1551148": {
+   "title": "MC1551148: [Outlook for iOS and Android] Copilot Chat in Outlook UX improvements",
+   "link": "https://mc.merill.net/message/MC1551148",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-24T17:06:14.000Z",
+   "updated": null,
+   "summary": "Copilot Chat in Outlook for iOS and Android is being updated with a refreshed, consistent design across Microsoft 365 apps, improved chat interface, prompts, and navigation. Rollout starts mid-December 2026, completing by late January 2027. No admin action or compliance concerns are required.",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 3,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (copilot, microsoft 365, outlook, android)",
+    "+1 plans/price/availability \"Rollout\""
+   ],
+   "status": "below",
+   "hash": "5935e2d2"
+  },
+  "https://mc.merill.net/message/MC1556095": {
+   "title": "MC1556095: Plugins in PowerPoint for Microsoft 365 Copilot [Mac]",
+   "link": "https://mc.merill.net/message/MC1556095",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-24T17:05:55.000Z",
+   "updated": null,
+   "summary": "Plugins will be added to PowerPoint for Microsoft 365 Copilot on Mac, enhancing presentation capabilities. The rollout starts mid-November 2026 and completes by early December. Users can access plugins in Copilot, and admins can manage plugin access via the Microsoft 365 admin center. No compliance ",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 5,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (copilot, microsoft 365, powerpoint, mac)",
+    "+2 user steps \"Users can\"",
+    "+1 plans/price/availability \"rollout\""
+   ],
+   "status": "below",
+   "hash": "facb7094"
+  },
+  "https://mc.merill.net/message/MC1550540": {
+   "title": "MC1550540: Microsoft 365 Copilot: Copilot Workspaces is replacing standalone agent selection with agentic chat",
+   "link": "https://mc.merill.net/message/MC1550540",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-24T17:05:38.000Z",
+   "updated": null,
+   "summary": "Microsoft 365 Copilot Workspaces will replace standalone agent selection (Researcher, Analyst, Designer) with an agentic chat that applies skills based on user requests. This simplifies workflows without losing capabilities. The change begins December 2026 in Frontier preview, with no admin action r",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 1,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (copilot, microsoft 365, agent)",
+    "-1 in /news 2026-11-13-netapp-ldap-refs-copilot-schedules"
+   ],
+   "status": "below",
+   "hash": "4c9c851d",
+   "news": "2026-11-13-netapp-ldap-refs-copilot-schedules"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-api-gateway-announces-api-portal": {
+   "title": "Amazon API Gateway announces API Portal",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-api-gateway-announces-api-portal/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T20:00:00.000Z",
+   "updated": null,
+   "summary": "Today, Amazon API Gateway announces API Portal , a new feature that discovers, governs, and documents the APIs and AI endpoints behind Amazon API Gateway, Application Load Balancer, and Amazon CloudFront across your AWS organization. Many organizations can't see which APIs are running, which were ne",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 1,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"new feature\"",
+    "+2 user steps \"install\"",
+    "-1 narrow audience \"API\""
+   ],
+   "status": "below",
+   "hash": "7e607187"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/postgresql-19-amazon-rds-database-preview-environment": {
+   "title": "RDS PostgreSQL now supports PostgreSQL 19.0 in the Amazon RDS Database Preview Environment",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/postgresql-19-amazon-rds-database-preview-environment/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T17:00:00.000Z",
+   "updated": null,
+   "summary": "Starting today, Amazon RDS for PostgreSQL 19.0 is available in the Amazon RDS Database Preview Environment , allowing you to evaluate PostgreSQL 19.0 on Amazon RDS PostgreSQL. PostgreSQL 19.0 introduces the REPACK command with a CONCURRENTLY option, which removes table and index bloat with minimal l",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 3,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now supports\"",
+    "+2 user steps \"You can\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "5ca7164b"
+  },
+  "https://iru.com/blog/phantomvnc-phishing-kit": {
+   "title": "New PhantomVNC phishing kit hijacks sessions after MFA",
+   "link": "https://www.iru.com/blog/phantomvnc-phishing-kit",
+   "source": "iru-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T16:32:43.000Z",
+   "updated": null,
+   "summary": "Most phishing kits sell a static clone of a login page and capture the password a victim types into it. PhantomVNC streams a live browser session to the operator and captures the fully authenticated session, including the multi-factor authentication (MFA) step the victim just completed.",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": -1,
+   "reasons": [
+    "-2 source iru-blog",
+    "+1 niche (password)"
+   ],
+   "status": "below",
+   "hash": "a8676f33"
+  },
+  "https://azure.microsoft.com/updates?id=582171": {
+   "title": "[Launched] Generally Available: Azure Site Recovery support for zonal disaster recovery for Ultra disks",
+   "link": "https://azure.microsoft.com/updates?id=582171",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T17:48:22.000Z",
+   "updated": "2026-11-24T17:48:22.000Z",
+   "summary": "Azure Site Recovery now supports Zone-to-Zone Disaster Recovery (Zonal DR) for Azure Ultra disks. Customers can protect performance-intensive virtual machines across Availability Zones against zonal disruptions by replication and recovering them to anothe",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 1,
+   "reasons": [
+    "-2 source azure-updates",
+    "+2 launch \"Launched\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "2fbbf7a1"
+  },
+  "https://azure.microsoft.com/updates?id=581483": {
+   "title": "[In preview] Public Preview: Optimize agents from insights in Foundry Agent Service",
+   "link": "https://azure.microsoft.com/updates?id=581483",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T16:52:07.000Z",
+   "updated": "2026-11-24T16:52:07.000Z",
+   "summary": "Optimization from insights is in public preview in Foundry Agent Service. In the Foundry portal, start from an eligible insight in a prompt-agent trace to generate and evaluate candidate changes to the agent's instructions and function-calling tool descri",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 0,
+   "reasons": [
+    "-2 source azure-updates",
+    "+1 niche (agents)",
+    "+1 plans/price/availability \"eligible\""
+   ],
+   "status": "below",
+   "hash": "c603f733"
+  },
+  "https://azure.microsoft.com/updates?id=581498": {
+   "title": "[In preview] Public Preview: Govern MCP tools with your own gateway in Microsoft Foundry Agent Service",
+   "link": "https://azure.microsoft.com/updates?id=581498",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T16:50:47.000Z",
+   "updated": "2026-11-24T16:50:47.000Z",
+   "summary": "In public preview, Microsoft Foundry Agent Service lets you route MCP tool traffic through existing AI Gateway or Azure API Management endpoints that your organization manages. Configure the MCP route in the gateway first, then enter the gateway-routed en",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 1,
+   "reasons": [
+    "-2 source azure-updates",
+    "+1 niche (agent)",
+    "+2 user steps \"Configure\""
+   ],
+   "status": "below",
+   "hash": "9ff469f1"
+  },
+  "https://azure.microsoft.com/updates?id=581303": {
+   "title": "[Launched] Generally Available: Use Azure Storage permissions in Azure AI Search and Foundry IQ",
+   "link": "https://azure.microsoft.com/updates?id=581303",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T16:49:39.000Z",
+   "updated": "2026-11-24T16:49:39.000Z",
+   "summary": "Azure AI Search and Foundry IQ in Microsoft Foundry can use supported Azure Storage permissions to control access to search results.Once configured, search applications and AI agents return content based on each user's access. This reduces the need to cre",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 2,
+   "reasons": [
+    "-2 source azure-updates",
+    "+1 niche (agents)",
+    "+2 launch \"Launched\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "527baace"
+  },
+  "https://azure.microsoft.com/updates?id=581313": {
+   "title": "[In preview] Public Preview: Native A2A passthrough for hosted agents in Foundry Agent Service",
+   "link": "https://azure.microsoft.com/updates?id=581313",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T16:48:25.000Z",
+   "updated": "2026-11-24T16:48:25.000Z",
+   "summary": "Bring your existing Agent2Agent (A2A) agents to Agent Service without a protocol conversion layer.Previously, Agent Service converted incoming A2A requests to the Responses protocol. With A2A passthrough, Agent Service forwards native A2A requests directl",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": -1,
+   "reasons": [
+    "-2 source azure-updates",
+    "+1 niche (agents)"
+   ],
+   "status": "below",
+   "hash": "15692102"
+  },
+  "https://azure.microsoft.com/updates?id=581318": {
+   "title": "[In preview] Public Preview: Azure Developer CLI extension for Azure Document Intelligence and Content Understanding in Foundry Tools",
+   "link": "https://azure.microsoft.com/updates?id=581318",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T16:45:59.000Z",
+   "updated": "2026-11-24T16:45:59.000Z",
+   "summary": "Within Microsoft Foundry, use azd ai cu commands to analyze documents with Azure Document Intelligence and Content Understanding in Foundry Tools. The extension for Azure Developer CLI (azd) can save analysis results as Markdown or JSON.You can start with",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": -1,
+   "reasons": [
+    "-2 source azure-updates",
+    "+2 user steps \"You can\"",
+    "-1 narrow audience \"Developer\""
+   ],
+   "status": "below",
+   "hash": "67758b29"
+  },
+  "https://azure.microsoft.com/updates?id=581323": {
+   "title": "[In preview] Public Preview: Cost controls for model and agent spending in Microsoft Foundry",
+   "link": "https://azure.microsoft.com/updates?id=581323",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T16:43:40.000Z",
+   "updated": "2026-11-24T16:43:40.000Z",
+   "summary": "Within Microsoft Foundry, cost controls set a spending or token budget for a Foundry resource or project. When usage reaches a threshold that you set, a cost control sends an alert through Azure Event Grid or blocks new requests.You can apply a budget to",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 1,
+   "reasons": [
+    "-2 source azure-updates",
+    "+1 niche (agent)",
+    "+2 user steps \"You can\""
+   ],
+   "status": "below",
+   "hash": "c2ebc254"
+  },
+  "https://azure.microsoft.com/updates?id=581328": {
+   "title": "[In preview] Public Preview: Central governance of hosted-agent outbound domains in Foundry Agent Service",
+   "link": "https://azure.microsoft.com/updates?id=581328",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T16:42:20.000Z",
+   "updated": "2026-11-24T16:42:20.000Z",
+   "summary": "Administrators can use Azure Policy to govern outbound destinations for hosted agents in Foundry Agent Service. Agent authors configure and attach a compliant egress policy before creating an agent version. The egress policy then controls outbound request",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 1,
+   "reasons": [
+    "-2 source azure-updates",
+    "+1 niche (agent)",
+    "+2 user steps \"configure\""
+   ],
+   "status": "below",
+   "hash": "2231f4f8"
+  },
+  "https://elevenlabs.io/blog/yahoo": {
+   "title": "How Yahoo Scout, a new AI answer tool from Yahoo, got a voice",
+   "link": "https://elevenlabs.io/blog/yahoo",
+   "source": "elevenlabs-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-24T12:00:00.000Z",
+   "updated": null,
+   "summary": "Yahoo used the ElevenAgents platform to add conversational voice to its new Yahoo Scout AI answer tool, going from kickoff to production in 6 weeks.",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": -2,
+   "reasons": [
+    "-2 source elevenlabs-blog"
+   ],
+   "status": "below",
+   "hash": "520bfa89"
+  },
+  "https://reuters.com/business/microsoft-declares-code-red-after-historic-outage-internal-memos-show-2026-11-24": {
+   "title": "Internal memos: Microsoft declared a \"Code Red\" drive to overhaul how it prevents and responds to major service failures after the 24-hour Microsoft 365 outage",
+   "link": "https://www.reuters.com/business/microsoft-declares-code-red-after-historic-outage-internal-memos-show-2026-11-24/",
+   "source": "techmeme",
+   "topic": "microsoft-365",
+   "category": "outage",
+   "date": "2026-11-24T16:35:02.000Z",
+   "updated": null,
+   "summary": "Microsoft has declared a “Code Red” drive to overhaul how it prevents and responds to major service failures …",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 11,
+   "reasons": [
+    "+6 outage \"outage\"",
+    "+3 major platform (microsoft)",
+    "+1 scale \"major\"",
+    "backlog teams-not-working-today-fix-windows-mac-us",
+    "+1 autocomplete (3)"
+   ],
+   "status": "queued",
+   "hash": "10910f9d",
+   "families": [
+    "microsoft"
+   ],
+   "backlog": "teams-not-working-today-fix-windows-mac-us"
+  },
+  "https://bloomberg.com/news/articles/2026-11-24/xai-founders-unveil-new-ai-startup-to-predict-future-events": {
+   "title": "Three xAI founding members launch Epochal to build AI agents that achieve \"superhuman prediction\"; source: co-founder Guodong Zhang personally invested $100M",
+   "link": "https://www.bloomberg.com/news/articles/2026-11-24/xai-founders-unveil-new-ai-startup-to-predict-future-events",
+   "source": "techmeme",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-24T17:25:02.000Z",
+   "summary": "Three founding members of Elon Musk's artificial intelligence business, xAI, have teamed up to build a new AI company …",
+   "first": "2026-11-24T20:23:44.941Z",
+   "score": 11,
+   "reasons": [
+    "+1 trending: Techmeme top headline, Bloomberg"
+   ],
+   "trending": {
+    "key": "milestone:xai",
+    "titles": [
+     "Three xAI founding members launch Epochal to build AI agents that achieve \"superhuman prediction\"; source: co-founder Guodong Zhang personally invested $100M"
+    ],
+    "links": [
+     "https://www.bloomberg.com/news/articles/2026-11-24/xai-founders-unveil-new-ai-startup-to-predict-future-events"
+    ],
+    "outlets": [
+     "Bloomberg"
+    ],
+    "techmeme": true
+   },
+   "trendDay": "2026-11-25",
+   "hash": "64d750df",
+   "status": "queued"
   }
  },
  "devices": {},
@@ -7950,6 +8852,9 @@
    "AWS debuts Strands Decider v2, a family of five open decision models based on Go",
    "OpenAI and Cisco launch Shirudo, an open-source runtime that helps teams protect",
    "Meta rolls out Muse to UK adults to help with everyday tasks, the first Big Tech"
+  ],
+  "2026-11-25": [
+   "Three xAI founding members launch Epochal to build AI agents that achieve \"super"
   ]
  },
  "trends": {
@@ -7957,7 +8862,7 @@
    "first": "2026-11-19T14:45:12.000Z",
    "decision": "covered",
    "key": "ipo:anthropic",
-   "title": "Anthropic falls 8%+ to ~$80, below its $83 IPO price and a sharp fall from its $111.50 IPO pop; Dario and Daniela Amodei each sold 3.37M+ shares worth $280M+",
+   "title": "Anthropic falls 12%+ to ~$76, below its $83 IPO price and a sharp fall from its $111.50 IPO pop; Dario and Daniela Amodei each sold 3.37M+ shares worth $280M+",
    "titles": [
     "Anthropic’s 7 founders cashed out nearly $2B in record-breaking IPO",
     "Anthropic’s IPO could deliver $156B to charity",
@@ -7985,15 +8890,19 @@
    "link": "https://www.reuters.com/business/anthropic-breaks-below-83-ipo-price-debut-rally-unravels-2026-11-24/",
    "outlets": [
     "Reuters",
-    "WSJ"
+    "Bloomberg",
+    "CNBC",
+    "The Information",
+    "TechCrunch",
+    "NDTV"
    ],
    "techmeme": true,
    "category": "launch",
    "topic": "ai-engineering",
    "parkOnly": false,
-   "last": "2026-11-24T14:45:30.000Z",
-   "date": "2026-11-24T14:45:30.000Z",
-   "score": 11,
+   "last": "2026-11-24T20:22:06.000Z",
+   "date": "2026-11-24T20:22:06.000Z",
+   "score": 15,
    "post": "anthropic-ipo-explained-claude-users"
   },
   "milestone:google|9c5a0e24": {
@@ -8089,6 +8998,30 @@
    "date": "2026-11-24T07:50:01.000Z",
    "score": 11,
    "ref": "https://about.fb.com/news/2026/11/introducing-muse-in-the-uk-a-personal-ai-agent-you-control"
+  },
+  "milestone:xai|64d750df": {
+   "first": "2026-11-24T17:25:02.000Z",
+   "decision": "queued",
+   "key": "milestone:xai",
+   "title": "Three xAI founding members launch Epochal to build AI agents that achieve \"superhuman prediction\"; source: co-founder Guodong Zhang personally invested $100M",
+   "titles": [
+    "Three xAI founding members launch Epochal to build AI agents that achieve \"superhuman prediction\"; source: co-founder Guodong Zhang personally invested $100M"
+   ],
+   "links": [
+    "https://www.bloomberg.com/news/articles/2026-11-24/xai-founders-unveil-new-ai-startup-to-predict-future-events"
+   ],
+   "link": "https://www.bloomberg.com/news/articles/2026-11-24/xai-founders-unveil-new-ai-startup-to-predict-future-events",
+   "outlets": [
+    "Bloomberg"
+   ],
+   "techmeme": true,
+   "category": "launch",
+   "topic": "ai-automation",
+   "parkOnly": false,
+   "last": "2026-11-24T17:25:02.000Z",
+   "date": "2026-11-24T17:25:02.000Z",
+   "score": 11,
+   "ref": "https://bloomberg.com/news/articles/2026-11-24/xai-founders-unveil-new-ai-startup-to-predict-future-events"
   }
  },
  "missedCheck": {
