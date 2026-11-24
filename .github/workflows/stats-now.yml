@@ -2,7 +2,8 @@
 # markdown in this run's job summary. Read-only: nothing is emailed, committed or published. Manual only (no schedule,
 # no scheduler slot). Code lives in the private repo (EPIVIFE scripts/stats/now.mjs; notes: ops/docs/HANDBOOK.md).
 #   gh workflow run stats-now.yml -R sk9836413/epifive-automation -f what=all -f date=
-#   gh run view <run id> -R sk9836413/epifive-automation        (the summary; or open the run page)
+#   gh run view <run id> -R sk9836413/epifive-automation --log | cut -f3- | sed -E 's/^[^0-9]*[0-9T:.-]+Z ?//' | sed -n '/=== STATS BEGIN/,/=== STATS END/p'
+#   (or open the run page: the job summary shows the same tables)
 # A missing secret shows as an "owner step" line in its section; the other sections still run.
 name: Stats now
 
@@ -69,4 +70,6 @@ jobs:
           case "$DATE" in ''|[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]) ;; *) echo "::error::Bad date (YYYY-MM-DD)"; exit 2 ;; esac
           node _ops/scripts/stats/now.mjs --what "$WHAT" ${DATE:+--date "$DATE"} > "$RUNNER_TEMP/stats.md"
           cat "$RUNNER_TEMP/stats.md" >> "$GITHUB_STEP_SUMMARY"
+          # The same text in the log, so `gh run view <id> --log` can read it (gh does not print job summaries).
+          echo "=== STATS BEGIN"; cat "$RUNNER_TEMP/stats.md"; echo "=== STATS END"
           echo "Done: $(grep -c '^#### ' "$RUNNER_TEMP/stats.md") sections, $(grep -ci 'owner step' "$RUNNER_TEMP/stats.md") owner steps, $(grep -c 'ailed' "$RUNNER_TEMP/stats.md") failures. The numbers are on the run's summary page."
