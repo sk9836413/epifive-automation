@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-24T10:06:28.091Z",
+ "lastScan": "2026-11-24T13:16:55.808Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -7533,6 +7533,81 @@
    ],
    "status": "below",
    "hash": "9c487252"
+  },
+  "https://thehackernews.com/2026/11/microsoft-fixes-azure-api-management.html": {
+   "title": "Microsoft Fixes Azure API Management Classic Flaw as Actor Targets Customer Secrets",
+   "link": "https://thehackernews.com/2026/11/microsoft-fixes-azure-api-management.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-24T10:44:49.000Z",
+   "updated": null,
+   "summary": "Norway's National Security Authority (NSM) has disclosed that it became aware of a security vulnerability in Microsoft's Azure API Management (APIM) that has affected multiple businesses in the country, including energy companies Equinor and Skagerak Energi. \"An unknown actor has been actively looki",
+   "first": "2026-11-24T13:16:55.808Z",
+   "score": 9,
+   "reasons": [
+    "+1 source thn",
+    "+2 vulnerability \"Flaw\"",
+    "+3 major platform (azure)",
+    "+2 user action \"Fixes\"",
+    "+1 autocomplete (3)"
+   ],
+   "status": "below",
+   "hash": "65d5684d"
+  },
+  "https://news.sap.com/2026/11/how-atlas-copco-group-makes-skills-visible-throughout-organization": {
+   "title": "How the Atlas Copco Group Makes Skills Visible Throughout the Organization",
+   "link": "https://news.sap.com/2026/11/how-atlas-copco-group-makes-skills-visible-throughout-organization/",
+   "source": "sap-news",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T12:15:00.000Z",
+   "updated": null,
+   "summary": "Becoming a skills-enabled organization starts with the way you think about talent.",
+   "first": "2026-11-24T13:16:55.808Z",
+   "score": -1,
+   "reasons": [
+    "-1 source sap-news"
+   ],
+   "status": "below",
+   "hash": "7d2853c9"
+  },
+  "https://news.sap.com/2026/11/less-code-more-context-how-ai-is-reshaping-developer-role": {
+   "title": "Less Code, More Context: How AI Is Reshaping the Developer Role",
+   "link": "https://news.sap.com/2026/11/less-code-more-context-how-ai-is-reshaping-developer-role/",
+   "source": "sap-news",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-24T11:15:00.000Z",
+   "updated": null,
+   "summary": "As developers delegate more work to AI, where does their expertise matter most?",
+   "first": "2026-11-24T13:16:55.808Z",
+   "score": -2,
+   "reasons": [
+    "-1 source sap-news",
+    "-1 narrow audience \"Developer\""
+   ],
+   "status": "below",
+   "hash": "141fe5fa"
+  },
+  "https://hashicorp.com/blog/terraform-introduces-tfpolicy-support-for-stacks-scim-support-and-more": {
+   "title": "Terraform introduces tfpolicy support for Stacks, SCIM support, and more",
+   "link": "https://www.hashicorp.com/blog/terraform-introduces-tfpolicy-support-for-stacks-scim-support-and-more",
+   "source": "hashicorp-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-23T19:00:00.000Z",
+   "updated": "2026-11-23T19:00:00.000Z",
+   "summary": "HCP Terraform and Terraform Enterprise enhance orchestration, AI-ready workflows, and governance to help teams scale infrastructure securely and efficiently.",
+   "first": "2026-11-24T13:16:55.808Z",
+   "score": 1,
+   "reasons": [
+    "-2 source hashicorp-blog",
+    "+2 launch \"introduces\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "353fb82e"
   }
  },
  "devices": {},
@@ -7557,7 +7632,7 @@
    "first": "2026-11-19T14:45:12.000Z",
    "decision": "covered",
    "key": "ipo:anthropic",
-   "title": "Anthropic Faces New Pressures From Public Investors After Successful IPO",
+   "title": "Anthropic breaks below $83 IPO price as debut rally unravels",
    "titles": [
     "Anthropic’s 7 founders cashed out nearly $2B in record-breaking IPO",
     "Anthropic’s IPO could deliver $156B to charity",
@@ -7582,20 +7657,23 @@
     "https://www.cnbc.com/2026/11/20/anthropic-ipo-greenshoe.html",
     "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQZXdyUExSdjhGa000MWtxaUR0YzhiVHJnNzN0N0lTUnNONktkaWZkUVUwdExoUXhXMTlJN0NEZ3F3M2RYbUZYelpiNFhpOE14LWdtYjF1MnB2M00xMk1GbENmci1UeFlXa3V0aHM4TWlxVVZNeFBwUkZjMTA2ZWhCSFBVaVVBb0FUdnpj?oc=5"
    ],
-   "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNaWEtdlp4ZFBsaUpfZVZsTW9BeTRLYmRFSXcyT1RFbFZzcmp5OGtQRy1ob2I2Q1FET2ZJbG9ha1BtSlpJaVd5UVFMZFZXX2F4OE52QmEwRko0bDhLendUOXdpWVpZZGhCcDRYNGZhVzBDdWtpWTBXOU5reDB0ZkU1ZURrQXptREdqMXNwbGNySWdwcEN5aDNFazVQTXc5TGc?oc=5",
+   "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNMHBNOVY5RDc1NmxUUjNnZkNhLWROQkhUOFZpVmQ0SEI0UG9aSUpTTjhpV3EydTNkdW8xYm1KOWF6OXg2Z3BMaUJCWTE3WnFCM0hCZGNuQ3ZKUklsYUROVWQzdExOamNKVlJLRTgwYWpoYVdOUjlDY0pxTmxZajlvckJ4cHc0TG1hbW1ZUkszaDZ2M2Rvd3RqTWRFaVRENXVWT0pr?oc=5",
    "outlets": [
+    "Reuters",
     "Bloomberg",
     "CNBC",
     "WSJ",
-    "TechCrunch"
+    "TechCrunch",
+    "The Hindu",
+    "Hindustan Times"
    ],
-   "techmeme": false,
+   "techmeme": true,
    "category": "launch",
    "topic": "ai-engineering",
    "parkOnly": false,
-   "last": "2026-11-24T09:30:00.000Z",
-   "date": "2026-11-24T09:30:00.000Z",
-   "score": 12,
+   "last": "2026-11-24T13:01:46.000Z",
+   "date": "2026-11-24T13:01:46.000Z",
+   "score": 15,
    "post": "anthropic-ipo-explained-claude-users"
   },
   "milestone:google|9c5a0e24": {
@@ -7694,8 +7772,8 @@
   }
  },
  "missedCheck": {
-  "day": "2026-11-23",
-  "at": "2026-11-23T13:16:57.470Z",
+  "day": "2026-11-24",
+  "at": "2026-11-24T13:16:55.808Z",
   "checked": 0,
   "covered": 0,
   "items": []

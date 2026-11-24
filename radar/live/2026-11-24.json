@@ -2,7 +2,7 @@
  "date": "2026-11-24",
  "title": "Tech news today, 24 November 2026",
  "published": "2026-11-23T23:59:46.286Z",
- "updated": "2026-11-24T09:40:16.115Z",
+ "updated": "2026-11-24T13:16:55.808Z",
  "items": [
   {
    "id": "2dc368ba",
@@ -953,7 +953,100 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "e0402c23",
+   "key": "https://hashicorp.com/blog/terraform-introduces-tfpolicy-support-for-stacks-scim-support-and-more",
+   "time": "2026-11-23T19:00:00.000Z",
+   "seen": "2026-11-24T13:16:55.808Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Terraform introduces tfpolicy support for Stacks, SCIM support, and more",
+   "summary": "HCP Terraform and Terraform Enterprise enhance orchestration, AI-ready workflows, and governance to help teams scale infrastructure securely and efficiently.",
+   "lines": [
+    "HashiCorp added tfpolicy support for Stacks and SCIM support to Terraform, along with other updates.",
+    "The updates enhance orchestration, AI-ready workflows, and governance in HCP Terraform and Terraform Enterprise.",
+    "IT teams using these platforms may find the governance and orchestration changes relevant to scaling infrastructure securely and efficiently."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "HashiCorp Blog",
+    "url": "https://www.hashicorp.com/blog/terraform-introduces-tfpolicy-support-for-stacks-scim-support-and-more"
+   },
+   "sourceId": "hashicorp-blog",
+   "sourceMax": 3,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "1edaef14",
+   "key": "https://thehackernews.com/2026/11/microsoft-fixes-azure-api-management.html",
+   "time": "2026-11-24T10:44:49.000Z",
+   "seen": "2026-11-24T13:16:55.808Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Microsoft Fixes Azure API Management Classic Flaw as Actor Targets Customer Secrets",
+   "summary": "Norway's National Security Authority (NSM) has disclosed that it became aware of a security vulnerability in Microsoft's Azure API Management (APIM) that has affected multiple businesses in the country, including energy companies Equinor and Skagerak Energi. \"An unknown actor has been actively looking for access tokens, secrets, and named values ​​in APIM,\" NSM said. \"It is still uncertain how",
+   "lines": [
+    "Reported by The Hacker News: Norway's National Security Authority (NSM) disclosed a security vulnerability in Microsoft's Azure API Management (APIM) that affected multiple businesses in the country, including Equinor and Skagerak Energi.",
+    "Microsoft has fixed the Azure API Management Classic flaw.",
+    "NSM said an unknown actor was actively looking for access tokens, secrets, and named values in APIM.",
+    "IT teams running Azure API Management may need to review access tokens and secrets in light of this activity."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/microsoft-fixes-azure-api-management.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 8,
+   "story": null
+  },
+  {
+   "id": "0f7a1494",
+   "key": "https://gsmarena.com/motorola_edge_70_neo_price_sale_date-news-75606.php",
+   "time": "2026-11-24T11:21:02.000Z",
+   "seen": "2026-11-24T13:16:55.808Z",
+   "kind": "device",
+   "tier": 2,
+   "headline": "Motorola Edge 70 Neo's price and sale date announced",
+   "summary": "Motorola unveiled the Edge 70 Neo yesterday and today announced its pricing and availability. The smartphone comes in a single 8GB/128GB configuration, priced at INR40,999. However, for a limited period, it will be available at INR37,999. The Edge 70 Neo will go on sale in India starting December 1 through Motorola's Indian website, Flipkart, and leading retail stores, including Reliance Digital. Customers have four color options: Pantone Mountain View, Pantone Milky Blue, Pantone Sage, and Pantone Gray Lilac. Motorola Edge 70 Neo's color options The Motorola Edge 70 Neo is...",
+   "lines": [
+    "Reported by GSMArena news: Motorola unveiled the Edge 70 Neo and announced its pricing and availability.",
+    "The smartphone comes in one 8GB/128GB configuration priced at INR40,999, with a limited-period price of INR37,999, and goes on sale in India starting December 1.",
+    "It will be sold through Motorola's Indian website, Flipkart, and leading retail stores, including Reliance Digital, in four color options.",
+    "For business users in India, the text covers pricing and sales channels for this consumer smartphone."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "GSMArena news",
+    "url": "https://www.gsmarena.com/motorola_edge_70_neo_price_sale_date-news-75606.php"
+   },
+   "sourceId": "gsmarena-news",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": {
+    "model": "Motorola Edge 70",
+    "brand": "Motorola",
+    "category": "phone",
+    "key": "motorola edge 70"
+   },
+   "ai": null,
+   "score": 8,
+   "story": "device:motorola edge 70"
   }
  ],
- "description": "33 technology updates from official sources, updated hourly: MC1552394: Microsoft Viva Engage: Retiring the legacy live event creation option in Engage; Anthropic Faces New Pressures From Public Investors After Successful IPO; Microsoft Azure flaw exploited to steal customers' API credentials."
+ "description": "36 technology updates from official sources, updated hourly: MC1552394: Microsoft Viva Engage: Retiring the legacy live event creation option in Engage; Anthropic Faces New Pressures From Public Investors After Successful IPO; Microsoft Azure flaw exploited to steal customers' API credentials."
 }
