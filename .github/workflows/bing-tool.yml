@@ -1,0 +1,54 @@
+# Bing Webmaster API tool (EPIVIFE scripts/stats/bing.mjs; notes: ops/docs/HANDBOOK.md "Bing sitemaps"). Manual only.
+#   probe       which API endpoints return data          sites   sites on the account (GetUserSites)
+#   feeds       submitted sitemaps (GetFeeds)            stats   traffic, top queries/pages, crawl stats
+#   submit-feed submit one sitemap URL (SubmitFeed; the only mode that writes, needs `url`)
+#   gh workflow run bing-tool.yml -R sk9836413/epifive-automation -f mode=feeds
+#   gh workflow run bing-tool.yml -R sk9836413/epifive-automation -f mode=submit-feed -f url=https://www.epifive.com/sitemap-bing.xml
+# Output: the run's job summary (counts, URLs and search queries; the API key is never printed).
+name: Bing tool
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: What to do
+        type: choice
+        options: [probe, sites, feeds, stats, submit-feed]
+        default: probe
+      url:
+        description: 'submit-feed: sitemap URL (https://www.epifive.com/...xml)'
+        type: string
+        default: ''
+
+permissions:
+  contents: read
+
+jobs:
+  bing:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out the code (private repo, scripts/stats)
+        uses: actions/checkout@v4
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+          path: _ops
+          persist-credentials: false
+          sparse-checkout: |
+            scripts/stats
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Run
+        env:
+          MODE: ${{ inputs.mode }}
+          URL: ${{ inputs.url }}
+          BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}
+        run: |
+          if [ "$MODE" = submit-feed ]; then
+            printf '%s' "$URL" | grep -Eq '^https://www\.epifive\.com/[A-Za-z0-9/._-]+\.xml$' || { echo "::error::url must be an https://www.epifive.com/...xml sitemap"; exit 2; }
+            node _ops/scripts/stats/bing.mjs submit-feed "$URL" | tee -a "$GITHUB_STEP_SUMMARY"
+          else
+            node _ops/scripts/stats/bing.mjs "$MODE" | tee -a "$GITHUB_STEP_SUMMARY"
+          fi

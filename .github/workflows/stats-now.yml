@@ -1,0 +1,72 @@
+# "Stats now": EpiFive numbers on demand (website, YouTube, Facebook/Instagram, Google + Bing search, subscribers) as
+# markdown in this run's job summary. Read-only: nothing is emailed, committed or published. Manual only (no schedule,
+# no scheduler slot). Code lives in the private repo (EPIVIFE scripts/stats/now.mjs; notes: ops/docs/HANDBOOK.md).
+#   gh workflow run stats-now.yml -R sk9836413/epifive-automation -f what=all -f date=
+#   gh run view <run id> -R sk9836413/epifive-automation        (the summary; or open the run page)
+# A missing secret shows as an "owner step" line in its section; the other sections still run.
+name: Stats now
+
+on:
+  workflow_dispatch:
+    inputs:
+      what:
+        description: Which numbers
+        type: choice
+        options: [all, website, youtube, social, search, subscribers]
+        default: all
+      date:
+        description: UTC date YYYY-MM-DD (empty = today)
+        type: string
+        default: ''
+
+permissions:
+  contents: read
+
+concurrency:
+  group: stats-now
+  cancel-in-progress: false
+
+jobs:
+  stats:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out the code (private repo, scripts/stats)
+        uses: actions/checkout@v4
+        with:
+          repository: sk9836413/EPIVIFE
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+          path: _ops
+          persist-credentials: false
+          sparse-checkout: |
+            scripts/stats
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Tests
+        run: node --test _ops/scripts/stats/stats.test.mjs
+
+      - name: Stats
+        env:
+          WHAT: ${{ inputs.what }}
+          DATE: ${{ inputs.date }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+          META_PAGE_TOKEN: ${{ secrets.META_PAGE_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          GSC_CLIENT_ID: ${{ secrets.GSC_CLIENT_ID }}
+          GSC_CLIENT_SECRET: ${{ secrets.GSC_CLIENT_SECRET }}
+          GSC_REFRESH_TOKEN: ${{ secrets.GSC_REFRESH_TOKEN }}
+          GSC_SITE: ${{ secrets.GSC_SITE }}
+          BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+        run: |
+          case "$DATE" in ''|[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]) ;; *) echo "::error::Bad date (YYYY-MM-DD)"; exit 2 ;; esac
+          node _ops/scripts/stats/now.mjs --what "$WHAT" ${DATE:+--date "$DATE"} > "$RUNNER_TEMP/stats.md"
+          cat "$RUNNER_TEMP/stats.md" >> "$GITHUB_STEP_SUMMARY"
+          echo "Done: $(grep -c '^#### ' "$RUNNER_TEMP/stats.md") sections, $(grep -ci 'owner step' "$RUNNER_TEMP/stats.md") owner steps, $(grep -c 'ailed' "$RUNNER_TEMP/stats.md") failures. The numbers are on the run's summary page."
