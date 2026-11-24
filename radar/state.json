@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-24T04:26:09.691Z",
+ "lastScan": "2026-11-24T05:13:21.776Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -7060,6 +7060,27 @@
    "hash": "12f167c1",
    "status": "parked",
    "parkedAt": "2026-11-24T04:26:09.691Z"
+  },
+  "https://aws.amazon.com/blogs/machine-learning/introducing-the-amazon-bedrock-trusted-access-api-with-anthropics-enterprise-frontier-safeguards-and-enterprise-data-controls": {
+   "title": "Introducing the Amazon Bedrock Trusted Access API with Anthropic’s Enterprise Frontier Safeguards and Enterprise Data Controls",
+   "link": "https://aws.amazon.com/blogs/machine-learning/introducing-the-amazon-bedrock-trusted-access-api-with-anthropics-enterprise-frontier-safeguards-and-enterprise-data-controls/",
+   "source": "aws-ml-blog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-24T05:01:14.000Z",
+   "updated": null,
+   "summary": "Amazon Bedrock now offers a trusted access program API: one place to discover, request, and enroll in model provider programs. The first two offerings, in public preview, are Anthropic's Enterprise Frontier Safeguards (EFS) and Enterprise Data Controls (EDC), which give you control over your data wh",
+   "first": "2026-11-24T05:13:21.776Z",
+   "score": 1,
+   "reasons": [
+    "-3 source aws-ml-blog",
+    "+2 niche (claude)",
+    "+2 launch \"Introducing\"",
+    "+1 launch in the headline",
+    "-1 narrow audience \"API\""
+   ],
+   "status": "below",
+   "hash": "b36ea4a"
   }
  },
  "devices": {},
