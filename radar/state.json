@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-25T13:16:59.116Z",
+ "lastScan": "2026-11-25T14:16:38.554Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -10428,6 +10428,132 @@
     "microsoft"
    ],
    "backlog": "teams-not-working-today-fix-windows-mac-us"
+  },
+  "https://thehackernews.com/2026/11/hackers-exploit-two-geoserver-flaws-as.html": {
+   "title": "Hackers Exploit Two GeoServer Flaws as Researchers Warn of Unauthenticated RCE Chains",
+   "link": "https://thehackernews.com/2026/11/hackers-exploit-two-geoserver-flaws-as.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-25T12:48:54.000Z",
+   "updated": null,
+   "summary": "Threat actors are actively exploiting two newly patched security flaws in GeoServer, according to watchTowr. The vulnerabilities in question are CVE-2026-120705 and CVE-2026-129243, details of which are below - CVE-2026-120705 (CVSS score: 8.6) - An arbitrary file read vulnerability that could enabl",
+   "first": "2026-11-25T14:16:38.554Z",
+   "score": 8,
+   "reasons": [
+    "+1 source thn",
+    "+3 incident \"Hackers\"",
+    "+2 exploited \"Hackers Exploit\"",
+    "+2 user action \"patched\""
+   ],
+   "status": "below",
+   "hash": "862ce299"
+  },
+  "https://zoom.com/en/blog/meeting-phone-survivability-cloud-outages": {
+   "title": "Plan for the outage before it happens: keep meetings and calls running when cloud goes down",
+   "link": "https://www.zoom.com/en/blog/meeting-phone-survivability-cloud-outages/",
+   "source": "zoom-blog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-25T14:13:00.000Z",
+   "updated": null,
+   "summary": "Zoom Meeting Survivability and Zoom Phone Local Survivability can help you keep your meetings and calls going on your own network when the connection to the cloud drops.",
+   "first": "2026-11-25T14:16:38.554Z",
+   "score": 1,
+   "reasons": [
+    "+1 plans/price/availability \"Plan\""
+   ],
+   "status": "below",
+   "hash": "27556584"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64043": {
+   "title": "RBI to conduct Overnight Variable Rate Repo (VRR) auction under LAF on November 26, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64043",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-25T19:20:00.000Z",
+   "updated": null,
+   "summary": "On a review of current and evolving liquidity conditions in the near term, it has been decided to conduct a Variable Rate Repo (VRR) auction on Thursday, November 26, 2026, as under: Sl. No. Notified Amount (₹ crore) Tenor (day) Window Timing Date of Reversal 1 75,000 1 09:30 AM to 10:00 AM November",
+   "first": "2026-11-25T14:16:38.554Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "5d49059d"
+  },
+  "https://crowdstrike.com/en-us/blog/crowdstrike-named-leader-2026-gartner-mq-isoc": {
+   "title": "CrowdStrike Accelerates the Shift to the Agentic SOC",
+   "link": "https://www.crowdstrike.com/en-us/blog/crowdstrike-named-leader-2026-gartner-mq-isoc/",
+   "source": "crowdstrike-blog",
+   "topic": "security-identity",
+   "category": "launch",
+   "date": "2026-11-25T08:00:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-25T14:16:38.554Z",
+   "score": -1,
+   "reasons": [
+    "-1 source crowdstrike-blog"
+   ],
+   "status": "below",
+   "hash": "dd5d5b19"
+  },
+  "https://salesforce.com/blog/small-business/what-is-conversational-crm": {
+   "title": "What is Conversational CRM? Everything You Need to Know",
+   "link": "https://www.salesforce.com/blog/small-business/what-is-conversational-crm/",
+   "source": "salesforce-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-25T14:00:00.000Z",
+   "updated": null,
+   "summary": "Here's how conversational CRM puts work right where your team already collaborates.",
+   "first": "2026-11-25T14:16:38.554Z",
+   "score": -1,
+   "reasons": [
+    "-1 source salesforce-blog"
+   ],
+   "status": "below",
+   "hash": "c16f5f9b"
+  },
+  "https://blog.cloudflare.com/search-for-agents": {
+   "title": "Introducing Search for Agents",
+   "link": "https://blog.cloudflare.com/search-for-agents/",
+   "source": "cloudflare-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-25T14:00:00.000Z",
+   "updated": null,
+   "summary": "Flip one toggle to make your site searchable by AI agents — complete with automatic content indexing, a discoverable search API, and native HTTP QUERY support.",
+   "first": "2026-11-25T14:16:38.554Z",
+   "score": 3,
+   "reasons": [
+    "-1 source cloudflare-blog",
+    "+1 niche (agents)",
+    "+2 launch \"Introducing\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "af8cf7a7"
+  },
+  "https://blog.scalefusion.com/mdm-solution-for-bankstown-city-aged-care": {
+   "title": "[Case study] How Bankstown City Aged Care manages 250+ devices across multiple sites with Scalefusion",
+   "link": "https://blog.scalefusion.com/mdm-solution-for-bankstown-city-aged-care/",
+   "source": "scalefusion-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-25T13:43:03.000Z",
+   "updated": null,
+   "summary": "Managing hundreds of devices across multiple aged care facilities can be challenging for a small IT team. Devices move between staff members and locations, applications need to stay updated, and IT needs visibility into device location, health, and availability. For Bankstown City Aged Care, these c",
+   "first": "2026-11-25T14:16:38.554Z",
+   "score": -6,
+   "reasons": [
+    "-2 source scalefusion-blog",
+    "-4 customer story"
+   ],
+   "status": "below",
+   "hash": "e5ea0db"
   }
  },
  "devices": {},
@@ -10492,8 +10618,8 @@
    "category": "launch",
    "topic": "ai-engineering",
    "parkOnly": false,
-   "last": "2026-11-25T12:54:27.000Z",
-   "date": "2026-11-25T12:54:27.000Z",
+   "last": "2026-11-25T13:55:34.000Z",
+   "date": "2026-11-25T13:55:34.000Z",
    "score": 12,
    "post": "anthropic-ipo-explained-claude-users"
   },
