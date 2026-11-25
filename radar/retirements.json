@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-24T16:12:27.920Z",
+ "generated": "2026-11-25T03:42:45.257Z",
  "about": "Microsoft 365 / Azure / GitHub retirements for https://www.epifive.com/microsoft-365-retirements. Built by radar/retirements.mjs from official notices; see that file for sources and date rules.",
  "sources": {
-  "message-center": 126,
+  "message-center": 128,
   "azure": 81,
   "github": 3
  },
@@ -1010,6 +1010,23 @@
    "firstSeen": "2026-11-19T04:58:43.152Z"
   },
   {
+   "id": "MC1567221",
+   "source": "message-center",
+   "product": "power-platform",
+   "title": "Power Platform admin center - Inventory data export (preview) stops December 1, 2026",
+   "date": "2026-10-30",
+   "precision": "day",
+   "dateText": "As previously announced in the Power Platform admin center on October 30th, 2026, data export (preview) is deprecated and will be retired in phases.",
+   "dateBasis": "stated",
+   "affected": "Inventory data : Starting December 1, 2026, new inventory data won't be exported to your Azure Data Lake Storage account. Reports and processes that depend on inventory data export will stop receiving updates.",
+   "action": "To keep getting inventory data, switch to the Power Platform inventory API before December 1, 2026. Before you migrate, compare data export and the inventory API . No action is needed for usage and environment data exports at this time.",
+   "url": "https://admin.microsoft.com/#/MessageCenter/:/messages/MC1567221",
+   "mirror": "https://mc.merill.net/message/MC1567221",
+   "published": "2026-11-24T21:39:13Z",
+   "guide": null,
+   "firstSeen": "2026-11-25T03:42:45.257Z"
+  },
+  {
    "id": "AZ513892",
    "source": "azure-updates",
    "product": "azure",
@@ -1150,23 +1167,6 @@
    "url": "https://admin.microsoft.com/#/MessageCenter/:/messages/MC1521614",
    "mirror": "https://mc.merill.net/message/MC1521614",
    "published": "2026-10-22T23:16:53Z",
-   "guide": null,
-   "firstSeen": "2026-11-19T04:58:43.152Z"
-  },
-  {
-   "id": "MC1523085",
-   "source": "message-center",
-   "product": "copilot",
-   "title": "Viva Insights: GitHub Copilot metrics will be on by default, and the public preview opt-in setting is being retired",
-   "date": "2026-11-01",
-   "precision": "month",
-   "dateText": "General Availability (Worldwide): Beginning in mid-November 2026 and expected to complete by mid-December 2026",
-   "dateBasis": "stated",
-   "affected": "Microsoft 365 Global Administrators, Insights Analysts with global partition access, and managers who have access to consumption insights; Insights Administrators who manage access to consumption insights",
-   "action": "No action is required. This change will happen automatically. We recommend that you: Review who in your organization can access consumption insights and related Copilot reports in Viva Insights .",
-   "url": "https://admin.microsoft.com/#/MessageCenter/:/messages/MC1523085",
-   "mirror": "https://mc.merill.net/message/MC1523085",
-   "published": "2026-10-23T23:08:32Z",
    "guide": null,
    "firstSeen": "2026-11-19T04:58:43.152Z"
   },
@@ -1671,6 +1671,23 @@
    "url": "https://admin.microsoft.com/#/MessageCenter/:/messages/MC1509789",
    "mirror": "https://mc.merill.net/message/MC1509789",
    "published": "2026-10-15T23:03:32Z",
+   "guide": null,
+   "firstSeen": "2026-11-19T04:58:43.152Z"
+  },
+  {
+   "id": "MC1523085",
+   "source": "message-center",
+   "product": "copilot",
+   "title": "Viva Insights: GitHub Copilot metrics will be on by default, and the public preview opt-in setting is being retired",
+   "date": "2026-12-01",
+   "precision": "month",
+   "dateText": "General Availability (Worldwide): Beginning in mid-December 2026 (previously mid-November) and expected to complete by mid-January 2027 (previously mid-December 2026)",
+   "dateBasis": "stated",
+   "affected": "Microsoft 365 Global Administrators, Insights Analysts with global partition access, and managers who have access to consumption insights; Insights Administrators who manage access to consumption insights",
+   "action": "No action is required. This change will happen automatically. We recommend that you: Review who in your organization can access consumption insights and related Copilot reports in Viva Insights .",
+   "url": "https://admin.microsoft.com/#/MessageCenter/:/messages/MC1523085",
+   "mirror": "https://mc.merill.net/message/MC1523085",
+   "published": "2026-10-23T23:08:32Z",
    "guide": null,
    "firstSeen": "2026-11-19T04:58:43.152Z"
   },
@@ -2389,6 +2406,22 @@
    "published": "2026-09-01T22:17:46Z",
    "guide": null,
    "firstSeen": "2026-11-19T04:58:43.152Z"
+  },
+  {
+   "id": "MC1567258",
+   "source": "message-center",
+   "product": "teams",
+   "title": "Microsoft Teams for Android and iOS: Update to the latest app version to maintain file access",
+   "date": "2027-03-31",
+   "precision": "day",
+   "dateBasis": "act-by",
+   "affected": "Users running older, incompatible versions of Microsoft Teams for Android or iOS.",
+   "action": "To prepare for enforcement on April 1, 2027, we recommend that you begin updating users now and complete the following actions before that date: Encourage users to update Microsoft Teams mobile to the latest available version.",
+   "url": "https://admin.microsoft.com/#/MessageCenter/:/messages/MC1567258",
+   "mirror": "https://mc.merill.net/message/MC1567258",
+   "published": "2026-11-24T22:42:33Z",
+   "guide": null,
+   "firstSeen": "2026-11-25T03:42:45.257Z"
   },
   {
    "id": "MC1227454",

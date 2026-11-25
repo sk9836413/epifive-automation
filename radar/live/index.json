@@ -2,16 +2,16 @@
  "days": [
   {
    "date": "2026-11-25",
-   "count": 20,
+   "count": 29,
    "published": "2026-11-24T20:23:44.941Z",
-   "updated": "2026-11-24T20:23:44.941Z",
+   "updated": "2026-11-25T03:42:04.583Z",
    "title": "Tech news today, 25 November 2026"
   },
   {
    "date": "2026-11-24",
    "count": 41,
    "published": "2026-11-23T23:59:46.286Z",
-   "updated": "2026-11-24T20:23:44.941Z",
+   "updated": "2026-11-25T03:42:04.583Z",
    "title": "Tech news today, 24 November 2026"
   },
   {
@@ -85,5 +85,5 @@
    "title": "Tech news today, 14 November 2026"
   }
  ],
- "lastIndexNow": "2026-11-24T20:23:44.941Z"
+ "lastIndexNow": "2026-11-25T03:42:04.583Z"
 }

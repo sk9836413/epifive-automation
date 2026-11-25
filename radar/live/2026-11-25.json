@@ -2,7 +2,7 @@
  "date": "2026-11-25",
  "title": "Tech news today, 25 November 2026",
  "published": "2026-11-24T20:23:44.941Z",
- "updated": "2026-11-24T20:23:44.941Z",
+ "updated": "2026-11-25T03:42:04.583Z",
  "items": [
   {
    "id": "e62d266c",
@@ -195,7 +195,9 @@
    },
    "sourceId": "paloalto-advisories",
    "reported": false,
-   "also": [],
+   "also": [
+    "Cisco Security Advisories (PSIRT)"
+   ],
    "post": null,
    "device": null,
    "ai": null,
@@ -575,7 +577,274 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "3551cb01",
+   "key": "https://microsoft.ai/news/introducing-mai-licensed-weights",
+   "time": "2026-11-24T21:37:50.000Z",
+   "seen": "2026-11-25T03:42:04.583Z",
+   "kind": "ai-model",
+   "tier": 2,
+   "headline": "Introducing mai licensed weights",
+   "summary": "Share this article LinkedIn (opens in a new tab) X (opens in a new tab) Facebook (opens in a new tab) More of what makes a company distinctive will live inside the AI models it runs. Businesses increasingly want to control those models: who can access them, how they’re adapted, what they cost to operate, and when they’re upgraded. That’s why we’re introducing MAI Licensed Weights, giving organizations the ability to deploy and customize Microsoft AI models in their own Azure environments. Models you control MAI Licensed Weights brings Microsoft’s frontier AI models into your own Azure environment, where you can adapt them to your business and safely integrate your proprietary knowledge and e",
+   "lines": [
+    "Microsoft AI introduced MAI Licensed Weights, which lets organizations deploy and customize Microsoft AI models in their own Azure environments.",
+    "The announcement says customers can adapt the models and integrate their proprietary knowledge.",
+    "Organizations can control who accesses the models, how they are adapted, what they cost to operate, and when they are upgraded."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft AI (MAI) news (sitemap)",
+    "url": "https://microsoft.ai/news/introducing-mai-licensed-weights/"
+   },
+   "sourceId": "microsoft-ai",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": {
+    "model": "mai licensed",
+    "kind": "release"
+   },
+   "score": 7,
+   "story": "ai:mai licensed:release"
+  },
+  {
+   "id": "bd19303d",
+   "key": "https://mc.merill.net/message/MC1523085",
+   "time": "2026-11-24T21:37:16.000Z",
+   "seen": "2026-11-25T03:42:04.583Z",
+   "kind": "retirement",
+   "tier": 2,
+   "headline": "MC1523085: Viva Insights: GitHub Copilot metrics will be on by default, and the public preview opt-in setting is being retired",
+   "summary": "GitHub Copilot metrics will be enabled by default in the Viva Insights Consumption dashboard starting mid-December 2026, retiring the public preview opt-in setting. No admin action is needed. Existing roles and permissions will control data access, and organizations should update documentation and inform relevant users.",
+   "lines": [
+    "Starting mid-December 2026, GitHub Copilot metrics will be on by default in the Viva Insights Consumption dashboard.",
+    "The public preview opt-in setting for these metrics is being retired. No admin action is needed.",
+    "Existing roles and permissions control data access. Organizations should update documentation and inform relevant users."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1523085"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 7,
+   "story": null
+  },
+  {
+   "id": "6204d428",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/gpt-daybreak-red-runtime-govcloud",
+   "time": "2026-11-24T21:27:00.000Z",
+   "seen": "2026-11-25T03:42:04.583Z",
+   "kind": "ai-model",
+   "tier": 2,
+   "headline": "Amazon Bedrock adds bedrock-runtime endpoint support for OpenAI Daybreak Red in AWS GovCloud (US)",
+   "summary": "Eligible customers can now access OpenAI’s specialized cybersecurity models Daybreak Red: GPT-5.6 Cyber through the bedrock-runtime endpoint on Amazon Bedrock in AWS GovCloud (US). Daybreak Red is designed for advanced, authorized tasks such as vulnerability research, exploit reproduction, and mitigation development. For these tasks, a lower refusal threshold, matched by stronger identity verification, monitoring, and access controls, improves the speed and depth of an investigation. Your inference data is not used for model training, and you are not required to opt in to sharing your data with OpenAI. On the bedrock-runtime endpoint, the model is available through the US Gov Geo cross-Regio",
+   "lines": [
+    "Amazon Bedrock adds bedrock-runtime endpoint support for OpenAI Daybreak Red: GPT-5.6 Cyber for eligible customers in AWS GovCloud (US).",
+    "Daybreak Red is designed for authorized tasks such as vulnerability research, exploit reproduction, and mitigation development.",
+    "Inference data is not used for model training, and customers are not required to opt in to sharing data with OpenAI."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/gpt-daybreak-red-runtime-govcloud/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": {
+    "model": "GPT-5.6",
+    "kind": "release"
+   },
+   "score": 6,
+   "story": "ai:gpt-5.6:release"
+  },
+  {
+   "id": "e131b733",
+   "key": "https://news.samsung.com/global/a-day-in-the-life-of-a-dog-with-galaxy-smarttag3-and-smartthings",
+   "time": "2026-11-25T03:42:04.583Z",
+   "seen": "2026-11-25T03:42:04.583Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "A Day in the Life of a Dog With Galaxy SmartTag3 and SmartThings",
+   "summary": "Samsung Electronics released Galaxy SmartTag3, a compact tracker that helps users locate valuables and care for their pets. As SmartThings expands beyond home device control to pets’ outdoor activities and everyday care, Galaxy SmartTag3 brings new connected experiences to the ecosystem. Pet owners often wonder what their pets are doing when they’re apart. This has […]",
+   "lines": [
+    "Samsung Electronics released Galaxy SmartTag3, a compact tracker that helps users locate valuables and care for pets.",
+    "SmartThings is expanding beyond home device control to pets' outdoor activities and everyday care."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Samsung Newsroom (global)",
+    "url": "https://news.samsung.com/global/a-day-in-the-life-of-a-dog-with-galaxy-smarttag3-and-smartthings"
+   },
+   "sourceId": "samsung-global",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "71f1c432",
+   "key": "https://mc.merill.net/message/MC1567251",
+   "time": "2026-11-24T22:37:47.000Z",
+   "seen": "2026-11-25T03:42:04.583Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1567251: Windows Server 2028 is now available in public preview",
+   "summary": "What and whyWindows Server 2028 is now available in public preview. This release introduces security, storage, and management improvements and begins investments in hybrid intelligence to support AI inference on local infrastructure. The release includes a hardened Server Core configuration by default, a new security baseline, and Trusted Launch for virtual machines. Storage improvements include native NVMe storage enabled by default, NVMe over TCP and RDMA, and the ability to boot from ReFS. Ro...",
+   "lines": [
+    "Windows Server 2028 is now available in public preview, with security, storage, and management improvements.",
+    "The preview includes a hardened Server Core configuration by default, a new security baseline, and Trusted Launch for virtual machines.",
+    "Storage changes include native NVMe enabled by default, NVMe over TCP and RDMA, and booting from ReFS.",
+    "IT teams can evaluate these security and storage changes in the preview."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1567251"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": "windows-server-2028-preview-download-install-lab",
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "62984bec",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-opensearch-serverless-available-cape-town-region",
+   "time": "2026-11-24T20:22:00.000Z",
+   "seen": "2026-11-25T03:42:04.583Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Amazon OpenSearch Serverless is now available in the Africa (Cape Town) Region",
+   "summary": "Starting today, the next generation of Amazon OpenSearch Serverless is available in the AWS Africa (Cape Town) Region. Customers can now use a fully managed search, vector and analytics engine that provisions resources in seconds, auto scales instantly to meet changing demand, and scales to zero when idle, so customers only pay for the compute they use. With this launch, customers in the Africa (Cape Town) Region can run agentic AI, search, and observability workloads without provisioning or managing clusters. Compute is fully separated from storage, which lets customers scale compute independently to reduce costs during low-traffic periods while remaining ready for traffic spikes. With scal",
+   "lines": [
+    "The next generation of Amazon OpenSearch Serverless is now available in the AWS Africa (Cape Town) Region.",
+    "It provisions resources in seconds, auto scales, scales to zero when idle, and bills only for the compute used.",
+    "Compute is separated from storage, so customers can scale compute independently and run agentic AI, search, and observability workloads without managing clusters."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-opensearch-serverless-available-cape-town-region/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "66891989",
+   "key": "https://bleepingcomputer.com/news/security/rackspace-shuts-down-spot-cloud-platform-after-security-breach",
+   "time": "2026-11-24T21:37:30.000Z",
+   "seen": "2026-11-25T03:42:04.583Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Rackspace shuts down Spot cloud platform after security breach",
+   "summary": "Rackspace is shutting down its Rackspace Spot cloud platform after a security breach allowed hackers to access customer Kubernetes clusters and secrets, giving customers until December 8 to migrate their services and download their data. [...]",
+   "lines": [
+    "Reported by BleepingComputer: Rackspace is shutting down its Rackspace Spot cloud platform after a security breach.",
+    "The breach allowed hackers to access customer Kubernetes clusters and secrets.",
+    "Customers have until December 8 to migrate their services and download their data, so teams using the platform need to plan before that deadline."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/rackspace-shuts-down-spot-cloud-platform-after-security-breach/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null
+  },
+  {
+   "id": "eece2066",
+   "key": "https://theverge.com/tech/1041820/huawei-guilty-trade-secrets-trial",
+   "time": "2026-11-24T22:23:27.000Z",
+   "seen": "2026-11-25T03:42:04.583Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Huawei found guilty of stealing trade secrets",
+   "summary": "A jury has found Huawei guilty of stealing US trade secrets, as reported earlier by NBC News and Bloomberg. The verdict, handed down in a federal court in New York, concludes a years-long legal battle that accused the Chinese telecom giant of stealing source code and proprietary technology from several companies, including T-Mobile, Cisco, and […]",
+   "lines": [
+    "Reported by The Verge: a jury found Huawei guilty of stealing US trade secrets in a federal court in New York.",
+    "The verdict ends a years-long legal battle over alleged theft of source code and proprietary technology from several companies, including T-Mobile and Cisco.",
+    "The case highlights the business risk of trade secret theft involving source code and proprietary technology."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Verge",
+    "url": "https://www.theverge.com/tech/1041820/huawei-guilty-trade-secrets-trial"
+   },
+   "sourceId": "the-verge",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [
+    "Engadget"
+   ],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "8867c2fa",
+   "key": "https://techcrunch.com/2026/11/24/dozens-of-oil-and-shipping-tankers-hacked-in-recent-weeks-per-report",
+   "time": "2026-11-24T21:09:04.000Z",
+   "seen": "2026-11-25T03:42:04.583Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Dozens of oil and shipping tankers hacked in recent weeks, per report",
+   "summary": "Iran is the chief suspect behind the dozens of cyberattacks targeting oil and chemical shipping vessels.",
+   "lines": [
+    "Reported by TechCrunch: dozens of oil and shipping tankers were hacked in recent weeks.",
+    "The report names Iran as the chief suspect behind the cyberattacks targeting oil and chemical shipping vessels.",
+    "The attacks highlight cyber risk to vessel and energy operations for IT and security teams."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "TechCrunch",
+    "url": "https://techcrunch.com/2026/11/24/dozens-of-oil-and-shipping-tankers-hacked-in-recent-weeks-per-report/"
+   },
+   "sourceId": "techcrunch",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
   }
  ],
- "description": "20 technology updates from official sources, updated hourly: Internal memos: Microsoft declared a \"Code Red\" drive to overhaul how it prevents and responds to major service failures after the 24-hour Microsoft 365 outage; Three xAI founding members launch Epochal to build AI agents that achieve \"sup"
+ "description": "29 technology updates from official sources, updated hourly: Internal memos: Microsoft declared a \"Code Red\" drive to overhaul how it prevents and responds to major service failures after the 24-hour Microsoft 365 outage; Three xAI founding members launch Epochal to build AI agents that achieve \"sup"
 }
