@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-25T04:43:53.191Z",
+ "lastScan": "2026-11-25T05:13:21.765Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -8741,7 +8741,7 @@
     "backlog teams-not-working-today-fix-windows-mac-us",
     "+1 autocomplete (3)"
    ],
-   "status": "writing",
+   "status": "skipped",
    "hash": "10910f9d",
    "families": [
     "microsoft"
@@ -8750,7 +8750,9 @@
    "kind": "new",
    "extra": true,
    "taskAt": "2026-11-25T04:43:53.191Z",
-   "attempts": 1
+   "attempts": 1,
+   "resultAt": "2026-11-25T04:46:27.832Z",
+   "skipReason": "RADAR-SKIP: covered by /blog/microsoft-365-outage-november-2026-what-to-do (Reuters report on Microsoft's internal \"Code Red\" memos is business news about the Nov 12-13 outage; no new reader action)"
   },
   "https://bloomberg.com/news/articles/2026-11-24/xai-founders-unveil-new-ai-startup-to-predict-future-events": {
    "title": "Three xAI founding members launch Epochal to build AI agents that achieve \"superhuman prediction\"; source: co-founder Guodong Zhang personally invested $100M",
@@ -9946,6 +9948,59 @@
     ],
     "month": "2026-11"
    }
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64035": {
+   "title": "Result of the Overnight Variable Rate Repo (VRR) auction held on November 25, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64035",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-25T10:25:00.000Z",
+   "updated": null,
+   "summary": "Tenor 1-day Notified Amount (in ₹ crore) 50,000 Total amount of bids received (in ₹ crore) 1,62,017 Amount allotted (in ₹ crore) 50,007 Cut off Rate (%) 5.66 Weighted Average Rate (%) 5.67 Partial Allotment Percentage of bids received at cut off rate (%) 50.55 Ajit Prasad Deputy General Manager (Com",
+   "first": "2026-11-25T05:13:21.765Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "d42a3d26"
+  },
+  "https://tallysolutions.com/business-guides/business-accounting-without-expertise": {
+   "title": "How to Maintain Business Accounts Without Being an Accounting Expert?",
+   "link": "https://tallysolutions.com/business-guides/business-accounting-without-expertise/",
+   "source": "tally-blog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-25T05:01:56.000Z",
+   "updated": null,
+   "summary": "Managing business accounts can feel difficult when you lack accounting knowledge. However, a simple routine can make everyday tasks easier. You can manage business accounts without accountant by recording sales, tracking expenses and organising invoices. These steps make simple accounting for small ",
+   "first": "2026-11-25T05:13:21.765Z",
+   "score": 0,
+   "reasons": [
+    "-2 source tally-blog",
+    "+2 user steps \"How to\""
+   ],
+   "status": "below",
+   "hash": "1e4db7e"
+  },
+  "https://tallysolutions.com/business-guides/how-to-manage-multiple-businesses-or-branches-with-accounting-software": {
+   "title": "How to Manage Multiple Businesses or Branches with Accounting Software?",
+   "link": "https://tallysolutions.com/business-guides/how-to-manage-multiple-businesses-or-branches-with-accounting-software/",
+   "source": "tally-blog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-25T04:54:13.000Z",
+   "updated": null,
+   "summary": "Running more than one business or branch means more books, more people, and more room for mistakes. If each location keeps its own sheet, you only see the full picture when someone pulls it together by hand. Good accounting software for multiple businesses keeps each record separate and shows you th",
+   "first": "2026-11-25T05:13:21.765Z",
+   "score": 0,
+   "reasons": [
+    "-2 source tally-blog",
+    "+2 user steps \"How to\""
+   ],
+   "status": "below",
+   "hash": "f425b783"
   }
  },
  "devices": {},
