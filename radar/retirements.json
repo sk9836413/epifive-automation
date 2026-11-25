@@ -1,9 +1,9 @@
 {
- "generated": "2026-11-25T13:17:58.261Z",
+ "generated": "2026-11-25T22:43:16.946Z",
  "about": "Microsoft 365 / Azure / GitHub retirements for https://www.epifive.com/microsoft-365-retirements. Built by radar/retirements.mjs from official notices; see that file for sources and date rules.",
  "sources": {
   "message-center": 128,
-  "azure": 81,
+  "azure": 82,
   "github": 3
  },
  "errors": [],
@@ -2176,9 +2176,9 @@
    "title": "Video creation from a prompt in Microsoft Clipchamp: now in Video Hub, with an upgraded experience coming",
    "date": "2027-02-01",
    "precision": "month",
-   "dateText": "By the end of February 2027, we'll replace this experience with an upgraded version that does the same things, produces higher-quality videos and fixes known issues.",
+   "dateText": "By the end of February 2027: the upgraded experience replaces the current one.",
    "dateBasis": "stated",
-   "affected": "Users create videos from a prompt in Video Hub. See instructions here, How to create video with Copilot; When the upgraded experience arrives, users get the same capabilities with better video quality.",
+   "affected": "To create a video from a prompt, users go to m365.cloud.microsoft, open the app launcher, select More apps, select Clipchamp, and then use the prompt box at the top of Clipchamp Home.",
    "url": "https://admin.microsoft.com/#/MessageCenter/:/messages/MC1566260",
    "mirror": "https://mc.merill.net/message/MC1566260",
    "published": "2026-11-24T04:09:42Z",
@@ -2773,6 +2773,22 @@
    "published": "2026-10-06T18:21:59.354Z",
    "guide": null,
    "firstSeen": "2026-11-19T04:58:43.152Z"
+  },
+  {
+   "id": "AZ568586",
+   "source": "azure-updates",
+   "product": "azure",
+   "title": "Support for Java 8, 11 and 17 in Azure Functions ends on September 1, 2027",
+   "date": "2027-09-01",
+   "precision": "day",
+   "dateText": "Retirement: Support for Java 8, 11 and 17 in Azure Functions ends on September 1, 2027",
+   "dateBasis": "stated",
+   "affected": "Customers using Azure Functions.",
+   "action": "Required action To avoid potential security vulnerabilities, minimize risk for your Azure Functions apps, and take advantage of latest features, follow the steps to upgrade your Function app to Java 25 before September 1, 2027.",
+   "url": "https://azure.microsoft.com/en-us/updates?id=568586",
+   "published": "2026-11-25T21:53:30.464Z",
+   "guide": null,
+   "firstSeen": "2026-11-25T22:43:16.946Z"
   },
   {
    "id": "MC1515294",

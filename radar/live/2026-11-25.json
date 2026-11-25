@@ -2,7 +2,7 @@
  "date": "2026-11-25",
  "title": "Tech news today, 25 November 2026",
  "published": "2026-11-24T20:23:44.941Z",
- "updated": "2026-11-25T14:16:38.554Z",
+ "updated": "2026-11-25T22:42:19.087Z",
  "items": [
   {
    "id": "e62d266c",
@@ -196,7 +196,8 @@
    "sourceId": "paloalto-advisories",
    "reported": false,
    "also": [
-    "Cisco Security Advisories (PSIRT)"
+    "Cisco Security Advisories (PSIRT)",
+    "BleepingComputer"
    ],
    "post": null,
    "device": null,
@@ -812,7 +813,8 @@
    "reported": true,
    "also": [
     "Engadget",
-    "ThePrint: Tech"
+    "ThePrint: Tech",
+    "GSMArena news"
    ],
    "post": null,
    "device": null,

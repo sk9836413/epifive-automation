@@ -1,0 +1,297 @@
+{
+ "date": "2026-11-26",
+ "title": "Tech news today, 26 November 2026",
+ "published": "2026-11-25T22:42:19.087Z",
+ "updated": "2026-11-25T22:42:19.087Z",
+ "items": [
+  {
+   "id": "6e3a80d1",
+   "key": "https://mc.merill.net/message/MC1568439",
+   "time": "2026-11-25T18:05:59.000Z",
+   "seen": "2026-11-25T22:42:19.087Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "MC1568439: Out-of-band hotpatch update addresses stop error 0x139 on Windows Server 2025",
+   "summary": "Microsoft has released a new Windows out-of-band (OOB) update today, November 25, 2026, to address an issue affecting a limited number of Windows Servers with Router Advertisement (RA) enabled that receive time-bound IPv6 routes. Affected devices might stop unexpectedly with stop error 0x139 (KERNEL_SECURITY_CHECK_FAILURE) when a route timer expires. This issue affects some Windows Server 2025 devices after installing the November 2026 Windows security hotpatch update. This non-security OOB upda...",
+   "lines": [
+    "Microsoft released an out-of-band Windows update on November 25, 2026, to address stop error 0x139 (KERNEL_SECURITY_CHECK_FAILURE) on Windows Servers.",
+    "The issue affects a limited number of Windows Servers with Router Advertisement (RA) enabled that receive time-bound IPv6 routes, and devices may stop when a route timer expires. The text says it can also affect some Windows Server 2025 devices after the November 2026 security hotpatch.",
+    "IT teams running Windows Server 2025 with RA enabled and time-bound IPv6 routes may need to review this non-security update."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1568439"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "3914183c",
+   "key": "https://workspaceupdates.googleblog.com/2026/11/rooms-more-actions-panel-reordering.html",
+   "time": "2026-11-25T19:52:32.421Z",
+   "seen": "2026-11-25T22:42:19.087Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Rooms \"More actions\" Panel Reordering",
+   "summary": "Starting on December 02, 2026, we are updating the order of options within the \"More actions\" panel on Google Meet hardware touch controllers. This update introduces improvements based on usage patterns and user feedback, prioritizing high-frequency actions so room participants can access essential controls faster and with less scrolling. Key adjustments in the panel include: Moving frequently used controls such as Present, Adjust view , and People higher in the menu for direct access from the side panel on most touch controllers. Retaining primary in-room actions, including Chat at the top and Control camera near the front of the list, while demoting lower-frequency tools like Recording or",
+   "lines": [
+    "Google is reordering options in the \"More actions\" panel on Google Meet hardware touch controllers, moving frequently used controls such as Present, Adjust view, and People higher in the menu.",
+    "The change starts on December 02, 2026.",
+    "Based on usage patterns and user feedback, the change aims to let room participants reach common controls faster and with less scrolling."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Google Workspace Updates",
+    "url": "http://workspaceupdates.googleblog.com/2026/11/rooms-more-actions-panel-reordering.html"
+   },
+   "sourceId": "workspace-updates",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "464ae720",
+   "key": "https://azure.microsoft.com/updates?id=568586",
+   "time": "2026-11-25T21:53:30.000Z",
+   "seen": "2026-11-25T22:42:19.087Z",
+   "kind": "retirement",
+   "tier": 2,
+   "headline": "Retirement: Support for Java 8, 11 and 17 in Azure Functions ends on September 1, 2027",
+   "summary": "Support for Java 8, 11 and 17 on Azure Functions is ending on September 1, 2027. Your apps that are hosted on Azure Functions will continue to run, but security updates will no longer be available, and we’ll no longer provide customer service for Java 8,",
+   "lines": [
+    "Support for Java 8, 11 and 17 on Azure Functions ends on September 1, 2027.",
+    "Apps hosted on Azure Functions will keep running after support ends, but security updates will no longer be available.",
+    "Teams running Java apps on these versions on Azure Functions should plan upgrades before the end date."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Azure Updates",
+    "url": "https://azure.microsoft.com/updates?id=568586"
+   },
+   "sourceId": "azure-updates",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "d55855a0",
+   "key": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ucs-uefi-sb-bypass-eb6xC5GW?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Cisco%20UCS%20and%20UCS-Based%20Appliances%20UEFI%20Shell%20Secure%20Boot%20Bypass%20Vulnerability%26vs_k=1",
+   "time": "2026-11-25T18:29:45.000Z",
+   "seen": "2026-11-25T22:42:19.087Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Cisco UCS and UCS-Based Appliances UEFI Shell Secure Boot Bypass Vulnerability",
+   "summary": "A vulnerability in the Unified Extensible Firmware Interface (UEFI) Shell implementation of Cisco UCS Servers and UCS-based appliances could allow an authenticated attacker with valid credentials for a user account with the role of user or admin or an unauthenticated attacker with physical access to an affected device to bypass UEFI Secure Boot validation checks and execute unauthorized software. This vulnerability is due to the availability of memory write commands in the UEFI Shell while UEFI Secure Boot is enabled on a device. An attacker could exploit this vulnerability by selecting the UEFI Shell boot option at boot time and using available shell commands to modify UEFI memory variables",
+   "lines": [
+    "A vulnerability in the UEFI Shell of Cisco UCS Servers and UCS-based appliances can let an attacker bypass UEFI Secure Boot validation checks and execute unauthorized software.",
+    "An authenticated attacker with user or admin credentials, or an unauthenticated attacker with physical access, could exploit it by selecting the UEFI Shell boot option at boot time and using shell commands to modify UEFI memory variables.",
+    "IT teams managing Cisco UCS servers may want to review the advisory, since the flaw affects the boot protection that Secure Boot provides."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Cisco Security Advisories (PSIRT)",
+    "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ucs-uefi-sb-bypass-eb6xC5GW?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Cisco%20UCS%20and%20UCS-Based%20Appliances%20UEFI%20Shell%20Secure%20Boot%20Bypass%20Vulnerability%26vs_k=1"
+   },
+   "sourceId": "cisco-psirt",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "04a57a4c",
+   "key": "https://mc.merill.net/message/MC1568568",
+   "time": "2026-11-25T20:58:16.000Z",
+   "seen": "2026-11-25T22:42:19.087Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1568568: Configure security key sign-in experience for display-based NFC readers",
+   "summary": "What and why: An improved security key sign-in experience is available on Windows 11 devices with display-based Near Field Communication (NFC) readers. A new on-screen indicator now shows where to tap your security key during sign-in. The indicator adjusts to the device's screen orientation, making it easier to locate the NFC reader. Rollout schedule:This improved sign-in experience and simpler appearance are available starting with the November 2026 Windows non-security update. Impact on your o...",
+   "lines": [
+    "Windows 11 devices with display-based Near Field Communication (NFC) readers now show an on-screen indicator for where to tap a security key during sign-in.",
+    "The indicator adjusts to screen orientation and is available starting with the November 2026 Windows non-security update.",
+    "The change may make security key sign-in easier to complete on devices with NFC readers, according to the text's description of a simpler appearance."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1568568"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "5980ace6",
+   "key": "https://mc.merill.net/message/MC1562278",
+   "time": "2026-11-25T17:10:42.000Z",
+   "seen": "2026-11-25T22:42:19.087Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1562278: Microsoft Teams: Expanded Markdown support in the compose box",
+   "summary": "Microsoft Teams will expand Markdown support in the compose box, allowing users to write with visible syntax, use a Markdown toolbar, preview messages, and switch between Markdown and rich text. Public preview starts mid-December 2026; general availability begins mid-January 2027. No admin action needed.",
+   "lines": [
+    "Microsoft Teams will expand Markdown support in the compose box, with visible syntax, a Markdown toolbar, message preview, and switching between Markdown and rich text.",
+    "Public preview starts in mid-December 2026, and general availability begins in mid-January 2027.",
+    "The text states that no admin action is needed for this change."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1562278"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "7baacfa0",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ec2-m8g-instances-telaviv-region",
+   "time": "2026-11-25T17:15:00.000Z",
+   "seen": "2026-11-25T22:42:19.087Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Amazon EC2 M8g instances are now available in Israel (Tel Aviv)",
+   "summary": "Starting today, Amazon Elastic Compute Cloud (Amazon EC2) M8g instances are available in the Israel (Tel Aviv) region. These instances are powered by AWS Graviton4 processors and deliver up to 30% better performance compared to AWS Graviton3-based instances. Amazon EC2 M8g instances are built for general-purpose workloads, such as application servers, microservices, gaming servers, midsize data stores, and caching fleets. M8g instances are up to 40% faster for databases, up to 30% faster for web applications, and up to 45% faster for large Java applications than AWS Graviton3-based M7g instances. These instances are built on the AWS Nitro System , which offloads CPU virtualization, storage,",
+   "lines": [
+    "Amazon EC2 M8g instances are now available in the Israel (Tel Aviv) region, powered by AWS Graviton4 processors.",
+    "AWS says the instances deliver up to 30% better performance than Graviton3-based instances and are built for general-purpose workloads such as application servers, microservices, and caching fleets.",
+    "The text cites up to 40% faster databases and up to 45% faster large Java applications than M7g instances, which may matter to IT teams sizing these workloads."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ec2-m8g-instances-telaviv-region/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "fbe3e240",
+   "key": "https://bleepingcomputer.com/news/security/1password-customer-data-stolen-after-employee-github-account-breach",
+   "time": "2026-11-25T21:33:33.000Z",
+   "seen": "2026-11-25T22:42:19.087Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "1Password customer data stolen after employee GitHub account breach",
+   "summary": "1Password has disclosed a data breach after a an employee's corporate GitHub account was hacked and used to deploy malicious code to the company's backend services to steal customer data. [...]",
+   "lines": [
+    "Reported by BleepingComputer: 1Password disclosed a data breach after an employee's corporate GitHub account was hacked and used to deploy malicious code to its backend services.",
+    "The malicious code was used to steal customer data.",
+    "Business users and admins may want to review how developer accounts such as GitHub are secured, since one compromised account reached backend services."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/1password-customer-data-stolen-after-employee-github-account-breach/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 9,
+   "story": null
+  },
+  {
+   "id": "9b60bd47",
+   "key": "https://techcrunch.com/2026/11/25/1password-said-hackers-broke-into-its-internal-systems-but-customer-passwords-are-safe",
+   "time": "2026-11-25T18:49:52.000Z",
+   "seen": "2026-11-25T22:42:19.087Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "1Password said hackers broke into its internal systems, but customer passwords are safe",
+   "summary": "The password manager maker said an attacker gained access to an employee's corporate account and took some information about customers.",
+   "lines": [
+    "Reported by TechCrunch: 1Password said an attacker gained access to an employee's corporate account and took some information about customers.",
+    "1Password said customer passwords are safe.",
+    "The report describes the customer information taken only as \"some information,\" so the scope is not detailed in this text."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "TechCrunch",
+    "url": "https://techcrunch.com/2026/11/25/1password-said-hackers-broke-into-its-internal-systems-but-customer-passwords-are-safe/"
+   },
+   "sourceId": "techcrunch",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [
+    "techmeme"
+   ],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "12ddda54",
+   "key": "https://techcrunch.com/2026/11/25/doj-accuses-former-cyber-executive-of-defrauding-ransomware-victims-by-secretly-paying-hackers",
+   "time": "2026-11-25T17:36:51.000Z",
+   "seen": "2026-11-25T22:42:19.087Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "DOJ accuses former cyber executive of defrauding ransomware victims by secretly paying hackers",
+   "summary": "U.S. prosecutors accused the former executive of defrauding victims of ransomware by paying the hackers, charging victims more, and pocketing the difference.",
+   "lines": [
+    "Reported by TechCrunch: U.S. prosecutors accused a former cyber executive of defrauding ransomware victims by secretly paying the hackers, charging victims more, and pocketing the difference.",
+    "The allegations concern how ransomware payments were handled, which is relevant to incident response planning."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "TechCrunch",
+    "url": "https://techcrunch.com/2026/11/25/doj-accuses-former-cyber-executive-of-defrauding-ransomware-victims-by-secretly-paying-hackers/"
+   },
+   "sourceId": "techcrunch",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  }
+ ],
+ "description": "10 technology updates from official sources, updated hourly: 1Password customer data stolen after employee GitHub account breach; MC1568439: Out-of-band hotpatch update addresses stop error 0x139 on Windows Server 2025; 1Password said hackers broke into its internal systems, but customer passwords a"
+}

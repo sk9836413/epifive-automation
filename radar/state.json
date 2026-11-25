@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-25T14:16:38.554Z",
+ "lastScan": "2026-11-25T22:42:19.087Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -3727,59 +3727,6 @@
    "status": "duplicate",
    "hash": "abb9bc65",
    "post": "purview-dlp-policies-exchange-teams-endpoints"
-  },
-  "https://openai.com/index/perplexity-and-intelligence": {
-   "title": "Perplexity and Intelligence",
-   "link": "https://openai.com/index/perplexity-and-intelligence",
-   "source": "openai-news",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-22T00:00:00.000Z",
-   "updated": null,
-   "summary": "How perplexity measures progress in AI models, and why it could help developers establish a shared approach to evaluating emerging capabilities.",
-   "first": "2026-11-22T18:45:06.177Z",
-   "score": 1,
-   "reasons": [
-    "+2 source openai-news",
-    "+1 also on techmeme",
-    "-2 category (Research)"
-   ],
-   "status": "below",
-   "hash": "7a06a3d5"
-  },
-  "https://intel.com/content/www/us/en/newsroom/news/client-computing/the-best-employee-experiences-start-with-technology-that-works-together.html": {
-   "title": "Best Experiences Start with Technology That Works",
-   "link": "https://www.intel.com/content/www/us/en/newsroom/news/client-computing/the-best-employee-experiences-start-with-technology-that-works-together.html",
-   "source": "intel-newsroom",
-   "topic": "laptops-hardware",
-   "category": "launch",
-   "date": null,
-   "updated": null,
-   "summary": "Client Computing",
-   "first": "2026-11-22T18:45:06.177Z",
-   "score": -1,
-   "reasons": [
-    "-1 source intel-newsroom"
-   ],
-   "status": "below",
-   "hash": "81a9c14c"
-  },
-  "https://blogs.vmware.com/cloud-foundation/2026/11/22/microsoft-sql-server-failover-clustering-on-vcf-9-1-vm-service-requirements-topology-and-methods-part-1": {
-   "title": "Microsoft SQL Server Failover Clustering on VCF 9.1 VM Service: Requirements, Topology and Methods (Part 1)",
-   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/22/microsoft-sql-server-failover-clustering-on-vcf-9-1-vm-service-requirements-topology-and-methods-part-1/",
-   "source": "vmware-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-22T21:00:00.000Z",
-   "updated": null,
-   "summary": "Introduction The transition to VMware Cloud Foundation (VCF) will typically involve questions about not only new functionalities, but also functionalities and capabilities that are already in use. One of the most common use cases for vSphere is virtualizing business-critical applications (BCA). Runn",
-   "first": "2026-11-22T22:23:42.014Z",
-   "score": -1,
-   "reasons": [
-    "-1 source vmware-blog"
-   ],
-   "status": "below",
-   "hash": "bb3de232"
   },
   "https://news.samsung.com/global/the-technology-behind-more-precise-finding-with-galaxy-smarttag3-and-smartthings": {
    "title": "The Technology Behind More Precise Finding With Galaxy SmartTag3 and SmartThings",
@@ -9901,7 +9848,7 @@
     "MSRC watcher: added by Microsoft on 2026-11-24 to the November 2026 release (Patch Tuesday was 2026-11-10)",
     "Critical, CVSS 9.8 >= 9"
    ],
-   "status": "queued",
+   "status": "writing",
    "hash": "53ab4c9c",
    "msrc": {
     "cve": "CVE-2026-112732",
@@ -9909,7 +9856,11 @@
      "new"
     ],
     "month": "2026-11"
-   }
+   },
+   "kind": "new",
+   "extra": false,
+   "taskAt": "2026-11-25T22:42:19.087Z",
+   "attempts": 1
   },
   "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64035": {
    "title": "Result of the Overnight Variable Rate Repo (VRR) auction held on November 25, 2026",
@@ -10554,6 +10505,750 @@
    ],
    "status": "below",
    "hash": "e5ea0db"
+  },
+  "https://blog.whatsapp.com/say-it-at-the-right-time-with-scheduled-messages": {
+   "title": "Say it at the right time with scheduled messages",
+   "link": "https://blog.whatsapp.com/say-it-at-the-right-time-with-scheduled-messages",
+   "source": "whatsapp-blog",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-25T15:00:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": 2,
+   "reasons": [
+    "+2 source whatsapp-blog"
+   ],
+   "status": "below",
+   "hash": "735fb03b"
+  },
+  "https://techcommunity.microsoft.com/t5/microsoft-365-blog/microsoft-ignite-2026-recap-celebrating-community-connection-and/ba-p/4576748": {
+   "title": "Microsoft Ignite 2026 Recap: Celebrating Community, Connection, and the Power of Learning Together",
+   "link": "https://techcommunity.microsoft.com/t5/microsoft-365-blog/microsoft-ignite-2026-recap-celebrating-community-connection-and/ba-p/4576748",
+   "source": "tc-m365",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-25T18:57:11.000Z",
+   "updated": null,
+   "summary": "From inspiring conversations to practical AI learning, Microsoft Ignite 2026 reminded us that innovation is even more powerful when we build and learn together. Microsoft Ignite brought the global Microsoft community together in San Francisco, November 16–20, for a week of learning, collaboration, a",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": -1,
+   "reasons": [
+    "+1 source tc-m365",
+    "+1 niche (exchange)",
+    "-3 corporate/announcement \"Recap\""
+   ],
+   "status": "below",
+   "hash": "c6c90770"
+  },
+  "https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity": {
+   "title": "From spectrum to structure: Identifying molecules with Mass Spec Skills for Google Antigravity",
+   "link": "https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity/",
+   "source": "deepmind-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-24T13:07:53.000Z",
+   "updated": null,
+   "summary": "Mass Spec Skills empowers scientists using Google Antigravity to interpret tandem mass spectra.",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": 1,
+   "reasons": [
+    "+1 source deepmind-blog"
+   ],
+   "status": "below",
+   "hash": "d6d12274"
+  },
+  "https://bleepingcomputer.com/news/security/1password-customer-data-stolen-after-employee-github-account-breach": {
+   "title": "1Password customer data stolen after employee GitHub account breach",
+   "link": "https://www.bleepingcomputer.com/news/security/1password-customer-data-stolen-after-employee-github-account-breach/",
+   "source": "bleepingcomputer",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-25T21:33:33.000Z",
+   "updated": null,
+   "summary": "1Password has disclosed a data breach after a an employee's corporate GitHub account was hacked and used to deploy malicious code to the company's backend services to steal customer data. [...]",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": 9,
+   "reasons": [
+    "+1 source bleepingcomputer",
+    "+3 incident \"stolen\"",
+    "+3 major platform (github)",
+    "+1 user data or credentials exposed",
+    "+1 category (Security)"
+   ],
+   "status": "below",
+   "hash": "600a520d"
+  },
+  "https://workspaceupdates.googleblog.com/2026/11/rooms-more-actions-panel-reordering.html": {
+   "title": "Rooms \"More actions\" Panel Reordering",
+   "link": "http://workspaceupdates.googleblog.com/2026/11/rooms-more-actions-panel-reordering.html",
+   "source": "workspace-updates",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-25T19:52:32.421Z",
+   "updated": "2026-11-25T19:52:32.421Z",
+   "summary": "Starting on December 02, 2026, we are updating the order of options within the \"More actions\" panel on Google Meet hardware touch controllers. This update introduces improvements based on usage patterns and user feedback, prioritizing high-frequency actions so room participants can access essential ",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": 4,
+   "reasons": [
+    "+1 source workspace-updates",
+    "+1 niche (google meet)",
+    "+2 launch \"introduces\""
+   ],
+   "status": "below",
+   "hash": "d3e2da1c"
+  },
+  "https://proxmox.com/en/about/company-details/press-releases/proxmox-virtual-environment-9-3": {
+   "title": "Proxmox Virtual Environment 9.3 with focus on improved Enterprise storage experience",
+   "link": "https://www.proxmox.com/en/about/company-details/press-releases/proxmox-virtual-environment-9-3",
+   "source": "proxmox-press",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-25T12:57:58.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "52220e95"
+  },
+  "https://githubstatus.com/incidents/qn8mfv6q5hlx": {
+   "title": "Investigating degraded experiences across GitHub products",
+   "link": "https://www.githubstatus.com/incidents/qn8mfv6q5hlx",
+   "source": "status-github",
+   "topic": "ai-engineering",
+   "category": "outage",
+   "date": "2026-11-25T15:55:19.600Z",
+   "updated": "2026-11-25T16:52:16.321Z",
+   "summary": "This incident has been resolved. Thank you for your patience and understanding as we addressed this issue. A detailed root cause analysis will be shared as soon as it is available.",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": 11,
+   "reasons": [
+    "+6 status-page incident \"resolved\"",
+    "+3 major platform (github)",
+    "+2 large incident (impact critical, 8 service(s))",
+    "resolved or retrospective: may update an existing outage guide, never a new one"
+   ],
+   "status": "resolved",
+   "hash": "663eddbe",
+   "families": [
+    "github"
+   ]
+  },
+  "https://zoom.com/en/blog/zra-webinar-replay-nov18": {
+   "title": "Why context is the missing piece in revenue automation",
+   "link": "https://www.zoom.com/en/blog/zra-webinar-replay-nov18/",
+   "source": "zoom-blog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-25T15:00:00.000Z",
+   "updated": null,
+   "summary": "Most revenue teams have plenty of automation. What they’re missing is context. Erin Kriese and Jared Wexler share a 4-question test for every automation you run and illustrate how one buyer signal can be carried through the customer journey\". Read the takeaways, then watch the webinar recording.",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "4cf3c0c7"
+  },
+  "https://github.blog/changelog/2026-11-25-copilot-code-review-billing-will-default-to-the-organization": {
+   "title": "Copilot code review billing will default to the organization",
+   "link": "https://github.blog/changelog/2026-11-25-copilot-code-review-billing-will-default-to-the-organization",
+   "source": "github-changelog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-25T22:18:03.000Z",
+   "updated": null,
+   "summary": "If you haven’t chosen how to bill Copilot code review for members with a Copilot license, those reviews will be billed to your organization starting December 30, 2026. To keep… The post Copilot code review billing will default to the organization appeared first on The GitHub Blog .",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": 3,
+   "reasons": [
+    "-1 source github-changelog",
+    "+2 niche (copilot)",
+    "+2 user steps \"how to\""
+   ],
+   "status": "below",
+   "hash": "a3399e37"
+  },
+  "https://linkedin.com/feed/update/urn:li:activity:7530839822152708096": {
+   "title": "Outcome per dollar is the frontier. We’re advancing it at every layer: FLOPs-efficient pretraining (MAI Base 2), long RL climbs (Rocket), and token-efficient models (7 new MAI models announced last week) [Read more]",
+   "link": "https://www.linkedin.com/feed/update/urn:li:activity:7530839822152708096/",
+   "source": "ms-source",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-24T16:41:15.000Z",
+   "updated": null,
+   "summary": "The post Outcome per dollar is the frontier. We’re advancing it at every layer: FLOPs-efficient pretraining (MAI Base 2), long RL climbs (Rocket), and token-efficient models (7 new MAI models announced last week) [Read more] appeared first on Source .",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": -1,
+   "reasons": [
+    "-1 source ms-source"
+   ],
+   "status": "below",
+   "hash": "33260848",
+   "story": "ai:mai base 2:release"
+  },
+  "https://blogs.vmware.com/cloud-foundation/2026/11/25/running-kagent-on-vmware-vsphere-kubernetes-service": {
+   "title": "Building Enterprise AI Agents on VMware vSphere Kubernetes Service Part 2: Declarative Orchestration with kagent",
+   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/25/running-kagent-on-vmware-vsphere-kubernetes-service/",
+   "source": "vmware-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-25T16:00:00.000Z",
+   "updated": null,
+   "summary": "Author: Jessiely Consolacion In Part 1 of this series, Running Agent Substrate on VMware vSphere Kubernetes Service, we demonstrated how to package and deploy Agent Substrate as a VMware vSphere Kubernetes Service (VKS) add-on. Agent Substrate solves the low-level runtime problem: it schedules sandb",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": 2,
+   "reasons": [
+    "-1 source vmware-blog",
+    "+1 niche (agents)",
+    "+2 user steps \"how to\""
+   ],
+   "status": "below",
+   "hash": "add05e2a"
+  },
+  "https://blogs.vmware.com/cloud-foundation/2026/11/25/using-the-salt-api-behind-vcf-security-posture-management": {
+   "title": "Using the Salt API Behind VCF Security Posture Management",
+   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/25/using-the-salt-api-behind-vcf-security-posture-management/",
+   "source": "vmware-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-25T13:52:43.000Z",
+   "updated": null,
+   "summary": "VMware Cloud Foundation (VCF) Operations checks my lab against its compliance rules and shows me what has drifted. That’s fine in the UI, but I wanted to do the same from a script: pick one setting, check it, fix it, check again. In VCF 9.1 that work is done by Salt, and Salt comes with … Continued ",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": -2,
+   "reasons": [
+    "-1 source vmware-blog",
+    "-1 narrow audience \"API\""
+   ],
+   "status": "below",
+   "hash": "6fc27725"
+  },
+  "https://backblaze.com/blog/when-a-robot-fails-what-does-the-data-say": {
+   "title": "When a Robot Fails, What Does the Data Say?",
+   "link": "https://www.backblaze.com/blog/when-a-robot-fails-what-does-the-data-say/",
+   "source": "backblaze-blog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-25T15:21:03.000Z",
+   "updated": null,
+   "summary": "When a robot fails, customers want more than a plausible explanation. Learn what robotics teams need to preserve, from raw sensor recordings and software versions to unchanged originals and access histories, to build an incident record they can stand behind. The post When a Robot Fails, What Does th",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": -1,
+   "reasons": [
+    "-1 source backblaze-blog"
+   ],
+   "status": "below",
+   "hash": "78864e2e"
+  },
+  "https://veeam.com/blog/on-prem-ai-vs-cloud-ai.html": {
+   "title": "On-premises AI vs. cloud AI: The data protection trade-offs nobody budgets in",
+   "link": "https://www.veeam.com/blog/on-prem-ai-vs-cloud-ai.html",
+   "source": "veeam-blog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-25T15:32:21.000Z",
+   "updated": null,
+   "summary": "Every comparison of on-premises AI and cloud AI evaluates the same four things: Cost, latency, scalability, and control. Almost no one evaluates who restores the data when something breaks. That gap matters more than the comparison does, because on-premises AI (e.g., the full model lifecycle on infr",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": -1,
+   "reasons": [
+    "-1 source veeam-blog"
+   ],
+   "status": "below",
+   "hash": "136cbdaa"
+  },
+  "https://docker.com/blog/prove-your-ai-agent-guardrails-work": {
+   "title": "Prove your AI agent guardrails work",
+   "link": "https://www.docker.com/blog/prove-your-ai-agent-guardrails-work/",
+   "source": "docker-blog",
+   "topic": "ai-engineering",
+   "category": "launch",
+   "date": "2026-11-25T16:57:00.000Z",
+   "updated": null,
+   "summary": "Coding agents can reach more than their task needs. See how Docker AI Governance controls network, filesystem, credential, and MCP access, then test it.",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": 0,
+   "reasons": [
+    "-1 source docker-blog",
+    "+1 niche (agent)",
+    "backlog ai-agents-for-business-workflows"
+   ],
+   "status": "below",
+   "hash": "5402dc01",
+   "backlog": "ai-agents-for-business-workflows"
+  },
+  "https://salesforce.com/blog/world-tour-new-york-executives-customer-zero": {
+   "title": "Live at World Tour NYC: Meet the People Building Salesforce on Salesforce",
+   "link": "https://www.salesforce.com/blog/world-tour-new-york-executives-customer-zero/",
+   "source": "salesforce-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-25T19:16:59.000Z",
+   "updated": null,
+   "summary": "On December 3 at the Javits Center, get face time with the practitioners who run Salesforce on our own AI. See real demos, ask the hard questions, and leave with a plan.",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": 0,
+   "reasons": [
+    "-1 source salesforce-blog",
+    "+1 plans/price/availability \"plan\""
+   ],
+   "status": "below",
+   "hash": "dd7942b3"
+  },
+  "https://salesforce.com/blog/5-ways-customers-are-already-innovating-with-salesforce-in-claude": {
+   "title": "5 ways customers are already innovating with Salesforce in Claude",
+   "link": "https://www.salesforce.com/blog/5-ways-customers-are-already-innovating-with-salesforce-in-claude/",
+   "source": "salesforce-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-25T18:06:41.000Z",
+   "updated": null,
+   "summary": "See how early adopters are turning trusted Salesforce data and Claude’s reasoning into faster sales and reimagined ways of working. For companies combining advanced reasoning and trusted enterprise intelligence with Salesforce in Claude,…",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": 1,
+   "reasons": [
+    "-1 source salesforce-blog",
+    "+2 niche (claude)"
+   ],
+   "status": "below",
+   "hash": "ba47cb47"
+  },
+  "https://salesforce.com/blog/salesforce-graduate-program-eoins-path-pitch-to-tech": {
+   "title": "Salesforce Graduate Program: Eoin’s Path from the Pitch to Tech",
+   "link": "https://www.salesforce.com/blog/salesforce-graduate-program-eoins-path-pitch-to-tech/",
+   "source": "salesforce-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-25T16:06:39.000Z",
+   "updated": null,
+   "summary": "Eoin Comerford didn’t start his career in a corporate boardroom. In 2018, he was a performance analyst for the Republic of Ireland international football teams. Today, he manages early-career hires in the Salesforce…",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": -1,
+   "reasons": [
+    "-1 source salesforce-blog"
+   ],
+   "status": "below",
+   "hash": "f0636049"
+  },
+  "https://mc.merill.net/message/MC920304": {
+   "title": "MC920304: Microsoft Purview | Communication Compliance: Policy alerts improvements",
+   "link": "https://mc.merill.net/message/MC920304",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-25T21:45:46.000Z",
+   "updated": null,
+   "summary": "Microsoft Purview Communication Compliance will enhance policy alert customization, allowing admins to adjust alert frequency and recipients. Public preview starts October 2026, with general availability by mid-August 2027. Features include pseudonymized usernames, role-based access, and audit logs ",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": 0,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 launch \"general availability\""
+   ],
+   "status": "below",
+   "hash": "5e82ab90"
+  },
+  "https://mc.merill.net/message/MC1568568": {
+   "title": "MC1568568: Configure security key sign-in experience for display-based NFC readers",
+   "link": "https://mc.merill.net/message/MC1568568",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-25T20:58:16.000Z",
+   "updated": null,
+   "summary": "What and why: An improved security key sign-in experience is available on Windows 11 devices with display-based Near Field Communication (NFC) readers. A new on-screen indicator now shows where to tap your security key during sign-in. The indicator adjusts to the device's screen orientation, making ",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": 4,
+   "reasons": [
+    "-2 source mc-merill",
+    "+3 niche (windows 11, windows)",
+    "+2 user steps \"Configure\"",
+    "+1 plans/price/availability \"Rollout\""
+   ],
+   "status": "below",
+   "hash": "f3d91d8d"
+  },
+  "https://mc.merill.net/message/MC1568439": {
+   "title": "MC1568439: Out-of-band hotpatch update addresses stop error 0x139 on Windows Server 2025",
+   "link": "https://mc.merill.net/message/MC1568439",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-25T18:05:59.000Z",
+   "updated": null,
+   "summary": "Microsoft has released a new Windows out-of-band (OOB) update today, November 25, 2026, to address an issue affecting a limited number of Windows Servers with Router Advertisement (RA) enabled that receive time-bound IPv6 routes. Affected devices might stop unexpectedly with stop error 0x139 (KERNEL",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": -1,
+   "reasons": [
+    "-2 source mc-merill",
+    "+1 niche (windows)"
+   ],
+   "status": "below",
+   "hash": "cc5afb18"
+  },
+  "https://mc.merill.net/message/MC1481313": {
+   "title": "MC1481313: Microsoft Purview | DLM: Legacy Teams retention policies that cover Copilot will be treated as Teams-only",
+   "link": "https://mc.merill.net/message/MC1481313",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-25T17:12:08.000Z",
+   "updated": null,
+   "summary": "Starting mid-January 2027, legacy Microsoft Teams retention policies will apply only to Teams data, excluding Microsoft 365 Copilot interactions. Organizations must create separate retention policies for Copilot to maintain compliance. Existing Teams retention behavior remains unchanged, but action ",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": 2,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (copilot, microsoft 365, microsoft teams)",
+    "covered by /blog/copilot-interactions-audit-retention-ediscovery"
+   ],
+   "status": "duplicate",
+   "hash": "668c3a46",
+   "post": "copilot-interactions-audit-retention-ediscovery"
+  },
+  "https://mc.merill.net/message/MC1562278": {
+   "title": "MC1562278: Microsoft Teams: Expanded Markdown support in the compose box",
+   "link": "https://mc.merill.net/message/MC1562278",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-25T17:10:42.000Z",
+   "updated": null,
+   "summary": "Microsoft Teams will expand Markdown support in the compose box, allowing users to write with visible syntax, use a Markdown toolbar, preview messages, and switch between Markdown and rich text. Public preview starts mid-December 2026; general availability begins mid-January 2027. No admin action ne",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": 2,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 niche (microsoft teams)",
+    "+2 launch \"general availability\""
+   ],
+   "status": "below",
+   "hash": "30add638"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ec2-m8g-instances-telaviv-region": {
+   "title": "Amazon EC2 M8g instances are now available in Israel (Tel Aviv)",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ec2-m8g-instances-telaviv-region/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-25T17:15:00.000Z",
+   "updated": null,
+   "summary": "Starting today, Amazon Elastic Compute Cloud (Amazon EC2) M8g instances are available in the Israel (Tel Aviv) region. These instances are powered by AWS Graviton4 processors and deliver up to 30% better performance compared to AWS Graviton3-based instances. Amazon EC2 M8g instances are built for ge",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": 2,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now available\"",
+    "+1 plans/price/availability \"region\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "274b3ce0"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ec2-m9gd-asiapacific-seoul": {
+   "title": "Amazon EC2 M9gd instances are now available in Asia Pacific (Seoul)",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ec2-m9gd-asiapacific-seoul/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-25T17:10:00.000Z",
+   "updated": null,
+   "summary": "Starting today, Amazon Elastic Compute Cloud (Amazon EC2) M9gd instances are available in the Asia Pacific (Seoul) region. These instances are powered by AWS Graviton5 processors, the fifth generation of custom-designed CPUs, which deliver the best price performance for a broad range of workloads ru",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": 2,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now available\"",
+    "+1 plans/price/availability \"region\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "29bededc"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ec2-c9gd-instances-additional-regions": {
+   "title": "Amazon EC2 C9gd instances now available in additional regions",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ec2-c9gd-instances-additional-regions/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-25T16:49:00.000Z",
+   "updated": null,
+   "summary": "Starting today, Amazon Elastic Compute Cloud (Amazon EC2) C9gd instances are available in the Europe (Ireland, Spain) regions. These instances are powered by AWS Graviton5 processors, the fifth generation of custom-designed CPUs, which deliver the best price performance for a broad range of workload",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": 2,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now available\"",
+    "+1 plans/price/availability \"regions\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "cae2647c"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ec2-c9g-instances-additional-regions": {
+   "title": "Amazon EC2 C9g instances are now available in additional regions",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ec2-c9g-instances-additional-regions/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-25T16:17:00.000Z",
+   "updated": null,
+   "summary": "Starting today, Amazon Elastic Compute Cloud (Amazon EC2) C9g instances are available in the Asia Pacific (Sydney), Europe (Ireland, Spain), and South America (São Paulo) regions. These instances are powered by AWS Graviton5 processors, the fifth generation of custom-designed CPUs, which deliver the",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": 2,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now available\"",
+    "+1 plans/price/availability \"regions\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "11482ae6"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ec2-m9g-instances-additional-regions": {
+   "title": "Amazon EC2 M9g instances now available in additional regions",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-ec2-m9g-instances-additional-regions/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-25T16:06:00.000Z",
+   "updated": null,
+   "summary": "Starting today, Amazon Elastic Compute Cloud (Amazon EC2) M9g instances, powered by AWS Graviton5 processors, are available in US West (N. California), Canada (Central), South America (São Paulo), and Asia Pacific (Seoul) regions. AWS Graviton5 processors are the fifth generation of custom-designed ",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": 2,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now available\"",
+    "+1 plans/price/availability \"regions\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "b4a42f10"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-iot-core-dedicated-ipv6-ranges": {
+   "title": "AWS IoT Core now uses dedicated IPv6 address ranges for the HTTP rule action",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-iot-core-dedicated-ipv6-ranges/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-25T08:00:00.000Z",
+   "updated": null,
+   "summary": "AWS IoT Core can now send traffic to HTTPS endpoints within a dedicated, published IPv6 address range. This launch enables you to configure your HTTPS endpoints to accept requests only from AWS IoT Core and block all other traffic, thereby reducing your endpoint's exposure to public internet. AWS Io",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": 2,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"launch\"",
+    "+2 user steps \"configure\""
+   ],
+   "status": "below",
+   "hash": "ea6213e7"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-iot-core-quota-usage-monitoring": {
+   "title": "AWS IoT Core quotas and usage are now visible in AWS Service Quotas console",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-iot-core-quota-usage-monitoring/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-25T08:00:00.000Z",
+   "updated": null,
+   "summary": "AWS IoT Core now publishes its most used service quotas and your current usage against the quotas in AWS Service Quotas console , improving observability and monitoring of API limits and quotas. This launch enables you to monitor your service quota usage, set alarms before you are throttled, and req",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": 0,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"launch\""
+   ],
+   "status": "below",
+   "hash": "5384ad28"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-iam": {
+   "title": "AWS IAM extends trusted identity propagation to IAM federation and IAM Roles Anywhere, and simplifies it in IAM Identity Center",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-iam/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-25T06:00:00.000Z",
+   "updated": null,
+   "summary": "Trusted identity propagation (TIP) carries the identity of a human user or workload with requests to supported AWS Services. Customers can use that identity in IAM policy conditions for access control and to identify the originating human user or workload in AWS CloudTrail. AWS is expanding TIP to A",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": -2,
+   "reasons": [
+    "-2 source aws-whats-new"
+   ],
+   "status": "below",
+   "hash": "777b84a4"
+  },
+  "https://intuit.com/blog/innovative-thinking/ai-vs-human-analysis-financial-decisions": {
+   "title": "The AI Financial Trust Spectrum: How People Are Rethinking Money Decisions in 2026",
+   "link": "https://www.intuit.com/blog/innovative-thinking/ai-vs-human-analysis-financial-decisions/",
+   "source": "intuit-blog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-25T16:35:00.000Z",
+   "updated": null,
+   "summary": "Financial advice has traditionally come from human professionals, namely advisors and planners trained to understand nuance and guide complex decisions. AI in finance now offers something different: instant, on-demand guidance powered by vast datasets and advanced algorithms. So, what does that mean",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": -2,
+   "reasons": [
+    "-2 source intuit-blog"
+   ],
+   "status": "below",
+   "hash": "63ecd82b"
+  },
+  "https://azure.microsoft.com/updates?id=568586": {
+   "title": "Retirement: Support for Java 8, 11 and 17 in Azure Functions ends on September 1, 2027",
+   "link": "https://azure.microsoft.com/updates?id=568586",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-25T21:53:30.000Z",
+   "updated": "2026-11-25T21:53:30.000Z",
+   "summary": "Support for Java 8, 11 and 17 on Azure Functions is ending on September 1, 2027. Your apps that are hosted on Azure Functions will continue to run, but security updates will no longer be available, and we’ll no longer provide customer service for Java 8,",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": -1,
+   "reasons": [
+    "-2 source azure-updates",
+    "+1 retirement/migration"
+   ],
+   "status": "below",
+   "hash": "34e33b1a"
+  },
+  "https://elevenlabs.io/blog/fixing-front-door-government": {
+   "title": "Fixing the front door to government, one voice agent at a time",
+   "link": "https://elevenlabs.io/blog/fixing-front-door-government",
+   "source": "elevenlabs-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-25T12:00:00.000Z",
+   "updated": null,
+   "summary": "The front door to government for millions of people is an outdated IVR phone menu. Governments are now adopting AI agents for several kinds of calls.",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": -1,
+   "reasons": [
+    "-2 source elevenlabs-blog",
+    "+1 niche (agent)"
+   ],
+   "status": "below",
+   "hash": "d8530c5d"
+  },
+  "https://miradore.com/blog/how-to-scale-activation-lock-management-with-mdm": {
+   "title": "How to scale Activation Lock Management with MDM",
+   "link": "https://www.miradore.com/blog/how-to-scale-activation-lock-management-with-mdm/",
+   "source": "miradore-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-25T15:40:41.000Z",
+   "updated": null,
+   "summary": "Mobile device management (MDM) cybersecurity doesn't exclusively start and end online. Physical threats like device theft are a significant, high-cost security risk, especially in organizations...",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": 0,
+   "reasons": [
+    "-2 source miradore-blog",
+    "+2 user steps \"How to\""
+   ],
+   "status": "below",
+   "hash": "365cd4da"
+  },
+  "https://changelog.shopify.com/posts/get-more-evidence-for-chargebacks-on-agentic-orders": {
+   "title": "Get more evidence for chargebacks on Agentic orders",
+   "link": "https://changelog.shopify.com/posts/get-more-evidence-for-chargebacks-on-agentic-orders",
+   "source": "shopify-changelog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-25T17:00:00.000Z",
+   "updated": null,
+   "summary": "When an AI shopping assistant places an order for a customer, the order looks like any other order in your Shopify admin. If the customer later says they didn't authorize the payment, your own records can't show what the customer set up. Shopify-provided information from checkout is now added to you",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": 0,
+   "reasons": [
+    "-2 source shopify-changelog",
+    "+2 user steps \"set up\""
+   ],
+   "status": "below",
+   "hash": "1a16d3b9"
+  },
+  "https://changelog.shopify.com/posts/choose-which-staff-get-chargeback-notifications": {
+   "title": "Choose which staff get chargeback notifications",
+   "link": "https://changelog.shopify.com/posts/choose-which-staff-get-chargeback-notifications",
+   "source": "shopify-changelog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-25T17:00:00.000Z",
+   "updated": null,
+   "summary": "Dispute notifications can now reach the staff who handle your disputes, not only the store owner. Staff with permission to manage disputes can get email, push, and in-admin updates when a chargeback or inquiry is opened, escalated, won, or lost. To choose who receives them, use the Order dispute upd",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": 0,
+   "reasons": [
+    "-2 source shopify-changelog",
+    "+2 user steps \"You can\""
+   ],
+   "status": "below",
+   "hash": "76f23d55"
+  },
+  "https://changelog.shopify.com/posts/fraud-and-unauthorized-chargebacks-now-include-payment-verification-proof": {
+   "title": "Fraud and unauthorized chargebacks now include payment verification proof",
+   "link": "https://changelog.shopify.com/posts/fraud-and-unauthorized-chargebacks-now-include-payment-verification-proof",
+   "source": "shopify-changelog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-25T17:00:00.000Z",
+   "updated": null,
+   "summary": "When a customer's bank files a chargeback that says a purchase wasn't authorized, the strongest proof often comes from the payment itself. That proof is now added to your response automatically: Card security code (CVV) and address verification (AVS) results, and the authorization code 3D Secure aut",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": 1,
+   "reasons": [
+    "-2 source shopify-changelog",
+    "+1 niche (fraud)",
+    "+2 user steps \"You can\""
+   ],
+   "status": "below",
+   "hash": "f55ed167"
+  },
+  "https://changelog.shopify.com/posts/get-ai-written-responses-for-every-chargeback-reason": {
+   "title": "Get AI-written responses for every chargeback reason",
+   "link": "https://changelog.shopify.com/posts/get-ai-written-responses-for-every-chargeback-reason",
+   "source": "shopify-changelog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-25T17:00:00.000Z",
+   "updated": null,
+   "summary": "When a customer disputes a card payment, your response now includes a defense of your case that's written for you by Shopify using AI, whatever the reason for the dispute. Before, this was available only for product not received disputes. The defence combines the evidence that you submit with the ev",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": -2,
+   "reasons": [
+    "-2 source shopify-changelog"
+   ],
+   "status": "below",
+   "hash": "e873ce98"
+  },
+  "https://news.google.com/rss/articles/CBMinwFBVV95cUxQakpXUnNLQVVnckxaaXFzYWhNaFlqUi1iX0wtcW5uYXhZN0lhZVJWRlB3SlVFUzNmYWIyaGd6SGtEVWdRSnRrY2JNOEd6WUdFUC1ROEMxTFprQW8zV2EwcEI5Y3QyNXkzcXcyTEVpTXNGMVJwWVJwLXpHRjJTOGpxQkRqSzV0X2JMLWVQdHRrRURZdDBOS2Q0RW11amdmRkE?oc=5": {
+   "title": "Microsoft 365 and US air traffic outages expose travel insurance gaps",
+   "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQakpXUnNLQVVnckxaaXFzYWhNaFlqUi1iX0wtcW5uYXhZN0lhZVJWRlB3SlVFUzNmYWIyaGd6SGtEVWdRSnRrY2JNOEd6WUdFUC1ROEMxTFprQW8zV2EwcEI5Y3QyNXkzcXcyTEVpTXNGMVJwWVJwLXpHRjJTOGpxQkRqSzV0X2JMLWVQdHRrRURZdDBOS2Q0RW11amdmRkE?oc=5",
+   "source": "gnews-infra",
+   "topic": "microsoft-365",
+   "category": "outage",
+   "date": "2026-11-25T12:25:54.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-25T22:42:19.087Z",
+   "score": 9,
+   "reasons": [
+    "-1 source gnews-infra",
+    "+6 outage \"outages\"",
+    "+3 major platform (microsoft)",
+    "backlog teams-not-working-today-fix-windows-mac-us",
+    "+1 autocomplete (10)"
+   ],
+   "status": "below",
+   "hash": "baed5e00",
+   "families": [
+    "microsoft"
+   ],
+   "backlog": "teams-not-working-today-fix-windows-mac-us"
   }
  },
  "devices": {},
@@ -10575,7 +11270,8 @@
   "2026-11-25": [
    "Three xAI founding members launch Epochal to build AI agents that achieve \"super",
    "Anthropic rolls out \"Install as app\" in beta, which turns Claude artifacts into "
-  ]
+  ],
+  "2026-11-26": []
  },
  "trends": {
   "ipo:anthropic|63c1035a": {
