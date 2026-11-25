@@ -5,3 +5,4 @@
 - 2026-11-21 | gta-6-controller-drift-battery-vibration-fix | ig-en: https://www.instagram.com/reel/Df_FxxoDhqg/
 - 2026-11-22 | gta-6-download-slow-speed-up-ps5-xbox | ig-en: https://www.instagram.com/reel/DgBp1FpFLdh/
 - 2026-11-23 | cpanel-to-microsoft-365-migration-step-by-step | ig-en: https://www.instagram.com/reel/DgEXyZ0Em73/
+- 2026-11-25 | claude-ship-set-up-code-review-steward-approvals | ig-en: https://www.instagram.com/reel/DgJl_bkuGuk/
