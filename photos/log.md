@@ -13,3 +13,4 @@
 - 2026-11-22 | cpanel-to-microsoft-365-migration-step-by-step | slides 8 (recent) | fb: https://www.facebook.com/1428744796978054_122126119377497479 | ig: https://www.instagram.com/p/DgCbY3Gl0JG/
 - 2026-11-23 | microsoft-365-split-delivery-shared-domain-internal-relay | slides 7 (recent) | fb: https://www.facebook.com/1428744796978054_122126432163497479 | ig: https://www.instagram.com/p/DgFWuHfFBRQ/
 - 2026-11-24 | best-monitor-work-from-home-india-2026 | slides 7 (recent) | fb: https://www.facebook.com/1428744796978054_122126607261497479 | ig: https://www.instagram.com/p/DgHTSq2DItS/
+- 2026-11-25 | recover-deleted-files-windows-11-free-tools | slides 7 (recent) | fb: https://www.facebook.com/1428744796978054_122127017781497479 | ig: https://www.instagram.com/p/DgKnumTIDh3/
