@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-25T03:42:04.583Z",
+ "lastScan": "2026-11-25T04:43:53.191Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -3705,25 +3705,6 @@
    ],
    "status": "below",
    "hash": "7b618e25"
-  },
-  "https://aws.amazon.com/blogs/machine-learning/meta-ads-is-now-available-in-aws-quick": {
-   "title": "Meta ads is now available in AWS Quick",
-   "link": "https://aws.amazon.com/blogs/machine-learning/meta-ads-is-now-available-in-aws-quick/",
-   "source": "aws-ml-blog",
-   "topic": "ai-engineering",
-   "category": "launch",
-   "date": "2026-11-22T01:59:13.000Z",
-   "updated": null,
-   "summary": "AWS Quick now has a Meta ads AI connector. Meta advertisers can use natural language in Quick to create, manage, and analyze campaigns while staying connected to the Meta ad management network, and combine Meta ad data with first- and third-party sources to build dashboards, documents, slide decks, ",
-   "first": "2026-11-22T03:43:42.871Z",
-   "score": 0,
-   "reasons": [
-    "-3 source aws-ml-blog",
-    "+2 launch \"now available\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "23a62ec4"
   },
   "https://thehackernews.com/2026/11/openrouter-drops-3-providers-after.html": {
    "title": "OpenRouter Drops 3 Providers After Researchers Catch Months of Prompt Theft at AI Hosting Firms",
@@ -7974,7 +7955,7 @@
     "+1 plans/price/availability \"plan\"",
     "+1 trending: Techmeme top headline, no reputable outlet named"
    ],
-   "status": "writing",
+   "status": "published",
    "hash": "3bc86d6e",
    "trending": {
     "key": "milestone:anthropic",
@@ -7991,7 +7972,9 @@
    "kind": "new",
    "extra": false,
    "taskAt": "2026-11-25T03:42:04.583Z",
-   "attempts": 1
+   "attempts": 1,
+   "slug": "claude-install-artifact-as-app-mac-windows",
+   "resultAt": "2026-11-25T03:55:47.127Z"
   },
   "https://claude.com/resources/articles/skills-over-mcp-tasks-and-more": {
    "title": "MCP servers can now ship skills, run tasks, and more with Claude",
@@ -8758,12 +8741,16 @@
     "backlog teams-not-working-today-fix-windows-mac-us",
     "+1 autocomplete (3)"
    ],
-   "status": "queued",
+   "status": "writing",
    "hash": "10910f9d",
    "families": [
     "microsoft"
    ],
-   "backlog": "teams-not-working-today-fix-windows-mac-us"
+   "backlog": "teams-not-working-today-fix-windows-mac-us",
+   "kind": "new",
+   "extra": true,
+   "taskAt": "2026-11-25T04:43:53.191Z",
+   "attempts": 1
   },
   "https://bloomberg.com/news/articles/2026-11-24/xai-founders-unveil-new-ai-startup-to-predict-future-events": {
    "title": "Three xAI founding members launch Epochal to build AI agents that achieve \"superhuman prediction\"; source: co-founder Guodong Zhang personally invested $100M",
@@ -9811,6 +9798,154 @@
    ],
    "status": "below",
    "hash": "f2bd8882"
+  },
+  "https://techcommunity.microsoft.com/t5/windows-it-pro-blog/maintenance-windows-for-cloud-managed-systems/ba-p/4508203": {
+   "title": "Maintenance windows for cloud-managed systems",
+   "link": "https://techcommunity.microsoft.com/t5/windows-it-pro-blog/maintenance-windows-for-cloud-managed-systems/ba-p/4508203",
+   "source": "tc-windows-itpro",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-23T22:41:39.000Z",
+   "updated": null,
+   "summary": "Do you manage critical infrastructure? Then maintenance windows are designed for you. Maintenance windows policies have been available for Windows 11, version 24H2 and later since the January 2026 non-security update through Group Policy. Today, an improved maintenance window configuration experienc",
+   "first": "2026-11-25T04:43:53.191Z",
+   "score": 7,
+   "reasons": [
+    "+1 source tc-windows-itpro",
+    "+4 niche (windows 11, intune, windows)",
+    "+2 launch \"available in\""
+   ],
+   "status": "below",
+   "hash": "234e7749"
+  },
+  "https://techcommunity.microsoft.com/t5/windows-it-pro-blog/expand-passwordless-access-with-confidence/ba-p/4572666": {
+   "title": "Expand passwordless access with confidence",
+   "link": "https://techcommunity.microsoft.com/t5/windows-it-pro-blog/expand-passwordless-access-with-confidence/ba-p/4572666",
+   "source": "tc-windows-itpro",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-23T23:48:18.000Z",
+   "updated": null,
+   "summary": "Passwordless sign-in is tested in ordinary moments: when an employee needs to start work immediately, when a frontline worker approaches a shared device, or when a security team needs to understand how devices across the organization are being unlocked. Moving beyond passwords requires more than a s",
+   "first": "2026-11-25T04:43:53.191Z",
+   "score": 1,
+   "reasons": [
+    "+1 source tc-windows-itpro"
+   ],
+   "status": "below",
+   "hash": "9148a39d"
+  },
+  "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/ask-the-microsoft-entra-experts-anything-live-on-december-2/ba-p/4576043": {
+   "title": "Ask the Microsoft Entra experts anything, live on December 2",
+   "link": "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/ask-the-microsoft-entra-experts-anything-live-on-december-2/ba-p/4576043",
+   "source": "tc-entra",
+   "topic": "security-identity",
+   "category": "launch",
+   "date": "2026-11-24T18:59:22.000Z",
+   "updated": null,
+   "summary": "Microsoft Ignite 2026 brought a wave of news for Microsoft Entra , from new ways to secure AI agents to new tools for managing access at scale. Now it's your turn to ask the people who build it. On Tuesday, December 2, Yina Arenas, Chief Product Officer for Microsoft Identity and Network Access, joi",
+   "first": "2026-11-25T04:43:53.191Z",
+   "score": 4,
+   "reasons": [
+    "+2 niche (entra, agents)",
+    "+2 user steps \"How to\""
+   ],
+   "status": "below",
+   "hash": "8c44fb31"
+  },
+  "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/ai-is-changing-access-see-how-microsoft-entra-helps-you-stay/ba-p/4556456": {
+   "title": "AI is changing access. See how Microsoft Entra helps you stay ahead.",
+   "link": "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/ai-is-changing-access-see-how-microsoft-entra-helps-you-stay/ba-p/4556456",
+   "source": "tc-entra",
+   "topic": "security-identity",
+   "category": "launch",
+   "date": "2026-11-24T00:43:52.000Z",
+   "updated": null,
+   "summary": "AI and agents are changing the access landscape at a pace that challenges even mature identity and security programs. Without centralized visibility and control, agent sprawl risks becoming shadow IT at a scale we've never had to manage before. AI amplifies today's identity challenges. Every agent n",
+   "first": "2026-11-25T04:43:53.191Z",
+   "score": 2,
+   "reasons": [
+    "+2 niche (entra, agents)"
+   ],
+   "status": "below",
+   "hash": "d86a0b5c"
+  },
+  "https://techcommunity.microsoft.com/t5/intune-customer-success/use-web-based-device-enrollment-for-byod-enrollment-on-ios/ba-p/4576027": {
+   "title": "Use web-based device enrollment for BYOD enrollment on iOS/iPadOS",
+   "link": "https://techcommunity.microsoft.com/t5/intune-customer-success/use-web-based-device-enrollment-for-byod-enrollment-on-ios/ba-p/4576027",
+   "source": "tc-intune",
+   "topic": "security-identity",
+   "category": "launch",
+   "date": "2026-11-23T23:00:00.000Z",
+   "updated": null,
+   "summary": "By: Rishita Sarin - Product Manager 2 | Microsoft Intune Web-based device enrollment is the recommended enrollment method for bring-your-own-device (BYOD) scenarios on personal iOS/iPadOS devices in Microsoft Intune. It provides a faster, more user-friendly enrollment experience while giving organiz",
+   "first": "2026-11-25T04:43:53.191Z",
+   "score": 6,
+   "reasons": [
+    "+4 niche (microsoft teams, outlook, ipados, intune)",
+    "+2 user steps \"Users can\""
+   ],
+   "status": "below",
+   "hash": "642b5a5c"
+  },
+  "https://manageengine.com/dns-dhcp-ipam/blog/dhcp-reservations-for-reliability-maintaining-consistent-ip-assignments-for-critical-network-devices-with-ddi-central.html": {
+   "title": "DHCP reservations for reliability: Maintaining consistent IP assignments for critical network devices with DDI Central",
+   "link": "https://www.manageengine.com/dns-dhcp-ipam/blog/dhcp-reservations-for-reliability-maintaining-consistent-ip-assignments-for-critical-network-devices-with-ddi-central.html",
+   "source": "manageengine-blog",
+   "topic": "security-identity",
+   "category": "launch",
+   "date": "2026-11-24T22:30:00.000Z",
+   "updated": null,
+   "summary": "Modern enterprise networks support more than just computers, servers, and mobile devices. Organizations also rely on various connected devices and network infrastructure to support their day-to-day operations and maintain essential business functions.These devices often communicate with centralized ",
+   "first": "2026-11-25T04:43:53.191Z",
+   "score": -1,
+   "reasons": [
+    "-2 source manageengine-blog",
+    "+1 niche (exchange)"
+   ],
+   "status": "below",
+   "hash": "bd50ef6"
+  },
+  "https://manageengine.com/blog/general/if-everything-is-a-priority-nothing-is.html": {
+   "title": "If everything is a priority, nothing is",
+   "link": "https://www.manageengine.com/blog/general/if-everything-is-a-priority-nothing-is.html",
+   "source": "manageengine-blog",
+   "topic": "security-identity",
+   "category": "launch",
+   "date": "2026-11-24T17:30:00.000Z",
+   "updated": null,
+   "summary": "There is a particular kind of chaos that most IT teams are probably familiar with: A critical system needs attention, a security alert has just come in, someone from the finance team is following up on a ticket they raised yesterday, and there's an email from senior management marked URGENT that nee",
+   "first": "2026-11-25T04:43:53.191Z",
+   "score": -2,
+   "reasons": [
+    "-2 source manageengine-blog"
+   ],
+   "status": "below",
+   "hash": "fce8c6fc"
+  },
+  "msrc:CVE-2026-112732:critical": {
+   "title": "Microsoft Office Visio Remote Code Execution Vulnerability (CVE-2026-112732): Critical, CVSS 9.8, added to the November 2026 security release",
+   "link": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-112732",
+   "source": "msrc",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-24T16:00:00.000Z",
+   "first": "2026-11-25T04:43:53.191Z",
+   "summary": "Microsoft Security Update Guide: CVE-2026-112732 \"Microsoft Office Visio Remote Code Execution Vulnerability\" (Microsoft Office Visio), Critical, CVSS 9.8, Remote Code Execution; exploited: No, publicly disclosed: No; added by Microsoft on 2026-11-24 to the November 2026 release (Patch Tuesday was 2026-11-10). Affected: Microsoft 365 Apps for Enterprise, Microsoft Office LTSC 2021, Microsoft Office LTSC 2024. Data: https://api.msrc.microsoft.com/sug/v2.0/en-US/vulnerability?$filter=cveNumber%20eq%20'CVE-2026-112732' Monthly summary: /blog/patch-tuesday-november-2026.",
+   "score": 14,
+   "reasons": [
+    "MSRC watcher: added by Microsoft on 2026-11-24 to the November 2026 release (Patch Tuesday was 2026-11-10)",
+    "Critical, CVSS 9.8 >= 9"
+   ],
+   "status": "queued",
+   "hash": "53ab4c9c",
+   "msrc": {
+    "cve": "CVE-2026-112732",
+    "kinds": [
+     "new"
+    ],
+    "month": "2026-11"
+   }
   }
  },
  "devices": {},
@@ -9878,8 +10013,8 @@
    "category": "launch",
    "topic": "ai-engineering",
    "parkOnly": false,
-   "last": "2026-11-25T03:18:00.000Z",
-   "date": "2026-11-25T03:18:00.000Z",
+   "last": "2026-11-25T04:10:46.000Z",
+   "date": "2026-11-25T04:10:46.000Z",
    "score": 14,
    "post": "anthropic-ipo-explained-claude-users"
   },

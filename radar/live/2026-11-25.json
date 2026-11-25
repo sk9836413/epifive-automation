@@ -2,7 +2,7 @@
  "date": "2026-11-25",
  "title": "Tech news today, 25 November 2026",
  "published": "2026-11-24T20:23:44.941Z",
- "updated": "2026-11-25T03:42:04.583Z",
+ "updated": "2026-11-25T04:43:53.191Z",
  "items": [
   {
    "id": "e62d266c",
@@ -410,7 +410,7 @@
    "time": "2026-11-24T16:35:02.000Z",
    "seen": "2026-11-24T20:23:44.941Z",
    "kind": "outage",
-   "tier": 2,
+   "tier": 1,
    "headline": "Internal memos: Microsoft declared a \"Code Red\" drive to overhaul how it prevents and responds to major service failures after the 24-hour Microsoft 365 outage",
    "summary": "Microsoft has declared a “Code Red” drive to overhaul how it prevents and responds to major service failures …",
    "lines": [
@@ -844,7 +844,35 @@
    "ai": null,
    "score": 4,
    "story": null
+  },
+  {
+   "id": "201ea8d7",
+   "key": "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/ask-the-microsoft-entra-experts-anything-live-on-december-2/ba-p/4576043",
+   "time": "2026-11-24T18:59:22.000Z",
+   "seen": "2026-11-25T04:43:53.191Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Ask the Microsoft Entra experts anything, live on December 2",
+   "summary": "Microsoft Ignite 2026 brought a wave of news for Microsoft Entra , from new ways to secure AI agents to new tools for managing access at scale. Now it's your turn to ask the people who build it. On Tuesday, December 2, Yina Arenas, Chief Product Officer for Microsoft Identity and Network Access, joins a panel of Microsoft Entra product and engineering experts for a live Ask Microsoft Anything (AMA). Post your questions and add the event to your calendar at https://aka.ms/EntraAMA Live AMA event details When: Tuesday, December 2, 2026, 11:00 AM–12:00 PM PT Where: Livestream on the Microsoft Tech Community Add to calendar: aka.ms/EntraAMA How to ask: Sign in to the Microsoft Tech Community (or",
+   "lines": [
+    "Microsoft is hosting a live Ask Microsoft Anything (AMA) session on Microsoft Entra with a panel of Entra product and engineering experts, including Yina Arenas, Chief Product Officer for Microsoft Identity and Network Access.",
+    "The livestream is on the Microsoft Tech Community on Tuesday, December 2, 2026, from 11:00 AM to 12:00 PM PT.",
+    "IT teams can post questions about Microsoft Entra updates from Microsoft Ignite 2026, including new ways to secure AI agents and new tools for managing access at scale."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Tech Community: Microsoft Entra Blog",
+    "url": "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/ask-the-microsoft-entra-experts-anything-live-on-december-2/ba-p/4576043"
+   },
+   "sourceId": "tc-entra",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
   }
  ],
- "description": "29 technology updates from official sources, updated hourly: Internal memos: Microsoft declared a \"Code Red\" drive to overhaul how it prevents and responds to major service failures after the 24-hour Microsoft 365 outage; Three xAI founding members launch Epochal to build AI agents that achieve \"sup"
+ "description": "30 technology updates from official sources, updated hourly: Internal memos: Microsoft declared a \"Code Red\" drive to overhaul how it prevents and responds to major service failures after the 24-hour Microsoft 365 outage; Three xAI founding members launch Epochal to build AI agents that achieve \"sup"
 }
