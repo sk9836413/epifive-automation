@@ -103,7 +103,7 @@ jobs:
             node ops/radar/radar.mjs site-apply --site . --task ../task.json
             git add automation/backlog.md
             git diff --cached --quiet && break
-            git commit -q -m "Radar: queue launches that missed the fast-track cap"
+            git commit -q -m "Radar: queue launches that missed the fast-track cap, trending stories and MSRC refresh lines"
             git push -q "$SITE_REMOTE" HEAD:main && break
             sleep 10
           done
@@ -138,6 +138,7 @@ jobs:
         run: |
           git add radar/state.json radar/log
           git add radar/status radar/retirements.json 2>/dev/null || true
+          if [ -f radar/msrc.json ]; then git add radar/msrc.json; fi
           if [ -d radar/live ]; then git add radar/live; fi
           git diff --cached --quiet && exit 0
           git config user.name "github-actions[bot]"
