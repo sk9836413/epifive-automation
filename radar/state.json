@@ -1,101 +1,7 @@
 {
  "version": 1,
- "lastScan": "2026-11-26T05:13:19.221Z",
+ "lastScan": "2026-11-26T13:16:56.472Z",
  "seen": {
-  "https://openai.com/index/chatgpt-plus-for-veterans": {
-   "title": "ChatGPT Plus for veterans and servicemembers",
-   "link": "https://openai.com/index/chatgpt-plus-for-veterans",
-   "source": "openai-news",
-   "topic": "ai-automation",
-   "date": "2026-11-11T08:00:00.000Z",
-   "updated": null,
-   "summary": "More than 20,000 veterans and transitioning service members have claimed a free year of ChatGPT Plus. See how they use it to prepare for civilian careers.",
-   "first": "2026-11-12T08:57:28.416Z",
-   "score": 6,
-   "reasons": [
-    "+2 source openai-news",
-    "+3 niche (chatgpt)",
-    "+1 plans/price/availability \"free\""
-   ],
-   "status": "below",
-   "hash": "7dfb9aff"
-  },
-  "https://blog.google/innovation-and-ai/products/gemini-app/gemini-on-apple-carplay": {
-   "title": "Talk it through with Gemini, now on Apple CarPlay",
-   "link": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-on-apple-carplay/",
-   "source": "gemini-blog",
-   "topic": "ai-automation",
-   "date": "2026-11-11T17:00:00.000Z",
-   "updated": null,
-   "summary": "Gemini is now available on Apple CarPlay.",
-   "first": "2026-11-12T08:57:28.416Z",
-   "score": 6,
-   "reasons": [
-    "+1 source gemini-blog",
-    "+2 niche (gemini)",
-    "+2 launch \"now available\"",
-    "+1 also on google-keyword"
-   ],
-   "status": "below",
-   "hash": "c21f6080"
-  },
-  "https://workspaceupdates.googleblog.com/2026/11/publish-sheets-canvas-as-standalone-link.html": {
-   "title": "Publish a Sheets canvas as a standalone link",
-   "link": "http://workspaceupdates.googleblog.com/2026/11/publish-sheets-canvas-as-standalone-link.html",
-   "source": "workspace-updates",
-   "topic": "small-business-it",
-   "date": "2026-11-11T21:58:56.335Z",
-   "updated": "2026-11-11T21:58:56.336Z",
-   "summary": "Earlier this year we introduced Sheets canvas , which uses Gemini to turn spreadsheet data into interactive mini-apps like dashboards, kanban boards, and calendars. Starting today, you can publish a Sheets canvas directly to its own link, granting others read-only access to interact with the mini-ap",
-   "first": "2026-11-12T08:57:28.416Z",
-   "score": 7,
-   "reasons": [
-    "+1 source workspace-updates",
-    "+2 niche (gemini)",
-    "+2 launch \"introduced\"",
-    "+2 user steps \"you can\""
-   ],
-   "status": "below",
-   "hash": "97f1179c"
-  },
-  "https://workspaceupdates.googleblog.com/2026/11/organize-and-communicate-complex-information-with-numbered-and-nested-lists-in-Google-Chat.html": {
-   "title": "Organize and communicate complex information with numbered and nested lists in Google Chat",
-   "link": "http://workspaceupdates.googleblog.com/2026/11/organize-and-communicate-complex-information-with-numbered-and-nested-lists-in-Google-Chat.html",
-   "source": "workspace-updates",
-   "topic": "small-business-it",
-   "date": "2026-11-11T21:18:23.229Z",
-   "updated": "2026-11-11T21:18:23.229Z",
-   "summary": "You can now use numbered lists and nested lists in your Google Chat messages. Numbered lists work well for step-by-step instructions, rankings, and agendas. Nested lists let you break a main point into smaller details, which helps for meeting notes, project plans, and status updates. You can mix bul",
-   "first": "2026-11-12T08:57:28.416Z",
-   "score": 8,
-   "reasons": [
-    "+1 source workspace-updates",
-    "+2 niche (android)",
-    "+2 launch \"You can now\"",
-    "+2 user steps \"You can\"",
-    "+1 plans/price/availability \"plans\""
-   ],
-   "status": "below",
-   "hash": "f8a4eb7a"
-  },
-  "https://workspaceupdates.googleblog.com/2026/11/expanding-gemini-in-gmail-to-more-Google-Workspace-users.html": {
-   "title": "Expanding Gemini in Gmail to more Google Workspace users",
-   "link": "http://workspaceupdates.googleblog.com/2026/11/expanding-gemini-in-gmail-to-more-Google-Workspace-users.html",
-   "source": "workspace-updates",
-   "topic": "small-business-it",
-   "date": "2026-11-10T21:45:00.317Z",
-   "updated": "2026-11-10T21:45:00.317Z",
-   "summary": "We’re expanding the availability of some Gemini in Gmail features to more Google Workspace users aged 18 and older. Previously available to consumer accounts and specific Workspace editions, these tools are now being brought to the core Workspace experience by expanding availability to all Workspace",
-   "first": "2026-11-12T08:57:28.416Z",
-   "score": 6,
-   "reasons": [
-    "+1 source workspace-updates",
-    "+4 niche (gemini, google workspace, gmail)",
-    "+1 plans/price/availability \"available to\""
-   ],
-   "status": "below",
-   "hash": "366d8df3"
-  },
   "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade": {
    "title": "Google Search gets a major upgrade with Gemini 4 Hydrogen",
    "link": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/",
@@ -3800,263 +3706,6 @@
    "status": "duplicate",
    "hash": "e85f621d",
    "post": "glinet-goodcloud-compromise-check-update"
-  },
-  "https://news.samsung.com/in/winning-pitch-that-earned-team-morphism-a-place-among-the-sft-2026-winners": {
-   "title": "Winning Pitch that Earned Team Morphism a Place Among the SFT 2026 Winners",
-   "link": "https://news.samsung.com/in/winning-pitch-that-earned-team-morphism-a-place-among-the-sft-2026-winners",
-   "source": "samsung-india",
-   "topic": "mobiles",
-   "category": "launch",
-   "date": "2026-11-23T09:53:33.000Z",
-   "updated": null,
-   "summary": "What if artificial intelligence could help people understand emotions that are often difficult to recognise or express? This was the central idea behind Team Morphism from Raipur, Chhattisgarh, one of the winning teams of Samsung Solve for Tomorrow (SFT) 2026. Led by Ananya Agrawal and Adityasai Bak",
-   "first": "2026-11-23T12:11:08.778Z",
-   "score": 0,
-   "reasons": [],
-   "status": "below",
-   "hash": "9a5c7602"
-  },
-  "https://news.lenovo.com/pressroom/press-releases/lenovo-earns-frost-sullivans-2026-asia-pacific-agentic-ai-solutions-competitive-strategy-leadership-recognition": {
-   "title": "Lenovo Earns Frost & Sullivan’s 2026 Asia-Pacific Agentic AI Solutions Competitive Strategy Leadership Recognition",
-   "link": "https://news.lenovo.com/pressroom/press-releases/lenovo-earns-frost-sullivans-2026-asia-pacific-agentic-ai-solutions-competitive-strategy-leadership-recognition/",
-   "source": "lenovo-news",
-   "topic": "laptops-hardware",
-   "category": "launch",
-   "date": "2026-11-23T03:00:36.000Z",
-   "updated": null,
-   "summary": "",
-   "first": "2026-11-23T12:11:08.778Z",
-   "score": 0,
-   "reasons": [],
-   "status": "below",
-   "hash": "16d644de"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64028": {
-   "title": "Reserve Bank (Securitisation Transactions) Amendment Directions, 2026",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64028",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-23T17:00:00.000Z",
-   "updated": null,
-   "summary": "The Reserve Bank of India had, on July 27, 2026 , issued the Draft (Securitisation Transactions) Amendment Directions for stakeholder feedback. 2. Feedback received on the draft Directions has been examined and consequent modifications, as deemed appropriate, have been suitably incorporated in the f",
-   "first": "2026-11-23T12:11:08.778Z",
-   "score": 0,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 plans/price/availability \"India\""
-   ],
-   "status": "below",
-   "hash": "15d73597"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64027": {
-   "title": "State Government Securities - Full Auction Result",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64027",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-23T16:50:00.000Z",
-   "updated": null,
-   "summary": "The result of the auction of State Government Securities held on November 23, 2026 is as under: (Amount in ₹ Crore) ASSAM SGS 2036 BIHAR SGS 2035* BIHAR SGS 2041 CHHATTISGARH SGS 2038 @ Notified Amount 1000 1000 2000 900 Tenor Re-issue of 7.66% ASSAM SGS 2036 issued on 17-JUN-2026 Re-issue of 8.18% ",
-   "first": "2026-11-23T12:11:08.778Z",
-   "score": 0,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 plans/price/availability \"Price\""
-   ],
-   "status": "below",
-   "hash": "2b2431e8"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64026": {
-   "title": "RBI issues Draft Amendment Directions for ‘Preventive Safeguards for Electronic Banking Transactions (EBTs)’",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64026",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-23T16:35:00.000Z",
-   "updated": null,
-   "summary": "The Reserve Bank had issued the Amendment Directions dated June 24, 2026 on ‘ Customer Protection in Fraudulent Electronic Banking Transactions ’ which, inter alia, strengthened the existing framework for limiting liability of customers in unauthorised Electronic Banking Transactions (EBTs). While t",
-   "first": "2026-11-23T12:11:08.778Z",
-   "score": -1,
-   "reasons": [
-    "-1 source rbi-press"
-   ],
-   "status": "below",
-   "hash": "1f3cce11"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64025": {
-   "title": "RBI releases 2026 list of Domestic Systemically Important Banks (D-SIBs)",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64025",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-23T16:30:00.000Z",
-   "updated": null,
-   "summary": "State Bank of India, HDFC Bank, and ICICI Bank continue to be identified as Domestic Systemically Important Banks (D-SIBs) under the same bucketing structure as in the 2025 list of D-SIBs . The additional Common Equity Tier 1 (CET1) requirement for these D-SIBs will be in addition to the capital con",
-   "first": "2026-11-23T12:11:08.778Z",
-   "score": 0,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 plans/price/availability \"India\""
-   ],
-   "status": "below",
-   "hash": "8b1a56c"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64024": {
-   "title": "Result of Yield/Price Based Auction of State Government Securities",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64024",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-23T15:05:00.000Z",
-   "updated": null,
-   "summary": "Sr. No State/UT Amount to be raised (₹ Crore) Amount Accepted (₹ Crore) Cut off Price (₹)/ Yield (%) Tenor (Year) 1. Assam 1000 1000 98.00/7.9615 Re-issue of 7.66% Assam SGS 2036, issued on June 17, 2026 2. Bihar* 1000 941.919 101.51/7.9390 Re-issue of 8.18% Bihar SGS 2035, issued on October 28, 202",
-   "first": "2026-11-23T12:11:08.778Z",
-   "score": 0,
-   "reasons": [
-    "-1 source rbi-press",
-    "+1 plans/price/availability \"Price\""
-   ],
-   "status": "below",
-   "hash": "50b64cb9"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64023": {
-   "title": "Money Market Operations as on November 22, 2026",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64023",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-23T11:45:00.000Z",
-   "updated": null,
-   "summary": "(Amount in ₹ crore, Rate in Per cent) MONEY MARKETS @ --> Money Markets @ Volume (One Leg) Weighted Average Rate Range A. Overnight Segment (I+II+III+IV) 0.00 - - I. Call Money 0.00 - - II. Triparty Repo 0.00 - - III. Market Repo 0.00 - - IV. Repo in Corporate Bond 0.00 - - B. Term Segment I. Notice",
-   "first": "2026-11-23T12:11:08.778Z",
-   "score": -1,
-   "reasons": [
-    "-1 source rbi-press"
-   ],
-   "status": "below",
-   "hash": "53d9797c"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64022": {
-   "title": "Money Market Operations as on November 21, 2026",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64022",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-23T11:40:00.000Z",
-   "updated": null,
-   "summary": "(Amount in ₹ crore, Rate in Per cent) MONEY MARKETS @ --> Money Markets @ Volume (One Leg) Weighted Average Rate Range A. Overnight Segment (I+II+III+IV) 10,954.47 5.69 4.75-6.50 I. Call Money 2,098.75 5.45 4.80-5.85 II. Triparty Repo 8,753.45 5.75 4.75-6.50 III. Market Repo 102.27 5.70 5.70-5.70 IV",
-   "first": "2026-11-23T12:11:08.778Z",
-   "score": -1,
-   "reasons": [
-    "-1 source rbi-press"
-   ],
-   "status": "below",
-   "hash": "ede69a5f"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64021": {
-   "title": "Result of the 2-day Variable Rate Repo (VRR) auction held on November 23, 2026",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64021",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-23T11:35:00.000Z",
-   "updated": null,
-   "summary": "Tenor 2-day Notified Amount (in ₹ crore) 50,000 Total amount of bids received (in ₹ crore) 1,37,612 Amount allotted (in ₹ crore) 50,003 Cut off Rate (%) 5.64 Weighted Average Rate (%) 5.65 Partial Allotment Percentage of bids received at cut off rate (%) 89.95 Ajit Prasad Deputy General Manager (Com",
-   "first": "2026-11-23T12:11:08.778Z",
-   "score": -1,
-   "reasons": [
-    "-1 source rbi-press"
-   ],
-   "status": "below",
-   "hash": "d6e39374"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64020": {
-   "title": "Result of the 4-day Variable Rate Repo (VRR) auction held on November 23, 2026",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64020",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-23T10:40:00.000Z",
-   "updated": null,
-   "summary": "Tenor 4-day Notified Amount (in ₹ crore) 50,000 Total amount of bids received (in ₹ crore) 1,51,982 Amount allotted (in ₹ crore) 50,005 Cut off Rate (%) 5.62 Weighted Average Rate (%) 5.63 Partial Allotment Percentage of bids received at cut off rate (%) 86.98 Ajit Prasad Deputy General Manager (Com",
-   "first": "2026-11-23T12:11:08.778Z",
-   "score": -1,
-   "reasons": [
-    "-1 source rbi-press"
-   ],
-   "status": "below",
-   "hash": "794a1081"
-  },
-  "https://blogs.vmware.com/cloud-foundation/2026/11/23/microsoft-sql-server-failover-clustering-on-vcf-9-1-vm-service-vcf-automation-manual-implementation-part-3": {
-   "title": "Microsoft SQL Server Failover Clustering on VCF 9.1 VM Service: VCF Automation Manual Implementation (Part 3)",
-   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/23/microsoft-sql-server-failover-clustering-on-vcf-9-1-vm-service-vcf-automation-manual-implementation-part-3/",
-   "source": "vmware-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-23T09:00:00.000Z",
-   "updated": null,
-   "summary": "Introduction In this part of the series, we will build the two nodes MSSQL FCI Cluster via VMware Cloud Foundation (VCF) Automation and its IaaS Services Console. Part 1 focuses on Requirements, Topology and Methods. Part 2 focuses on the Supervisor direct implementation. Part 3 (this article) focus",
-   "first": "2026-11-23T12:11:08.778Z",
-   "score": -1,
-   "reasons": [
-    "-1 source vmware-blog"
-   ],
-   "status": "below",
-   "hash": "7072e66e"
-  },
-  "https://blogs.vmware.com/cloud-foundation/2026/11/22/vcf-9-1-vpc-networking-part-3-the-distributed-transit-gateway": {
-   "title": "VCF 9.1 VPC Networking, Part 3: The Distributed Transit Gateway",
-   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/22/vcf-9-1-vpc-networking-part-3-the-distributed-transit-gateway/",
-   "source": "vmware-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-23T06:28:16.000Z",
-   "updated": null,
-   "summary": "Series · Part 3 of 6 The VCF 9.1 VPC Networking Mental Model 1VCF 9.1 VPC Networking, Part 1: From External Connection to VPC 2VCF 9.1 VPC Networking, Part 2: IP Blocks, External Connections, Transit Gateways, Subnets, and NAT 3VCF 9.1 VPC Networking, Part 3: The Distributed Transit GatewayYou are h",
-   "first": "2026-11-23T12:11:08.778Z",
-   "score": -1,
-   "reasons": [
-    "-1 source vmware-blog"
-   ],
-   "status": "below",
-   "hash": "d812930a"
-  },
-  "https://news.sap.com/2026/11/interview-sindhu-gangadharan-sap-labs-india": {
-   "title": "Interview with Sindhu Gangadharan: “I Want People to Say ‘That Idea Started in India'”",
-   "link": "https://news.sap.com/2026/11/interview-sindhu-gangadharan-sap-labs-india/",
-   "source": "sap-news",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-23T05:15:00.000Z",
-   "updated": null,
-   "summary": "As SAP's biggest R&D base outside Walldorf, SAP Labs India sits at the center of the company's AI ambitions. Managing Director Sindhu Gangadharan explains why the location matters.",
-   "first": "2026-11-23T12:11:08.778Z",
-   "score": -3,
-   "reasons": [
-    "-1 source sap-news",
-    "+1 plans/price/availability \"India\"",
-    "-3 corporate/announcement \"Interview\""
-   ],
-   "status": "below",
-   "hash": "77378d1d"
-  },
-  "https://elevenlabs.io/blog/postnord": {
-   "title": "How the Nordics' leading postal operator rebuilt its customer support on ElevenAgents",
-   "link": "https://elevenlabs.io/blog/postnord",
-   "source": "elevenlabs-blog",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-23T12:00:00.000Z",
-   "updated": null,
-   "summary": "Raising AI resolution rate from 45% to 60% on ElevenAgents in 90 days",
-   "first": "2026-11-23T12:11:08.778Z",
-   "score": -2,
-   "reasons": [
-    "-2 source elevenlabs-blog"
-   ],
-   "status": "below",
-   "hash": "351f810e"
   },
   "https://thehackernews.com/2026/11/hackers-exploit-critical-screenconnect.html": {
    "title": "Hackers Exploit Critical ScreenConnect Flaw to Hijack MSP Technician PCs Without Warning",
@@ -11712,6 +11361,304 @@
    ],
    "status": "below",
    "hash": "eb70dd04"
+  },
+  "https://medianama.com/2026/11/223-cert-in-high-severity-vulnerability-egov-digit-platform": {
+   "title": "CERT-In flags high-severity vulnerability in eGov’s DIGIT platforms",
+   "link": "https://www.medianama.com/2026/11/223-cert-in-high-severity-vulnerability-egov-digit-platform/",
+   "source": "medianama",
+   "topic": "online-safety",
+   "category": "incident",
+   "date": "2026-11-26T10:09:55.000Z",
+   "updated": null,
+   "summary": "CERT-In did not say whether the flaw has been exploited or the time it took for fixing the patch. The post CERT-In flags high-severity vulnerability in eGov’s DIGIT platforms appeared first on MEDIANAMA .",
+   "first": "2026-11-26T13:16:56.472Z",
+   "score": 13,
+   "reasons": [
+    "+1 source medianama",
+    "+3 incident \"vulnerability\"",
+    "+5 India banking/payments/identity \"CERT-In\"",
+    "+2 exploited \"exploited\"",
+    "+2 user action \"patch\""
+   ],
+   "status": "writing",
+   "hash": "144e62c9",
+   "kind": "new",
+   "extra": true,
+   "taskAt": "2026-11-26T13:16:56.472Z",
+   "attempts": 1
+  },
+  "https://medianama.com/2026/11/223-persistent-systems-employees-data-breached": {
+   "title": "Persistent Systems flags possible employee data breach: What remains unanswered?",
+   "link": "https://www.medianama.com/2026/11/223-persistent-systems-employees-data-breached/",
+   "source": "medianama",
+   "topic": "online-safety",
+   "category": "incident",
+   "date": "2026-11-26T06:42:05.000Z",
+   "updated": null,
+   "summary": "Persistent Systems has disclosed a possible data breach at a US law firm handling employee immigration records, leaving questions about the scale of the leak, employee notification and regulatory compliance. The post Persistent Systems flags possible employee data breach: What remains unanswered? ap",
+   "first": "2026-11-26T13:16:56.472Z",
+   "score": 5,
+   "reasons": [
+    "+1 source medianama",
+    "+3 incident \"breach\"",
+    "+1 user data or credentials exposed",
+    "contains claims: label them as claims"
+   ],
+   "status": "below",
+   "hash": "fc11afe8"
+  },
+  "https://thehackernews.com/2026/11/most-wanted-phishing-kits-and.html": {
+   "title": "Most Wanted: The Phishing Kits and Techniques Getting Past Security Controls",
+   "link": "https://thehackernews.com/2026/11/most-wanted-phishing-kits-and.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-26T10:57:55.000Z",
+   "updated": null,
+   "summary": "Every phishing attack has to get past email security, web filtering, and safe browsing before it reaches an employee. Some kits manage that far more often than others, and those are the kits that security teams need to know about. At Push Security, we measure this as breakthrough rate: The share of ",
+   "first": "2026-11-26T13:16:56.472Z",
+   "score": 5,
+   "reasons": [
+    "+1 source thn",
+    "+3 incident \"Phishing\"",
+    "+1 user data or credentials exposed"
+   ],
+   "status": "below",
+   "hash": "195eaf58"
+  },
+  "https://thehackernews.com/2026/11/1password-hacked-customer-data-and.html": {
+   "title": "1Password Hacked, Customer Data and Source Code Stolen in GitHub Account Breach",
+   "link": "https://thehackernews.com/2026/11/1password-hacked-customer-data-and.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-26T10:57:25.000Z",
+   "updated": null,
+   "summary": "Popular password management software 1Password on Wednesday disclosed a security incident involving its backend systems that led to the unauthorized access of some customer information, but emphasized that customer password vaults and other secrets were not accessed. \"While we took immediate steps t",
+   "first": "2026-11-26T13:16:56.472Z",
+   "score": 8,
+   "reasons": [
+    "+1 source thn",
+    "+3 incident \"Hacked\"",
+    "+3 major platform (github)",
+    "+1 user data or credentials exposed"
+   ],
+   "status": "below",
+   "hash": "e18c797e"
+  },
+  "https://news.samsung.com/global/small-actions-big-impact-give-back-this-holiday-season-with-the-samsung-global-goals-app": {
+   "title": "Small Actions, Big Impact: Give Back This Holiday Season With the Samsung Global Goals App",
+   "link": "https://news.samsung.com/global/small-actions-big-impact-give-back-this-holiday-season-with-the-samsung-global-goals-app",
+   "source": "samsung-global",
+   "topic": "mobiles",
+   "category": "launch",
+   "date": "2026-11-26T21:00:00.000Z",
+   "updated": null,
+   "summary": "The holidays are a time for giving back, and for Galaxy users, one of the easiest ways to take part may already be on their phone. The Samsung Global Goals app, launched in partnership with the United Nations Development Programme (UNDP), gives the global Galaxy user community a simple way to suppor",
+   "first": "2026-11-26T13:16:56.472Z",
+   "score": 3,
+   "reasons": [
+    "+1 niche (galaxy)",
+    "+2 launch \"launched\""
+   ],
+   "status": "below",
+   "hash": "ac02e14c"
+  },
+  "https://news.samsung.com/in/samsung-expands-advanced-health-features-to-galaxy-watch8-series-with-one-ui-9-watch": {
+   "title": "Samsung Expands Advanced Health Features to Galaxy Watch8 Series With One UI 9 Watch",
+   "link": "https://news.samsung.com/in/samsung-expands-advanced-health-features-to-galaxy-watch8-series-with-one-ui-9-watch",
+   "source": "samsung-india",
+   "topic": "mobiles",
+   "category": "launch",
+   "date": "2026-11-26T11:56:26.000Z",
+   "updated": null,
+   "summary": "Samsung Electronics announced that Galaxy Watch8 Classic and Galaxy Watch8 are receiving a set of health features first introduced on Galaxy Watch9 and Galaxy Watch Ultra2. Delivered through the One UI 9 Watch software update and the Samsung Health and Samsung Health Monitor apps, the new features h",
+   "first": "2026-11-26T13:16:56.472Z",
+   "score": 3,
+   "reasons": [
+    "+1 niche (galaxy)",
+    "+2 launch \"introduced\""
+   ],
+   "status": "below",
+   "hash": "1a9689f7"
+  },
+  "https://news.lenovo.com/uk-frontline-technology-research": {
+   "title": "Built for the frontline, but failing the field? Britain’s frontline could be losing around two working weeks every year to fragile technology, new Lenovo research suggests",
+   "link": "https://news.lenovo.com/uk-frontline-technology-research/",
+   "source": "lenovo-news",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": "2026-11-26T09:00:02.000Z",
+   "updated": null,
+   "summary": "Lenovo research reveals how unreliable frontline technology in the UK can disrupt productivity and why devices need to perform in demanding real-world conditions.",
+   "first": "2026-11-26T13:16:56.472Z",
+   "score": -3,
+   "reasons": [
+    "-3 corporate/announcement \"research\""
+   ],
+   "status": "below",
+   "hash": "828c5af2"
+  },
+  "https://news.sap.com/2026/11/sap-planqc-bring-quantum-computing-business-processes": {
+   "title": "SAP and planqc Bring Quantum Computing into Business Processes",
+   "link": "https://news.sap.com/2026/11/sap-planqc-bring-quantum-computing-business-processes/",
+   "source": "sap-news",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-26T12:30:00.000Z",
+   "updated": null,
+   "summary": "MUNICH — With planqc, SAP can develop directly on real quantum hardware and shorten the path to real-world business applications.",
+   "first": "2026-11-26T13:16:56.472Z",
+   "score": -1,
+   "reasons": [
+    "-1 source sap-news"
+   ],
+   "status": "below",
+   "hash": "a9ae8000"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64050": {
+   "title": "Reserve Money and Money Supply for the fortnight ended on November 15, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64050",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-26T18:00:00.000Z",
+   "updated": null,
+   "summary": "The Reserve Bank has today released data on Reserve Money and Money Supply for the fortnight ended on November 15, 2026. Ajit Prasad Deputy General Manager (Communications) Press Release: 2026-2027/1572",
+   "first": "2026-11-26T13:16:56.472Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "4b9d0d34"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64049": {
+   "title": "Result: First Conversion/Switch Auction of State Government Securities",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64049",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-26T16:25:00.000Z",
+   "updated": null,
+   "summary": "In terms of the Press Release: 2026-2027/1539 dated November 20, 2026 , the first switch auction of the State Government Securities was conducted today. The results of the same are given below. A. Source Security 7.55% Madhya Pradesh SDL 2027 (Maturing on Oct 11, 2027) 8.05% Madhya Pradesh SDL 2028 ",
+   "first": "2026-11-26T13:16:56.472Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "bb1e44bb"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64048": {
+   "title": "Underwriting Auction for sale of Government Securities for ₹33,000 crore on November 27, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64048",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-26T12:15:00.000Z",
+   "updated": null,
+   "summary": "Government of India has announced the sale (re-issue) of Government Securities, as detailed below, through auction to be held on November 27, 2026 (Friday). As per the extant scheme of underwriting commitment notified on November 14, 2007, the amounts of Minimum Underwriting Commitment (MUC) and the",
+   "first": "2026-11-26T13:16:56.472Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"₹3\""
+   ],
+   "status": "below",
+   "hash": "c69c47b8"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64047": {
+   "title": "Result of the Second Overnight Variable Rate Repo (VRR) auction held on November 26, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64047",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-26T12:00:00.000Z",
+   "updated": null,
+   "summary": "Tenor 1-day Notified Amount (in ₹ crore) 50,000 Total amount of bids received (in ₹ crore) 45,731 Amount allotted (in ₹ crore) 45,731 Cut off Rate (%) 5.51 Weighted Average Rate (%) 5.65 Partial Allotment Percentage of bids received at cut off rate (%) NA Ajit Prasad Deputy General Manager (Communic",
+   "first": "2026-11-26T13:16:56.472Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "4fa4f38b"
+  },
+  "https://blog.xero.com/data-insights/stronger-together-report-small-businesses": {
+   "title": "You keep small businesses going. Now we have the data to back it",
+   "link": "https://blog.xero.com/data-insights/stronger-together-report-small-businesses/",
+   "source": "xero-blog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-26T09:00:00.000Z",
+   "updated": null,
+   "summary": "It hasn’t been an easy year. Accountants and bookkeepers have guided small businesses through National Insurance rises, frozen tax thresholds, business rates changes and another Budget. You’ve helped sole traders and landlords take their... The post You keep small businesses going. Now we have the d",
+   "first": "2026-11-26T13:16:56.472Z",
+   "score": -1,
+   "reasons": [
+    "-1 source xero-blog",
+    "backlog microsoft-365-backup-does-microsoft-back-up-your-data-small-business"
+   ],
+   "status": "below",
+   "hash": "bc1dfd4b",
+   "backlog": "microsoft-365-backup-does-microsoft-back-up-your-data-small-business"
+  },
+  "https://bitdefender.com/en-us/blog/labs/sys010-reloaded-malvertising-campaign-targeting-meta-business-accounts": {
+   "title": "SYS010 Reloaded: The new malvertising campaign targeting Meta Business Accounts",
+   "link": "https://www.bitdefender.com/en-us/blog/labs/sys010-reloaded-malvertising-campaign-targeting-meta-business-accounts",
+   "source": "bitdefender-labs",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-26T08:55:20.000Z",
+   "updated": null,
+   "summary": "Bitdefender Labs has uncovered SYS010, a new malvertising campaign that uses Meta ads promoting free animated wallpaper apps to target Meta Business accounts. The campaign uses paid ads to direct users to install malicious browser extensions that steal browser cookies, collect Meta Business data, re",
+   "first": "2026-11-26T13:16:56.472Z",
+   "score": 6,
+   "reasons": [
+    "-1 source bitdefender-labs",
+    "+3 incident \"steal\"",
+    "+3 major platform (meta)",
+    "+1 user data or credentials exposed"
+   ],
+   "status": "below",
+   "hash": "536f4494"
+  },
+  "https://ivanti.com/blog/qr-code-security": {
+   "title": "Quick Relief for QR Code Security",
+   "link": "https://www.ivanti.com/blog/qr-code-security",
+   "source": "ivanti-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-26T13:00:07.000Z",
+   "updated": null,
+   "summary": "From scanning a print ad to paying for parking downtown, QR codes help people make the leap from the physical to the digital world. But what happens when evildoers use them to do…well, evil? Earlier this year, Chain Store Age reported 71% of consumers view QR codes a useful part of their daily lives",
+   "first": "2026-11-26T13:16:56.472Z",
+   "score": -2,
+   "reasons": [
+    "-2 source ivanti-blog"
+   ],
+   "status": "below",
+   "hash": "52a4e8ab"
+  },
+  "https://miradore.com/blog/ios-ipados-updates": {
+   "title": "iOS/iPadOS Updates",
+   "link": "https://www.miradore.com/blog/ios-ipados-updates/",
+   "source": "miradore-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-26T06:09:55.000Z",
+   "updated": null,
+   "summary": "In this article, we explain how to use Miradore to identify iOS and iPadOS devices with pending security updates and manage updates on supported devices....",
+   "first": "2026-11-26T13:16:56.472Z",
+   "score": 2,
+   "reasons": [
+    "-2 source miradore-blog",
+    "+2 niche (ipados)",
+    "+2 user steps \"how to\""
+   ],
+   "status": "below",
+   "hash": "2c90b0c3"
   }
  },
  "devices": {},
@@ -11901,8 +11848,8 @@
   }
  },
  "missedCheck": {
-  "day": "2026-11-25",
-  "at": "2026-11-25T13:16:59.116Z",
+  "day": "2026-11-26",
+  "at": "2026-11-26T13:16:56.472Z",
   "checked": 0,
   "covered": 0,
   "items": []

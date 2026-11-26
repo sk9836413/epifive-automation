@@ -2,7 +2,7 @@
  "date": "2026-11-26",
  "title": "Tech news today, 26 November 2026",
  "published": "2026-11-25T22:42:19.087Z",
- "updated": "2026-11-26T05:13:19.221Z",
+ "updated": "2026-11-26T13:16:56.472Z",
  "items": [
   {
    "id": "6e3a80d1",
@@ -504,7 +504,322 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "87625313",
+   "key": "https://bitdefender.com/en-us/blog/labs/sys010-reloaded-malvertising-campaign-targeting-meta-business-accounts",
+   "time": "2026-11-26T08:55:20.000Z",
+   "seen": "2026-11-26T13:16:56.472Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "SYS010 Reloaded: The new malvertising campaign targeting Meta Business Accounts",
+   "summary": "Bitdefender Labs has uncovered SYS010, a new malvertising campaign that uses Meta ads promoting free animated wallpaper apps to target Meta Business accounts. The campaign uses paid ads to direct users to install malicious browser extensions that steal browser cookies, collect Meta Business data, read emails and, in some cases, delete security alerts. Key findings: * Ongoing attack: Bitdefender Labs identified the first malicious SYS010 advertisement on October 16, 2026. * A new generatio",
+   "lines": [
+    "Bitdefender Labs uncovered SYS010, a new malvertising campaign that uses Meta ads promoting free animated wallpaper apps to target Meta Business accounts.",
+    "The campaign directs users to install malicious browser extensions that steal browser cookies, collect Meta Business data, read emails and, in some cases, delete security alerts.",
+    "Bitdefender Labs identified the first malicious SYS010 advertisement on October 16, 2026. IT teams may want to review browser extensions and Meta Business account activity."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Bitdefender Labs",
+    "url": "https://www.bitdefender.com/en-us/blog/labs/sys010-reloaded-malvertising-campaign-targeting-meta-business-accounts"
+   },
+   "sourceId": "bitdefender-labs",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 6,
+   "story": null
+  },
+  {
+   "id": "34a51af3",
+   "key": "https://news.samsung.com/in/samsung-expands-advanced-health-features-to-galaxy-watch8-series-with-one-ui-9-watch",
+   "time": "2026-11-26T11:56:26.000Z",
+   "seen": "2026-11-26T13:16:56.472Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Samsung Expands Advanced Health Features to Galaxy Watch8 Series With One UI 9 Watch",
+   "summary": "Samsung Electronics announced that Galaxy Watch8 Classic and Galaxy Watch8 are receiving a set of health features first introduced on Galaxy Watch9 and Galaxy Watch Ultra2. Delivered through the One UI 9 Watch software update and the Samsung Health and Samsung Health Monitor apps, the new features help users understand their health across sleep, heart […]",
+   "lines": [
+    "Samsung Electronics said the Galaxy Watch8 Classic and Galaxy Watch8 are receiving health features first introduced on the Galaxy Watch9 and Galaxy Watch Ultra2.",
+    "The features are delivered through the One UI 9 Watch software update and the Samsung Health and Samsung Health Monitor apps, and cover sleep and heart health.",
+    "Business users with these watches may see new health tracking options through a software update rather than new hardware."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Samsung Newsroom India",
+    "url": "https://news.samsung.com/in/samsung-expands-advanced-health-features-to-galaxy-watch8-series-with-one-ui-9-watch"
+   },
+   "sourceId": "samsung-india",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "a610d26d",
+   "key": "https://medianama.com/2026/11/223-cert-in-high-severity-vulnerability-egov-digit-platform",
+   "time": "2026-11-26T10:09:55.000Z",
+   "seen": "2026-11-26T13:16:56.472Z",
+   "kind": "security",
+   "tier": 1,
+   "headline": "CERT-In flags high-severity vulnerability in eGov’s DIGIT platforms",
+   "summary": "CERT-In did not say whether the flaw has been exploited or the time it took for fixing the patch. The post CERT-In flags high-severity vulnerability in eGov’s DIGIT platforms appeared first on MEDIANAMA .",
+   "lines": [
+    "Reported by MediaNama: CERT-In flagged a high-severity vulnerability in eGov's DIGIT platforms.",
+    "CERT-In did not say whether the flaw has been exploited or how long it took to fix the patch.",
+    "IT teams running DIGIT platforms may need to track patch status, since exploitation status has not been confirmed."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "MediaNama",
+    "url": "https://www.medianama.com/2026/11/223-cert-in-high-severity-vulnerability-egov-digit-platform/"
+   },
+   "sourceId": "medianama",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 13,
+   "story": null
+  },
+  {
+   "id": "305d6abc",
+   "key": "https://thehackernews.com/2026/11/1password-hacked-customer-data-and.html",
+   "time": "2026-11-26T10:57:25.000Z",
+   "seen": "2026-11-26T13:16:56.472Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "1Password Hacked, Customer Data and Source Code Stolen in GitHub Account Breach",
+   "summary": "Popular password management software 1Password on Wednesday disclosed a security incident involving its backend systems that led to the unauthorized access of some customer information, but emphasized that customer password vaults and other secrets were not accessed. \"While we took immediate steps to contain the incident, the attacker gained access to some of our backend systems and accessed a",
+   "lines": [
+    "Reported by The Hacker News: 1Password disclosed a security incident involving its backend systems that led to unauthorized access to some customer information.",
+    "1Password said customer password vaults and other secrets were not accessed.",
+    "The headline reports that source code was stolen in a GitHub account breach. Admins may want to review the vendor's incident guidance."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/1password-hacked-customer-data-and.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 8,
+   "story": null
+  },
+  {
+   "id": "3b527b4c",
+   "key": "https://gsmarena.com/vivo_x500_series_makes_its_india_debut_heres_the_pricing-news-75648.php",
+   "time": "2026-11-26T11:06:02.000Z",
+   "seen": "2026-11-26T13:16:56.472Z",
+   "kind": "device",
+   "tier": 2,
+   "headline": "vivo X500 series makes its India debut, here's the pricing",
+   "summary": "Nearly two months after its China debut, the vivo X500 series has arrived in India. At an in-person launch event, vivo unveiled the base X500, the X500 Pro, and the top-of-the-line X500 Pro Max in the country. The vivo X500 series is available for pre-order through vivo's official online store and Flipkart, with open sales scheduled to begin on December 3. As for pricing, the vivo X500 starts at INR 1,19,999 for the 12GB/256GB variant. The X500 Pro is priced at INR 1,49,999 for the same memory configuration, while the X500 Pro Max starts at INR 1,64,999. The X500 Pro Max...",
+   "lines": [
+    "Reported by GSMArena news: Nearly two months after its China debut, the vivo X500 series launched in India with the base X500, X500 Pro and X500 Pro Max.",
+    "The series is available for pre-order through vivo's official online store and Flipkart, with open sales scheduled to begin on December 3.",
+    "The X500 starts at INR 1,19,999 for the 12GB/256GB variant, the X500 Pro is priced at INR 1,49,999 for the same memory configuration, and the X500 Pro Max starts at INR 1,64,999."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "GSMArena news",
+    "url": "https://www.gsmarena.com/vivo_x500_series_makes_its_india_debut_heres_the_pricing-news-75648.php"
+   },
+   "sourceId": "gsmarena-news",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": {
+    "model": "vivo X500",
+    "brand": "vivo",
+    "category": "phone",
+    "key": "vivo x500"
+   },
+   "ai": null,
+   "score": 6,
+   "story": "device:vivo x500"
+  },
+  {
+   "id": "1f6a8f15",
+   "key": "https://medianama.com/2026/11/223-persistent-systems-employees-data-breached",
+   "time": "2026-11-26T06:42:05.000Z",
+   "seen": "2026-11-26T13:16:56.472Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Persistent Systems flags possible employee data breach: What remains unanswered?",
+   "summary": "Persistent Systems has disclosed a possible data breach at a US law firm handling employee immigration records, leaving questions about the scale of the leak, employee notification and regulatory compliance. The post Persistent Systems flags possible employee data breach: What remains unanswered? appeared first on MEDIANAMA .",
+   "lines": [
+    "Reported by MediaNama: Persistent Systems disclosed a possible data breach at a US law firm that handles employee immigration records.",
+    "Open questions include the scale of the leak, whether employees will be notified and how regulatory compliance applies.",
+    "HR and IT teams may need to plan for breach scope and notification questions that remain unanswered."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "MediaNama",
+    "url": "https://www.medianama.com/2026/11/223-persistent-systems-employees-data-breached/"
+   },
+   "sourceId": "medianama",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "d0447267",
+   "key": "https://thehackernews.com/2026/11/most-wanted-phishing-kits-and.html",
+   "time": "2026-11-26T10:57:55.000Z",
+   "seen": "2026-11-26T13:16:56.472Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Most Wanted: The Phishing Kits and Techniques Getting Past Security Controls",
+   "summary": "Every phishing attack has to get past email security, web filtering, and safe browsing before it reaches an employee. Some kits manage that far more often than others, and those are the kits that security teams need to know about. At Push Security, we measure this as breakthrough rate: The share of attacks that get past email security, web gateways, and safe browsing to reach the user. How an",
+   "lines": [
+    "Reported by The Hacker News: Push Security describes phishing kits that get past email security, web filtering and safe browsing, and says some kits do this more often than others.",
+    "Push Security defines breakthrough rate as the share of attacks that get past email security, web gateways and safe browsing to reach the user.",
+    "Security teams can use breakthrough rate to compare which phishing kits are most likely to reach employees."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/most-wanted-phishing-kits-and.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "649ff969",
+   "key": "https://bleepingcomputer.com/news/security/sys010-malware-abuses-browser-management-to-spy-on-gmail-outlook",
+   "time": "2026-11-26T11:50:17.000Z",
+   "seen": "2026-11-26T13:16:56.472Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "SYS010 malware abuses browser management to spy on Gmail, Outlook",
+   "summary": "A new version of the SYS01 infostealer malware delivered through Meta ads is enrolling browsers into enterprise-style management to force the installation of an extension that steals sensitive data, including Gmail and Outlook emails. [...]",
+   "lines": [
+    "Reported by BleepingComputer: A new version of the SYS01 infostealer, delivered through Meta ads, enrolls browsers into enterprise-style management.",
+    "The management enrollment is used to force installation of an extension that steals sensitive data, including Gmail and Outlook emails.",
+    "IT teams may want to review how browser management policies are configured on endpoints."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/sys010-malware-abuses-browser-management-to-spy-on-gmail-outlook/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "1a115689",
+   "key": "https://medianama.com/2026/11/223-views-monetization-personal-data-data-breach-under-dpdpa",
+   "time": "2026-11-26T06:00:49.000Z",
+   "seen": "2026-11-26T13:16:56.472Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Views: Can monetization of personal data amount to a breach under India’s data protection law?",
+   "summary": "Monetization of personal data is against public policy at large and works against the letter and spirit of the law in myriad ways that ultimately defeat the purpose of the law itself, the author argues. The post Views: Can monetization of personal data amount to a breach under India’s data protection law? appeared first on MEDIANAMA .",
+   "lines": [
+    "Reported by MediaNama: an author argues that monetization of personal data is against public policy and works against the letter and spirit of India's data protection law.",
+    "The author argues that such monetization defeats the purpose of the law itself.",
+    "Business users who handle personal data may find the question of whether monetization counts as a breach relevant to compliance planning."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "MediaNama",
+    "url": "https://www.medianama.com/2026/11/223-views-monetization-personal-data-data-breach-under-dpdpa/"
+   },
+   "sourceId": "medianama",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "d9d16dd6",
+   "key": "https://thehackernews.com/2026/11/drupal-warns-of-new-highly-critical.html",
+   "time": "2026-11-26T07:02:34.000Z",
+   "seen": "2026-11-26T13:16:56.472Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Drupal Warns of New Highly Critical Site Takeover Vulnerability Under Active Exploitation",
+   "summary": "Drupal has warned of a new \"highly critical\" security flaw impacting Drupal core that it said has been exploited in the wild. The vulnerability, tracked as CVE-2026-136716 (CVSS score: N/A), has been described as a case of improper checking for unusual or exceptional conditions. It also relates to CVE-2026-132165 aka Fail2Install in that it addresses remaining vulnerable installation states",
+   "lines": [
+    "Reported by The Hacker News: Drupal warned of a new 'highly critical' site takeover vulnerability in Drupal core that it said has been exploited in the wild.",
+    "The flaw is tracked as CVE-2026-136716, has no CVSS score listed, and is described as improper checking for unusual or exceptional conditions.",
+    "It relates to CVE-2026-132165 (Fail2Install) in that it addresses remaining vulnerable installation states. Drupal site operators may want to check their core versions against the vendor advisory."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/drupal-warns-of-new-highly-critical.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "1e6c5b4b",
+   "key": "https://thehackernews.com/2026/11/hackers-exploit-10-vulnerabilities.html",
+   "time": "2026-11-26T06:44:46.000Z",
+   "seen": "2026-11-26T13:16:56.472Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Hackers Exploit 10 Vulnerabilities Across Mitel, Juniper, Vates, and Danfoss Products",
+   "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Wednesday added 10 security flaws to its Known Exploited Vulnerabilities (KEV) catalog, including five vulnerabilities impacting Mitel MiCollab that were disclosed last week. The Mitel MiCollab vulnerabilities are listed below - CVE-2026-133275 (CVSS score: 5.3) - An arbitrary file upload vulnerability in the Audio, Web and",
+   "lines": [
+    "Reported by The Hacker News: CISA added 10 security flaws to its Known Exploited Vulnerabilities catalog on Wednesday.",
+    "The additions include five Mitel MiCollab vulnerabilities disclosed the previous week. The headline also names Juniper, Vates and Danfoss products.",
+    "IT teams running the listed products may want to prioritize patching based on the KEV catalog."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/hackers-exploit-10-vulnerabilities.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
   }
  ],
- "description": "17 technology updates from official sources, updated hourly: FedEx plane overshoots Miami runway, causing temporary ground stop at airport; SpaceX Receives Government Approval to Launch Space Data Centers; 1Password customer data stolen after employee GitHub account breach."
+ "description": "28 technology updates from official sources, updated hourly: CERT-In flags high-severity vulnerability in eGov’s DIGIT platforms; FedEx plane overshoots Miami runway, causing temporary ground stop at airport; SpaceX Receives Government Approval to Launch Space Data Centers."
 }
