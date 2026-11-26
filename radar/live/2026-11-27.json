@@ -1,0 +1,123 @@
+{
+ "date": "2026-11-27",
+ "title": "Tech news today, 27 November 2026",
+ "published": "2026-11-26T23:03:53.084Z",
+ "updated": "2026-11-26T23:03:53.084Z",
+ "items": [
+  {
+   "id": "7d95ca76",
+   "key": "https://theverge.com/gadgets/1042483/garmin-forerunner-265s-fitness-tracker-wearable-deal-sale-black-friday",
+   "time": "2026-11-26T19:00:00.000Z",
+   "seen": "2026-11-26T23:03:53.084Z",
+   "kind": "outage",
+   "tier": 2,
+   "headline": "The Garmin Forerunner 265S is down to $300, its best price of the year",
+   "summary": "The Forerunner 265S may not be the newest or flashiest Garmin, but it’s one that I’ve always loved most in testing. For runners with smaller wrists, it fits nicely. The battery life is pretty good thanks in part to its OLED touchscreen. When I reviewed it a few years ago, I called it the Goldilocks […]",
+   "lines": [
+    "Reported by The Verge: The Garmin Forerunner 265S is down to $300, its best price of the year.",
+    "The article says the watch has a smaller-wrist fit, an OLED touchscreen, and good battery life, and it describes the reviewer's testing.",
+    "The item is a consumer deal and does not address business or IT use."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Verge",
+    "url": "https://www.theverge.com/gadgets/1042483/garmin-forerunner-265s-fitness-tracker-wearable-deal-sale-black-friday"
+   },
+   "sourceId": "the-verge",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "families": [],
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "aabc0d75",
+   "key": "https://engadget.com/2329256/backloggd-breach-november-2026-password-reset",
+   "time": "2026-11-26T21:26:47.000Z",
+   "seen": "2026-11-26T23:03:53.084Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Backloggd urges users to change their passwords after a breach",
+   "summary": "If you use Backloggd, you might need to log in again and reset your password.",
+   "lines": [
+    "Reported by Engadget: Backloggd urges users to change their passwords after a breach.",
+    "Users may need to log in again and reset their password.",
+    "Staff who use the service may need to reset their credentials, and IT teams may want to confirm whether any work accounts share those logins."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Engadget",
+    "url": "https://www.engadget.com/2329256/backloggd-breach-november-2026-password-reset/"
+   },
+   "sourceId": "engadget",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "1dec75bc",
+   "key": "https://bleepingcomputer.com/news/apple/fake-paid-expert-interviews-impersonate-brands-to-steal-google-logins",
+   "time": "2026-11-26T17:15:27.000Z",
+   "seen": "2026-11-26T23:03:53.084Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Fake paid expert interviews impersonate brands to steal Google logins",
+   "summary": "An ongoing phishing campaign dubbed \"GoodGuys\" impersonates major brands, including Google, Nvidia, Accenture, and SpaceX, to steal corporate Google and Okta credentials using fake invitations to paid expert interviews and webinars. [...]",
+   "lines": [
+    "Reported by BleepingComputer: An ongoing phishing campaign called \"GoodGuys\" impersonates brands including Google, Nvidia, Accenture, and SpaceX to steal corporate Google and Okta credentials.",
+    "The campaign uses fake invitations to paid expert interviews and webinars.",
+    "IT teams may want to warn staff to be cautious with unsolicited interview or webinar invitations that ask them to sign in."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/apple/fake-paid-expert-interviews-impersonate-brands-to-steal-google-logins/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "deaf7419",
+   "key": "https://thehackernews.com/2026/11/threatsday-250-rogue-extensions-10m.html",
+   "time": "2026-11-26T19:39:57.000Z",
+   "seen": "2026-11-26T23:03:53.084Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "ThreatsDay: 10M NGINX Services at Risk, 250+ Malicious Extensions, AI Server Hijacking + 17 More Stories",
+   "summary": "A website can look perfectly fine to the person running it. Log out, visit the same page, and things might look different. Something similar is happening with browser extensions, where even the way you find and install one can change what it does. Checking whether software works as expected only tells you so much. Then there’s the question of who gets to use what. Stolen logins are opening",
+   "lines": [
+    "Reported by The Hacker News: The ThreatsDay roundup lists 10M NGINX services at risk, 250+ malicious browser extensions, and AI server hijacking.",
+    "Admins who run NGINX or manage browser extensions may want to review their exposure to these items."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/threatsday-250-rogue-extensions-10m.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  }
+ ],
+ "description": "4 technology updates from official sources, updated hourly: The Garmin Forerunner 265S is down to $300, its best price of the year; Backloggd urges users to change their passwords after a breach; Fake paid expert interviews impersonate brands to steal Google logins."
+}
