@@ -188,7 +188,12 @@ jobs:
           if [ -n "$slug" ]; then
             kind=$(node scripts/social/video-kind.mjs "$slug")
             echo "Video kind: $kind"
-            if [ "$(node -p 'JSON.parse(process.argv[1]).video' "$kind")" != true ] && [ "${{ inputs.allow_news }}" != "true" ]; then
+            # Owner priority list (automation/social-priority.txt) entries get a reel even when video-kind calls them news,
+            # as pick.mjs documents (owner, 21 Nov 2026). Without this the queue stalled from 25 Nov on a launch post: the
+            # run skipped it without logging, so every slot re-picked the same slug and nothing was shared.
+            prio=false
+            if [ -z "$SLUG_INPUT" ] && [ -f automation/social-priority.txt ] && tr -d '\r' < automation/social-priority.txt | grep -qxF "$slug"; then prio=true; echo "Owner priority post: reel allowed."; fi
+            if [ "$(node -p 'JSON.parse(process.argv[1]).video' "$kind")" != true ] && [ "${{ inputs.allow_news }}" != "true" ] && [ "$prio" != true ]; then
               echo "::notice::$slug is not a fix/how-to ($kind); no video (owner plan, 16 Nov 2026). Run with allow_news to override."
               echo "slug=" >> "$GITHUB_OUTPUT"
               exit 0
