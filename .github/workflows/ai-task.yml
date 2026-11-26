@@ -61,11 +61,12 @@ jobs:
           sparse-checkout: |
             ops/ai-task
             ops/report
+            scripts/stats
       - name: Copy helper scripts
         if: steps.gate.outputs.ready == 'true'
         run: |
           mkdir -p "$AUTO_DIR/data/report" "$AUTO_DIR/data/radar" "$AI_TASK_DIR"
-          cp -r _ops/ops/ai-task _ops/ops/report "$AUTO_DIR/"
+          cp -r _ops/ops/ai-task _ops/ops/report _ops/scripts/stats "$AUTO_DIR/"
           cp report/snapshot.json "$AUTO_DIR/data/report/" 2>/dev/null || true
           cp radar/state.json "$AUTO_DIR/data/radar/" 2>/dev/null || true
           find . -mindepth 1 -delete
@@ -136,9 +137,22 @@ jobs:
           SHYAM_IG_USER_ID: ${{ secrets.SHYAM_IG_USER_ID }}
           LINKEDIN_PAGE_TOKEN_EXPIRES: ${{ vars.LINKEDIN_PAGE_TOKEN_EXPIRES }}
           LINKEDIN_MEMBER_TOKEN_EXPIRES: ${{ vars.LINKEDIN_MEMBER_TOKEN_EXPIRES }}
+          GSC_CLIENT_ID: ${{ secrets.GSC_CLIENT_ID }}
+          GSC_CLIENT_SECRET: ${{ secrets.GSC_CLIENT_SECRET }}
+          GSC_REFRESH_TOKEN: ${{ secrets.GSC_REFRESH_TOKEN }}
+          GSC_SITE: ${{ secrets.GSC_SITE }}
+          BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+        # Runs for performance questions even without the CRM box (ops/ai-task/lib.mjs wantsReport). Three files, each
+        # optional: today's and yesterday's daily report (IST days; --out never emails or writes the snapshot) and
+        # Stats now (7 days per UTC day with the people/BingBot split, YouTube, social, search, subscribers).
         run: |
           mkdir -p .ai-task
-          AUTOMATION_DATA="$AUTO_DIR/data" node "$AUTO_DIR/report/report.mjs" --out .ai-task/performance.txt
+          AUTOMATION_DATA="$AUTO_DIR/data" node "$AUTO_DIR/report/report.mjs" --out .ai-task/performance.txt || echo "::warning::today's report failed"
+          yday=$(TZ=Asia/Kolkata date -d yesterday +%F)
+          AUTOMATION_DATA="$AUTO_DIR/data" node "$AUTO_DIR/report/report.mjs" --date "$yday" --out .ai-task/performance-yesterday.txt || echo "::warning::yesterday's report failed"
+          node "$AUTO_DIR/stats/now.mjs" --what all > .ai-task/stats-now.md 2>/dev/null || { echo "::warning::stats now failed"; rm -f .ai-task/stats-now.md; }
+          ls -l .ai-task | awk 'NR>1{print $5, $9}'
 
       - name: Prepare the task file
         id: prepare
