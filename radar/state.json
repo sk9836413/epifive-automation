@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-26T14:16:50.172Z",
+ "lastScan": "2026-11-26T16:20:27.085Z",
  "seen": {
   "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade": {
    "title": "Google Search gets a major upgrade with Gemini 4 Hydrogen",
@@ -11434,6 +11434,41 @@
    ],
    "status": "below",
    "hash": "1d55f32a"
+  },
+  "https://blog.whatsapp.com/stay-connected-on-whatsapp-when-you-travel": {
+   "title": "Stay connected on whatsapp when you travel",
+   "link": "https://blog.whatsapp.com/stay-connected-on-whatsapp-when-you-travel",
+   "source": "whatsapp-blog",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-26T15:44:57.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-26T16:20:27.085Z",
+   "score": 5,
+   "reasons": [
+    "+2 source whatsapp-blog",
+    "+3 niche (whatsapp)"
+   ],
+   "status": "below",
+   "hash": "c04fce95"
+  },
+  "https://blog.google/company-news/outreach-and-initiatives/google-org/15-years-investing-colombia-talent-future": {
+   "title": "15 years of investing in Colombia’s talent and future",
+   "link": "https://blog.google/company-news/outreach-and-initiatives/google-org/15-years-investing-colombia-talent-future/",
+   "source": "google-keyword",
+   "topic": "how-to-tips",
+   "category": "launch",
+   "date": "2026-11-26T18:00:00.000Z",
+   "updated": null,
+   "summary": "Google marks 15 years in Colombia with over $1M in Google.org funding for AI education, small businesses, rural youth, and disaster relief.",
+   "first": "2026-11-26T16:20:27.085Z",
+   "score": 1,
+   "reasons": [
+    "+1 plans/price/availability \"$1\""
+   ],
+   "status": "below",
+   "hash": "4b7abb2f"
   }
  },
  "devices": {},

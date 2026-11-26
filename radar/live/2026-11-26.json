@@ -2,7 +2,7 @@
  "date": "2026-11-26",
  "title": "Tech news today, 26 November 2026",
  "published": "2026-11-25T22:42:19.087Z",
- "updated": "2026-11-26T13:16:56.472Z",
+ "updated": "2026-11-26T16:20:27.085Z",
  "items": [
   {
    "id": "6e3a80d1",
@@ -819,7 +819,92 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "69917416",
+   "key": "https://blog.whatsapp.com/stay-connected-on-whatsapp-when-you-travel",
+   "time": "2026-11-26T15:44:57.000Z",
+   "seen": "2026-11-26T16:20:27.085Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Stay connected on whatsapp when you travel",
+   "summary": "People around the world rely on WhatsApp when they travel. It’s how they get their boarding pass before they leave, coordinate their pick-up for when they arrive and let family know they’ve made it safely. November 26, 2026",
+   "lines": [
+    "WhatsApp's blog post 'Stay connected on WhatsApp when you travel' describes how people use the app while traveling, including for boarding passes, pick-up coordination and letting family know they arrived safely.",
+    "The post is dated November 26, 2026.",
+    "IT teams supporting employees who travel may want to note how staff use WhatsApp for travel logistics and check-ins."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "WhatsApp Blog (sitemap)",
+    "url": "https://blog.whatsapp.com/stay-connected-on-whatsapp-when-you-travel"
+   },
+   "sourceId": "whatsapp-blog",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "f4afae77",
+   "key": "https://bleepingcomputer.com/news/security/remus-malware-steals-gmail-messages-via-fake-google-sheets-extension",
+   "time": "2026-11-26T15:23:28.000Z",
+   "seen": "2026-11-26T16:20:27.085Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Remus malware steals Gmail messages via fake Google Sheets extension",
+   "summary": "The Remus infostealer is stealing Gmail messages through a stealthy malicious Chrome extension, a capability the malware operators marketed as a zero-day exploit in Google's email service. [...]",
+   "lines": [
+    "Reported by BleepingComputer: The Remus infostealer is stealing Gmail messages through a malicious Chrome extension disguised as a Google Sheets extension.",
+    "The malware operators marketed this capability as a zero-day exploit in Google's email service.",
+    "IT teams may want to review installed Chrome extensions, especially those posing as Google Sheets tools."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/remus-malware-steals-gmail-messages-via-fake-google-sheets-extension/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "463fbe12",
+   "key": "https://thehackernews.com/2026/11/north-korea-linked-polinrider-poisons.html",
+   "time": "2026-11-26T15:13:41.000Z",
+   "seen": "2026-11-26T16:20:27.085Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "North Korea-Linked PolinRider Poisons Over 7,600 GitHub Repositories to Spread Malware",
+   "summary": "The threat actors behind the PolinRider campaign have been observed planting a Python loader in GitHub repositories, as evidence emerges that the activity may have started as far back as February 2025. \"The loader hides in a small utils package or in conftest.py,\" SafeDep said in a report published this week. \"When Python imports the file, the loader reads the newest transaction that an",
+   "lines": [
+    "Reported by The Hacker News: The North Korea-linked PolinRider campaign has poisoned over 7,600 GitHub repositories to spread malware.",
+    "The threat actors planted a Python loader that hides in a small utils package or in conftest.py, and runs when Python imports the file.",
+    "Evidence suggests the activity may have started as far back as February 2025, according to SafeDep.",
+    "IT teams that use GitHub repositories may want to review Python utils packages and conftest.py files for unexpected loader code."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/north-korea-linked-polinrider-poisons.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
   }
  ],
- "description": "28 technology updates from official sources, updated hourly: CERT-In flags high-severity vulnerability in eGov’s DIGIT platforms; FedEx plane overshoots Miami runway, causing temporary ground stop at airport; SpaceX Receives Government Approval to Launch Space Data Centers."
+ "description": "31 technology updates from official sources, updated hourly: CERT-In flags high-severity vulnerability in eGov’s DIGIT platforms; FedEx plane overshoots Miami runway, causing temporary ground stop at airport; SpaceX Receives Government Approval to Launch Space Data Centers."
 }
