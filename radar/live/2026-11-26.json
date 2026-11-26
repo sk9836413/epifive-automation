@@ -2,7 +2,7 @@
  "date": "2026-11-26",
  "title": "Tech news today, 26 November 2026",
  "published": "2026-11-25T22:42:19.087Z",
- "updated": "2026-11-26T04:29:59.062Z",
+ "updated": "2026-11-26T05:13:19.221Z",
  "items": [
   {
    "id": "6e3a80d1",
@@ -446,7 +446,65 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "a28410bc",
+   "key": "https://mc.merill.net/message/MC1568700",
+   "time": "2026-11-25T23:38:56.000Z",
+   "seen": "2026-11-26T05:13:19.221Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1568700: Microsoft 365 Copilot: Customize how citations are included when copying responses",
+   "summary": "Microsoft 365 Copilot will add a customizable \"Copy with sources\" option by mid-December 2026, letting users choose whether to include citations when copying responses. It is enabled by default but can be turned off to copy text without citations. No admin action is needed.",
+   "lines": [
+    "Microsoft 365 Copilot will add a customizable \"Copy with sources\" option, letting users choose whether to include citations when copying responses.",
+    "The option is enabled by default and can be turned off to copy text without citations. Rollout is scheduled by mid-December 2026.",
+    "Users can control whether citations come along when they copy Copilot responses. No admin action is needed."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1568700"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "1542d0a1",
+   "key": "https://mc.merill.net/message/MC1568699",
+   "time": "2026-11-25T23:38:20.000Z",
+   "seen": "2026-11-26T05:13:19.221Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "MC1568699: Campaigns in SharePoint",
+   "summary": "SharePoint is introducing site campaigns, integrating Viva Amplify's campaign management directly into SharePoint for unified creation, distribution, and analytics of news posts. Available to both seeded and licensed Viva Amplify users, rollout begins mid-August 2026. No changes to existing Amplify campaigns or licensing.",
+   "lines": [
+    "SharePoint is introducing site campaigns, which integrate Viva Amplify campaign management directly into SharePoint.",
+    "Rollout begins mid-August 2026 and is available to both seeded and licensed Viva Amplify users.",
+    "Teams can create, distribute and analyze news post campaigns within SharePoint. Existing Amplify campaigns and licensing are unchanged."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Microsoft 365 Message Center (community mirror mc.merill.net)",
+    "url": "https://mc.merill.net/message/MC1568699"
+   },
+   "sourceId": "mc-merill",
+   "sourceMax": 5,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
   }
  ],
- "description": "15 technology updates from official sources, updated hourly: FedEx plane overshoots Miami runway, causing temporary ground stop at airport; SpaceX Receives Government Approval to Launch Space Data Centers; 1Password customer data stolen after employee GitHub account breach."
+ "description": "17 technology updates from official sources, updated hourly: FedEx plane overshoots Miami runway, causing temporary ground stop at airport; SpaceX Receives Government Approval to Launch Space Data Centers; 1Password customer data stolen after employee GitHub account breach."
 }

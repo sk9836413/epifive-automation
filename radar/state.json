@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-26T04:29:59.062Z",
+ "lastScan": "2026-11-26T05:13:19.221Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -3727,23 +3727,6 @@
    "status": "duplicate",
    "hash": "abb9bc65",
    "post": "purview-dlp-policies-exchange-teams-endpoints"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64019": {
-   "title": "RBI to conduct 2-day Variable Rate Repo (VRR) auction under LAF on November 23, 2026",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64019",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-23T10:15:00.000Z",
-   "updated": null,
-   "summary": "On a review of current and evolving liquidity conditions in the near term, it has been decided to conduct a second Variable Rate Repo (VRR) auction on Monday, November 23, 2026, as under: Sl. No. Notified Amount (₹ crore) Tenor (day) Window Timing Date of Reversal 1 50,000 2 10:30 AM to 11:00 AM Nov",
-   "first": "2026-11-23T05:13:18.329Z",
-   "score": -1,
-   "reasons": [
-    "-1 source rbi-press"
-   ],
-   "status": "below",
-   "hash": "f665c688"
   },
   "https://bleepingcomputer.com/news/security/cisa-flags-critical-cisco-expressway-rce-flaw-as-actively-exploited": {
    "title": "CISA flags critical Cisco RCE flaw as actively exploited in attacks",
@@ -11619,6 +11602,116 @@
    ],
    "status": "below",
    "hash": "f98e55f0"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64046": {
+   "title": "RBI to conduct Second Overnight Variable Rate Repo (VRR) auction under LAF on November 26, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64046",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-26T10:35:00.000Z",
+   "updated": null,
+   "summary": "On a review of current and evolving liquidity conditions in the near term, it has been decided to conduct a second Variable Rate Repo (VRR) auction on Thursday, November 26, 2026, as under: Sl. No. Notified Amount (₹ crore) Tenor (day) Window Timing Date of Reversal 1 50,000 1 11:00 AM to 11:30 AM N",
+   "first": "2026-11-26T05:13:19.221Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "dceaf431"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64045": {
+   "title": "Result of the Overnight Variable Rate Repo (VRR) auction held on November 26, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64045",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-26T10:25:00.000Z",
+   "updated": null,
+   "summary": "Tenor 1-day Notified Amount (in ₹ crore) 75,000 Total amount of bids received (in ₹ crore) 1,40,535 Amount allotted (in ₹ crore) 75,007 Cut off Rate (%) 5.68 Weighted Average Rate (%) 5.69 Partial Allotment Percentage of bids received at cut off rate (%) 56.95 Ajit Prasad Deputy General Manager (Com",
+   "first": "2026-11-26T05:13:19.221Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "b83515"
+  },
+  "https://mc.merill.net/message/MC1568702": {
+   "title": "MC1568702: Adding in app browsing control policies",
+   "link": "https://mc.merill.net/message/MC1568702",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-25T23:41:39.000Z",
+   "updated": null,
+   "summary": "Enterprise policies now control Copilot desktop app's built-in browser on Windows and Mac, covering security, privacy, content access, authentication, and permissions. Available worldwide, admins should enable browsing, align policies with existing governance, test with pilot users, and communicate ",
+   "first": "2026-11-26T05:13:19.221Z",
+   "score": 4,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (copilot, windows, mac)",
+    "+2 user steps \"enable\""
+   ],
+   "status": "below",
+   "hash": "46d5e992"
+  },
+  "https://mc.merill.net/message/MC1568700": {
+   "title": "MC1568700: Microsoft 365 Copilot: Customize how citations are included when copying responses",
+   "link": "https://mc.merill.net/message/MC1568700",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-25T23:38:56.000Z",
+   "updated": null,
+   "summary": "Microsoft 365 Copilot will add a customizable \"Copy with sources\" option by mid-December 2026, letting users choose whether to include citations when copying responses. It is enabled by default but can be turned off to copy text without citations. No admin action is needed.",
+   "first": "2026-11-26T05:13:19.221Z",
+   "score": 2,
+   "reasons": [
+    "-2 source mc-merill",
+    "+4 niche (copilot, microsoft 365)"
+   ],
+   "status": "below",
+   "hash": "76b25029"
+  },
+  "https://mc.merill.net/message/MC1568699": {
+   "title": "MC1568699: Campaigns in SharePoint",
+   "link": "https://mc.merill.net/message/MC1568699",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-25T23:38:20.000Z",
+   "updated": null,
+   "summary": "SharePoint is introducing site campaigns, integrating Viva Amplify's campaign management directly into SharePoint for unified creation, distribution, and analytics of news posts. Available to both seeded and licensed Viva Amplify users, rollout begins mid-August 2026. No changes to existing Amplify ",
+   "first": "2026-11-26T05:13:19.221Z",
+   "score": 2,
+   "reasons": [
+    "-2 source mc-merill",
+    "+1 niche (sharepoint)",
+    "+2 launch \"introducing\"",
+    "+1 plans/price/availability \"Available to\""
+   ],
+   "status": "below",
+   "hash": "a776b1bb"
+  },
+  "https://mc.merill.net/message/MC1568697": {
+   "title": "MC1568697: Microsoft Purview: Insider Risk Management-Introducing IRM Alert classification",
+   "link": "https://mc.merill.net/message/MC1568697",
+   "source": "mc-merill",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-25T23:35:32.000Z",
+   "updated": null,
+   "summary": "Microsoft Purview Insider Risk Management will introduce alert classification as True positive, Benign, or False positive to improve risk reporting and tuning. Rolling out from December 2026 to January 2027, it separates classification from alert status and updates alert actions. No configuration ch",
+   "first": "2026-11-26T05:13:19.221Z",
+   "score": 1,
+   "reasons": [
+    "-2 source mc-merill",
+    "+2 launch \"Introducing\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "eb70dd04"
   }
  },
  "devices": {},
@@ -11683,8 +11776,8 @@
    "category": "launch",
    "topic": "ai-engineering",
    "parkOnly": false,
-   "last": "2026-11-26T03:38:07.000Z",
-   "date": "2026-11-26T03:38:07.000Z",
+   "last": "2026-11-26T05:00:02.000Z",
+   "date": "2026-11-26T05:00:02.000Z",
    "score": 11,
    "post": "anthropic-ipo-explained-claude-users"
   },
