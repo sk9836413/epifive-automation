@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-26T03:43:45.111Z",
+ "lastScan": "2026-11-26T04:29:59.062Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -3727,40 +3727,6 @@
    "status": "duplicate",
    "hash": "abb9bc65",
    "post": "purview-dlp-policies-exchange-teams-endpoints"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64018": {
-   "title": "Money Market Operations as on November 20, 2026",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64018",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-23T09:00:00.000Z",
-   "updated": null,
-   "summary": "(Amount in ₹ crore, Rate in Per cent) MONEY MARKETS @ --> Money Markets @ Volume (One Leg) Weighted Average Rate Range A. Overnight Segment (I+II+III+IV) 14,897.60 5.64 4.80-5.95 I. Call Money 1,283.60 5.27 5.00-5.70 II. Triparty Repo 5,479.30 5.56 5.00-5.74 III. Market Repo 302.75 5.09 4.80-5.50 IV",
-   "first": "2026-11-23T03:43:50.488Z",
-   "score": -1,
-   "reasons": [
-    "-1 source rbi-press"
-   ],
-   "status": "below",
-   "hash": "507f324e"
-  },
-  "https://blogs.vmware.com/cloud-foundation/2026/11/22/microsoft-sql-server-failover-clustering-on-vcf-9-1-vm-service-supervisor-direct-implementation-part-2": {
-   "title": "Microsoft SQL Server Failover Clustering on VCF 9.1 VM Service: Supervisor Direct Implementation (Part 2)",
-   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/22/microsoft-sql-server-failover-clustering-on-vcf-9-1-vm-service-supervisor-direct-implementation-part-2/",
-   "source": "vmware-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-23T03:00:00.000Z",
-   "updated": null,
-   "summary": "Introduction In this part of the series, we will build the two nodes MSSQL FCI Cluster via the vSphere Supervisor and the Local Consumption Interface service. Part 1 focuses on Requirements, Topology, and Methods. Part 2 (this article) focuses on the Supervisor Direct Implementation. Part 3 focuses ",
-   "first": "2026-11-23T03:43:50.488Z",
-   "score": -1,
-   "reasons": [
-    "-1 source vmware-blog"
-   ],
-   "status": "below",
-   "hash": "b99adf73"
   },
   "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64019": {
    "title": "RBI to conduct 2-day Variable Rate Repo (VRR) auction under LAF on November 23, 2026",
@@ -10041,12 +10007,14 @@
     "+2 user steps \"how to\"",
     "+3 trending \"november 27 2026 ott releases\", autocomplete (8)"
    ],
-   "status": "writing",
+   "status": "published",
    "hash": "b3aa227a",
    "kind": "new",
    "extra": false,
    "taskAt": "2026-11-26T03:43:45.111Z",
-   "attempts": 1
+   "attempts": 1,
+   "slug": "excel-november-2026-copilot-error-cards-pivot-grouping",
+   "resultAt": "2026-11-26T03:54:20.013Z"
   },
   "https://zoho.com/blog/partners/start-your-zoho-partner-journey-with-these-three-apps.html": {
    "title": "New to Zoho Partnership? Starting with these 3 apps enables you to serve most customers.",
@@ -11562,6 +11530,95 @@
    ],
    "status": "below",
    "hash": "2cbacdd"
+  },
+  "https://crowdstrike.com/en-us/blog/securing-employees-ai-use-requires-unified-architecture": {
+   "title": "Securing Employees’ AI Use Requires a Unified Architecture",
+   "link": "https://www.crowdstrike.com/en-us/blog/securing-employees-ai-use-requires-unified-architecture/",
+   "source": "crowdstrike-blog",
+   "topic": "security-identity",
+   "category": "launch",
+   "date": "2026-11-25T08:00:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-26T04:29:59.062Z",
+   "score": -1,
+   "reasons": [
+    "-1 source crowdstrike-blog"
+   ],
+   "status": "below",
+   "hash": "6ee2104a"
+  },
+  "https://odoo.com/blog/odoo-news-5/doo-signs-strategic-partnership-mou-with-hitachi-solutions-create-in-japan-2520": {
+   "title": "Odoo Signs Strategic Partnership MOU with Hitachi Solutions Create in Japan",
+   "link": "https://www.odoo.com/blog/odoo-news-5/doo-signs-strategic-partnership-mou-with-hitachi-solutions-create-in-japan-2520",
+   "source": "odoo-news",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-26T04:02:57.000Z",
+   "updated": "2026-11-26T04:02:57.000Z",
+   "summary": "Combining Odoo’s AI-empowered, all-in-one ERP—trusted by 28 million users—with Hitachi’s mission-critical engineering to deliver agile, high-ROI business transformation in Japan. TOKYO, November 26, 2...",
+   "first": "2026-11-26T04:29:59.062Z",
+   "score": -5,
+   "reasons": [
+    "-1 source odoo-news",
+    "-4 customer story"
+   ],
+   "status": "below",
+   "hash": "e59d31db"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/elastic-load-balancing-for-envoy-generally-available": {
+   "title": "Elastic Load Balancing for Envoy is now generally available",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/elastic-load-balancing-for-envoy-generally-available",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-25T16:00:00.000Z",
+   "updated": null,
+   "summary": "Today, AWS announces the general availability of ELB for Envoy, a new load balancer type in Elastic Load Balancing (ELB) that runs open-source Envoy proxies. Platform teams that run Envoy themselves own upgrades, security patching, and capacity across Availability Zones (AZs). ELB for Envoy takes on",
+   "first": "2026-11-26T04:29:59.062Z",
+   "score": 3,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"generally available\"",
+    "+2 user steps \"you can\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "829fea35"
+  },
+  "https://manageengine.com/it-operations-management/blog/meet-manageengine-at-aws-reinvent-2026-explore-unified-observability-with-opmanager-nexus.html": {
+   "title": "Meet ManageEngine at AWS re:Invent 2026: Explore unified observability with OpManager Nexus",
+   "link": "https://www.manageengine.com/it-operations-management/blog/meet-manageengine-at-aws-reinvent-2026-explore-unified-observability-with-opmanager-nexus.html",
+   "source": "manageengine-blog",
+   "topic": "security-identity",
+   "category": "launch",
+   "date": "2026-11-25T17:30:00.000Z",
+   "updated": null,
+   "summary": "As organizations expand their cloud infrastructure and adopt AI-driven automation, managing increasingly complex IT environments brings new challenges. IT teams need better visibility across their infrastructure, faster ways to troubleshoot issues, and greater control over cloud spending.At AWS re:I",
+   "first": "2026-11-26T04:29:59.062Z",
+   "score": -2,
+   "reasons": [
+    "-2 source manageengine-blog"
+   ],
+   "status": "below",
+   "hash": "34a3fbba"
+  },
+  "https://manageengine.com/blog/general/enterprise-credential-attacks-seal-the-gates-tight.html": {
+   "title": "Enterprise credential attacks: Seal the gates tight",
+   "link": "https://www.manageengine.com/blog/general/enterprise-credential-attacks-seal-the-gates-tight.html",
+   "source": "manageengine-blog",
+   "topic": "security-identity",
+   "category": "launch",
+   "date": "2026-11-25T11:00:00.000Z",
+   "updated": null,
+   "summary": "The walls of Troy were never breached. The Trojan horse only needed the city gates to be opened. The Trojans saw it as a gift from the gods and welcomed it with complete trust, only to be deceived by the hidden Greek army inside the horse, which broke out and conquered Troy.Today's cyberattacks happ",
+   "first": "2026-11-26T04:29:59.062Z",
+   "score": -2,
+   "reasons": [
+    "-2 source manageengine-blog"
+   ],
+   "status": "below",
+   "hash": "f98e55f0"
   }
  },
  "devices": {},

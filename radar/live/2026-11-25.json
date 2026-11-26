@@ -2,7 +2,7 @@
  "date": "2026-11-25",
  "title": "Tech news today, 25 November 2026",
  "published": "2026-11-24T20:23:44.941Z",
- "updated": "2026-11-26T03:43:45.111Z",
+ "updated": "2026-11-26T04:29:59.062Z",
  "items": [
   {
    "id": "e62d266c",
@@ -930,7 +930,7 @@
    "sourceId": "tc-excel",
    "reported": false,
    "also": [],
-   "post": null,
+   "post": "excel-november-2026-copilot-error-cards-pivot-grouping",
    "device": null,
    "ai": null,
    "score": 4,

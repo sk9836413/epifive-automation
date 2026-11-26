@@ -2,7 +2,7 @@
  "date": "2026-11-26",
  "title": "Tech news today, 26 November 2026",
  "published": "2026-11-25T22:42:19.087Z",
- "updated": "2026-11-26T03:43:45.111Z",
+ "updated": "2026-11-26T04:29:59.062Z",
  "items": [
   {
    "id": "6e3a80d1",
@@ -418,7 +418,35 @@
    "ai": null,
    "score": 10,
    "story": "trend:milestone:spacex"
+  },
+  {
+   "id": "7e8a6adc",
+   "key": "https://thehackernews.com/2026/11/13-malicious-nuget-packages-turn-fake.html",
+   "time": "2026-11-26T03:48:52.000Z",
+   "seen": "2026-11-26T04:29:59.062Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "13 Malicious NuGet Packages Turn Fake .NET Job Assessments Into Malware Delivery Traps",
+   "summary": "Cybersecurity researchers have discovered 13 malicious NuGet packages that are designed to target Windows .NET developers under the guise of a fake take-home job assessment. \"Most of the packages pose as WinUI 3 and WPF [Windows Presentation Foundation] button controls,\" Socket security researcher Kush Pandya said in a technical write-up. \"In the versions we analyzed, building or running a",
+   "lines": [
+    "Reported by The Hacker News: Cybersecurity researchers discovered 13 malicious NuGet packages designed to target Windows .NET developers under the guise of a fake take-home job assessment.",
+    "Most of the packages pose as WinUI 3 and WPF (Windows Presentation Foundation) button controls, according to a technical write-up from Socket.",
+    "IT teams supporting .NET developers may want to review the NuGet packages in use and verify where their dependencies come from."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/13-malicious-nuget-packages-turn-fake.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
   }
  ],
- "description": "14 technology updates from official sources, updated hourly: FedEx plane overshoots Miami runway, causing temporary ground stop at airport; SpaceX Receives Government Approval to Launch Space Data Centers; 1Password customer data stolen after employee GitHub account breach."
+ "description": "15 technology updates from official sources, updated hourly: FedEx plane overshoots Miami runway, causing temporary ground stop at airport; SpaceX Receives Government Approval to Launch Space Data Centers; 1Password customer data stolen after employee GitHub account breach."
 }
