@@ -2,7 +2,7 @@
  "date": "2026-11-26",
  "title": "Tech news today, 26 November 2026",
  "published": "2026-11-25T22:42:19.087Z",
- "updated": "2026-11-25T22:42:19.087Z",
+ "updated": "2026-11-26T03:43:45.111Z",
  "items": [
   {
    "id": "6e3a80d1",
@@ -291,7 +291,134 @@
    "ai": null,
    "score": 4,
    "story": null
+  },
+  {
+   "id": "f9f42e99",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/lambda-durable-microvm",
+   "time": "2026-11-25T20:00:00.000Z",
+   "seen": "2026-11-26T03:43:45.111Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "AWS Lambda now supports orchestrating MicroVMs with Lambda durable functions",
+   "summary": "Today, AWS announces a developer preview of a new extension for orchestrating Lambda MicroVMs with Lambda durable functions . The extension adds durable operations for running work on MicroVMs and managing their lifecycle. You can use the new operations to build software factories, security scanners, or orchestrate CI/CD jobs that run untrusted or agent-generated code in isolated sandboxes. With Lambda durable functions, you can build resilient, multi-step applications and AI workflows that run for up to one year, with built-in checkpointing and automatic retries. Lambda MicroVMs are a serverless compute primitive that provides VM-level isolation, near-instant launch and resume, and state pr",
+   "lines": [
+    "AWS announced a developer preview of an extension for orchestrating Lambda MicroVMs with Lambda durable functions. It adds durable operations for running work on MicroVMs and managing their lifecycle.",
+    "The extension is in developer preview.",
+    "IT teams can use it to orchestrate CI/CD jobs and security scanners that run untrusted or agent-generated code in isolated sandboxes."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/lambda-durable-microvm/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "0a2fdeb4",
+   "key": "https://azure.microsoft.com/updates?id=582326",
+   "time": "2026-11-25T23:14:20.000Z",
+   "seen": "2026-11-26T03:43:45.111Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "[In preview] Public Preview: ECMP Nexthop",
+   "summary": "Equal-Cost Multi-Path (ECMP) routing for Azure Virtual Network is now available in public preview, enabling customers to distribute traffic across multiple network appliances using a single user-defined route (UDR). Customers can configure 2 to 16 next-h",
+   "lines": [
+    "Equal-Cost Multi-Path (ECMP) routing for Azure Virtual Network is in public preview. It lets customers distribute traffic across multiple network appliances using a single user-defined route (UDR).",
+    "Customers can configure 2 to 16 next hops."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Azure Updates",
+    "url": "https://azure.microsoft.com/updates?id=582326"
+   },
+   "sourceId": "azure-updates",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "a8a55abc",
+   "key": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE45bUpwdlMwTTBqVE5uMnQ0TXQyQ0hnLUVlU1B2akk2bmxaMTQyUG9BOG1xaFE4RUpERmlMS3NQVGJ6ek84Um1UX25PTWJ5Z0Jzd1FaamtsWlZjcjg?oc=5",
+   "time": "2026-11-26T03:27:33.000Z",
+   "seen": "2026-11-26T03:43:45.111Z",
+   "kind": "outage",
+   "topic": "infra-outage",
+   "tier": 2,
+   "trending": true,
+   "trendKey": "infra-outage:aviation",
+   "techmeme": false,
+   "headline": "FedEx plane overshoots Miami runway, causing temporary ground stop at airport",
+   "summary": "",
+   "lines": [
+    "Reported by BBC: A FedEx plane overshot a runway at Miami airport, causing a temporary ground stop at the airport.",
+    "Also reported by CNN and Hindustan Times."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BBC",
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE45bUpwdlMwTTBqVE5uMnQ0TXQyQ0hnLUVlU1B2akk2bmxaMTQyUG9BOG1xaFE4RUpERmlMS3NQVGJ6ek84Um1UX25PTWJ5Z0Jzd1FaamtsWlZjcjg?oc=5"
+   },
+   "sourceId": "gnews-infra",
+   "sourceMax": 4,
+   "reported": true,
+   "also": [
+    "CNN",
+    "Hindustan Times"
+   ],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 12,
+   "story": "trend:infra-outage:aviation"
+  },
+  {
+   "id": "ff9844a3",
+   "key": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPMVVHT0RrcFA5ZTBDVVhtcHdtNEdyTWswVGdocnhkX0JGYXljVEtWSGppeHNRSHRPUFBPZTBfLXpSeXVrM2RsdmJ0bnJlcFlmNkFiNUxqWDQtblFzcjdVSDNiRThEbEdtRzlSOW9URDYxYUZPMDlFZ0h0Zk1RSUN4YWE4Tk9CV1E2ekdQODVHSktDMXdKejdJNzl4cEUyVUlnQnItaE1XRkgwRVdrT05FYUY5dU4zZw?oc=5",
+   "time": "2026-11-25T20:54:12.000Z",
+   "seen": "2026-11-26T03:43:45.111Z",
+   "kind": "trending",
+   "topic": "milestone",
+   "tier": 2,
+   "trending": true,
+   "trendKey": "milestone:spacex",
+   "techmeme": false,
+   "headline": "SpaceX Receives Government Approval to Launch Space Data Centers",
+   "summary": "",
+   "lines": [
+    "Reported by Bloomberg: SpaceX received government approval to launch space data centers.",
+    "Also reported by WSJ and NDTV."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Bloomberg",
+    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPMVVHT0RrcFA5ZTBDVVhtcHdtNEdyTWswVGdocnhkX0JGYXljVEtWSGppeHNRSHRPUFBPZTBfLXpSeXVrM2RsdmJ0bnJlcFlmNkFiNUxqWDQtblFzcjdVSDNiRThEbEdtRzlSOW9URDYxYUZPMDlFZ0h0Zk1RSUN4YWE4Tk9CV1E2ekdQODVHSktDMXdKejdJNzl4cEUyVUlnQnItaE1XRkgwRVdrT05FYUY5dU4zZw?oc=5"
+   },
+   "sourceId": "gnews-ipo",
+   "sourceMax": 4,
+   "reported": true,
+   "also": [
+    "WSJ",
+    "NDTV"
+   ],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 10,
+   "story": "trend:milestone:spacex"
   }
  ],
- "description": "10 technology updates from official sources, updated hourly: 1Password customer data stolen after employee GitHub account breach; MC1568439: Out-of-band hotpatch update addresses stop error 0x139 on Windows Server 2025; 1Password said hackers broke into its internal systems, but customer passwords a"
+ "description": "14 technology updates from official sources, updated hourly: FedEx plane overshoots Miami runway, causing temporary ground stop at airport; SpaceX Receives Government Approval to Launch Space Data Centers; 1Password customer data stolen after employee GitHub account breach."
 }

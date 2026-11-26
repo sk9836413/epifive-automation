@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-25T22:42:19.087Z",
+ "lastScan": "2026-11-26T03:43:45.111Z",
  "seen": {
   "https://openai.com/index/chatgpt-plus-for-veterans": {
    "title": "ChatGPT Plus for veterans and servicemembers",
@@ -3727,24 +3727,6 @@
    "status": "duplicate",
    "hash": "abb9bc65",
    "post": "purview-dlp-policies-exchange-teams-endpoints"
-  },
-  "https://news.samsung.com/global/the-technology-behind-more-precise-finding-with-galaxy-smarttag3-and-smartthings": {
-   "title": "The Technology Behind More Precise Finding With Galaxy SmartTag3 and SmartThings",
-   "link": "https://news.samsung.com/global/the-technology-behind-more-precise-finding-with-galaxy-smarttag3-and-smartthings",
-   "source": "samsung-global",
-   "topic": "mobiles",
-   "category": "launch",
-   "date": "2026-11-23T08:00:00.000Z",
-   "updated": null,
-   "summary": "Samsung Electronics launched Galaxy SmartTag3, a compact tracker that helps locate personal belongings or pets. Weighing just 9.15 g — approximately 33% lighter and 35% smaller by volume than its predecessor — Galaxy SmartTag3 offers improved portability and battery life of up to 550 days under stan",
-   "first": "2026-11-23T03:02:13.148Z",
-   "score": 3,
-   "reasons": [
-    "+1 niche (galaxy)",
-    "+2 launch \"launched\""
-   ],
-   "status": "below",
-   "hash": "4421aee6"
   },
   "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64018": {
    "title": "Money Market Operations as on November 20, 2026",
@@ -9848,7 +9830,7 @@
     "MSRC watcher: added by Microsoft on 2026-11-24 to the November 2026 release (Patch Tuesday was 2026-11-10)",
     "Critical, CVSS 9.8 >= 9"
    ],
-   "status": "writing",
+   "status": "published",
    "hash": "53ab4c9c",
    "msrc": {
     "cve": "CVE-2026-112732",
@@ -9860,7 +9842,9 @@
    "kind": "new",
    "extra": false,
    "taskAt": "2026-11-25T22:42:19.087Z",
-   "attempts": 1
+   "attempts": 1,
+   "slug": "cve-2026-112732-office-visio-rce-check-update",
+   "resultAt": "2026-11-25T22:52:00.616Z"
   },
   "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64035": {
    "title": "Result of the Overnight Variable Rate Repo (VRR) auction held on November 25, 2026",
@@ -10057,8 +10041,12 @@
     "+2 user steps \"how to\"",
     "+3 trending \"november 27 2026 ott releases\", autocomplete (8)"
    ],
-   "status": "queued",
-   "hash": "b3aa227a"
+   "status": "writing",
+   "hash": "b3aa227a",
+   "kind": "new",
+   "extra": false,
+   "taskAt": "2026-11-26T03:43:45.111Z",
+   "attempts": 1
   },
   "https://zoho.com/blog/partners/start-your-zoho-partner-journey-with-these-three-apps.html": {
    "title": "New to Zoho Partnership? Starting with these 3 apps enables you to serve most customers.",
@@ -11249,6 +11237,331 @@
     "microsoft"
    ],
    "backlog": "teams-not-working-today-fix-windows-mac-us"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64044": {
+   "title": "Money Market Operations as on November 25, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64044",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-26T09:00:00.000Z",
+   "updated": null,
+   "summary": "(Amount in ₹ crore, Rate in Per cent) MONEY MARKETS @ --> Money Markets @ Volume (One Leg) Weighted Average Rate Range A. Overnight Segment (I+II+III+IV) 7,79,137.97 5.72 4.30-5.94 I. Call Money 14,280.85 5.73 4.30-5.88 II. Triparty Repo 5,76,862.25 5.71 5.21-5.78 III. Market Repo 1,80,856.87 5.72 4",
+   "first": "2026-11-26T03:43:45.111Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "8364a33"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=581895": {
+   "title": "Microsoft Power Platform governance and administration: Create and manage Filter-based Security filters in Power Platform Maker portal",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581895",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-26T00:16:54.000Z",
+   "updated": "2026-11-26T00:16:54.000Z",
+   "summary": "Admins and makers can create and manage filters for Filter-based Security through a simplified management experience. Filters define which Dataverse records users can access based on configurable conditions, helping organizations implement scalable, policy-driven record access without individually s",
+   "first": "2026-11-26T03:43:45.111Z",
+   "score": -4,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 user steps \"users can\"",
+    "-5 category (In development, General Availability, Preview)"
+   ],
+   "status": "below",
+   "hash": "f9443b09"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=581794": {
+   "title": "Dynamics 365 Finance: Customer Transaction Form Enhancement",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581794",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-26T00:16:54.000Z",
+   "updated": "2026-11-26T00:16:54.000Z",
+   "summary": "Redesigning the Customer transaction form to improve the performance and include the Multiledger aspect GA date: March CY2027 Preview date: December CY2026",
+   "first": "2026-11-26T03:43:45.111Z",
+   "score": -6,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "-5 category (In development, General Availability, Preview)"
+   ],
+   "status": "below",
+   "hash": "a8ba97cc"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=581793": {
+   "title": "Dynamics 365 Finance: Finance explorer skill",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581793",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-26T00:16:54.000Z",
+   "updated": "2026-11-26T00:16:54.000Z",
+   "summary": "This provides the end-to-end traceability of document relationships across the order to cash. GA date: June CY2027 Preview date: March CY2027",
+   "first": "2026-11-26T03:43:45.111Z",
+   "score": -6,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "-5 category (In development, General Availability, Preview)",
+    "backlog dynamics-365-finance-supply-chain-overview-licensing"
+   ],
+   "status": "below",
+   "hash": "a75f0b2e",
+   "backlog": "dynamics-365-finance-supply-chain-overview-licensing"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=581783": {
+   "title": "Dynamics 365 Finance: Enable Parameter-Based Configuration for Customer Prepayments",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581783",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-26T00:16:54.000Z",
+   "updated": "2026-11-26T00:16:54.000Z",
+   "summary": "The Prepayment customer invoice feature can be enabled per legal entity/country region. GA date: December CY2026",
+   "first": "2026-11-26T03:43:45.111Z",
+   "score": -2,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 user steps \"Enable\"",
+    "+1 plans/price/availability \"region\"",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "2e7c4f18"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=581782": {
+   "title": "Dynamics 365 Finance: Explorer Skill",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581782",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-26T00:16:54.000Z",
+   "updated": "2026-11-26T00:16:54.000Z",
+   "summary": "This feature provides the end-to-end traceability of document relationships across order to cash. GA date: June CY2027 Preview date: March CY2027",
+   "first": "2026-11-26T03:43:45.111Z",
+   "score": -6,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "-5 category (In development, General Availability, Preview)",
+    "backlog dynamics-365-finance-supply-chain-overview-licensing"
+   ],
+   "status": "below",
+   "hash": "e3bb378f",
+   "backlog": "dynamics-365-finance-supply-chain-overview-licensing"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=581756": {
+   "title": "Dynamics 365 Human Resources: Simplify HR case management with employee self-service",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581756",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-26T00:16:54.000Z",
+   "updated": "2026-11-26T00:16:54.000Z",
+   "summary": "Enable employees to conveniently create, manage, and track HR-related cases through the Employee Self-Service (ESS) experience in Dynamics 365 Human Resources. Employees can submit HR inquiries, report issues, and request assistance for scenarios related to leave and absence, benefits, and personnel",
+   "first": "2026-11-26T03:43:45.111Z",
+   "score": -4,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 user steps \"Enable\"",
+    "-5 category (In development, General Availability, Preview)"
+   ],
+   "status": "below",
+   "hash": "959fa2a4"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=580886": {
+   "title": "Microsoft Teams: Open and collaborate on Pages in Teams",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=580886",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-26T00:16:54.000Z",
+   "updated": "2026-11-26T00:16:54.000Z",
+   "summary": "When someone shares a page in chat or a channel, you can open it in Teams, edit, and discuss with teammates. Open a page in your main Teams window or a new window, whichever works best for you. More info: https://support.microsoft.com/en-us/teams/teams-channels/manage-pages-and-loop-components-in-ch",
+   "first": "2026-11-26T03:43:45.111Z",
+   "score": -6,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+2 niche (microsoft teams)",
+    "+2 user steps \"you can\"",
+    "-4 customer story",
+    "-5 category (In development, General Availability, Preview)"
+   ],
+   "status": "below",
+   "hash": "d123f077"
+  },
+  "https://microsoft.com/microsoft-365/roadmap?id=578862": {
+   "title": "Microsoft Viva: Access Management for Copilot Analytics",
+   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=578862",
+   "source": "m365-roadmap",
+   "topic": "microsoft-365",
+   "category": "launch",
+   "date": "2026-11-26T00:16:54.000Z",
+   "updated": "2026-11-26T00:16:54.000Z",
+   "summary": "Admins can now manage who has access to Viva Insights - Copilot Analytics, and what they can do, directly in the product. The new Access Management experience brings role assignment and permissions into one place for Global administrators, AI administrators and Viva Insights administrators, instead ",
+   "first": "2026-11-26T03:43:45.111Z",
+   "score": 1,
+   "reasons": [
+    "-1 source m365-roadmap",
+    "+4 niche (copilot, microsoft 365, entra)",
+    "+2 user steps \"Admins can\"",
+    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
+   ],
+   "status": "below",
+   "hash": "217fee50"
+  },
+  "https://blogs.vmware.com/cloud-foundation/2026/11/25/diagnostics-for-vmware-cloud-foundation-operations-newest-findings-3": {
+   "title": "Diagnostics for VMware Cloud Foundation Operations – Newest Findings",
+   "link": "https://blogs.vmware.com/cloud-foundation/2026/11/25/diagnostics-for-vmware-cloud-foundation-operations-newest-findings-3/",
+   "source": "vmware-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-25T22:16:01.000Z",
+   "updated": null,
+   "summary": "Diagnostics for VMware Cloud Foundation is a centralized platform that monitors the overall operational status of the VMware Cloud Foundation (VCF) software stack. It is a self-service platform that helps you analyze and troubleshoot the components of VMware Cloud Foundation, including vCenter, ESXi",
+   "first": "2026-11-26T03:43:45.111Z",
+   "score": -1,
+   "reasons": [
+    "-1 source vmware-blog"
+   ],
+   "status": "below",
+   "hash": "83f37ca3"
+  },
+  "https://intel.com/content/www/us/en/newsroom/news/client-computing/the-best-employee-experiences-start-with-technology-that-works-together.html": {
+   "title": "Best Experiences Start with Technology That Works",
+   "link": "https://www.intel.com/content/www/us/en/newsroom/news/client-computing/the-best-employee-experiences-start-with-technology-that-works-together.html",
+   "source": "intel-newsroom",
+   "topic": "laptops-hardware",
+   "category": "launch",
+   "date": null,
+   "updated": null,
+   "summary": "Client Computing",
+   "first": "2026-11-26T03:43:45.111Z",
+   "score": -1,
+   "reasons": [
+    "-1 source intel-newsroom"
+   ],
+   "status": "below",
+   "hash": "81a9c14c"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/lambda-durable-microvm": {
+   "title": "AWS Lambda now supports orchestrating MicroVMs with Lambda durable functions",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/lambda-durable-microvm/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-25T20:00:00.000Z",
+   "updated": null,
+   "summary": "Today, AWS announces a developer preview of a new extension for orchestrating Lambda MicroVMs with Lambda durable functions . The extension adds durable operations for running work on MicroVMs and managing their lifecycle. You can use the new operations to build software factories, security scanners",
+   "first": "2026-11-26T03:43:45.111Z",
+   "score": 4,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+1 niche (agent)",
+    "+2 launch \"now supports\"",
+    "+2 user steps \"You can\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "c88598bd"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-cloudwatch-omni-pagerduty": {
+   "title": "Amazon CloudWatch Omni now integrates with PagerDuty",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-cloudwatch-omni-pagerduty/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-25T20:00:00.000Z",
+   "updated": null,
+   "summary": "Amazon CloudWatch Omni alerts can now automatically create PagerDuty incidents, so notifications flow directly into your existing incident management workflows. This reduces mean time to resolution (MTTR) by eliminating manual notification steps and ensuring consistent incident workflows. CloudWatch",
+   "first": "2026-11-26T03:43:45.111Z",
+   "score": -1,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+1 niche (agents)"
+   ],
+   "status": "below",
+   "hash": "16cc2945"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/transcribe-turbo-preview": {
+   "title": "Amazon Transcribe Turbo: more accurate transcripts and natural turn-taking for voice agents, now in public preview",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/transcribe-turbo-preview/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-25T08:00:00.000Z",
+   "updated": null,
+   "summary": "Amazon Transcribe Turbo, our next-generation speech-to-text model, is now in public preview in US East (Ohio) for batch and streaming. Turbo improves accuracy, supports custom vocabulary, and formats numbers, dates, currency, phone numbers and addresses following each locale's conventions. Streaming",
+   "first": "2026-11-26T03:43:45.111Z",
+   "score": 2,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+1 niche (agents)",
+    "+2 launch \"generally available\"",
+    "+1 plans/price/availability \"Regions\""
+   ],
+   "status": "below",
+   "hash": "47b9ed76"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/device-farm-virtual-devices": {
+   "title": "AWS Device Farm now supports Android emulators and iOS simulators",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/device-farm-virtual-devices/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-25T08:00:00.000Z",
+   "updated": null,
+   "summary": "AWS Device Farm , a service for testing mobile and web apps, now supports Android emulators and iOS simulators alongside real devices for automated and manual testing, enabling faster testing at scale early in your development pipeline. With virtual devices, you can shift testing left to stages that",
+   "first": "2026-11-26T03:43:45.111Z",
+   "score": 5,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 niche (android)",
+    "+2 launch \"now supports\"",
+    "+2 user steps \"you can\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "344bb80"
+  },
+  "https://azure.microsoft.com/updates?id=582326": {
+   "title": "[In preview] Public Preview: ECMP Nexthop",
+   "link": "https://azure.microsoft.com/updates?id=582326",
+   "source": "azure-updates",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-25T23:14:20.000Z",
+   "updated": "2026-11-25T23:14:20.000Z",
+   "summary": "Equal-Cost Multi-Path (ECMP) routing for Azure Virtual Network is now available in public preview, enabling customers to distribute traffic across multiple network appliances using a single user-defined route (UDR). Customers can configure 2 to 16 next-h",
+   "first": "2026-11-26T03:43:45.111Z",
+   "score": 2,
+   "reasons": [
+    "-2 source azure-updates",
+    "+2 launch \"now available\"",
+    "+2 user steps \"configure\""
+   ],
+   "status": "below",
+   "hash": "a0a7d804"
+  },
+  "https://elevenlabs.io/blog/what-is-graphrag": {
+   "title": "What is GraphRAG? A practical guide to smarter AI retrieval",
+   "link": "https://elevenlabs.io/blog/what-is-graphrag",
+   "source": "elevenlabs-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-25T12:00:00.000Z",
+   "updated": null,
+   "summary": "Learn what is GraphRAG, how knowledge graph RAG works, and where it beats standard RAG. See use cases and how ElevenAgents handles RAG for voice agents.",
+   "first": "2026-11-26T03:43:45.111Z",
+   "score": -1,
+   "reasons": [
+    "-2 source elevenlabs-blog",
+    "+1 niche (agents)"
+   ],
+   "status": "below",
+   "hash": "2cbacdd"
   }
  },
  "devices": {},
@@ -11278,7 +11591,7 @@
    "first": "2026-11-19T14:45:12.000Z",
    "decision": "covered",
    "key": "ipo:anthropic",
-   "title": "Anthropic shares tumble below $83 IPO price, on track to lose nearly $200 billion in value",
+   "title": "Anthropic’s Post-IPO Struggles Contrast With SpaceX’s Early Days",
    "titles": [
     "Anthropic’s 7 founders cashed out nearly $2B in record-breaking IPO",
     "Anthropic’s IPO could deliver $156B to charity",
@@ -11303,20 +11616,19 @@
     "https://www.cnbc.com/2026/11/20/anthropic-ipo-greenshoe.html",
     "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQZXdyUExSdjhGa000MWtxaUR0YzhiVHJnNzN0N0lTUnNONktkaWZkUVUwdExoUXhXMTlJN0NEZ3F3M2RYbUZYelpiNFhpOE14LWdtYjF1MnB2M00xMk1GbENmci1UeFlXa3V0aHM4TWlxVVZNeFBwUkZjMTA2ZWhCSFBVaVVBb0FUdnpj?oc=5"
    ],
-   "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNMHBNOVY5RDc1NmxUUjNnZkNhLWROQkhUOFZpVmQ0SEI0UG9aSUpTTjhpV3EydTNkdW8xYm1KOWF6OXg2Z3BMaUJCWTE3WnFCM0hCZGNuQ3ZKUklsYUROVWQzdExOamNKVlJLRTgwYWpoYVdOUjlDY0pxTmxZajlvckJ4cHc0TG1hbW1ZUkszaDZ2M2Rvd3RqTWRFaVRENXVWT0pr?oc=5",
+   "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNNnA5YTMwSWRSUnZxYzBTbDFmd1FXejBuclc1ODdIOERNaGdTZG1iSWVUUm1kMGV6VG02YUp0RG9RRGJUOGhtWW5lOWk5N2ptSUVQMmp2ZXRPdVVLOXdQUjhaRWpfWEp3NXIyZHJDSmx1WnJZWXR2LXBEY1ctQnBjVVczc2ttMEhxSUxNazJGT09yQ3BiS0Q0Y0llRENGeERqQ29VWE1FZFdJQ2hxZFpvTzI1b1Vmdw?oc=5",
    "outlets": [
-    "Reuters",
     "Bloomberg",
     "CNBC",
-    "TechCrunch"
+    "WSJ"
    ],
    "techmeme": false,
    "category": "launch",
    "topic": "ai-engineering",
    "parkOnly": false,
-   "last": "2026-11-25T13:55:34.000Z",
-   "date": "2026-11-25T13:55:34.000Z",
-   "score": 12,
+   "last": "2026-11-26T03:38:07.000Z",
+   "date": "2026-11-26T03:38:07.000Z",
+   "score": 11,
    "post": "anthropic-ipo-explained-claude-users"
   },
   "milestone:amazon|12f167c1": {
@@ -11345,23 +11657,27 @@
    "first": "2026-11-24T03:45:01.000Z",
    "decision": "parked",
    "key": "milestone:openai",
-   "title": "OpenAI and Cisco launch Shirudo, an open-source runtime that helps teams protect running Linux systems without a reboot while they roll out patches",
+   "title": "OpenAI rolls out its merged ChatGPT Chat and Work tabs, with a shared usage meter, to a small group of Pro users, saying heavy users may hit their limits sooner",
    "titles": [
     "OpenAI and Cisco launch Shirudo, an open-source runtime that helps teams protect running Linux systems without a reboot while they roll out patches",
-    "OpenAI rolls out a version of GPT-6.2 Sol that is \"optimized for everyday conversation\" to the Chat tab for Plus, Pro, Business, and Enterprise users"
+    "OpenAI rolls out a version of GPT-6.2 Sol that is \"optimized for everyday conversation\" to the Chat tab for Plus, Pro, Business, and Enterprise users",
+    "OpenAI rolls out its merged ChatGPT Chat and Work tabs, with a shared usage meter, to a small group of Pro users, saying heavy users may hit their limits sooner"
    ],
    "links": [
     "https://siliconangle.com/2026/11/23/cisco-and-openai-launch-shirudo-an-open-source-infrastructure-shield-to-protect-against-ai-driven-cyberattacks/",
-    "https://9to5mac.com/2026/11/23/chatgpt-expands-gpt-6-2-sol-as-openai-sets-retirement-date-for-two-models/"
+    "https://9to5mac.com/2026/11/23/chatgpt-expands-gpt-6-2-sol-as-openai-sets-retirement-date-for-two-models/",
+    "https://techcrunch.com/2026/11/25/openai-says-heavy-chatgpt-users-may-hit-limits-sooner-as-it-merges-chat-and-work/"
    ],
-   "link": "https://siliconangle.com/2026/11/23/cisco-and-openai-launch-shirudo-an-open-source-infrastructure-shield-to-protect-against-ai-driven-cyberattacks/",
-   "outlets": [],
+   "link": "https://techcrunch.com/2026/11/25/openai-says-heavy-chatgpt-users-may-hit-limits-sooner-as-it-merges-chat-and-work/",
+   "outlets": [
+    "TechCrunch"
+   ],
    "techmeme": true,
    "category": "launch",
-   "topic": "how-to-tips",
+   "topic": "ai-automation",
    "parkOnly": false,
-   "last": "2026-11-24T04:15:00.000Z",
-   "date": "2026-11-24T04:15:00.000Z",
+   "last": "2026-11-26T02:55:02.000Z",
+   "date": "2026-11-26T02:55:02.000Z",
    "score": 11,
    "ref": "https://openai.com/index/introducing-shirudo"
   },

@@ -2,7 +2,7 @@
  "date": "2026-11-25",
  "title": "Tech news today, 25 November 2026",
  "published": "2026-11-24T20:23:44.941Z",
- "updated": "2026-11-25T22:42:19.087Z",
+ "updated": "2026-11-26T03:43:45.111Z",
  "items": [
   {
    "id": "e62d266c",
@@ -914,7 +914,7 @@
    "time": "2026-11-25T00:31:51.000Z",
    "seen": "2026-11-25T13:16:59.116Z",
    "kind": "launch",
-   "tier": 2,
+   "tier": 1,
    "headline": "What's New in Excel (November 2026)",
    "summary": "Finance teams can hand reconciliations and journal entries to new accounting skills, analysts can group PivotTable data just by asking, and anyone who opens a read-only workbook can now ask Copilot about it. You also get more model choices. On Windows, descriptive error cards explain formula errors and how to fix them, and on iPhone, Copilot keeps working on your task after you put your phone away. Excel for Windows, Mac, and web Copilot in Excel: Accounting skills (Frontier) Copilot in Excel: PivotTable grouping (Insiders) Copilot in Excel: Available in read-only workbooks New models in Copilot in Excel Excel for Windows and Mac Descriptive error cards Show Changes: Grouped Copilot cards (I",
    "lines": [
@@ -1313,5 +1313,5 @@
    "story": null
   }
  ],
- "description": "45 technology updates from official sources, updated hourly: Internal memos: Microsoft declared a \"Code Red\" drive to overhaul how it prevents and responds to major service failures after the 24-hour Microsoft 365 outage; Drupal Fail2Install Exploit Details Emerge as Critical RCE Flaw Faces Active E"
+ "description": "45 technology updates from official sources, updated hourly: Internal memos: Microsoft declared a \"Code Red\" drive to overhaul how it prevents and responds to major service failures after the 24-hour Microsoft 365 outage; What's New in Excel (November 2026); Drupal Fail2Install Exploit Details Emerg"
 }
