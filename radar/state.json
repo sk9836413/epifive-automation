@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-27T13:17:03.494Z",
+ "lastScan": "2026-11-27T14:16:37.788Z",
  "seen": {
   "https://bleepingcomputer.com/news/security/apache-http-server-patches-critical-http-2-remote-code-execution-flaw": {
    "title": "Apache HTTP Server patches critical HTTP/2 remote code execution flaw",
@@ -8669,13 +8669,15 @@
     "+2 corroborated by theprint-tech, miradore-blog (whatsapp, ios)",
     "backlog cert-flag-high-severity-vulnerability-egov-digit"
    ],
-   "status": "writing",
+   "status": "skipped",
    "hash": "a8c9a345",
    "backlog": "cert-flag-high-severity-vulnerability-egov-digit",
    "kind": "new",
    "extra": false,
    "taskAt": "2026-11-27T13:17:03.494Z",
-   "attempts": 1
+   "attempts": 1,
+   "resultAt": "2026-11-27T13:22:47.983Z",
+   "skipReason": "RADAR-SKIP: covered by /blog/whatsapp-cve-2026-23871-android-update-check (three of the five CVEs, same WhatsApp advisories; CERT-In note CIVN-2026-0576 itself could not be opened, so a CERT-In-specif"
   },
   "https://thehackernews.com/2026/11/north-korea-linked-polinrider-poisons.html": {
    "title": "North Korea-Linked PolinRider Poisons Over 7,600 GitHub Repositories to Spread Malware",
@@ -8892,6 +8894,75 @@
    ],
    "status": "below",
    "hash": "caccb4f8"
+  },
+  "https://salesforce.com/blog/small-business/token-management-for-business-owners": {
+   "title": "We’re Talking Token Management and it’s Not Arcade Flashbacks",
+   "link": "https://www.salesforce.com/blog/small-business/token-management-for-business-owners/",
+   "source": "salesforce-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-27T14:00:00.000Z",
+   "updated": null,
+   "summary": "How many tokens do we need to do business with AI? Let’s talk about it.",
+   "first": "2026-11-27T14:16:37.788Z",
+   "score": -1,
+   "reasons": [
+    "-1 source salesforce-blog"
+   ],
+   "status": "below",
+   "hash": "f7630004"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64060": {
+   "title": "Auction of State Government Securities",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64060",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-27T19:00:00.000Z",
+   "updated": null,
+   "summary": "The following State Governments have offered to sell stock by way of auction, for an aggregate amount of ₹21,200 Crore (Face Value). Sr No State/UT Amount to be raised (₹ Crore) Additional Borrowing (Greenshoe) Option (₹ Crore) Tenor (Year) Type of Auction 1. Andhra Pradesh 1000 - Re-issue of 7.51% ",
+   "first": "2026-11-27T14:16:37.788Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"₹2\""
+   ],
+   "status": "below",
+   "hash": "7218fc6e"
+  },
+  "https://reuters.com/world/hackers-breach-us-air-force-flagship-cloud-one-computing-platform-2026-11-27": {
+   "title": "Sources: the US Air Force recently discovered a breach of Cloud One, which combines Microsoft, Amazon, Oracle, and Google clouds to power Air Force applications",
+   "link": "https://www.reuters.com/world/hackers-breach-us-air-force-flagship-cloud-one-computing-platform-2026-11-27/",
+   "source": "techmeme",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-27T12:10:01.000Z",
+   "summary": "Hackers have breached the US Air Force's flagship cloud computing platform, three people familiar with the matter told Reuters …",
+   "first": "2026-11-27T14:16:37.788Z",
+   "score": 11,
+   "reasons": [
+    "+1 trending: Techmeme top headline, Reuters"
+   ],
+   "trending": {
+    "key": "security:google",
+    "titles": [
+     "Sources: the US Air Force recently discovered a breach of Cloud One, which combines Microsoft, Amazon, Oracle, and Google clouds to power Air Force applications"
+    ],
+    "links": [
+     "https://www.reuters.com/world/hackers-breach-us-air-force-flagship-cloud-one-computing-platform-2026-11-27/"
+    ],
+    "outlets": [
+     "Reuters"
+    ],
+    "techmeme": true
+   },
+   "trendDay": "2026-11-27",
+   "hash": "c0037948",
+   "status": "writing",
+   "kind": "new",
+   "extra": false,
+   "taskAt": "2026-11-27T14:16:37.788Z",
+   "attempts": 1
   }
  },
  "devices": {},
@@ -8915,7 +8986,9 @@
    "Anthropic rolls out \"Install as app\" in beta, which turns Claude artifacts into "
   ],
   "2026-11-26": [],
-  "2026-11-27": []
+  "2026-11-27": [
+   "Sources: the US Air Force recently discovered a breach of Cloud One, which combi"
+  ]
  },
  "trends": {
   "ipo:anthropic|63c1035a": {
@@ -9079,6 +9152,30 @@
    "date": "2026-11-24T22:05:01.000Z",
    "score": 11,
    "ref": "https://claude.com/resources/articles/install-as-app"
+  },
+  "security:google|c0037948": {
+   "first": "2026-11-27T12:10:01.000Z",
+   "decision": "queued",
+   "key": "security:google",
+   "title": "Sources: the US Air Force recently discovered a breach of Cloud One, which combines Microsoft, Amazon, Oracle, and Google clouds to power Air Force applications",
+   "titles": [
+    "Sources: the US Air Force recently discovered a breach of Cloud One, which combines Microsoft, Amazon, Oracle, and Google clouds to power Air Force applications"
+   ],
+   "links": [
+    "https://www.reuters.com/world/hackers-breach-us-air-force-flagship-cloud-one-computing-platform-2026-11-27/"
+   ],
+   "link": "https://www.reuters.com/world/hackers-breach-us-air-force-flagship-cloud-one-computing-platform-2026-11-27/",
+   "outlets": [
+    "Reuters"
+   ],
+   "techmeme": true,
+   "category": "incident",
+   "topic": "security-identity",
+   "parkOnly": false,
+   "last": "2026-11-27T12:10:01.000Z",
+   "date": "2026-11-27T12:10:01.000Z",
+   "score": 11,
+   "ref": "https://reuters.com/world/hackers-breach-us-air-force-flagship-cloud-one-computing-platform-2026-11-27"
   }
  },
  "missedCheck": {

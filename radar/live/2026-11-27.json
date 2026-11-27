@@ -2,7 +2,7 @@
  "date": "2026-11-27",
  "title": "Tech news today, 27 November 2026",
  "published": "2026-11-26T23:03:53.084Z",
- "updated": "2026-11-27T13:17:03.494Z",
+ "updated": "2026-11-27T14:16:37.788Z",
  "items": [
   {
    "id": "7d95ca76",
@@ -373,7 +373,37 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "61da2bb0",
+   "key": "https://theverge.com/games/1043028/keychron-g6-he-hall-effect-magoptic-gaming-mouse-impressions",
+   "time": "2026-11-27T14:00:00.000Z",
+   "seen": "2026-11-27T14:16:37.788Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "This gaming mouse should be a Logitech-killer, but it has one big flaw",
+   "summary": "When Keychron announced its $90 G6 HE gaming mouse, I immediately thought, \"Cool! A cheaper alternative to the pricey $180 Logitech G Pro X2 Superstrike.\" Logitech's innovation with the Superstrike is using magnetic Hall effect switches for a user-adjustable mouse click depth, with haptic vibrations mimicking the tactile click feel. The Keychron G6 HE, as […]",
+   "lines": [
+    "Reported by The Verge: Keychron announced the G6 HE gaming mouse as a lower-cost alternative to Logitech's G Pro X2 Superstrike.",
+    "The G6 HE is priced at $90, compared with $180 for the Superstrike.",
+    "The Superstrike uses magnetic Hall effect switches for user-adjustable click depth, with haptic vibrations that mimic a tactile click. The provided text does not describe the flaw named in the headline.",
+    "For IT teams and business users buying peripherals, the comparison shows a price difference between two gaming mice with different click features."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Verge",
+    "url": "https://www.theverge.com/games/1043028/keychron-g6-he-hall-effect-magoptic-gaming-mouse-impressions"
+   },
+   "sourceId": "the-verge",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
   }
  ],
- "description": "13 technology updates from official sources, updated hourly: The Garmin Forerunner 265S is down to $300, its best price of the year; Instagram for TV Comes to India, Introducing New Ways to Watch Reels Together; Backloggd urges users to change their passwords after a breach."
+ "description": "14 technology updates from official sources, updated hourly: The Garmin Forerunner 265S is down to $300, its best price of the year; Instagram for TV Comes to India, Introducing New Ways to Watch Reels Together; This gaming mouse should be a Logitech-killer, but it has one big flaw."
 }
