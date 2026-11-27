@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-27T04:43:50.452Z",
+ "lastScan": "2026-11-27T05:13:18.865Z",
  "seen": {
   "https://bleepingcomputer.com/news/security/apache-http-server-patches-critical-http-2-remote-code-execution-flaw": {
    "title": "Apache HTTP Server patches critical HTTP/2 remote code execution flaw",
@@ -84,76 +84,6 @@
    "attempts": 1,
    "slug": "microsoft-365-outage-november-2026-what-to-do",
    "resultAt": "2026-11-13T05:23:21.622Z"
-  },
-  "https://status.cloud.microsoft/#2026-11-13-users-may-be-unable-to-connect-to-multiple-microsoft-365-ser": {
-   "title": "Users may be unable to connect to multiple Microsoft 365 services",
-   "link": "https://status.cloud.microsoft/#2026-11-13-users-may-be-unable-to-connect-to-multiple-microsoft-365-ser",
-   "source": "status-m365-admin",
-   "topic": "microsoft-365",
-   "category": "outage",
-   "date": "2026-11-13T04:57:55.000Z",
-   "updated": "2026-11-13T04:57:55.000Z",
-   "summary": "User impact: Users may be unable to connect to multiple Microsoft 365 services. More info: Features of the Microsoft 365 services below that interact with Exchange Online and email services are impacted. Elements of those services that do not depend on interaction with Exchange Online remain functio",
-   "first": "2026-11-13T05:13:15.630Z",
-   "score": 11,
-   "reasons": [
-    "+6 status-page incident \"service degradation\"",
-    "+3 major platform (microsoft)",
-    "+2 large incident (impact major, 19 service(s), multi-service/region)",
-    "same outage as \"Massive Microsoft 365 outage disrupts Outlook, Teams, Copilo\""
-   ],
-   "status": "duplicate",
-   "hash": "3a894ec2",
-   "families": [
-    "microsoft"
-   ]
-  },
-  "https://status.cloud.microsoft/#2026-11-13-users-may-be-unable-to-access-or-perform-several-actions-in-": {
-   "title": "Users may be unable to access or perform several actions in Microsoft 365 services",
-   "link": "https://status.cloud.microsoft/#2026-11-13-users-may-be-unable-to-access-or-perform-several-actions-in-",
-   "source": "status-m365-consumer",
-   "topic": "microsoft-365",
-   "category": "outage",
-   "date": "2026-11-13T04:24:54.757Z",
-   "updated": "2026-11-13T04:24:54.757Z",
-   "summary": "User impact: Users may be unable to access or perform several actions in Microsoft 365 services. Current status: We’re continuing our recovery efforts to restore service health throughout the affected environment. This issue impacts Outlook.com, OneDrive, OneNote, Microsoft To Do, Teams, and Microso",
-   "first": "2026-11-13T05:13:15.630Z",
-   "score": 11,
-   "reasons": [
-    "+6 status-page incident \"service degradation\"",
-    "+3 major platform (microsoft)",
-    "+2 large incident (impact major, 0 service(s))",
-    "same outage as \"Massive Microsoft 365 outage disrupts Outlook, Teams, Copilo\""
-   ],
-   "status": "duplicate",
-   "hash": "13dfd7ae",
-   "families": [
-    "microsoft"
-   ]
-  },
-  "https://githubstatus.com/incidents/dvy0t3mvh1lg": {
-   "title": "Impact across multiple GitHub products including Actions, Pages, and Copilot products.",
-   "link": "https://www.githubstatus.com/incidents/dvy0t3mvh1lg",
-   "source": "status-github",
-   "topic": "ai-engineering",
-   "category": "outage",
-   "date": "2026-11-11T20:48:12.260Z",
-   "updated": "2026-11-11T21:21:39.499Z",
-   "summary": "This incident has been resolved. Thank you for your patience and understanding as we addressed this issue. A detailed root cause analysis will be shared as soon as it is available.",
-   "first": "2026-11-13T05:13:15.630Z",
-   "score": 12,
-   "reasons": [
-    "+6 status-page incident \"resolved\"",
-    "+3 major platform (github)",
-    "+2 large incident (impact critical, 4 service(s), multi-service/region)",
-    "resolved or retrospective: may update an existing outage guide, never a new one",
-    "+1 autocomplete (10)"
-   ],
-   "status": "resolved",
-   "hash": "e00c824a",
-   "families": [
-    "github"
-   ]
   },
   "https://medianama.com/2026/11/223-microsoft-365-applications-global-outage": {
    "title": "Microsoft 365 applications hit by global outage for over 10 hours",
@@ -9130,14 +9060,16 @@
    "category": "launch",
    "date": "2026-11-27T10:10:00.000Z",
    "updated": null,
-   "summary": "",
+   "summary": "In the underwriting auction conducted on November 27, 2026, for Additional Competitive Underwriting (ACU) of the undernoted Government securities, the Reserve Bank of India has set the cut-off rate for underwriting commission payable to Primary Dealers as given below: Nomenclature of the Security No",
    "first": "2026-11-27T04:43:50.452Z",
-   "score": -1,
+   "score": 0,
    "reasons": [
-    "-1 source rbi-press"
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"India\"",
+    "re-scored (was -1)"
    ],
    "status": "below",
-   "hash": "1ba97ac7"
+   "hash": "663636f2"
   },
   "https://blogs.vmware.com/vmware-japan/2026/11/9-1-2-ga-release.html": {
    "title": "VMware Cloud Foundation 9.1.2 の一般提供（GA）を開始",
@@ -9172,6 +9104,23 @@
    ],
    "status": "below",
    "hash": "99078dff"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64054": {
+   "title": "Result of the 3-day Variable Rate Repo (VRR) auction held on November 27, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64054",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-27T10:25:00.000Z",
+   "updated": null,
+   "summary": "Tenor 3-day Notified Amount (in ₹ crore) 75,000 Total amount of bids received (in ₹ crore) 1,35,656 Amount allotted (in ₹ crore) 75,006 Cut off Rate (%) 5.60 Weighted Average Rate (%) 5.66 Partial Allotment Percentage of bids received at cut off rate (%) 0.42 Ajit Prasad Deputy General Manager (Comm",
+   "first": "2026-11-27T05:13:18.865Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "8c1c255d"
   }
  },
  "devices": {},

@@ -1,8 +1,8 @@
 {
- "generated": "2026-11-26T23:04:15.437Z",
+ "generated": "2026-11-27T05:13:30.455Z",
  "about": "Microsoft 365 / Azure / GitHub retirements for https://www.epifive.com/microsoft-365-retirements. Built by radar/retirements.mjs from official notices; see that file for sources and date rules.",
  "sources": {
-  "message-center": 128,
+  "message-center": 127,
   "azure": 82,
   "github": 3
  },
