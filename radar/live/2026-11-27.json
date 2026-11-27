@@ -2,7 +2,7 @@
  "date": "2026-11-27",
  "title": "Tech news today, 27 November 2026",
  "published": "2026-11-26T23:03:53.084Z",
- "updated": "2026-11-27T04:43:50.452Z",
+ "updated": "2026-11-27T13:17:03.494Z",
  "items": [
   {
    "id": "7d95ca76",
@@ -146,7 +146,234 @@
    "ai": null,
    "score": 4,
    "story": null
+  },
+  {
+   "id": "fb9da248",
+   "key": "https://about.fb.com/news/2026/11/instagram-for-tv-comes-to-india-introducing-new-ways-to-watch-reels-together",
+   "time": "2026-11-27T12:33:00.000Z",
+   "seen": "2026-11-27T13:17:03.494Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Instagram for TV Comes to India, Introducing New Ways to Watch Reels Together",
+   "summary": "Instagram for TV will soon be available in India, bringing content from your favorite creators to the big screen in your home so you can enjoy watching them with friends. The post Instagram for TV Comes to India, Introducing New Ways to Watch Reels Together appeared first on Meta Newsroom .",
+   "lines": [
+    "Instagram for TV will soon be available in India, bringing Reels from favorite creators to the big screen at home.",
+    "It also adds new ways to watch Reels together with friends."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Meta Newsroom",
+    "url": "https://about.fb.com/news/2026/11/instagram-for-tv-comes-to-india-introducing-new-ways-to-watch-reels-together/"
+   },
+   "sourceId": "meta-newsroom",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "97c0b232",
+   "key": "https://news.sap.com/2026/11/mastering-cbam-compliance-what-latest-sap-release-means-for-declarants",
+   "time": "2026-11-27T11:15:00.000Z",
+   "seen": "2026-11-27T13:17:03.494Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Mastering CBAM Compliance: What SAP’s Latest Release Means for Declarants",
+   "summary": "Businesses have less than a year to ensure their often manual and fragmented compliance processes are ready.",
+   "lines": [
+    "SAP's latest release is aimed at helping declarants meet CBAM compliance requirements.",
+    "Businesses have less than a year to make their often manual and fragmented compliance processes ready.",
+    "Teams responsible for CBAM compliance may need to review those manual processes."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "SAP News Center",
+    "url": "https://news.sap.com/2026/11/mastering-cbam-compliance-what-latest-sap-release-means-for-declarants/"
+   },
+   "sourceId": "sap-news",
+   "sourceMax": 4,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "ee4e1502",
+   "key": "https://bleepingcomputer.com/news/security/new-nfs2root-linux-flaw-can-let-attackers-gain-root-privileges",
+   "time": "2026-11-27T08:06:58.000Z",
+   "seen": "2026-11-27T13:17:03.494Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "New NFS2ROOT Linux flaw can let attackers gain root privileges",
+   "summary": "​A 12-year-old critical vulnerability in the Linux kernel's Network File System (NFS) server, tracked as CVE-2026-99362, allows remote attackers to gain root privileges. [...]",
+   "lines": [
+    "Reported by BleepingComputer: A 12-year-old critical vulnerability in the Linux kernel's NFS server, tracked as CVE-2026-99362, allows remote attackers to gain root privileges.",
+    "The flaw is called NFS2ROOT.",
+    "IT teams running Linux systems with NFS servers should review their exposure to this flaw."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/new-nfs2root-linux-flaw-can-let-attackers-gain-root-privileges/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "550a9349",
+   "key": "https://theprint.in/tech/whatsapp-security-alert-govt-flags-5-high-risk-flaws-one-may-have-been-exploited/3110860",
+   "time": "2026-11-27T10:43:13.000Z",
+   "seen": "2026-11-27T13:17:03.494Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "WhatsApp security alert: Govt flags 5 ‘high risk’ flaws, one may have been exploited",
+   "summary": "According to CERT-In, attackers can use flaws by sending a message, file or link. Code on user device can be used to get hold of info, or bypass app's security checks.",
+   "lines": [
+    "Reported by ThePrint: Tech: CERT-In flagged 5 'high risk' WhatsApp flaws, and one may have been exploited.",
+    "According to CERT-In, attackers can use the flaws by sending a message, file or link.",
+    "Code on a user device can be used to get hold of information or bypass the app's security checks.",
+    "IT teams may need to assess WhatsApp use on managed devices."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "ThePrint: Tech",
+    "url": "https://theprint.in/tech/whatsapp-security-alert-govt-flags-5-high-risk-flaws-one-may-have-been-exploited/3110860/"
+   },
+   "sourceId": "theprint-tech",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "aa81e4e5",
+   "key": "https://medianama.com/2026/11/223-jio-takes-down-ai-astrology-platform",
+   "time": "2026-11-27T12:29:08.000Z",
+   "seen": "2026-11-27T13:17:03.494Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Jio launches and takes down astrology platform within a day",
+   "summary": "Amidst AstroTalk becoming unavailable on Apple's app store, Jio launched an AI-powered astrology platform on Nov 26 and took it down after a few hours, saying that the live website was just a \"demo survey\". The post Jio launches and takes down astrology platform within a day appeared first on MEDIANAMA .",
+   "lines": [
+    "Reported by MediaNama: Jio launched an AI-powered astrology platform on Nov 26 and took it down after a few hours.",
+    "Jio said the live website was just a 'demo survey'.",
+    "The launch came amid AstroTalk becoming unavailable on Apple's app store."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "MediaNama",
+    "url": "https://www.medianama.com/2026/11/223-jio-takes-down-ai-astrology-platform/"
+   },
+   "sourceId": "medianama",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "69f236cb",
+   "key": "https://thehackernews.com/2026/11/hackers-trojanize-official-q-dir-and.html",
+   "time": "2026-11-27T09:29:30.000Z",
+   "seen": "2026-11-27T13:17:03.494Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Hackers Trojanize Official Q-Dir and DesktopOK Downloads to Deliver Remote Access Malware",
+   "summary": "Cybersecurity researchers have disclosed details of a software supply chain attack that has tampered with Q-Dir and DesktopOK installation files distributed via the official SoftwareOK website. \"Evidence indicates that malicious files were generated not only when users downloaded the programs directly from the official download page but also during the update process of previously installed",
+   "lines": [
+    "Reported by The Hacker News: Attackers trojanized Q-Dir and DesktopOK installation files distributed via the official SoftwareOK website.",
+    "Researchers say malicious files were generated on direct downloads from the official download page and during updates of previously installed programs.",
+    "The tampered files were used to deliver remote access malware.",
+    "IT teams that deploy these tools should verify installation files and update sources."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/hackers-trojanize-official-q-dir-and.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "de09342c",
+   "key": "https://thehackernews.com/2026/11/switzerland-confirms-ai-assisted.html",
+   "time": "2026-11-27T06:04:20.000Z",
+   "seen": "2026-11-27T13:17:03.494Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Switzerland Confirms AI-Assisted Cyberattacks Breached Critical Infrastructure Operators",
+   "summary": "Attackers using AI agents have broken into computer systems at Swiss organizations in four of five confirmed attacks, the first such cases in the country, the country's cybersecurity agency said yesterday. Three of the attacks targeted critical infrastructure operators, and two of those succeeded, with no major disruptions reported. The victims have not been named, and it is not known who is",
+   "lines": [
+    "Reported by The Hacker News: Switzerland's cybersecurity agency confirmed that attackers using AI agents broke into systems at Swiss organizations in four of five confirmed attacks.",
+    "Three attacks targeted critical infrastructure operators, and two of those succeeded, with no major disruptions reported.",
+    "These are the first such cases in the country."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/switzerland-confirms-ai-assisted.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "a71f26c6",
+   "key": "https://thehackernews.com/2026/11/unpatched-cacti-zero-day-enables-rce-in.html",
+   "time": "2026-11-27T05:48:20.000Z",
+   "seen": "2026-11-27T13:17:03.494Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Unpatched Cacti Zero-Day Enables RCE in Just Four HTTP Requests via Guest Access",
+   "summary": "Details have emerged about a new zero-day vulnerability in Cacti, an open-source network monitoring tool, that could be exploited to achieve remote code execution. The proof-of-concept (PoC) exploit, which has yet to be assigned a CVE identifier, has been tracked as 4HTTP2SHELL and 4HTTP2ROOT. \"I found a path from a fresh, unauthenticated HTTP session to command execution as the Cacti server",
+   "lines": [
+    "Reported by The Hacker News: Details have emerged about an unpatched zero-day in Cacti, an open-source network monitoring tool, that could enable remote code execution.",
+    "The proof-of-concept exploit has been tracked as 4HTTP2SHELL and 4HTTP2ROOT and has not yet been assigned a CVE identifier.",
+    "The exploit reportedly needs only four HTTP requests via guest access.",
+    "IT teams running Cacti should review guest access settings and exposure."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Hacker News",
+    "url": "https://thehackernews.com/2026/11/unpatched-cacti-zero-day-enables-rce-in.html"
+   },
+   "sourceId": "thn",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
   }
  ],
- "description": "5 technology updates from official sources, updated hourly: The Garmin Forerunner 265S is down to $300, its best price of the year; Backloggd urges users to change their passwords after a breach; VMware Cloud Foundation 9.1.2 の一般提供（GA）を開始."
+ "description": "13 technology updates from official sources, updated hourly: The Garmin Forerunner 265S is down to $300, its best price of the year; Instagram for TV Comes to India, Introducing New Ways to Watch Reels Together; Backloggd urges users to change their passwords after a breach."
 }

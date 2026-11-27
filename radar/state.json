@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-27T05:13:18.865Z",
+ "lastScan": "2026-11-27T13:17:03.494Z",
  "seen": {
   "https://bleepingcomputer.com/news/security/apache-http-server-patches-critical-http-2-remote-code-execution-flaw": {
    "title": "Apache HTTP Server patches critical HTTP/2 remote code execution flaw",
@@ -84,33 +84,6 @@
    "attempts": 1,
    "slug": "microsoft-365-outage-november-2026-what-to-do",
    "resultAt": "2026-11-13T05:23:21.622Z"
-  },
-  "https://medianama.com/2026/11/223-microsoft-365-applications-global-outage": {
-   "title": "Microsoft 365 applications hit by global outage for over 10 hours",
-   "link": "https://www.medianama.com/2026/11/223-microsoft-365-applications-global-outage/",
-   "source": "medianama",
-   "topic": "microsoft-365",
-   "category": "outage",
-   "date": "2026-11-13T09:57:50.000Z",
-   "updated": null,
-   "summary": "While Microsoft said the outage happened because a number of servers had become unexpectedly unavailable, straining the remaining infrastructure, it also ascertained that it wasn't aware of any malicious activity was behind it. The post Microsoft 365 applications hit by global outage for over 10 hou",
-   "first": "2026-11-13T13:16:56.410Z",
-   "score": 11,
-   "reasons": [
-    "+1 source medianama",
-    "+6 outage \"outage\"",
-    "+3 major platform (microsoft)",
-    "+1 scale \"global\"",
-    "resolved or retrospective: may update an existing outage guide, never a new one",
-    "same outage as \"Massive Microsoft 365 outage disrupts Outlook, Teams, Copilo\"",
-    "covered by /blog/microsoft-365-outage-november-2026-what-to-do"
-   ],
-   "status": "duplicate",
-   "hash": "9c9f2120",
-   "families": [
-    "microsoft"
-   ],
-   "post": "microsoft-365-outage-november-2026-what-to-do"
   },
   "https://mc.merill.net/message/MC1551147": {
    "title": "MC1551147: Microsoft Word: Retirement of legacy compatibility settings",
@@ -3676,272 +3649,6 @@
    "status": "parked",
    "parkedAt": "2026-11-24T04:26:09.691Z"
   },
-  "https://aws.amazon.com/blogs/machine-learning/introducing-the-amazon-bedrock-trusted-access-api-with-anthropics-enterprise-frontier-safeguards-and-enterprise-data-controls": {
-   "title": "Introducing the Amazon Bedrock Trusted Access API with Anthropic’s Enterprise Frontier Safeguards and Enterprise Data Controls",
-   "link": "https://aws.amazon.com/blogs/machine-learning/introducing-the-amazon-bedrock-trusted-access-api-with-anthropics-enterprise-frontier-safeguards-and-enterprise-data-controls/",
-   "source": "aws-ml-blog",
-   "topic": "ai-engineering",
-   "category": "launch",
-   "date": "2026-11-24T05:01:14.000Z",
-   "updated": null,
-   "summary": "Amazon Bedrock now offers a trusted access program API: one place to discover, request, and enroll in model provider programs. The first two offerings, in public preview, are Anthropic's Enterprise Frontier Safeguards (EFS) and Enterprise Data Controls (EDC), which give you control over your data wh",
-   "first": "2026-11-24T05:13:21.776Z",
-   "score": 1,
-   "reasons": [
-    "-3 source aws-ml-blog",
-    "+2 niche (claude)",
-    "+2 launch \"Introducing\"",
-    "+1 launch in the headline",
-    "-1 narrow audience \"API\""
-   ],
-   "status": "below",
-   "hash": "b36ea4a"
-  },
-  "https://zoho.com/blog/marketplace/3-ways-to-book-more-meetings-from-your-zoho-crm-leads.html": {
-   "title": "3 ways to book more meetings from your Zoho CRM leads",
-   "link": "https://www.zoho.com/blog/marketplace/3-ways-to-book-more-meetings-from-your-zoho-crm-leads.html",
-   "source": "zoho-blog",
-   "topic": "small-business-it",
-   "category": "launch",
-   "date": "2026-11-23T17:09:18.000Z",
-   "updated": null,
-   "summary": "This is a guest post by Kriti Mishra, SaaS Product Marketer at Klenty.If you're running an SDR team on Zoho CRM, you already know the problem is turning those leads into conversations. That takes two things: reaching prospects across more than one channel and having enough live phone conversations t",
-   "first": "2026-11-24T06:20:50.738Z",
-   "score": 0,
-   "reasons": [],
-   "status": "below",
-   "hash": "a9aca116"
-  },
-  "https://zoho.com/blog/crm/introducing-vibe-ai-app-builder-within-zohocrm.html": {
-   "title": "Introducing Vibe: A prompt-to-app AI builder in Zoho CRM",
-   "link": "https://www.zoho.com/blog/crm/introducing-vibe-ai-app-builder-within-zohocrm.html",
-   "source": "zoho-blog",
-   "topic": "small-business-it",
-   "category": "launch",
-   "date": "2026-11-23T13:27:53.000Z",
-   "updated": null,
-   "summary": "Everywhere you look, someone is building an app or tool using AI, and the scale is bigger than you might think. Lovable, an AI platform, is seeing 100,000+ new projects being launched every day (Sacra). So, what is Vibe coding?Vibe coding is the process of building software by describing what you wa",
-   "first": "2026-11-24T06:20:50.738Z",
-   "score": 3,
-   "reasons": [
-    "+2 launch \"Introducing\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "bfe5e9b7"
-  },
-  "https://mc.merill.net/message/MC1566260": {
-   "title": "MC1566260: Video creation from a prompt in Microsoft Clipchamp: now in Video Hub, with an upgraded experience coming",
-   "link": "https://mc.merill.net/message/MC1566260",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-24T04:10:02.000Z",
-   "updated": null,
-   "summary": "Microsoft Clipchamp's prompt-to-video feature is now in Video Hub. By February 2027, an upgraded version with better quality and fixes will replace it, available to current subscribers. Existing projects remain accessible, no admin action is needed, and users can refer to the provided support articl",
-   "first": "2026-11-24T06:20:50.738Z",
-   "score": 1,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 user steps \"users can\"",
-    "+1 plans/price/availability \"available to\""
-   ],
-   "status": "below",
-   "hash": "b6c79125"
-  },
-  "https://mc.merill.net/message/MC1559644": {
-   "title": "MC1559644: [Education] AI-powered teaching tools in OneNote Class Notebook",
-   "link": "https://mc.merill.net/message/MC1559644",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-24T00:39:07.000Z",
-   "updated": null,
-   "summary": "AI-powered Copilot teaching tools in OneNote Class Notebook help educators create personalized resources and interactive activities. Rolling out globally from mid-November to December 2026, these tools require no extra license and are managed via Copilot and Learning Activities settings. Educators s",
-   "first": "2026-11-24T06:20:50.738Z",
-   "score": 2,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 niche (copilot)",
-    "+2 launch \"Rolling out\""
-   ],
-   "status": "below",
-   "hash": "85832cc2"
-  },
-  "https://mc.merill.net/message/MC1530595": {
-   "title": "MC1530595: Microsoft Copilot Feedback UX update",
-   "link": "https://mc.merill.net/message/MC1530595",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-24T00:36:31.000Z",
-   "updated": null,
-   "summary": "Microsoft Copilot is updating its thumbs-down feedback to include selectable categories and optional comments for clearer, actionable input. The rollout starts mid-November 2026, completing by early December, affecting users with Microsoft Entra ID and consumer accounts, excluding some environments.",
-   "first": "2026-11-24T06:20:50.738Z",
-   "score": 2,
-   "reasons": [
-    "-2 source mc-merill",
-    "+3 niche (copilot, entra)",
-    "+1 plans/price/availability \"rollout\""
-   ],
-   "status": "below",
-   "hash": "b5874322"
-  },
-  "https://mc.merill.net/message/MC1565967": {
-   "title": "MC1565967: New VDI solution for Omnissa on Mac",
-   "link": "https://mc.merill.net/message/MC1565967",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-23T22:47:01.000Z",
-   "updated": null,
-   "summary": "A new VDI optimization for Omnissa on Mac using a SlimCore-based media engine will enhance Microsoft Teams' quality, reliability, and performance. Rollout starts December 2026 to February 2027. Upgrade Horizon Client (2609.1+) and Teams (26304.1207.5384.858+) to benefit. No compliance issues noted.",
-   "first": "2026-11-24T06:20:50.738Z",
-   "score": 4,
-   "reasons": [
-    "-2 source mc-merill",
-    "+3 niche (microsoft teams, mac)",
-    "+2 user steps \"Upgrade\"",
-    "+1 plans/price/availability \"Rollout\""
-   ],
-   "status": "below",
-   "hash": "57289895"
-  },
-  "https://mc.merill.net/message/MC1565964": {
-   "title": "MC1565964: Microsoft SharePoint Online: Classic publishing restrictions begin March 1, 2027",
-   "link": "https://mc.merill.net/message/MC1565964",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-23T22:43:52.000Z",
-   "updated": null,
-   "summary": "Starting March 1, 2027, SharePoint Online will block creation and activation of classic publishing sites and features, enforcing restrictions on custom scripting. New tenants face additional limits on classic pages. Administrators must update workflows and modernize pages before the rollout complete",
-   "first": "2026-11-24T06:20:50.738Z",
-   "score": 0,
-   "reasons": [
-    "-2 source mc-merill",
-    "+1 niche (sharepoint)",
-    "+1 plans/price/availability \"rollout\""
-   ],
-   "status": "below",
-   "hash": "c3654d0c"
-  },
-  "https://mc.merill.net/message/MC1565960": {
-   "title": "MC1565960: Plan for Change: Updates to policy-related reporting in Microsoft Intune Data Warehouse",
-   "link": "https://mc.merill.net/message/MC1565960",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-23T22:41:42.000Z",
-   "updated": null,
-   "summary": "Starting January 4, 2027, Microsoft Intune Data Warehouse will update policy-related reporting collections, possibly causing changes in policy-status counts. Existing connections and schemas remain unchanged, and no action is required. Differences from Intune admin center reports may occur due to ti",
-   "first": "2026-11-24T06:20:50.738Z",
-   "score": 0,
-   "reasons": [
-    "-2 source mc-merill",
-    "+1 niche (intune)",
-    "+1 plans/price/availability \"Plan\""
-   ],
-   "status": "below",
-   "hash": "c414d3c6"
-  },
-  "https://mc.merill.net/message/MC1565959": {
-   "title": "MC1565959: Plan for Change: Updated web-based device enrollment experience for iOS/iPadOS",
-   "link": "https://mc.merill.net/message/MC1565959",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-23T22:41:11.000Z",
-   "updated": null,
-   "summary": "Microsoft Intune will update the web-based device enrollment experience for iOS/iPadOS in late January 2027, affecting only tenants using this method. No admin action is needed, but user guidance may be updated. This change precedes web-based enrollment becoming the default for iOS/iPadOS.",
-   "first": "2026-11-24T06:20:50.738Z",
-   "score": 2,
-   "reasons": [
-    "-2 source mc-merill",
-    "+3 niche (ipados, intune)",
-    "+1 plans/price/availability \"Plan\""
-   ],
-   "status": "below",
-   "hash": "592ce684"
-  },
-  "https://mc.merill.net/message/MC1472601": {
-   "title": "MC1472601: Microsoft Purview: Archive SharePoint files under retention policies",
-   "link": "https://mc.merill.net/message/MC1472601",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-23T22:27:57.000Z",
-   "updated": null,
-   "summary": "Microsoft Purview Data Lifecycle Management will enable admins to archive inactive SharePoint files under retention policies starting mid-January 2027. Archived files move to Microsoft 365 Archive, remain compliant and discoverable, and are excluded from Copilot indexing to improve response relevanc",
-   "first": "2026-11-24T06:20:50.738Z",
-   "score": 4,
-   "reasons": [
-    "-2 source mc-merill",
-    "+4 niche (copilot, microsoft 365, sharepoint)",
-    "+2 user steps \"enable\""
-   ],
-   "status": "below",
-   "hash": "c4c5f424"
-  },
-  "https://mc.merill.net/message/MC1325441": {
-   "title": "MC1325441: Microsoft Purview | Data Lifecycle Management - Archive SharePoint files under retention",
-   "link": "https://mc.merill.net/message/MC1325441",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-23T22:25:28.000Z",
-   "updated": null,
-   "summary": "Microsoft Purview Data Lifecycle Management will add an Archive option to retention policies, allowing admins to move inactive SharePoint files to Microsoft 365 Archive for cost savings while maintaining compliance and discoverability. Archived content is excluded from Copilot indexing. Rollout begi",
-   "first": "2026-11-24T06:20:50.738Z",
-   "score": 3,
-   "reasons": [
-    "-2 source mc-merill",
-    "+4 niche (copilot, microsoft 365, sharepoint)",
-    "+1 plans/price/availability \"Rollout\""
-   ],
-   "status": "below",
-   "hash": "11eb86db"
-  },
-  "https://mc.merill.net/message/MC1261587": {
-   "title": "MC1261587: Microsoft Purview | Data Lifecycle Management - Hard delete OneDrive and SharePoint files with priority cleanup workflow",
-   "link": "https://mc.merill.net/message/MC1261587",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-23T22:22:22.000Z",
-   "updated": null,
-   "summary": "Microsoft Purview introduces a priority cleanup workflow allowing admins to hard delete specific OneDrive and SharePoint content, overriding retention policies with eDiscovery admin approval. Rolling out mid-August 2026 (preview) and early December 2026 (general availability), this feature requires ",
-   "first": "2026-11-24T06:20:50.738Z",
-   "score": 3,
-   "reasons": [
-    "-2 source mc-merill",
-    "+1 niche (onedrive)",
-    "+2 launch \"introduces\"",
-    "+2 user steps \"setup\""
-   ],
-   "status": "below",
-   "hash": "394671f0"
-  },
-  "https://mc.merill.net/message/MC1550542": {
-   "title": "MC1550542: Microsoft Teams: Updated recording and transcript access setting behavior for town halls and webinars",
-   "link": "https://mc.merill.net/message/MC1550542",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-23T22:19:25.000Z",
-   "updated": null,
-   "summary": "Microsoft Teams is updating the \"Who has access to the recording or transcript\" option for Events App town halls and webinars. Starting mid-January 2027, access will depend on the RecordingForTownhall or RecordingForWebinar settings, not AllowCloudRecording. No action is required.",
-   "first": "2026-11-24T06:20:50.738Z",
-   "score": -1,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 niche (microsoft teams)",
-    "-1 in /news 2026-11-16-fbi-artex-warning-rd-web-access-fix"
-   ],
-   "status": "below",
-   "hash": "63768fed",
-   "news": "2026-11-16-fbi-artex-warning-rd-web-access-fix"
-  },
   "https://mc.merill.net/message/MC1519855": {
    "title": "MC1519855: Microsoft Entra: Choose your own telephony provider now generally available",
    "link": "https://mc.merill.net/message/MC1519855",
@@ -3990,23 +3697,6 @@
    ],
    "status": "below",
    "hash": "30e1eb6d"
-  },
-  "https://blog.google/company-news/inside-google/around-the-globe/google-europe/united-kingdom/expanding-london-home-kings-cross": {
-   "title": "We’re expanding our London home in King's Cross.",
-   "link": "https://blog.google/company-news/inside-google/around-the-globe/google-europe/united-kingdom/expanding-london-home-kings-cross/",
-   "source": "google-keyword",
-   "topic": "how-to-tips",
-   "category": "launch",
-   "date": "2026-11-24T08:00:00.000Z",
-   "updated": null,
-   "summary": "In 2016, we arrived in King’s Cross as founding residents of the Knowledge Quarter. Today, we’re announcing our plan to purchase 6 Pancras Square.Alongside Central Saint…",
-   "first": "2026-11-24T09:40:16.115Z",
-   "score": 1,
-   "reasons": [
-    "+1 plans/price/availability \"plan\""
-   ],
-   "status": "below",
-   "hash": "d7c4d1e1"
   },
   "https://about.fb.com/news/2026/11/introducing-muse-in-the-uk-a-personal-ai-agent-you-control": {
    "title": "Introducing Muse in the UK: A Personal AI Agent You Control",
@@ -4063,115 +3753,6 @@
    "status": "below",
    "hash": "d2208e7f"
   },
-  "https://news.lenovo.com/pressroom/press-releases/data-marc-marquez-history-motogp-championship-ducati": {
-   "title": "Lenovo reveals data behind Marc Márquez’s history-making MotoGP championship win with the Ducati Lenovo Team",
-   "link": "https://news.lenovo.com/pressroom/press-releases/data-marc-marquez-history-motogp-championship-ducati/",
-   "source": "lenovo-news",
-   "topic": "laptops-hardware",
-   "category": "launch",
-   "date": "2026-11-24T09:00:44.000Z",
-   "updated": null,
-   "summary": "Márquez’s resilience and determination, the expertise and teamwork of Ducati Corse engineers, and Lenovo devices and infrastructure combined to make victory possible.",
-   "first": "2026-11-24T09:40:16.115Z",
-   "score": 0,
-   "reasons": [],
-   "status": "below",
-   "hash": "5abdb870"
-  },
-  "https://ninjaone.com/blog/how-to-manage-backup-coverage-for-ownerless-enterprise-devices": {
-   "title": "How to Manage Backup Coverage for Ownerless Enterprise Devices",
-   "link": "https://www.ninjaone.com/blog/how-to-manage-backup-coverage-for-ownerless-enterprise-devices/",
-   "source": "ninjaone-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-24T08:16:40.000Z",
-   "updated": null,
-   "summary": "Unowned devices can emerge during enterprise inventory audits, typically left behind by reorganizations, offboarding gaps, or shadow IT activity. Regardless of root cause, ownerless devices create backup issues that can lead to security vulnerabilities and compliance failures. Backup coverage manage",
-   "first": "2026-11-24T09:40:16.115Z",
-   "score": 1,
-   "reasons": [
-    "-1 source ninjaone-blog",
-    "+2 user steps \"How to\""
-   ],
-   "status": "below",
-   "hash": "a7a44f8d"
-  },
-  "https://ninjaone.com/blog/how-to-document-assumptions-before-creating-an-it-backup-plan": {
-   "title": "How to Document Assumptions Before Creating an IT Backup Plan",
-   "link": "https://www.ninjaone.com/blog/how-to-document-assumptions-before-creating-an-it-backup-plan/",
-   "source": "ninjaone-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-24T08:16:39.000Z",
-   "updated": null,
-   "summary": "When employees save work on personal laptops or use unapproved apps, guessing where company data lives is dangerous. Before buying recovery software, you must verify your actual network requirements. In this guide, you will learn how to document these facts before creating a reliable IT backup plan.",
-   "first": "2026-11-24T09:40:16.115Z",
-   "score": 2,
-   "reasons": [
-    "-1 source ninjaone-blog",
-    "+2 user steps \"How to\"",
-    "+1 plans/price/availability \"Plan\""
-   ],
-   "status": "below",
-   "hash": "50b55105"
-  },
-  "https://ninjaone.com/blog/how-to-manage-local-data-backup-in-enterprise-device-policies": {
-   "title": "How to Manage Local Data Backup in Enterprise Device Policies",
-   "link": "https://www.ninjaone.com/blog/how-to-manage-local-data-backup-in-enterprise-device-policies/",
-   "source": "ninjaone-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-24T08:16:33.000Z",
-   "updated": null,
-   "summary": "Employees save business data in places IT never approved: desktops, downloads folders, local application directories, and temporary project folders that never reach a managed repository. When backup policies only cover standard folders or cloud-synced locations, those files fall through the cracks. ",
-   "first": "2026-11-24T09:40:16.115Z",
-   "score": 1,
-   "reasons": [
-    "-1 source ninjaone-blog",
-    "+2 user steps \"How to\""
-   ],
-   "status": "below",
-   "hash": "44b40346"
-  },
-  "https://ninjaone.com/blog/how-to-create-backup-policies-for-executive-and-previleged-user-devices": {
-   "title": "How to Create Backup Policies for Executive and Privileged-User Devices",
-   "link": "https://www.ninjaone.com/blog/how-to-create-backup-policies-for-executive-and-previleged-user-devices/",
-   "source": "ninjaone-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-24T08:16:31.000Z",
-   "updated": null,
-   "summary": "Executive and privileged-user devices present higher organizational risk than standard endpoints because they are used by individuals with access to sensitive information and critical systems. This means privileged endpoint backup policies are important, since they define how these high-risk devices",
-   "first": "2026-11-24T09:40:16.115Z",
-   "score": 1,
-   "reasons": [
-    "-1 source ninjaone-blog",
-    "+2 user steps \"How to\""
-   ],
-   "status": "below",
-   "hash": "9256e21c"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-opensearch-opensearch-3-9": {
-   "title": "Amazon OpenSearch Service now supports OpenSearch version 3.9",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-opensearch-opensearch-3-9",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-23T19:30:00.000Z",
-   "updated": null,
-   "summary": "You can now run OpenSearch version 3.9 on Amazon OpenSearch Service. OpenSearch 3.9 helps you reduce vector memory and storage, evaluate search quality with more large language model (LLM) providers, build more responsive AI agents, and control access to shared resources. This release adds a new hal",
-   "first": "2026-11-24T10:06:28.091Z",
-   "score": 4,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (agents)",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"You can\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "9c487252"
-  },
   "https://thehackernews.com/2026/11/microsoft-fixes-azure-api-management.html": {
    "title": "Microsoft Fixes Azure API Management Classic Flaw as Actor Targets Customer Secrets",
    "link": "https://thehackernews.com/2026/11/microsoft-fixes-azure-api-management.html",
@@ -4192,60 +3773,6 @@
    ],
    "status": "below",
    "hash": "65d5684d"
-  },
-  "https://news.sap.com/2026/11/how-atlas-copco-group-makes-skills-visible-throughout-organization": {
-   "title": "How the Atlas Copco Group Makes Skills Visible Throughout the Organization",
-   "link": "https://news.sap.com/2026/11/how-atlas-copco-group-makes-skills-visible-throughout-organization/",
-   "source": "sap-news",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-24T12:15:00.000Z",
-   "updated": null,
-   "summary": "Becoming a skills-enabled organization starts with the way you think about talent.",
-   "first": "2026-11-24T13:16:55.808Z",
-   "score": -1,
-   "reasons": [
-    "-1 source sap-news"
-   ],
-   "status": "below",
-   "hash": "7d2853c9"
-  },
-  "https://news.sap.com/2026/11/less-code-more-context-how-ai-is-reshaping-developer-role": {
-   "title": "Less Code, More Context: How AI Is Reshaping the Developer Role",
-   "link": "https://news.sap.com/2026/11/less-code-more-context-how-ai-is-reshaping-developer-role/",
-   "source": "sap-news",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-24T11:15:00.000Z",
-   "updated": null,
-   "summary": "As developers delegate more work to AI, where does their expertise matter most?",
-   "first": "2026-11-24T13:16:55.808Z",
-   "score": -2,
-   "reasons": [
-    "-1 source sap-news",
-    "-1 narrow audience \"Developer\""
-   ],
-   "status": "below",
-   "hash": "141fe5fa"
-  },
-  "https://hashicorp.com/blog/terraform-introduces-tfpolicy-support-for-stacks-scim-support-and-more": {
-   "title": "Terraform introduces tfpolicy support for Stacks, SCIM support, and more",
-   "link": "https://www.hashicorp.com/blog/terraform-introduces-tfpolicy-support-for-stacks-scim-support-and-more",
-   "source": "hashicorp-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-23T19:00:00.000Z",
-   "updated": "2026-11-23T19:00:00.000Z",
-   "summary": "HCP Terraform and Terraform Enterprise enhance orchestration, AI-ready workflows, and governance to help teams scale infrastructure securely and efficiently.",
-   "first": "2026-11-24T13:16:55.808Z",
-   "score": 1,
-   "reasons": [
-    "-2 source hashicorp-blog",
-    "+2 launch \"introduces\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "353fb82e"
   },
   "https://bleepingcomputer.com/news/security/mcdonalds-japan-data-breach-exposes-customer-location-information": {
    "title": "McDonald's Japan data breach exposes customer location information",
@@ -9121,6 +8648,250 @@
    ],
    "status": "below",
    "hash": "8c1c255d"
+  },
+  "https://medianama.com/2026/11/223-cert-in-vulnerabilities-whatsapp": {
+   "title": "CERT-In flags high-severity vulnerabilities in WhatsApp across Android, iOS and desktop",
+   "link": "https://www.medianama.com/2026/11/223-cert-in-vulnerabilities-whatsapp/",
+   "source": "medianama",
+   "topic": "online-safety",
+   "category": "incident",
+   "date": "2026-11-27T07:05:50.000Z",
+   "updated": null,
+   "summary": "CERT-In has flagged five high-severity vulnerabilities in WhatsApp that attackers can exploit through specially crafted messages, attachments or URLs. The agency advises users to update their apps. The post CERT-In flags high-severity vulnerabilities in WhatsApp across Android, iOS and desktop appea",
+   "first": "2026-11-27T13:17:03.494Z",
+   "score": 16,
+   "reasons": [
+    "+1 source medianama",
+    "+2 vulnerability \"vulnerabilities\"",
+    "+4 major platform (whatsapp, android, ios)",
+    "+5 India banking/payments/identity \"CERT-In\"",
+    "+2 user action \"advises\"",
+    "+2 corroborated by theprint-tech, miradore-blog (whatsapp, ios)",
+    "backlog cert-flag-high-severity-vulnerability-egov-digit"
+   ],
+   "status": "writing",
+   "hash": "a8c9a345",
+   "backlog": "cert-flag-high-severity-vulnerability-egov-digit",
+   "kind": "new",
+   "extra": false,
+   "taskAt": "2026-11-27T13:17:03.494Z",
+   "attempts": 1
+  },
+  "https://thehackernews.com/2026/11/north-korea-linked-polinrider-poisons.html": {
+   "title": "North Korea-Linked PolinRider Poisons Over 7,600 GitHub Repositories to Spread Malware",
+   "link": "https://thehackernews.com/2026/11/north-korea-linked-polinrider-poisons.html",
+   "source": "thn",
+   "topic": "security-identity",
+   "category": "incident",
+   "date": "2026-11-26T15:13:41.000Z",
+   "updated": null,
+   "summary": "The threat actors behind the PolinRider campaign have compromised over 7,600 GitHub repositories, in some cases planting a Python loader capable of delivering next-stage payloads, as evidence emerges that the activity may have started as far back as February 2025. \"These are real developers, not thr",
+   "first": "2026-11-27T13:17:03.494Z",
+   "score": 10,
+   "reasons": [
+    "+1 source thn",
+    "+3 incident \"Malware\"",
+    "+3 major platform (github)",
+    "+2 large scale \"7,600 GitHub Repositories\"",
+    "+1 user data or credentials exposed"
+   ],
+   "status": "queued",
+   "hash": "d9d674a3"
+  },
+  "https://about.fb.com/news/2026/11/instagram-for-tv-comes-to-india-introducing-new-ways-to-watch-reels-together": {
+   "title": "Instagram for TV Comes to India, Introducing New Ways to Watch Reels Together",
+   "link": "https://about.fb.com/news/2026/11/instagram-for-tv-comes-to-india-introducing-new-ways-to-watch-reels-together/",
+   "source": "meta-newsroom",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-27T12:33:00.000Z",
+   "updated": null,
+   "summary": "Instagram for TV will soon be available in India, bringing content from your favorite creators to the big screen in your home so you can enjoy watching them with friends. The post Instagram for TV Comes to India, Introducing New Ways to Watch Reels Together appeared first on Meta Newsroom .",
+   "first": "2026-11-27T13:17:03.494Z",
+   "score": 7,
+   "reasons": [
+    "+1 niche (instagram)",
+    "+2 launch \"Introducing\"",
+    "+2 user steps \"you can\"",
+    "+1 plans/price/availability \"India\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "6cb4e9b0"
+  },
+  "https://zoho.com/blog/writer/new-conversion-engine.html": {
+   "title": "Zoho Writer's all new conversion engine for enhanced document handling",
+   "link": "https://www.zoho.com/blog/writer/new-conversion-engine.html",
+   "source": "zoho-blog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-26T14:34:58.000Z",
+   "updated": null,
+   "summary": "Hi everyone,Whenever organizations switch or consider switching to Zoho Writer, a key question comes up: Will our existing documents retain the formatting, structure, and functionality we depend on when we move them?Even small differences in how word processors interpret document formats can cause f",
+   "first": "2026-11-27T13:17:03.494Z",
+   "score": 0,
+   "reasons": [],
+   "status": "below",
+   "hash": "8e56038d"
+  },
+  "https://zoho.com/blog/recruit/staffing-agency-software-sandwich.html": {
+   "title": "The Staffing Agency Sandwich: A Recipe for Your Tech Stack",
+   "link": "https://www.zoho.com/blog/recruit/staffing-agency-software-sandwich.html",
+   "source": "zoho-blog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-26T11:52:30.000Z",
+   "updated": null,
+   "summary": "A software sandwich is a tech stack where every layer comes from one vendor and sits on one shared base. Each team works in the app built for its job, and the layers stay connected through native integrations or the Model Context Protocol (MCP). The result is one login, one permissions model, and on",
+   "first": "2026-11-27T13:17:03.494Z",
+   "score": 2,
+   "reasons": [
+    "+2 user steps \"You can\""
+   ],
+   "status": "below",
+   "hash": "6d5c92e5"
+  },
+  "https://news.sap.com/2026/11/mastering-cbam-compliance-what-latest-sap-release-means-for-declarants": {
+   "title": "Mastering CBAM Compliance: What SAP’s Latest Release Means for Declarants",
+   "link": "https://news.sap.com/2026/11/mastering-cbam-compliance-what-latest-sap-release-means-for-declarants/",
+   "source": "sap-news",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-27T11:15:00.000Z",
+   "updated": null,
+   "summary": "Businesses have less than a year to ensure their often manual and fragmented compliance processes are ready.",
+   "first": "2026-11-27T13:17:03.494Z",
+   "score": -1,
+   "reasons": [
+    "-1 source sap-news"
+   ],
+   "status": "below",
+   "hash": "868fe803"
+  },
+  "https://news.sap.com/2026/11/build-first-agentic-use-case-new-whitepaper-road-map-enterprise-ai": {
+   "title": "Building Your First Agentic Use Case: New Whitepaper Offers a Road Map for Enterprise AI",
+   "link": "https://news.sap.com/2026/11/build-first-agentic-use-case-new-whitepaper-road-map-enterprise-ai/",
+   "source": "sap-news",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-27T10:15:00.000Z",
+   "updated": null,
+   "summary": "Enterprise AI success depends on trusted data, business context, human accountability, and a disciplined approach to autonomy.",
+   "first": "2026-11-27T13:17:03.494Z",
+   "score": -1,
+   "reasons": [
+    "-1 source sap-news"
+   ],
+   "status": "below",
+   "hash": "ea88b5ca"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64059": {
+   "title": "Thirty First Meeting of the Standing Advisory Committee (SAC) to Review the Flow of Credit to the MSME Sector in Kolkata on November 27, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64059",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-27T18:25:00.000Z",
+   "updated": null,
+   "summary": "The 31st meeting of the Standing Advisory Committee (SAC) to review the flow of credit to micro, small and medium enterprises (MSMEs) was held in Kolkata on November 27, 2026. Shri Swaminathan J, Deputy Governor, Reserve Bank of India (RBI), chaired the meeting. Participants included the Additional ",
+   "first": "2026-11-27T13:17:03.494Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"India\""
+   ],
+   "status": "below",
+   "hash": "7e63fba3"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64058": {
+   "title": "Auction of 91-Day, 182-Day and 364-Day Treasury Bills",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64058",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-27T17:35:00.000Z",
+   "updated": null,
+   "summary": "Reserve Bank of India announces the auction of Government of India Treasury Bills as per the following details: Sr. No. Treasury Bill Notified Amount (₹ crore) Auction Date Settlement Date 1 91-Day 8,000 December 02, 2026 (Wednesday) December 03, 2026 (Thursday) 2 182-Day 8,000 3 364-Day 7,000 Total",
+   "first": "2026-11-27T13:17:03.494Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"India\""
+   ],
+   "status": "below",
+   "hash": "b82d953b"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64057": {
+   "title": "Reserve Bank of India – Bulletin Weekly Statistical Supplement – Extract",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64057",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-27T17:00:00.000Z",
+   "updated": null,
+   "summary": "1. Reserve Bank of India - Liabilities and Assets* (₹ Crore) Item 2025 2026 Variation Nov. 21 Nov. 13 Nov. 20 Week Year 1 2 3 4 5 4 Loans and Advances 4.1 Central Government 0 0 0 0 0 4.2 State Governments 27060 21004 19965 -1039 -7095 * Data are provisional; difference, if any, is due to rounding o",
+   "first": "2026-11-27T13:17:03.494Z",
+   "score": 1,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 niche (exchange)",
+    "+1 plans/price/availability \"India\""
+   ],
+   "status": "below",
+   "hash": "6895a144"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64056": {
+   "title": "Government Stock - Full Auction Results",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64056",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-27T15:35:00.000Z",
+   "updated": null,
+   "summary": "(Amount in ₹ Crore) Auction Results 6.20% GS 2029 6.57% GS 2033 7.63% GS 2056 7.50% GOI SGrB 2056 I. Notified Amount 9,000 12,000 9,000 3,000 II. Competitive Bids Received (i) Number 85 160 192 65 (ii) Amount 13,785.200 22,948.200 23,095.000 8,723.000 III. Cut-off price (₹) / Yield 98.05 96.30 98.03",
+   "first": "2026-11-27T13:17:03.494Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"price\""
+   ],
+   "status": "below",
+   "hash": "cb33b90f"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64055": {
+   "title": "Government Stock - Auction Results: Cut-off",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64055",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-27T14:10:00.000Z",
+   "updated": null,
+   "summary": "6.20% GS 2029 6.57% GS 2033 7.63% GS 2056 7.50% GOI SGrB 2056 I. Notified Amount ₹9,000 crore ₹12,000 crore ₹9,000 crore ₹3,000 crore II. Cut off Price (₹) / Implicit Yield at cut-off 98.05/6.9960% 96.30/7.2736% 98.03/7.7996% 96.86/7.7721% III. Amount accepted in the auction ₹3,677.495 crore ₹12,000",
+   "first": "2026-11-27T13:17:03.494Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"₹9\""
+   ],
+   "status": "below",
+   "hash": "ddfd705b"
+  },
+  "https://tallysolutions.com/tally/tallyprime-go-to-feature-faster-navigation": {
+   "title": "TallyPrime’s Go To Search: The Feature That Changes Everything for Users Moving from Older Versions",
+   "link": "https://tallysolutions.com/tally/tallyprime-go-to-feature-faster-navigation/",
+   "source": "tally-blog",
+   "topic": "small-business-it",
+   "category": "launch",
+   "date": "2026-11-27T07:12:35.000Z",
+   "updated": null,
+   "summary": "If you have spent years working on Tally.ERP 9 or older versions, you probably know the drill by heart. You are in the middle of checking a customer ledger, a client calls to ask about a specific stock item, and suddenly you have to press Escape multiple times, risk losing your current screen, and d",
+   "first": "2026-11-27T13:17:03.494Z",
+   "score": -2,
+   "reasons": [
+    "-2 source tally-blog"
+   ],
+   "status": "below",
+   "hash": "caccb4f8"
   }
  },
  "devices": {},
@@ -9311,8 +9082,8 @@
   }
  },
  "missedCheck": {
-  "day": "2026-11-26",
-  "at": "2026-11-26T13:16:56.472Z",
+  "day": "2026-11-27",
+  "at": "2026-11-27T13:17:03.494Z",
   "checked": 0,
   "covered": 0,
   "items": []
