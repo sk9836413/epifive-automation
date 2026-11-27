@@ -13,7 +13,7 @@ on:
       what:
         description: Which numbers
         type: choice
-        options: [all, website, youtube, social, search, subscribers]
+        options: [all, website, youtube, social, search, subscribers, flow, visibility]
         default: all
       date:
         description: UTC date YYYY-MM-DD (empty = today)

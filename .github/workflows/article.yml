@@ -524,6 +524,23 @@ jobs:
           echo "picks=$n" >> "$GITHUB_OUTPUT"
           { echo "### Search Console refresh block: $n post(s)"; echo '```json'; cat "$RUNNER_TEMP/gsc.json"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
 
+      - name: Bing striking-distance block (Mondays)
+        # Owner, 27 Nov 2026 (SEO/GEO/AEO first): Bing pages at positions 4-15 go to the top of ## Refresh right after
+        # the GSC block (scripts/seo/refresh-queue.mjs bing); Bing also feeds ChatGPT search and Copilot.
+        id: bingblock
+        if: steps.gate.outputs.ready == 'true' && steps.date.outputs.mode == 'interlink' && steps.date.outputs.full == 'true'
+        continue-on-error: true
+        env:
+          BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}
+          DRY_RUN: ${{ inputs.dry_run || false }}
+        run: |
+          if [ -z "$BING_WEBMASTER_API_KEY" ]; then echo "::notice::BING_WEBMASTER_API_KEY is not set; Bing refresh block skipped."; exit 0; fi
+          if [ "$DRY_RUN" = "true" ]; then node scripts/seo/refresh-queue.mjs bing > "$RUNNER_TEMP/bing.json"
+          else node scripts/seo/refresh-queue.mjs bing --write > "$RUNNER_TEMP/bing.json"; fi
+          n=$(node -e "console.log(require(process.argv[1]).picks.length)" "$RUNNER_TEMP/bing.json")
+          echo "picks=$n" >> "$GITHUB_OUTPUT"
+          { echo "### Bing refresh block: $n post(s)"; echo '```json'; cat "$RUNNER_TEMP/bing.json"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
       - name: Internal links
         id: links
         if: steps.gate.outputs.ready == 'true' && steps.date.outputs.mode == 'interlink'

@@ -40,6 +40,7 @@ jobs:
           persist-credentials: false
           sparse-checkout: |
             ops/report
+            scripts/stats
 
       - name: Check out Shyam's day plan
         continue-on-error: true
@@ -75,6 +76,12 @@ jobs:
           CRM_URL: ${{ vars.CRM_URL || 'https://epifive-crm.pages.dev' }}
           INGEST_TOKEN: ${{ secrets.INGEST_TOKEN }}
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          # Mondays: search and AI visibility (EPIVIFE scripts/stats/visibility.mjs, owner 27 Nov 2026).
+          BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}
+          GSC_CLIENT_ID: ${{ secrets.GSC_CLIENT_ID }}
+          GSC_CLIENT_SECRET: ${{ secrets.GSC_CLIENT_SECRET }}
+          GSC_REFRESH_TOKEN: ${{ secrets.GSC_REFRESH_TOKEN }}
+          GSC_SITE: ${{ secrets.GSC_SITE }}
           SITE_REPO_TOKEN: ${{ secrets.SITE_REPO_TOKEN }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
