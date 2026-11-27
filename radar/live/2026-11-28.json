@@ -1,0 +1,239 @@
+{
+ "date": "2026-11-28",
+ "title": "Tech news today, 28 November 2026",
+ "published": "2026-11-27T23:01:44.698Z",
+ "updated": "2026-11-27T23:01:44.698Z",
+ "items": [
+  {
+   "id": "4d321ba9",
+   "key": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
+   "time": "2026-11-27T20:04:26.000Z",
+   "seen": "2026-11-27T23:01:44.698Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Vulnerabilities in nginx Affecting Cisco Products: November 2026",
+   "summary": "On November 18, 2026, nginx announced the availability of a fix for multiple critical vulnerabilities in nginx that could lead to remote code execution. These vulnerabilities affect nginx releases 1.9.5 through 1.31.8 and is fixed in releases 1.31.9 (mainline) and 1.30.7 (stable). These vulnerabilities were identified by the following CVEs: CVE-2026-113425: NGINX ngx_mail_proxy_module vulnerability CVE-2026-121810: NGINX ngx_http_v3_module vulnerability CVE-2026-123007: NGINX ngx_http_v2_module vulnerability CVE-2026-123633: NGINX ngx_http_v2_module vulnerability CVE-2026-123634: NGINX resolver vulnerability For more information, see the nginx Security Advisories . This advisory will be upda",
+   "lines": [
+    "nginx announced a fix for multiple critical vulnerabilities that could lead to remote code execution, affecting nginx releases 1.9.5 through 1.31.8.",
+    "The fix is in releases 1.31.9 (mainline) and 1.30.7 (stable).",
+    "The advisory covers flaws in the ngx_mail_proxy, ngx_http_v3, ngx_http_v2 and resolver modules. IT teams running affected nginx versions may need to upgrade to a fixed release."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Cisco Security Advisories (PSIRT)",
+    "url": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-nginx-nov-2026-e8jska2s?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20nginx%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1"
+   },
+   "sourceId": "cisco-psirt",
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 8,
+   "story": null
+  },
+  {
+   "id": "29d35f69",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-cloudwatch-opentelemetry-enrichment",
+   "time": "2026-11-27T21:03:00.000Z",
+   "seen": "2026-11-27T23:01:44.698Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Amazon CloudWatch announces basic OpenTelemetry enrichment at no additional cost",
+   "summary": "Amazon CloudWatch now offers basic OpenTelemetry enrichment for AWS service metrics at no additional cost. Basic enrichment turns the metrics that AWS services publish to CloudWatch into OpenTelemetry data points you can query with PromQL. It covers metrics that identify a resource, such as Amazon EC2 CPUUtilization with an InstanceId dimension. Enriched metrics get resource attributes for the Amazon Resource Name, cloud provider, Region, and account ID, plus an instrumentation scope naming the source service. Your original CloudWatch dimensions become data point attributes. To query AWS resource tags as PromQL labels, choose resource tag enrichment instead. It is charged as OTel Vended Metr",
+   "lines": [
+    "Amazon CloudWatch now offers basic OpenTelemetry enrichment for AWS service metrics, turning them into OpenTelemetry data points that can be queried with PromQL.",
+    "Basic enrichment is offered at no additional cost.",
+    "Enriched metrics add resource attributes for the ARN, cloud provider, Region and account ID. Resource tag enrichment is a separate option for querying AWS tags as PromQL labels."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-cloudwatch-opentelemetry-enrichment/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "8abef571",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-neptune-graph-sessions-generally-available",
+   "time": "2026-11-27T19:00:00.000Z",
+   "seen": "2026-11-27T23:01:44.698Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Amazon Neptune introduces Neptune Graph Sessions, smaller graphs designed for agents that scale to zero and resume automatically",
+   "summary": "Amazon Neptune now supports Neptune Graph Sessions, a compute mode designed for agents that scales memory and CPU automatically and scales to zero when idle. You can give each agent, user or task its own graph without paying for the 16 m-NCU minimum of a provisioned graph. You choose a starting size of 4 s-NCU (sessions Neptune capacity units) or 8 s-NCU of working memory when you create a graph. Applications such as GraphRAG assistants, AI agents and per-user analytics improve accuracy when using a graph. These use cases often need a separate graph for each conversation or task, and the size of that graph is hard to predict. Each Graph Sessions graph starts at the size you choose and includ",
+   "lines": [
+    "Amazon Neptune now supports Neptune Graph Sessions, a compute mode for agents that scales memory and CPU automatically and scales to zero when idle.",
+    "A graph can start at 4 s-NCU or 8 s-NCU of working memory, chosen when the graph is created, without paying for the 16 m-NCU minimum of a provisioned graph.",
+    "Teams building GraphRAG assistants, AI agents or per-user analytics can give each agent, user or task its own graph."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-neptune-graph-sessions-generally-available"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "a8ca8c12",
+   "key": "https://theverge.com/gadgets/1041006/anker-100w-universal-travel-charger-black-friday-deal-sale",
+   "time": "2026-11-27T18:30:00.000Z",
+   "seen": "2026-11-27T23:01:44.698Z",
+   "kind": "outage",
+   "tier": 2,
+   "headline": "Anker’s 100W universal travel charger is down to $60, its lowest price yet",
+   "summary": "During Black Friday, the Anker 100W Universal Charger is on sale for $59.99 at Amazon, Best Buy, and Walmart, a $20 discount from its list price. That’s a few dollars lower than the previous best, with both the dark gray and silver versions available from all three retailers. With four USB ports and support for […]",
+   "lines": [
+    "Reported by The Verge: During Black Friday, the Anker 100W Universal Charger is on sale for $59.99 at Amazon, Best Buy and Walmart, a $20 discount from its list price.",
+    "The price is a few dollars lower than the previous best, and dark gray and silver versions are available from all three retailers.",
+    "The charger has four USB ports. Buyers comparing multi-port travel chargers may weigh this sale price against the previous best."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Verge",
+    "url": "https://www.theverge.com/gadgets/1041006/anker-100w-universal-travel-charger-black-friday-deal-sale"
+   },
+   "sourceId": "the-verge",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "families": [],
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "7efe5d53",
+   "key": "https://engadget.com/2329747/openai-countersues-apple-and-accuses-it-of-stealing-trade-secrets",
+   "time": "2026-11-27T19:44:38.000Z",
+   "seen": "2026-11-27T23:01:44.698Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "OpenAI countersues Apple and accuses it of stealing trade secrets",
+   "summary": "The suit suggests that the iPhone maker is trying to \"compete unfairly by any means available.\"",
+   "lines": [
+    "Reported by Engadget: OpenAI filed a countersuit against Apple, accusing it of stealing trade secrets.",
+    "The suit suggests Apple is trying to \"compete unfairly by any means available.\""
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "Engadget",
+    "url": "https://www.engadget.com/2329747/openai-countersues-apple-and-accuses-it-of-stealing-trade-secrets/"
+   },
+   "sourceId": "engadget",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 5,
+   "story": null
+  },
+  {
+   "id": "603d1554",
+   "key": "https://theverge.com/tech/1044612/allstate-has-been-suffering-an-outage-since-monday",
+   "time": "2026-11-27T21:52:42.000Z",
+   "seen": "2026-11-27T23:01:44.698Z",
+   "kind": "outage",
+   "tier": 2,
+   "headline": "Allstate has been suffering an outage since Monday",
+   "summary": "On Monday, November 23rd, Allstate began dealing with an outage that has impacted its website, mobile apps, and roadside assistance service. It's just the latest company, including Microsoft and JPMorgan Chase, to suffer an outage in the last few weeks. As of Friday afternoon, access to accounts through the app and site appeared to still […]",
+   "lines": [
+    "Reported by The Verge: Allstate began an outage on Monday, November 23rd, that has affected its website, mobile apps and roadside assistance service.",
+    "The report says Microsoft and JPMorgan Chase have also suffered outages in the last few weeks.",
+    "Business users who rely on Allstate's online account access or roadside assistance may face service disruption while the outage continues."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "The Verge",
+    "url": "https://www.theverge.com/tech/1044612/allstate-has-been-suffering-an-outage-since-monday"
+   },
+   "sourceId": "the-verge",
+   "sourceMax": 3,
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "families": [],
+   "score": 4,
+   "story": null
+  },
+  {
+   "id": "7775f12b",
+   "key": "https://bleepingcomputer.com/news/security/new-boston-scientific-data-breach-exposes-personal-medical-info",
+   "time": "2026-11-27T18:57:42.000Z",
+   "seen": "2026-11-27T23:01:44.698Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "New Boston Scientific data breach exposes personal, medical info",
+   "summary": "Medical technology company Boston Scientific is sending data breach notices to individuals affected by a cyberattack on the firm. [...]",
+   "lines": [
+    "Reported by BleepingComputer: Boston Scientific is sending data breach notices to individuals affected by a cyberattack on the firm.",
+    "The headline states the breach exposed personal and medical information.",
+    "IT teams at medical technology and healthcare firms may review third-party risk and data-protection controls in light of this incident."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/new-boston-scientific-data-breach-exposes-personal-medical-info/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  },
+  {
+   "id": "9096b96a",
+   "key": "https://bleepingcomputer.com/news/security/unpatched-cacti-zero-day-with-public-poc-gives-remote-code-execution",
+   "time": "2026-11-27T17:06:13.000Z",
+   "seen": "2026-11-27T23:01:44.698Z",
+   "kind": "security",
+   "tier": 2,
+   "headline": "Unpatched Cacti zero-day with public PoC gives remote code execution",
+   "summary": "A zero-day vulnerability in the Cacti network monitoring platform has been publicly disclosed, along with a proof-of-concept exploit that lets unauthenticated attackers execute commands on vulnerable servers. [...]",
+   "lines": [
+    "Reported by BleepingComputer: A zero-day vulnerability in the Cacti network monitoring platform has been publicly disclosed.",
+    "A public proof-of-concept exploit lets unauthenticated attackers execute commands on vulnerable servers.",
+    "IT teams running Cacti should assess their exposure to remote code execution, since a public exploit is now available."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "BleepingComputer",
+    "url": "https://www.bleepingcomputer.com/news/security/unpatched-cacti-zero-day-with-public-poc-gives-remote-code-execution/"
+   },
+   "sourceId": "bleepingcomputer",
+   "reported": true,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
+  }
+ ],
+ "description": "8 technology updates from official sources, updated hourly: Vulnerabilities in nginx Affecting Cisco Products: November 2026; Anker’s 100W universal travel charger is down to $60, its lowest price yet; OpenAI countersues Apple and accuses it of stealing trade secrets."
+}
