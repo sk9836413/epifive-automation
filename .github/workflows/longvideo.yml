@@ -101,10 +101,17 @@ jobs:
         continue-on-error: true
         env:
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          # Owner, 27 Nov 2026: videos on what people search; Bing search demand goes ahead of traffic.
+          BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}
         run: |
           curl -fsSL "https://raw.githubusercontent.com/${{ github.repository }}/main/stats/top-articles.json" -o "$RUNNER_TEMP/top.json" || echo '[]' > "$RUNNER_TEMP/top.json"
           if [ -n "$CF_API_TOKEN" ]; then
             node scripts/stats/top-articles.mjs --days 28 --limit 10 --out "$RUNNER_TEMP/live.json" > /dev/null               && [ "$(node -p "require('$RUNNER_TEMP/live.json').length")" -gt 0 ] && cp "$RUNNER_TEMP/live.json" "$RUNNER_TEMP/top.json"               || echo "::warning::Cloudflare top articles failed; the committed list is used."
+          fi
+          if [ -n "$BING_WEBMASTER_API_KEY" ]; then
+            node scripts/stats/search-demand.mjs --out "$RUNNER_TEMP/demand.json" > /dev/null || echo '[]' > "$RUNNER_TEMP/demand.json"
+            node -e "const [d, t] = process.argv.slice(1).map((f) => require(f)); const s = [...new Set([...d.map((x) => x.slug), ...t.map((x) => x.slug || x)])]; require('fs').writeFileSync(process.argv[2], JSON.stringify(s.map((slug) => ({ slug }))))" "$RUNNER_TEMP/demand.json" "$RUNNER_TEMP/top.json"
+            echo "Search demand first: $(node -p "require('$RUNNER_TEMP/demand.json').slice(0, 8).map((x) => x.slug + ' ' + x.impressions).join(', ')")"
           fi
           echo "Top articles: $(node -p "require('$RUNNER_TEMP/top.json').slice(0, 10).map((x) => x.slug || x).join(', ')")"
 
