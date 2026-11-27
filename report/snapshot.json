@@ -139,7 +139,27 @@
     "fb": 1014,
     "ig": 1400
    }
+  },
+  "2026-11-27": {
+   "yt_epifive": {
+    "subs": 7,
+    "views": 3581,
+    "videos": 123
+   },
+   "yt_shyam": {
+    "subs": 51,
+    "views": 10307,
+    "videos": 180
+   },
+   "meta_epifive": {
+    "fb": 23,
+    "ig": 8
+   },
+   "meta_shyam": {
+    "fb": 1014,
+    "ig": 1399
+   }
   }
  },
- "sent": "2026-11-26"
+ "sent": "2026-11-27"
 }
