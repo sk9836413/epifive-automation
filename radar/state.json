@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-27T14:52:56.381Z",
+ "lastScan": "2026-11-27T15:46:11.069Z",
  "seen": {
   "https://bleepingcomputer.com/news/security/apache-http-server-patches-critical-http-2-remote-code-execution-flaw": {
    "title": "Apache HTTP Server patches critical HTTP/2 remote code execution flaw",
@@ -8592,12 +8592,14 @@
     "+2 large scale \"7,600 GitHub Repositories\"",
     "+1 user data or credentials exposed"
    ],
-   "status": "writing",
+   "status": "published",
    "hash": "d9d674a3",
    "kind": "new",
    "extra": false,
    "taskAt": "2026-11-27T14:52:56.381Z",
-   "attempts": 1
+   "attempts": 1,
+   "slug": "polinrider-github-repos-poisoned-check-and-clean",
+   "resultAt": "2026-11-27T15:01:09.708Z"
   },
   "https://about.fb.com/news/2026/11/instagram-for-tv-comes-to-india-introducing-new-ways-to-watch-reels-together": {
    "title": "Instagram for TV Comes to India, Introducing New Ways to Watch Reels Together",
@@ -8881,6 +8883,24 @@
    ],
    "status": "below",
    "hash": "9c9796f3"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64062": {
+   "title": "RBI Issues Amendment Directions on ‘Suspected Money Mule Accounts to Prevent Cyber-enabled Financial Frauds’",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64062",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-27T20:45:00.000Z",
+   "updated": null,
+   "summary": "The Reserve Bank had issued the draft Reserve Bank of India (Know Your Customer) Amendment Directions, 2026 on September 11, 2026, for seeking feedback from stakeholders. The draft Amendment Directions proposed a Standard Operating Procedure (SOP) laying down a uniform, time-bound procedure for bank",
+   "first": "2026-11-27T15:46:11.069Z",
+   "score": 0,
+   "reasons": [
+    "-1 source rbi-press",
+    "+1 plans/price/availability \"India\""
+   ],
+   "status": "below",
+   "hash": "dfc477d1"
   }
  },
  "devices": {},
