@@ -2,7 +2,7 @@
  "date": "2026-11-26",
  "title": "Tech news today, 26 November 2026",
  "published": "2026-11-25T22:42:19.087Z",
- "updated": "2026-11-27T13:17:03.494Z",
+ "updated": "2026-11-27T14:52:56.381Z",
  "items": [
   {
    "id": "6e3a80d1",
@@ -885,7 +885,7 @@
    "time": "2026-11-26T15:13:41.000Z",
    "seen": "2026-11-26T16:20:27.085Z",
    "kind": "security",
-   "tier": 2,
+   "tier": 1,
    "headline": "North Korea-Linked PolinRider Poisons Over 7,600 GitHub Repositories to Spread Malware",
    "summary": "The threat actors behind the PolinRider campaign have been observed planting a Python loader in GitHub repositories, as evidence emerges that the activity may have started as far back as February 2025. \"The loader hides in a small utils package or in conftest.py,\" SafeDep said in a report published this week. \"When Python imports the file, the loader reads the newest transaction that an",
    "lines": [
@@ -909,5 +909,5 @@
    "story": null
   }
  ],
- "description": "31 technology updates from official sources, updated hourly: CERT-In flags high-severity vulnerability in eGov’s DIGIT platforms; FedEx plane overshoots Miami runway, causing temporary ground stop at airport; SpaceX Receives Government Approval to Launch Space Data Centers."
+ "description": "31 technology updates from official sources, updated hourly: CERT-In flags high-severity vulnerability in eGov’s DIGIT platforms; North Korea-Linked PolinRider Poisons Over 7,600 GitHub Repositories to Spread Malware; FedEx plane overshoots Miami runway, causing temporary ground stop at airport."
 }

@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-27T14:16:37.788Z",
+ "lastScan": "2026-11-27T14:52:56.381Z",
  "seen": {
   "https://bleepingcomputer.com/news/security/apache-http-server-patches-critical-http-2-remote-code-execution-flaw": {
    "title": "Apache HTTP Server patches critical HTTP/2 remote code execution flaw",
@@ -3839,76 +3839,6 @@
    "hash": "239ce2b",
    "post": "vmware-vcenter-cve-2026-123890-patch-check"
   },
-  "https://blog.google/innovation-and-ai/models-and-research/google-labs/women-in-film-india-google-flow": {
-   "title": "Independent filmmakers in India bring big-screen stories to life with Google Flow.",
-   "link": "https://blog.google/innovation-and-ai/models-and-research/google-labs/women-in-film-india-google-flow/",
-   "source": "google-keyword",
-   "topic": "how-to-tips",
-   "category": "launch",
-   "date": "2026-11-24T14:00:00.000Z",
-   "updated": null,
-   "summary": "Indian filmmakers use Google Flow to create original short films. Watch five winning stories from the WIF India Filmathon. See the films now.",
-   "first": "2026-11-24T14:16:40.543Z",
-   "score": 1,
-   "reasons": [
-    "+1 plans/price/availability \"India\""
-   ],
-   "status": "below",
-   "hash": "4567cd40"
-  },
-  "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/cisco-to-participate-in-december-events-with-the-financial-community.html": {
-   "title": "Cisco to Participate in December Events with the Financial Community",
-   "link": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/cisco-to-participate-in-december-events-with-the-financial-community.html?source=rss",
-   "source": "cisco-newsroom",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-24T14:06:00.000Z",
-   "updated": null,
-   "summary": "Cisco to Participate in December Events with the Financial Community More RSS Feeds: https://newsroom.cisco.com/c/r/newsroom/en/us/rss-feeds.html",
-   "first": "2026-11-24T14:16:40.543Z",
-   "score": -4,
-   "reasons": [
-    "-1 source cisco-newsroom",
-    "-3 corporate/announcement \"Events\""
-   ],
-   "status": "below",
-   "hash": "bb8bff45"
-  },
-  "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/cisco-to-host-2026-virtual-annual-meeting-of-stockholders.html": {
-   "title": "Cisco to Host 2026 Virtual Annual Meeting of Stockholders",
-   "link": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/cisco-to-host-2026-virtual-annual-meeting-of-stockholders.html?source=rss",
-   "source": "cisco-newsroom",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-24T14:06:00.000Z",
-   "updated": null,
-   "summary": "Cisco (NASDAQ: CSCO) will host its 2026 Annual Meeting of Stockholders on Tuesday, December 15, 2026, beginning at 8:00 a.m. PST via audio webcast More RSS Feeds: https://newsroom.cisco.com/c/r/newsroom/en/us/rss-feeds.html",
-   "first": "2026-11-24T14:16:40.543Z",
-   "score": -1,
-   "reasons": [
-    "-1 source cisco-newsroom"
-   ],
-   "status": "below",
-   "hash": "75f47113"
-  },
-  "https://dell.com/en-us/blog/how-cyberattackers-target-small-businesses-and-how-to-stop-them": {
-   "title": "How Cyberattackers Target Small Businesses and How to Stop Them",
-   "link": "https://www.dell.com/en-us/blog/how-cyberattackers-target-small-businesses-and-how-to-stop-them",
-   "source": "dell-blog",
-   "topic": "laptops-hardware",
-   "category": "launch",
-   "date": "2026-11-24T14:00:00.000Z",
-   "updated": null,
-   "summary": "Learn how cyberattacks move through a small business, from first opening to disruption, and which PC, software and response controls help interrupt each stage.",
-   "first": "2026-11-24T14:16:40.543Z",
-   "score": 1,
-   "reasons": [
-    "-1 source dell-blog",
-    "+2 user steps \"How to\""
-   ],
-   "status": "below",
-   "hash": "7ba77bc7"
-  },
   "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-clamav-multi-e93M3vdA?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=ClamAV%20Vulnerabilities%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1": {
    "title": "ClamAV Vulnerabilities Affecting Cisco Products: November 2026",
    "link": "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-clamav-multi-e93M3vdA?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=ClamAV%20Vulnerabilities%20Affecting%20Cisco%20Products:%20November%202026%26vs_k=1",
@@ -3938,41 +3868,6 @@
    "slug": "cisco-expressway-cve-2026-76466-exploited-patch",
    "resultAt": "2026-11-24T14:19:33.804Z",
    "skipReason": "RADAR-SKIP: no material change (Cisco ClamAV advisory affects Secure Endpoint connectors, does not mention Expressway or CVE-2026-76466; no known exploitation)"
-  },
-  "https://salesforce.com/blog/small-business/how-to-write-a-welcome-email": {
-   "title": "How to Write a Welcome Email That Turns New Customers into Loyal Fans",
-   "link": "https://www.salesforce.com/blog/small-business/how-to-write-a-welcome-email/",
-   "source": "salesforce-blog",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-24T14:00:00.000Z",
-   "updated": null,
-   "summary": "Your first email sets the tone for the whole relationship — here's how to make it count, with a little help from AI.",
-   "first": "2026-11-24T14:16:40.543Z",
-   "score": 1,
-   "reasons": [
-    "-1 source salesforce-blog",
-    "+2 user steps \"How to\""
-   ],
-   "status": "below",
-   "hash": "aaa170c2"
-  },
-  "https://blog.scalefusion.com/patch-compliance": {
-   "title": "Patch compliance: Need, challenges, best practices",
-   "link": "https://blog.scalefusion.com/patch-compliance/",
-   "source": "scalefusion-blog",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-24T13:54:42.000Z",
-   "updated": null,
-   "summary": "Patch compliance measures whether required updates have been installed on operating systems, applications, and endpoint devices within defined timelines. It helps IT teams identify overdue patches, track remediation progress, and reduce exposure to known vulnerabilities across their IT environment. ",
-   "first": "2026-11-24T14:16:40.543Z",
-   "score": -2,
-   "reasons": [
-    "-2 source scalefusion-blog"
-   ],
-   "status": "below",
-   "hash": "25393d61"
   },
   "https://blog.google/products-and-platforms/products/gemini/gemini-golden-state": {
    "title": "How Gemini is changing the game for Golden State's organization and fans.",
@@ -8697,8 +8592,12 @@
     "+2 large scale \"7,600 GitHub Repositories\"",
     "+1 user data or credentials exposed"
    ],
-   "status": "queued",
-   "hash": "d9d674a3"
+   "status": "writing",
+   "hash": "d9d674a3",
+   "kind": "new",
+   "extra": false,
+   "taskAt": "2026-11-27T14:52:56.381Z",
+   "attempts": 1
   },
   "https://about.fb.com/news/2026/11/instagram-for-tv-comes-to-india-introducing-new-ways-to-watch-reels-together": {
    "title": "Instagram for TV Comes to India, Introducing New Ways to Watch Reels Together",
@@ -8958,11 +8857,30 @@
    },
    "trendDay": "2026-11-27",
    "hash": "c0037948",
-   "status": "writing",
+   "status": "skipped",
    "kind": "new",
    "extra": false,
    "taskAt": "2026-11-27T14:16:37.788Z",
-   "attempts": 1
+   "attempts": 1,
+   "resultAt": "2026-11-27T14:19:20.698Z",
+   "skipReason": "RADAR-SKIP: news only (single Reuters report from anonymous sources, Air Force gave no confirmation, no indicators or advisory, nothing concrete for readers to do; listed on /news/live)"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64061": {
+   "title": "RBI to conduct Overnight Variable Rate Repo (VRR) auction under LAF on November 30, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64061",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-27T19:45:00.000Z",
+   "updated": null,
+   "summary": "On a review of current and evolving liquidity conditions in the near term, it has been decided to conduct a Variable Rate Repo (VRR) auction on Monday, November 30, 2026, as under: Sl. No. Notified Amount (₹ crore) Tenor (day) Window Timing Date of Reversal 1 50,000 1 09:30 AM to 10:00 AM December 0",
+   "first": "2026-11-27T14:52:56.381Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "9c9796f3"
   }
  },
  "devices": {},
