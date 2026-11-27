@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-27T03:43:47.944Z",
+ "lastScan": "2026-11-27T04:43:50.452Z",
  "seen": {
   "https://bleepingcomputer.com/news/security/apache-http-server-patches-critical-http-2-remote-code-execution-flaw": {
    "title": "Apache HTTP Server patches critical HTTP/2 remote code execution flaw",
@@ -9121,6 +9121,57 @@
    ],
    "status": "below",
    "hash": "27158d52"
+  },
+  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64053": {
+   "title": "Result of Underwriting Auction conducted on November 27, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64053",
+   "source": "rbi-press",
+   "topic": "online-safety",
+   "category": "launch",
+   "date": "2026-11-27T10:10:00.000Z",
+   "updated": null,
+   "summary": "",
+   "first": "2026-11-27T04:43:50.452Z",
+   "score": -1,
+   "reasons": [
+    "-1 source rbi-press"
+   ],
+   "status": "below",
+   "hash": "1ba97ac7"
+  },
+  "https://blogs.vmware.com/vmware-japan/2026/11/9-1-2-ga-release.html": {
+   "title": "VMware Cloud Foundation 9.1.2 の一般提供（GA）を開始",
+   "link": "https://blogs.vmware.com/vmware-japan/2026/11/9-1-2-ga-release.html",
+   "source": "vmware-blog",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-27T02:40:26.000Z",
+   "updated": null,
+   "summary": "多くの企業がスピードの向上、コストの削減、セキュリティの強化を目指す一方で、新たな収益源を生み出すためにアプリケーションやワークロードの幅を広げ続けるプレッシャーにも直面しています。VMware Cloud Foundation（VCF）9.1.2 の一般提供（GA）は、こうした課題に直接応えるものであり、新たな AI 自動化機能に加え、VMware vSphere Kubernetes Service（VKS）の機能強化やセキュリティアップデートを提供します。これらのアップデートにより、プラットフォームチームは手動での構成作業にかける時間を減らし、ビジネス価値の創出により多くの時間を割けるよ",
+   "first": "2026-11-27T04:43:50.452Z",
+   "score": -1,
+   "reasons": [
+    "-1 source vmware-blog"
+   ],
+   "status": "below",
+   "hash": "6f2f5b76"
+  },
+  "https://manageengine.com/blog/general/the-it-butterfly-effect-5-tips-to-prevent-small-changes-from-triggering-massive-disruptions.html": {
+   "title": "The IT butterfly effect: 5 tips to prevent small changes from triggering massive disruptions",
+   "link": "https://www.manageengine.com/blog/general/the-it-butterfly-effect-5-tips-to-prevent-small-changes-from-triggering-massive-disruptions.html",
+   "source": "manageengine-blog",
+   "topic": "security-identity",
+   "category": "launch",
+   "date": "2026-11-26T17:30:00.000Z",
+   "updated": null,
+   "summary": "Top tips is a weekly column where we highlight what’s trending in the tech world and share ways to stay ahead. This week, we're looking at the butterfly effect in IT and how seemingly minor changes to your infrastructure can trigger unexpected disruptions, along with ways to minimize the risks and k",
+   "first": "2026-11-27T04:43:50.452Z",
+   "score": -2,
+   "reasons": [
+    "-2 source manageengine-blog"
+   ],
+   "status": "below",
+   "hash": "99078dff"
   }
  },
  "devices": {},

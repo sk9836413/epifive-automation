@@ -2,7 +2,7 @@
  "date": "2026-11-27",
  "title": "Tech news today, 27 November 2026",
  "published": "2026-11-26T23:03:53.084Z",
- "updated": "2026-11-26T23:03:53.084Z",
+ "updated": "2026-11-27T04:43:50.452Z",
  "items": [
   {
    "id": "7d95ca76",
@@ -117,7 +117,36 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "f7e99291",
+   "key": "https://blogs.vmware.com/vmware-japan/2026/11/9-1-2-ga-release.html",
+   "time": "2026-11-27T02:40:26.000Z",
+   "seen": "2026-11-27T04:43:50.452Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "VMware Cloud Foundation 9.1.2 の一般提供（GA）を開始",
+   "summary": "多くの企業がスピードの向上、コストの削減、セキュリティの強化を目指す一方で、新たな収益源を生み出すためにアプリケーションやワークロードの幅を広げ続けるプレッシャーにも直面しています。VMware Cloud Foundation（VCF）9.1.2 の一般提供（GA）は、こうした課題に直接応えるものであり、新たな AI 自動化機能に加え、VMware vSphere Kubernetes Service（VKS）の機能強化やセキュリティアップデートを提供します。これらのアップデートにより、プラットフォームチームは手動での構成作業にかける時間を減らし、ビジネス価値の創出により多くの時間を割けるようになります。 本記事では、VCF 9.1.2 で追加された主な新機能について詳しくご紹介します。 AI インフラストラクチャのデプロイを自動化 これまで AI ワークロード用のインフラストラクチャを構築するには、複数の手動ステップをつなぎ合わせる必要がありました。VCF 9.1.2 では、単一の VMware vCenter プラグインを通じて Day 0 のデプロイを自動化する「AI インフラストラクチャ・クイックスタート」を導入し、クラスター構成、VMware vSphere Supervisor の有効化、VKS クラスターのセットアップを 1 つの合理化されたワークフローに統合しました。 これにより、チームは基盤となるインフラストラクチャとソフトウェアを 1 つの連携したステップでプロビジョニングできるようになります。長期にわたる手動設定に悩まされることなく、デプロイまでの時間を",
+   "lines": [
+    "VMware by Broadcom launched general availability (GA) of VMware Cloud Foundation (VCF) 9.1.2, with new AI automation features, enhancements to VMware vSphere Kubernetes Service (VKS), and security updates.",
+    "The AI Infrastructure Quickstart uses a single VMware vCenter plugin to automate Day 0 deployment, combining cluster configuration, enabling VMware vSphere Supervisor, and VKS cluster setup into one workflow.",
+    "Platform teams can spend less time on manual configuration and more time on business value, and provision infrastructure and software in one coordinated sequence of steps."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "VMware by Broadcom Blogs",
+    "url": "https://blogs.vmware.com/vmware-japan/2026/11/9-1-2-ga-release.html"
+   },
+   "sourceId": "vmware-blog",
+   "sourceMax": 4,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 4,
+   "story": null
   }
  ],
- "description": "4 technology updates from official sources, updated hourly: The Garmin Forerunner 265S is down to $300, its best price of the year; Backloggd urges users to change their passwords after a breach; Fake paid expert interviews impersonate brands to steal Google logins."
+ "description": "5 technology updates from official sources, updated hourly: The Garmin Forerunner 265S is down to $300, its best price of the year; Backloggd urges users to change their passwords after a breach; VMware Cloud Foundation 9.1.2 の一般提供（GA）を開始."
 }
