@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-27T23:02:12.632Z",
+ "generated": "2026-11-28T05:13:35.691Z",
  "about": "Microsoft 365 / Azure / GitHub retirements for https://www.epifive.com/microsoft-365-retirements. Built by radar/retirements.mjs from official notices; see that file for sources and date rules.",
  "sources": {
   "message-center": 125,
@@ -8,38 +8,6 @@
  },
  "errors": [],
  "items": [
-  {
-   "id": "AZ551523",
-   "source": "azure-updates",
-   "product": "azure",
-   "title": "\"Send data to Event Hubs & Storage (Preview)\" retiring July 31, 2026",
-   "date": "2026-07-31",
-   "precision": "day",
-   "dateText": "Retirement: \"Send data to Event Hubs & Storage (Preview)\" retiring July 31, 2026",
-   "dateBasis": "stated",
-   "affected": "Customers using Azure Monitor.",
-   "action": "You will need to switch to alternatives described here to continue using AMA or other Azure solutions that provide more reliable, scalable and performant solutions to send data to respective destinations.",
-   "url": "https://azure.microsoft.com/en-us/updates?id=551523",
-   "published": "2026-01-30T18:30:02.620Z",
-   "guide": null,
-   "firstSeen": "2026-11-19T04:58:43.152Z"
-  },
-  {
-   "id": "MC1293480",
-   "source": "message-center",
-   "product": "exchange",
-   "title": "Exchange Online: Retirement of legacy TLS versions for POP and IMAP connections",
-   "date": "2026-07-31",
-   "precision": "day",
-   "dateBasis": "act-by",
-   "affected": "Microsoft 365 tenants using POP3 or IMAP4 with Exchange Online; Admins managing email clients, applications, or devices that use POP or IMAP",
-   "action": "If you use POP or IMAP with Exchange Online, ensure email clients, applications, and libraries support TLS 1.2 or later and do not use legacy TLS endpoints . Review all POP and IMAP clients in your organization.",
-   "url": "https://admin.microsoft.com/#/MessageCenter/:/messages/MC1293480",
-   "mirror": "https://mc.merill.net/message/MC1293480",
-   "published": "2026-04-27T22:14:41Z",
-   "guide": null,
-   "firstSeen": "2026-11-19T04:58:43.152Z"
-  },
   {
    "id": "MC1462813",
    "source": "message-center",

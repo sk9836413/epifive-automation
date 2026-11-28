@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-28T04:40:15.473Z",
+ "lastScan": "2026-11-28T05:13:24.013Z",
  "seen": {
   "https://bleepingcomputer.com/news/security/apache-http-server-patches-critical-http-2-remote-code-execution-flaw": {
    "title": "Apache HTTP Server patches critical HTTP/2 remote code execution flaw",
@@ -4088,58 +4088,6 @@
    "status": "below",
    "hash": "234e7749"
   },
-  "https://techcommunity.microsoft.com/t5/windows-it-pro-blog/expand-passwordless-access-with-confidence/ba-p/4572666": {
-   "title": "Expand passwordless access with confidence",
-   "link": "https://techcommunity.microsoft.com/t5/windows-it-pro-blog/expand-passwordless-access-with-confidence/ba-p/4572666",
-   "source": "tc-windows-itpro",
-   "topic": "how-to-tips",
-   "category": "launch",
-   "date": "2026-11-23T23:48:18.000Z",
-   "updated": null,
-   "summary": "Passwordless sign-in is tested in ordinary moments: when an employee needs to start work immediately, when a frontline worker approaches a shared device, or when a security team needs to understand how devices across the organization are being unlocked. Moving beyond passwords requires more than a s",
-   "first": "2026-11-25T04:43:53.191Z",
-   "score": 1,
-   "reasons": [
-    "+1 source tc-windows-itpro"
-   ],
-   "status": "below",
-   "hash": "9148a39d"
-  },
-  "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/ask-the-microsoft-entra-experts-anything-live-on-december-2/ba-p/4576043": {
-   "title": "Ask the Microsoft Entra experts anything, live on December 2",
-   "link": "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/ask-the-microsoft-entra-experts-anything-live-on-december-2/ba-p/4576043",
-   "source": "tc-entra",
-   "topic": "security-identity",
-   "category": "launch",
-   "date": "2026-11-24T18:59:22.000Z",
-   "updated": null,
-   "summary": "Microsoft Ignite 2026 brought a wave of news for Microsoft Entra , from new ways to secure AI agents to new tools for managing access at scale. Now it's your turn to ask the people who build it. On Tuesday, December 2, Yina Arenas, Chief Product Officer for Microsoft Identity and Network Access, joi",
-   "first": "2026-11-25T04:43:53.191Z",
-   "score": 4,
-   "reasons": [
-    "+2 niche (entra, agents)",
-    "+2 user steps \"How to\""
-   ],
-   "status": "below",
-   "hash": "8c44fb31"
-  },
-  "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/ai-is-changing-access-see-how-microsoft-entra-helps-you-stay/ba-p/4556456": {
-   "title": "AI is changing access. See how Microsoft Entra helps you stay ahead.",
-   "link": "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/ai-is-changing-access-see-how-microsoft-entra-helps-you-stay/ba-p/4556456",
-   "source": "tc-entra",
-   "topic": "security-identity",
-   "category": "launch",
-   "date": "2026-11-24T00:43:52.000Z",
-   "updated": null,
-   "summary": "AI and agents are changing the access landscape at a pace that challenges even mature identity and security programs. Without centralized visibility and control, agent sprawl risks becoming shadow IT at a scale we've never had to manage before. AI amplifies today's identity challenges. Every agent n",
-   "first": "2026-11-25T04:43:53.191Z",
-   "score": 2,
-   "reasons": [
-    "+2 niche (entra, agents)"
-   ],
-   "status": "below",
-   "hash": "d86a0b5c"
-  },
   "https://techcommunity.microsoft.com/t5/intune-customer-success/use-web-based-device-enrollment-for-byod-enrollment-on-ios/ba-p/4576027": {
    "title": "Use web-based device enrollment for BYOD enrollment on iOS/iPadOS",
    "link": "https://techcommunity.microsoft.com/t5/intune-customer-success/use-web-based-device-enrollment-for-byod-enrollment-on-ios/ba-p/4576027",
@@ -4157,41 +4105,6 @@
    ],
    "status": "below",
    "hash": "642b5a5c"
-  },
-  "https://manageengine.com/dns-dhcp-ipam/blog/dhcp-reservations-for-reliability-maintaining-consistent-ip-assignments-for-critical-network-devices-with-ddi-central.html": {
-   "title": "DHCP reservations for reliability: Maintaining consistent IP assignments for critical network devices with DDI Central",
-   "link": "https://www.manageengine.com/dns-dhcp-ipam/blog/dhcp-reservations-for-reliability-maintaining-consistent-ip-assignments-for-critical-network-devices-with-ddi-central.html",
-   "source": "manageengine-blog",
-   "topic": "security-identity",
-   "category": "launch",
-   "date": "2026-11-24T22:30:00.000Z",
-   "updated": null,
-   "summary": "Modern enterprise networks support more than just computers, servers, and mobile devices. Organizations also rely on various connected devices and network infrastructure to support their day-to-day operations and maintain essential business functions.These devices often communicate with centralized ",
-   "first": "2026-11-25T04:43:53.191Z",
-   "score": -1,
-   "reasons": [
-    "-2 source manageengine-blog",
-    "+1 niche (exchange)"
-   ],
-   "status": "below",
-   "hash": "bd50ef6"
-  },
-  "https://manageengine.com/blog/general/if-everything-is-a-priority-nothing-is.html": {
-   "title": "If everything is a priority, nothing is",
-   "link": "https://www.manageengine.com/blog/general/if-everything-is-a-priority-nothing-is.html",
-   "source": "manageengine-blog",
-   "topic": "security-identity",
-   "category": "launch",
-   "date": "2026-11-24T17:30:00.000Z",
-   "updated": null,
-   "summary": "There is a particular kind of chaos that most IT teams are probably familiar with: A critical system needs attention, a security alert has just come in, someone from the finance team is following up on a ticket they raised yesterday, and there's an email from senior management marked URGENT that nee",
-   "first": "2026-11-25T04:43:53.191Z",
-   "score": -2,
-   "reasons": [
-    "-2 source manageengine-blog"
-   ],
-   "status": "below",
-   "hash": "fce8c6fc"
   },
   "msrc:CVE-2026-112732:critical": {
    "title": "Microsoft Office Visio Remote Code Execution Vulnerability (CVE-2026-112732): Critical, CVSS 9.8, added to the November 2026 security release",
@@ -4222,59 +4135,6 @@
    "attempts": 1,
    "slug": "cve-2026-112732-office-visio-rce-check-update",
    "resultAt": "2026-11-25T22:52:00.616Z"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64035": {
-   "title": "Result of the Overnight Variable Rate Repo (VRR) auction held on November 25, 2026",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64035",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-25T10:25:00.000Z",
-   "updated": null,
-   "summary": "Tenor 1-day Notified Amount (in ₹ crore) 50,000 Total amount of bids received (in ₹ crore) 1,62,017 Amount allotted (in ₹ crore) 50,007 Cut off Rate (%) 5.66 Weighted Average Rate (%) 5.67 Partial Allotment Percentage of bids received at cut off rate (%) 50.55 Ajit Prasad Deputy General Manager (Com",
-   "first": "2026-11-25T05:13:21.765Z",
-   "score": -1,
-   "reasons": [
-    "-1 source rbi-press"
-   ],
-   "status": "below",
-   "hash": "d42a3d26"
-  },
-  "https://tallysolutions.com/business-guides/business-accounting-without-expertise": {
-   "title": "How to Maintain Business Accounts Without Being an Accounting Expert?",
-   "link": "https://tallysolutions.com/business-guides/business-accounting-without-expertise/",
-   "source": "tally-blog",
-   "topic": "small-business-it",
-   "category": "launch",
-   "date": "2026-11-25T05:01:56.000Z",
-   "updated": null,
-   "summary": "Managing business accounts can feel difficult when you lack accounting knowledge. However, a simple routine can make everyday tasks easier. You can manage business accounts without accountant by recording sales, tracking expenses and organising invoices. These steps make simple accounting for small ",
-   "first": "2026-11-25T05:13:21.765Z",
-   "score": 0,
-   "reasons": [
-    "-2 source tally-blog",
-    "+2 user steps \"How to\""
-   ],
-   "status": "below",
-   "hash": "1e4db7e"
-  },
-  "https://tallysolutions.com/business-guides/how-to-manage-multiple-businesses-or-branches-with-accounting-software": {
-   "title": "How to Manage Multiple Businesses or Branches with Accounting Software?",
-   "link": "https://tallysolutions.com/business-guides/how-to-manage-multiple-businesses-or-branches-with-accounting-software/",
-   "source": "tally-blog",
-   "topic": "small-business-it",
-   "category": "launch",
-   "date": "2026-11-25T04:54:13.000Z",
-   "updated": null,
-   "summary": "Running more than one business or branch means more books, more people, and more room for mistakes. If each location keeps its own sheet, you only see the full picture when someone pulls it together by hand. Good accounting software for multiple businesses keeps each record separate and shows you th",
-   "first": "2026-11-25T05:13:21.765Z",
-   "score": 0,
-   "reasons": [
-    "-2 source tally-blog",
-    "+2 user steps \"How to\""
-   ],
-   "status": "below",
-   "hash": "f425b783"
   },
   "https://bleepingcomputer.com/news/microsoft/microsoft-confirms-authentication-issues-after-november-updates": {
    "title": "Microsoft confirms authentication issues after November updates",
