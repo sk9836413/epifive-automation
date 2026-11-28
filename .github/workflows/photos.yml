@@ -51,6 +51,9 @@ jobs:
           WINDOW: ${{ vars.CAROUSEL_WINDOW_HOURS || '8' }}
           MANUAL: ${{ github.event_name == 'workflow_dispatch' && (inputs.dry_run || inputs.slug != '' || inputs.force) }}
         run: |
+          # A queued run checks out the commit from when it was triggered, so it may not see the log line the run
+          # before it just pushed (26-27 Nov 2026: every carousel went out twice). Read the latest log first.
+          git pull -q --ff-only || echo "::warning::Could not refresh photos/log.md; using the checked-out copy."
           mkdir -p photos && touch photos/log.md
           date=$(TZ=Asia/Kolkata date +%F)
           echo "date=$date" >> "$GITHUB_OUTPUT"
