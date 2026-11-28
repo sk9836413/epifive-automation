@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-28T03:43:42.166Z",
+ "lastScan": "2026-11-28T04:40:15.473Z",
  "seen": {
   "https://bleepingcomputer.com/news/security/apache-http-server-patches-critical-http-2-remote-code-execution-flaw": {
    "title": "Apache HTTP Server patches critical HTTP/2 remote code execution flaw",
@@ -194,27 +194,6 @@
    "attempts": 2,
    "slug": "viva-engage-teams-town-hall-creation-retirement",
    "resultAt": "2026-11-24T06:31:02.945Z"
-  },
-  "https://mc.merill.net/message/MC1552389": {
-   "title": "MC1552389: Microsoft 365 Copilot: Workforce Intelligence plugin available in Copilot Cowork",
-   "link": "https://mc.merill.net/message/MC1552389",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-13T23:45:06.000Z",
-   "updated": null,
-   "summary": "The Workforce Intelligence plugin in Microsoft 365 Copilot Cowork, launching November 16, 2026, helps leaders explore organizational structure and skills via natural language. It respects existing data permissions, supports team learning, requires admin setup, and is not for employee evaluation or p",
-   "first": "2026-11-14T03:43:44.961Z",
-   "score": 7,
-   "reasons": [
-    "-2 source mc-merill",
-    "+4 niche (copilot, microsoft 365)",
-    "+2 launch \"available in\"",
-    "+2 user steps \"setup\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "fb1cb1b5"
   },
   "https://mc.merill.net/message/MC1552387": {
    "title": "MC1552387: Retired: Microsoft Defender for Identity classic alerts (Remote code execution attempt and pass-the-hash)",
@@ -7300,28 +7279,6 @@
    "date": "2026-11-26T05:00:02.000Z",
    "score": 11,
    "post": "anthropic-ipo-explained-claude-users"
-  },
-  "milestone:amazon|12f167c1": {
-   "first": "2026-11-24T04:25:01.000Z",
-   "decision": "parked",
-   "key": "milestone:amazon",
-   "title": "AWS debuts Strands Decider v2, a family of five open decision models based on Google's Gemma 4, ranging from 2B to 31B parameters, under the Apache 2.0 license",
-   "titles": [
-    "AWS debuts Strands Decider v2, a family of five open decision models based on Google's Gemma 4, ranging from 2B to 31B parameters, under the Apache 2.0 license"
-   ],
-   "links": [
-    "https://thenewstack.io/aws-strands-decider-v2/"
-   ],
-   "link": "https://thenewstack.io/aws-strands-decider-v2/",
-   "outlets": [],
-   "techmeme": true,
-   "category": "launch",
-   "topic": "ai-automation",
-   "parkOnly": false,
-   "last": "2026-11-24T04:25:01.000Z",
-   "date": "2026-11-24T04:25:01.000Z",
-   "score": 11,
-   "ref": "https://thenewstack.io/aws-strands-decider-v2"
   },
   "milestone:openai|30dc9964": {
    "first": "2026-11-24T03:45:01.000Z",
