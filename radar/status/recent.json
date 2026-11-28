@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-24T20:24:28.616Z",
+ "generated": "2026-11-28T13:17:15.787Z",
  "services": {
   "microsoft-365": [
    {
@@ -121,7 +121,17 @@
   "google-workspace": [],
   "gmail": [],
   "google-cloud": [],
-  "cloudflare": [],
+  "cloudflare": [
+   {
+    "time": "2026-11-28T07:21:21.338Z",
+    "headline": "Email Delivery Delays",
+    "source": "Cloudflare Status (Statuspage incidents.json)",
+    "url": "https://www.cloudflarestatus.com/incidents/27xnfvjy0n6j",
+    "reported": false,
+    "live": "/news/live/2026-11-28#u-25926637",
+    "post": null
+   }
+  ],
   "github": [],
   "chatgpt": [],
   "slack": []

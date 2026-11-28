@@ -2,9 +2,9 @@
  "days": [
   {
    "date": "2026-11-28",
-   "count": 9,
+   "count": 10,
    "published": "2026-11-27T23:01:44.698Z",
-   "updated": "2026-11-28T03:43:42.166Z",
+   "updated": "2026-11-28T13:16:55.919Z",
    "title": "Tech news today, 28 November 2026"
   },
   {
@@ -106,5 +106,5 @@
    "title": "Tech news today, 14 November 2026"
   }
  ],
- "lastIndexNow": "2026-11-28T03:43:42.166Z"
+ "lastIndexNow": "2026-11-28T13:16:55.919Z"
 }

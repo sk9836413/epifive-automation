@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-28T05:13:24.013Z",
+ "lastScan": "2026-11-28T13:16:55.919Z",
  "seen": {
   "https://bleepingcomputer.com/news/security/apache-http-server-patches-critical-http-2-remote-code-execution-flaw": {
    "title": "Apache HTTP Server patches critical HTTP/2 remote code execution flaw",
@@ -7068,6 +7068,30 @@
    "status": "below",
    "hash": "92abdd0b",
    "backlog": "ai-agents-for-business-workflows"
+  },
+  "https://cloudflarestatus.com/incidents/27xnfvjy0n6j": {
+   "title": "Email Delivery Delays",
+   "link": "https://www.cloudflarestatus.com/incidents/27xnfvjy0n6j",
+   "source": "status-cloudflare",
+   "topic": "cloud",
+   "category": "outage",
+   "date": "2026-11-28T07:21:21.338Z",
+   "updated": "2026-11-28T09:23:38.704Z",
+   "summary": "This incident has been resolved.",
+   "first": "2026-11-28T13:16:55.919Z",
+   "score": 12,
+   "reasons": [
+    "+6 status-page incident \"resolved\"",
+    "+3 major platform (cloudflare)",
+    "+2 large incident (impact critical, 1 service(s))",
+    "resolved or retrospective: may update an existing outage guide, never a new one",
+    "+1 autocomplete (9)"
+   ],
+   "status": "resolved",
+   "hash": "879bd687",
+   "families": [
+    "cloudflare"
+   ]
   }
  },
  "devices": {},
@@ -7168,28 +7192,6 @@
    "score": 11,
    "ref": "https://openai.com/index/introducing-shirudo"
   },
-  "milestone:meta|1b4e8c44": {
-   "first": "2026-11-24T07:50:01.000Z",
-   "decision": "parked",
-   "key": "milestone:meta",
-   "title": "Meta rolls out Muse to UK adults to help with everyday tasks, the first Big Tech company to launch an AI agent in the UK; UK watchdogs have warned about agents",
-   "titles": [
-    "Meta rolls out Muse to UK adults to help with everyday tasks, the first Big Tech company to launch an AI agent in the UK; UK watchdogs have warned about agents"
-   ],
-   "links": [
-    "https://www.politico.eu/article/meta-ai-agent-muse-launch-uk/"
-   ],
-   "link": "https://www.politico.eu/article/meta-ai-agent-muse-launch-uk/",
-   "outlets": [],
-   "techmeme": true,
-   "category": "launch",
-   "topic": "ai-automation",
-   "parkOnly": false,
-   "last": "2026-11-24T07:50:01.000Z",
-   "date": "2026-11-24T07:50:01.000Z",
-   "score": 11,
-   "ref": "https://about.fb.com/news/2026/11/introducing-muse-in-the-uk-a-personal-ai-agent-you-control"
-  },
   "milestone:xai|64d750df": {
    "first": "2026-11-24T17:25:02.000Z",
    "decision": "parked",
@@ -7286,8 +7288,8 @@
   }
  },
  "missedCheck": {
-  "day": "2026-11-27",
-  "at": "2026-11-27T13:17:03.494Z",
+  "day": "2026-11-28",
+  "at": "2026-11-28T13:16:55.919Z",
   "checked": 0,
   "covered": 0,
   "items": []
