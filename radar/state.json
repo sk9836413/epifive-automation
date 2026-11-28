@@ -1,6 +1,6 @@
 {
  "version": 1,
- "lastScan": "2026-11-27T23:01:44.698Z",
+ "lastScan": "2026-11-28T03:43:42.166Z",
  "seen": {
   "https://bleepingcomputer.com/news/security/apache-http-server-patches-critical-http-2-remote-code-execution-flaw": {
    "title": "Apache HTTP Server patches critical HTTP/2 remote code execution flaw",
@@ -3981,43 +3981,6 @@
    "status": "parked",
    "parkedAt": "2026-11-25T03:42:04.583Z"
   },
-  "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities": {
-   "title": "GPT-6 models demonstrate intrinsic protein-design capabilities",
-   "link": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
-   "source": "openai-news",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-24T13:00:00.000Z",
-   "updated": null,
-   "summary": "GPT-6 models design protein structures and sequences using reasoning and code. Lab tests found evidence of binding across five targets.",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": 3,
-   "reasons": [
-    "+2 source openai-news",
-    "+1 also on techmeme"
-   ],
-   "status": "below",
-   "hash": "7a3b6266"
-  },
-  "https://openai.com/business/customer-stories/clay-plugins-openai": {
-   "title": "Clay helps sales teams win with Codex and ChatGPT",
-   "link": "https://openai.com/business/customer-stories/clay-plugins-openai",
-   "source": "openai-news",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-24T00:00:00.000Z",
-   "updated": null,
-   "summary": "ChatGPT and Codex integrations help Clay’s users research deals and turn data into go-to-market plays, with GPT-6 models handling the reasoning.",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": 4,
-   "reasons": [
-    "+2 source openai-news",
-    "+4 niche (chatgpt, codex)",
-    "-2 category (none)"
-   ],
-   "status": "below",
-   "hash": "c19a121f"
-  },
   "https://bleepingcomputer.com/news/security/rackspace-shuts-down-spot-cloud-platform-after-security-breach": {
    "title": "Rackspace shuts down Spot cloud platform after security breach",
    "link": "https://www.bleepingcomputer.com/news/security/rackspace-shuts-down-spot-cloud-platform-after-security-breach/",
@@ -4037,94 +4000,6 @@
    ],
    "status": "below",
    "hash": "5c87f4e6"
-  },
-  "https://microsoft.ai/news/introducing-mai-licensed-weights": {
-   "title": "Introducing mai licensed weights",
-   "link": "https://microsoft.ai/news/introducing-mai-licensed-weights/",
-   "source": "microsoft-ai",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-24T21:37:50.000Z",
-   "updated": null,
-   "summary": "",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": 3,
-   "reasons": [
-    "+2 launch \"Introducing\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "9a7db410",
-   "story": "ai:mai licensed:release"
-  },
-  "https://news.samsung.com/global/a-day-in-the-life-of-a-dog-with-galaxy-smarttag3-and-smartthings": {
-   "title": "A Day in the Life of a Dog With Galaxy SmartTag3 and SmartThings",
-   "link": "https://news.samsung.com/global/a-day-in-the-life-of-a-dog-with-galaxy-smarttag3-and-smartthings",
-   "source": "samsung-global",
-   "topic": "mobiles",
-   "category": "launch",
-   "date": "2026-11-25T08:00:00.000Z",
-   "updated": null,
-   "summary": "Samsung Electronics released Galaxy SmartTag3, a compact tracker that helps users locate valuables and care for their pets. As SmartThings expands beyond home device control to pets’ outdoor activities and everyday care, Galaxy SmartTag3 brings new connected experiences to the ecosystem. Pet owners ",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": 1,
-   "reasons": [
-    "+1 niche (galaxy)"
-   ],
-   "status": "below",
-   "hash": "70b9353e"
-  },
-  "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64034": {
-   "title": "Money Market Operations as on November 23, 2026",
-   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=64034",
-   "source": "rbi-press",
-   "topic": "online-safety",
-   "category": "launch",
-   "date": "2026-11-25T09:00:00.000Z",
-   "updated": null,
-   "summary": "(Amount in ₹ crore, Rate in Per cent) MONEY MARKETS @ --> Money Markets @ Volume (One Leg) Weighted Average Rate Range A. Overnight Segment (I+II+III+IV) 7,92,140.65 5.73 4.25-6.10 I. Call Money 13,306.12 5.74 4.30-6.10 II. Triparty Repo 5,68,390.35 5.73 5.64-5.80 III. Market Repo 2,03,375.73 5.72 4",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": -1,
-   "reasons": [
-    "-1 source rbi-press"
-   ],
-   "status": "below",
-   "hash": "33624c69"
-  },
-  "https://dell.com/en-us/blog/building-ai-that-scales-infrastructure-operations-expertise": {
-   "title": "Building AI that Scales: Infrastructure, Operations, Expertise",
-   "link": "https://www.dell.com/en-us/blog/building-ai-that-scales-infrastructure-operations-expertise",
-   "source": "dell-blog",
-   "topic": "laptops-hardware",
-   "category": "launch",
-   "date": "2026-11-24T21:05:00.000Z",
-   "updated": null,
-   "summary": "",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": -5,
-   "reasons": [
-    "-1 source dell-blog",
-    "-4 customer story"
-   ],
-   "status": "below",
-   "hash": "f9993f87"
-  },
-  "https://dell.com/en-us/blog/neural-networks-to-ai-factories-roland-kunz-on-ai-that-delivers": {
-   "title": "Neural Networks to AI Factories: Roland Kunz on AI That Delivers",
-   "link": "https://www.dell.com/en-us/blog/neural-networks-to-ai-factories-roland-kunz-on-ai-that-delivers",
-   "source": "dell-blog",
-   "topic": "laptops-hardware",
-   "category": "launch",
-   "date": "2026-11-24T15:00:00.000Z",
-   "updated": null,
-   "summary": "Roland Kunz, an AI expert at Dell Technologies, shares his insights on how organizations can turn AI concepts into impactful, measurable business outcomes.",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": -1,
-   "reasons": [
-    "-1 source dell-blog"
-   ],
-   "status": "below",
-   "hash": "c2f37e08"
   },
   "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-oct2026-node-js-Jj3SQ19u?vs_f=Cisco%20Security%20Advisory%26vs_cat=Security%20Intelligence%26vs_type=RSS%26vs_p=Vulnerabilities%20in%20Node.js%20and%20Brotli%20Affecting%20Cisco%20Products:%20October%202026%26vs_k=1": {
    "title": "Vulnerabilities in Node.js and Brotli Affecting Cisco Products: October 2026",
@@ -4149,316 +4024,6 @@
    "hash": "2cdc0230",
    "post": "cisco-expressway-cve-2026-76466-exploited-patch"
   },
-  "https://microsoft.com/microsoft-365/roadmap?id=582052": {
-   "title": "Microsoft Teams: Show your shared content on both room displays",
-   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=582052",
-   "source": "m365-roadmap",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-25T00:10:31.000Z",
-   "updated": "2026-11-25T00:10:31.000Z",
-   "summary": "Make presentations easier to see from anywhere in the room, even when you're not in a Teams meeting. On Microsoft Teams Rooms on Android with dual displays, content you share through an HDMI connection can now appear on both screens at once. You can start or stop showing your content on both screens",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": 1,
-   "reasons": [
-    "-1 source m365-roadmap",
-    "+4 niche (microsoft teams, android)",
-    "+2 user steps \"You can\"",
-    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
-   ],
-   "status": "below",
-   "hash": "6c667bdd"
-  },
-  "https://microsoft.com/microsoft-365/roadmap?id=582050": {
-   "title": "Microsoft Teams: External bot detection and activity reports in Admin Center",
-   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=582050",
-   "source": "m365-roadmap",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-25T00:10:31.000Z",
-   "updated": "2026-11-25T00:10:31.000Z",
-   "summary": "Admins should be able to track the detection and meeting access activity of external bots in the meetings and events hosted in their tenant. GA date: January CY2027",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": -3,
-   "reasons": [
-    "-1 source m365-roadmap",
-    "+2 niche (microsoft teams)",
-    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
-   ],
-   "status": "below",
-   "hash": "d7373500"
-  },
-  "https://microsoft.com/microsoft-365/roadmap?id=581865": {
-   "title": "SharePoint: Organization-wide page templates",
-   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581865",
-   "source": "m365-roadmap",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-25T00:10:31.000Z",
-   "updated": "2026-11-25T00:10:31.000Z",
-   "summary": "We are introducing organization-wide page templates in SharePoint, enabling organizations to provide reusable, approved starting points for page creation across sites within a tenant. Managed centrally in the SharePoint site associated with your organization's brand center, these templates help auth",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": 0,
-   "reasons": [
-    "-1 source m365-roadmap",
-    "+1 niche (sharepoint)",
-    "+2 launch \"introducing\"",
-    "+2 user steps \"setup\"",
-    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
-   ],
-   "status": "below",
-   "hash": "8bdec134"
-  },
-  "https://microsoft.com/microsoft-365/roadmap?id=581799": {
-   "title": "Dynamics 365 Commerce: UTGST Tax support in Commerce [India Tax Localization]",
-   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581799",
-   "source": "m365-roadmap",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-25T00:10:31.000Z",
-   "updated": "2026-11-25T00:10:31.000Z",
-   "summary": "This feature adds UTGST (Union Territory Goods and Services Tax) to the Commerce channel - store Commerce/POS/Trade POS and e‑commerce transactions in union territories. What UTGST is: For union territories in India that don't have a legislature, the GST Council introduced UTGST, which is comparable",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": -2,
-   "reasons": [
-    "-1 source m365-roadmap",
-    "+2 launch \"introduced\"",
-    "+1 plans/price/availability \"India\"",
-    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
-   ],
-   "status": "below",
-   "hash": "7b665604"
-  },
-  "https://microsoft.com/microsoft-365/roadmap?id=581798": {
-   "title": "Dynamics 365 Supply Chain Management: ATP with customer & product lead time",
-   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581798",
-   "source": "m365-roadmap",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-25T00:10:31.000Z",
-   "updated": "2026-11-25T00:10:31.000Z",
-   "summary": "This feature adds lead times set per customer or per product to the ATP promise date, so the date reflects how each customer and each item is actually served. Customer lead time: time that applies to everything shipped to a given customer, such as agreed service levels, delivery schedules, or extra ",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": -6,
-   "reasons": [
-    "-1 source m365-roadmap",
-    "-5 category (In development, General Availability, Preview)"
-   ],
-   "status": "below",
-   "hash": "e85f34"
-  },
-  "https://microsoft.com/microsoft-365/roadmap?id=581797": {
-   "title": "Dynamics 365 Supply Chain Management: Configurable ATP with Receipt Control",
-   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581797",
-   "source": "m365-roadmap",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-25T00:10:31.000Z",
-   "updated": "2026-11-25T00:10:31.000Z",
-   "summary": "This feature lets a business choose which incoming supply counts when the system calculates available-to-promise (ATP), so delivery promises match its own order-promising policy. It is in preview from version 10.0.50. It allows business to design ATP calculations for their business needs through dif",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": -5,
-   "reasons": [
-    "-1 source m365-roadmap",
-    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
-   ],
-   "status": "below",
-   "hash": "f9906b27"
-  },
-  "https://microsoft.com/microsoft-365/roadmap?id=581777": {
-   "title": "Microsoft Power Platform governance and administration: Unify finance and operations system administrator user and role management in Power Platform admin center",
-   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581777",
-   "source": "m365-roadmap",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-25T00:10:31.000Z",
-   "updated": "2026-11-25T00:10:31.000Z",
-   "summary": "Administrators can now manage system administrator users and security roles for both finance and operations apps and Dataverse from a single, unified experience in Power Platform admin center. Instead of switching between the finance and operations Users and Security configuration pages and the Data",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": -1,
-   "reasons": [
-    "-1 source m365-roadmap",
-    "+2 launch \"generally available\"",
-    "+2 user steps \"admins can\"",
-    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
-   ],
-   "status": "below",
-   "hash": "f2551f91"
-  },
-  "https://microsoft.com/microsoft-365/roadmap?id=581772": {
-   "title": "Dynamics 365 Human Resources: Agent onboarding for new employees",
-   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=581772",
-   "source": "m365-roadmap",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-25T00:10:31.000Z",
-   "updated": "2026-11-25T00:10:31.000Z",
-   "summary": "Business value Onboarding in Dynamics 365 Human Resources spans several pages and two people: HR administrators hire the candidate, enroll leave and set compensation, while the new employee completes personal details, address, emergency contacts and identification. Steps are easy to miss. A new agen",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": -5,
-   "reasons": [
-    "-1 source m365-roadmap",
-    "+1 niche (agent)",
-    "-5 category (In development, General Availability, Preview)"
-   ],
-   "status": "below",
-   "hash": "b8c2441e"
-  },
-  "https://microsoft.com/microsoft-365/roadmap?id=580871": {
-   "title": "Dynamics 365 Project Operations: Enable Project Revenue recognition using cost estimate instead of EAC (estimate at complete)",
-   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=580871",
-   "source": "m365-roadmap",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-25T00:10:31.000Z",
-   "updated": "2026-11-25T00:10:31.000Z",
-   "summary": "When you enable the Enable Project Revenue recognition using the cost estimate instead of the EAC (estimate at complete) setting, you activate this feature. Uses the original project estimate for PoC calculations: Delivers stable, predictable revenue without EAC-driven fluctuations. Anchors revenue ",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": -4,
-   "reasons": [
-    "-1 source m365-roadmap",
-    "+2 user steps \"Enable\"",
-    "-5 category (In development, General Availability, Preview)"
-   ],
-   "status": "below",
-   "hash": "f624b4c8"
-  },
-  "https://microsoft.com/microsoft-365/roadmap?id=580455": {
-   "title": "Microsoft Viva - Viva Glint: Enhanced multi-attribute report exports",
-   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=580455",
-   "source": "m365-roadmap",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-25T00:10:31.000Z",
-   "updated": "2026-11-25T00:10:31.000Z",
-   "summary": "Enhancements that are a part of this release expand who can use the Multi-attribute report export, increases the supported scale, and gives authorized users more control over the questions and attributes included. GA date: January CY2027",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": -5,
-   "reasons": [
-    "-1 source m365-roadmap",
-    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
-   ],
-   "status": "below",
-   "hash": "f9df97a6"
-  },
-  "https://microsoft.com/microsoft-365/roadmap?id=579966": {
-   "title": "Dynamics 365 Field Service: Plan further ahead with 180-day hourly schedule board view",
-   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=579966",
-   "source": "m365-roadmap",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-25T00:10:31.000Z",
-   "updated": "2026-11-25T00:10:31.000Z",
-   "summary": "Scheduling teams planning work over several months need to see upcoming bookings while retaining an hourly view of their schedules. The current hourly view supports up to 28 days. The planned extended view is designed to help teams review bookings across a longer planning horizon without switching t",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": 0,
-   "reasons": [
-    "-1 source m365-roadmap",
-    "+2 launch \"introduces\"",
-    "+2 user steps \"configure\"",
-    "+1 plans/price/availability \"Plan\"",
-    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
-   ],
-   "status": "below",
-   "hash": "576f3954"
-  },
-  "https://microsoft.com/microsoft-365/roadmap?id=579965": {
-   "title": "Dynamics 365 Field Service: Custom tooltips and templates on schedule board aggregate views",
-   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=579965",
-   "source": "m365-roadmap",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-25T00:10:31.000Z",
-   "updated": "2026-11-25T00:10:31.000Z",
-   "summary": "Scheduling teams planning multiday work do so using the aggregate views on the schedule board - the daily, weekly, and monthly views. On those views, multiple bookings are aggregated into a single object that spans the entire period. This improvement will allow administrators to configure the templa",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": -3,
-   "reasons": [
-    "-1 source m365-roadmap",
-    "+2 user steps \"configure\"",
-    "-4 category (In development, General Availability, Worldwide (Standard Multi-Tenant))"
-   ],
-   "status": "below",
-   "hash": "e451208"
-  },
-  "https://microsoft.com/microsoft-365/roadmap?id=578903": {
-   "title": "Dynamics 365 Project Operations: Activity Approvals Agent",
-   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=578903",
-   "source": "m365-roadmap",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-25T00:10:31.000Z",
-   "updated": "2026-11-25T00:10:31.000Z",
-   "summary": "The Approvals Agent in Dynamics 365 Project Operations uses AI to perform an initial review of submitted time, expense, and material entries against policy documents written in natural language. It classifies entries as Ready for approval or Needs review, helping project managers prioritize entries ",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": -3,
-   "reasons": [
-    "-1 source m365-roadmap",
-    "+1 niche (agent)",
-    "+2 user steps \"configure\"",
-    "-5 category (In development, General Availability, Preview)"
-   ],
-   "status": "below",
-   "hash": "356cfa47"
-  },
-  "https://microsoft.com/microsoft-365/roadmap?id=578902": {
-   "title": "Dynamics 365 Project Operations: Mark all eligible actuals ready to invoice in bulk",
-   "link": "https://www.microsoft.com/microsoft-365/roadmap?id=578902",
-   "source": "m365-roadmap",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-25T00:10:31.000Z",
-   "updated": "2026-11-25T00:10:31.000Z",
-   "summary": "Before you can invoice a project, every eligible unbilled sales actual has to be marked ready to invoice. Today, project managers and billing administrators do that by selecting records in a grid that's capped at 1,000 per page, then repeating the action page after page. For firms with tens of thous",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": -1,
-   "reasons": [
-    "-1 source m365-roadmap",
-    "+2 launch \"Now you can\"",
-    "+2 user steps \"you can\"",
-    "+1 plans/price/availability \"eligible\"",
-    "-5 category (In development, General Availability, Preview)"
-   ],
-   "status": "below",
-   "hash": "5f857d9b"
-  },
-  "https://salesforce.com/blog/sales/lead-qualification-ai": {
-   "title": "AI Lead Qualification: A Complete Guide to How It Works",
-   "link": "https://www.salesforce.com/blog/sales/lead-qualification-ai/",
-   "source": "salesforce-blog",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-24T21:33:49.000Z",
-   "updated": null,
-   "summary": "Learn how to use AI to prioritize the hottest sales leads before they go cold.",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": 1,
-   "reasons": [
-    "-1 source salesforce-blog",
-    "+2 user steps \"how to\""
-   ],
-   "status": "below",
-   "hash": "35a29524"
-  },
-  "https://mc.merill.net/message/MC1567320": {
-   "title": "MC1567320: Power Apps - Information about SharePoint thumbnails not rendering",
-   "link": "https://mc.merill.net/message/MC1567320",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-25T00:23:25.000Z",
-   "updated": null,
-   "summary": "We identified that changes made in relation to the retirement of SharePoint temporary authentication URLs communicated under MC1551122 may prevent thumbnails for SharePoint items from rendering in Power Apps. How does this affect me? SharePoint thumbnails displayed in your apps may not render. Other",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": 0,
-   "reasons": [
-    "-2 source mc-merill",
-    "+1 niche (sharepoint)",
-    "+1 retirement/migration"
-   ],
-   "status": "below",
-   "hash": "77d12c41"
-  },
   "https://mc.merill.net/message/MC1567263": {
    "title": "MC1567263: Microsoft 365 Copilot: New notification option when pinning Copilot to the Windows taskbar",
    "link": "https://mc.merill.net/message/MC1567263",
@@ -4479,80 +4044,6 @@
    ],
    "status": "below",
    "hash": "ca1b387e"
-  },
-  "https://mc.merill.net/message/MC1567262": {
-   "title": "MC1567262: Microsoft 365 Backup: Up to 10-year recovery windows for SharePoint and OneDrive",
-   "link": "https://mc.merill.net/message/MC1567262",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-24T22:45:25.000Z",
-   "updated": null,
-   "summary": "Microsoft 365 Backup now allows configurable recovery windows up to 10 years for SharePoint and OneDrive, extending from the previous 2 years. Administrators can set recovery periods from 3 months to 10 years, while Exchange backup windows remain unchanged. No action is needed unless longer retentio",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": 2,
-   "reasons": [
-    "-2 source mc-merill",
-    "+4 niche (microsoft 365, sharepoint, exchange, windows)"
-   ],
-   "status": "below",
-   "hash": "3f4d2c31"
-  },
-  "https://mc.merill.net/message/MC1567261": {
-   "title": "MC1567261: OneDrive for Business: Bug fixes to ensure proper storage quota aligns with license limits",
-   "link": "https://mc.merill.net/message/MC1567261",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-24T22:44:49.000Z",
-   "updated": null,
-   "summary": "OneDrive for Business will fix a bug causing incorrect 1 TB storage quotas for users with certain license combinations. Starting January 2027, quotas will match the actual storage plan, potentially reducing some users' quotas. Organizations should review usage, adjust licenses, and prepare for possi",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": 0,
-   "reasons": [
-    "-2 source mc-merill",
-    "+1 niche (onedrive)",
-    "+1 plans/price/availability \"plan\""
-   ],
-   "status": "below",
-   "hash": "75d8945"
-  },
-  "https://mc.merill.net/message/MC1567258": {
-   "title": "MC1567258: Microsoft Teams for Android and iOS: Update to the latest app version to maintain file access",
-   "link": "https://mc.merill.net/message/MC1567258",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-24T22:42:44.000Z",
-   "updated": null,
-   "summary": "Update Microsoft Teams mobile to version 1416/1.0.0.2026151302 (Android) or 8.19.0 (iOS) by April 1, 2027, to maintain file access. Older versions will lose file functionality due to a shift to Microsoft Entra ID authentication replacing pre-authenticated URLs. Begin updates now.",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": 2,
-   "reasons": [
-    "-2 source mc-merill",
-    "+4 niche (microsoft teams, android, entra)"
-   ],
-   "status": "below",
-   "hash": "8cf065e2"
-  },
-  "https://mc.merill.net/message/MC1567253": {
-   "title": "MC1567253: Microsoft Viva Engage: Minimum operating system requirements changing for iOS and iPadOS",
-   "link": "https://mc.merill.net/message/MC1567253",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-24T22:39:51.000Z",
-   "updated": null,
-   "summary": "Starting January 2027, Microsoft Viva Engage app updates for iOS and iPadOS will require version 18 or later. Devices on iOS/iPadOS 17 or earlier can keep using current app versions but won't get updates or new features. No admin action needed; users should update their OS to continue receiving upda",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": 2,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 niche (ipados)",
-    "+2 launch \"new features\""
-   ],
-   "status": "below",
-   "hash": "9da00acd"
   },
   "https://mc.merill.net/message/MC1567251": {
    "title": "MC1567251: Windows Server 2028 is now available in public preview",
@@ -4576,106 +4067,6 @@
    "hash": "64ceee4",
    "post": "windows-server-2028-preview-download-install-lab"
   },
-  "https://mc.merill.net/message/MC1549242": {
-   "title": "MC1549242: NTLM signing security improvements in Windows",
-   "link": "https://mc.merill.net/message/MC1549242",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-24T22:37:45.000Z",
-   "updated": null,
-   "summary": "(Updated 11-24-2026: KB5135557 has been updated with a Known issue section about compatibility issues affecting some third-party apps and devices using NTLM authentication, including authentication proxy servers and single sign-on (SSO) solutions.) What and why:New NTLM signing security improvements",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": 0,
-   "reasons": [
-    "-2 source mc-merill",
-    "+1 niche (windows)",
-    "+2 user steps \"enable\"",
-    "-1 in /news 2026-11-12-ntlm-signing-emudhra-openssh-kev"
-   ],
-   "status": "below",
-   "hash": "325fa20c",
-   "news": "2026-11-12-ntlm-signing-emudhra-openssh-kev"
-  },
-  "https://mc.merill.net/message/MC1470424": {
-   "title": "MC1470424: Microsoft Viva Engage: New left navigation controls for collapsing, resizing, and managing favorites",
-   "link": "https://mc.merill.net/message/MC1470424",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-24T21:46:57.000Z",
-   "updated": null,
-   "summary": "Microsoft Viva Engage is enhancing its left navigation with collapsible, resizable panes, unlimited favorites, and reorderable communities. These user-initiated features, available on web, Teams, and Outlook, will roll out globally by January 2027 with no admin action required. Users retain navigati",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": 2,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 niche (outlook)",
-    "+2 launch \"roll out\""
-   ],
-   "status": "below",
-   "hash": "9260a65e"
-  },
-  "https://mc.merill.net/message/MC1567225": {
-   "title": "MC1567225: Updates available for Microsoft 365 Apps for Current Channel",
-   "link": "https://mc.merill.net/message/MC1567225",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-24T21:45:09.000Z",
-   "updated": null,
-   "summary": "We've released updates to the following update channel for Microsoft 365 Apps: Current Channel When this will happen: We'll be gradually rolling out this update of Microsoft 365 Apps to users on that update channel starting November 24th, 2026 (PST). How this will affect your organization: If your M",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": 4,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 niche (microsoft 365)",
-    "+2 launch \"rolling out\"",
-    "+2 user steps \"you can\"",
-    "backlog microsoft-365-apps-update-channels"
-   ],
-   "status": "below",
-   "hash": "87a1b446",
-   "backlog": "microsoft-365-apps-update-channels"
-  },
-  "https://mc.merill.net/message/MC1530948": {
-   "title": "MC1530948: Microsoft Purview | Information Protection: Auto-labeling support for legacy Microsoft Office file formats",
-   "link": "https://mc.merill.net/message/MC1530948",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-24T21:41:08.000Z",
-   "updated": null,
-   "summary": "Microsoft Purview auto-labeling will support legacy Office files (.doc, .xls, .ppt) in SharePoint and OneDrive starting late November 2026. Existing policies need a minor edit and rerun to apply this. New policies support these formats automatically in both simulation and enforcement modes.",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": -2,
-   "reasons": [
-    "-2 source mc-merill",
-    "+1 niche (sharepoint)",
-    "-1 in /news 2026-10-30-kev-cisco-asa-gitlab-teams-graph-layout"
-   ],
-   "status": "below",
-   "hash": "ebf4585d",
-   "news": "2026-10-30-kev-cisco-asa-gitlab-teams-graph-layout"
-  },
-  "https://mc.merill.net/message/MC1567221": {
-   "title": "MC1567221: Power Platform admin center - Inventory data export (preview) stops December 1, 2026",
-   "link": "https://mc.merill.net/message/MC1567221",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-24T21:41:03.000Z",
-   "updated": null,
-   "summary": "As previously announced in the Power Platform admin center on October 30th, 2026, data export (preview) is deprecated and will be retired in phases. Inventory data export stops on December 1, 2026. Usage and environment data exports aren't affected by this change and continue to function as they do ",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": -1,
-   "reasons": [
-    "-2 source mc-merill",
-    "+1 retirement/migration"
-   ],
-   "status": "below",
-   "hash": "d0e4927"
-  },
   "https://mc.merill.net/message/MC1523085": {
    "title": "MC1523085: Viva Insights: GitHub Copilot metrics will be on by default, and the public preview opt-in setting is being retired",
    "link": "https://mc.merill.net/message/MC1523085",
@@ -4698,304 +4089,6 @@
    "status": "expired",
    "hash": "403b92f8",
    "news": "2026-10-25-php-rce-fixes-copilot-defaults"
-  },
-  "https://mc.merill.net/message/MC1560920": {
-   "title": "MC1560920: Copilot video creation in Clipchamp Video Hub is now live in Frontier Public",
-   "link": "https://mc.merill.net/message/MC1560920",
-   "source": "mc-merill",
-   "topic": "microsoft-365",
-   "category": "launch",
-   "date": "2026-11-24T18:13:16.000Z",
-   "updated": null,
-   "summary": "Copilot video creation in Clipchamp Video Hub is now in public preview, enabling users to create and refine videos from documents and prompts using Copilot Credits. Admins must enable Anthropic models and configure spending policies. Videos export as MP4 with an AI watermark, and some preview limita",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": 2,
-   "reasons": [
-    "-2 source mc-merill",
-    "+2 niche (copilot)",
-    "+2 user steps \"enable\""
-   ],
-   "status": "below",
-   "hash": "514dc8c9"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/gpt-daybreak-red-runtime-govcloud": {
-   "title": "Amazon Bedrock adds bedrock-runtime endpoint support for OpenAI Daybreak Red in AWS GovCloud (US)",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/gpt-daybreak-red-runtime-govcloud/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-24T21:27:00.000Z",
-   "updated": null,
-   "summary": "Eligible customers can now access OpenAI’s specialized cybersecurity models Daybreak Red: GPT-5.6 Cyber through the bedrock-runtime endpoint on Amazon Bedrock in AWS GovCloud (US). Daybreak Red is designed for advanced, authorized tasks such as vulnerability research, exploit reproduction, and mitig",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": 2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (openai)",
-    "+2 user steps \"opt in\"",
-    "+1 plans/price/availability \"Eligible\""
-   ],
-   "status": "below",
-   "hash": "c247f984",
-   "story": "ai:gpt-5.6:release"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-opensearch-serverless-available-cape-town-region": {
-   "title": "Amazon OpenSearch Serverless is now available in the Africa (Cape Town) Region",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-opensearch-serverless-available-cape-town-region/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-24T20:22:00.000Z",
-   "updated": null,
-   "summary": "Starting today, the next generation of Amazon OpenSearch Serverless is available in the AWS Africa (Cape Town) Region. Customers can now use a fully managed search, vector and analytics engine that provisions resources in seconds, auto scales instantly to meet changing demand, and scales to zero whe",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": 2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now available\"",
-    "+1 plans/price/availability \"Region\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "6edfaaf6"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/cloudformation-coverage-expansion": {
-   "title": "AWS CloudFormation makes resource coverage comprehensive with 206 new types",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/cloudformation-coverage-expansion/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-24T20:00:00.000Z",
-   "updated": null,
-   "summary": "AWS CloudFormation now supports 206 additional resource types across 88 services, including Amazon SageMaker Hub, Amazon Bedrock AgentCore PolicyEngine, and Amazon EC2 Snapshot. This closes key gaps in CloudFormation coverage and helps customers to standardize on safe and scalable infrastructure man",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": 0,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\""
-   ],
-   "status": "below",
-   "hash": "b7351cf5"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-connect-time-interval": {
-   "title": "Amazon Connect Customer dashboards now support grouping historical metrics by time interval",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-connect-time-interval/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-24T17:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon Connect Customer analytics dashboards now support grouping historical metrics by time interval on trailing widgets, giving contact center managers granular control over how performance data is visualized over time. Trailing widgets now display data grouped by 15-minute, 30-minute, one-hour, d",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": 2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now support\"",
-    "+1 plans/price/availability \"regions\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "d27e5b99"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/rds-sqlserver-supports-500-databases-per-instance": {
-   "title": "Amazon RDS for SQL Server now supports up to 500 databases per instance",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/rds-sqlserver-supports-500-databases-per-instance",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-24T08:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon Relational Database Service (Amazon RDS) for SQL Server now supports up to 500 databases per DB instance, up from the previous limit of 100. This higher density helps software as a service (SaaS) providers, multi-tenant applications, and other customers who run many databases on a DB instance",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": 3,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"You can\"",
-    "+1 launch in the headline"
-   ],
-   "status": "below",
-   "hash": "135fdaa3"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-sagemaker-hyperpod-patching-slurm-eks-inference": {
-   "title": "Amazon SageMaker HyperPod extends AMI auto-patching to Slurm and inference on EKS",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-sagemaker-hyperpod-patching-slurm-eks-inference/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-23T17:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon SageMaker HyperPod now automatically patches AMIs on Slurm clusters and introduces a new AMI patching strategy for Amazon EKS clusters that deploy inference workloads. SageMaker HyperPod is purpose-built infrastructure for training and deploying foundation models at scale. Previously, patchin",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": 0,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"introduces\""
-   ],
-   "status": "below",
-   "hash": "4dd43c2b"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-quick-snowflake-databricks-3lo-end-user-permissions": {
-   "title": "AWS Quick adds identity-aware access via 3LO for Snowflake and Databricks structured data sources",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-quick-snowflake-databricks-3lo-end-user-permissions/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-23T17:00:00.000Z",
-   "updated": null,
-   "summary": "AWS Quick now supports three-legged OAuth (3LO) with end-user permissions for Snowflake and Databricks. When end users in AWS Quick consume Chat, interactive dashboards, or Apps, queries run using their own Snowflake or Databricks identity. Governance policies configured in Snowflake or Databricks U",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": 2,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\"",
-    "+2 user steps \"get started\""
-   ],
-   "status": "below",
-   "hash": "eef26b8b"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-sagemaker-hyperpod-slurm-hung-jobs": {
-   "title": "Amazon SageMaker HyperPod now detects and recovers hung training jobs on Slurm clusters",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-sagemaker-hyperpod-slurm-hung-jobs/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-23T17:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon SageMaker HyperPod now supports hung job detection for Slurm-orchestrated clusters, which finds training jobs that have stopped making progress and returns them to the job queue. SageMaker HyperPod helps you provision resilient clusters for training and deploying AI/ML models. Previously, a j",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": 0,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now supports\""
-   ],
-   "status": "below",
-   "hash": "cc0429aa"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-sagemaker-hyperpod-k8s-monitoring-agent": {
-   "title": "Amazon SageMaker HyperPod now detects Kubernetes issues affecting training",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-sagemaker-hyperpod-k8s-monitoring-agent/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-23T17:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon SageMaker HyperPod now detects Kubernetes issues that disrupt training, such as crash-looping device plugins or missing DaemonSets, on clusters orchestrated by Amazon EKS. SageMaker HyperPod is purpose-built infrastructure for AI/ML model development, with built-in fault tolerance and automat",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": -1,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+1 niche (agent)"
-   ],
-   "status": "below",
-   "hash": "db0d7f94"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-sagemaker-hyperpod-training-validation": {
-   "title": "Amazon SageMaker HyperPod deep health check now validates training correctness",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-sagemaker-hyperpod-training-validation/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-23T17:00:00.000Z",
-   "updated": null,
-   "summary": "Amazon SageMaker HyperPod clusters orchestrated by Amazon EKS now support MultiNodeTrainingValidation, a deep health check that validates nodes train correctly before your jobs run. SageMaker HyperPod is purpose-built infrastructure for AI/ML model development, with built-in fault tolerance and auto",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": 0,
-   "reasons": [
-    "-2 source aws-whats-new",
-    "+2 launch \"now support\""
-   ],
-   "status": "below",
-   "hash": "216e941f"
-  },
-  "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-quick-ai-ready-existing-datasets": {
-   "title": "AWS Quick brings AI-ready capabilities to your existing datasets",
-   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-quick-ai-ready-existing-datasets/",
-   "source": "aws-whats-new",
-   "topic": "cloud",
-   "category": "launch",
-   "date": "2026-11-23T17:00:00.000Z",
-   "updated": null,
-   "summary": "Today, AWS Quick makes your legacy datasets AI ready through the new technology stack used by its improved visual data preparation experience. This stack powers Dataset Semantics, topics and semantic models, and Dataset Evaluation. Data curators can add business context through dataset descriptions,",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": -2,
-   "reasons": [
-    "-2 source aws-whats-new"
-   ],
-   "status": "below",
-   "hash": "1ac60867"
-  },
-  "https://ir.hubspot.com/news-releases/news-release-details/hubspot-present-barclays-24th-annual-global-technology": {
-   "title": "HubSpot to Present at the Barclays 24th Annual Global Technology Conference",
-   "link": "https://ir.hubspot.com/news-releases/news-release-details/hubspot-present-barclays-24th-annual-global-technology",
-   "source": "hubspot-ir",
-   "topic": "small-business-it",
-   "category": "launch",
-   "date": "2026-11-24T21:05:00.000Z",
-   "updated": null,
-   "summary": "CAMBRIDGE, Mass. --(BUSINESS WIRE)--Nov. 24, 2026-- HubSpot, Inc., the agentic customer platform for scaling businesses, announced today that Brian Halligan, the Company’s Chief Executive Officer, is scheduled to present at the Barclays 24th Annual Global Technology Conference in San Francisco,",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": -5,
-   "reasons": [
-    "-2 source hubspot-ir",
-    "-3 corporate/announcement \"Conference\""
-   ],
-   "status": "below",
-   "hash": "93ef158d"
-  },
-  "https://intuit.com/blog/innovative-thinking/accountant-shortage": {
-   "title": "Is There an Accountant Shortage in 2026?",
-   "link": "https://www.intuit.com/blog/innovative-thinking/accountant-shortage/",
-   "source": "intuit-blog",
-   "topic": "small-business-it",
-   "category": "launch",
-   "date": "2026-11-25T01:34:50.000Z",
-   "updated": null,
-   "summary": "There is a shortage of accountants in the USA, and it’s been building for a while. According to the latest American Institute of Certified Public Accountants (AICPA) Trends Report, completed accounting degrees have declined steadily since 2010, and the number of new CPA candidates has fallen from ne",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": -2,
-   "reasons": [
-    "-2 source intuit-blog"
-   ],
-   "status": "below",
-   "hash": "30bbc15c"
-  },
-  "https://intuit.com/blog/innovative-thinking/teaching-accounting": {
-   "title": "How to Teach Accounting Effectively",
-   "link": "https://www.intuit.com/blog/innovative-thinking/teaching-accounting/",
-   "source": "intuit-blog",
-   "topic": "small-business-it",
-   "category": "launch",
-   "date": "2026-11-25T01:21:04.000Z",
-   "updated": null,
-   "summary": "Teaching accounting is more than preparing students to crunch numbers. Math skills and tech fundamentals remain important, but the profession is increasingly moving toward high-level client support in areas such as financial planning and risk management. That evolution changes what effective instruc",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": 0,
-   "reasons": [
-    "-2 source intuit-blog",
-    "+2 user steps \"How to\""
-   ],
-   "status": "below",
-   "hash": "5e6eea1f"
-  },
-  "https://elevenlabs.io/blog/what-is-sip-trunking": {
-   "title": "What is SIP trunking? A business guide to modern calls",
-   "link": "https://elevenlabs.io/blog/what-is-sip-trunking",
-   "source": "elevenlabs-blog",
-   "topic": "ai-automation",
-   "category": "launch",
-   "date": "2026-11-24T12:00:00.000Z",
-   "updated": null,
-   "summary": "Learn what is SIP trunking, how it works, what it costs, how to choose a provider, and how to connect it to AI voice agents for customer service.",
-   "first": "2026-11-25T03:42:04.583Z",
-   "score": 1,
-   "reasons": [
-    "-2 source elevenlabs-blog",
-    "+1 niche (agents)",
-    "+2 user steps \"how to\""
-   ],
-   "status": "below",
-   "hash": "f2bd8882"
   },
   "https://techcommunity.microsoft.com/t5/windows-it-pro-blog/maintenance-windows-for-cloud-managed-systems/ba-p/4508203": {
    "title": "Maintenance windows for cloud-managed systems",
@@ -8089,11 +7182,53 @@
    },
    "trendDay": "2026-11-28",
    "hash": "9bfda55b",
-   "status": "writing",
+   "status": "published",
    "kind": "new",
    "extra": false,
    "taskAt": "2026-11-27T23:01:44.698Z",
-   "attempts": 1
+   "attempts": 1,
+   "slug": "sap-github-incident-what-to-do",
+   "resultAt": "2026-11-27T23:10:26.956Z"
+  },
+  "https://aws.amazon.com/about-aws/whats-new/2026/11/influxdb-heterogeneous-cluster": {
+   "title": "Amazon Timestream for InfluxDB 3 now supports heterogeneous clusters",
+   "link": "https://aws.amazon.com/about-aws/whats-new/2026/11/influxdb-heterogeneous-cluster/",
+   "source": "aws-whats-new",
+   "topic": "cloud",
+   "category": "launch",
+   "date": "2026-11-27T22:30:00.000Z",
+   "updated": null,
+   "summary": "Amazon Timestream for InfluxDB 3 now supports heterogeneous clusters, which let you assign a different instance size to each node role in an InfluxDB 3 Enterprise cluster. You can size the writer, reader, and compactor roles independently. You set the size for each role when you create a cluster or ",
+   "first": "2026-11-28T03:43:42.166Z",
+   "score": 3,
+   "reasons": [
+    "-2 source aws-whats-new",
+    "+2 launch \"now supports\"",
+    "+2 user steps \"You can\"",
+    "+1 launch in the headline"
+   ],
+   "status": "below",
+   "hash": "4130b286"
+  },
+  "https://elevenlabs.io/blog/what-is-agent-to-agent-communication": {
+   "title": "Agent-to-agent communication: How AI agents work together",
+   "link": "https://elevenlabs.io/blog/what-is-agent-to-agent-communication",
+   "source": "elevenlabs-blog",
+   "topic": "ai-automation",
+   "category": "launch",
+   "date": "2026-11-27T12:00:00.000Z",
+   "updated": null,
+   "summary": "Learn how agent-to-agent communication works, how the A2A protocol compares with MCP, and how AI agents delegate tasks and share context across systems.",
+   "first": "2026-11-28T03:43:42.166Z",
+   "score": -1,
+   "reasons": [
+    "-2 source elevenlabs-blog",
+    "+1 niche (agent)",
+    "backlog ai-agents-for-business-workflows"
+   ],
+   "status": "below",
+   "hash": "92abdd0b",
+   "backlog": "ai-agents-for-business-workflows"
   }
  },
  "devices": {},

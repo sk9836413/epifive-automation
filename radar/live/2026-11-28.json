@@ -2,7 +2,7 @@
  "date": "2026-11-28",
  "title": "Tech news today, 28 November 2026",
  "published": "2026-11-27T23:01:44.698Z",
- "updated": "2026-11-27T23:01:44.698Z",
+ "updated": "2026-11-28T03:43:42.166Z",
  "items": [
   {
    "id": "4d321ba9",
@@ -233,7 +233,36 @@
    "ai": null,
    "score": 3,
    "story": null
+  },
+  {
+   "id": "bb68a90b",
+   "key": "https://aws.amazon.com/about-aws/whats-new/2026/11/influxdb-heterogeneous-cluster",
+   "time": "2026-11-27T22:30:00.000Z",
+   "seen": "2026-11-28T03:43:42.166Z",
+   "kind": "launch",
+   "tier": 2,
+   "headline": "Amazon Timestream for InfluxDB 3 now supports heterogeneous clusters",
+   "summary": "Amazon Timestream for InfluxDB 3 now supports heterogeneous clusters, which let you assign a different instance size to each node role in an InfluxDB 3 Enterprise cluster. You can size the writer, reader, and compactor roles independently. You set the size for each role when you create a cluster or add nodes to an existing cluster, using the Amazon Timestream console, the AWS Command Line Interface (CLI), or the AWS SDKs. Time series workloads rarely load every part of a database the same way. Queries need memory for the query cache, writes are gated by durable flushes to object storage, and compaction needs vCPUs to merge files in the background. Because every node previously ran one instan",
+   "lines": [
+    "Amazon Timestream for InfluxDB 3 now supports heterogeneous clusters, which let you assign a different instance size to each node role in an InfluxDB 3 Enterprise cluster.",
+    "You set the size for the writer, reader, and compactor roles when you create a cluster or add nodes, using the Amazon Timestream console, the AWS CLI, or the AWS SDKs.",
+    "Time series workloads load different parts of a database unevenly, so sizing each role separately lets teams match resources to what each role needs."
+   ],
+   "linesBy": "claude",
+   "source": {
+    "name": "AWS What's New",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/influxdb-heterogeneous-cluster/"
+   },
+   "sourceId": "aws-whats-new",
+   "sourceMax": 6,
+   "reported": false,
+   "also": [],
+   "post": null,
+   "device": null,
+   "ai": null,
+   "score": 3,
+   "story": null
   }
  ],
- "description": "8 technology updates from official sources, updated hourly: Vulnerabilities in nginx Affecting Cisco Products: November 2026; Anker’s 100W universal travel charger is down to $60, its lowest price yet; OpenAI countersues Apple and accuses it of stealing trade secrets."
+ "description": "9 technology updates from official sources, updated hourly: Vulnerabilities in nginx Affecting Cisco Products: November 2026; Anker’s 100W universal travel charger is down to $60, its lowest price yet; OpenAI countersues Apple and accuses it of stealing trade secrets."
 }
