@@ -16,3 +16,4 @@
 - 2026-11-25 | recover-deleted-files-windows-11-free-tools | slides 7 (recent) | fb: https://www.facebook.com/1428744796978054_122127017781497479 | ig: https://www.instagram.com/p/DgKnumTIDh3/
 - 2026-11-26 | best-ups-for-pc-router-india-2026 | slides 7 (recent) | fb: https://www.facebook.com/1428744796978054_122127324183497479 | ig: https://www.instagram.com/p/DgNMg23F7pE/
 - 2026-11-27 | backup-windows-11-pc-external-drive-free-vs-paid | slides 6 (recent) | fb: https://www.facebook.com/1428744796978054_122127694743497479 | ig: https://www.instagram.com/p/DgPxSjWEkA8/
+- 2026-11-28 | android-phone-adware-popup-ads-remove | slides 7 (recent) | fb: https://www.facebook.com/1428744796978054_122127995913497479 | ig: https://www.instagram.com/p/DgSWGncjZOq/
