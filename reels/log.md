@@ -7,3 +7,4 @@
 - 2026-11-23 | cpanel-to-microsoft-365-migration-step-by-step | ig-en: https://www.instagram.com/reel/DgEXyZ0Em73/
 - 2026-11-25 | claude-ship-set-up-code-review-steward-approvals | ig-en: https://www.instagram.com/reel/DgJl_bkuGuk/
 - 2026-11-27 | laptop-battery-health-report-windows-powercfg | ig-en: https://www.instagram.com/reel/DgOvpMsBZ8S/
+- 2026-11-28 | aadsts53003-blocked-by-conditional-access | ig-en: https://www.instagram.com/reel/DgRUgsIhknW/
